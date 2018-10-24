@@ -155,3 +155,5 @@ alias serve="/c/Users/userid/bin/serve"
 echo bundle exec jekyll serve --incremental
 bundle exec jekyll serve --incremental
 ```
+
+### Use GitHub Desktop to commit to master and Push to GitHub
