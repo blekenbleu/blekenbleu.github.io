@@ -5,7 +5,7 @@
   Following seemingly current GitHub documentation was doomed,
   provoking many false moves that needed undoing.
 
-Warning:  I *think* this sequence is more nearly correct,
+*Warning:*  I *think* this sequence is more nearly correct,
 but is untested..
 
 Debugging generated page failures wants
@@ -36,16 +36,17 @@ GitHub was totally unclear about that, but
 Pressed Enter for options 1,2,3; get many, many messages,
 including a final prompt that seemingly wanted to start over...??!!
 
+### Invoke commands from Git Bash
 `$ gem install bundler`
 - required firewall permission
 
 `$ bundle install`
 - NOTHING reported for a very long time..
 then failed:
-
-`Retrying fetcher due to error (2/4): Bundler::HTTP`
-`Error Could not fetch specs from https://rubygems.org/`
-
+```
+Retrying fetcher due to error (2/4): Bundler::HTTP
+Error Could not fetch specs from https://rubygems.org/
+```
 .. but, after walking away for awhile, retried `$ bundle install`
 - .. and it worked..!?
 
@@ -157,3 +158,4 @@ bundle exec jekyll serve --incremental
 ```
 
 ### Use GitHub Desktop to commit to master and Push to GitHub
+*Note:* Markdown pages (files ending with `.md`) get URLs *without* `.md`
