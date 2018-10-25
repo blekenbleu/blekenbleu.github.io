@@ -10,4 +10,6 @@
 
 ### GitHub's [Default welcome page - Markup tutorial](https://blekenbleu.github.io/Welcome)
 
-[source](https://github.com/blekenbleu/blekenbleu.github.io)
+[documentation source repository](https://github.com/blekenbleu/blekenbleu.github.io)  
+[GitHub status](https://status.github.com/messages)  
+site URL:  {{site.url}}
