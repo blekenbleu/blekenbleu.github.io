@@ -5,3 +5,5 @@
 ### GitHub's [Default welcome page](Welcome)
 
 ### [GitHub Pages with Windows 8.1](GitHubPages) Installation How-To
+
+### [Sim racing pedals - STM32](pedals/STM32)
