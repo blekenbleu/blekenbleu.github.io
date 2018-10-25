@@ -6,4 +6,4 @@
 
 ### [GitHub Pages with Windows 8.1](GitHubPages) Installation How-To
 
-### [Sim racing pedals - STM32](pedals/STM32)
+### USB-attached [Logitech G29 pedals - STM32](pedals/STM32)

@@ -71,8 +71,7 @@ Clone [Logitech pedals as separate USB game controller](https://github.com/robot
 - [Arduino HX711.cpp](https://github.com/bogde/HX711/blob/master/HX711.cpp)
 - [HX711 Arduino UNO code to stm32f103 blue pill board](http://www.stm32duino.com/viewtopic.php?f=2&t=2222#p30232)
 
-Still need dfu-util to load second stage Black Magic Probe
-since its bootloader expects/requires that.
+Black Magic Probe bootloader expects/requires [dfu-util](http://dfu-util.sourceforge.net/) to load second stage
 
 BMP bootloader can be installed by ST-Link..
 
