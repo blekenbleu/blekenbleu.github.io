@@ -12,4 +12,12 @@
 
 [documentation source repository](https://github.com/blekenbleu/blekenbleu.github.io)  
 [GitHub status](https://status.github.com/messages)  
-site URL:  {{site.url}}
+site URL:  {{site.url}}  
+
+{% if site.url == 'site.url' %}
+   {% assign myurl='https://blekenbleu.github.io/' %}
+{% else %}
+   {% assign myurl=site.url %}
+{% endif %}
+
+my URL: {{myurl}}
