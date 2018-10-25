@@ -63,7 +63,7 @@ https://github.com/jch/html-pipeline#dependencies
 
 `$ jekyll new userid.github.io`
 ```
-Running bundle install in G:/Gateway/GitHub/userid.github.io/userid.github.io...
+Running bundle install in D:/GitHub/userid/userid.github.io...
   Bundler: Fetching gem metadata from https://rubygems.org/...........
   Bundler: Fetching gem metadata from https://rubygems.org/.
   Bundler: Resolving dependencies...
@@ -108,47 +108,42 @@ Running bundle install in G:/Gateway/GitHub/userid.github.io/userid.github.io...
   Bundler: Installing wdm 0.1.1 with native extensions
   Bundler: Bundle complete! 5 Gemfile dependencies, 33 gems now installed.
   Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
-New jekyll site installed in G:/Gateway/GitHub/userid.github.io/userid.github.io.
+New jekyll site installed in D:/GitHub/userid.github.io/userid.github.io.
 ```
 
 `$ cd userid.github.io/`
 
 `$ bundle exec jekyll serve`
 ```
-Configuration file: G:/Gateway/GitHub/userid.github.io/userid.github.io/_config.yml
-            Source: G:/Gateway/GitHub/userid.github.io/userid.github.io
-       Destination: G:/Gateway/GitHub/userid.github.io/userid.github.io/_site
+Configuration file: D:/GitHub/userid/userid.github.io/_config.yml
+            Source: D:/GitHub/userid/userid.github.io
+       Destination: D:/GitHub/userid/userid.github.io/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
        Jekyll Feed: Generating feed for posts
                     done in 0.752 seconds.
- Auto-regeneration: enabled for 'G:/Gateway/GitHub/userid.github.io/userid.github.io'
+ Auto-regeneration: enabled for 'D:/GitHub/userid/userid.github.io'
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 [2018-10-22 16:02:03] ERROR '/favicon.ico' not found.
 ```
 Browse succeeded to [http://localhost:4000](http://localhost:4000)
 
-### Converting to GitHub Pages
+### Applying Jekyll for GitHub Pages
 `$ cat _config.yml`
 ```
-theme: jekyll-theme-hacker
-repository: userid/userid.github.io
-encoding: UTF-8
-github: [metadata]
+{% include_relative _config.yml %}
 ```
 `$ cat Gemfile`
 ```
-source 'http://rubygems.org'
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-gem 'github-pages', group: :jekyll_plugins
+{% include_relative Gemfile %}
 ```
 Generate a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/), then set up the environmental variable:
 
 `$ cat $HOME/.bash_profile`
 ```
 export JEKYLL_GITHUB_TOKEN=12345yourtokenhere6789
-alias g="cd /d/GitHub/userid.github.io/userid.github.io"
+alias g="cd /d/GitHub/userid/userid.github.io"
 alias serve="/c/Users/userid/bin/serve"
 ```
 `$ cat $HOME/bin/serve`
