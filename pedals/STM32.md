@@ -21,18 +21,18 @@ Playing Assetto Corsa on conventional PC monitors limits field-of-view;
 By lacking inertial cues from velocity changes, sim racing seems harder than real.
 Although Logitech improved pedal feel with their G29, braking remains problematic:,
 1. signal to sim software is based on pedal movement distance, not pressure.
-2. feedback for tires losing grip during braking comes thru the wheel, instead of the brake pedal.
+2. feedback for tires losing grip during braking currently comes thru the steering wheel, instead of the brake pedal.
 
-### Proposals
+### Project
 Those 2 brake simulation shortcomings can be mitigated, respectively, by:
-1. replacing brake pedal potentiometer with a load cell, e.g
+1. replacing brake potentiometer with a load cell, e.g
 [Logitec G27 Load cell brake modification](https://imgur.com/gallery/gOjAf)
    * That mod used analog conversion, but [SP_Adapter](https://github.com/robotsrulz/SP_Adapter) separates pedals from wheel.
-1. adding ABS feedback to the brake pedal
-   * e.g. 3:50/10:56 [DIY RUMBLE PEDALS SIM RACING](https://www.youtube.com/watch?v=8aLqqcEaUVk)
+2. simulating ABS feedback at the brake pedal
+   * e.g. @ 3:47/10:56 of this video: [DIY RUMBLE PEDALS SIM RACING](https://www.youtube.com/watch?v=8aLqqcEaUVk)
    * Get tire slip data from Assetto Corsa via UDP socket or [Python](https://gist.github.com/robertcedwards/2f7a061af8ccc987aab2)
-   * [proTyres app](https://www.assettocorsa.net/forum/index.php?threads/protyres-v1-0-0-it%E2%80%99s-all-about-the-tyre.43361/)
-includes Tyre slip indicator during braking
+   * [proTyres app](https://www.assettocorsa.net/forum/index.php?threads/protyres-v1-0-0-it%E2%80%99s-all-about-the-tyre.43361/) [*requires registration*]
+includes indicator for Tyre slip during braking
 
 ### Assetto Corsa software development
 * [Assetto Corsa Programming](https://www.assettocorsa.net/forum/index.php?forums/programming-language-apps-gui-themes.22/)
@@ -59,7 +59,7 @@ Monitor app for more or less the complete AC API
 
 
 ### STM32 USB HID adapter for Logitech G29 pedals with load cell brake
-- Prototype using [Blue Pill](http://wiki.stm32duino.com/index.php?title=Blue_Pill)
+- Prototype using a $2 [Blue Pill](http://wiki.stm32duino.com/index.php?title=Blue_Pill)
 - Blue Pill uses [STM32F103C8T6](https://www.st.com/en/microcontrollers/stm32f103c8.html)
 with 128Kbytes of Flash and 20 Kbytes SRAM
 - Blue Pill STM32F103 measured [~49 VAX (integer) MIPS  and 9 Whetstone (floating point) MIPS](http://www.stm32duino.com/viewtopic.php?t=76&start=20)
