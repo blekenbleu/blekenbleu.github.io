@@ -1,21 +1,27 @@
 ## Logitech G29 brake pedal mods
+### Background
 Having poor coordination always and no depth perception until vision fused in my 40s,
 driving and bicycling were as nearly athletic as I cared to get.
-Gloria got a BMW E21 320i when her old Toyota Corolla died in the early 1990s.
-This led, in 1995, to a 1985 BMW E23 735i, which by 1997 began attending BMW CCA
-driving schools at Watkins Glen, Mont-Tremblant, Road Atlanta, Mid Ohio, Sebring, Summit Point and Putnam Park.  Driving schools mostly ended for us around 2003;  too expensive and increasing likelihood of non-trivial track offs as my confidence increased, but mainly the 735i ECU became unreliable.  Meanwhile, I still ride bicycles...
+My wife got a BMW E21 320i when her old Toyota Corolla died in the early 1990s.
+The best BMW garage in town offered discounts to BMW CCA members, so we joined.
+This led, in 1995, to a 5-speed [1985 BMW E23 735i](https://drive-my.com/en/test-drive/item/2201-road-test-1985-bmw-735i-e23.html),
+which I waanted to own since reading the September 1985 Road & Track review.
+By 1997, I was driving it at BMW CCA
+driving schools on Watkins Glen, Mont-Tremblant, Road Atlanta, Mid Ohio, Sebring, Summit Point and Putnam Park.  Driving schools mostly ended for us around 2003, owing to increasing expenses and likelihood of non-trivial track offs as my confidence grew. The [Motronic DME](http://www.unixnerd.demon.co.uk/m30.html) had also became unreliable.  Meanwhile, I still ride bicycles...
 
-Nostalgia being what it is, VIRTUALLY revisiting driver schools seems attractive.
-Many cars and tracks that I drove are available with sim racing program Assetto Corsa
-and can be played using relatively cheap Logitech G29 pedals and steering wheel.
+Nostalgia being what it is, *VIRTUALLY* revisiting driver schools seems attractive.
+Many cars and tracks that I have driven are available with sim racing program Assetto Corsa
+and can be played using relatively cheap [Logitech G29](https://www.amazon.com/dp/B00Z0UWWYC) pedals and steering wheel.
 Playing Assetto Corsa on conventional PC monitors limits field-of-view;
  I opted for Samsung mixed reality headset.
 
+### Problems
 By lacking inertial cues from velocity changes, sim racing seems harder than real.
 Although Logitech improved pedal feel with their G29, braking remains problematic:,
-1. signals to sim software are based on pedal movement distance, not pressure.
-2. feedback for tires losing grip during braking comes thru the wheel, instead of the pedal.
+1. signal to sim software is based on pedal movement distance, not pressure.
+2. feedback for tires losing grip during braking comes thru the wheel, instead of the brake pedal.
 
+### Proposals
 Those 2 brake simulation shortcomings can be mitigated, respectively, by:
 1. replacing brake pedal potentiometer with a load cell, e.g
 [Logitec G27 Load cell brake modification](https://imgur.com/gallery/gOjAf)
@@ -50,18 +56,14 @@ Monitor app for more or less the complete AC API
 * AC API: download [zip](https://www.assettocorsa.net/forum/index.php?attachments/aci_api_1-1_full-zip.57505/)
 
 
-## STM32 USB HID adapter for Logitech G29 pedals with load cell brake
-
-Prototype using [Blue Pill](http://wiki.stm32duino.com/index.php?title=Blue_Pill)
-
-Blue Pill uses [STM32F103C8T6](https://www.st.com/en/microcontrollers/stm32f103c8.html)
+### STM32 USB HID adapter for Logitech G29 pedals with load cell brake
+- Prototype using [Blue Pill](http://wiki.stm32duino.com/index.php?title=Blue_Pill)
+- Blue Pill uses [STM32F103C8T6](https://www.st.com/en/microcontrollers/stm32f103c8.html)
 with 128Kbytes of Flash and 20 Kbytes SRAM
+- Blue Pill STM32F103 measured [~49 VAX (integer) MIPS  and 9 Whetstone (floating point) MIPS](http://www.stm32duino.com/viewtopic.php?t=76&start=20)
+  - 1994 Pentium PCs rated [~ 71 VAX MIPS and 12 Whetstone MIPS](http://www.roylongbottom.org.uk/whetstone.htm)
 
-Blue Pill STM32F103 clocked @ standard 72 MHz measured [~49 VAX (integer) MIPS  and 9 Whetstone (floating point) MIPS](http://www.stm32duino.com/viewtopic.php?t=76&start=20)
-
-... while a 1994 Pentium PC rated [~ 71 VAX MIPS and 12 Whetstone MIPS](http://www.roylongbottom.org.uk/whetstone.htm)
-
-Clone [Logitech pedals as separate USB game controller](https://github.com/robotsrulz/SP_Adapter)
+Clone code from [Logitech pedals as separate USB game controller](https://github.com/robotsrulz/SP_Adapter)
 
 [Arduino USB Composite library](http://www.stm32duino.com/viewtopic.php?f=9&t=3994&start=20)
 
