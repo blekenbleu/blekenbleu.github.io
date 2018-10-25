@@ -1,4 +1,6 @@
-## Logitech G29 brake pedal mods
+25 October 2018
+
+## Logitech G29 brake mods
 ### Background
 Having poor coordination always and no depth perception until vision fused in my 40s,
 driving and bicycling were as nearly athletic as I cared to get.

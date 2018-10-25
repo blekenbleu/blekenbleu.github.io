@@ -1,4 +1,6 @@
-## Signal Processing
+24 October 2018
+
+## Image Processing
 - [Special Error Diffusion](ImageProcessing/sped.html)
 - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 

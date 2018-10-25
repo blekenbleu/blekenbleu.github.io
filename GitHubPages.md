@@ -14,13 +14,16 @@ that will become your GitHub Pages home page,
 and Jekyll insists on creating that repository directory,
 so first install Jekyll on a local PC.
 
+Note: Jekyll is *NOT* separately installed.  
+Configuring `'github-pages'` in Gemfile enables builds using `jekyll build`  
+and previewing pages locally using `jekyll serve`. 
+
 ## Install [Git for Windows](https://gitforwindows.org/)
 ... which uses MINGW64 for Git Bash
 
-### Install [Ruby](https://rubyinstaller.org/downloads/) with Dev toolchain;
-GitHub was totally unclear about that, but
-"MSYS2 is required to install gems with C extensions"
-Pressed Enter for options 1,2,3; get many, many messages,
+### Install [Ruby](https://rubyinstaller.org/downloads/) with Dev toolchain
+GitHub was unclear, but `"MSYS2 is required to install gems with C extensions"`  
+Pressed Enter for options 1,2,3; get many, many messages,  
 including a final prompt that seemingly wanted to start over...??!!
 
 ### Invoke commands from Git Bash
@@ -34,7 +37,8 @@ then failed:
 Retrying fetcher due to error (2/4): Bundler::HTTP
 Error Could not fetch specs from https://rubygems.org/
 ```
-.. but, after walking away for awhile, retried `$ bundle install`
+.. but, after walking away for awhile, retried  
+`$ bundle install`
 - .. and it worked..!?
 
 Based on [this](https://github.com/mmistakes/minimal-mistakes/issues/1558)
