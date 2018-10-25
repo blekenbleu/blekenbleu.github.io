@@ -1,6 +1,6 @@
 24 October 2018
 
-# [GitHub Pages](https://pages.github.com/) - too good to be true
+# [GitHub Pages](https://pages.github.com/) - too good to be true (really)
 
   Following seemingly current GitHub documentation was doomed,
   provoking many false moves that needed undoing.
@@ -14,19 +14,6 @@ that will become your GitHub Pages home page,
 and Jekyll insists on creating that repository directory,
 so first install Jekyll on a local PC.
 
-
-
-## Install [GitHub Desktop](https://help.github.com/desktop/guides/getting-started-with-github-desktop/)
-   Installation splash screen is half white with no border;
-- Other (black "space" cartoon) half was so distracting (and pointless)
-      that "Welcome" prompts were initially missed..
-- [Clone a repository refuses to clone into an existing directory]
-- Git "setup" (email) instruction is redundant
-It took awhile (hours?) for GitHub Desktop to sync from github.com repository...
-
-File changes using Windows Explorer or Command window or GVIM
-are not recognized instantly, but fairly soon...
-
 ## Install [Git for Windows](https://gitforwindows.org/)
 ... which uses MINGW64 for Git Bash
 
@@ -38,7 +25,7 @@ including a final prompt that seemingly wanted to start over...??!!
 
 ### Invoke commands from Git Bash
 `$ gem install bundler`
-- required firewall permission
+- gem required firewall permissions
 
 `$ bundle install`
 - NOTHING reported for a very long time..
@@ -51,7 +38,7 @@ Error Could not fetch specs from https://rubygems.org/
 - .. and it worked..!?
 
 Based on [this](https://github.com/mmistakes/minimal-mistakes/issues/1558)
-... ignoring message:
+... ignore this *You must* message:
 ```
 -------------------------------------------------
 Thank you for installing html-pipeline!
@@ -108,7 +95,7 @@ Running bundle install in D:/GitHub/userid/userid.github.io...
   Bundler: Installing wdm 0.1.1 with native extensions
   Bundler: Bundle complete! 5 Gemfile dependencies, 33 gems now installed.
   Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
-New jekyll site installed in D:/GitHub/userid.github.io/userid.github.io.
+New jekyll site installed in D:/GitHub/userid/userid.github.io.
 ```
 
 `$ cd userid.github.io/`
@@ -138,7 +125,7 @@ Browse succeeded to [http://localhost:4000](http://localhost:4000)
 ```
 {% include_relative Gemfile %}
 ```
-Generate a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/), then set up the environmental variable:
+Generate a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) and set its environmental variable:
 
 `$ cat $HOME/.bash_profile`
 ```
@@ -151,6 +138,17 @@ alias serve="/c/Users/userid/bin/serve"
 echo bundle exec jekyll serve --incremental
 bundle exec jekyll serve --incremental
 ```
+## Install [GitHub Desktop](https://help.github.com/desktop/guides/getting-started-with-github-desktop/)
 
-### Use GitHub Desktop to commit to master and Push to GitHub
+File changes using Windows Explorer or Command window or GVIM
+are not recognized instantly, but fairly soon...
+
+   Installation splash screen is half white with no border;
+- Other (black "space" cartoon) half was so distracting (and pointless)
+      that "Welcome" prompts were initially missed..
+- [Clone a repository refuses to clone into an existing directory]
+- Git "setup" (email) instruction is redundant
+It took awhile (hours?) for GitHub Desktop to first sync with github.com repository...
+
+### Use GitHub Desktop to commit your GitHub Page[s] to master and Push to GitHub
 *Note:* Markdown pages (files ending with `.md`) get URLs *without* `.md`
