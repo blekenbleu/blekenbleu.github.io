@@ -1,3 +1,6 @@
+---
+title: Jekyll for GitHub Pages
+---
 24 October 2018
 
 # [GitHub Pages](https://pages.github.com/) - too good to be true (really)
@@ -10,13 +13,18 @@ but is untested..
 
 Debugging generated page failures wants
 a local PC copy of the GitHub repository
-that will become your GitHub Pages home page,
-and Jekyll insists on creating that repository directory,
-so first install Jekyll on a local PC.
+that becomes the GitHub Pages website,
+and `jekyll new` insists on creating that GitHub Pages repository directory,
+so configure Jekyll on a local PC *first*.
 
 Note: Jekyll is *NOT* separately installed.  
 Configuring `'github-pages'` in Gemfile enables builds using `jekyll build`  
-and previewing pages locally using `jekyll serve`. 
+and previewing pages locally using `jekyll serve`.
+
+README.md becomes the GitHub Pages landing page.
+Unfortunately, relative URLs (which would work both locally for `jekyll serve`
+as well as at github.io GitHub Pages URL would be broken
+in README.md displayed at the bottom pf https://github.com/ repository page URL
 
 ## Install [Git for Windows](https://gitforwindows.org/)
 ... which uses MINGW64 for Git Bash
@@ -52,9 +60,9 @@ https://github.com/jch/html-pipeline#dependencies
 -------------------------------------------------
 ```
 
-`$ jekyll new userid.github.io`
+`$ jekyll new blekenbleu.github.io`
 ```
-Running bundle install in D:/GitHub/userid/userid.github.io...
+Running bundle install in D:/GitHub/blekenbleu/blekenbleu.github.io...
   Bundler: Fetching gem metadata from https://rubygems.org/...........
   Bundler: Fetching gem metadata from https://rubygems.org/.
   Bundler: Resolving dependencies...
@@ -99,21 +107,21 @@ Running bundle install in D:/GitHub/userid/userid.github.io...
   Bundler: Installing wdm 0.1.1 with native extensions
   Bundler: Bundle complete! 5 Gemfile dependencies, 33 gems now installed.
   Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
-New jekyll site installed in D:/GitHub/userid/userid.github.io.
+New jekyll site installed in D:/GitHub/blekenbleu/blekenbleu.github.io.
 ```
 
-`$ cd userid.github.io/`
+`$ cd blekenbleu.github.io/`
 
 `$ bundle exec jekyll serve`
 ```
-Configuration file: D:/GitHub/userid/userid.github.io/_config.yml
-            Source: D:/GitHub/userid/userid.github.io
-       Destination: D:/GitHub/userid/userid.github.io/_site
+Configuration file: D:/GitHub/blekenbleu/blekenbleu.github.io/_config.yml
+            Source: D:/GitHub/blekenbleu/blekenbleu.github.io
+       Destination: D:/GitHub/blekenbleu/blekenbleu.github.io/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
        Jekyll Feed: Generating feed for posts
                     done in 0.752 seconds.
- Auto-regeneration: enabled for 'D:/GitHub/userid/userid.github.io'
+ Auto-regeneration: enabled for 'D:/GitHub/blekenbleu/blekenbleu.github.io'
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 [2018-10-22 16:02:03] ERROR '/favicon.ico' not found.
@@ -134,8 +142,8 @@ Generate a [personal access token](https://help.github.com/articles/creating-a-p
 `$ cat $HOME/.bash_profile`
 ```
 export JEKYLL_GITHUB_TOKEN=12345yourtokenhere6789
-alias g="cd /d/GitHub/userid/userid.github.io"
-alias serve="/c/Users/userid/bin/serve"
+alias g="cd /d/GitHub/blekenbleu/blekenbleu.github.io"
+alias serve="/c/Users/blekenbleu/bin/serve"
 ```
 `$ cat $HOME/bin/serve`
 ```
