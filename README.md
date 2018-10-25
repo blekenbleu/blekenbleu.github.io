@@ -1,8 +1,8 @@
 24 October 2018
 
 ## Image Processing
-- [Special Error Diffusion](https://blekenbleu.github.io/ImageProcessing/sped.html)
-- [Neighborhood Mask Dithered Interpolation](https://blekenbleu.github.io/ImageProcessing/NMDI.html)
+- [Special Error Diffusion](ImageProcessing/sped.html)
+- [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 
 ## USB-attached [Logitech G29 pedals - STM32](https://blekenbleu.github.io/pedals/STM32)
 
