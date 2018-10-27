@@ -7,7 +7,10 @@ See [GitHub Pages website](https://blekenbleu.github.io/) for the published vers
 
 ## USB-attached [Logitech G29 pedals - STM32](pedals/STM32)
 
-## Windows 8.1 [GitHub Pages](GitHubPages) Installation How-To
+## GitHub Pages Installation How-To
+[Windows 8.1](GitHubPages)  
+[Windows 10](GitHubW10)  
+[macOS](GitHubmac) High Sierra  
 
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 
