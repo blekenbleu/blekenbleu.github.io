@@ -11,5 +11,5 @@ See [GitHub Pages website](https://blekenbleu.github.io/) for the published vers
 
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 
-[GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io) for documentation source  
+[GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io) for blekenbleu documentation source  
 [GitHub site status](https://status.github.com/messages)  
