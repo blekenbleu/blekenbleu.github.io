@@ -4,75 +4,84 @@ title: Jekyll on Windows 10
 27 October 2018  
 See [GitHub Pages website](https://blekenbleu.github.io/) for the published version of this page *with working links*.  
 
-This was written *after* Windows 10 installation,
-which followed Windows 8.1 installation.
+This was written *after* Windows 10 installation,  
+which followed Windows 8.1 installation.  
 
 The short version: wait for installation using Windows Subsystem for Linux  
-...which should basically be an [Ubuntu Installation](https://jekyllrb.com/docs/installation/ubuntu/)  
+...which should basically be an [Ubuntu Installation](https://jekyllrb.com/docs/installation/ubuntu/)    
 FWIW, I would prefer a Fedora distro on WSL, but that is as yet unsupported and problematic even for [better hackers than I](https://github.com/RoliSoft/WSL-Distribution-Switcher)  
 
-Given that Ruby is required for Jekyll,
-and Ruby installs MINGW64,
-and its MINGW64 is bigger than Git for Windows',
-then consolidating on Ruby seems more efficient.
+Given that Ruby is required for Jekyll,  
+and Ruby installs MINGW64,  
+and its MINGW64 is bigger than Git for Windows',  
+then consolidating on Ruby seems more efficient.  
 
-Installed Ruby WITHOUT Dev toolchain,
-https://github.com/oneclick/rubyinstaller2
-.. but that installer anyway ran ridk.cmd,
-which prompted for Dev toolchain..
-FWIW, ridk.cmd is a Windows shell script
-that will not run from within a bash shell.
-Ruby installs a much larger MINGW64 than does by Git for Windows:
-Git Bash:
+Installed [Ruby WITHOUT Dev toolchain](https://github.com/oneclick/rubyinstaller2),  
+.. but that installer anyway ran `ridk.cmd`,  
+which prompted for Dev toolchain..  
+FWIW, `ridk.cmd` is a Windows shell script  
+that will not run from within a bash shell.  
+Ruby installs a much larger MINGW64 than does by Git for Windows:  
+#### Git Bash:  
+```
 $ du -s /bin /usr
 86818   /bin
 74850   /usr
+```
 
-Ruby:
+#### Ruby:
+```
 $ du -s /bin /usr
 166562  /bin
 257421  /usr
+```
 
-$ gem install bundler
+`$ gem install bundler`
+```
 Successfully installed bundler-1.17.1
 Parsing documentation for bundler-1.17.1
 Installing ri documentation for bundler-1.17.1
 Done installing documentation for bundler after 9 seconds
 1 gem installed
+```
 
-$ bundle install
+`$ bundle install`
+```
 Could not locate Gemfile
+```
 
-$ find /d/Ruby25-x64/ -name Gemfile -ls
-$ cd /d/Ruby25-x64/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/templates
-$ bundle install
+`$ find /d/Ruby25-x64/ -name Gemfile -ls`  
+`$ cd /d/Ruby25-x64/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/templates`  
+`$ bundle install`
+```
 The Gemfile specifies no dependencies
 Resolving dependencies...
 Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
 Use `bundle info [gemname]` to see where a bundled gem is installed.
+```
 
-Ruby installs MINGW64 with D:\msys64\msys2_shell.cmd
-of which I made a shortcut named Ruby Bash,
-which launches a useful MSYS2 terminal
-Git Bash sets $HOME = /c/Users/bleke and appends to Windows' huge $PATH
-while D:\msys64\msys2_shell.cmd sets $HOME = /home/bleke,
-which is /d/msys64/home/bleke,
-and prunes Windows' $PATH before adding its bin/ directories.
-Although Git for Windows' Git Bash seemed nicer than Ruby Bash
+Ruby installs MINGW64 with `D:\msys64\msys2_shell.cmd`  
+of which I made a shortcut named Ruby Bash,  
+which launches a useful MSYS2 terminal  
+Git Bash sets `$HOME = /c/Users/bleke` and appends to Windows' huge $PATH  
+while `D:\msys64\msys2_shell.cmd` sets $HOME = /home/bleke,  
+which is `/d/msys64/home/bleke`,
+and prunes Windows' $PATH before adding its bin/ directories.  
+Although Git for Windows' Git Bash seemed nicer than Ruby Bash  
 Ruby Bash may find different things on its path that did Git Bash...
 
-I personally like the notion of isolating git / ruby / jekyll bash stuff from Windows..
-Since I had installed stuff using Git Bash,
-I copied dot folders from /c/Users/bleke to /d/msys64/home/bleke
+I personally like the notion of isolating git / ruby / jekyll bash stuff from Windows..  
+Since I had installed stuff using Git Bash,  
+I copied dot folders from `/c/Users/bleke` to `/d/msys64/home/bleke`  
 using Ruby Bash:
-$ cp -R /c/Users/bleke/.gem .
-$ cp -R /c/Users/bleke/.gnupg .
+`$ cp -R /c/Users/bleke/.gem .`  
+`$ cp -R /c/Users/bleke/.gnupg .`  
 
 .. then uninstalled Git for Windows.
 
-Verify Ruby SSL:
-=============
-$ ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'
+#### Verify Ruby SSL:
+`$ ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'`
+```
 (eval):136: warning: constant OpenSSL::SSL::SSLContext::METHODS is deprecated
 Here's your Ruby and OpenSSL environment:
 
@@ -91,8 +100,10 @@ RubyGems connection to rubygems.org:      success ?
 Ruby net/http connection to rubygems.org: success ?
 
 Hooray! This Ruby can connect to rubygems.org. You are all set to use Bundler and RubyGems.
+```
 
-$ gem update --system
+`$ gem update --system`  
+```
 Updating rubygems-update
 Successfully installed rubygems-update-2.7.7
 Parsing documentation for rubygems-update-2.7.7
@@ -127,7 +138,7 @@ Bug fixes:
   #2115 by MSP-Greg.
 * Fixed tempfile leak for RubyGems 2.7.6. Pull request #2194 by SHIBATA
   Hiroshi.
-* Add missing requires. Pull request #2196 by David Rodríguez.
+* Add missing requires. Pull request #2196 by David Rodriguez.
 * Fix Gem::Version.correct?. Pull request #2203 by Masato Nakamura.
 * Fix verify_entry regex for metadata. Pull request #2212 by Luis
   Sagastume.
@@ -303,7 +314,7 @@ Minor enhancements:
   Olle Jonsson.
 * Warn when no files are set. Pull request #1773 by Aidan Coyle.
 * Ensure `to_spec` falls back on prerelease specs. Pull request #1755 by
-  André Arko.
+  Andre Arko.
 * [Specification] Eval setting default attributes in #initialize. Pull
   request #1739 by Samuel Giddins.
 * Sort ordering of sources is preserved. Pull request #1633 by Nathan
@@ -323,7 +334,7 @@ Minor enhancements:
 * Update Contributing.rdoc with new label usage. Pull request #1716 by
   Lynn Cyrin.
 * Add --host sample to help. Pull request #1709 by Code Ahss.
-* Add a helpful suggestion when `gem install` fails due to required_rub….
+* Add a helpful suggestion when `gem install` fails due to required_ruby.
   Pull request #1697 by Samuel Giddins.
 * Add cert expiration length flag. Pull request #1725 by Luis Sagastume.
 * Add submodule instructions to manual install. Pull request #1727 by
@@ -398,7 +409,7 @@ Bug fixes:
 * Replace socket error text message. Pull request #1823 by Daniel Berger.
 * Raise error if the email is invalid when building cert. Pull request
   #1779 by Luis Sagastume.
-* [StubSpecification] Don’t iterate through all loaded specs in #to_spec.
+* [StubSpecification] Don't iterate through all loaded specs in #to_spec.
   Pull request #1738 by Samuel Giddins.
 
 
@@ -422,10 +433,12 @@ Parsing documentation for rubygems-update-2.7.7
 Done installing documentation for rubygems-update after 0 seconds
 Installing RubyGems 2.7.7
 RubyGems system software updated
+```
 
 Jekyll
 =====
-$ gem install jekyll
+`$ gem install jekyll`
+```
 Successfully installed public_suffix-3.0.3
 Successfully installed addressable-2.5.2
 Successfully installed colorator-1.1.0
@@ -517,9 +530,11 @@ Parsing documentation for jekyll-3.8.4
 Installing ri documentation for jekyll-3.8.4
 Done installing documentation for public_suffix, addressable, colorator, http_parser.rb, eventmachine, em-websocket, concurrent-ruby, i18n, rb-fsevent, ffi, rb-inotify, sass-listen, sass, jekyll-sass-converter, ruby_dep, listen, jekyll-watch, kramdown, liquid, mercenary, forwardable-extended, pathutil, rouge, safe_yaml, jekyll after 36 seconds
 25 gems installed
+```
 
-$ cd /d/Git/blekenbleu
-$ jekyll new blekenbleu.github.io
+`$ cd /d/Git/blekenbleu`
+`$ jekyll new blekenbleu.github.io`
+```
 Running bundle install in D:/Git/blekenbleu/blekenbleu.github.io...
   Bundler: Fetching gem metadata from https://rubygems.org/...........
   Bundler: Fetching gem metadata from https://rubygems.org/.
@@ -567,8 +582,10 @@ Running bundle install in D:/Git/blekenbleu/blekenbleu.github.io...
   Bundler: Bundle complete! 5 Gemfile dependencies, 33 gems now installed.
   Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
 New jekyll site installed in D:/Git/blekenbleu/blekenbleu.github.io.
+```
 
-$ serve
+`$ serve`
+```
 bundle exec jekyll serve --incremental
 Configuration file: D:/Git/blekenbleu/blekenbleu.github.io/_config.yml
             Source: D:/Git/blekenbleu/blekenbleu.github.io
@@ -581,24 +598,26 @@ Configuration file: D:/Git/blekenbleu/blekenbleu.github.io/_config.yml
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 [2018-10-26 09:54:23] ERROR `/favicon.ico' not found.
+```
 
-Install GitHub Desktop
-==============
-https://desktop.github.com/
+### Install [GitHub Desktop](https://desktop.github.com/)
 
-Added D:\msys64\usr\bin to Windows User Path so that GitHub Desktop could find command line git.exe (installed by `pacman -S git`
+Add to Windows User Path:  
+`%LOCALAPPDATA%\GitHubDesktop\app-1.4.3\resources\app\git\mingw64\bin`  
+so that GitHub Desktop could find command line git.exe
 
-FWIW, GitHub Desktop also installs many command-line biinaries
-in  %LOCALAPPDATA%\GitHubDesktop\app-1.4.3\resources\app\git\mingw64\bin\
-and  %LOCALAPPDATA%\GitHubDesktop\app-1.4.3\resources\app\git\usr\bin\
-.. but not by default use them.
+FWIW, GitHub Desktop installs many command-line biinaries in  
+`%LOCALAPPDATA%\GitHubDesktop\app-1.4.3\resources\app\git\mingw64\bin\` and  
+`%LOCALAPPDATA%\GitHubDesktop\app-1.4.3\resources\app\git\usr\bin\`  
+.. but does not by default use them.
 
 Also FWIW, GitHub Desktop has a menu item for opening an external editor,
-but seemingly only Atom actually works..
-https://atom.io/
-Enable jekyll serve for documentation repository from github.com
-$ cd /e/blekenbleu/blekenbleu.github.io
-$ bundle install
+but seemingly only [Atom](https://atom.io/) actually works..
+  
+Enable `jekyll serve` for documentation repository from github.com  
+`$ cd /e/blekenbleu/blekenbleu.github.io`
+`$ bundle install`
+```
 Fetching gem metadata from http://rubygems.org/...........
 Using concurrent-ruby 1.0.5
 Using i18n 0.9.5
@@ -760,8 +779,10 @@ You must bundle Filter gem dependencies.
 See html-pipeline README.md for more details.
 https://github.com/jch/html-pipeline#dependencies
 -------------------------------------------------
+```
 
-$ serve
+`$ serve`
+```
 bundle exec jekyll serve --incremental
 Configuration file: E:/blekenbleu/blekenbleu.github.io/_config.yml
             Source: E:/blekenbleu/blekenbleu.github.io
@@ -772,11 +793,18 @@ Configuration file: E:/blekenbleu/blekenbleu.github.io/_config.yml
  Auto-regeneration: enabled for 'E:/blekenbleu/blekenbleu.github.io'
     Server address: http://127.0.0.1:4000
   Server running... press ctrl-c to stop.
+```
 
 ### Problems
 * jekyll serve `-- incremental` option can be problematic  
 * git.exe installed by pacman reported status of files in cloned repository
 as "modified".
-  Workaround:    
-  Add path to GitHub Desktop's mingw64/bin/git.exe AFTER /usr/bin  
-  `/c/Users/bleke/AppData/Local/GitHubDesktop/app-1.4.3/resources/app/git/mingw64/bin`
+  Workaround:  
+  * Don't install git by pacman
+  * Add path to GitHub Desktop's mingw64/bin/git.exe *AFTER* `/usr/bin`, e.g.:
+```  
+  /c/Users/bleke/AppData/Local/GitHubDesktop/app-1.4.3/resources/app/git/mingw64/bin
+```
+* jekyll build `Error: invalid byte sequence in UTF-8`  
+  Workaround: find offending characters to be editted out:    
+  `$ grep -axv '.*' filename.bad | less`
