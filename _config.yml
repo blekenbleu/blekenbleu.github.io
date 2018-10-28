@@ -1,4 +1,8 @@
-theme: jekyll-theme-tactile
+# Does not support <details>?
+# theme: jekyll-theme-tactile
+theme: jekyll-theme-primer
 repository: blekenbleu/blekenbleu.github.io
 github: [metadata]
 title: blekenbleu documentation
+# Kramdown does not support <details>
+markdown: CommonMarkGhPages

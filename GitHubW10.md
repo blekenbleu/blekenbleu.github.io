@@ -2,27 +2,25 @@
 title: Jekyll on Windows 10
 ---
 27 October 2018  
-See [GitHub Pages website](https://blekenbleu.github.io/) for the published version of this page *with working links*.  
+See my [GitHub Pages website](https://blekenbleu.github.io/) for the published version of this page *with working links*.  
 
 This was written *after* Windows 10 installation,  
 which followed Windows 8.1 installation.  
 
-The short version: wait for installation using Windows Subsystem for Linux  
+**The short version**: wait for installation using Windows Subsystem for Linux  
 ...which should basically be an [Ubuntu Installation](https://jekyllrb.com/docs/installation/ubuntu/)    
-FWIW, I would prefer a Fedora distro on WSL, but that is as yet unsupported and problematic even for [better hackers than I](https://github.com/RoliSoft/WSL-Distribution-Switcher)  
+FWIW, a Fedora distro on WSL would be preferable,  
+but is as yet unsupported and problematic even for [better hackers than I](https://github.com/RoliSoft/WSL-Distribution-Switcher)  
 
-Given that Ruby is required for Jekyll,  
-and Ruby installs a more complete MINGW64 than did **Git for Windows**',  
-and **GitHub Desktop** includes a usable `git.exe`
-then avoiding **Git for Windows** seems more efficient.  
-
-Installed [Ruby WITHOUT Dev toolchain](https://github.com/oneclick/rubyinstaller2),  
+Jekyll requires Ruby.    
+Downloaded [Ruby WITHOUT Dev toolchain](https://github.com/oneclick/rubyinstaller2),  
 .. but that installer anyway ran `ridk.cmd`,  
 which prompted for Dev toolchain..  
-FWIW, `ridk.cmd` is a Windows shell script  
+FWIW, `ridk.cmd` is a Windows script  
 that will not run from within a bash shell.  
-Ruby installs a much larger MINGW64 than did **Git for Windows**:  
-#### Git Bash:  
+
+MINGW64 in Ruby is much larger than in **Git for Windows** or **GitHub Desktop**:  
+#### Git for Windows:
 ```
 $ du -s /bin /usr
 86818   /bin
@@ -31,9 +29,9 @@ $ du -s /bin /usr
 
 #### GitHub Desktop:
 ```
-$ du -s $GPATH/usr/bin $GPATH/mingw64/bin
-20484   /c/Users/bleke/AppData/Local/GitHubDesktop/app-1.4.3/resources/app/git/usr/bin
+$ du -s $GPATH/mingw64/bin $GPATH/usr
 21429   /c/Users/bleke/AppData/Local/GitHubDesktop/app-1.4.3/resources/app/git/mingw64/bin
+21254   /c/Users/bleke/AppData/Local/GitHubDesktop/app-1.4.3/resources/app/git/usr
 ```
 
 #### Ruby:
@@ -42,6 +40,21 @@ $ du -s /bin /usr
 166562  /bin
 257421  /usr
 ```
+**GitHub Desktop** includes a usable `git.exe`  
+**Git for Windows** seems redundant...   
+
+#### Ruby Bash
+Ruby MINGW64 installation includes `D:\msys64\msys2_shell.cmd`  
+of which I made a shortcut named **Ruby Bash**,  
+![snapshot of Ruby Bash shortcut properties](RubyBash.gif "shortcut properties")  
+which launches a useful MSYS2 terminal.  
+
+**Git Bash** set `$HOME = /c/Users/bleke` and extended Windows' huge $PATH, while  
+**Ruby Bash** sets `$HOME = /home/bleke`, AKA `/d/msys64/home/bleke`,  
+and prunes Windows' $PATH before adding its bin/ directories.  
+Although **Git for Windows**' **Git Bash** seemed nicer than **Ruby Bash**,  
+**Ruby Bash** has more and different things on its path than did **Git Bash**  
+and better isolates git / ruby / jekyll bash stuff from Windows..  
 
 `$ gem install bundler`
 ```
@@ -51,19 +64,6 @@ Installing ri documentation for bundler-1.17.1
 Done installing documentation for bundler after 9 seconds
 1 gem installed
 ```
-#### Ruby Bash
-Ruby MINGW64 installation includes `D:\msys64\msys2_shell.cmd`  
-of which I made a shortcut named **Ruby Bash**,  
-![snapshot of Ruby Bash shortcut properties](RubyBash.gif "shortcut properties")  
-which launches a useful MSYS2 terminal.  
-**Git Bash** set `$HOME = /c/Users/bleke` and extended Windows' huge $PATH, while  
-**Ruby Bash** sets `$HOME = /home/bleke`, which is `/d/msys64/home/bleke`,  
-and prunes Windows' $PATH before adding its bin/ directories.  
-Although **Git for Windows**' **Git Bash** seemed nicer than **Ruby Bash**,  
-**Ruby Bash** may find more and different things on its path that did **Git Bash**...
-
-I prefer git / ruby / jekyll bash stuff being isolated from Windows..  
-
 #### Verify Ruby SSL:
 `$ ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'`
 ```
@@ -88,6 +88,9 @@ Hooray! This Ruby can connect to rubygems.org. You are all set to use Bundler an
 ```
 
 `$ gem update --system`  
+<details>
+<summary>click for installation log</summary>
+
 ```
 Updating rubygems-update
 Successfully installed rubygems-update-2.7.7
@@ -420,7 +423,12 @@ Installing RubyGems 2.7.7
 RubyGems system software updated
 ```
 
-#### Modify bash shell envirnment for Jekyl and GitHub Desktop
+</details>
+
+#### Modify bash shell environment for Jekyll and GitHub Desktop
+<details>
+<summary>click for <em>working</em> example files</summary>
+
 `$ cat .bash_profile`
 ```
 # To the extent possible under law, the author(s) have dedicated all
@@ -480,15 +488,25 @@ GPATH="${GPATH}/GitHubDesktop/app-1.4.3/resources/app/git"
 export JEKYLL_GITHUB_TOKEN=123456789your_token_here0987654321abcdef
 alias g="cd /e/blekenbleu/blekenbleu.github.io"
 alias serve="${HOME}/bin/serve"
+alias rmv="rm *~ .[._a-Z]*~"
 
 # Windows command compatibility
 alias path="echo $PATH"
 ```
+`$ cat ~/bin/serve`  
+```
+echo bundle exec jekyll serve --incremental  
+bundle exec jekyll serve --incremental  
+```
 
 `$ exit`, then re-launch **Ruby Bash**
+</details>
 
 ### Jekyll
 `$ gem install jekyll`
+<details>
+<summary>click for installation log</summary>
+
 ```
 Successfully installed public_suffix-3.0.3
 Successfully installed addressable-2.5.2
@@ -582,12 +600,17 @@ Installing ri documentation for jekyll-3.8.4
 Done installing documentation for public_suffix, addressable, colorator, http_parser.rb, eventmachine, em-websocket, concurrent-ruby, i18n, rb-fsevent, ffi, rb-inotify, sass-listen, sass, jekyll-sass-converter, ruby_dep, listen, jekyll-watch, kramdown, liquid, mercenary, forwardable-extended, pathutil, rouge, safe_yaml, jekyll after 36 seconds
 25 gems installed
 ```
-#### Install a dummy Jekyll home page
-Since github.com already has a GitHub Pages repository for blekenbleu  
-I practiced for Windows 10 on a different drive:  
 
+</details>
+
+#### Installing a dummy Jekyll home page
+Since github.com already has a GitHub Pages repository for blekenbleu  
+Jekyll for Windows 10 was tested on a different drive:  
 `$ cd /d/Git/blekenbleu`  
 `$ jekyll new blekenbleu.github.io`
+<details>
+<summary>click for installation log</summary>
+
 ```
 Running bundle install in D:/Git/blekenbleu/blekenbleu.github.io...
   Bundler: Fetching gem metadata from https://rubygems.org/...........
@@ -638,6 +661,10 @@ Running bundle install in D:/Git/blekenbleu/blekenbleu.github.io...
 New jekyll site installed in D:/Git/blekenbleu/blekenbleu.github.io.
 ```
 
+</details>
+
+##### Lauch local Jekyl test page
+
 `$ cd blekenbleu.github.io`  
 `$ serve`
 ```
@@ -657,29 +684,34 @@ Configuration file: D:/Git/blekenbleu/blekenbleu.github.io/_config.yml
 
 ### Install [GitHub Desktop](https://desktop.github.com/)
 
-Add to Windows User Path:  
+Add to [Windows User Path](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/):  
 `%LOCALAPPDATA%\GitHubDesktop\app-1.4.3\resources\app\git\mingw64\bin`  
-so that GitHub Desktop can find `git.exe`
 
-FWIW, GitHub Desktop installs many command-line biinaries in  
+...so that **GitHub Desktop** finds `git.exe`
+
+FWIW, **GitHub Desktop** installs many command-line biinaries in  
 `%LOCALAPPDATA%\GitHubDesktop\app-1.4.3\resources\app\git\mingw64\bin\` and  
 `%LOCALAPPDATA%\GitHubDesktop\app-1.4.3\resources\app\git\usr\bin\`  
 .. but does not by default use them.
 
-Also FWIW, GitHub Desktop has a menu item for opening an external editor,  
+Also FWIW, **GitHub Desktop** has a menu item for opening an external editor,  
 but seemingly only [Atom](https://atom.io/) actually works on Windows..
 
-#### Use GitHub Desktop to download GitHub Pages repository
+#### Use GitHub Desktop to clone GitHub Pages repository
   
 Enable `jekyll serve` for documentation repository from github.com  
 `$ cd /e/blekenbleu/blekenbleu.github.io`  
 #### Configure Jekyll for GitHub Pages
 `$ cat _config.yml`
 ```
+# Does not support <details>?
+# theme: jekyll-theme-tactile
 theme: jekyll-theme-tactile
 repository: blekenbleu/blekenbleu.github.io
 github: [metadata]
 title: blekenbleu documentation
+# Kramdown does not support <details>
+markdown: CommonMarkGhPages
 ```
 `$ cat Gemfile`
 ```
@@ -688,6 +720,9 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'github-pages', group: :jekyll_plugins
 ```
 `$ bundle install`
+<details>
+<summary>click for installation log</summary>
+
 ```
 Fetching gem metadata from http://rubygems.org/...........
 Using concurrent-ruby 1.0.5
@@ -852,6 +887,9 @@ https://github.com/jch/html-pipeline#dependencies
 -------------------------------------------------
 ```
 
+</details>
+
+#### Launch test page
 `$ serve`
 ```
 bundle exec jekyll serve --incremental
@@ -866,19 +904,14 @@ Configuration file: E:/blekenbleu/blekenbleu.github.io/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-### Problems
-* jekyll serve `-- incremental` option can be problematic  
+### Problem workarounds
+* jekyll serve `-- incremental` option can be occasionally problematic  
   Workaround: `$ bundle exec jekyll serve` (without `-- incremental`)  
-* git.exe installed by pacman reported status of files in cloned repository
-as `modified`.  
+* git.exe installed by pacman reported files in cloned repository as `modified`.  
   Workaround:  
-  * *Do NOT* install git by pacman
-  * Link GitHub Desktop's mingw64/bin to `/usr/bin/local`, e.g.:
-```
-  $ cd /usr/local
-  $ ln -s $GPATH/mingw64/bin .
-  /c/Users/bleke/AppData/Local/GitHubDesktop/app-1.4.3/resources/app/git/mingw64/bin
-```
+  * *Do NOT* use git from pacman.
+  * Instead, link **GitHub Desktop**'s mingw64/bin to `/usr/bin/local`, e.g.:  
+  `$ ln -s $GPATH/mingw64/bin /usr/local/`
 * jekyll build `Error: invalid byte sequence in UTF-8`  
   Workaround: find offending characters to be editted out:    
   `$ grep -axv '.*' badfile.md | less`
