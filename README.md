@@ -10,8 +10,10 @@ See [GitHub Pages website](https://blekenbleu.github.io/) for the published vers
 ## GitHub Pages Installation How-To
 [Windows 8.1](GitHubPages)  
 [Windows 10](GitHubW10)  
-[macOS](GitHubmac) High Sierra  
+[Ubuntu on Windows (WSL)](GitHubWSL)  
+[macOS](GitHubMac) High Sierra  
 
+### macOS local [gitolite](MacGit) server
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 
 [GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io) for blekenbleu documentation source  
