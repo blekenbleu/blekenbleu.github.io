@@ -915,3 +915,10 @@ Configuration file: E:/blekenbleu/blekenbleu.github.io/_config.yml
 * jekyll build `Error: invalid byte sequence in UTF-8`  
   Workaround: find offending characters to be editted out:    
   `$ grep -axv '.*' badfile.md | less`
+* Ctrl+C to `bundle exec jekyll serve` does not stop serving @ port 4000  
+  Workaround: shell is freed up for other use..  
+  To kill HTTP service:
+  ```
+  $ grep unserve ~/.bash_profile
+  alias unserve="taskkill //IM ruby.exe //F"
+  ```
