@@ -7,6 +7,8 @@ See [GitHub Pages website](https://blekenbleu.github.io/) for the published vers
 
 ## USB-attached [Logitech G29 pedals - STM32](pedals/STM32)
 
+### [WeMos D1 UNO R1 ESP8266](ESPDuino)
+
 ## GitHub Pages Installation How-To
 [Windows 8.1](GitHubPages)  
 [Windows 10](GitHubW10)  
