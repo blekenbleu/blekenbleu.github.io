@@ -89,7 +89,7 @@ Hooray! This Ruby can connect to rubygems.org. You are all set to use Bundler an
 
 `$ gem update --system`  
 <details>
-<summary>click for installation log</summary>
+<summary>click for details</summary>
 
 ```
 Updating rubygems-update
@@ -505,7 +505,7 @@ bundle exec jekyll serve --incremental
 ### Jekyll
 `$ gem install jekyll`
 <details>
-<summary>click for installation log</summary>
+<summary>click for details</summary>
 
 ```
 Successfully installed public_suffix-3.0.3
@@ -609,7 +609,7 @@ Jekyll for Windows 10 was tested on a different drive:
 `$ cd /d/Git/blekenbleu`  
 `$ jekyll new blekenbleu.github.io`
 <details>
-<summary>click for installation log</summary>
+<summary>click for details</summary>
 
 ```
 Running bundle install in D:/Git/blekenbleu/blekenbleu.github.io...
@@ -721,7 +721,7 @@ gem 'github-pages', group: :jekyll_plugins
 ```
 `$ bundle install`
 <details>
-<summary>click for installation log</summary>
+<summary>click for details</summary>
 
 ```
 Fetching gem metadata from http://rubygems.org/...........

@@ -25,11 +25,64 @@ which installed as `/opt/local/bin/ruby2.5`
 [This page](https://stackoverflow.com/questions/49987920/ruby-on-mac-osx-sierra-via-mac-ports)
 describes using `$ sudo port select --set ruby ruby25` to set `ruby25` as `ruby`,  
 
+<details>
+<summary>click for `rbenv` digression</summary>
 If that scrogs stuff depending on /user/bin/ruby behavior, then  
-another tool, `rbenv`, only affects shells with a modified $PATH,  
-which could be set in my `g` alias that goes to local GitHub Pages repository.
-- [MacPorts Ruby HowTo](https://trac.macports.org/wiki/howto/RubyOnRails)
-- [GitHub rbenv](https://github.com/rbenv/rbenv#how-rbenv-hooks-into-your-shell)
-- Options to avoid [`rbenv` openssl incompatibility](https://stackoverflow.com/questions/48061622/failing-to-build-ruby-2-5-0-with-rbenv-and-ruby-build-on-macos-sierra/48728800#48728800)  
-- Examples of [rbenv [mis]usage](https://github.com/rbenv/rbenv/issues/1122)  
+<br>another tool, `rbenv`, only affects shells with a modified $PATH,  
+<br>which could be set in my `g` alias that goes to local GitHub Pages repository.
+<ul compact>
+<li> [MacPorts Ruby HowTo](https://trac.macports.org/wiki/howto/RubyOnRails)
+<li> [GitHub rbenv](https://github.com/rbenv/rbenv#how-rbenv-hooks-into-your-shell)
+<li> Options to avoid [`rbenv` openssl incompatibility](https://stackoverflow.com/questions/48061622/failing-to-build-ruby-2-5-0-with-rbenv-and-ruby-build-on-macos-sierra/48728800#48728800)  
+<li> Examples of [rbenv [mis]usage](https://github.com/rbenv/rbenv/issues/1122)  
+</ul>
+</details>
+
+#### MacPorts Ruby
+MacPorts installs into /opt/local/, requiring sudo permission specifically for writing into /opt/local/lib/ruby2.5/gems/2.5.0  
+
+Except for `sudo`, Jekyll installation proceeds as on Windows 10,  
+for which see details
+
+$ which ruby  
+/usr/bin/ruby  
+$ sudo port select --set ruby ruby25  
+Password:  
+Selecting 'ruby25' for 'ruby' succeeded. 'ruby25' is now active.  
+$ which ruby  
+/opt/local/bin/ruby  
+
+$ sudo gem install bundler  
+Fetching: bundler-1.17.1.gem (100%)  
+Successfully installed bundler-1.17.1  
+Parsing documentation for bundler-1.17.1  
+Installing ri documentation for bundler-1.17.1  
+Done installing documentation for bundler after 4 seconds  
+1 gem installed  
+
+$ ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'  
+$ sudo gem update --system  
+...  
+RubyGems installed the following executables:  
+/opt/local/bin/gem2.5  
+/opt/local/bin/bundle2.5  
+...  
+
+$ sudo gem install jekyll  
+$ cd  
+$ cd ../Shared  
+$ mkdir Git  
+$ cd $Git  
+$ sudo jekyll new Jekyl  
+$ cd Jekyl/  
+$ bundle exec jekyll build  
+$ bundle exec jekyll serve  
+
+Install SmartGit  
+* reuse GitHub token generated for Jekyll  
+* clone GitHub Pages repository  
+
+$ cd ~/Public/GitHub/blekenbleu.github.io/  
+$ sudo bundle update  
+$ bundle exec jekyll serve --incremental
 
