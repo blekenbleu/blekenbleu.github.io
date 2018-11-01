@@ -4,18 +4,20 @@ title: Jekyll on Windows 10
 27 October 2018  
 See my [GitHub Pages website](https://blekenbleu.github.io/) for the published version of this page *with working links*.  
 
-This was written *after* Windows 10 installation,  
+This was written *after* first Windows 10 installation,  
 which followed Windows 8.1 installation.  
+Having multiple Windows PCs enables discovering multiple ways to fail  
+without the overhead of virtual machines.
 
-**The short version**: wait for installation using Windows Subsystem for Linux  
+**The short version**: maybe wait for [installation using Windows Subsystem for Linux](GitHubWSL)  
 ...which should basically be an [Ubuntu Installation](https://jekyllrb.com/docs/installation/ubuntu/)    
-FWIW, a Fedora distro on WSL would be preferable,  
-but is as yet unsupported and problematic even for [better hackers than I](https://github.com/RoliSoft/WSL-Distribution-Switcher)  
+FWIW, a Fedora distro on WSL would be preferred,  
+but is as yet unsupported and problematic even for [better hackers](https://github.com/RoliSoft/WSL-Distribution-Switcher)  
 
 Jekyll requires Ruby.    
 Downloaded [Ruby WITHOUT Dev toolchain](https://github.com/oneclick/rubyinstaller2),  
 .. but that installer anyway ran `ridk.cmd`,  
-which prompted for Dev toolchain..  
+which prompted for Dev toolchain, to which `Enter` was pressed..  
 FWIW, `ridk.cmd` is a Windows script  
 that will not run from within a bash shell.  
 
@@ -704,7 +706,7 @@ Enable `jekyll serve` for documentation repository from github.com
 #### Configure Jekyll for GitHub Pages
 `$ cat _config.yml`
 ```
-# Does not support <details>?
+# Does not tactile support <details>?
 # theme: jekyll-theme-tactile
 theme: jekyll-theme-tactile
 repository: blekenbleu/blekenbleu.github.io
@@ -889,7 +891,7 @@ https://github.com/jch/html-pipeline#dependencies
 
 </details>
 
-#### Launch test page
+#### Launch GitHub Pages locally
 `$ serve`
 ```
 bundle exec jekyll serve --incremental
