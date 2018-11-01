@@ -197,4 +197,6 @@ are not recognized instantly, but fairly soon...
 It took awhile (hours?) for GitHub Desktop to first sync with github.com repository...
 
 ### Commit your *working* GitHub Page[s] to master and Push to GitHub
-*Note:* Markdown pages (files ending with `.md`) get URLs *without* `.md`
+*Notes:*
+1. Unlike html pages, markdown pages (files ending with `.md`) get URLs *without* `.md`  
+2. If no [`index.md`](/), then Jekyll uses `README.md` for landing page 

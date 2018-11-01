@@ -1,4 +1,4 @@
-### Does this replace [README](README.md)?
+1 November 2018  
 ## Image Processing
 - [Special Error Diffusion](ImageProcessing/sped.html)
 - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
@@ -17,4 +17,5 @@
 ### macOS local [gitolite](MacGit) server
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 
-[GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io) for blekenbleu documentation source  
+[GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io)
+for this markdown
