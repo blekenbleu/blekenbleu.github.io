@@ -69,6 +69,8 @@ if [ -d /g/GitHub/blekenbleu/blekenbleu.github.io ] ; then
   alias g="cd /g/GitHub/blekenbleu/blekenbleu.github.io"
 fi
 alias serve="~/bin/serve"
+# Ctrl+C leaves Jekyll server running..!
+alias unserve="taskkill //IM ruby.exe //F"
 ```
 `$ cat $HOME/bin/serve`
 ```

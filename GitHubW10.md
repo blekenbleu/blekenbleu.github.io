@@ -45,17 +45,17 @@ $ du -s /bin /usr
 **GitHub Desktop** includes a usable `git.exe`  
 **Git for Windows** seems redundant...   
 
-#### Ruby Bash
+#### msys2 Bash
 Ruby MINGW64 installation includes `D:\msys64\msys2_shell.cmd`  
-of which I made a shortcut named **Ruby Bash**,  
-![snapshot of Ruby Bash shortcut properties](RubyBash.gif "shortcut properties")  
+of which I made a shortcut named **msys2 Bash**,  
+![snapshot of msys2 Bash shortcut properties](RubyBash.gif "shortcut properties")  
 which launches a useful MSYS2 terminal.  
 
 **Git Bash** set `$HOME = /c/Users/bleke` and extended Windows' huge $PATH, while  
-**Ruby Bash** sets `$HOME = /home/bleke`, AKA `/d/msys64/home/bleke`,  
+**msys2 Bash** sets `$HOME = /home/bleke`, AKA `/d/msys64/home/bleke`,  
 and prunes Windows' $PATH before adding its bin/ directories.  
-Although **Git for Windows**' **Git Bash** seemed nicer than **Ruby Bash**,  
-**Ruby Bash** has more and different things on its path than did **Git Bash**  
+Although **Git for Windows**' **Git Bash** seemed nicer than **msys2 Bash**,  
+**msys2 Bash** has more and different things on its path than did **Git Bash**  
 and better isolates git / ruby / jekyll bash stuff from Windows..  
 
 `$ gem install bundler`
@@ -501,7 +501,7 @@ echo bundle exec jekyll serve --incremental
 bundle exec jekyll serve --incremental  
 ```
 
-`$ exit`, then re-launch **Ruby Bash**
+`$ exit`, then re-launch **msys2 Bash**
 </details>
 
 ### Jekyll
