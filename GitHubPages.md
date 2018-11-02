@@ -1,5 +1,5 @@
 ---
-title: Jekyll on Windows 8.1
+<title>Jekyll on Windows 8.1</title>
 ---
 24 October 2018
 

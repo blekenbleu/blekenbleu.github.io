@@ -2,19 +2,18 @@
 title: Jekyll on Windows 10
 ---
 27 October 2018  
-See my [GitHub Pages website](https://blekenbleu.github.io/) for the published version of this page *with working links*.  
 
 This was written *after* first Windows 10 installation,  
 which followed Windows 8.1 installation.  
 Having multiple Windows PCs enables discovering multiple ways to fail  
 without the overhead of virtual machines.
 
-**The short version**: maybe wait for [installation using Windows Subsystem for Linux](GitHubWSL)  
+**The short version**: [installation using Windows Subsystem for Linux](GitHubWSL)  
 ...which should basically be an [Ubuntu Installation](https://jekyllrb.com/docs/installation/ubuntu/)    
-FWIW, a Fedora distro on WSL would be preferred,  
+was disappointing.  FWIW, a Fedora distro on WSL would be preferred,  
 but is as yet unsupported and problematic even for [better hackers](https://github.com/RoliSoft/WSL-Distribution-Switcher)  
 
-Jekyll requires Ruby.    
+#### Jekyll requires Ruby.    
 Downloaded [Ruby WITHOUT Dev toolchain](https://github.com/oneclick/rubyinstaller2),  
 .. but that installer anyway ran `ridk.cmd`,  
 which prompted for Dev toolchain, to which `Enter` was pressed..  
@@ -42,7 +41,7 @@ $ du -s /bin /usr
 166562  /bin
 257421  /usr
 ```
-**GitHub Desktop** includes a usable `git.exe`  
+**GitHub Desktop** and **SmartGit** include a usable `git.exe`  
 **Git for Windows** seems redundant...   
 
 #### msys2 Bash
@@ -427,7 +426,7 @@ RubyGems system software updated
 
 </details>
 
-#### Modify bash shell environment for Jekyll and GitHub Desktop
+#### Modify bash shell environment for Jekyll and (optionally) GitHub Desktop
 <details>
 <summary>click for <em>working</em> example files</summary>
 
@@ -488,8 +487,10 @@ GPATH="${GPATH}/GitHubDesktop/app-1.4.3/resources/app/git"
 # 10/26/2018
 # GitHub Pages Jekyll helpers
 export JEKYLL_GITHUB_TOKEN=123456789your_token_here0987654321abcdef
-alias g="cd /e/blekenbleu/blekenbleu.github.io"
+alias g="cd /d/Git/blekenbleu.github.io"
 alias serve="${HOME}/bin/serve"
+alias unserve="taskkill //IM ruby.exe //F"
+# remove vim debris
 alias rmv="rm *~ .[._a-Z]*~"
 
 # Windows command compatibility
@@ -614,7 +615,7 @@ Jekyll for Windows 10 was tested on a different drive:
 <summary>click for details</summary>
 
 ```
-Running bundle install in D:/Git/blekenbleu/blekenbleu.github.io...
+Running bundle install in D:/Git/blekenbleu.github.io...
   Bundler: Fetching gem metadata from https://rubygems.org/...........
   Bundler: Fetching gem metadata from https://rubygems.org/.
   Bundler: Resolving dependencies...
@@ -660,33 +661,37 @@ Running bundle install in D:/Git/blekenbleu/blekenbleu.github.io...
   Bundler: Installing wdm 0.1.1 with native extensions
   Bundler: Bundle complete! 5 Gemfile dependencies, 33 gems now installed.
   Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
-New jekyll site installed in D:/Git/blekenbleu/blekenbleu.github.io.
+New jekyll site installed in D:/Git/blekenbleu.github.io.
 ```
 
 </details>
 
 ##### Lauch local Jekyl test page
 
-`$ cd blekenbleu.github.io`  
+`$ cd /d/Git/blekenbleu.github.io`  
 `$ serve`
 ```
 bundle exec jekyll serve --incremental
-Configuration file: D:/Git/blekenbleu/blekenbleu.github.io/_config.yml
-            Source: D:/Git/blekenbleu/blekenbleu.github.io
-       Destination: D:/Git/blekenbleu/blekenbleu.github.io/_site
+Configuration file: D:/Git/blekenbleu.github.io/_config.yml
+            Source: D:/Git/blekenbleu.github.io
+       Destination: D:/Git/blekenbleu.github.io/_site
  Incremental build: enabled
       Generating...
        Jekyll Feed: Generating feed for posts
                     done in 0.638 seconds.
- Auto-regeneration: enabled for 'D:/Git/blekenbleu/blekenbleu.github.io'
+ Auto-regeneration: enabled for 'D:/Git/blekenbleu.github.io'
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 [2018-10-26 09:54:23] ERROR `/favicon.ico' not found.
 ```
 
-### Install [GitHub Desktop](https://desktop.github.com/)
+#### Optionally Install [GitHub Desktop](https://desktop.github.com/)
+I standardized on [SmartGit](https://www.syntevo.com/)
 
-Add to [Windows User Path](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/):  
+<details>
+<summary>click for <b>GitHub Desktop</b> details</summary>
+
+If **GitHub Desktop**, then add to [Windows User Path](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/):  
 `%LOCALAPPDATA%\GitHubDesktop\app-1.4.3\resources\app\git\mingw64\bin`  
 
 ...so that **GitHub Desktop** finds `git.exe`
@@ -699,27 +704,20 @@ FWIW, **GitHub Desktop** installs many command-line biinaries in
 Also FWIW, **GitHub Desktop** has a menu item for opening an external editor,  
 but seemingly only [Atom](https://atom.io/) actually works on Windows..
 
-#### Use GitHub Desktop to clone GitHub Pages repository
-  
-Enable `jekyll serve` for documentation repository from github.com  
-`$ cd /e/blekenbleu/blekenbleu.github.io`  
-#### Configure Jekyll for GitHub Pages
-`$ cat _config.yml`
+</details>
+
+### Clone GitHub Pages repository
+  .. if already created, else:
+### Configure Jekyll for GitHub Pages
+Enable `bundle exec jekyll serve` for documentation repository from github.com  
+`$ cd /d/Git/blekenbleu.github.io`  
+`$ cat _config.yml`   
 ```
-# Does not tactile support <details>?
-# theme: jekyll-theme-tactile
-theme: jekyll-theme-tactile
-repository: blekenbleu/blekenbleu.github.io
-github: [metadata]
-title: blekenbleu documentation
-# Kramdown does not support <details>
-markdown: CommonMarkGhPages
+{% include_relative _config.yml %}
 ```
 `$ cat Gemfile`
 ```
-source 'http://rubygems.org'
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-gem 'github-pages', group: :jekyll_plugins
+{% include_relative Gemfile %}
 ```
 `$ bundle install`
 <details>
@@ -891,34 +889,36 @@ https://github.com/jch/html-pipeline#dependencies
 
 </details>
 
-#### Launch GitHub Pages locally
+### Launch GitHub Pages locally
+Using my alias and/or script:  
 `$ serve`
 ```
 bundle exec jekyll serve --incremental
-Configuration file: E:/blekenbleu/blekenbleu.github.io/_config.yml
-            Source: E:/blekenbleu/blekenbleu.github.io
-       Destination: E:/blekenbleu/blekenbleu.github.io/_site
+Configuration file: D:/Git/blekenbleu.github.io/_config.yml
+            Source: D:/Git/blekenbleu.github.io
+       Destination: D:/Git/blekenbleu.github.io/_site
  Incremental build: enabled
       Generating...
                     done in 0.718 seconds.
- Auto-regeneration: enabled for 'E:/blekenbleu/blekenbleu.github.io'
-    Server address: http://127.0.0.1:4000
+ Auto-regeneration: enabled for 'D:/Git/blekenbleu.github.io'
+    Server address: http://127.0.0.1:4000  
   Server running... press ctrl-c to stop.
 ```
 
 ### Problem workarounds
 * jekyll serve `-- incremental` option can be occasionally problematic  
   Workaround: `$ bundle exec jekyll serve` (without `-- incremental`)  
-* git.exe installed by pacman reported files in cloned repository as `modified`.  
+* Ruby `git.exe` installed by `pacman` reported files in cloned repository as `modified`.  
   Workaround:  
-  * *Do NOT* use git from pacman.
-  * Instead, link **GitHub Desktop**'s mingw64/bin to `/usr/bin/local`, e.g.:  
+  * *Do NOT* install git by `pacman`.
+  * Instead, link **SmartGit** or **GitHub Desktop**'s mingw64/bin to `/usr/bin/local`, e.g.:  
   `$ ln -s $GPATH/mingw64/bin /usr/local/`
 * jekyll build `Error: invalid byte sequence in UTF-8`  
   Workaround: find offending characters to be editted out:    
   `$ grep -axv '.*' badfile.md | less`
-* Ctrl+C to `bundle exec jekyll serve` does not stop serving @ port 4000  
-  Workaround: shell is freed up for other use..  
+* In msys2 Bash window, Ctrl+C to `bundle exec jekyll serve` does HOT stop port 4000 service  
+  It does allows window reuse for other purposes...
+  Workaround:
   To kill HTTP service:
   ```
   $ grep unserve ~/.bash_profile
