@@ -19,11 +19,11 @@ macOS High Sierra `/user/bin/ruby` is version `2.3.7p456`
 Perhaps that should suffice, but mixing Jekyl gems with any for macOS seems messy,  
 and MacPorts has ruby version `2.5.3p105` which installed as `/opt/local/bin/ruby2.5`
 
-I appreciate that [HomeBrew](https://github.com/Homebrew/brew) is arguably a better fit for GitHub,  
-but MaPorts has provided packages useful to me since before HomeBrew launched.
-
+[HomeBrew](https://github.com/Homebrew/brew) is arguably a better fit for GitHub,  
+but MacPorts has provided me packages since before HomeBrew launched.  
 [This page](https://stackoverflow.com/questions/49987920/ruby-on-mac-osx-sierra-via-mac-ports)
-describes using `$ sudo port select --set ruby ruby25` to set `ruby25` as `ruby`,  
+describes setting `ruby25` as `ruby`:  
+`$ sudo port select --set ruby ruby25`
 
 <details>
 <summary>click for `rbenv` digression</summary>
@@ -39,10 +39,10 @@ If that scrogs stuff depending on /user/bin/ruby behavior, then
 </details>
 
 #### MacPorts Ruby
-**MacPorts** installs into `/opt/local/`, requiring sudo permission specifically for writing into `/opt/local/lib/ruby2.5/gems/2.5.0`  
+**MacPorts** installs into `/opt/local/`, requiring `sudo` permission specifically for writing into `/opt/local/lib/ruby2.5/gems/2.5.0`  
 
 Except for `sudo`, Jekyll installation proceeds as on Windows 10;  
-see [that installation](GitHubW10) for tricks and configuration details.
+see [that documentation](GitHubW10) for tricks and configuration details.
 
 `$ which ruby`  
 ```

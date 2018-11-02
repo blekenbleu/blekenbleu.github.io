@@ -916,7 +916,7 @@ Configuration file: D:/Git/blekenbleu.github.io/_config.yml
 * jekyll build `Error: invalid byte sequence in UTF-8`  
   Workaround: find offending characters to be editted out:    
   `$ grep -axv '.*' badfile.md | less`
-* In msys2 Bash window, Ctrl+C to `bundle exec jekyll serve` does HOT stop port 4000 service  
+* In msys2 Bash window, Ctrl+C to `bundle exec jekyll serve` does NOT stop port 4000 service  
   It does allows window reuse for other purposes...
   Workaround:
   To kill HTTP service:
