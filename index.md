@@ -15,12 +15,18 @@
 **[Ubuntu on Windows (WSL)](GitHubWSL)** with **SmartGit**  
 *Notes:*
 1. Unlike html pages, markdown pages (files ending with `.md`) get URLs *without* `.md`  
-2. If no [`index.md`](/), then Jekyll uses `README.md` for landing page 
+2. If no [`index.md`](/), then Jekyll uses `README.md` for landing page  
    **Workaround**:  
    Create `index.md`, which Jekyll will use instead  
 3. Jekyll expects UTF-8 character encoding and fails badly if/when a BOM (Byte Order Mark) is encountered  
-   This was especially problematic with Jekyll style gems on WSL...  
-
+   This was especially problematic with Jekyll style gem files on WSL...  
+   **Workaround** (using `vim`):  
+```
+   :set nobomb
+   :wq
+```
+4. **IPv6** tends to be problematic, requiring Windows reboots  
+   Suggested procedures [for disabling IPv6](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
 
 
 ### macOS local [gitolite](MacGit) server
