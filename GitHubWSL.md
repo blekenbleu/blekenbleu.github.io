@@ -47,11 +47,10 @@ $ du -s
 88      init
 828482  usr
 ```
-For comparison, SmartGit is 403 MB
+For comparison, SmartGit is 403 MB,
+Git for Windows v2.19.1 is 572 MB
+GitHub Desktop is 260 MB
 and Ruby25-x64 is 930 MB
-
-Good example of GitHun Pages deployment:
-https://github.com/aws-amplify
 
 To install WSL,  go [here:](https://www.microsoft.com/en-us/search?q=ubuntu)
 

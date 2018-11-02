@@ -22,17 +22,11 @@ Note: Jekyll is *NOT* separately installed; it gets installed using Ruby.
 Configuring `'github-pages'` in Gemfile enables GitHub Pages builds using `bundle exec jekyll build`  
 and previewing pages locally using `bundle exec jekyll serve`.
 
-README.md becomes the GitHub Pages landing page by default.
-Unfortunately, relative URLs  
-(which would work both locally for `bundle exec jekyll serve`
-as well as at github.io GitHub Pages URL)  
-would be broken in README.md displayed at the bottom pf https://github.com/ repository page URL
-
 ## Optionally install [Git for Windows](https://gitforwindows.org/)
-... which uses MINGW64 for Git bash.  
+... which uses MINGW64 for Git Bash.  
 Usefull `git.exe` and
-bash terminals are also available in **GitHub Desktop**,
-**SmartGit** and Ruby's `msys64` folder.  
+Bash terminals are also available in **SmartGit** and Ruby's `msys64` folder.  
+**Git for Windows**' Bash shell `$PATH` is unnecessarily cluttered.
 
 ### Install [Ruby](https://rubyinstaller.org/downloads/) **with** Dev toolchain
 Many folks recommend using `rbenv` or `rvm` to install and configure Ruby, but my intention is to *not change versions* once Jekyll works satisfactorily.
@@ -42,17 +36,59 @@ Pressed `Enter` for options 1,2,3; provoking many, many messages,
 including a final prompt that seemingly wanted to start over...??!!
 
 ### Invoke commands from some Bash shell
-Available in GitHub Desktop, SmartGit 
+Bash shell available in GitHub Desktop, SmartGit, and/or Ruby
+
+### Launch Ruby's msys64\msys2_shell.cmd
+```
+Copying skeleton files.
+These files are for the users to personalise their msys2 experience.
+
+They will never be overwritten nor automatically updated.
+
+'./.bashrc' -> '/home/Steven/.bashrc'
+'./.bash_logout' -> '/home/Steven/.bash_logout'
+'./.bash_profile' -> '/home/Steven/.bash_profile'
+'./.inputrc' -> '/home/Steven/.inputrc'
+'./.profile' -> '/home/Steven/.profile'
+```
+#### Generate a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+This is wanted for local Jekyll as well as **GitHub Desktop** and/or **SmartGit**
+##### set Jekyll's environmental variable:
+Added to `~/.bash_profile` :
+```
+# Ruby's msys2 Bash $PATH by default includes neither git nor vi
+if [ -z "$RUBY" ] ; then
+  export RUBY="/g/Ruby25-x64"
+fi
+if [ -d "${RUBY}/bin" ] ; then
+  PATH="${PATH}:${RUBY}/bin"
+fi
+
+export JEKYLL_GITHUB_TOKEN=0123456789yourTokenHereabcdef98765432100
+if [ -d /g/GitHub/blekenbleu/blekenbleu.github.io ] ; then
+  alias g="cd /g/GitHub/blekenbleu/blekenbleu.github.io"
+fi
+alias serve="~/bin/serve"
+```
+`$ cat $HOME/bin/serve`
+```
+echo bundle exec jekyll serve --incremental
+bundle exec jekyll serve --incremental
+```
+ 
 `$ gem install bundler`
 - gem required firewall permissions
 
 `$ ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'`   
 `$ gem update --system`  
-#### create simple test document folder
+#### create a simple Jekyll test folder
+`$ cd /g/GitHub`   
 `$ jekyll new blekenbleu.github.io`
 
 <details>
 <summary> click for details</summary>
+
+```
 Running bundle install in D:/GitHub/blekenbleu/blekenbleu.github.io...
   Bundler: Fetching gem metadata from https://rubygems.org/...........
   Bundler: Fetching gem metadata from https://rubygems.org/.
@@ -99,19 +135,12 @@ Running bundle install in D:/GitHub/blekenbleu/blekenbleu.github.io...
   Bundler: Bundle complete! 5 Gemfile dependencies, 33 gems now installed.
   Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
 New jekyll site installed in D:/GitHub/blekenbleu/blekenbleu.github.io.
+```
+
 </details>
 
-#### build and server simple test
+#### serve simple test Jekyll
 `$ cd blekenbleu.github.io/`   
-`$ cat _config.yml`   
-```
-{% include_relative _config.yml %}
-```
-`$ cat Gemfile`
-```
-{% include_relative Gemfile %}
-```
-
 `$ bundle exec jekyll serve`
 ```
 Configuration file: D:/GitHub/blekenbleu/blekenbleu.github.io/_config.yml
@@ -130,39 +159,15 @@ Configuration file: D:/GitHub/blekenbleu/blekenbleu.github.io/_config.yml
 
 ### Modify simple folder for GitHub Pages
 `$ cd /e/blekenbleu/blekenbleu.github.io`  
-#### Configure Jekyll for GitHub Pages
-`$ cat _config.yml`
+`$ cat _config.yml`   
 ```
-# Does not tactile support <details>?
-# theme: jekyll-theme-tactile
-theme: jekyll-theme-primer
-repository: blekenbleu/blekenbleu.github.io
-github: [metadata]
-title: blekenbleu documentation
-# Kramdown does not support <details>
-markdown: CommonMarkGhPages
+{% include_relative _config.yml %}
 ```
 `$ cat Gemfile`
 ```
-source 'http://rubygems.org'
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-gem 'github-pages', group: :jekyll_plugins
+{% include_relative Gemfile %}
 ```
-#### Generate a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) and set its environmental variable:
-
-`$ cat $HOME/.bash_profile`
-```
-export JEKYLL_GITHUB_TOKEN=12345yourtokenhere6789
-alias g="cd /d/GitHub/blekenbleu/blekenbleu.github.io"
-alias serve="/c/Users/blekenbleu/bin/serve"
-```
-`$ cat $HOME/bin/serve`
-```
-echo bundle exec jekyll serve --incremental
-bundle exec jekyll serve --incremental
-```
-
-#### Install GitHub Pages gems
+#### Install gems to support GitHub Pages
 `$ bundle install`
 - NOTHING reported for a very long time..
 then failed:
@@ -170,9 +175,111 @@ then failed:
 Retrying fetcher due to error (2/4): Bundler::HTTP
 Error Could not fetch specs from https://rubygems.org/
 ```
-.. but, after walking away for awhile, retried  
-`$ bundle install`
+.. but, after walking away for awhile, retried:   
+`$ bundle install`  
 - .. and it worked..!?  
+
+<details>
+<summary>click for installation messages</summary>
+
+```
+Warning: the running version of Bundler (1.16.6) is older than the version that created the lockfile (1.17.1). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+Fetching gem metadata from http://rubygems.org/..............
+Fetching gem metadata from http://rubygems.org/..
+Resolving dependencies...
+Using concurrent-ruby 1.0.5
+Using i18n 0.9.5
+Using minitest 5.11.3
+Using thread_safe 0.3.6
+Using tzinfo 1.2.5
+Using activesupport 4.2.10
+Using public_suffix 2.0.5
+Using addressable 2.5.2
+Using bundler 1.16.6
+Using coffee-script-source 1.11.1
+Using execjs 2.7.0
+Using coffee-script 2.4.1
+Using colorator 1.1.0
+Using ruby-enum 0.7.2
+Using commonmarker 0.17.13
+Using dnsruby 1.61.2
+Using eventmachine 1.2.7 (x64-mingw32)
+Using http_parser.rb 0.6.0
+Using em-websocket 0.5.1
+Using ffi 1.9.25 (x64-mingw32)
+Using ethon 0.11.0
+Using multipart-post 2.0.0
+Using faraday 0.15.3
+Using forwardable-extended 2.6.0
+Using gemoji 3.0.0
+Using sawyer 0.8.1
+Using octokit 4.13.0
+Using typhoeus 1.3.0
+Using github-pages-health-check 1.8.1
+Using rb-fsevent 0.10.3
+Using rb-inotify 0.9.10
+Using sass-listen 4.0.0
+Using sass 3.6.0
+Using jekyll-sass-converter 1.5.2
+Using ruby_dep 1.5.0
+Using listen 3.1.5
+Using jekyll-watch 2.1.2
+Using kramdown 1.17.0
+Using liquid 4.0.0
+Using mercenary 0.3.6
+Fetching pathutil 0.16.2
+Installing pathutil 0.16.2
+Using rouge 2.2.1
+Using safe_yaml 1.0.4
+Using jekyll 3.7.4
+Using jekyll-avatar 0.6.0
+Using jekyll-coffeescript 1.1.1
+Using jekyll-commonmark 1.2.0
+Using jekyll-commonmark-ghpages 0.1.5
+Using jekyll-default-layout 0.1.4
+Using jekyll-feed 0.10.0
+Using jekyll-gist 1.5.0
+Using jekyll-github-metadata 2.9.4
+Using mini_portile2 2.3.0
+Using nokogiri 1.8.5 (x64-mingw32)
+Using html-pipeline 2.8.4
+Using jekyll-mentions 1.4.1
+Using jekyll-optional-front-matter 0.3.0
+Using jekyll-paginate 1.1.0
+Using jekyll-readme-index 0.2.0
+Using jekyll-redirect-from 0.14.0
+Using jekyll-relative-links 0.5.3
+Using rubyzip 1.2.2
+Using jekyll-remote-theme 0.3.1
+Using jekyll-seo-tag 2.5.0
+Using jekyll-sitemap 1.2.0
+Using jekyll-swiss 0.4.0
+Using jekyll-theme-architect 0.1.1
+Using jekyll-theme-cayman 0.1.1
+Using jekyll-theme-dinky 0.1.1
+Using jekyll-theme-hacker 0.1.1
+Using jekyll-theme-leap-day 0.1.1
+Using jekyll-theme-merlot 0.1.1
+Using jekyll-theme-midnight 0.1.1
+Using jekyll-theme-minimal 0.1.1
+Using jekyll-theme-modernist 0.1.1
+Using jekyll-theme-primer 0.5.3
+Using jekyll-theme-slate 0.1.1
+Using jekyll-theme-tactile 0.1.1
+Using jekyll-theme-time-machine 0.1.1
+Using jekyll-titles-from-headings 0.5.1
+Using jemoji 0.10.1
+Using minima 2.5.0
+Using unicode-display_width 1.4.0
+Using terminal-table 1.8.0
+Using github-pages 192
+Using wdm 0.1.1
+Bundle complete! 2 Gemfile dependencies, 86 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+```
+
+</details>
+
 [`rubygems.org`](https://rubygems.org/) is seeming overloaded, based on [subsequent misadventures](GitHubWSL).
 
 Based on [this advice](https://github.com/mmistakes/minimal-mistakes/issues/1558)
@@ -197,6 +304,3 @@ are not recognized instantly, but fairly soon...
 It took awhile (hours?) for GitHub Desktop to first sync with github.com repository...
 
 ### Commit your *working* GitHub Page[s] to master and Push to GitHub
-*Notes:*
-1. Unlike html pages, markdown pages (files ending with `.md`) get URLs *without* `.md`  
-2. If no [`index.md`](/), then Jekyll uses `README.md` for landing page 

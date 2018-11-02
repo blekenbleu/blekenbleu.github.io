@@ -13,6 +13,12 @@
 **[Windows 10](GitHubW10)** with **GitHub Desktop**   
 **[macOS](GitHubMac) High Sierra** with **MacPorts** and **SmartGit**  
 **[Ubuntu on Windows (WSL)](GitHubWSL)** with **SmartGit**  
+*Notes:*
+1. Unlike html pages, markdown pages (files ending with `.md`) get URLs *without* `.md`  
+2. If no [`index.md`](/), then Jekyll uses `README.md` for landing page 
+   **Workaround**:  
+   Create `index.md`, which Jekyll will use instead
+
 
 ### macOS local [gitolite](MacGit) server
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
