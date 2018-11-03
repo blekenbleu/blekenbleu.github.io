@@ -62,8 +62,8 @@ but a wealth of bugs made implementing Jekyll on WSL problematic.
 
 Since this WSL Windows 10 installation shares `G:` drive with Windows 8.1 installation,  
 a custom `C:/Users/bleke/.bash_profile` for `"C:\Program Files (x86)\SmartGit\git\git-bash.exe"`  
-adding a path to that Ruby installation:    
 ![snapshot of Git Bash shortcut properties](GitBash.gif "shortcut properties")
+... adding a path to that Ruby installation:    
 
 <details>
 <summary>click here for custom <code>.bash_profile</code></summary>
@@ -89,7 +89,7 @@ if [ -d /g/Gateway/GitHub/blekenbleu.github.io ] ; then
   alias g="cd /g/Gateway/GitHub/blekenbleu.github.io"
 fi
 # Git Bash [Ctrl]+[C] kills Jekyl server
-alias serve="${RUBY}/msys64/home/Steven/bin/serve"
+alias serve="${RUBY}/msys64/home/bleke/bin/serve"
 ```
 
 </details>
@@ -214,7 +214,7 @@ for a GitHub repository cloned using Windows GitHub Desktop:
 <summary>click for details of <code>get status</code> failure</summary>
 
 ```
-$ cd /g/Gateway/GitHub/blekenbleu/blekenbleu.github.io/
+$ cd /g/Gateway/GitHub/blekenbleu.github.io/
 $ git --version
 git version 2.17.1
 $ which git
@@ -317,7 +317,7 @@ ERROR:  Could not find a valid gem 'bundler' (>= 0), here is why:
 Rebooted the PC to eventually recover..
 ```
 $ sudo gem install bundler
-[sudo] password for Steven:
+[sudo] password for bleke:
 Fetching: bundler-1.17.1.gem (100%)
 Successfully installed bundler-1.17.1
 Parsing documentation for bundler-1.17.1
@@ -349,14 +349,14 @@ $ cd /g/Gateway/GitHub
 $ sudo jekyll new Jekyll
 $ cd Jekyll
 $ bundle exec jekyll build
-$ cd ../blekenbleu/blekenbleu.github.io
+$ cd ../blekenbleu.github.io
 $ bundle install
 $ bundle exec jekyll build
 $ bundle exec jekyll serve
 with `_config.yml:theme: jekyll-theme-primer`
-Configuration file: /mnt/g/Gateway/GitHub/blekenbleu/blekenbleu.github.io/_config.yml
-            Source: /mnt/g/Gateway/GitHub/blekenbleu/blekenbleu.github.io
-       Destination: /mnt/g/Gateway/GitHub/blekenbleu/blekenbleu.github.io/_site
+Configuration file: /mnt/g/Gateway/GitHub/blekenbleu.github.io/_config.yml
+            Source: /mnt/g/Gateway/GitHub/blekenbleu.github.io
+       Destination: /mnt/g/Gateway/GitHub/blekenbleu.github.io/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
   Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss':
@@ -375,16 +375,16 @@ File of concern may be
 success, finally:  
 ```
 $ bundle exec jekyll serve
-Configuration file: /mnt/g/Gateway/GitHub/blekenbleu/blekenbleu.github.io/_config.yml
-            Source: /mnt/g/Gateway/GitHub/blekenbleu/blekenbleu.github.io
-       Destination: /mnt/g/Gateway/GitHub/blekenbleu/blekenbleu.github.io/_site
+Configuration file: /mnt/g/Gateway/GitHub/blekenbleu.github.io/_config.yml
+            Source: /mnt/g/Gateway/GitHub/blekenbleu.github.io
+       Destination: /mnt/g/Gateway/GitHub/blekenbleu.github.io/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
                     done in 2.436 seconds.
                     Auto-regeneration may not work on some Windows versions.
                     Please see: https://github.com/Microsoft/BashOnWindows/issues/216
                     If it does not work, please upgrade Bash on Windows or run Jekyll with --no-watch.
- Auto-regeneration: enabled for '/mnt/g/Gateway/GitHub/blekenbleu/blekenbleu.github.io'
+ Auto-regeneration: enabled for '/mnt/g/Gateway/GitHub/blekenbleu.github.io'
     Server address: http://127.0.0.1:4000
   Server running... press ctrl-c to stop
 ```

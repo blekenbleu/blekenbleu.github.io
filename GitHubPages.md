@@ -45,11 +45,11 @@ These files are for the users to personalise their msys2 experience.
 
 They will never be overwritten nor automatically updated.
 
-'./.bashrc' -> '/home/Steven/.bashrc'
-'./.bash_logout' -> '/home/Steven/.bash_logout'
-'./.bash_profile' -> '/home/Steven/.bash_profile'
-'./.inputrc' -> '/home/Steven/.inputrc'
-'./.profile' -> '/home/Steven/.profile'
+'./.bashrc' -> '/home/bleke/.bashrc'
+'./.bash_logout' -> '/home/bleke/.bash_logout'
+'./.bash_profile' -> '/home/bleke/.bash_profile'
+'./.inputrc' -> '/home/bleke/.inputrc'
+'./.profile' -> '/home/bleke/.profile'
 ```
 #### Generate a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 This is wanted for local Jekyll as well as **GitHub Desktop** and/or **SmartGit**
@@ -65,8 +65,8 @@ if [ -d "${RUBY}/bin" ] ; then
 fi
 
 export JEKYLL_GITHUB_TOKEN=0123456789yourTokenHereabcdef98765432100
-if [ -d /g/GitHub/blekenbleu/blekenbleu.github.io ] ; then
-  alias g="cd /g/GitHub/blekenbleu/blekenbleu.github.io"
+if [ -d /g/GitHub/blekenbleu.github.io ] ; then
+  alias g="cd /g/GitHub/blekenbleu.github.io"
 fi
 alias serve="~/bin/serve"
 # Ctrl+C leaves Jekyll server running..!
@@ -91,7 +91,7 @@ bundle exec jekyll serve --incremental
 <summary> click for details</summary>
 
 ```
-Running bundle install in D:/GitHub/blekenbleu/blekenbleu.github.io...
+Running bundle install in D:/GitHub/blekenbleu.github.io...
   Bundler: Fetching gem metadata from https://rubygems.org/...........
   Bundler: Fetching gem metadata from https://rubygems.org/.
   Bundler: Resolving dependencies...
@@ -136,7 +136,7 @@ Running bundle install in D:/GitHub/blekenbleu/blekenbleu.github.io...
   Bundler: Installing wdm 0.1.1 with native extensions
   Bundler: Bundle complete! 5 Gemfile dependencies, 33 gems now installed.
   Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
-New jekyll site installed in D:/GitHub/blekenbleu/blekenbleu.github.io.
+New jekyll site installed in D:/GitHub/blekenbleu.github.io.
 ```
 
 </details>
@@ -145,14 +145,14 @@ New jekyll site installed in D:/GitHub/blekenbleu/blekenbleu.github.io.
 `$ cd blekenbleu.github.io/`   
 `$ bundle exec jekyll serve`
 ```
-Configuration file: D:/GitHub/blekenbleu/blekenbleu.github.io/_config.yml
-            Source: D:/GitHub/blekenbleu/blekenbleu.github.io
-       Destination: D:/GitHub/blekenbleu/blekenbleu.github.io/_site
+Configuration file: D:/GitHub/blekenbleu.github.io/_config.yml
+            Source: D:/GitHub/blekenbleu.github.io
+       Destination: D:/GitHub/blekenbleu.github.io/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
        Jekyll Feed: Generating feed for posts
                     done in 0.752 seconds.
- Auto-regeneration: enabled for 'D:/GitHub/blekenbleu/blekenbleu.github.io'
+ Auto-regeneration: enabled for 'D:/GitHub/blekenbleu.github.io'
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 [2018-10-22 16:02:03] ERROR '/favicon.ico' not found.
@@ -160,7 +160,7 @@ Configuration file: D:/GitHub/blekenbleu/blekenbleu.github.io/_config.yml
 #### Browse to [http://localhost:4000](http://localhost:4000) to review results
 
 ### Modify simple folder for GitHub Pages
-`$ cd /e/blekenbleu/blekenbleu.github.io`  
+`$ cd /e/blekenbleu.github.io`  
 `$ cat _config.yml`   
 ```
 {% include_relative _config.yml %}
