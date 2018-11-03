@@ -34,7 +34,6 @@ by supporting servers other than github.com
 [QTerminal for WSL](https://www.reddit.com/r/bashonubuntuonwindows/comments/82e1x5/qterminal_for_wsl/)  
 
 ##### WSL has plenty of bugs and is pretty large (1.2 GB):
-
 ```
 $ cd /
 $ du -s
@@ -47,15 +46,60 @@ $ du -s
 88      init
 828482  usr
 ```
-For comparison, SmartGit is 403 MB,
-Git for Windows v2.19.1 is 572 MB
-GitHub Desktop is 260 MB
-and Ruby25-x64 is 930 MB
+For comparison,  
+SmartGit is 403 MB,  
+Git for Windows v2.19.1 is 572 MB  
+GitHub Desktop is 260 MB  
+and Ruby25-x64 is 930 MB  
 
-To install WSL,  go [here:](https://www.microsoft.com/en-us/search?q=ubuntu)
+#### Ubuntu 18.04 LTS
+Since Ubuntu updates packages relatively slowly,
+using its newest LTS (Long Term Support) version seemed  
+less likely to provoke incompatibilities or extra updates
+when installing Jekyll and dependencies.  
+As it turns out. the version of ruby was recent enough,  
+but a wealth of bugs made implementing Jekyll on WSL problematic.
+
+Since this WSL Windows 10 installation shares `G:` drive with Windows 8.1 installation,  
+a custom `C:/Users/bleke/.bash_profile` for `"C:\Program Files (x86)\SmartGit\git\git-bash.exe"`  
+adding a path to that Ruby installation:    
+![snapshot of Git Bash shortcut properties](GitBash.gif "shortcut properties")
+
+<details>
+<summary>click here for custom <code>.bash_profile</code></summary>
+
+```console
+# Stripped-down for Git Bash
+PATH=/mingw64/bin:/usr/bin:/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/OpenSSH:/usr/bin/vendor_perl:/usr/bin/core_perl
+
+# add Ruby for Jekyl
+if ! hash ruby 2>>/dev/null ; then
+  if [ -z "$RUBY" ] ; then
+    export RUBY="/g/Ruby25-x64"
+  fi
+  if [ -d "${RUBY}/bin" ] ; then
+    PATH="${PATH}:${RUBY}/bin"
+  else
+    echo "ruby not found!!"
+  fi
+fi
+export JEKYLL_GITHUB_TOKEN=9142f8b9ae1bad58fd1aa5033daad5e0c8385ba1
+alias  path="echo '$PATH'"
+if [ -d /g/Gateway/GitHub/blekenbleu.github.io ] ; then
+  alias g="cd /g/Gateway/GitHub/blekenbleu.github.io"
+fi
+# Git Bash [Ctrl]+[C] kills Jekyl server
+alias serve="${RUBY}/msys64/home/Steven/bin/serve"
+```
+
+</details>
+
+### However, *if you insist*,
+ then go [here](https://www.microsoft.com/en-us/search?q=ubuntu) to install WSL
 
 #### Background:
-WSL AKA Ubuntu from Microsoft Store, along with VcXsrv, was originally installed via Windows Insider program on fast Ring for Windows 10 Insider Preview build 16190
+WSL AKA Ubuntu from Microsoft Store, along with [VcXsrv](https://github.com/Microsoft/WSL/issues/2855#issuecomment-358861903), was originally installed  
+via Windows Insider program on fast Ring for Windows 10 Insider Preview build 16190
 
 <details>
 <summary>click here for update details</summary>
@@ -86,19 +130,12 @@ Codename:       xenial
 ```
 </details>
 
-#### Ubuntu 18.04 LTS
-Since Ubuntu updates packages relatively slowly,
-using its newest LTS (Long Term Support) version
-seems less likely to provoke incompatibilities or extra updates
-when installing Jekyll and dependencies.  
-As it turns out. the version of ruby was recent enough,  
-but a wealth of bugs made implementing Jekyll on WSL problematic.
-
-However, *if you insist*, then **before starting** Ruby installation,
+#### Ruby
+**before starting** Ruby installation,
 prioritizing IPv4  over IPv6 will probably reduce grief:
 
 #### [disable ipv6 or prefer ipv4](https://www.reddit.com/r/bashonubuntuonwindows/comments/7u1le5/disable_ipv6_or_prefer_ipv4_first/dtlnmzu)
-In /etc/gai.config
+In `/etc/gai.config`
 ```
 # un-comment this line
 precedence ::ffff:0:0/96 100
