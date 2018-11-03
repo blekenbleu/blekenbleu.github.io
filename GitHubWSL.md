@@ -83,7 +83,7 @@ if ! hash ruby 2>>/dev/null ; then
     echo "ruby not found!!"
   fi
 fi
-export JEKYLL_GITHUB_TOKEN=9142f8b9ae1bad58fd1aa5033daad5e0c8385ba1
+export JEKYLL_GITHUB_TOKEN=0123456789tokendejour0987654321abcdefg00
 alias  path="echo '$PATH'"
 if [ -d /g/Gateway/GitHub/blekenbleu.github.io ] ; then
   alias g="cd /g/Gateway/GitHub/blekenbleu.github.io"
