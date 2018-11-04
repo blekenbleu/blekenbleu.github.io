@@ -1,9 +1,9 @@
 1 November 2018  
-## Image Processing
+## Signal Processing
 - [Special Error Diffusion](ImageProcessing/sped.html)
 - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 
-## USB-attached [Logitech G29 pedals - STM32](pedals/STM32)
+### USB-attached [Logitech G29 pedals - STM32](pedals/STM32)
 
 ### [WeMos D1 UNO R1 ESP8266](ESPDuino)
 
@@ -12,7 +12,8 @@
 **[Windows 8.1](GitHubPages)**  with **HitHub Desktop** and **Git for Windows**  
 **[Windows 10](GitHubW10)** with **GitHub Desktop**   
 **[macOS](GitHubMac) High Sierra** with **MacPorts** and **SmartGit**  
-**[Ubuntu on Windows (WSL)](GitHubWSL)** with **SmartGit**  
+**[Ubuntu on Windows (WSL)](GitHubWSL) (or NOT)** with **SmartGit**  and its `git-bash.exe`
+
 *Notes:*
 1. Unlike html pages, markdown pages (files ending with `.md`) get URLs *without* `.md`  
 2. If no [`index.md`](/), then Jekyll uses `README.md` for landing page  
