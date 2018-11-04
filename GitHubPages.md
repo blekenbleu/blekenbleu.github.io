@@ -141,6 +141,8 @@ New jekyll site installed in D:/GitHub/blekenbleu.github.io.
 
 </details>
 
+###
+###
 #### serve simple test Jekyll
 `$ cd blekenbleu.github.io/`   
 `$ bundle exec jekyll serve`
@@ -282,6 +284,8 @@ Use `bundle info [gemname]` to see where a bundled gem is installed.
 
 </details>
 
+###
+###
 [`rubygems.org`](https://rubygems.org/) is seeming overloaded, based on [subsequent misadventures](GitHubWSL).
 
 Based on [this advice](https://github.com/mmistakes/minimal-mistakes/issues/1558)

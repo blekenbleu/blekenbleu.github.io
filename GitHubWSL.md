@@ -94,6 +94,8 @@ alias serve="${RUBY}/msys64/home/bleke/bin/serve"
 
 </details>
 
+###
+###
 ### However, *if you insist*,
  then go [here](https://www.microsoft.com/en-us/search?q=ubuntu) to install WSL
 
@@ -130,6 +132,8 @@ Codename:       xenial
 ```
 </details>
 
+###
+###
 #### Ruby
 **before starting** Ruby installation,
 prioritizing IPv4  over IPv6 will probably reduce grief:
@@ -188,6 +192,8 @@ UBUNTU_CODENAME=bionic
 ```
 </details>
 
+###
+###
 ### WSL tweaks (for MINGW64 compatibility)
 ```
 $ ln -s /mnt/[cdeg] /
@@ -239,6 +245,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 </details>
 
+###
+###
 #### How to convince WSL [git to  work with Windows repositories](https://github.com/Microsoft/WSL/issues/3046)  
 `git config --global core.autocrlf true`
 

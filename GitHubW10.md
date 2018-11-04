@@ -426,6 +426,8 @@ RubyGems system software updated
 
 </details>
 
+###   
+###   
 #### Modify bash shell environment for Jekyll and (optionally) GitHub Desktop
 <details>
 <summary>click for <em>working</em> example files</summary>
@@ -505,6 +507,8 @@ bundle exec jekyll serve --incremental
 `$ exit`, then re-launch **msys2 Bash**
 </details>
 
+###   
+###   
 ### Jekyll
 `$ gem install jekyll`
 <details>
@@ -606,6 +610,8 @@ Done installing documentation for public_suffix, addressable, colorator, http_pa
 
 </details>
 
+###   
+###   
 #### Installing a dummy Jekyll home page
 Since github.com already has a GitHub Pages repository for blekenbleu  
 Jekyll for Windows 10 was tested on a different drive:  
@@ -666,6 +672,8 @@ New jekyll site installed in D:/Git/blekenbleu.github.io.
 
 </details>
 
+###   
+###   
 ##### Lauch local Jekyl test page
 
 `$ cd /d/Git/blekenbleu.github.io`  
@@ -706,6 +714,8 @@ but seemingly only [Atom](https://atom.io/) actually works on Windows..
 
 </details>
 
+###   
+###   
 ### Clone GitHub Pages repository
   .. if already created, else:
 ### Configure Jekyll for GitHub Pages
@@ -889,6 +899,8 @@ https://github.com/jch/html-pipeline#dependencies
 
 </details>
 
+###   
+###   
 ### Launch GitHub Pages locally
 Using my alias and/or script:  
 `$ serve`
