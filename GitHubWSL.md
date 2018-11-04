@@ -1,7 +1,7 @@
 ---
 title: Jekyll  for GitHub Pages on WSL Ubuntu
 ---
-I gave up on [Fedora support](https://www.redhat.com/en/blog/monumental-day-open-source-and-red-hat) on
+I gave up on [Fedora support](https://www.redhat.com/en/blog/monumental-day-open-source-and-red-hat) of
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10),  
 based on other IBM acquisitions (e.g. [Wunderground monetization](https://github.com/n0bel/PiClock/issues/103))
 
@@ -15,7 +15,7 @@ On one hand,
 - running a "native" Windows XServer is
 [not horrible](https://github.com/QMonkey/wsl-tutorial)  
   .. and not required, so long git repositores are on NTFS    
-- runs more slowly than **MINGW** implementations
+- runs more slowly than **MINGW64** implementations
 - has some bugs that take awhile to resolve,  
   even after discovering solutions
 
@@ -98,7 +98,7 @@ alias serve="${RUBY}/msys64/home/bleke/bin/serve"
 for **Git Bash** AKA `"C:\Program Files (x86)\SmartGit\git\git-bash.exe"`  
 ![snapshot of Git Bash shortcut properties](GitBash.gif "shortcut properties")  
 ### However, *if you insist*,
- then go [here](https://www.microsoft.com/en-us/search?q=ubuntu) to install WSL
+- then go [here](https://www.microsoft.com/en-us/search?q=ubuntu) to install WSL
 
 #### Background:
 **WSL** AKA **Ubuntu from Microsoft Store**, along with [**VcXsrv**](https://github.com/Microsoft/WSL/issues/2855#issuecomment-358861903),  
@@ -106,7 +106,7 @@ was originally installed via **Windows Insider** program
 on fast Ring for **Windows 10 Insider Preview build 16190**  
 
 <details>
-<summary>click here for **WSL** update details</summary>
+<summary>click here for <b>WSL</b> update details</summary>
 
 Updating that Windows 10 Home installation to 1803 17134.376, then  
 launching %LOCALAPPDATA%\Microsoft\WindowsApps\ubuntu.exe
@@ -147,7 +147,7 @@ precedence ::ffff:0:0/96 100
 ```
 
 <details>
-<summary>click here for <em>more</em> update details</summary>
+<summary>click here for <em>more</em> WSL update details</summary>
 
 On July 9, 2018, [Ask Ubuntu recommended](https://blogs.msdn.microsoft.com/commandline/2018/07/09/upgrading-ubuntu/)  
 `$ sudo do-release-upgrade`
@@ -251,7 +251,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 #### How to convince WSL [git to  work with Windows repositories](https://github.com/Microsoft/WSL/issues/3046)  
 `git config --global core.autocrlf true`
 
-#### Install SmartGit, which includes a Git Bash and mingw64
+#### Install SmartGit, which includes a Git Bash and MINGW64
 ```
 $ du -s /usr/bin /mingw64/bin
 80461   /usr/bin
@@ -260,9 +260,9 @@ $ du -s /usr/bin /mingw64/bin
 In fact, **SmartGit** for Windows includes **Git for Windows**
 .. and a useful `git.exe`
 
-As on Mac, **SmartGit** wants you GitHub token, as **Jekyll** uses.  
+**SmartGit** wants your GitHub token, as used for **Jekyll**.  
 To more easily work with its mingw64 binaries,  
-create an NTFS symbolic link without spaces
+create an NTFS symbolic link without spaces:
 ```
 C:\>mklink /d SmartGit "Program Files (x86)\SmartGit\git"
 symbolic link created for SmartGit <<===>> Program Files (x86)\SmartGit\git
@@ -370,11 +370,11 @@ Configuration file: /mnt/g/Gateway/GitHub/blekenbleu.github.io/_config.yml
 jekyll 3.7.4 | Error:  Invalid US-ASCII character "\xE2" on line 5
 ```
 #### Jekyll style UTF-8 bugs
-Finally found assets in `/var/lib/gems/`  
+Eventually found assets in `/var/lib/gems/`  
 `Scss` error seemed to be in:  
 `/var/lib/gems/2.5.0/gems/jekyll-theme-primer-0.5.3/assets/css/style.scss`
 
-.. but that had  only 4 lines...  Problems were *eventually* found by:  
+.. but that had  only 4 lines...  Problems were *later* found by:  
 `$ grep -R --color='always' -P -n "[\x80-\xFF]" /var/lib/gems/2.5.0/gems/jekyll-theme-primer-0.5.3`
 
 ### `sudo vi offending.md` for about 8 files..
