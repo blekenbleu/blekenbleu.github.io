@@ -29,7 +29,7 @@
 4. **IPv6** tends to be problematic, requiring Windows reboots  
    Suggested procedures [for disabling IPv6](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
 
-
+### [GVim and True X-Mouse on Windows](VimTXmouse)
 ### macOS local [gitolite](MacGit) server
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 

@@ -1,0 +1,8 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\<appro@fy.chalmers.se>\TXMouse]
+"AutoRaiseDelay"=dword:00000200
+"ExemptedClasses"="EXCEEDW:*;XWinClass;cygwin/x*;VNCviewer;wMFService*;UIMainClass;TSSHELLWND;MSPaintApp;Basilisk*;tty;Chrome_WidgetWin*"
+"ExemptedModules"="vmware.exe;msrdp.ocx;mstscax.ocx;wfica.ocx;"
+"RapidClickInterval"=dword:0000014d
+"TwoButtons"=dword:0
