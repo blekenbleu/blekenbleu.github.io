@@ -1,7 +1,7 @@
 ---
 title: Jekyll on Windows 10
 ---
-27 October 2018  
+4 November 2018  
 
 This was written *after* first Windows 10 installation,  
 which followed Windows 8.1 installation.  
@@ -44,18 +44,21 @@ $ du -s /bin /usr
 **GitHub Desktop** and **SmartGit** include a usable `git.exe`  
 **Git for Windows** seems redundant...   
 
-#### msys2 Bash
+#### Ruby Bash
 Ruby MINGW64 installation includes `D:\msys64\msys2_shell.cmd`  
-of which I made a shortcut named **msys2 Bash**,  
-![snapshot of msys2 Bash shortcut properties](RubyBash.gif "shortcut properties")  
+of which I made a shortcut named **Ruby Bash**,  
+![snapshot of Ruby Bash shortcut properties](RubyBash.gif "shortcut properties")  
 which launches a useful MSYS2 terminal.  
 
 **Git Bash** set `$HOME = /c/Users/bleke` and extended Windows' huge $PATH, while  
-**msys2 Bash** sets `$HOME = /home/bleke`, AKA `/d/msys64/home/bleke`,  
+**Ruby Bash** sets `$HOME = /home/bleke`, AKA `/d/msys64/home/bleke`,  
 and prunes Windows' $PATH before adding its bin/ directories.  
-Although **Git for Windows**' **Git Bash** seemed nicer than **msys2 Bash**,  
-**msys2 Bash** has more and different things on its path than did **Git Bash**  
+Although **Git for Windows**' **Git Bash** seemed nicer than **Ruby Bash**,  
+**Ruby Bash** has more and different things on its path than did **Git Bash**  
 and better isolates git / ruby / jekyll bash stuff from Windows..  
+
+**Ruby Bash** was eventually replaced by **Git Bash**
+from within [SmartGit](https://www.syntevo.com/smartgit/)   
 
 `$ gem install bundler`
 ```
@@ -504,7 +507,7 @@ echo bundle exec jekyll serve --incremental
 bundle exec jekyll serve --incremental  
 ```
 
-`$ exit`, then re-launch **msys2 Bash**
+`$ exit`, then re-launch **Ruby Bash**
 </details>
 
 ###   
@@ -928,7 +931,7 @@ Configuration file: D:/Git/blekenbleu.github.io/_config.yml
 * jekyll build `Error: invalid byte sequence in UTF-8`  
   Workaround: find offending characters to be editted out:    
   `$ grep -axv '.*' badfile.md | less`
-* In msys2 Bash window, Ctrl+C to `bundle exec jekyll serve` does NOT stop port 4000 service  
+* In Ruby Bash window, Ctrl+C to `bundle exec jekyll serve` does NOT stop port 4000 service  
   It does allows window reuse for other purposes...
   Workaround:
   To kill HTTP service:

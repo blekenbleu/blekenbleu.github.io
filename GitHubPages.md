@@ -5,38 +5,46 @@ title: Jekyll on Windows 8.1
 
 # [GitHub Pages](https://pages.github.com/) - too good to be true (really)
 
-  Following [seemingly current GitHub documentation](https://jekyllrb.com/docs/installation/windows/)
+  Following [seemingly current **GitHub** documentation](https://jekyllrb.com/docs/installation/windows/)
  was for me doomed,
   provoking many false moves that needed undoing.
 
 *Warning:*  I *think* **this** sequence is more nearly correct,
 but is untested..
 
-Debugging Jekyll page generation failures wants
-a local PC copy of GitHub repository source
-that eventually becomes GitHub Pages,  
-and `jekyll new` insists on creating that GitHub Pages repository directory;
-it may be simpler to configure using Jekyll on a local PC *first*.
+Debugging **Jekyll** page generation failures wants
+a local PC copy of **GitHub** repository source
+that eventually becomes **GitHub** Pages,  
+and `jekyll new` insists on creating that **GitHub** Pages repository directory;
+it may be simpler to configure using **Jekyll** on a local PC *first*.
 
-Note: Jekyll is *NOT* separately installed; it gets installed using Ruby.   
-Configuring `'github-pages'` in Gemfile enables GitHub Pages builds using `bundle exec jekyll build`  
+Note: **Jekyll** is *NOT* separately installed; it gets installed using **Ruby**.   
+Configuring `'github-pages'` in Gemfile enables **GitHub Pages** builds using `bundle exec jekyll build`  
 and previewing pages locally using `bundle exec jekyll serve`.
 
 ## Optionally install [Git for Windows](https://gitforwindows.org/)
-... which uses MINGW64 for Git Bash.  
+... which uses MINGW64 for **Git Bash**.  
 Usefull `git.exe` and
 Bash terminals are also available in **SmartGit** and Ruby's `msys64` folder.  
 **Git for Windows**' Bash shell `$PATH` is unnecessarily cluttered.
 
 ### Install [Ruby](https://rubyinstaller.org/downloads/) **with** Dev toolchain
-Many folks recommend using `rbenv` or `rvm` to install and configure Ruby, but my intention is to *not change versions* once Jekyll works satisfactorily.
+Many folks recommend using `rbenv` or `rvm` to install and configure Ruby,
+but my intention is to *not change versions* once **Jekyll** works satisfactorily.  
 [GitHub documentation](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
-was unclear, but `"MSYS2 is required to install gems with C extensions"`  
+was unclear, but **Jekyll** [depends on nokogiri](https://pages.github.com/versions/), which has C extensions,
+and `"MSYS2 is required to install gems with C extensions"`  
 Pressed `Enter` for options 1,2,3; provoking many, many messages,  
 including a final prompt that seemingly wanted to start over...??!!
 
+FWIW, [this page](http://www.nokogiri.org/tutorials/installing_nokogiri.html) suggest that pre-compiled nokogiri binary
+should be available..  
+In which case, it may be possible to install a minimal **Ruby** *without* MSYS2 DevKit by downloading and selectively extracting from
+a [7-ZIP ARCHIVE](https://rubyinstaller.org/downloads/).  
+Since compiling embedded firmware is essential to the eventual goal, a massive MINGW64 is probably needed anyway...   
+
 ### Invoke commands from some Bash shell
-Bash shell available in GitHub Desktop, SmartGit, and/or Ruby
+Bash shell available in **GitHub Desktop**, **SmartGit**, and/or **Ruby**
 
 ### Launch Ruby's msys64\msys2_shell.cmd
 ```
@@ -52,7 +60,7 @@ They will never be overwritten nor automatically updated.
 './.profile' -> '/home/bleke/.profile'
 ```
 #### Generate a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
-This is wanted for local Jekyll as well as **GitHub Desktop** and/or **SmartGit**
+This is wanted for local **Jekyll** as well as **GitHub Desktop** and/or **SmartGit**
 ##### set Jekyll's environmental variable:
 Added to `~/.bash_profile` :
 ```
@@ -69,7 +77,7 @@ if [ -d /g/GitHub/blekenbleu.github.io ] ; then
   alias g="cd /g/GitHub/blekenbleu.github.io"
 fi
 alias serve="~/bin/serve"
-# Ctrl+C leaves Jekyll server running..!
+# Ctrl+C leaves **Jekyll** server running..!
 alias unserve="taskkill //IM ruby.exe //F"
 ```
 `$ cat $HOME/bin/serve`
@@ -83,7 +91,7 @@ bundle exec jekyll serve --incremental
 
 `$ ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'`   
 `$ gem update --system`  
-#### create a simple Jekyll test folder
+#### create a simple **Jekyll** test folder
 `$ cd /g/GitHub`   
 `$ jekyll new blekenbleu.github.io`
 
@@ -161,7 +169,7 @@ Configuration file: D:/GitHub/blekenbleu.github.io/_config.yml
 ```
 #### Browse to [http://localhost:4000](http://localhost:4000) to review results
 
-### Modify simple folder for GitHub Pages
+### Modify simple folder for **GitHub Pages**
 `$ cd /e/blekenbleu.github.io`  
 `$ cat _config.yml`   
 ```
@@ -171,7 +179,7 @@ Configuration file: D:/GitHub/blekenbleu.github.io/_config.yml
 ```
 {% include_relative Gemfile %}
 ```
-#### Install gems to support GitHub Pages
+#### Install gems to support **GitHub Pages**
 `$ bundle install`
 - NOTHING reported for a very long time..
 then failed:
@@ -307,6 +315,6 @@ are not recognized instantly, but fairly soon...
       that "Welcome" prompts were initially missed..
 - [Clone a repository refuses to clone into an existing directory]
 - Git "setup" (email) instruction is redundant
-It took awhile (hours?) for GitHub Desktop to first sync with github.com repository...
+It took awhile (hours?) for **GitHub Desktop** to first sync with github.com repository...
 
-### Commit your *working* GitHub Page[s] to master and Push to GitHub
+### Commit your *working* **GitHub Page**[s] to master and Push to **GitHub**
