@@ -36,10 +36,15 @@ From a user interface perspective,
 The concept of a window manager saving and restoring the state and location of all client windows between logout and login by default seems to have been lost,  
   along with **X11 mouse behavior**.   
 X11 mouse behavior can still be at least approximated, at least on **Windows**.  
+
 Given  Apple's [Aqua](https://en.wikipedia.org/wiki/Aqua_(user_interface)) [Desktop](https://support.apple.com/en-us/HT201956) with *detached top menu bars*,  
-X mouse focus-follows-cursor is probably counterproductive,  
-but [may still be configurable](https://stackoverflow.com/questions/98310/focus-follows-mouse-plus-auto-raise-on-mac-os-x) for some apps, e.g. Terminal and [iTerm2](https://iterm2.com/documentation-highlights.html). One the other hand,  
-**X mouse copy/paste for macOS** is useful and [not too hard to implement](https://github.com/blekenbleu/macXcopy). 
+X mouse focus-follows-cursor is probably counterproductive in **macOS**,  
+but see [dwell](http://xahlee.info/kbd/macos_hover_switch_window.html) and [Creating Panels for Switch Control and Dwell Control](https://mcmw.abilitynet.org.uk/macos-1013-high-sierra-creating-panels-switch-control-and-dwell-control).  
+Focus-follows-mouse [may still be configurable](https://stackoverflow.com/questions/98310/focus-follows-mouse-plus-auto-raise-on-mac-os-x)
+for some macOS apps,  
+e.g. Terminal and [iTerm2](https://iterm2.com/documentation-highlights.html), but not **MacVim**.  
+One the other hand, **X mouse copy/paste for macOS** *is* useful  
+and [was not too hard to implement](https://github.com/blekenbleu/macXcopy). 
 
 ### X mouse and Windows
 **Gvim 8.1 installation**
