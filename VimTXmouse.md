@@ -37,6 +37,7 @@ The concept of a window manager saving and restoring the state and location of a
   along with **X11 mouse behavior**.   
 X11 mouse behavior can still be at least approximated, at least on **Windows**.  
 
+### X mouse and macOS
 Given  Apple's [Aqua](https://en.wikipedia.org/wiki/Aqua_(user_interface)) [Desktop](https://support.apple.com/en-us/HT201956) with *detached top menu bars*,  
 X mouse focus-follows-cursor is probably counterproductive in **macOS**,  
 but see [dwell](http://xahlee.info/kbd/macos_hover_switch_window.html) and [Creating Panels for Switch Control and Dwell Control](https://mcmw.abilitynet.org.uk/macos-1013-high-sierra-creating-panels-switch-control-and-dwell-control).  
