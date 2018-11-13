@@ -43,6 +43,8 @@ but wants [focus-follows-pointer](https://en.wikipedia.org/wiki/Focus_(computing
 Given Apple's [Aqua](https://en.wikipedia.org/wiki/Aqua_(user_interface)) [Desktop](https://support.apple.com/en-us/HT201956) with *detached top menu bars*,  
 X mouse autoraise is [unpopular](http://steve-yegge.blogspot.com/2008/04/settling-osx-focus-follows-mouse-debate.html),  
 but see [dwell](http://xahlee.info/kbd/macos_hover_switch_window.html) and [Creating Panels for Switch Control and Dwell Control](https://mcmw.abilitynet.org.uk/macos-1013-high-sierra-creating-panels-switch-control-and-dwell-control).  
+In my experience, while Accessibility Keyboard nicely implements autoraise among windows,  
+it also simulates left-button for any GUI elements over which the pointer hovers.
 
 ### X mouse and Windows
 **Gvim 8.1 installation**
