@@ -30,6 +30,7 @@
    Suggested procedures [for disabling IPv6](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
 
 ### [Vim and X-Mouse](VimTXmouse)
+### [Installing Git-Cola from MacPorts](GitColaMacPorts)
 ### macOS local [gitolite](MacGit) server
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 
