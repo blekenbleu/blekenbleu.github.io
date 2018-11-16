@@ -10,8 +10,9 @@ title: Install Git_Cola using MacPorts
 **SmartGit** is scary for poor/missing documentation,  
 e.g. merging  
 
-`$ sudo port selfupdate`  
-`$ sudo port install git-cola`
+#### 6 steps
+1. `$ sudo port selfupdate`  
+   `$ sudo port install git-cola`
 ```
 git-cola has the following notes:
     If you want to use bash-completion for git-cola,
@@ -47,17 +48,17 @@ git-cola has the following notes:
 .. that launches a Python GUI,  
    which cannot be usefully added to the Dock
 
-### [Instructions for installing git-cola.app](https://github.com/git-cola/git-cola)
+##### [Instructions for installing git-cola.app](https://github.com/git-cola/git-cola)
 ... modified to work with **MacPorts** git-cola:
 
-`$ sudo port install py36-pyside`
+2. `$ sudo port install py36-pyside`
 ```
 The following dependencies will be installed:
  py36-shiboken
  sparsehash
 Continue? [Y/n]:
 ```
-`$ sudo port select --set sphinx py36-sphinx`
+3. `$ sudo port select --set sphinx py36-sphinx`
 ```
 Password:
 Selecting 'py36-sphinx' for 'sphinx' succeeded. 'py36-sphinx' is now active.
@@ -67,15 +68,14 @@ Selecting 'py36-sphinx' for 'sphinx' succeeded. 'py36-sphinx' is now active.
 /opt/local/bin/sphinx-build
 ```
 
-1. Clone git-cola:  
+4. Clone git-cola:  
 `git clone git://github.com/git-cola/git-cola.git && cd git-cola`
 
-2. Build the git-cola.app application bundle:  
+5. Build the git-cola.app application bundle:  
 `make PYTHON=/opt/local/bin/python3.6 \
     PYTHON_CONFIG=/opt/local/bin/python3.6-config \
     SPHINXBUILD=/opt/local/bin/sphinx-build git-cola.app`
 
-3. Copy it to Applications  
+6. Copy it to Applications  
 `cp -r git-cola.app ~/Applications`
-
 
