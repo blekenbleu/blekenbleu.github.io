@@ -255,7 +255,7 @@ You need to be coming from a powered off state
 while holding the reset button 10-15 sec.  
 ![snapshot of CFE miniWeb Server](https://www.linksysinfo.org/proxy.php?image=http%3A%2F%2Fprikachi.com%2Fimages%2F756%2F9286756S.jpg&hash=bfbc6fddce76f8c839966f62073fd7eb "Upload")
 - click `Restore default NVRAM values`
-- `[Browse]` to `freshtomato-EA6500v2-ARM-2018.4-AIO-64K`
+- `[Browse]` to `freshtomato-EA6500v2-ARM-2018.4-AIO-64K.trx`
 - `[Upload]`
 - Flash can take up to five minutes;  
   check `ping 192.168.1.1` for ttl=64 to see if it's done.
