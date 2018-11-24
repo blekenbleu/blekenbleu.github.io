@@ -31,6 +31,7 @@
 
 ### [Vim and X-Mouse](VimTXmouse)
 ### [Installing Git-Cola from MacPorts](GitColaMacPorts)
+### [FreshTomato and Linksys EA6500v2](FreshTomato)
 ### macOS local [gitolite](MacGit) server
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 
