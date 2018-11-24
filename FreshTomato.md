@@ -88,8 +88,8 @@ most</a> significant <a href="https://en.wikipedia.org/wiki/Comparison_of_router
 <br>
 <br>I <a href="https://www.amazon.com/gp/product/B008I21EA2">purchased</a> mine in 2014,
 would now get a refurbished <a href="https://www.amazon.com/dp/B00EXK14S0">EA6900</a>
-<br>IMO, an EA6900 has hardware as good as many $150 routers, but available for < $40
-used or refurbished.
+<br>IMO, an EA6900 has hardware as good as many $150 routers, 
+<br> but available for < $40 used or refurbished.
 <br>Buying used cuts prices and avoids early life failures.
 <br>Replacing problematic Linksys firmware with FreshTomato should make an EA6900 equivalent to
 NETGEAR's <a href="https://www.google.com/search?q=EA6900+vs+R7000&pcmp=f">more popular and expensive Nighthawk R7000</a> running nearly <a href="https://www.linksysinfo.org/index.php?threads/fork-freshtomato-arm.74117/page-13#post-300517">identical firmware</a>.
@@ -124,7 +124,9 @@ Instructions <a href="https://www.linksysinfo.org/index.php?threads/guide-flash-
 since they focus on problematic tftp recovery, which should be unnecessary.
 
 ### Step 1
-Download
+- Download FreshTomato firmware from  
+  [https://exotic.se/freshtomato-arm/v2018/2018.4/](https://exotic.se/freshtomato-arm/v2018/2018.4/)  
+- Download
 <a href="https://my.pcloud.com/publink/show?code=kZUbB87Zm3YFpS5jm17pxlLl49R2b5lXvYQV">EA6500v2 CFE Flash</a> kit, which requires <a href="https://www.7-zip.org/">7-Zip</a> to unpack.  
 
 ### Step 2
@@ -134,6 +136,8 @@ Routers are usually found by web browsers at [192.168.1.1](http://192.168.1.1).
 For current Linksys firmware newer than 166281, restore the previous version:  
 `login, Troubleshooting>Diagnostics>[Restore previous firmware]`  
 ![snapshot of Restore Previous Firmware](http://cache-www.linksys.com/support/images/KB24948-003_EN_v1.png "Click")
+
+That worked for me...   
 
 If the router *still* reports firmware newer than 166281, then get 166281
 <a href="http://cache-www.belkin.com/support/dl/FW_EA6500v2_1.1.40.166281_prod.img">here</a>
@@ -166,7 +170,7 @@ that CFE's HTTP bootloader will be used to install FreshTomato 2018.4
 <br>
 
 ### Step 3
-On the router,
+#### On the router,
 - goto `Troubleshooting>Diagnostics`  
 - `Factory Reset`
 ![snapshot of Troubleshooting Diagnostics ](http://screenshots.portforward.com/routers/Linksys/EA6350/Diagnostics.jpg "Reset")
@@ -251,8 +255,8 @@ which will be after the *second* time booting into FreshTomato.<br>
 
 ### Step 9
 #### Install FreshTomato by CFE Recovery Web Interface 
-You need to be coming from a powered off state  
-while holding the reset button 10-15 sec.  
+Router must be coming from powered off state  
+while depressing the red reset button for 10-15 sec.  
 ![snapshot of CFE miniWeb Server](https://www.linksysinfo.org/proxy.php?image=http%3A%2F%2Fprikachi.com%2Fimages%2F756%2F9286756S.jpg&hash=bfbc6fddce76f8c839966f62073fd7eb "Upload")
 - click `Restore default NVRAM values`
 - `[Browse]` to `freshtomato-EA6500v2-ARM-2018.4-AIO-64K.trx`
