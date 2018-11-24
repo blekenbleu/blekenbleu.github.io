@@ -120,7 +120,7 @@ and reverting to the previous release allows loading e.g. mini-dd-wrt.
 ## FreshTomato 2018.4 installation on EA6500v2
 This works only on Windows.  
 
-Instructions <a href="">here</a> are nearly accurate, but IMO confusing,  
+Instructions <a href="https://www.linksysinfo.org/index.php?threads/guide-flash-linksys-ea6300v1-ea6400-ea6500v2-ea6700-ea6900v1-0-1-1-with-tomato.73877/">here</a> are nearly accurate, but IMO confusing,  
 since they focus on problematic tftp recovery, which should be unnecessary.
 
 ### Step 1
