@@ -166,20 +166,17 @@ that CFE's HTTP bootloader will be used to install FreshTomato 2018.4
 <br>
 
 ### Step 3
-The
-<a href="https://my.pcloud.com/publink/show?code=kZUbB87Zm3YFpS5jm17pxlLl49R2b5lXvYQV">EA6500v2 CFE Flash</a>
-kit contains
-- Tools
-- `linksys_ea6500_cfe.bin`
-- `linksys_ea6500_ddwrt.bin`
-
 On the router,
 - goto `Troubleshooting>Diagnostics`  
 - `Factory Reset`
 ![snapshot of Troubleshooting Diagnostics ](http://screenshots.portforward.com/routers/Linksys/EA6350/Diagnostics.jpg "Reset")
 ### Step 4
-- [perform a manual firmware update](https://www.linksys.com/us/support-article?articleNum=138220)
- to `linksys_ea6501_ddwrt.bin`  
+#### The <a href="https://my.pcloud.com/publink/show?code=kZUbB87Zm3YFpS5jm17pxlLl49R2b5lXvYQV">EA6500v2 CFE Flash</a> kit contains
+- Tools
+- `linksys_ea6500_cfe.bin`
+- `linksys_ea6500_ddwrt.bin`
+
+#### [Perform a manual firmware update](https://www.linksys.com/us/support-article?articleNum=138220) to `linksys_ea6501_ddwrt.bin`  
 - click OK for reboot
 - takes awhile; I waited ~20 minutes (lunch break)  
 ### Step 5
@@ -189,11 +186,11 @@ On the router,
 - click `Services`
 - enable `Secure Shell` `SSHd`
 ### Step 6
-This custom CFE has relatively few customizable parameters, based on:
+#### This custom CFE has relatively few customizable parameters, based on:
 - MAC Address (found on the bottom of the router)
 - WPS Password (found on the bottom of the router)  
 
-On the PC,
+#### On the PC,
 - `Tools\CFEEdit.exe`
 - Open `linksys_ea6500_cfe.bin`  
 - find and set
@@ -205,7 +202,7 @@ On the PC,
 - Save As `new-cfe.bin`
 - Exit
 ### Step 7
-Copy original CFE to Windows PC and copy custom CFE to router  
+#### Copy original CFE to Windows PC and copy custom CFE to router  
 - browse to [`http://192.168.1.1/backup/cfe.bin`](http://192.168.1.1/backup/cfe.bin)
   and save this orignal Linksys CFE somewhere memorable, in case you ever want to
   restore Linksys firmware..
@@ -220,7 +217,7 @@ Copy original CFE to Windows PC and copy custom CFE to router
 - drag `new-cfe.bin` from left pane to right
 - Close WinSCP
 ### Step 8
-Flash this custom CFE  
+#### Flash this custom CFE  
 - `Tools\putty.exe`
   Host name: 192.168.1.1  
   Port: 22  
@@ -253,25 +250,27 @@ which will be after the *second* time booting into FreshTomato.<br>
 <br>
 
 ### Step 9
-Install FreshTomato by CFE Recovery Web Interface 
-
-You need to be coming from a powered off state while holding the reset button 10-15 sec.
+#### Install FreshTomato by CFE Recovery Web Interface 
+You need to be coming from a powered off state  
+while holding the reset button 10-15 sec.  
 ![snapshot of CFE miniWeb Server](https://www.linksysinfo.org/proxy.php?image=http%3A%2F%2Fprikachi.com%2Fimages%2F756%2F9286756S.jpg&hash=bfbc6fddce76f8c839966f62073fd7eb "Upload")
 - click `Restore default NVRAM values`
-- `[Browse]` to ``
+- `[Browse]` to `freshtomato-EA6500v2-ARM-2018.4-AIO-64K`
 - `[Upload]`
-- Flash can take up to five minutes;  check `ping 192.168.1.1` for ttl=64 to see if it's done.
+- Flash can take up to five minutes;  
+  check `ping 192.168.1.1` for ttl=64 to see if it's done.
 
 ### Step 10
-reset NVRAM
+#### reset NVRAM
 - power off router
 - press blue WPS button while powering on the router,
-- continue holding WPS until the Linksys logo starts to flash or 15-20 seconds
+- continue holding WPS until the Linksys logo starts flashing -or- 15-20 seconds
 - browse to [192.168.1.1](http://192.168.1.1)
-- Administration > Configuration > Restore Default Configuration > `Erase all data in NVRAM memory (thorough)`
+- Administration > Configuration > Restore Default Configuration >  
+  `Erase all data in NVRAM memory (thorough)`
 ### Step 11
-Configure and deploy FreshTomato
-- Reboot router  
+#### Configure and deploy FreshTomato
+- First, `reboot router`  
 ### Usage Documentation
 - [FreshTomato-ARM @ LinksysInfo.org](https://www.linksysinfo.org/index.php?threads/fork-freshtomato-arm.74117/)  
 - [Using QOS - Tutorial and discussion](https://www.linksysinfo.org/index.php?threads/using-qos-tutorial-and-discussion.28349/)  
