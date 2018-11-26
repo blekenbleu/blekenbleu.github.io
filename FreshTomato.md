@@ -324,14 +324,13 @@ while depressing the red reset button for 10-15 sec.
 - First, `reboot router`  
 
 <details>
-<summary>click for Wireless Ethernet Bridge configuration</summary>
+<summary>click for <code>Wireless Ethernet Bridge</code> configuration</summary>
 <br>
 Tomato routers offer
 <a href="https://learntomato.com/category/wireless-bridge/">various wireless bridge modes</a>, such as:<br>
 Wireless Client Bridge, Wireless Ethernet Bridge, and<br>
  WDS (Wireless Distribution System).<br>
 <br>
-WDS = Wireless Distribution System<br>
 <a href="https://learntomato.com/setup-wireless-repeater-wds-bridge-tomato/">WDS
 requires compatible support at both ends</a>;<br>
 Sagemcom 5260 manual does not mention WDS..<br>
@@ -365,15 +364,17 @@ with the Shared Key appropriate for that SSID.<br>
 Perhaps should have also changed EA6500v2 IP address?<br>
 New address 192.68.1.68 was assigned by MySpectrumWiFib4-5G DHCP;<br>
 can ping it at 192.68.1.68, but cannot login by web or putty SSH.<br>
-YouTube video works; Speakeasy shows great speed<br>
+YouTube video streams fine; Speakeasy shows great speed<br>
 as does http://www.dslreports.com/speedtest?<br>
 
 <h4><a href="http://tomato.groov.pl/download/K26ARM/132/">Tomato 132 for EA6500v2</a></h4>
-<code>Wireless client mode</code> was broken in Tomato after release 132, which is before FreshTomato<br>
+<code>Wireless client mode</code> was broken after release 132, which preceded FreshTomato<br>
 
 <h4>Original Tomato <a href="https://learntomato.com/setup-wireless-ethernet-bridge-on-tomato-router/">Wireless Ethernet Bridge</a> setup</h4>
-<h4><a ref="https://www.linksysinfo.org/index.php?threads/solved-see-post-12-isolated-guest-wifi-on-wireless-ethernet-bridge-how-to.74357/">Wireless
-Ethernet Bridge works on AdvancedTomato</a></h4>
+
+<h4>
+<a href="https://www.linksysinfo.org/index.php?threads/solved-see-post-12-isolated-guest-wifi-on-wireless-ethernet-bridge-how-to.74357/">Wireless
+Ethernet Bridge on AdvancedTomato</a></h4>
 
 <h4>i<a href="https://wiki.dd-wrt.com/wiki/index.php/Repeating_Mode_Comparisons">DD-WRT's unhelpful table</a></h4>
 
