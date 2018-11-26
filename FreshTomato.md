@@ -1,7 +1,7 @@
 ---
 title: FreshTomato, Linksys EA6500v2 and the Internet
 ---
-24 November 2018
+26 November 2018
 
 ### Background
 
@@ -20,14 +20,17 @@ more accurately gateways</a>.
 </ul>
 So-called home routers (AKA wireless routers) are a particular kind of gateway,
 in that home LAN devices could at least in theory attach directly to the Internet, since they implement <a href="https://en.wikipedia.org/wiki/Internet_protocol_suite">Internet protocols</a>
-<br>Additionally, wireless routers <a href="https://en.wikipedia.org/wiki/Bridging_(networking)">bridge</a> Wi-Fi nodes to e.g. <a href="https://en.wikipedia.org/wiki/Ethernet_over_twisted_pair">CAT5 ethernet nodes</a>,
+<br>Additionally, wireless routers <a href="https://en.wikipedia.org/wiki/Bridging_(networking)">bridge</a> Wi-Fi nodes to e.g. switched <a href="https://en.wikipedia.org/wiki/Ethernet_over_twisted_pair">CAT5/6 ethernet nodes</a>,
 so that an iPad using Wi-Fi can discover and communicate with other LAN nodes without distinguishing between radio and twisted wire connections.
 <ul compact>
 <li>Few home network devices are robust against Internet malware exploits.
 <li>Some important home router features:
 <ul compact>
+<li>firewall and <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a>
 <li>relatively frequent updates to address new exploits
-<li><a href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4500/12-2/25ew/configuration/guide/conf/vlans.html">VLAN</a> and <a href="https://www.lifewire.com/definition-of-dynamic-dns-816294">DDNS</a><br>
+<li><a href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4500/12-2/25ew/configuration/guide/conf/vlans.html">VLAN</a>,
+ <a ref="http://www.tech-faq.com/the-vpn-gateway.html">VPN</a>
+ and <a href="https://www.lifewire.com/definition-of-dynamic-dns-816294">DDNS</a><br>
 These can help secure privacy (e.g., block ISP monetizing your Internet habits)
 and login to your home PC from away.
 <li><a href="https://en.wikipedia.org/wiki/Dnsmasq">Dnsmasq</a><br>
@@ -76,7 +79,48 @@ most</a> significant <a href="https://en.wikipedia.org/wiki/Comparison_of_router
 </details>
 
 <details>
-<summary>click for Linksys EA6500v2 vs Sagemcom F@st 5260</summary>
+<summary>click for FreshTomato-ARM <b>AIO</b> vs <b>VPN</b> builds; Entware </summary>
+<br>
+Shibby Tomato K26ARM builds include EA6500-6900<br>
+<em> (K26ARM7 applied only to R8000 and Asus RT-AC3200)</em><br>
+<br>
+For clear definition of AIO vs VPN; go to
+<a href="https://bitbucket.org/kille72/freshtomato-arm/src">source</a>:
+<code>shibby-arm</code> branch for <code>release/src-rt-6.x.4708/Makefile </code><br>
+Comparing Makefile <code>VPN</code> and <code>AIO</code> target line items sorted,<br>
+<br>
+VPN has no unique options<br>
+AIO has additional options:<br>
+<em>Comments from http://tomato.groov.pl/?page_id=78</em><br>
+<br>
+  <code>BTCLIENT=y</code>  # BlueTooth?<br>
+  <code>TR_EXTRAS=y</code> # transmission-remote tool[s]..?<br>
+  <code>DNSCRYPT=y</code>  # user selectable/manual DNS<br>
+  <code>STUBBY=y</code>       # DNS-over-TLS resolver<br>
+  <code>UPS=y</code>  &nbsp      # UPS presumably by USB<br>
+  <code>TINC=y</code> &nbsp      # Tunneling VPN daemon<br>
+  <code>NFS=y</code>  &nbsp      # NFS fileserver<br>
+  <code>NANO=y</code> &nbsp    # text editor<br>
+  <code>TOR=y</code>  &nbsp      # Bittorrent?<br>
+  <code>NGINX=y</code>         # webserver?<br>
+  <code>IPERF=y</code>         # network utilities - available separately for
+<a href="https://www.linksysinfo.org/index.php?threads/tomato-arm-utilities-tcpdump-iperf-rsync.70648/">TomatoUSB from Entware</a>
+<br>
+<br>In theory, mount a flash drive on the USB port and
+<a href="https://github.com/Entware/Entware/wiki/Install-on-the-TomatoUSB">install Entware there</a><br>
+"the FreshTomato project gives native support to ENTWARE"<br>
+<a href="https://www.linksysinfo.org/index.php?threads/fork-freshtomato-arm.74117/#post-296337">How To</a> &nbsp - &nbsp
+<a href="https://www.linksysinfo.org/index.php?threads/fork-freshtomato-arm.74117/page-7#post-298255">more forum support</a> -
+<a href="https://www.linksysinfo.org/index.php?threads/mips-repo-entware-backports-entware-ng-reloaded.74337/">
+.. but that was before entware-ng went away</a><br><br>
+<h4>
+<a href="https://repology.org/metapackages/?inrepo=entware&newest=1">Repology Metapackages in Entware</a></h4>
+<br>
+
+</details>
+
+<details>
+<summary>click for Sagemcom F@st 5260 vs Linksys EA6500v2 vs EA6700 </summary>
 <br>
 <ul compact>
 <li>Bundled by Spectrum, who control <a href="https://wikidevi.com/wiki/Sagemcom_F@ST_5250">F@st 5260</a> firmware,
@@ -87,12 +131,15 @@ most</a> significant <a href="https://en.wikipedia.org/wiki/Comparison_of_router
 <br>Available in two versions, <a href="https://www.amazon.com/dp/B008I21EA2">v2</a> is equivalent to the <a href="https://www.amazon.com/dp/B07DTL1QPK">Linksys EA6700</a>
 <br>
 <br>I <a href="https://www.amazon.com/gp/product/B008I21EA2">purchased</a> mine in 2014,
-would now get a refurbished <a href="https://www.amazon.com/dp/B00EXK14S0">EA6900</a>
-<br>IMO, an EA6900 has hardware as good as many $150 routers, 
-<br> but available for < $40 used or refurbished.
+would now get a refurbished <a href="https://www.amazon.com/dp/B07DTL1QPK">EA6700</a>.
+<br>IMO, an EA6700 has hardware nearly as good as many $150 routers, 
+<br> but available for < $40 used or refurbished.  Linksys rates their EA6900
+<br>faster <a href="https://www.linksys.com/us/support-article?articleNum=138794">only on 2.4 GHz</a> and has overheating issues
+<br> that would be mitigated by vertical mounting. 
 <br>Buying used cuts prices and avoids early life failures.
 <br>Replacing problematic Linksys firmware with FreshTomato should make an EA6900 equivalent to
-NETGEAR's <a href="https://www.google.com/search?q=EA6900+vs+R7000&pcmp=f">more popular and expensive Nighthawk R7000</a> running nearly <a href="https://www.linksysinfo.org/index.php?threads/fork-freshtomato-arm.74117/page-13#post-300517">identical firmware</a>.
+NETGEAR's <a href="https://www.google.com/search?q=EA6900+vs+R7000&pcmp=f">more popular and expensive Nighthawk R7000</a> running nearly
+<a href="https://www.linksysinfo.org/index.php?threads/fork-freshtomato-arm.74117/page-13#post-300517">identical firmware</a>.
 </ul>
 
 </details>
@@ -180,17 +227,17 @@ that CFE's HTTP bootloader will be used to install FreshTomato 2018.4
 - `linksys_ea6500_cfe.bin`
 - `linksys_ea6500_ddwrt.bin`
 
-#### [Perform a manual firmware update](https://www.linksys.com/us/support-article?articleNum=138220) to `linksys_ea6501_ddwrt.bin`  
+#### [Perform a manual firmware update](https://www.linksys.com/us/support-article?articleNum=138220) to `linksys_ea6500_ddwrt.bin`  
 - click OK for reboot
 - takes awhile; I waited ~20 minutes (lunch break)  
 ### Step 5
 - Power off/on - rebooted to dd-wrt 
-![snapshot of dd-wrt](https://www.linksysinfo.org/proxy.php?image=http%3A%2F%2Fprikachi.com%2Fimages%2F740%2F9286740D.jpg&hash=2a5617f9d0ef884572a598c69910ede0 "Change Password")
+![snapshot of dd-wrt](dd_wrt_password.gif "Change Password")
 - Set userid/password to admin admin admin
 - click `Services`
 - enable `Secure Shell` `SSHd`
 ### Step 6
-#### This custom CFE has relatively few customizable parameters, based on:
+#### New CFE has relatively few customizable parameters, based on:
 - MAC Address (found on the bottom of the router)
 - WPS Password (found on the bottom of the router)  
 
@@ -207,9 +254,9 @@ that CFE's HTTP bootloader will be used to install FreshTomato 2018.4
 - Exit
 ### Step 7
 #### Copy original CFE to Windows PC and copy custom CFE to router  
-- browse to [`http://192.168.1.1/backup/cfe.bin`](http://192.168.1.1/backup/cfe.bin)
-  and save this orignal Linksys CFE somewhere memorable, in case you ever want to
-  restore Linksys firmware..
+- browse to [`http://192.168.1.1/backup/cfe.bin`](http://192.168.1.1/backup/cfe.bin)  
+  and save this orignal Linksys CFE somewhere memorable,  
+  in case you ever want to restore Linksys firmware..
 - launch `Tools\WinSCP-5.9.6-Portable\WinSCP.exe`  
   Host name: 192.168.1.1  
   Port: 22  
@@ -222,7 +269,7 @@ that CFE's HTTP bootloader will be used to install FreshTomato 2018.4
 - Close WinSCP
 ### Step 8
 #### Flash this custom CFE  
-- `Tools\putty.exe`
+- `Tools\putty.exe`  
   Host name: 192.168.1.1  
   Port: 22  
   Connection type: SSH  
@@ -246,7 +293,7 @@ where previously valid data for old could crash new firmware,<br>
 not to mention whatever is in the 32K<br>
 that was not previously considered NVRAM.<br>
 Consequently, take every opportunity to clear NVRAM<br>
-until beginning FreshTomato configuration,<br>
+until tweaking FreshTomato settings,<br>
 which will be after the *second* time booting into FreshTomato.<br>
 
 </details>
@@ -273,8 +320,15 @@ while depressing the red reset button for 10-15 sec.
 - Administration > Configuration > Restore Default Configuration >  
   `Erase all data in NVRAM memory (thorough)`
 ### Step 11
-#### Configure and deploy FreshTomato
+#### Tweak and deploy FreshTomato
 - First, `reboot router`  
+
+<details>
+<summary>click for Wireless Ethernet Bridge configuration</summary>
+<br>
+
+</details>
+
 ### Usage Documentation
 - [FreshTomato-ARM @ LinksysInfo.org](https://www.linksysinfo.org/index.php?threads/fork-freshtomato-arm.74117/)  
 - [Using QOS - Tutorial and discussion](https://www.linksysinfo.org/index.php?threads/using-qos-tutorial-and-discussion.28349/)  
