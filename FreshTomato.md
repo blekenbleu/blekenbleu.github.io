@@ -79,7 +79,7 @@ most</a> significant <a href="https://en.wikipedia.org/wiki/Comparison_of_router
 </details>
 
 <details>
-<summary>click for FreshTomato-ARM <b>AIO</b> vs <b>VPN</b> builds; Entware </summary>
+<summary>click for FreshTomato-ARM <code>AIO</code> vs <code>VPN</code> builds; Entware </summary>
 <br>
 Shibby Tomato K26ARM builds include EA6500-6900<br>
 <em> (K26ARM7 applied only to R8000 and Asus RT-AC3200)</em><br>
@@ -304,7 +304,7 @@ which will be after the *second* time booting into FreshTomato.<br>
 #### Install FreshTomato by CFE Recovery Web Interface 
 Router must be coming from powered off state  
 while depressing the red reset button for 10-15 sec.  
-![snapshot of CFE miniWeb Server](https://www.linksysinfo.org/proxy.php?image=http%3A%2F%2Fprikachi.com%2Fimages%2F756%2F9286756S.jpg&hash=bfbc6fddce76f8c839966f62073fd7eb "Upload")
+![snapshot of CFE miniWeb Server](cfe_miniweb_server.jpg "Upload")
 - click `Restore default NVRAM values`
 - `[Browse]` to `freshtomato-EA6500v2-ARM-2018.4-AIO-64K.trx`
 - `[Upload]`
@@ -326,8 +326,59 @@ while depressing the red reset button for 10-15 sec.
 <details>
 <summary>click for Wireless Ethernet Bridge configuration</summary>
 <br>
+Tomato routers offer
+<a href="https://learntomato.com/category/wireless-bridge/">various wireless bridge modes</a>, such as:<br>
+Wireless Client Bridge, Wireless Ethernet Bridge, and<br>
+ WDS (Wireless Distribution System).<br>
+<br>
+WDS = Wireless Distribution System<br>
+<a href="https://learntomato.com/setup-wireless-repeater-wds-bridge-tomato/">WDS
+requires compatible support at both ends</a>;<br>
+Sagemcom 5260 manual does not mention WDS..<br>
+<br>
+<a href="https://learntomato.com/category/wireless-bridge/">Wireless Client Bridge mode</a>
+ puts clients on a different subnet.<br>
+FreshTomato owner declared <code>wireless client bridge mode</code> broken by <code>multi-wan</code><br>
+<br>
+<h4>Wireless Ethernet Bridge is <em>different</em></h4>
+* wireless ethernet bridge should transparantly bridge ethernet ports to Wi-Fi gateway<br>
+<br>
+FWIW, Wireless Client Mode is a WAN Setting in FreshTomato:<br>
+<img src="FreshTomatoBasicB4bridge.gif">
+<br clear=all>
+Relevant entry from tools-survey:<br><code>
+My5G  B8:EE:0E:BD:F2:BB -70 dBm 50% ch 155 5 GHz 80 MHz WPA2-Personal AES 11ac</code>
+<br>
+
+<code>basic-network.asp</code> shows 
+<code>Enable Wireless</code> unchecked for 2.4 GHz/ eth1<br>
+.. but is otherwise default.<br>
+Both eth1 and eth2 were Access Point mode;<br>
+5 Ghz/eth2 was 40 MHz Channel Width<br>
+<br>
+Changed eth2 to:<br>
+Wireless Ethernet Bridge (from Access Point)<br>
+My5G (from Tomato50)<br>
+80 MHz (from 40)<br>
+with the Shared Key appropriate for that SSID.<br>
+<br>
+Perhaps should have also changed EA6500v2 IP address?<br>
+New address 192.68.1.68 was assigned by MySpectrumWiFib4-5G DHCP;<br>
+can ping it at 192.68.1.68, but cannot login by web or putty SSH.<br>
+YouTube video works; Speakeasy shows great speed<br>
+as does http://www.dslreports.com/speedtest?<br>
+
+<h4><a href="http://tomato.groov.pl/download/K26ARM/132/">Tomato 132 for EA6500v2</a></h4>
+<code>Wireless client mode</code> was broken in Tomato after release 132, which is before FreshTomato<br>
+
+<h4>Original Tomato <a href="https://learntomato.com/setup-wireless-ethernet-bridge-on-tomato-router/">Wireless Ethernet Bridge</a> setup</h4>
+<h4><a ref="https://www.linksysinfo.org/index.php?threads/solved-see-post-12-isolated-guest-wifi-on-wireless-ethernet-bridge-how-to.74357/">Wireless
+Ethernet Bridge works on AdvancedTomato</a></h4>
+
+<h4>i<a href="https://wiki.dd-wrt.com/wiki/index.php/Repeating_Mode_Comparisons">DD-WRT's unhelpful table</a></h4>
 
 </details>
+<br>
 
 ### Usage Documentation
 - [FreshTomato-ARM @ LinksysInfo.org](https://www.linksysinfo.org/index.php?threads/fork-freshtomato-arm.74117/)  
