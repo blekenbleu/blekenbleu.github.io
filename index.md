@@ -8,6 +8,7 @@
 - [ESP8266](pedals/ESP8266)
 
 ### [WeMos D1 UNO R1 ESP8266](ESPDuino)
+- [VJoySerialFeeder and mi-360](Arduino/VJoySerialFeeder)
 - [ESP8266 Arduino IDE Alternative: Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
 
 ## GitHub Pages Jekyll Installation How-To
