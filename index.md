@@ -3,15 +3,15 @@
 - [Special Error Diffusion](ImageProcessing/sped.html)
 - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 
-### USB-attached Logitech G29 pedals
-- [STM32](pedals/STM32) - programmable USB can be configured as (HID) gamepad
+## USB-attached Logitech G29 pedals
+- [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
 - [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
-  - **WeMos D1 UNO R1** AKA *ESPDuino* [background information](ESPDuino)
+  - **WeMos D1 UNO R1** AKA *ESPDuino* [background information](Arduino/ESPDuino)
     - functionally similar to [$3 D1 mini](https://www.ebay.com/p/2232496538) and  
  [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU) - ([3 versions](https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/));
   $5 @ [Amazon](https://www.amazon.com/dp/B07F61FG7V),
   $2 @ [eBay](https://www.ebay.com/itm/192777702474)
-  - [Serial-Lab](SerialLab)
+  - [Serial-Lab](Windows/SerialLab) *fork already working with D1 UNO ESP8266*
   - [VJoySerialFeeder](Arduino/VJoySerialFeeder) *least obsolete COM->HID filter*
   - [mi-360](Arduino/mi360) *HID Xiaomi Gamepad -> Xbox360 filter*
   - ESP8266 Arduino IDE Alternative: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)

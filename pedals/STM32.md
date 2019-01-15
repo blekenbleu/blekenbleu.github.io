@@ -1,7 +1,7 @@
 25 October 2018
 
-## Logitech G29 brake mods
-### Background
+# Logitech G29 brake mods
+## Background
 Having poor coordination always and no depth perception until vision fused in my 40s,
 driving and bicycling were as nearly athletic as I cared to get.
 My wife got a BMW E21 320i when her old Toyota Corolla died in the early 1990s.
@@ -17,13 +17,13 @@ and can be played using relatively cheap [Logitech G29](https://www.amazon.com/d
 Playing Assetto Corsa on conventional PC monitors limits field-of-view;
  I opted for Samsung mixed reality headset.
 
-### Problems
+## Problems
 By lacking inertial cues from velocity changes, sim racing seems harder than real.
 Although Logitech improved pedal feel with their G29, braking remains problematic:,
 *   signal to sim software is based on pedal movement distance, not pressure.
 *   feedback for tires losing grip during braking currently comes thru the steering wheel, instead of the brake pedal.
 
-### Project
+## Project
 Those 2 brake simulation shortcomings can be mitigated, respectively, by:
 
 *   replacing brake potentiometer with a load cell, e.g
@@ -36,7 +36,7 @@ Those 2 brake simulation shortcomings can be mitigated, respectively, by:
 includes indicator for Tyre slip during braking  
 
 
-### Assetto Corsa software development
+## Assetto Corsa software development
 *  [Assetto Corsa Programming](https://www.assettocorsa.net/forum/index.php?forums/programming-language-apps-gui-themes.22/)
 *  [acplugins](https://github.com/minolin/acplugins)
 * [Python reference doc](https://www.assettocorsa.net/forum/index.php?attachments/acpythondocumentation-pdf.110364/)
@@ -60,18 +60,19 @@ Monitor app for more or less the complete AC API
 * AC API: download [zip](https://www.assettocorsa.net/forum/index.php?attachments/aci_api_1-1_full-zip.57505/)
 
 
-### STM32 USB HID adapter for Logitech G29 pedals with load cell brake
--  Prototype using a $2 [Blue Pill](http://wiki.stm32duino.com/index.php?title=Blue_Pill)
--  Blue Pill uses [STM32F103C8T6](https://www.st.com/en/microcontrollers/stm32f103c8.html)
+## STM32 [HID](../Windows/HID) adapter for G29 pedals with load cell brake
+- Unlike [ESP8266](ESP8266), STM32 supports custom native USB
+- Prototype using a $2 [Blue Pill](http://wiki.stm32duino.com/index.php?title=Blue_Pill)
+- Blue Pill uses [STM32F103C8T6](https://www.st.com/en/microcontrollers/stm32f103c8.html)
 with 128Kbytes of Flash and 20 Kbytes SRAM
--  Blue Pill STM32F103 measured [~49 VAX (integer) MIPS  and 9 Whetstone (floating point) MIPS](http://www.stm32duino.com/viewtopic.php?t=76&start=20)
-   - 1994 Pentium PCs rated [~ 71 VAX MIPS and 12 Whetstone MIPS](http://www.roylongbottom.org.uk/whetstone.htm)
+- Blue Pill STM32F103 [~49 VAX (integer) MIPS + 9 Whetstone (floating point) MIPS](http://www.stm32duino.com/viewtopic.php?t=76&start=20)
+   - 1994 Pentium PCs rated [~ 71 VAX MIPS and 12 Whetstone MIPS](http://www.roylongbottom.org.uk/whetstone.htm)  
 
-Clone code from [Logitech pedals as separate USB game controller](https://github.com/robotsrulz/SP_Adapter)
 
-[Arduino USB Composite library](http://www.stm32duino.com/viewtopic.php?f=9&t=3994&start=20)
+Clone code from [SP_Adapter](https://github.com/robotsrulz/SP_Adapter) - Logitech pedals as separate [USB game controller](../Windows/HID)
+- [Arduino USB Composite library](http://www.stm32duino.com/viewtopic.php?f=9&t=3994&start=20)
 
-### HX711 support
+#### HX711 support
 -  [STM32duino HX711 lib](https://www.stm32duino.com/viewtopic.php?t=1613)
 -  [STM32duino API](http://wiki.stm32duino.com/index.php?title=API)
 -  [Arduino HX711.cpp](https://github.com/bogde/HX711/blob/master/HX711.cpp)

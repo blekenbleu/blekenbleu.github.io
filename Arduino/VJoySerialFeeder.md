@@ -1,28 +1,26 @@
----
-title: D1 UNO USB (serial) as HID game controller using vJoySerialFeeder
----
+
+    
+## HID gamepad by vJoySerialFeeder
 
 #### Background
-Wanted: D1 UNO as HID game controller.  
+Wanted: D1 UNO as [HID game controller](../Windows/HID).  
 Unlike FTDI USB chips, CH340G on D1 UNO can *only* be serial.
 * Traditional workaround was vJoy - no longer supported
 #### alternatives
 * [VJoySerialFeeder](https://github.com/Cleric-K/vJoySerialFeeder) is a recent alternative.
   * [Docs](https://github.com/Cleric-K/vJoySerialFeeder/tree/master/Docs) lacks [installation](vJoySFinstall) instructions in [Quickstart](https://github.com/Cleric-K/vJoySerialFeeder/blob/master/Docs/Quickstart.md)
 * "Feeder" because it depends on a virtual HID bus for visibility by games.
-* As of Windows 1809, all drivers are required to be a Universal Windows Driver [UWD](https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk)
-AKA "Modern Windows Drivers"
 * VJoySerialFeeder uses vJoy or vXbox; neither are UWD
   * [ViGEm](https://github.com/ViGEm) is UWD
   * [mi-360](https://github.com/dancol90/mi-360) uses [ViGEm.NET](https://github.com/ViGEm/ViGEm.NET)
     * C# interface code for ViGEm may work for VJoySerialFeeder...
-    * Ultimately, I may want to use [mi-360](mi360) to derive a simpler dedicated serial<>ViGEm filter
+    * Ultimately, I may use [mi-360](mi360) to derive a simpler dedicated serial<>ViGEm filter
   * meanwhile, concerns about C# and .NET foibles and incompatilities among
     * Visual Studio 2017 Community (thankfully the latest version) for [mi-360](mi360).
     * SharpDevelop 4.4 (for VJoySerialFeeder) and
       * SharpDevelop seems nearly dead; current version is 5.1
 
-#### C# code
+## C# code
   Among other things, MainForm.cs selects serial port and protocol  
   and, along with MainFormWorker.cs, defines `class MainForm`
 * MainFormWorker.cs:  `backgroundWorker` in `MainForm` is main program loop  
