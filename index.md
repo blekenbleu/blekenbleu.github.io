@@ -16,6 +16,9 @@
   - [mi-360](Arduino/mi360) *HID Xiaomi Gamepad -> Xbox360 filter*
   - ESP8266 Arduino IDE Alternative: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
 
+## [ab]using Microsoft Visual Studio Community 2017
+* [shared installation](VSC2017)
+
 ## GitHub Pages Jekyll Installation How-To
 *in order attempted*  
 **[Windows 8.1](GitHubPages)**  with **HitHub Desktop** and **Git for Windows**  
