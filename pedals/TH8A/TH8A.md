@@ -15,14 +15,14 @@ $20 buys a [fairly complete tap and die set](https://www.amazon.com/gp/product/B
 
 
 *   Unscrew the knob; fit a wrench on its flats to remove and eventually replace the lever
-![adjustable wrench on lever flats](TH8A/wrench.jpg)  
+![adjustable wrench on lever flats](wrench.jpg)  
 *   Screw the die over existing threads, clamp shaft flats in a vice and cut another couple of inches of threads  
-![shaft with die in vice](TH8A/vice.jpg)  
+![shaft with die in vice](vice.jpg)  
 *   Cut an inch or so off the shaft  
-![M10x1.25 die and cut shaft](TH8A/cut.jpg)  
+![M10x1.25 die and cut shaft](cut.jpg)  
 *   Grind a half inch or so of new flats on shortened shaft end
-![grinder and flatted shaft](TH8A/flats.jpg)  
+![grinder and flatted shaft](flats.jpg)  
 * Using a 5/16 bit, drill about 1.5 inches into 2 inch cork ball and thread it onto the shortened shaft
-![cork ball on shaft](TH8A/cork.jpg)
+![cork ball on shaft](cork.jpg)
 * I may eventually shorten the shaft another 1/2 inch or so, but shifting is much improved  
-![hand on knob](TH8A/grip.jpg)
+![hand on knob](grip.jpg)
