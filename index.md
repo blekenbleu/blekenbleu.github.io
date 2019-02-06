@@ -15,6 +15,7 @@
   - [VJoySerialFeeder](Arduino/VJoySerialFeeder) *least obsolete COM->HID filter*
   - [mi-360](Arduino/mi360) *HID Xiaomi Gamepad -> Xbox360 filter*
   - ESP8266 Arduino IDE Alternative: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
+- [TH8A](TH8A/TH8A) Thrustmaster shifter mods
 
 ## [ab]using Microsoft Visual Studio Community 2017
 * [shared installation](VSC2017)
