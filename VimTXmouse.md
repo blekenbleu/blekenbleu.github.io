@@ -1,6 +1,7 @@
 ---
 title: R&D, Vim, X-Mouse and Logitech Anywhere MX
 ---
+25 Feb 2019  
 
 ### My R&D process (roughly)
 ```
@@ -67,4 +68,7 @@ required a minor Registry hack, as does enabling focus-follows-pointer autoraise
 
 A 3 button mouse is essential for efficient X mouse usage,  
 and middle button separate from scroll wheel reduces missed pastes.
-Hyperscroll is worthwhile, and Logitech's *original* [Anywhere MX](https://www.amazon.com/dp/B007PJ4Q4A) has the best power switch among hyperscroll mice with separate middle button.  Button switch durability is [problematic](https://www.ifixit.com/Guide/How+to+fix+Logitech+Anywhere+MX+Phantom+Double+Click/75780).
+Hyperscroll is worthwhile,  
+and Logitech's *original* [Anywhere MX](https://www.amazon.com/dp/B007PJ4Q4A)
+ hyperscroll mouse with separate middle button has the best power switch,  
+but button switches have been [problematic](https://www.ifixit.com/Guide/How+to+fix+Logitech+Anywhere+MX+Phantom+Double+Click/75780).

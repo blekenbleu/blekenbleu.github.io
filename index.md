@@ -43,6 +43,7 @@
    Suggested procedures [for disabling IPv6](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
 
 ### [Vim and X-Mouse](VimTXmouse)
+### [Line 6 JTV-89F guitar](JTV89F/Variax)
 ### [Installing Git-Cola from MacPorts](GitColaMacPorts)
 ### [FreshTomato and Linksys EA6500v2](FreshTomato)
 ### macOS local [gitolite](MacGit) server
