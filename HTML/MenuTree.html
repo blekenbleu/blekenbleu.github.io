@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+<title>Menu Tree</title>
+
+<!--
+  Tree diagrams are comparable to HTML lists;
+  this CSS overrides HTML list markup to draw trees.
+  Tree diagrams have no real trunks,
+  only leaves (<p>), stems(<li>) and branches (<ul>).
+  Horizontal trees have chilren right of parents,
+  so vertical branches and horizontal stems.
+  CSS dislikes comments nested in comments...
+ -->
+
+<style type="text/css" media="screen">
+  * {margin: 0; padding: 0;}
+
+/* shift content down and left */
+.tree {
+  margin-top: 45px;
+  margin-left: -70px;
+}
+
+.tree ul {
+  /* required for absolute branch positions
+   * and accumulating vertical offsets */
+  position: relative;
+  /* horizontal padding for vertical branches */
+  padding-left: 17px;
+  /* disable list bullets */
+  list-style-type: none;
+}
+
+/* single <p> column entries after <ul> */
+.tree li {
+  /* required for absolute stem positions
+   * and accumulating vertical offsets */
+  position: relative;
+  /* shift up to align with parent */
+  top: -34px;
+  /* horizontal padding for text boxes */
+  margin-left: 115px;
+  /* disable list bullets */
+  list-style-type: none;
+}
+
+/* avoid redundant vertical space */
+.tree li:last-child {
+  height: 0;
+}
+
+/* text boxes */
+.tree li p {
+  /* content (text and background) */
+  text-decoration: none;
+  text-align: center;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;
+  padding: 5px 10px;
+  background: white;
+  margin-bottom: 10px;
+
+  /* bounding box */
+  border: 1px solid #000;
+  min-width: 90px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  /* hover action timing */
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* vertically align paired <p>'s */
+.tree li p+p {
+  position: relative;
+  top: 30px;		/* shift down */
+  left: -112px;		/* horizontally align */
+  margin-bottom: 40px;	/* vertical spacing */
+}
+
+/* Draw branches and stems using ::before and ::after */
+
+/* vertical stem between paired <p>'s */
+.tree li p+p::before {
+  position: absolute;
+  content: '';
+  border-left: 1px solid #000;
+  left: 50%; 
+  top: -8px;
+  height: 8px;
+}
+
+/* vertical branches */
+.tree li::before {
+  position: absolute;
+  content: '';
+  border-left: 1px solid #000;
+  height: 100%;
+  left: -10px; /* center in <ul> margin */
+  top: 10px;   /* start at stem */
+}
+
+/* Remove vertical branches from last (only) children */
+.tree li:last-child::before {
+  display: none;
+}
+
+/* Horizontal stem from child to branch */
+.tree li::after {
+  position: absolute;
+  content: '';
+  border-top: 1px solid #000;
+  top: 10px; /* vertically center on boxes */
+  left: -10px; /* start at vertical branch */
+  width: 10px; /* extend to child left border */
+} 
+
+/* stems from parent to branch */
+.tree ul ul::before {
+  position: absolute;
+  content: '';
+  border-top: 1px solid #000;
+  top: -24px; /* vertically center on boxes */
+  width: 10px; /* extend to child left border */
+  left: 112px;
+}
+
+/* Hover effect: colorize boxes */
+.tree li p:hover, .tree li p:hover~ul li p {
+  background: #c8f4e8; color: #000;
+  border: 2px solid #9400a4;
+}
+
+/* branch and stem styles on hover */
+.tree li p:hover~ul li::before, 
+.tree li p:hover~ul li::after {
+  border-color: #9400a4;
+}
+
+</style>
+</head>
+
+<body>
+<!--
+  Create a tree using CSS(3) style above.
+  HTML nested list markup for connections and <p></p> for boxes
+  <ul> - generates vertical branches
+  <li> - generates horizontal stems
+ -->
+        Hacked from <a href="http://thecodeplayer.com/walkthrough/css3-family-tree">http://thecodeplayer.com/walkthrough/css3-family-tree</a><br>
+        Replaced that vertical CSS style with horizontal from <a href="https://codepen.io/P233/pen/Kzbsi">https://codepen.io/P233/pen/Kzbsi</a><br><br>
+
+<div class="tree">
+<ul>
+<li>
+  <p><a href="help.htm#U1">Uncle</a> </p>
+  <ul>
+    <li>
+      <p>Orphan Nephew</p>
+      <ul>
+        <li>
+          <p>Grand Nephew 1</p>
+        </li>
+        <li>
+          <p>Grand Nephew 2</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Another Nephew</p>
+      <ul>
+        <li>
+          <p>Grand Nephew 3</p>
+        </li>
+        <li>
+          <p>Grand Nephew 4</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Favorite <a href="help.htm#N1">Nephew</a></p><p>Someone's <a href="help.htm#N0">Niece</a></p>
+      <ul>
+        <li>
+          <p>Grand Niece 0</p>
+        </li>
+        <li>
+          <p>Grand Niece 1</p>
+        </li>
+        <li>
+          <p>Grand Niece 2</p>
+        </li>
+        <li>
+          <p>Grand Niece 3</p>
+        </li>
+        <li>
+          <p>Grand Niece 4</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Child</p>
+      <ul>
+        <li>
+          <p>Grand Child</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li>
+  <p>Parent</p>
+  <ul>
+    <li>
+      <p>Child</p>
+      <ul>
+        <li>
+          <p>Grand Child</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Sub Parent 1</p><p>Sub Parent 2</p>
+      <ul>
+        <li><p>Grand Child</p></li>
+        <li>
+          <p>Grand Child</p>
+          <ul>
+            <li>
+              <p>Great Grand Child</p>
+            </li>
+            <li>
+              <p>Great Grand Child</p>
+            </li>
+            <li>
+              <p>Great Grand Child</p>
+            </li>
+          </ul>
+        </li>
+        <li><p>Grand Child</p></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+</ul>
+</div>
+
+</body>
+</html>
