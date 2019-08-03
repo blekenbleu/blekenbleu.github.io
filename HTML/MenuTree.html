@@ -22,6 +22,27 @@
   margin-left: -70px;
 }
 
+.tree dl {
+  /* Do NOT accumulate horizontal position */
+  position: absolute;
+  /* horizontal padding for vertical branches */
+  padding-left: 17px;
+}
+
+/* single <p> row entries after <dl> */
+.tree dl dd {
+  float: left; text-align: center;
+  /* required for absolute stem positions
+   * and accumulating horizontal offsets */
+  position: relative;
+  /* shift up to align with parent */
+  top: -44px;
+  left: 110px;
+  list-style-type: none;
+  /* padding for text boxes */
+  padding: 15px 5px 0px 5px;
+}
+
 .tree ul {
   /* required for absolute branch positions
    * and accumulating vertical offsets */
@@ -33,7 +54,7 @@
 }
 
 /* single <p> column entries after <ul> */
-.tree li {
+.tree ul li {
   /* required for absolute stem positions
    * and accumulating vertical offsets */
   position: relative;
@@ -46,12 +67,12 @@
 }
 
 /* avoid redundant vertical space */
-.tree li:last-child {
+.tree ul li:last-child {
   height: 0;
 }
 
 /* text boxes */
-.tree li p {
+.tree ul li p {
   /* content (text and background) */
   text-decoration: none;
   text-align: center;
@@ -77,7 +98,7 @@
 }
 
 /* vertically align paired <p>'s */
-.tree li p+p {
+.tree ul li p+p {
   position: relative;
   top: 30px;		/* shift down */
   left: -112px;		/* horizontally align */
@@ -87,7 +108,7 @@
 /* Draw branches and stems using ::before and ::after */
 
 /* vertical stem between paired <p>'s */
-.tree li p+p::before {
+.tree ul li p+p::before {
   position: absolute;
   content: '';
   border-left: 1px solid #000;
@@ -97,7 +118,7 @@
 }
 
 /* vertical branches */
-.tree li::before {
+.tree ul li::before {
   position: absolute;
   content: '';
   border-left: 1px solid #000;
@@ -107,12 +128,12 @@
 }
 
 /* Remove vertical branches from last (only) children */
-.tree li:last-child::before {
+.tree ul li:last-child::before {
   display: none;
 }
 
 /* Horizontal stem from child to branch */
-.tree li::after {
+.tree ul li::after {
   position: absolute;
   content: '';
   border-top: 1px solid #000;
@@ -121,7 +142,7 @@
   width: 10px; /* extend to child left border */
 } 
 
-/* stems from parent to branch */
+/* stems from parent to branch except for root branch */
 .tree ul ul::before {
   position: absolute;
   content: '';
@@ -131,14 +152,64 @@
   left: 112px;
 }
 
+/* short horizontal branch from parent */
+.tree dl::before {
+  position: absolute;
+  content: '';
+  border-top: 1px solid #000;
+  top: -24px; /* vertically center on boxes */
+  width: 10px; /* extend to child left border */
+  left: 112px;
+}
+
+/* horizontal branch above children */
+.tree dd::before {
+  position: absolute;
+  content: '';
+  border-top: 1px solid #000;
+  top: 10px;
+  width: 100%; /* vertically center on boxes */
+  left: -60px;
+}
+
+.tree dd:first-child::before {
+  left: -6px;
+  width: 56%;
+}
+
+/* short vertical branch between parent and first child */
+.tree dl::after {
+  position: absolute;
+  content: '';
+  border-left: 1px solid #000;
+  top: -34px; /* vertically center on boxes */
+  height: 10px; /* extend to child top border */
+  left: 121px;
+}
+
+/* vertical stem between branch and child */
+.tree dd::after {
+  position: absolute;
+  content: '';
+  border-left: 1px solid #000;
+  top: 10px;	/* start at branch */
+  height: 5px; /* extend to box */
+  left: 50%; /* horizontally center on boxes */
+}
+
 /* Hover effect: colorize boxes */
-.tree li p:hover, .tree li p:hover~ul li p {
+.tree li p:hover, .tree li p:hover~ul li p, .tree li p:hover~dl dd p {
   background: #c8f4e8; color: #000;
   border: 2px solid #9400a4;
 }
 
 /* branch and stem styles on hover */
 .tree li p:hover~ul li::before, 
+.tree li p:hover~dl::before, 
+.tree li p:hover~dl::after, 
+.tree li p:hover~dl dd::before, 
+.tree li p:hover~dl dd::after, 
+.tree li p:hover~ul li dl dd::after, 
 .tree li p:hover~ul li::after {
   border-color: #9400a4;
 }
@@ -152,6 +223,7 @@
   HTML nested list markup for connections and <p></p> for boxes
   <ul> - generates vertical branches
   <li> - generates horizontal stems
+  Only for right-most generation, use <dl>, <dd> instead of <ul>, <li>
  -->
         Hacked from <a href="http://thecodeplayer.com/walkthrough/css3-family-tree">http://thecodeplayer.com/walkthrough/css3-family-tree</a><br>
         Replaced that vertical CSS style with horizontal from <a href="https://codepen.io/P233/pen/Kzbsi">https://codepen.io/P233/pen/Kzbsi</a><br><br>
@@ -164,46 +236,46 @@
     <li>
       <p title="tooltip
 for orphan"> Orphan Nephew</p>
-      <ul>
-        <li>
+      <dl>
+        <dd>
           <p>Grand Nephew 1</p>
-        </li>
-        <li>
+        </dd>
+        <dd>
           <p>Grand Nephew 2</p>
-        </li>
-      </ul>
+        </dd>
+      </dl>
     </li>
     <li>
       <p>Another Nephew</p>
-      <ul>
-        <li>
+      <dl>
+        <dd>
           <p>Grand Nephew 3</p>
-        </li>
-        <li>
+        </dd>
+        <dd>
           <p>Grand Nephew 4</p>
-        </li>
-      </ul>
+        </dd>
+      </dl>
     </li>
     <li>
       <p title="look towards bottom
 in hyperlink">Favorite <a href="help.htm#N1">Nephew</a></p><p>Someone's <a href="help.htm#N0">Niece</a></p>
-      <ul>
-        <li>
+      <dl>
+        <dd>
           <p>Grand Niece 0</p>
-        </li>
-        <li>
+        </dd>
+        <dd>
           <p>Grand Niece 1</p>
-        </li>
-        <li>
+        </dd>
+        <dd>
           <p>Grand Niece 2</p>
-        </li>
-        <li>
+        </dd>
+        <dd>
           <p>Grand Niece 3</p>
-        </li>
-        <li>
+        </dd>
+        <dd>
           <p>Grand Niece 4</p>
-        </li>
-      </ul>
+        </dd>
+      </dl>
     </li>
     <li>
       <p>Child</p>
@@ -232,17 +304,17 @@ in hyperlink">Favorite <a href="help.htm#N1">Nephew</a></p><p>Someone's <a href=
         <li><p>Grand Child</p></li>
         <li>
           <p>Grand Child</p>
-          <ul>
-            <li>
+          <dl>
+            <dd>
               <p>Great Grand Child</p>
-            </li>
-            <li>
+            </dd>
+            <dd>
               <p>Great Grand Child</p>
-            </li>
-            <li>
+            </dd>
+            <dd>
               <p>Great Grand Child</p>
-            </li>
-          </ul>
+            </dd>
+          </dl>
         </li>
         <li><p>Grand Child</p></li>
       </ul>

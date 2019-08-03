@@ -29,12 +29,13 @@ removed tabs in css3tree.html for easier comparison to HorizontalTree.htm.
 * commented out style entries to detect effects  
 * added comments to describe those effects  
 
-Associating vertical branches with `<ul>` fails:  
+Associating vertical branches with `<ul>` fails:
 * vertical branch line extends the full height of all embedded content,  
   while brand only among first generation `<li>` children is wanted.  
 
-Simplified CSS by settling for square joins between all branches and leaf stems.  
 Hardest for me was sorting out parent pairings.  
+Simplified CSS by settling for square joins between all branches and leaf stems.  
+Added optional `<dl>, <dd>` instead of `<ul>, <li>` for horizontal last generation to save vertical space
 
 Tool tips:
 * Use [HTML title Attribute](https://www.w3schools.com/tags/att_global_title.asp) in menu element `<p>` tags, e.g. `<p title="your tool tip here">Menu element</p>`
