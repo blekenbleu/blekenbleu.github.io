@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hnano</title>
+<style>
+    *, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+  color: #ffffff;
+  font: 12px Verdana, sans-serif;
+  background: #000000;
+}
+
+.tree {
+  margin-left: 40px;
+}
+
+/* text boxes */
+.tree p {
+  position: relative;
+  display: block;
+  /* changing this impacts other HHH */
+  width: 80px;
+  line-height: 20px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 1.0);
+  left: 0;
+  margin-bottom: 0px;
+  top: 50%;
+  margin-top: 0px;
+  z-index: 0;
+
+  /* hover action timing */
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* text box background colors */
+#yel  {
+  color: #222;
+  background: rgba(255, 255, 0, 1.0);
+}
+
+#blu  {
+  background: rgba(0, 0, 255, 1.0);
+}
+
+#grn {
+  background: rgba(0, 200, 0, 1.0);
+}
+
+#red  {
+  background: rgba(205, 0, 100, 1.0);
+}
+
+a {
+  color:yellow;
+}
+
+a:visited {
+  color: #FF00FF;
+}
+
+/* vertically align paired <p>'s */
+.tree p+p {
+  position: relative;
+  top: 0px;            /* shift down */
+  left: 0px;         /* vertically align */
+  margin-top: 10px;
+  margin-bottom: -30px;
+}
+
+/* vertical stem between paired <p>'s */
+.tree p+p::before {
+  position: absolute;
+  content: '';
+  border-left: 2px solid #fff;
+  left: 50%;
+  top: -12px;
+  height: 12px;
+} 
+
+.tree ul {	/* sl fails */
+  position: relative;
+  top: -35px;
+  /* changing p width impacts this HHH */
+  margin-left: 70px;
+  margin-top: 0px;
+  padding-bottom: 10px;
+}
+
+/* child entries */
+.tree li {
+  position: relative;
+  clear: left;
+  z-index: 0;
+}
+
+/* reduce redundant vertical space */
+.tree li:last-child {
+  height: 0px;
+  margin-bottom: 10px;
+}
+
+.tree dt:last-child {
+  height: 0px;
+  margin-right: -10px;
+}
+
+/* vertical spacing tweaks */
+#p20 {
+  padding-bottom: 20px;
+}
+
+#p40 {
+  padding-bottom: 40px;
+}
+
+#u30 {
+  margin-bottom: -30px;
+}
+
+#p60 {
+  padding-bottom: 60px;
+}
+
+/* horizontal branches */
+.tree dl {
+  position: relative;
+}
+
+#li-child {
+  /* changing p width impacts this HHH */
+  left: -58px;
+  top: -20px;
+  margin-top: 0px;
+}
+
+.tree li {
+  position: relative;
+  float: left;
+  /* disable list bullets */
+  list-style-type: none;
+  padding-top: 10px;  /* unlike margin, adds height */
+  padding-right: 10px;
+  margin-right: 0px;
+  z-index: 0;
+}
+
+.tree dt {
+  position: relative;
+  float: left;
+  padding-top: 10px;  /* unlike margin, adds height */
+  padding-right: 10px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  z-index: 0;
+}
+
+.tree dd {
+  position: relative;
+  float: left;
+  padding-top: 10px;  /* unlike margin, adds height */
+  padding-right: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+/* horizontal connectors ------------------ */
+/* horizontal stems before <li> entries */
+.tree li::before {
+  position: absolute;
+  content: "";
+  /* horizontal connector before entry */
+  border-top: 2px solid #ffffff;
+  top: 20px;
+  width: 15px;
+  left: -15px;
+}
+
+/* longer stem from first <li> to parent */
+.tree li:first-child::before  {
+  width: 30px;
+  left: -30px;
+}
+
+/* horizontal branches above <dl> entries */
+.tree dt::after, dd::after {
+  position: absolute;
+  content: "";
+  border-top: 2px solid #ffffff;
+  top: -4px;
+  /* changing p width impacts this HHH */
+  left: 45px;	/* % fails if child dl */
+  width: 100%;
+}
+
+.tree dt:last-child::after, .tree li:last-child::after {
+  display: none;
+}
+
+/* vertical branches */
+.tree li::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  border-left: 2px solid #ffffff;
+  min-height: 36px;  /* force vertical connections */
+  left: -15px;
+  top: 20px;
+}
+
+/* vertical branch for parent, left of horizontal entries */
+.tree dt:first-child::before {
+  height: 100%;
+  left: -15px;
+  top: 10px;
+}
+
+/* vertical stems to branches */
+.tree dt::before {
+  position: absolute;
+  content: "";
+  border-left: 2px solid #ffffff;
+  /* changing p width impacts this HHH */
+  left: 45px;	/* % fails if child dl */
+  height: 14px;
+  top: -4px;
+}
+
+/* longer vertical stem from first entry to dl parent */
+.tree dl::before {
+  position: absolute;
+  content: "";
+  border-left: 2px solid #ffffff;
+  height: 22px;
+  top: -12px;
+  /* changing p width impacts this HHH */
+  left: 43px;
+}
+
+/* Hover effect: colorize boxes */
+.tree ul p:hover~p,
+.tree li p:hover~dl dd p,
+.tree ul p:hover~dl dt p,
+.tree ul p:hover~ul li p {
+  background: #c8f4e8; color: #000;
+  border: 2px solid #9400a4;
+  z-index: 1;
+}
+
+/* branch and stem hover color */
+/* vertical branches */
+.tree li p:hover~ul li::after,
+.tree dt p:hover~ul li::after,
+/* horizontal stems */
+.tree li p:hover~ul li::before,
+.tree dt p:hover~ul li::before,
+/* horizontal branches */
+.tree li p:hover~ul li dl dt::after,
+.tree li p:hover~ul li dl dd::after,
+.tree li p:hover~dl dt::after,
+.tree dt p:hover~dl dt::after,
+.tree li p:hover~dl dd::after,
+.tree dt p:hover~dl dd::after,
+/* vertical stems */
+.tree li p:hover~ul li dl dt::before,
+.tree dt p:hover~ul li dl dt::before,
+.tree dt p:hover~dl dt::before,
+.tree li p:hover~dl dt::before,
+/* longer first vertical stems */
+.tree li p:hover~ul li dl::before,
+.tree dt p:hover~ul li dl::before,
+.tree li p:hover~dl dt dl::before,
+.tree dt p:hover~dl dt dl::before,
+.tree li p:hover~dl::before,
+.tree dt p:hover~dl::before,
+/* vertical stems between <p> pairs */
+.tree li p:hover~ul li dl dt p::before,
+.tree li p:hover~dl dt p::before,
+.tree li p:hover~p::before
+{
+  border-color: #9400a4;
+}
+
+/* CSS hover tooltip overloading <tt> */
+.tree tt {
+  visibility: hidden;
+  display:block;
+  min-width: 20px;
+  border: 1px solid #111111;
+  background-color: white;
+  color: #106;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 5px;
+
+  /* tooltip position */
+  position: absolute;
+  bottom: -10px;	/* up and left to avoid being obscured */
+  right: 80px;
+  z-index: 200;	/* does not help */
+}
+
+.tree p:hover tt {
+  visibility: visible;
+  z-index: 200;	/* does not help */
+}
+
+</style>
+</head>
+<!--
+ adapted from https://codepen.io/P233/pen/Kzbsi
+ -->
+
+<body translate="no">
+<base href="nVhelp.htm">
+<h3 align=center><a href="#U0">nanoVNA</a> Menu</h3>
+
+<div class="tree">
+<p>Press control or touch screen for menu</p>
+<ul>
+  <li><p><a href="#U1">DISPLAY</a></p>
+    <ul>
+      <li><p><tt>2/4 limit for aa/ch firmware</tt><a href="#U1L1">TRACE</a></p>
+        <dl>
+          <dt><p id="yel">
+	    <tt>enable if off, else goto OFF/SINGLE</tt>TRACE 0</p>
+		<dl><dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl></dt>
+          <dt><p id="blu">
+		<tt>enable if off, else goto OFF/SINGLE</tt>TRACE 1</p>
+	    <dl><dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl></dt>
+          <dt><p id="grn"><tt>{<i><b>4-trace firmware only</b></i>}<br>
+		enable if off, else goto OFF/SINGLE</tt>TRACE 2</p><dl>
+	    <dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl></dt>
+          <dt><p id="red"><tt>{<b><i>4-trace firmware only</i></b>}<br>
+		enable if off, else goto OFF/SINGLE</tt>TRACE 3</p>
+            <dl><dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl>
+          </dt>
+        </dl> 
+      </li>
+      <li><p>FORMAT</p>
+        <dl>
+          <dt><p>LOGMAG</p></dt>
+	  <dt><p>PHASE</p></dt>
+	  <dt><p><tt>not implemented</tt>DELAY</p></dt>
+	  <dt><p>SMITH</p></dt>
+	  <dt><p>SWR</p></dt>
+	  <dt><p>MORE</p>
+	    <dl>
+	      <dd><p>POLAR</p></dd>
+	      <dt><p>LINEAR</p></dt>
+            </dl>
+	  </dt>
+        </dl>
+      </li>
+      <li><p>SCALE</p>
+        <dl>
+          <dt id="p60"><p><a href="#U131">SCALE/DIV</a></p><p>
+		<tt>touch nanoVNA screen below menu to launch numeric keypad;<br>
+		click hyperlink for numeric input discussion</tt>
+		<a href="#U132">NUM KEYS</a></p></dt>
+          <dt><p>
+          <tt>position trace vertically</tt>
+          <a href="#U132">REFERENCE POSITION</a></p><p>
+	<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+	  <dt><p><tt>compensate CAL by e.g. cable length in picoseconds</tt>
+		<a href="#U133">ELECTRICAL DELAY</a></p><p>
+		<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+        </dl>
+      </li>
+      <li><p><tt>select port to measure;<br>
+	works for 2 and 4 trace firmware</tt>CHANNEL</p>
+        <ul>
+	  <li><p>CH0 REFLECT</p></li>
+	  <li><p>CH1 THROUGH</p></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li id="u30"><p><a href="#U2">MARKER</a></p>
+    <ul>
+	<li id="p20"><p><tt>with 2 markers enabled,
+	 marker 2 will read DELTA Frequency in relation to marker 1</tt>SELECT MARKER
+	  <dl>
+	  <dt><p>MARKER 1</p></dt>
+	  <dt><p>MARKER 2</p></dt>
+	  <dt><p>MARKER 3</p></dt>
+	  <dt><p>MARKER 4</p></dt>
+	  <dt><p>ALL OFF</p></dt>
+	  </dl>
+	</li>
+	<li>
+	<dl id="li-child">
+	<dd><p><tt>increase minimum sweep frequency<br>
+	to selected marker</tt>START</p></dt>
+	<dt><p><tt>decrease maximum sweep frequency<br>
+	to selected marker</tt>STOP</p></dt>
+	<dt><p><tt>shift center of frequency sweep<br>
+	to selected marker</tt>CENTER</p></dt>
+	<dt><p><tt>sweep frequency between 2 current markers</tt>SPAN</p></dt>
+	</dl>
+	</li>
+    </ul>
+  </li>
+  <li><p><tt>set sweep or single frequency</tt>STIMULUS</p>
+    <dl>
+      <dt id="p40"><p><tt>sweep lower limit &gt 50kHz</tt>START</p><p>
+	<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>sweep upper limit &lt 900mHz</tt>STOP</p><p>
+		<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>(START+STOP)/2</tt>CENTER</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>STOP-START</tt>SPAN</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>50 kHz &lt constant &lt 900mHz</tt>CW FREQ</p><p>
+	<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>freeze data collection;<br>
+	click hyperlink for saving frozen data via USB</tt><a href="#U36">PAUSE SWEEP</a></p></dt>
+    </dl>
+  </li>
+  <li><p><a href="#N4">CAL</a></p>
+    <ul>
+      <li><p><tt>press RESET to clear data before calibrating.<br>
+	Make appropriate [dis]connections before touching associated button</tt>CALIBRATE</p>
+        <dl>
+          <dd><p>OPEN</p></dt>
+          <dt><p>SHORT</p></dt>
+          <dt><p><tt>attach 50 Ohm load to TX port</tt>LOAD</p></dt>
+          <dt><p><tt>attach a 50 Ohm load to each port</tt>ISOLATION</p></dt>
+          <dt><p><tt>connect SMA cable[s] between ports</tt>THRU</p></dt>
+          <dt><p>DONE</p>
+            <ul>
+              <li><p>SAVE 0</p></li>
+              <li><p>SAVE 1</p></li>
+              <li><p>SAVE 2</p></li>
+              <li><p>SAVE 3</p></li>
+              <li><p>SAVE 4</p></li>
+            </ul>
+          </dt>
+        </dl>
+      </li>
+      <li><p><tt>press to clear data before CALIBRATE</tt>RESET</p></li>
+      <li id="u30"><p><tt>toggle calibration<br>on / off</tt>CORRECT</p></li>
+    </ul>
+  </li>
+  <li>
+    <p>
+    <tt>DISPLAY+MARKER +STIMULUS+CAL settings</tt>
+	RECALL SAVE
+    </p>
+  <ul>
+    <li><p>RECALL</p>
+      <dl>
+        <dt><p>RECALL 0</p></dt>
+        <dt><p>RECALL 1</p></dt>
+        <dt><p>RECALL 2</p></dt>
+        <dt><p>RECALL 3</p></dt>
+        <dt><p>RECALL 4</p></dt>
+      </dl>
+    </li>
+    <li><p>SAVE</p>
+      <dl>
+        <dd><p>SAVE 0</p></dt>
+        <dt><p>SAVE 1</p></dt>
+        <dt><p>SAVE 2</p></dt>
+        <dt><p>SAVE 3</p></dt>
+        <dt><p>SAVE 4</p></dt>
+      </dl>
+    </li>
+    </li>
+  </ul>
+  </li>
+</ul>
+
+</body>
+</html>
