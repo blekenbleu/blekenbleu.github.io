@@ -11,8 +11,9 @@ Sites of most interest: [vinylengine](https://www.vinylengine.com/library/thoren
 [Gallery of rim, belt drive models](https://www.theanalogdept.com/thorens_gallery.htm) TD 150 preceded TD 125  
 
 TD 124 (rim drive liable to vertical rumble) absurdly popular 1957 - 1968  
+* Rim drives are liable to rumble, in my experience, and idler wheels replacement is problematic.
 
-TD 125 [mechanically similar to TD 126](https://www.theanalogdept.com/td125_dept.htm) [chassis comparisons](https://www.theanalogdept.com/rk_125_6_sub-chassis.htm)  
+TD 125 [mechanically similar to TD 126](https://www.theanalogdept.com/td125_dept.htm) - [chassis comparisons](https://www.theanalogdept.com/rk_125_6_sub-chassis.htm)  
 TD 126 (1974) and MK II (1976) models continued to use the 16-pole AC synchronous motor from the TD 125 MK II  
 [TD 150, 125 and early 126 use 10mm bearing;  TD 126 MK III and later use 7mm bearing.](https://www.theanalogdept.com/td_platter_bearings.htm)  
 "From my taking the bearing off a TD126 Mk2 and replacing it with one off a TD126 Mk3 two differences were noted.  
@@ -25,6 +26,38 @@ TD 126 (1974) and MK II (1976) models continued to use the 16-pole AC synchronou
 
 [Suspension set-up](https://www.theanalogdept.com/susp_tim_bailey.htm)  3-spring design shared by  AR, most Ariston, Linn LP12, Systemdeks, and Thorens TD 125, 126, 145, 147, 150, and 160  
 [Suspension Adjustment videos](https://www.youtube.com/watch?v=4RCj31Jaycg)
+
+### Stylus alignment AKA Zenith
+Most writing about cartridge alignment is BS.   
+First, it is **stylus cantilevers** that want alignment.  
+If a stylus is not aligned in its cartridge body, it needs replacing.  
+Of course, a (non-conical) needle may be misaligned in its cantiliver...   
+Facts:
+- For pivoting tonearms, stylus cantilever alignment perfectly tangent to record grooves
+  occurs at only 2 places along record radii.
+- Audio-Technical writing that different protractors are required for different effective tonearm lengths
+  (needle to pivot distance) applies *only* for arc, which does NOT satisfy alignment.
+- NOTHING in this diagram is useful for accurate alignment:  
+  <img src="https://www.analogplanet.com/images/styles/600_wide/public/0515TAB.jpg">  
+- Perfectly matching some overhang or arc is *incidental* to cantilever alignment.  
+- These pairs of parallel lines (really, just center lines) are **ALL** that matter for alignment:  
+  <a href="http://www.vacuumstate.com/fileupload/Guru_protractor.pdf"><img src="protractor.png"></a>  
+
+IMO, if stylus cantilever cannot be seen well enough to align with protractor, *get another cartridge*.  
+
+Tracking distortion is phase-shifted, compared with harmonic distortion typical of active electronics:  
+  <a href="https://www.stereophile.com/reference/arc_angles_optimizing_tonearm_geometry"><img src="https://www.stereophile.com/images/archivesart/310arc.fig4.jpg"></a>
+* That phase error should affect perception of stereo imaging..  
+
+Relevant alignment protractor differences are ***only*** about what tracking distortion metric gets minimized:  
+* RMS (Loefgren AKA Lofgren B)  
+* highest (Baerwald AKA Lofgren A)   
+* towards the center(Stevenson)  
+  <a href="https://www.analogplanet.com/content/uni-din-versus-l%C3%B6fgren-b-just-clarify"><img src="https://www.analogplanet.com/images/styles/600_wide/public/1114UNI.jpg"></a>
+  FWIW, the argument for Stevenson is that classical music typically gets more dynamic towards the center...   
+
+Increasing tonearm length reduces tracking error *magnitude*, but longer arms have higher effective mass,  
+which is problematic for high compliance styli and e.g. warped records.  
 
 ## vinylengine forum
 [overhaul guide](https://www.vinylengine.com/turntable_forum/viewtopic.php?f=17&t=3095)  
