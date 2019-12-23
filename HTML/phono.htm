@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Phono MM input capacitance</title>
+</head>
+<body>
+<h3>resonance</h3>
+Moving magnet phonograph cartridges are substantially inductive,
+and moving magnet (MM) phonograph amplifier input stages have capacitance,
+often over 100pF, typically in parallel with 47K Ohms.
+That combination will resonate, and that resonance is typically wanted
+well above audibility e.g. > 20 KHz.
+Audio-Technica has been making phono cartridges since 1962, and while they
+also make moving coil cartridges, they make an extensive line of moving magnet cartridges and styli.
+While their MicroLine styli are well-regarded,  some Audio-Technica moving magnet cartridges
+are considered to have boosted high-frequency response, which is attributed to inductance (e.g. 460-550mH) higher
+than in otherwise comparable cartridges, which can provoke more audible resonance.
+550mH and 200pF resonates at ~ 480kHz, but phono cartridges are generators with armatures,
+so electro-mechanical resonances are at issue.
+Reducing input capacitance can mitigate this.  Some MM stages offer multiple loading options,
+more typically for resistances than capacitance.  
+
+<h3>cables</h3>
+At audio frequencies, short (e.g. 1 meter) shielded coaxial cables do not exhibit classical transmission line behavior.
+Instead, they mostly exhibit capacitance, particularly into typical MM phono preamp input loads.
+
+
+MM phono cartridges typically generate 4-
+MM input stages
+Tandberg 3002 MM 1mV sensitivity for 0.5V output, with 290mV maximum.
+For 10kHz-5MHz sweeps, nanoVNA delivers about 370mV peak-to-peak into 47k Ohms
+or about 185mV RMS, so unlikely to damage MM phono inputs.
+
+For CH0 Smith display, nanoVNA directly reports capacitance or inductance:
+* 8.5pF for the disconnected BNC Tee
+* 18.5pF for BNC Tee connected to oscilloscope input rated 13pF
+* 63.5pF with Tee and unterminated 2ft coax
+* 79pF when connected to the oscilloscope and 2ft BNC coax unterminated
+* 82.5 when connected to the oscilloscope and 2ft coax with phono plug adapter
+* 463pF when that Tee is connected to a 2ft coax terminated in 390pF +/-5%
+* 479pF when also connected to the oscilloscope
+Consequently, we suppose that 2ft coax contributes approx 55 - 65pF.
+
+Replacing that 390pF capacitor with Tandberg 3002 MM input
+   Left Right channel
+* 103pF 101pF when 20pF selected on Tandberg
+* 194pF 187pF when 120pF selected on Tandberg
+* 401pF 376pF when 350pF selected on Tandberg
+
+Since Audio-Technical typically recommends 100-200pF load capacitance,
+Tandberg's 120pF selection would be best for this cable...
+But we will not be using 2ft BNC cables with the phonograph,
+which tonearm wirig will also add capacitance
+
+
+</body>
+</html>
