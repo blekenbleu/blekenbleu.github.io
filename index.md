@@ -49,6 +49,7 @@
 ### macOS local [gitolite](MacGit) server
 ### [Thorens TD 160 MK II](ThorensTD126MKII/README.md) with SME Series III
 ### [Audio-Technica AT-LP140XP](AT-LP140XP/index.htm) microphonics
+### [Reichert/American Optical microscopes](microscope/index.html)
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 
 [GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io)
