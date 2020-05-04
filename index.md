@@ -42,6 +42,7 @@
 4. **IPv6** tends to be problematic, requiring Windows reboots  
    Suggested procedures [for disabling IPv6](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
 
+### [COVID-19 plots](covid)
 ### [Vim and X-Mouse](VimTXmouse)
 ### [Line 6 JTV-89F guitar](JTV89F/Variax)
 ### [Installing Git-Cola from MacPorts](GitColaMacPorts)
