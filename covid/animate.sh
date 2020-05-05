@@ -9,7 +9,6 @@ else
 fi
 
 ## Bash string field separator
-OFS=$IFS
 IFS=,
 
 csv=time_series_covid19_confirmed_US.csv
@@ -49,6 +48,7 @@ count `head -1 $csv`
 if [ $frame -nt anicovopt.gif ] ; then
   echo $MAGICK 'convert -delay 100 frame*.png -loop 1 -layers optimize anicovopt.gif'
   $MAGICK convert -delay 100 frame*.png -loop 1 -layers optimize anicovopt.gif
+  touch anicovopt.gif
 else
   ls -lt $frame anicovopt.gif
 fi

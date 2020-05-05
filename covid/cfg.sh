@@ -1,6 +1,13 @@
 #! /bin/bash
 oops=''
 
+if [ -z "$OFS" ] ; then
+  OFS=$IFS
+  IFS=,
+else
+  echo "OFS = '"$OFS"'"
+fi
+
 try_folder()
 {
   local here=`pwd`

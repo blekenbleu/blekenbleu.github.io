@@ -17,9 +17,6 @@ plot 'data.txt' using ($2) t 'immune'
 replot 'data.txt' using ($5) t 'new'
 replot 'data.txt' using ($4) t 'previous'
 replot 'data.txt' using 3:xticlabels(6) t 'active'
-set term push
+unset output
 set term png size 1400,800
-set output 'covid.png'
 replot
-#set term pop
-#replot

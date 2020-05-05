@@ -1,6 +1,5 @@
 # generate a single png e.g. for covid animated gif
 ## Bash string field separator
-OFS=$IFS
 IFS=,
 
 csv=$COVID_FOLDER/time_series_covid19_confirmed_US.csv
@@ -69,18 +68,18 @@ now()
     a23=$a26
   fi
 # increase days 1-3
-  let a20=${!argc}-${!a20}
-  if [ $a20 -lt $a23 ] ; then
-    echo "wtf $loc $now $a20 < $a23"
-    a20=$a23
+  let a21=${!argc}-${!a20}
+  if [ $a21 -lt $a23 ] ; then
+    echo "wtf $loc $now $a21 < $a23"
+    a21=$a23
   fi
  
 # per 100k 
   a26=`rnd100k $a26`
   a23=`rnd100k $a23`
-  a20=`rnd100k $a20`
+  a21=`rnd100k $a21`
   a0=`rnd100k ${!argc}` 
-  echo "$i	$a0	$a26	$a23	$a20	$loc" >> $COVID_FOLDER/data.txt
+  echo "$i	$a0	$a26	$a23	$a21	$loc" >> $COVID_FOLDER/data.txt
 }
 
 echo "#index	$now	$now6	$now3	$now20	Location" > $COVID_FOLDER/data.txt
@@ -111,6 +110,6 @@ while read foo ; do
   token $foo
 done < myFIPS.csv
 
-echo $GNUPLOT -e "title='$now COVID-19 cases per 100K'" plot_covid.p
-$GNUPLOT -e "title='$now COVID-19 cases per 100K'" plot_covid.p
-$MAGICK convert -rotate 90 covid.png $frame
+title="title='$now COVID-19 cases per 100K'"
+echo $GNUPLOT -e "$title" plot_covid.p
+$GNUPLOT -e "$title" plot_covid.p | $MAGICK convert png:- -rotate 90 $frame

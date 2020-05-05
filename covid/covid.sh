@@ -13,7 +13,6 @@ if [ ! -r $COVID_FOLDER/myFIPS.csv ] ; then
 fi
 
 ## Bash string field separator
-OFS=$IFS
 IFS=,
 
 if [ -n "$1" ] ; then
