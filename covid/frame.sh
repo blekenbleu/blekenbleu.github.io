@@ -14,19 +14,14 @@ args()
 {
   echo $argc items
 # echo "header = " $*
-# extract date labels
+# column  indices and date labels
   now=${!argc}
-  let j=$argc-3
-  now3=${!j}
-  let k=$argc-6
-  now6=${!k}
-  let l=$argc-20
-  now20=${!l}
-  first=`cat first.txt`
-  if [ -z "$first" ] ; then
-    first=75
-  fi
-  first=${!first}
+  let a3=$argc-3
+  now3=${!a3}
+  let a6=$argc-6
+  now6=${!a6}
+  let a20=$argc-20
+  now20=${!a20}
 }
 
 if [ -n "$1" ] ; then
@@ -46,34 +41,6 @@ rnd100k()
   echo $v
 }
 
-# build output for a county of interest
-# gnuplot first plots $rec, then overlays newer with older
-now()
-{
-# approx most recent 20 days are active
-  let act=${!k}-${!l}
-# increase days 4-6
-  let m=${!j}-${!l}
-  if [ $m -lt $act ] ; then
-    echo "wtf $loc $now3 $m < $act"
-    m=$act
-  fi
-# percent day 1-3
-  let n=${!argc}-${!l}
-  if [ $n -lt $m ] ; then
-    echo "wtf $loc $now $n < $m"
-    n=$m
-  fi
- 
-# per 100k 
-  act=`rnd100k $act`
-  m=`rnd100k $m`
-  n=`rnd100k $n`
-# over 20 days: recovered?
-  rec=`rnd100k ${!argc}` 
-  echo "$i	$rec	$act	$m	$n	$loc" >> $COVID_FOLDER/data.txt
-}
-
 sequence()
 {
   let seq=10000*$3
@@ -85,12 +52,38 @@ sequence()
 
 # check out csv header line
 echo "$csv using dates" ${now} ${now3} $now6 ${now20}
-echo "set ylabel '$now COVID-19 cases per 100K'" > $COVID_FOLDER/title.p
 IFS=/
 frame=`sequence ${now}`
 IFS=,
 
-echo "#index	$now20	$now	$now3	$now6	Location" > $COVID_FOLDER/data.txt
+# build output for a county of interest
+# gnuplot first plots $a0, then overlays newer with older
+now()
+{
+# approx most recent 20 days are contagious
+  let a26=${!a6}-${!a20}
+# trend:  increase days 4-6
+  let a23=${!a3}-${!a20}
+  if [ $a23 -lt $a26 ] ; then
+    echo "wtf $loc $now3 $a23 < $a26"
+    a23=$a26
+  fi
+# increase days 1-3
+  let a20=${!argc}-${!a20}
+  if [ $a20 -lt $a23 ] ; then
+    echo "wtf $loc $now $a20 < $a23"
+    a20=$a23
+  fi
+ 
+# per 100k 
+  a26=`rnd100k $a26`
+  a23=`rnd100k $a23`
+  a20=`rnd100k $a20`
+  a0=`rnd100k ${!argc}` 
+  echo "$i	$a0	$a26	$a23	$a20	$loc" >> $COVID_FOLDER/data.txt
+}
+
+echo "#index	$now	$now6	$now3	$now20	Location" > $COVID_FOLDER/data.txt
 
 # extract latest stats for counties of interest
 token()
@@ -106,7 +99,8 @@ token()
     now $hit
     let i=$i+1
   else
-    echo $loc
+    echo "bad $csv for $loc"
+    exit 2
   fi
 }
 
@@ -117,6 +111,6 @@ while read foo ; do
   token $foo
 done < myFIPS.csv
 
-echo $GNUPLOT plot_covid.p
-$GNUPLOT plot_covid.p
+echo $GNUPLOT -e "title='$now COVID-19 cases per 100K'" plot_covid.p
+$GNUPLOT -e "title='$now COVID-19 cases per 100K'" plot_covid.p
 $MAGICK convert -rotate 90 covid.png $frame

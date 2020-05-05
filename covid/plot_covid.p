@@ -7,12 +7,12 @@ set linetype 2 lc rgb "red" lw 0 pt 1
 set linetype 3 lc rgb "orange" lw 0 pt 1
 set linetype 4 lc rgb "yellow" lw 0 pt 1
 set xtics border rotate 90 offset 0,graph 0 nomirror
-load 'title.p'
 set logscale y
 unset grid
 unset y2tics
 set grid ytics back
 set yrange [10:5000]
+set ylabel title
 plot 'data.txt' using ($2) t 'immune'
 replot 'data.txt' using ($5) t 'new'
 replot 'data.txt' using ($4) t 'previous'
