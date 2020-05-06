@@ -103,6 +103,7 @@ token()
   fi
 }
 
+local here=`pwd`
 cd $COVID_FOLDER
 # main loop over counties of interest
 i=0
@@ -112,4 +113,4 @@ done < myFIPS.csv
 
 title="title='$now COVID-19 cases per 100K'"
 echo $GNUPLOT -e "$title" plot_covid.p
-$GNUPLOT -e "$title" plot_covid.p | $MAGICK convert png:- -rotate 90 $frame
+$GNUPLOT -e "$title" $here/plot_covid.p | $MAGICK convert png:- -rotate 90 $frame
