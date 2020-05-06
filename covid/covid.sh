@@ -25,5 +25,4 @@ else
 fi
 
 source frame.sh ''
-rm covid.png
 cp $frame $CHOME/covid.png
