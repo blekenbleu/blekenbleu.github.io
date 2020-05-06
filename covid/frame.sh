@@ -30,16 +30,6 @@ else
 fi
 args `head -1 $csv`
 
-# rounded values per 100K
-rnd100k()
-{
-  let v=100000*$1
-  let r=$pop/2
-  let v=$v+$r
-  let v=$v/$pop
-  echo $v
-}
-
 sequence()
 {
   let seq=10000*$3
@@ -54,6 +44,16 @@ echo "$csv using dates" ${now} ${now3} $now6 ${now20}
 IFS=/
 frame=`sequence ${now}`
 IFS=,
+
+# rounded values per 100K
+rnd100k()
+{
+  let v=100000*$1
+  let r=$Pop/2
+  let v=$v+$r
+  let v=$v/$Pop
+  echo $v
+}
 
 # build output for a county of interest
 # gnuplot first plots $a0, then overlays newer with older
@@ -87,6 +87,8 @@ echo "#index	$now	$now6	$now3	$now20	Location" > $COVID_FOLDER/data.txt
 # extract latest stats for counties of interest
 token()
 {
+  # remove potential leading blank[s] from numeric population string
+  Pop=`echo $3`
   hit=`grep "$2,$1" $csv`
   if [ "$2" == "$1" ] ; then
     loc="\"$1\""
@@ -94,7 +96,6 @@ token()
     loc="\"$2,$1\""
   fi
   if [ -n "$hit" ] ; then
-    pop=$3
     now $hit
     let i=$i+1
   else
@@ -103,7 +104,6 @@ token()
   fi
 }
 
-local here=`pwd`
 cd $COVID_FOLDER
 # main loop over counties of interest
 i=0
