@@ -1,7 +1,7 @@
 source cfg.sh
 if [ -n "$oops" ] ; then
   echo covid.sh:  missing $oops
-  exit 1
+  return 1
 fi
 
 if [ ! -r $COVID_FOLDER/myFIPS.csv ] ; then
@@ -9,7 +9,7 @@ if [ ! -r $COVID_FOLDER/myFIPS.csv ] ; then
   echo state,county,population
   echo eg California,Contra Costa,1150215
   extract e.g. from https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/co-est2019-alldata.csv
-  exit 2
+  return 2
 fi
 
 ## Bash string field separator
