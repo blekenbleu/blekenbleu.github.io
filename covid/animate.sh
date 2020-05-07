@@ -3,15 +3,16 @@
 source cfg.sh
 if [ -n "$oops" ] ; then
   echo animate.sh:  missing $oops
-  exit 1
-else
-  cd $COVID_FOLDER
+  return 1
 fi
 
-## Bash string field separator
-IFS=,
+if [ -z "$csv" ] ; then
+  csv=$COVID_FOLDER/time_series_covid19_confirmed_US.csv
+fi
 
-csv=time_series_covid19_confirmed_US.csv
+if [ ! -r $csv ] ; then
+  source covid.sh
+fi
 
 sequence()
 {
@@ -19,35 +20,39 @@ sequence()
   let i=100*$1
   let seq=${seq}+${i}
   let seq=${seq}+$2
-  echo "frame${seq}.png"
+  echo "$COVID_FOLDER/frame${seq}.png"
 }  
 
 count()
 {
   argc=$#
   echo $argc items
-  first=`cat first.txt`
+  first=`cat $COVID_FOLDER/first.txt`
   if [ -z "$first" ] ; then
     first=75
+    echo $first>$COVID_FOLDER/first.txt
   fi
   while [ $first -le $argc ] ; do
     now="${!first}"
     IFS=/
     frame=`sequence ${now}`
-    IFS=,
+    IFS=$OFS
     if [ ! -r $frame ] ; then
-      echo "sh frame.sh $first"
-      sh frame.sh $first
+      echo "frame.sh $first"
+      source frame.sh $first
     fi
     let first=1+$first
   done
 }
 
-count `head -1 $csv`
+header=`head -1 $csv`
+## Bash string field separator
+IFS=,
+count $header
 
 if [ $frame -nt anicovopt.gif ] ; then
   echo $MAGICK 'convert -delay 100 frame*.png -loop 1 -layers optimize anicovopt.gif'
-  $MAGICK convert -delay 100 frame*.png -loop 1 -layers optimize anicovopt.gif
+  $MAGICK convert -delay 100 $COVID_FOLDER/frame*.png -loop 1 -layers optimize anicovopt.gif
   touch anicovopt.gif
 else
   ls -lt $frame anicovopt.gif

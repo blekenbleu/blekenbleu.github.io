@@ -1,16 +1,15 @@
 #! /bin/bash
 oops=''
+here=`pwd`
 
 if [ -z "$OFS" ] ; then
   OFS=$IFS
-  IFS=,
 else
-  echo "OFS = '"$OFS"'"
+  echo "'\$OFS' =" "'$OFS'"
 fi
 
 try_folder()
 {
-  local here=`pwd`
   if [ -n "$HOMEPATH" ] ; then
     cd /c
     cd $HOMEPATH

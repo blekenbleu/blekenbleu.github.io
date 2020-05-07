@@ -1,8 +1,7 @@
 # generate a single png e.g. for covid animated gif
-## Bash string field separator
-IFS=,
 
 csv=$COVID_FOLDER/time_series_covid19_confirmed_US.csv
+header=`head -1 $csv`
 
 count()
 {
@@ -12,7 +11,7 @@ count()
 args()
 {
   echo $argc items
-# echo "header = " $*
+# echo "header = $header"
 # column  indices and date labels
   now=${!argc}
   let a3=$argc-3
@@ -23,12 +22,14 @@ args()
   now20=${!a20}
 }
 
+## Bash string field separator
+IFS=,
 if [ -n "$1" ] ; then
   argc=$1
 else
-  count `head -1 $csv`
+  count $header
 fi
-args `head -1 $csv`
+args $header
 
 sequence()
 {
@@ -40,7 +41,7 @@ sequence()
 }
 
 # check out csv header line
-echo "$csv using dates" ${now} ${now3} $now6 ${now20}
+echo "using dates" ${now} ${now3} $now6 ${now20}
 IFS=/
 frame=`sequence ${now}`
 IFS=,
@@ -88,7 +89,7 @@ echo "#index	$now	$now6	$now3	$now20	Location" > $COVID_FOLDER/data.txt
 token()
 {
   # remove potential leading blank[s] from numeric population string
-  Pop=`echo $3`
+  Pop=$3
   hit=`grep "$2,$1" $csv`
   if [ "$2" == "$1" ] ; then
     loc="\"$1\""
@@ -100,6 +101,7 @@ token()
     let i=$i+1
   else
     echo "bad $csv for $loc"
+    IFS=$OFS
     exit 2
   fi
 }
@@ -107,10 +109,14 @@ token()
 cd $COVID_FOLDER
 # main loop over counties of interest
 i=0
+IFS=$OFS
 while read foo ; do
+  IFS=,
   token $foo
+  IFS=$OFS
 done < myFIPS.csv
 
 title="title='$now COVID-19 cases per 100K'"
-echo $GNUPLOT -e "$title" plot_covid.p
+echo $GNUPLOT -e "$title" $here/plot_covid.p
 $GNUPLOT -e "$title" $here/plot_covid.p | $MAGICK convert png:- -rotate 90 $frame
+cd $here
