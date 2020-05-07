@@ -62,16 +62,20 @@ now()
 {
 # approx most recent 20 days are contagious
   let a26=${!a6}-${!a20}
+  if [ $a26 -lt 0 ] ; then
+    echo "wtf $loc $now6 $a6 < $now20 $a20"
+    a26=0
+  fi
 # trend:  increase days 4-6
   let a23=${!a3}-${!a20}
   if [ $a23 -lt $a26 ] ; then
-    echo "wtf $loc $now3 $a23 < $a26"
+    echo "wtf $loc $now3 $a23 < $now26 $a26"
     a23=$a26
   fi
 # increase days 1-3
   let a21=${!argc}-${!a20}
   if [ $a21 -lt $a23 ] ; then
-    echo "wtf $loc $now $a21 < $a23"
+    echo "wtf $loc $now $a21 < $now3 $a23"
     a21=$a23
   fi
  

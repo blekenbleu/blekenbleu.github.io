@@ -53,6 +53,10 @@ count $header
 if [ $frame -nt anicovopt.gif ] ; then
   echo $MAGICK 'convert -delay 100 frame*.png -loop 1 -layers optimize anicovopt.gif'
   $MAGICK convert -delay 100 $COVID_FOLDER/frame*.png -loop 1 -layers optimize anicovopt.gif
+# optional optimization https://eternallybored.org/misc/gifsicle/
+  if [ -n "$GIFSICLE" ] ; then
+    $GIFSICLE anicovopt.gif
+  fi
   touch anicovopt.gif
 else
   ls -lt $frame anicovopt.gif
