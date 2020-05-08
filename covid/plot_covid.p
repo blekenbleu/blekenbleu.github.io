@@ -10,7 +10,8 @@ set xtics border rotate 90 offset 0,graph 0 nomirror
 set logscale y
 unset grid
 unset y2tics
-set grid ytics
+set ytics nomirror
+set grid ytics front
 set yrange [1:5000]
 plot 'data.txt' using ($2) t '> 20 days'
 replot 'data.txt' using ($5) t '6-20 days'
