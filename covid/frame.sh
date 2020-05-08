@@ -2,6 +2,12 @@
 
 csv=$COVID_FOLDER/time_series_covid19_confirmed_US.csv
 header=`head -1 $csv`
+# where to write/read data.txt
+if [ -n "$RAMDISK" ] ; then
+  CTMP=$RAMDISK
+else
+  CTMP=$COVID_FOLDER
+fi
 
 count()
 {
@@ -34,10 +40,10 @@ args $header
 sequence()
 {
   let seq=10000*$3
-  let i=100*$1
-  let seq=${seq}+${i}
+  let s=100*$1
+  let seq=${seq}+${s}
   let seq=${seq}+$2
-  echo "frame${seq}.png"
+  echo "$COVID_FOLDER/frame${seq}.png"
 }
 
 # check out csv header line
@@ -84,10 +90,10 @@ now()
   a23=`rnd100k $a23`
   a21=`rnd100k $a21`
   a0=`rnd100k ${!argc}` 
-  echo "$i	$a0	$a26	$a23	$a21	$loc" >> $COVID_FOLDER/data.txt
+  echo "$i	$a0	$a26	$a23	$a21	$loc" >> data.txt
 }
 
-echo "#index	$now	$now6	$now3	$now20	Location" > $COVID_FOLDER/data.txt
+echo "#index	$now	$now6	$now3	$now20	Location" > $CTMP/data.txt
 
 # extract latest stats for counties of interest
 token()
@@ -110,7 +116,7 @@ token()
   fi
 }
 
-cd $COVID_FOLDER
+cd $CTMP
 # main loop over counties of interest
 i=0
 IFS=$OFS
@@ -118,7 +124,7 @@ while read foo ; do
   IFS=,
   token $foo
   IFS=$OFS
-done < myFIPS.csv
+done < $COVID_FOLDER/myFIPS.csv
 
 title="title='$now COVID-19 cases per 100K'"
 echo $GNUPLOT -e "$title" $here/plot_covid.p

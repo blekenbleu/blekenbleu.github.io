@@ -35,6 +35,12 @@ if [ -z  "$COVID_FOLDER" ] ; then
   try_folder
 fi
 
+if [ -n "$RAMDISK" ] ; then
+  if [ ! -d $RAMDISK ] ; then
+    ls -l  $RAMDISK
+  fi
+fi
+
 if [ -d "$COVID_FOLDER" ] ; then
   if [ -z "$MAGICK" ] ; then
     MAGICK=`which magick`
@@ -54,4 +60,4 @@ if [ -d "$COVID_FOLDER" ] ; then
 else
   oops=COVID_FOLDER
 fi
-echo "define \$$oops path in configure.sh"
+echo "define \$$oops path in cfg.sh"

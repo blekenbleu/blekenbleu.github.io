@@ -12,6 +12,7 @@ unset grid
 unset y2tics
 set ytics nomirror
 set grid ytics front
+set ylabel title
 set yrange [1:5000]
 plot 'data.txt' using ($2) t '> 20 days'
 replot 'data.txt' using ($5) t '6-20 days'

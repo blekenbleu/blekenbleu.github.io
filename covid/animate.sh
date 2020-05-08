@@ -25,14 +25,14 @@ sequence()
 
 count()
 {
-  argc=$#
-  echo $argc items
+  last=$#
+  echo $last items
   first=`cat $COVID_FOLDER/first.txt`
   if [ -z "$first" ] ; then
     first=75
     echo $first>$COVID_FOLDER/first.txt
   fi
-  while [ $first -le $argc ] ; do
+  while [ $first -le $last ] ; do
     now="${!first}"
     IFS=/
     frame=`sequence ${now}`
