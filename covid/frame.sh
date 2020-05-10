@@ -14,7 +14,7 @@ count()
 
 args()
 {
-  echo $argc items
+  echo $argc header items
 # echo "header = $header"
 # column  indices and date labels
   now=${!argc}
@@ -24,6 +24,11 @@ args()
   now6=${!a6}
   let a20=$argc-20
   now20=${!a20}
+# two less header columns than data
+  let argc=2+$argc
+  let a3=2+$a3
+  let a6=2+a6
+  let a20=2+a20
 }
 
 ## Bash string field separator
@@ -45,7 +50,7 @@ sequence()
 }
 
 # check out csv header line
-echo "using dates" ${now} ${now3} $now6 ${now20}
+echo "using dates '$now' '$now3' '$now6' '$now20'"
 IFS=/
 frame=`sequence ${now}`
 IFS=,
@@ -65,33 +70,50 @@ rnd100k()
 now()
 {
 # approx most recent 20 days are contagious
-  let a26=${!a6}-${!a20}
-  if [ $a26 -lt 0 ] ; then
-    echo "wtf $loc $now6 $a6 < $now20 $a20"
-    a26=0
+  let d20=${!a20}
+  if [ $d20 -lt 0 ] ; then
+    echo "wtf $loc $now20 $d20 < 0"
+    d20=0
   fi
-# trend:  increase days 4-6
-  let a23=${!a3}-${!a20}
-  if [ $a23 -lt $a26 ] ; then
-    echo "wtf $loc $now3 $a23 < $now26 $a26"
-    a23=$a26
+# trend:  day 6
+  let d6=${!a6}
+  if [ $d6 -lt $d20 ] ; then
+    echo "wtf $loc $now6 $d6 < $now20 $d20"
+    d6=$d20
   fi
-# increase days 1-3
-  let a21=${!argc}-${!a20}
-  if [ $a21 -lt $a23 ] ; then
-    echo "wtf $loc $now $a21 < $now3 $a23"
-    a21=$a23
+# trend:  day 3
+  let d3=${!a3}
+  if [ $d3 -lt $d6 ] ; then
+    echo "wtf $loc $now3 $d3 < $now6 $d6"
+    d3=$d6
+  fi
+# day 0
+  d0=${!argc}
+  if [ $d0 -lt $d3 ] ; then
+    echo "wtf $loc $now $d0 < $now3 $d3"
+    d0=$d3
+  fi
+# do not plot identical newer over older
+  if [ $d3 -eq -$d6 ] ; then
+    d3=$d0
+  fi
+  if [ $d6 -eq -$d20 ] ; then
+    d6=$d3
   fi
  
+# echo "argc=$argc"
+# echo "$i	$d0	$d3	$d6	$d20	$loc"
 # per 100k 
-  a26=`rnd100k $a26`
-  a23=`rnd100k $a23`
-  a21=`rnd100k $a21`
-  a0=`rnd100k ${!argc}` 
-  echo "$i	$a0	$a26	$a23	$a21	$loc" >> data.txt
+  d20=`rnd100k $d20`
+  d6=`rnd100k $d6`
+  d3=`rnd100k $d3`
+  d0=`rnd100k $d0` 
+# echo "$i	$d0	$d3	$d6	$d20	$loc"
+# return $argc
+  echo "$i	$d0	$d3	$d6	$d20	$loc" >> data.txt
 }
 
-echo "#index	$now	$now6	$now3	$now20	Location" > $CTMP/data.txt
+echo "#index	$now	$now3	$now6	$now20	Location" > $CTMP/data.txt
 
 # extract latest stats for counties of interest
 token()
@@ -106,6 +128,7 @@ token()
   fi
   if [ -n "$hit" ] ; then
     now $hit
+#   return 100
     let i=$i+1
   else
     echo "bad $csv for $loc"
@@ -121,6 +144,7 @@ IFS=$OFS
 while read foo ; do
   IFS=,
   token $foo
+# return 100
   IFS=$OFS
 done < $COVID_FOLDER/myFIPS.csv
 

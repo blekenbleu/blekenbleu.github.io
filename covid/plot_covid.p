@@ -15,9 +15,9 @@ set grid ytics front
 set ylabel title
 set yrange [1:5000]
 plot 'data.txt' using ($2) t '> 20 days'
-replot 'data.txt' using ($5) t '6-20 days'
-replot 'data.txt' using ($5-$3) t '3-6 days'
-replot 'data.txt' using ($5-$4):xticlabels(6) t '1-3 days'
+replot 'data.txt' using ($2-$5) t '6-20 days'
+replot 'data.txt' using ($2-$4) t '3-6 days'
+replot 'data.txt' using ($2-$3):xticlabels(6) t '1-3 days'
 unset output
 set term png size 1400,800
 replot
