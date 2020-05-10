@@ -1,12 +1,10 @@
 # generate a single png e.g. for covid animated gif
 
-csv=$COVID_FOLDER/time_series_covid19_confirmed_US.csv
-header=`head -1 $csv`
-# where to write/read data.txt
-if [ -n "$RAMDISK" ] ; then
-  CTMP=$RAMDISK
+if [ -n "$csv" ] ; then
+  header=`head -1 $csv`
 else
-  CTMP=$COVID_FOLDER
+  echo 'missing environmental variable $csv'
+  return 2
 fi
 
 count()

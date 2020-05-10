@@ -18,11 +18,10 @@ IFS=,
 if [ -n "$1" ] ; then
   csv=$1
 else
-  csv=time_series_covid19_confirmed_US.csv
-  curl "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/$csv" > $COVID_FOLDER/$csv
-  csv=$COVID_FOLDER/$csv
-  echo $csv `wc $csv`
+  tcsv=time_series_covid19_confirmed_US.csv
+  curl "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/$tcsv" > $csv
 fi
+echo $csv `wc $csv`
 
 source frame.sh ''
 if [ -n "$OFS" ] ; then

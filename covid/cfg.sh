@@ -38,8 +38,12 @@ fi
 if [ -n "$RAMDISK" ] ; then
   if [ ! -d $RAMDISK ] ; then
     ls -l  $RAMDISK
+    CTMP=$COVID_FOLDER
+  else
+     CTMP=$RAMDISK
   fi
 fi
+csv=$CTMP/time_series_covid19_confirmed_US.csv
 
 if [ -d "$COVID_FOLDER" ] ; then
   if [ -z "$MAGICK" ] ; then

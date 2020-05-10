@@ -6,10 +6,6 @@ if [ -n "$oops" ] ; then
   return 1
 fi
 
-if [ -z "$csv" ] ; then
-  csv=$COVID_FOLDER/time_series_covid19_confirmed_US.csv
-fi
-
 if [ ! -r $csv ] ; then
   source covid.sh
 fi
