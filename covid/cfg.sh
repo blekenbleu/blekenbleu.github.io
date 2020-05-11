@@ -2,12 +2,6 @@
 oops=''
 here=`pwd`
 
-if [ -z "$OFS" ] ; then
-  OFS=$IFS
-else
-  echo "'\$OFS' =" "'$OFS'"
-fi
-
 try_folder()
 {
   if [ -n "$HOMEPATH" ] ; then

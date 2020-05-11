@@ -109,7 +109,6 @@ now()
   d3=`rnd100k $d3`
   d0=`rnd100k $d0` 
 # echo "$i	$d0	$d3	$d6	$d20	$loc"
-# return $argc
   echo "$i	$d0	$d3	$d6	$d20	$loc" >> data.txt
 }
 
@@ -128,11 +127,10 @@ token()
   fi
   if [ -n "$hit" ] ; then
     now $hit
-#   return 100
     let i=$i+1
   else
     echo "bad $csv for $loc"
-    IFS=$OFS
+    unset IFS
     exit 2
   fi
 }
@@ -140,12 +138,11 @@ token()
 cd $CTMP
 # main loop over counties of interest
 i=0
-IFS=$OFS
+unset IFS
 while read foo ; do
   IFS=,
   token $foo
-# return 100
-  IFS=$OFS
+  unset IFS
 done < $COVID_FOLDER/myFIPS.csv
 
 title="title='$now COVID-19 cases per 100K'"

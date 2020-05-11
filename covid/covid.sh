@@ -7,7 +7,8 @@ fi
 if [ ! -r $COVID_FOLDER/myFIPS.csv ] ; then
   echo $COVID_FOLDER/myFIPS.csv required with no header, line contents:
   echo state,county,population
-  echo "eg:${OFS}California,Contra Costa,1150215"
+  echo "eg:
+California,Contra Costa,1150215"
   echo extract e.g. from https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/co-est2019-alldata.csv
   return 2
 fi
@@ -24,7 +25,5 @@ fi
 echo $csv `wc $csv`
 
 source frame.sh ''
-if [ -n "$OFS" ] ; then
-  IFS=$OFS
-fi
+unset IFS
 #cp $frame $CHOME/covid.png
