@@ -46,6 +46,19 @@ header=`head -1 $csv`
 IFS=,
 count $header
 
+# comparing today with 3 days ago
+latest()
+{
+  l=$#
+  let n=$l-3
+  echo $MAGICK convert -delay 90 ${!n} -delay 180 ${!l} -loop 0 $CTMP/latest.gif
+  $MAGICK convert -delay 90 ${!n} -delay 180 ${!l} -loop 0 $CTMP/latest.gif
+}
+
+cd $COVID_FOLDER
+latest frame*.png
+cd $here
+
 if [ $frame -nt anicovopt.gif ] ; then
   echo $MAGICK 'convert -delay 50 frame*.png -loop 1 -layers optimize anicovopt.gif'
   $MAGICK convert -delay 50 $COVID_FOLDER/frame*.png -loop 1 -layers optimize anicovopt.gif
