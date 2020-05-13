@@ -12,7 +12,11 @@ if [ ! -r factFIPS.csv ] ; then
 fi
 
 fco=covid_confirmed_usafacts.csv
-curl "https://usafactsstatic.blob.core.windows.net/public/data/covid-19/$fco" > $CTMP/$fco
+if [ ! -r $CTMP/$fco ] ; then
+  curl "https://usafactsstatic.blob.core.windows.net/public/data/covid-19/$fco" > $CTMP/$fco
+else
+  ls -l $CTMP/$fco
+fi
 fco=$CTMP/$fco
 
 count()
@@ -26,7 +30,7 @@ count()
   now3="${!a3}"
   now6="${!a6}"
   now20="${!a20}"
-  echo "#index	$now	$now3	$now6	$now20	Location" > $CTMP/data.txt
+  echo "#index	$now	$now3	$now6	$now20	Location	Population" > $CTMP/data.txt
 }
 
 # rounded values per 100K
@@ -57,7 +61,7 @@ county()
   if [ $d6 -eq -$d20 ] ; then
     d6=$d3
   fi
-  echo "$i	$d0	$d3	$d6	$d20	$loc" >> data.txt
+  echo "$i	$d0	$d3	$d6	$d20	$loc	$Pop" >> data.txt
 }
 
 # grab and process county line from $fco based on FIPS ($4)
