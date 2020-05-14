@@ -1,93 +1,93 @@
-California,Contra Costa,1150215
-California,Orange,3185968
-California,Alameda,1666753
-California,Imperial,181827
-California,Riverside,2450758
-California,San Diego,3343364
-California,San Francisco,883305
-California,San Mateo,769545
-California,Santa Clara,1937570
-California,Santa Cruz,274255
-Colorado,Gilpin,6121
-Colorado,Boulder,326078
-Colorado,Broomfield,69267
-Colorado,Denver,716492
-Colorado,Weld,314305
-Colorado,Larimer,350518
-Colorado,Grand,15525
-Kentucky,Oldham,66470
-Kentucky,Shelby,48518
-Kentucky,Bullitt,81069
-Kentucky,Jefferson,770517
-Ohio,Hamilton,816684
-Kentucky,Spencer,18794
-Kentucky,Barren,44176
-Kentucky,Anderson,22663
-Kentucky,Clark,36249
-Kentucky,Woodford,26533
-Kentucky,Jessamine,53920
-Kentucky,Fayette,323780
-Kentucky,Scott,56031
-Kentucky,Madison,92368
-Missouri,Crawford,23957
-Missouri,Franklin,103670
-Missouri,Jefferson,224347
-Missouri,St. Charles,399182
-Missouri,St. Louis,996945
-Missouri,Warren,34711
-Missouri,St. Francois,66692
-Missouri,Gasconade,14705
-New York,Livingston,63227
-New York,Orleans,40612
-New York,Genesee,57511
-New York,Monroe,742474
-New York,Ontario,109864
-New York,Wayne,90064
-New York,Cayuga,77145
-New York,Onondaga,461809
-New York,Seneca,34300
-New York,Cortland,47823
-New York,Tompkins,102793
-New York,Oswego,117898
-New York,Jefferson,111755
-New York,St. Lawrence,108047
-New York,Lewis,26447
-New York,Nassau,1358343
-New York,New York,8398748
-New York,Westchester,967612
-Oregon,Columbia,52377
-Oregon,Hood River,23428
-Oregon,Multnomah,811880
-Washington,Clark,481857
-Washington,Cowlitz,108987
-Washington,Skamania,11924
-Georgia,Effingham,62190
-Georgia,Chatham,289195
-South Carolina,Hampton,19351
-South Carolina,Beaufort,188715
-South Carolina,Charleston,405905
-South Carolina,Colleton,37660
-South Carolina,Jasper,28971
-South Carolina,Dorchester,160647
-South Carolina,Bamberg,14275
-Texas,Lee,17144
-Texas,Burnet,47542
-Texas,Bell,355642
-Texas,Hays,222631
-Texas,Bastrop,86976
-Texas,Travis,1248743
-Texas,Williamson,566719
-Texas,Blanco,11702
-Texas,Caldwell,43247
-District of Columbia,District of Columbia,702455
-Virginia,Arlington,237521
-Virginia,Fairfax,1150795
-Virginia,Prince William,468011
-Virginia,Stafford,149960
-Virginia,Loudoun,406850
-Virginia,Fauquier,70675
-Virginia,Shenandoah,43497
-Virginia,Warren,40003
-Virginia,Frederick,88355
-Virginia,Clarke,14523
-Virginia,Rappahannock,7252
+California,Contra Costa,1150215,CA
+California,Orange,3185968,CA
+California,Alameda,1666753,CA
+California,Imperial,181827,CA
+California,Riverside,2450758,CA
+California,San Diego,3343364,CA
+California,San Francisco,883305,CA
+California,San Mateo,769545,CA
+California,Santa Clara,1937570,CA
+California,Santa Cruz,274255,CA
+Colorado,Gilpin,6121,CO
+Colorado,Boulder,326078,CO
+Colorado,Broomfield,69267,CO
+Colorado,Denver,716492,CO
+Colorado,Weld,314305,CO
+Colorado,Larimer,350518,CO
+Colorado,Grand,15525,CO
+Kentucky,Oldham,66470,KY
+Kentucky,Shelby,48518,KY
+Kentucky,Bullitt,81069,KY
+Kentucky,Jefferson,770517,KY
+Ohio,Hamilton,816684,KY
+Kentucky,Spencer,18794,KY
+Kentucky,Barren,44176,KY
+Kentucky,Anderson,22663,KY
+Kentucky,Clark,36249,KY
+Kentucky,Woodford,26533,KY
+Kentucky,Jessamine,53920,KY
+Kentucky,Fayette,323780,KY
+Kentucky,Scott,56031,KY
+Kentucky,Madison,92368,KY
+Missouri,Crawford,23957,MO
+Missouri,Franklin,103670,MO
+Missouri,Jefferson,224347,MO
+Missouri,St. Charles,399182,MO
+Missouri,St. Louis,996945,MO
+Missouri,Warren,34711,MO
+Missouri,St. Francois,66692,MO
+Missouri,Gasconade,14705,MO
+New York,Livingston,63227,NY
+New York,Orleans,40612,NY
+New York,Genesee,57511,NY
+New York,Monroe,742474,NY
+New York,Ontario,109864,NY
+New York,Wayne,90064,NY
+New York,Cayuga,77145,NY
+New York,Onondaga,461809,NY
+New York,Seneca,34300,NY
+New York,Cortland,47823,NY
+New York,Tompkins,102793,NY
+New York,Oswego,117898,NY
+New York,Jefferson,111755,NY
+New York,St. Lawrence,108047,NY
+New York,Lewis,26447,NY
+New York,Nassau,1358343,NY
+New York,New York,8398748,NY
+New York,Westchester,967612,NY
+Oregon,Columbia,52377,OR
+Oregon,Hood River,23428,OR
+Oregon,Multnomah,811880,OR
+Washington,Clark,481857,WA
+Washington,Cowlitz,108987,WA
+Washington,Skamania,11924,WA
+Georgia,Effingham,62190,GA
+Georgia,Chatham,289195,GA
+South Carolina,Hampton,19351,SC
+South Carolina,Beaufort,188715,SC
+South Carolina,Charleston,405905,SC
+South Carolina,Colleton,37660,SC
+South Carolina,Jasper,28971,SC
+South Carolina,Dorchester,160647,SC
+South Carolina,Bamberg,14275,SC
+Texas,Lee,17144,TX
+Texas,Burnet,47542,TX
+Texas,Bell,355642,TX
+Texas,Hays,222631,TX
+Texas,Bastrop,86976,TX
+Texas,Travis,1248743,TX
+Texas,Williamson,566719,TX
+Texas,Blanco,11702,TX
+Texas,Caldwell,43247,TX
+District of Columbia,District of Columbia,702455,DC
+Virginia,Arlington,237521,VA
+Virginia,Fairfax,1150795,VA
+Virginia,Prince William,468011,VA
+Virginia,Stafford,149960,VA
+Virginia,Loudoun,406850,VA
+Virginia,Fauquier,70675,VA
+Virginia,Shenandoah,43497,VA
+Virginia,Warren,40003,VA
+Virginia,Frederick,88355,VA
+Virginia,Clarke,14523,VA
+Virginia,Rappahannock,7252,VA
