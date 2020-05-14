@@ -46,10 +46,15 @@ rnd100k()
 county()
 {
 # approx most recent 20 days are contagious
-  let d20=${!a20}
-  let d6=${!a6}
-  let d3=${!a3}
-  let d0=${!a0}
+  d20=${!a20}
+  if [ $a0 -gt $# ] ; then
+    echo "$loc: d20='$d20'; a20='$a20'; \$96=$96; \$#=$#; FIPS='$FIPS'; \$line=
+$line"
+    return
+  fi
+  d6=${!a6}
+  d3=${!a3}
+  d0=${!a0}
   d20=`rnd100k $d20`
   d6=`rnd100k $d6`
   d3=`rnd100k $d3`
@@ -69,7 +74,8 @@ grab ()
 {
   Pop=$6
   loc="\"$2,$5\""
-  line=`grep ^$4, $fco`
+  FIPS=$4
+  line=`grep ^$FIPS, $fco`
 # echo "line=$line"
   county $line
 }
