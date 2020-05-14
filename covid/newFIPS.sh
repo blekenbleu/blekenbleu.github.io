@@ -15,8 +15,8 @@ if [ -z "$csv" ] ; then
   exit 2
 fi
 
-if [ ! -r covid_county_population_usafacts.csv ] ; then
-  curl "https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_county_population_usafacts.csv" > covid_county_population_usafacts.csv
+if [ ! -r population_usafacts.csv ] ; then
+  curl "https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_county_population_usafacts.csv" > population_usafacts.csv
 fi
 
 cofacts()
@@ -31,7 +31,7 @@ there()
   if [ -n "$FIPS" ] ; then
 # Bash string field separator
     unset IFS
-    usfacts=`grep ^${FIPS}, covid_county_population_usafacts.csv`
+    usfacts=`grep ^${FIPS}, population_usafacts.csv`
     if [ -n "$usfacts" ] ; then
       IFS=,
       cofacts $usfacts
