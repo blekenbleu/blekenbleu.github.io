@@ -39,7 +39,7 @@ args()
 ## Bash string field separator
 IFS=,
 if [ -n "$1" ] ; then
-  argc=$1
+  a0=$1
 else
   count $header
 fi
