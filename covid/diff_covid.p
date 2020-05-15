@@ -1,5 +1,5 @@
 unset border
-set term wxt 0 enhanced size 1400,800
+set term wxt 0 enhanced size 1400,1000
 set style data boxes
 set style fill solid 1.0 border -1
 set linetype 1 lc rgb "gray" lw 0 pt 1
@@ -23,5 +23,5 @@ replot 'data.txt' using ($2-$4) t '3-6 days'
 replot 'data.txt' using ($2-$3) t '1-3 days'
 replot 'data.txt' using (f($2-$3,$3-$4)):xticlabels(6) t 'increasing 1-3 days'
 unset output
-set term png size 1400,800
+set term png size 1400,1000
 replot
