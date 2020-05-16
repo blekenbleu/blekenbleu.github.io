@@ -86,9 +86,12 @@ IFS=,
 count $header
 unset IFS
 i=0
+# to be invoked from stats.p
+cp seq.sh $CTMP/
 cd $CTMP
 # generate copop.csv for (eventual) use by gnuplot
-(echo -n '#index,location,population,';head -1 $fco | cut -d ',' -f 58-$a0) > copop.csv
+ipl='index,location,population,'
+(echo -n $ipl;head -1 $fco | cut -d ',' -f 58-$a0) > copop.csv
 while read foo ; do
   IFS=,
 # echo "foo=$foo"
@@ -105,4 +108,5 @@ done < $here/factFIPS.csv
 title="title='$now COVID-19 cases per 100K'"
 echo $GNUPLOT -e "$title" $here/diff_covid.p
 $GNUPLOT -e "$title" $here/diff_covid.p | $MAGICK convert png:- -rotate 90 diff.png
+$GNUPLOT $here/stats.p
 cd $here
