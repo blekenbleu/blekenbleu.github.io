@@ -73,7 +73,7 @@ $line"
 grab ()
 {
   Pop=$6
-  loc="\"$2,$5\""
+  loc="\"$2 $5\""
   FIPS=$4
   line=`grep ^$FIPS, $fco`
 # echo "line=$line"
@@ -87,11 +87,17 @@ count $header
 unset IFS
 i=0
 cd $CTMP
+# generate copop.csv for (eventual) use by gnuplot
+(echo -n '#index,location,population,';head -1 $fco | cut -d ',' -f 58-$a0) > copop.csv
 while read foo ; do
   IFS=,
 # echo "foo=$foo"
   grab $foo
   unset IFS
+  (echo -n "$i,$loc,$Pop,";echo $line | cut -d ',' -f 58-$a0) >> copop.csv
+# less copop.csv
+# cd $here
+# return
   let i=1+$i
 done < $here/factFIPS.csv
 
