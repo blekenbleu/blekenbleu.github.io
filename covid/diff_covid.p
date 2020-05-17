@@ -1,5 +1,5 @@
 unset border
-set term wxt 0 enhanced size 1400,1000
+set term wxt 0 enhanced size 1400,1200
 set style data boxes
 set style fill solid 1.0 border -1
 set linetype 1 lc rgb "gray" lw 0 pt 1
@@ -13,15 +13,16 @@ unset grid
 unset y2tics
 set ytics nomirror
 set grid ytics front
-set ylabel title
+dates = system("head -1 data.txt")
+set ylabel word(dates,2).' COVID-19 cases per 100K'
 set yrange [1:5000]
 f(a,b) = (a > b) ? a : 0
 plot 'data.txt' using 2 t '> 20 days'
-replot 'data.txt' using ($2-$5) t '6-20 days'
-replot 'data.txt' using ($2-$4) t '3-6 days'
+replot 'data.txt' using ($2-$5) t '7-20 days'
+replot 'data.txt' using ($2-$4) t '4-6 days'
 # differently color-code increasing 3 day cases
 replot 'data.txt' using ($2-$3) t '1-3 days'
 replot 'data.txt' using (f($2-$3,$3-$4)):xticlabels(6) t 'increasing 1-3 days'
 unset output
-set term png size 1400,1000
+set term png size 1400,1200
 replot

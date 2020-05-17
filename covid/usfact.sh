@@ -105,8 +105,7 @@ while read foo ; do
 done < $here/factFIPS.csv
 
 # comparing today with 3 days ago
-title="title='$now COVID-19 cases per 100K'"
-echo $GNUPLOT -e "$title" $here/diff_covid.p
-$GNUPLOT -e "$title" $here/diff_covid.p | $MAGICK convert png:- -rotate 90 diff.png
+echo '$GNUPLOT $here/diff_covid.p'
+$GNUPLOT $here/diff_covid.p | $MAGICK convert png:- -rotate 90 diff.png
 $GNUPLOT $here/stats.p
 cd $here
