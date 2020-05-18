@@ -11,9 +11,14 @@ if [ ! -r factFIPS.csv ] ; then
   return 2
 fi
 
+if [ -n "$1" ] ; then
+  a0=$1
+fi
+
 fco=covid_confirmed_usafacts.csv
+url="https://usafactsstatic.blob.core.windows.net/public/data/covid-19/$fco"
 if [ ! -r $CTMP/$fco ] ; then
-  curl "https://usafactsstatic.blob.core.windows.net/public/data/covid-19/$fco" > $CTMP/$fco
+  curl $url > $CTMP/$fco
 else
   ls -l $CTMP/$fco
 fi
@@ -21,7 +26,9 @@ fco=$CTMP/$fco
 
 count()
 {
-  a0=$#
+  if [ -z "$a0" ] ; then
+    a0=$#
+  fi
   echo $a0 items in $fco
   let a3=$a0-3
   let a6=$a0-6
@@ -33,16 +40,6 @@ count()
   echo "#index	$now	$now3	$now6	$now20	Location	Population" > $CTMP/data.txt
 }
 
-# rounded values per 100K
-rnd100k()
-{
-  let v=100000*$1
-  let r=$Pop/2
-  let v=$v+$r
-  let v=$v/$Pop
-  echo $v
-}
-  
 county()
 {
 # approx most recent 20 days are contagious
@@ -55,10 +52,6 @@ $line"
   d6=${!a6}
   d3=${!a3}
   d0=${!a0}
-  d20=`rnd100k $d20`
-  d6=`rnd100k $d6`
-  d3=`rnd100k $d3`
-  d0=`rnd100k $d0`
 # do not plot identical newer over older
   if [ $d3 -eq -$d6 ] ; then
     d3=$d0

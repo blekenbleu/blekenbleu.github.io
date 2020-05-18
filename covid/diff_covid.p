@@ -16,13 +16,14 @@ set grid ytics front
 dates = system("head -1 data.txt")
 set ylabel word(dates,2).' COVID-19 cases per 100K'
 set yrange [1:5000]
-f(a,b) = (a > b) ? a : 0
-plot 'data.txt' using 2 t '> 20 days'
-replot 'data.txt' using ($2-$5) t '7-20 days'
-replot 'data.txt' using ($2-$4) t '4-6 days'
+pc(n) = (100000*n)/column(7)
+f(a,b) = (a > b) ? pc(a) : 0
+plot 'data.txt' using (pc($2)) t '> 20 days'
+replot 'data.txt' using (pc($2-$5)) t 'days 7-20'
+replot 'data.txt' using (pc($2-$4)) t 'days 4-6'
 # differently color-code increasing 3 day cases
-replot 'data.txt' using ($2-$3) t '1-3 days'
-replot 'data.txt' using (f($2-$3,$3-$4)):xticlabels(6) t 'increasing 1-3 days'
+replot 'data.txt' using (pc($2-$3)) t 'days 1-3'
+replot 'data.txt' using (f($2-$3,$3-$4)):xticlabels(6) t 'increasing days 1-3'
 unset output
 set term png size 1400,1200
 replot
