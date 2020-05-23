@@ -8,21 +8,22 @@ try_folder()
     cd /c
     cd $HOMEPATH
     CHOME=`pwd`/Desktop
-    cd Documents
-    if [ -e COVID-19 ] ; then
-       if [ -d COVID-19 ] ; then
-         COVID_FOLDER=`pwd`/COVID-19
-       else
-         echo set COVID_FOLDER to a subfolder of `pwd`
-       fi
-    else
-      mkdir COVID-19
-      COVID_FOLDER=`pwd`/COVID-19
-    fi
-    cd $here
   else
     CHOME=$HOME/Desktop
+    cd $HOME
   fi
+  cd Documents
+  if [ -e COVID-19 ] ; then
+     if [ -d COVID-19 ] ; then
+       COVID_FOLDER=`pwd`/COVID-19
+     else
+       echo set COVID_FOLDER to a subfolder of `pwd`
+     fi
+  else
+    mkdir COVID-19
+    COVID_FOLDER=`pwd`/COVID-19
+  fi
+  cd $here
 }
 
 if [ -z  "$COVID_FOLDER" ] ; then
@@ -34,8 +35,10 @@ if [ -n "$RAMDISK" ] ; then
     ls -l  $RAMDISK
     CTMP=$COVID_FOLDER
   else
-     CTMP=$RAMDISK
+    CTMP=$RAMDISK
   fi
+else
+  CTMP=$COVID_FOLDER
 fi
 csv=$CTMP/time_series_covid19_confirmed_US.csv
 
@@ -43,7 +46,7 @@ if [ -d "$COVID_FOLDER" ] ; then
   if [ -z "$MAGICK" ] ; then
     MAGICK=`which magick`
   fi
-  if [ -n  "$MAGICK" ] ; then
+  if [ -n  "`$MAGICK convert`" ] ; then
     if [ -z "$GNUPLOT" ] ; then
       GNUPLOT=`which gnuplot`
     fi
