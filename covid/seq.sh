@@ -8,7 +8,7 @@ sequence()
 }
 
 if [ -n "$1" ] ; then
-  IFS=/
+  IFS=-
   png=`sequence $1`
   unset IFS
   echo -n magick convert stats.png -rotate 90 $png
