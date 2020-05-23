@@ -72,8 +72,8 @@ grab ()
 # echo "line=$line"
   county $line
 }
-
-header=`head -1 $fco`
+# dates suitable for filenames
+header=`head -1 $fco | tr '/' '-'`
 ## Bash string field separator
 IFS=,
 count $header
@@ -84,7 +84,7 @@ cp seq.sh $CTMP/
 cd $CTMP
 # generate copop.csv for (eventual) use by gnuplot
 ipl='index,location,population,'
-(echo -n $ipl;head -1 $fco | cut -d ',' -f 58-$a0) > copop.csv
+(echo -n $ipl;head -1 $fco | cut -d ',' -f 58-$a0 | tr '/' '-') > copop.csv
 while read foo ; do
   IFS=,
 # echo "foo=$foo"
