@@ -19,8 +19,8 @@ set ytics nomirror
 set grid ytics front
 stats csv skip 1 nooutput
 c = STATS_columns
-now = word(dates,c)
-set ylabel now.' COVID-19 cases per 100K'
+day = word(dates,c)
+set ylabel day.' COVID-19 cases per 100K'
 set key autotitle columnhead
 pc(n) = (100000*n)/column(3)
 f(a,b) = (a > b) ? pc(a) : 0
@@ -29,8 +29,9 @@ plot csv u (pc(column(c))) t '> 20 days', \
  '' u (pc(column(c)-column(c-6))) t 'days 4-6', \
  '' u (pc(column(c)-column(c-3))) t 'days 1-3', \
  '' u (f(column(c)-column(c-3), column(c-3)-column(c-6))):xticlabels(2) t 'increasing days 1-3'
+# fails for Windows gnuplot
+#set output '| magick convert png:- -rotate 90 frame'.day.'.png'
 set output 'stats.png'
 set term png size 1400,1200
-replot 
-print "bash -c 'source seq.sh ".now."'"
+replot
 system("bash -c 'source seq.sh ".now."'")
