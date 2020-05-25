@@ -31,6 +31,18 @@ plot csv u (pc(column(c))) t '> 20 days', \
  '' u (f(column(c)-column(c-3), column(c-3)-column(c-6))):xticlabels(2) t 'increasing days 1-3'
 # fails for Windows gnuplot
 #set output '| magick convert png:- -rotate 90 frame'.day.'.png'
+set output 'stats0.png'
+set term png size 1400,1200
+replot
+#
+set term wxt 0 enhanced size 1400,1200
+g(a,b,d) = (a > b && a > d) ? pc(a) : 0
+s(i,j) = column(c-i)-column(c-j)
+plot csv u (pc(column(c))) t '> 20 days', \
+ '' u (pc(s(0,20))) t 'days 7-20', \
+ '' u (pc(s(0,6))) t 'days 4-6', \
+ '' u (pc(s(0,3))) t 'days 1-3', \
+ '' u (g(s(0,3), s(3,6), s(7,10))):xticlabels(2) t 'increasing days 1-3'
 set output 'stats.png'
 set term png size 1400,1200
 replot
