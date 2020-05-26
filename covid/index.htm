@@ -12,13 +12,14 @@ body {
 <h2>COVID-19 in selected counties</h2>
 <img src="anicovopt.gif">
 <br clear=all>
-This originally extracted selected locations from <a type="text/plain" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv">Johns Hopkins Time Series</a> CSV for COVID-19<br>
-Selections are controlled by <a type="text/plain" href="myFIPS.csv">myFIPS.csv</a>, which was extracted from FIPS county population data, e.g.<br>
-<a type="text/plain" href="https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/co-est2019-alldata.csv">https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/co-est2019-alldata.csv</a><br>
+Data thanks to <a href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/">USAFACTS</a>.<br>
+Data was previously extracted from <a type="text/plain" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv">Johns Hopkins Time Series</a> CSV for COVID-19<br>
+Selections were controlled by <a type="text/plain" href="myFIPS.csv">myFIPS.csv</a>, which was extracted from FIPS county population data, e.g.<br>
+<a type="text/plain" href="https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/co-est2019-alldata.csv">https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/co-est2019-alldata.csv</a>.<br>
 <a type="text/plain" href="FIPSpopJul2018.csv">FIPSpopJul2018.csv</a> is a stripped CSV file with <i>only</i> state,county,locality  for most US FIPS localities.
 <p>
-Processing uses <a href="http://www.gnuplot.info/download.html">gnuplot</a>, <a href="https://imagemagick.org/script/download.php">ImageMagick</a>, and bash scripts<br>
-with bash used from <a href="https://www.ruby-lang.org/en/documentation/installation/">Ruby</a> on Windows 10.<br>
+Processing employs <a href="http://www.gnuplot.info/download.html">gnuplot</a>, <a href="https://imagemagick.org/script/download.php">ImageMagick</a>, and bash scripts<br>
+using MSYS2 bash from <a href="https://www.ruby-lang.org/en/documentation/installation/">Ruby</a> on Windows 10.<br>
 Scripts were tweaked to also work on macOS, but not yet tested on<br>
  e.g. <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux">Windows Subsystem for Linux</a> or linux.
 </p><p>
@@ -37,45 +38,46 @@ to set environmental variables for paths to scripts, executibles and working sub
 Still looking for a way to have GitHub Pages display plain text files *.p *.sh<br>
 Deal with CSV data source having newer entries with lower reported cumulative case counts.<br>
 <h5>6 May</h5>
-Pipe gnuplot output directly to ImageMagick convert, to reduce hard drive thrashing.<br>
-Convert bash scripts to be invoked by `source`; replace `exit` with `return`.<br>
-Invoke gnuplot script from GitHub folder, avoiding file copy.<br>
+Pipe gnuplot output directly to ImageMagick convert, reducing hard drive thrash.<br>
+Convert bash scripts to be invoked by `source` mostly by replacing `exit` with `return`.<br>
+Invoke gnuplot with path to script in GitHub folder, avoiding file copy.<br>
 Remove leading blank in numeric string.<br>
 
-<h5>7 May</h5>Create $csv for path to downloaded data file.</br>
-$here for path to GitHub folder.<br>
-Extract first line of $csv for date titles.<br>
-Doomed experiment using gifsicle to compress animated GIFs.<br>
-More invalid cumulative case count tests.<br>
+<h5>7 May</h5>Define <code>$csv</code> for path to downloaded data file,
+<code>$here</code> for path to GitHub folder.<br>
+Extract first line of <code>$csv</code> for date titles.<br>
+Doomed experiment using <a href="https://www.lcdf.org/gifsicle">gifsicle</a> to compress animated GIFs.<br>
+More tests for invalid cumulative case counts.<br>
+Clean up IFS usage.
 
-<h5>8 May</h5>Reorder bargraphs; better ytics and grid.<br>
+<h5>8 May</h5>Reorder bargraphs; better gnuplot ytics and grid.<br>
 Add RAM disk support to minimize SSD wear.<br>
-Pass title to gnuplot.
+Pass title to gnuplot on invocation.
 <h5>9 May</h5>Increase GIF animation speed.
-<h5>10 May</h5>Download $csv to RAM drive.<br>
+<h5>10 May</h5>Download <code>$csv</code> to RAM drive.<br>
 Compensate for 2 commas in columns; more checks for invalid data.<br>
 <h5>11 May</h5>
 In bash, `unset  IFS` restores default string field separators.<br>
 GIF animate today vs 3 days prior.
 <h5>13 May</h5>
 New and updated scripts for <a href="https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_county_population_usafacts.csv">covid_county_population_usafacts.csv</a>.<br>
-Add population to data.txt
-<h5>14 May</h5>Add state abbreviations to myFIPS.csv; rename plot_covid.p to <a href="diff_covid.p">diff_covid.p</a>; add Albuquerque.<br>
+Add population to <a href="data.txt">data.txt</a>, so that gnuplot can calculate per 100K values.
+<h5>14 May</h5>Add state abbreviations to <a href="myFIPS.csv">myFIPS.csv</a>; rename plot_covid.p to <a href="diff_covid.p">diff_covid.p</a>; add Albuquerque.<br>
 Fix <a href="frame.sh">frame.sh</a> a0 bug, <a href="factFIPS.csv">factFIPS.csv</a> Beralillo FIPS typo.<br>
-In <a href="usfact.sh">usfact.sh</a> county(), test for requested column greater than available
-<h5>15 May</h5>Widen and reorder graph.
-usfact.sh extracts copop.csv for use by new <a href="stats.p">stats.p</a>.<br>
+In <a href="usfact.sh">usfact.sh</a> <code>county()</code>, check for requested column greater than available.
+<h5>15 May</h5>Widen and reorder graph.<br>
+<a href="usfact.sh">usfact.sh</a> uses <a href="myFIPS.csv">myFIPS.csv</a> to extract <a href="copop.csv">copop.csv</a> for use by new gnuplot script <a href="stats.p">stats.p</a>.<br>
 <h5>16 May</h5>
-<a href="usfact.sh">usfact.sh</a> calls gnuplot <a href="stats.p">stats.p</a>, which uses <a href="seq.sh">seq.sh</a> to invoke convert for rotated graph<br>
-stats.p now sets ylabel date from first line of $csv
+<a href="usfact.sh">usfact.sh</a> calls `gnuplot <a href="stats.p">stats.p</a>`, which uses <a href="seq.sh">seq.sh</a> to invoke <a href="https://imagemagick.org/script/convert.php">convert</a> for rotated graph.<br>
+<a href="stats.p">stats.p</a> now sets <code>ylabel</code> date from first line of <code>$csv</code>
 <h5>17 May</h5>Widen graphs
 <h5>18 May</h5>per 100K calculations moved from bash to gnuplot script.<br>
-Widen graph, darker red for increasing new 3-day cases
+Widen graph, darker red for increasing new 3-day cases.
 <h5>23 May</h5>loop.p to generate multiple graphs from single gnuplot invocation.<br>
 Replace '/' in dates with '-' for use in graph filenames; update seq.sh IFS to handle '-'.<br>
-In stats.p, rename 'now' to 'day';  failed Windows gnuplot experiment to pipe in `set output`
-<h5>24 May</h5>Ignore .DS_Store on macOS; stats.p bug: now->day
-cfg.sh now works on macOS
+In <a href="stats.p">stats.p</a>, rename 'now' to 'day';  failed Windows gnuplot experiment to pipe directly to <code>convert</code> in `set output`
+<h5>24 May</h5>Ignore .DS_Store on macOS; <a href="stats.p">stats.p</a> bug: now->day;<br>
+<a href="cfg.sh">cfg.sh</a> now works on macOS.
 <h5>25 May</h5>Do not apply dark red for weekly fluctuations,<br>
 e.g. days 0-3 > 3-6 but not 7-10
 <h5>26 May</h5>update <a href="loop.p">loop.p</a> to match <a href="stats.p">stats.p</a>
