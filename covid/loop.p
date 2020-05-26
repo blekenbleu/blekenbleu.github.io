@@ -1,4 +1,5 @@
 csv = 'copop.csv'
+system("rm stats*.png")
 set datafile separator ","
 dates = system("head -1 ".csv." | tr ',' ' '")
 unset border
@@ -38,3 +39,4 @@ do for [d = 24:c] {
   set term png size 1400,1200
   replot 
 }
+print 'magick convert -delay 50 stats*.png -rotate 90 -loop 1 -layers optimize anicovopt.gif'

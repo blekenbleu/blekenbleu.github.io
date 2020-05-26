@@ -84,13 +84,23 @@ cp seq.sh $CTMP/
 cd $CTMP
 # generate copop.csv for (eventual) use by gnuplot
 ipl='index,location,population,'
-(echo -n $ipl;head -1 $fco | cut -d ',' -f 58-$a0 | tr '/' '-') > copop.csv
+dates=`head -1 $fco | cut -d ',' -f 38-$a0 | tr '/' '-'`
+dates=${dates//-1-/-01-}
+dates=${dates//-2-/-02-}
+dates=${dates//-3-/-03-}
+dates=${dates//-4-/-04-}
+dates=${dates//-5-/-05-}
+dates=${dates//-6-/-06-}
+dates=${dates//-7-/-07-}
+dates=${dates//-8-/-08-}
+dates=${dates//-9-/-09-}
+(echo -n $ipl;echo $dates) > copop.csv
 while read foo ; do
   IFS=,
 # echo "foo=$foo"
   grab $foo
   unset IFS
-  (echo -n "$i,$loc,$Pop,";echo $line | cut -d ',' -f 58-$a0) >> copop.csv
+  (echo -n "$i,$loc,$Pop,";echo $line | cut -d ',' -f 38-$a0) >> copop.csv
 # less copop.csv
 # cd $here
 # return
