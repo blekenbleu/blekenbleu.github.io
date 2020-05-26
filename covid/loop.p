@@ -24,17 +24,18 @@ c = STATS_columns
 set key autotitle columnhead
 # column(3) is population
 pc(n) = (100000*n)/column(3)
-f(a,b) = (a > b) ? pc(a) : 0
+g(a,b,k) = (a > b && a > k) ? pc(a) : 0
+s(i,j) = column(d-i)-column(d-j)
 # first 4 columns are NOT cases; need 20 columns (days) of history
 do for [d = 24:c] {
   day = word(dates,d)
   set ylabel day.' COVID-19 cases per 100K'
   set term wxt 0 enhanced size 1400,1200
   plot csv u (pc(column(d))) t '> 20 days', \
-   '' u (pc(column(d)-column(d-20))) t 'days 7-20', \
-   '' u (pc(column(d)-column(d-6))) t 'days 4-6', \
-   '' u (pc(column(d)-column(d-3))) t 'days 1-3', \
-   '' u (f(column(d)-column(d-3), column(d-3)-column(d-6))):xticlabels(2) t 'increasing days 1-3'
+   '' u (pc(s(0,20))) t 'days 7-20', \
+   '' u (pc(s(0,6))) t 'days 4-6', \
+   '' u (pc(s(0,3))) t 'days 1-3', \
+   '' u (g(s(0,3), s(3,6), s(7,10))):xticlabels(2) t 'increasing days 1-3'
   set output 'stats'.day.'.png'
   set term png size 1400,1200
   replot 

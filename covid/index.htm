@@ -12,17 +12,17 @@ body {
 <h2>COVID-19 in selected counties</h2>
 <img src="anicovopt.gif">
 <br clear=all>
-This uses selections from <a type="text/plain" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv">Johns Hopkins Time Series</a> CSV for COVID-19<br>
-Selections are based on <a type="text/plain" href="myFIPS.csv">myFIPS.csv</a>, which was extracted from FIPS county population data, e.g.<br>
+This originally extracted selected locations from <a type="text/plain" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv">Johns Hopkins Time Series</a> CSV for COVID-19<br>
+Selections are controlled by <a type="text/plain" href="myFIPS.csv">myFIPS.csv</a>, which was extracted from FIPS county population data, e.g.<br>
 <a type="text/plain" href="https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/co-est2019-alldata.csv">https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/co-est2019-alldata.csv</a><br>
 <a type="text/plain" href="FIPSpopJul2018.csv">FIPSpopJul2018.csv</a> is a stripped CSV file with <i>only</i> state,county,locality  for most US FIPS localities.
 <p>
 Processing uses <a href="http://www.gnuplot.info/download.html">gnuplot</a>, <a href="https://imagemagick.org/script/download.php">ImageMagick</a>, and bash scripts<br>
 with bash used from <a href="https://www.ruby-lang.org/en/documentation/installation/">Ruby</a> on Windows 10.<br>
-These scripts would probably require changes to work elsewhere,<br>
- e.g. <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux">Windows Subsystem for Linux</a>, macOS or linux.
+Scripts were tweaked to also work on macOS, but not yet tested on<br>
+ e.g. <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux">Windows Subsystem for Linux</a> or linux.
 </p><p>
-Data for gnuplot is mostly extracted by <a type="text/plain" href="frame.sh">frame.sh</a>, which may be invoked standalone,<br>
+Before 14 May, data for gnuplot was mostly extracted by <a type="text/plain" href="frame.sh">frame.sh</a>, which may be invoked standalone,<br>
 but is typically run by invoking <a type="text/plain" href="covid.sh">covid.sh</a>, which downloads most recent Johns Hopkins Time Series .csv,<br>
 then invokes <code>frame.sh</code>, which eventually invokes <code>gnuplot</code> to generate a <code>covid.png</code> based on <a type="text/plain" href="plot_covid.p">plot_covid.p</a>,<br>
 which uses <code>data.txt</code>, which was previously extractated by <code>frame.sh</code>.<br>
@@ -77,6 +77,7 @@ In stats.p, rename 'now' to 'day';  failed Windows gnuplot experiment to pipe in
 cfg.sh now works on macOS
 <h5>25 May</h5>Do not apply dark red for weekly fluctuations,<br>
 e.g. days 0-3 > 3-6 but not 7-10
+<h5>26 May</h5>update loop.p to match stats.p
 </font>
 <a href=".."><i>back</i></a>
 </body>
