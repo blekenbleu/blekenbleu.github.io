@@ -33,6 +33,50 @@ which uses <code>data.txt</code>, which was previously extractated by <code>fram
 Utility script <a type="text/plain" href="cfg.sh">cfg.sh</a> is sourced by  both <a type="text/plain" href="animate.sh">animate.sh</a> and <a type="text/plain" href="covid.sh">covid.sh</a><br>
 to set environmental variables for paths to scripts, executibles and working subdirectory.
 </p>
+<h5>5 May 2020</h5>
+Still looking for a way to have GitHub Pages display plain text files *.p *.sh<br>
+Deal with CSV data source having newer entries with lower reported cumulative case counts.<br>
+<h5>6 May</h5>
+Pipe gnuplot output directly to ImageMagick convert, to reduce hard drive thrashing.<br>
+Convert bash scripts to be invoked by `source`; replace `exit` with `return`.<br>
+Invoke gnuplot script from GitHub folder, avoiding file copy.<br>
+Remove leading blank in numeric string.<br>
+
+<h5>7 May</h5>Create $csv for path to downloaded data file.</br>
+$here for path to GitHub folder.<br>
+Extract first line of $csv for date titles.<br>
+Doomed experiment using gifsicle to compress animated GIFs.<br>
+More invalid cumulative case count tests.<br>
+
+<h5>8 May</h5>Reorder bargraphs; better ytics and grid.<br>
+Add RAM disk support to minimize SSD wear.<br>
+Pass title to gnuplot.
+<h5>9 May</h5>Increase GIF animation speed.
+<h5>10 May</h5>Download $csv to RAM drive.<br>
+Compensate for 2 commas in columns; more checks for invalid data.<br>
+<h5>11 May</h5>
+In bash, `unset  IFS` restores default string field separators.<br>
+GIF animate today vs 3 days prior.
+<h5>13 May</h5>
+New and updated scripts for <a href="https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_county_population_usafacts.csv">covid_county_population_usafacts.csv</a>.<br>
+Add population to data.txt
+<h5>14 May</h5>Add state abbreviations to myFIPS.csv; rename plot_covid.p to diff_covid.p; add Albuquerque.<br>
+Fix frame.sh a0 bug, factFIPS.csv Beralillo FIPS typo.<br>
+In usfact.sh county(), test for requested column greater than available
+<h5>15 May</h5>Widen and reorder graph.
+usfact.sh generates initial copop.csv for use by new stats.p.<br>
+<h5>16 May</h5>
+usfacts.sh calls gnuplot stats.p, which uses seq.sh to invoke convert for rotated graph
+<h5>17 May</h5>Widen graphs; usfact.sh extracts gnuplot ylabel date
+<h5>18 May</h5>Move per 100K calculations from bash to gnuplot.<br>
+Widen graph, darker red for increasing new 3-day cases
+<h5>23 May</h5>loop.p to generate multiple graphs from single gnuplot invocation.<br>
+Replace '/' in dates with '-' for use in graph filenames; update seq.sh IFS to handle '-'.<br>
+In stats.p, rename 'now' to 'day';  failed Windows gnuplot experiment to pipe in `set output`
+<h5>24 May</h5>Ignore .DS_Store on macOS; stats.p bug: now->day
+cfg.sh now works on macOS
+<h5>25 May</h5>Do not apply dark red for weekly fluctuations,<br>
+e.g. days 0-3 > 3-6 but not 7-10
 </font>
 <a href=".."><i>back</i></a>
 </body>
