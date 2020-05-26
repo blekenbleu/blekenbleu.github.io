@@ -60,15 +60,16 @@ GIF animate today vs 3 days prior.
 <h5>13 May</h5>
 New and updated scripts for <a href="https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_county_population_usafacts.csv">covid_county_population_usafacts.csv</a>.<br>
 Add population to data.txt
-<h5>14 May</h5>Add state abbreviations to myFIPS.csv; rename plot_covid.p to diff_covid.p; add Albuquerque.<br>
-Fix frame.sh a0 bug, factFIPS.csv Beralillo FIPS typo.<br>
-In usfact.sh county(), test for requested column greater than available
+<h5>14 May</h5>Add state abbreviations to myFIPS.csv; rename plot_covid.p to <a href="diff_covid.p">diff_covid.p</a>; add Albuquerque.<br>
+Fix <a href="frame.sh">frame.sh</a> a0 bug, <a href="factFIPS.csv">factFIPS.csv</a> Beralillo FIPS typo.<br>
+In <a href="usfact.sh">usfact.sh</a> county(), test for requested column greater than available
 <h5>15 May</h5>Widen and reorder graph.
-usfact.sh generates initial copop.csv for use by new stats.p.<br>
+usfact.sh extracts copop.csv for use by new <a href="stats.p">stats.p</a>.<br>
 <h5>16 May</h5>
-usfacts.sh calls gnuplot stats.p, which uses seq.sh to invoke convert for rotated graph
-<h5>17 May</h5>Widen graphs; usfact.sh extracts gnuplot ylabel date
-<h5>18 May</h5>Move per 100K calculations from bash to gnuplot.<br>
+<a href="usfact.sh">usfact.sh</a> calls gnuplot <a href="stats.p">stats.p</a>, which uses <a href="seq.sh">seq.sh</a> to invoke convert for rotated graph<br>
+stats.p now sets ylabel date from first line of $csv
+<h5>17 May</h5>Widen graphs
+<h5>18 May</h5>per 100K calculations moved from bash to gnuplot script.<br>
 Widen graph, darker red for increasing new 3-day cases
 <h5>23 May</h5>loop.p to generate multiple graphs from single gnuplot invocation.<br>
 Replace '/' in dates with '-' for use in graph filenames; update seq.sh IFS to handle '-'.<br>
@@ -77,8 +78,8 @@ In stats.p, rename 'now' to 'day';  failed Windows gnuplot experiment to pipe in
 cfg.sh now works on macOS
 <h5>25 May</h5>Do not apply dark red for weekly fluctuations,<br>
 e.g. days 0-3 > 3-6 but not 7-10
-<h5>26 May</h5>update loop.p to match stats.p
+<h5>26 May</h5>update <a href="loop.p">loop.p</a> to match <a href="stats.p">stats.p</a>
 </font>
-<a href=".."><i>back</i></a>
+<br><a href=".."><i>back</i></a>
 </body>
 </html>
