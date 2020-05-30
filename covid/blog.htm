@@ -1,0 +1,154 @@
+<html>
+<head>
+<style>
+<!-- see https://www.the-art-of-web.com/css/format-dl/ -->
+dt {
+  font-family: monospace;
+  font-weight: bold;
+  color: #00dd66;
+}
+dt::after {
+  content: ":";
+}
+dd {
+  padding: 0 0 0.5em 0;
+}
+</style>
+<title>COVID-19 blog: statistics and speculations</title>
+</head>
+
+<body>
+Of 23 King Co., WA nursing home residents,<br>
+ only 3 of 23 cases were ultimately asymptomatic,<br>
+ but 13 were initially asymptomatic.
+<a href="https://www.ncbi.nlm.nih.gov/research/coronavirus/publication/32240128">https://www.ncbi.nlm.nih.gov/research/coronavirus/publication/32240128</a>
+
+<dl>
+<dt>Apr 6, 2020
+<dd><b>COVID growth stress</b>
+Positive tests updated to Apr 5<br>
+and X axis changed to percent of state population,<br>
+which is probably a better approximation of stress on states' healthcare resources:<br>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.0.1&permmsgid=msg-a:r2905267820723110795&th=1714eba88651d005&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ9z8R08E911EoJgRvjKLnXdfe0AnungkKg3HEl8VQkz6amMvj7kYkGsTwGiXFmQlmXfxl5ROylXfFFXpdZhf2aQ3-oRYjpBvz0cdOrAUBWW23fTpQ6Ei2_0Wd4&disp=emb&realattid=ii_k8o8p1ej0">
+<br clear=all>
+X-axis rescaled log to better spread points;<br>
+NJ seems liable to become more overwhelmed than NY.
+<dt>Apr 5, 2020
+<dd><b>COVID-19 positive test growth</b><br>
+Plotting Apr 4 positive test reports vs growth from last week:<br>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.1&permmsgid=msg-a:r-7692878107945979264&th=1714abdb0a30cd8c&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ-vFnYE3eahRxgUzkS7P64jFLUWpTM5sdLYXHnN3Dsbf94QIOb-se-Ftxc8E9E1vqOJFh1HGk9IJsRCT5EouZQj9_Cyrh37vvhSR77OaAf5ZqeDb9u8hfQna_s&disp=emb&realattid=ii_k8n4ibx60">
+<br clear=all>
+States want to avoid being in the upper right quadrant.<br>
+PA and NJ seem vulnerable, then FL and MI.<br>
+Washington state is doing relatively well by less than doubling.<br>
+This supposes that state data are comparable,<br>
+despite e.g. NY having tested over 3x more of its population than others.<br>
+<br>
+<pre>
+# increased   Mar 22  Mar 29  Apr 4    COVID   population
+# residence   COVID    COVID   COVID  tests K      K
+   10           152      919    2019     27.1      7279   # AZ
+   15          1536     5708   12026    113.7     39512   # CA
+   13           830     4246   11545    105.9     21478   # FL
+   11           600     2651    6383     26.5     10617   # GA
+   13          1049     4596   10357     53.6     12672   # IL
+    9            99      394     917     16.7      4468   # KY
+   12          1035     5486   14225     26.1      9986   # MI
+    9            90      838    2291     27.2      6137   # MO
+   16          1914    13386   34124     75.4      8882   # NJ
+   16         15168    59513  113704    283.6     19454   # NY
+   10           255     1040    2402     38.8     10488   # NC
+   10           351     1653    3739     41.9     11689   # OH
+   12           479     3394   10017     70       12802   # PA
+    9           195      774    1917     18.3      5149   # SC
+   13           334     2552    6110     63.8     28996   # TX
+   11           219      890    2407     21.6      8536   # VA
+   13          1793     4310    7591     87.9      7615   # WA
+</pre>
+<dt>Apr 4, 2020
+<dd><b>mobility report vs positive COVID-19</b><br>
+.. based on Feb 16 - Mar 29 <a href="https://www.google.com/covid19/mobility/">https://www.google.com/covid19/mobility/</a>
+and <a href="https://covidtracking.com/data/">https://covidtracking.com/data/</a><br>
+I suppose that some critical workers have been tested multiple times..
+<pre>
+      3-29/2-16    Mar 22   Apr 4    positive   2020   tests   reported                 
+state residence   positive positive  increase  census reported  ratio
+CA    +15%          1536    10701       697%   37255k  35.3k    .09%   59.5k pending
+FL    +13%           830    10268      1238%   21478k  94.4k    .44%    1.4k pending
+GA    +11%           600     5967       995%    9688k  25.4k    .26%
+KY    +9%             99      831       839%    4339k  15.6k    .36%
+MO    +9%             90     2113      2348%    5989k  26.8k    .45%
+NY    +16%         15168   102863       678%   19378k   271k   1.4% 
+SC    +9%            195     1700       872%    4625k  16.2k    .35%
+TX    +13%           334     5330      1596%   25146k  55.8k    .22%
+VA    +11%           219     2012       919%    8001k    19k    .24%
+</pre>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.1&permmsgid=msg-a:r5705228837168546093&th=17146ecd2745dabb&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ-gacHcy5Qt3aDqrwaG6wkq6Q_JSSHy1VHbrj2llOqQo5u66bIcz6CySFV9nfybni5kzT38J1SLzIFD3IAUOMRFFDNxyVQLA7ziT0bEjiNf6sOfNg4TgvYbV-U&disp=emb&realattid=ii_k8m2wf9f0">
+<br clear=all>
+It is encouraging that 2 highest increased residence rates have lowest CIVID growth rates.<br>
+Missouri is worrying, but perhaps reflects better test reporting now than earlier.<br>
+This also does not capture how risky is typical behavior away from home...
+
+<br><hr>
+&gt; Why case counts are meaningless without information about testing coverage:<br>
+&gt; <a href="https://fivethirtyeight.com/features/coronavirus-case-counts-are-meaningless/">https://fivethirtyeight.com/features/coronavirus-case-counts-are-meaningless/</a><br>
+&gt; e.g. why West Virginia was the last state to get a case...<br>
+
+I should have also tabulated states' percent of population tested,<br>
+but even then would not know how much bias/credibility for<br>
+establishing error bars...<br>
+As time goes on, many of the same critical workers may be retested,<br>
+which is not being delineated.
+
+<dt>Apr 3, 2020
+<dd><b>DIY masks using HEPA vacuum cleaner bags</b><br>
+I ordered upright vacuum HEPA bags from eBay for <a href="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.1&permmsgid=msg-a:r7338624276689187221&th=1714135f815b7ffa&view=att&disp=inline&realattid=f_k8khmlmh0">this pattern</a>
+<br>
+Most HEPA vacuum bags are made with fiberglass,
+which can be an irritant.<br>
+Enclosing them in cotton cloth envelopes addresses that.
+<dt>Mar 31, 2020
+<dd><b>Re: Washington Post dynamic graphical simulation of disease spread</b><br>
+&gt; An interesting computer simulation addressing social distancing.<br>
+&gt; <a href="https://www.washingtonpost.com/graphics/2020/world/corona-simulator/">https://www.washingtonpost.com/graphics/2020/world/corona-simulator/</a>
+<br>Excellent!<br>
+&gt; I hope people will pay attention and actually start doing their part.<br>
+Sadly, that's NOT happening here in Sun City;<br>
+  oldsters vehicular traffic is about as heavy as before SC disaster
+declaration.<br>
+Significant influx of Ohio, New Jersey, etc relatives around the neighborhood.<br>
+.01% KY (same as Texas) vs .02% SC, .017% VA positive.<br>
+<br>
+With NY .39% positive, we have a ways to go...<br>
+<dt>Mar 30, 2020
+<dd>13 have died from COVID-19 in SC since Mar 22.<br>
+If 1% die, then SC may have had 1300 cases a month ago.<br>
+SC reports 774 cases today, compared with 195 a week ago.<br>
+Given 4x growth per week, SC may now have about 200,000 cases.
+<dt>Mar 29, 2020
+<dd><b>SC Covid-19 severity by age</b><br>
+South Carolina received a federal disaster declaration for COVID-19 on Mar 28.
+With a population of over 5.2 million, South Carolina reports testing 3,675 or 0.07%,
+with 18% positive and most negative tests presumably among health workers.
+Given general population testing effectively limited to those with serious symptoms,
+this may be a good population for estimating how serious are symptoms among
+and between age groups.  For example, the percentage of positive tests
+among those 40-50 is roughly the same as their percentage of SC population.
+Folks 60-70 appear 73% more likely than them to have severe symptoms
+while children 10-20 are only 30% as likely. <pre>
+SC population positive %  severity
+age   percent  COVID-19    ratio
+80+     3         7         2.35
+70-80   5.7      13         2.29
+60-70  10.6      19         1.78
+50-60  13.5      17         1.26
+40-50  13.5      14         1.03
+30-40  12.3      11         0.89
+20-30  12.7      12         0.94
+10-20  12.8       4         0.3
+0-10   12.9       2         0.15</pre>
+</dl>
+</body>
+<html>
+
+
