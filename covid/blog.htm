@@ -22,11 +22,220 @@ Of King Co., WA nursing home resident cases,<br>
  only 3 of 23 were ultimately asymptomatic,<br>
  but 13 were initially asymptomatic.
 <a href="https://www.ncbi.nlm.nih.gov/research/coronavirus/publication/32240128">https://www.ncbi.nlm.nih.gov/research/coronavirus/publication/32240128</a>
+<br> <br>
+One issue with using excess mortality to manage epidemics:<br>
+too many places report deaths with no urgency;<br>
+the worst may be over long before those reports are available.<br>
+CDC most recent mortality data is for 18 months ago.
 
 <dl>
-<dt>Apr 12, 2020
-<dd><b></b><br>
-<img src=""><br clear=all>
+<dt>Apr 23, 2020
+<dd><b>Cuomo: over 20% of NYC population tests positive</b><br>
+[12:05/55:25] <a href="https://www.youtube.com/watch?v=IIru8C-ayYk">https://www.youtube.com/watch?v=IIru8C-ayYk</a><br>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.1&permmsgid=msg-a:r807309861885251364&th=171a8ab3b38054a6&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ83nVu7nPWRKfKHW2_hslZzJHgNmQxls4hwvaoidepDFgs9fTuSX4iJ8yGca2lGOBhp84mAeZQAllI6t1ufxhJyYmwLZxgk25QVAeto7jdQYzAb2aFSHYJmcF4&disp=emb&realattid=ii_k9d6apqv0"><br clear=all>
+My primitive model suggests that, if NYC can get their hospitalization rate down,<br>
+ then (supposing acquired immunity)  NYC's 20% reduction in susceptibility<br>
+(AKA partial herd immunity) may make reopening there not much more risky than upstate,<br>
+where contagion risk is lower, but over 96% remain susceptible.<br>
+<br>
+To avoid excess mortality, 'not much more risky' still IMO wants<br>
+masks on everyone in public along with distancing, massive testing and tracing.<br>
+<dt>Apr 23, 2020
+<dd><b>asthma sufferers strikingly underrepresented among COVID-19 deaths</b><br>
+[ instead, blood clotting ]<br>
+Nearly 8% of US population has asthma.  When the novel coronavirus first hit,<br>
+the Centers for Disease Control and Prevention and others put people<br>
+with asthma at the top of their lists of those who might be the most vulnerable.<br>
+But European researchers writing in the journal Lancet noted<br>
+it was <i>striking</i> how underrepresented asthma patients had been.<br>
+<br>
+Earlier this month, when New York state released data about<br>
+the top chronic health problems of those who died of covid-19,<br>
+asthma was not among them.<br>
+Instead, they were almost all cardiovascular conditions.<br>
+<br>
+<a href="https://www.nytimes.com/2020/04/16/health/coronavirus-asthma-risk.html">https://www.nytimes.com/2020/04/16/health/coronavirus-asthma-risk.html</a><br>
+<a href="https://www.washingtonpost.com/health/2020/04/22/coronavirus-blood-clots">https://www.washingtonpost.com/health/2020/04/22/coronavirus-blood-clots</a><br>
+<a href="https://www.ibtimes.com/doctors-identify-blood-clots-latest-life-threatening-complication-covid-19-2961539">https://www.ibtimes.com/doctors-identify-blood-clots-latest-life-threatening-complication-covid-19-2961539</a><br>
+<a href="https://www.webmd.com/lung/news/20200326/stroke-drug-could-help-covid-19-patients">https://www.webmd.com/lung/news/20200326/stroke-drug-could-help-covid-19-patients</a><br>
+<br>
+Assessment of Evidence for COVID-19-Related Treatments: Updated 4/22/2020<br>
+<a href="https://www.ashp.org/-/media/assets/pharmacy-practice/resource-centers/Coronavirus/docs/ASHP-COVID-19-Evidence-Table.ashx">https://www.ashp.org/-/media/assets/pharmacy-practice/resource-centers/Coronavirus/docs/ASHP-COVID-19-Evidence-Table.ashx</a><br>
+
+<dt>Apr 22, 2020
+<dd><b>r[t], SIR model versus my SRC model</b><br>
+I am no doctor, but then doctors are not engineers..<br>
+<br>
+r[0] supposes that, given a population with no resistance at time t=0,<br>
+there is a meaningful ratio for<br>
+how many others will catch an infection from any spreader.<br>
+The SIR model postulates that, at any time,<br>
+the rate of new infections is product of susceptible population s(t)<br>
+times infected population i(t) and  r(t).<br>
+Further, recovery rate d(r)/dt is some constant rate times the infected population<br>
+<a href="https://en.wikipedia.org/wiki/Mathematical_modelling_of_infectious_disease#The_SIR_model">
+https://en.wikipedia.org/wiki/Mathematical_modelling_of_infectious_disease#The_SIR_model</a><br>
+<br>
+It is, IMO, silly to suppose that:<br>
+* someone who just caught a disease is equally likely to "recover" at any time, and<br>
+* infection rate for a given virus should appreciably change over time.<br>
+<br>
+Seemingly more credible:<br>
+* some average period of time that folks are contagious, and <br>
+* some probability that contagion occurs.<br>
+<br>
+Here are gnuplots based on my assumptions of:<br>
+* 20 days average contagion, and<br>
+* 1.5% or 2.5% probability of contagion during that period,<br>
+* starting with a single carrier:<br>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.0.1&permmsgid=msg-a:r-9171732061660364211&th=171a1b4e7afba710&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ-DSOqMM23nAGzt5v4SmcIL5wEEde5PVbQTSDb1pkJG8tS_kwfVtRwrmDqut5Q9gXer3SsyOplMJe37IsF4j49qkXfhHACaI7d3PNyVjX3y75GYCUajTVi4CF8&disp=emb&realattid=ii_k9b86c6i0"><br clear=all>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.0.2&permmsgid=msg-a:r-9171732061660364211&th=171a1b4e7afba710&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ9SHY0puq-0P3iVStJV3HXk1MEvZ9ErEMu0viuOY82aKx6zP3vbgb3uR_Kf4VzcPMgQrLLwbVVrZV8FTSiXjplRrLFKM-E0v4onufY2jM4KTrBoyjyqb61r8BY&disp=emb&realattid=ii_k9b87i841"><br clear=all>
+Behavior drives contagion risk, as may perhaps weather/season..<br>
+Something approximating "herd immunity" obtains<br>
+after about double the peak interval.   Of course, if risky behavior increases,<br>
+subsequent peaks are possible, with correspondingly higher herd immunity rates.<br>
+This all supposes that non-trivial immunity actually occurs...<br>
+<br>
+While that roughly 20% peak contagious population seems scary,<br>
+20% may not be all that far off what is happening with asymptomatic COVID-19...<br>
+<br>
+<a href="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.1&permmsgid=msg-a:r-9171732061660364211&th=171a1b4e7afba710&view=att&disp=safe&realattid=f_k9b96gjc2">Here</a> is (fairly readable) gnuplot source.
+<hr>
+<b>SC model</b><br>
+Rather than merely speculate, I hacked the gnuplot SRC model<br>
+to approximate South Carolina statistics according to Washington Post:<br>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.0.1&permmsgid=msg-a:r4000733257411381849&th=171a357b8ec0af43&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ-B2v8te_xo-2xAohRBtEim5o3Sc31A9zvjLu5a5tp2WUfO15xJQ1iQTz4ZNb90DtnVQ-_-rN6tG5y_xX7wWxWA9hBudxkuThNH2EeiHklsvGqPsCvcnpvWENg&disp=emb&realattid=ii_k9bol0cn0"><br clear=all>
+...and predicted politics according to me.<br>
+<br>
+In the next graph, "C" represents the model's contagious population percentage,<br>
+"R" represents recovered (no longer susceptible) and S represents remaining susceptible.<br>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.0.2&permmsgid=msg-a:r4000733257411381849&th=171a357b8ec0af43&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ_CccwgNtT2A-ieXkAj8PuVOFKNrJPDsjioZJWgoo9nA15k9YJnUxLz3xgiSxu28nsnbLatbmDKXQu5ejXUgxh5nmQX0Hza4rpQRDdVqK08loAztNlO1HLa7NU&disp=emb&realattid=ii_k9bomvpq1"><br clear=all>
+Day 30 on the model graph corresponds to April 9, which was the peak day (so far)<br>
+on the Washington Post graph.  The model switches from 1% to 2% contagion<br>
+on day 41 (April 20), corresponding to SC governor reopening many businesses,<br>
+noted reduction in mask wearing and increased traffic. <br>
+* After a 7 day delay for new cases to get serious, publish cases spike.<br>
+   In real life, spikes will spread with some getting sicker sooner or later..<br>
+* Supposing resumed stay at home around April 30, that spike should relent,<br>
+   delayed by another week or so.<br>
+<br>
+   The same model is plotted here for 300 days:<br>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.0.3&permmsgid=msg-a:r4000733257411381849&th=171a357b8ec0af43&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ8SSvMQfdr-UAmsmBWRN-Hp9NkbPKsJww9e5wVvj5vVIbCzBGyLeZwG1pOXEkj6-FyTQ4GYjIRpJR0LWqHOfXRWdMdolJIKsg79MnLQGeu8SMBGPTIeo4fDgyY&disp=emb&realattid=ii_k9box9uz2"><br clear=all>
+Supposing the governor again reopens business around May 15,<br>
+another, lower, spike provokes no reclosing.  By this time,<br>
+the population percentage still susceptible will have been reduced so that<br>
+resumption of more riskier behavior may not overtax the healthcare system...<br>
+
+<dt>Apr 20, 2020
+<dd><b>Re: Covid-19 Rt, "the effective reproduction number"</b><br>
+<a href="http://systrom.com/blog/the-metric-we-need-to-manage-covid-19/">Here</a> is a blog post discussing their approach to <a href="https://rt.live/">estimating Rt</a>.<br>
+My specific interest was how they estimate contagious populations,<br>
+for which they reportedly use previous 7 days' positive tests.<br>
+Since folks may be contagious for longer, this should overstate Rt.<br>
+However, since positive test results understate actual infections,<br>
+I consider their 7 day approximation as a fudge factor that was tuned<br>
+to match their model to reported data.   Consequently, one could<br>
+expect different fudge factors to better fit different populations at different times,<br>
+depending on [mis]behaviors.<br>
+<br>
+Again, since their Rt proxy is effectively based on hospitalizations,<br>
+it lags real active Rt by over a week.<br>
+Since we have already seen positive test reported values double in under 2 days,<br>
+a locality wants their rate before relaxing mitigations to be<br>
+less than 10% of whatever is considered a tolerable rate,<br>
+which might arguably be based on excess mortality..<br>
+<br>
+About half way down this blog post, Mr. Systrom ranks rates per state<br>
+by median, then worst-case estimated values.<br>
+This latter clusters states with fewest tests and least mitigations.<br>
+<br>
+On the other hand, while that makes LA appear to be in relatively good shape,<br>
+I fear that it instead reflects recent testing biased towards folks with influence<br>
+more that folks with symptoms.  Indeed, Louisiana's death rate remains relatively high:<br>
+<a href="https://www.nytimes.com/interactive/2020/03/21/upshot/coronavirus-deaths-by-country.html">
+https://www.nytimes.com/interactive/2020/03/21/upshot/coronavirus-deaths-by-country.html</a><br>
+... with many deceased untested and thus excluded.
+<dt>Apr 19, 2020
+<dd><b>Covid-19 Rt, positivity rate</b><br>
+Rt:  virus growth<br>
+color-coded for trending per state<br>
+<a href="https://rt.live/">https://rt.live/</a><br>
+<br>
+Positivity Rate<br>
+According to Tracking Project figures,<br>
+nearly 20% of people in the U.S. tested have been positive for the coronavirus,<br>
+but actual prevalence in general population is presumably lower, thanks to<br>
+testing largely limited to those symptomatic and/or known to have been exposed.<br>
+If the outbreak were indeed under control,<br>
+then more testing should yield a smaller proportion of positives.<br>
+So far, that hasn’t happened.<br>
+Virtually the only wealthy country with a larger positivity rate than the U.S. is the U.K.,<br>
+ where more than 30% of tests have been positive.<br>
+<br>
+Hawaii has tested twice as many people per capita as Illinois,<br>
+and its positivity rate is only one-tenth as high...<br>
+<a href="https://medium.com/the-atlantic/a-new-statistic-reveals-why-americas-covid-19-numbers-are-flat-82e9b600551f">https://medium.com/the-atlantic/a-new-statistic-reveals-why-americas-covid-19-numbers-are-flat-82e9b600551f</a><br>
+<br>
+This chart does NOT plot changes in % positive with increased testing,<br>
+merely percentages of tests that have been positive.<br>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.1&permmsgid=msg-a:r3853132563343883598&th=1719376519773de0&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ9Ui2wjkYj5Lzrxy5oSXGkiQw4aE6W2hXIFsWmCKWD6yxckXsSmF_Fe6JFrPTMLOSF_kl1S8SxAClIZY0-BNnESYVJB10dLnDyLHB--gU5s2gCCMQH2Zztg7OA&disp=emb&realattid=ii_k977y1mf0"><br clear=all>
+The horizontal scale goes from 0.6 to just over 3%<br>
+Results in states below 1% are presumably overweight for healthcare workers.<br>
+<br>
+Here are CHANGES in positive test percentages:<br>
+<img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.2&permmsgid=msg-a:r3853132563343883598&th=1719376519773de0&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ9vav1ETZZMbhHhdjai7k3ym7QNhHfX3ERt-FXJ6UIVmSzirBtym4U9CtHdCWkFpjVQINerw_lHOVAYf8A4-GbA7oMACH_MIA0S5e_StV7XsGBqjrYkOGqsmmQ&disp=emb&realattid=ii_k97b3nc61"><br clear=all>
+Horizontal scale is 0.13% to  0.82%<br>
+Label oops: AZ should be over with MO<br>
+States with increasing infection test rates should be prepared for increasingly bad news.<br>
+<dt>Apr 17, 2020
+<dd><b>Nextstrain</b><br>
+&gt; Tracking the genetic strains of the virus:<br>
+&gt;<br>
+&gt; <a href="https://nextstrain.org/ncov/global">https://nextstrain.org/ncov/global<a>
+<dt>Apr 16, 2020
+<dd><b>glad</b><br>
+My assumption is that life with COVID-19  will be much like this for over a year,<br>
+except with increasing food prices as other midwest sweatshop industries close down:<br>
+<a href="https://www.thegatewaypundit.com/2020/04/largest-pork-producer-warns-nation-perilously-close-meat-shortages-processing-plants-close-due-coronavirus/">https://www.thegatewaypundit.com/2020/04/largest-pork-producer-warns-nation-perilously-close-meat-shortages-processing-plants-close-due-coronavirus/</a><br>
+<br>
+I expect this will provoke panic-buying e.g. of chicken, etc.<br>
+<br>
+Meanwhile, a  predicted heavy hurricane system will provoke mass evacuations<br>
+in a time of "social distancing"
+<hr>
+<b>excess mortality</b><br>
+ I wrote an email to our US Congressman, suggesting that a total death rate should be tracked<br>
+in comparison to that seasonal per capita rate e.g. averaged over the previous 5 years. <br>
+This might address the problem of population testing insufficient for statistical significance,<br>
+with residents dying without having been tested<br>
+and sick folks electing to forgo hospitals and testing, given a lack of effective treatments.<br>
+<br>
+While excess mortality probably lags COVID-19 infections by over a month,<br>
+it might at least help identify communities that may otherwise not get appropriate attention and assistance:<br>
+NY appears exceptional by explicitly tracking deaths not specifically diagnosed as COVID-19.<br>
+<a href="https://www.nytimes.com/interactive/2020/04/10/upshot/coronavirus-deaths-new-york-city.html">
+https://www.nytimes.com/interactive/2020/04/10/upshot/coronavirus-deaths-new-york-city.html</a><br>
+<a href="https://www.nationalreview.com/corner/the-problem-with-new-york-citys-covid-19-death-rate-estimates/">
+https://www.nationalreview.com/corner/the-problem-with-new-york-citys-covid-19-death-rate-estimates/</a><br>
+ <a href="https://www.theguardian.com/us-news/2020/apr/15/new-york-city-coronavirus-death-toll-jumps-revised-count">
+ https://www.theguardian.com/us-news/2020/apr/15/new-york-city-coronavirus-death-toll-jumps-revised-count</a><br>
+<br>
+So-called social distance in the US was substantially motivated by this:<br>
+<img src="https://cms.qz.com/wp-content/uploads/2020/03/image.png"><br clear=all>
+Note that excess mortality is plotted there, based on hindsight,<br>
+ lacking explicit verification for Spanish flu.  <a href="https://en.wikipedia.org/wiki/Spanish_flu">https://en.wikipedia.org/wiki/Spanish_flu</a><br>
+<br>
+The present mobility reduction has presumably also reduced flu infections and deaths.<br>
+In some localities, e.g. where influenza rarely spreads, overall death rates may be <br>
+lower than normal because of reduced motor vehicle usage and accidents.<br>
+In a few places, deaths may have increased either by random bad luck<br>
+or risky behavior such as driving faster because of less traffic on dangerous roads<br>
+leading to disproportionally more fatal accidents.<br>
+<br>
+If there are localities that report decreased total mortality rates,<br>
+mobility restrictions arguably somehow could be loosened,<br>
+although that could provoke migration from places with more restrictions and disease.<br>
+
 <dt>Apr 13, 2020
 <dd><b>NY Times: new confirmed cases and deaths for localities</b><br>
 I now find cumulative or growth rate plots harder to appreciate than new cases;<br>
@@ -40,7 +249,25 @@ FWIW, Syracuse NY looks hopeful., particularly compared to e.g.<br>
 <br>
 <b>MIT:  testing and tracking</b><br>
 <a href="https://www.technologyreview.com/2020/04/12/999117/blueprint-what-it-will-take-to-live-in-a-world-with-covid-19">https://www.technologyreview.com/2020/04/12/999117/blueprint-what-it-will-take-to-live-in-a-world-with-covid-19</a><br><br>
-
+<hr>
+&gt; 
+Here’s another set of graphs I’ve watched as well<br>
+&gt; 
+<a href="https://www.npr.org/sections/health-shots/2020/04/07/825479416/new-yorks-coronavirus-deaths-may-level-off-soon-when-might-your-state-s-peak">https://www.npr.org/sections/health-shots/2020/04/07/825479416/new-yorks-coronavirus-deaths-may-level-off-soon-when-might-your-state-s-peak</a><br>
+<br>
+One concern is that their deaths peak about the same time as resources,<br>
+when historical data indicates about 10-15 day delay
+<hr>
+<b>Cuomo</b><br>
+<a href="https://www.cnbc.com/2020/04/13/coronavirus-death-toll-in-new-york-state-tops-10000-cuomo-says.html">https://www.cnbc.com/2020/04/13/coronavirus-death-toll-in-new-york-state-tops-10000-cuomo-says.html</a><br>
+Points of resolution over time:<ul compact>
+<li> spread controlled
+<li> worst is over
+<li> starting on the way back to normalcy
+<li> some businesses reopen
+<li> effective treatment 
+<li> proven vaccine available?
+</ul>
 <dt>Apr 12, 2020
 <dd><b>German germs</b><br>
 <img src="https://mail.google.com/mail/u/0?ui=2&ik=0dbd7bcf46&attid=0.0.1&permmsgid=msg-a:r-7757282043600555477&th=1716e9bb88408aad&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ8zQL59XMmjZflaEP74NC_0Muu5BvNv5vjdVz_GE-mH-HnQdfcyYJCW0IvIruc_-eZp3XDn3N44eux69f4rqhsWlAsv_Ny1eWGhKWJ4xwy4wUF3RpRYfpAeGjA&disp=emb&realattid=ii_k8x2rk9e0"><br clear=all>
@@ -281,13 +508,13 @@ SC reports 774 cases today, compared with 195 a week ago.<br>
 Given 4x growth per week, SC may now have about 200,000 cases.
 <dt>Mar 29, 2020
 <dd><b>SC Covid-19 severity by age</b><br>
-South Carolina received a federal disaster declaration for COVID-19 on Mar 28.
-With a population of over 5.2 million, South Carolina reports testing 3,675 or 0.07%,
-with 18% positive and most negative tests presumably among health workers.
-Given general population testing effectively limited to those with serious symptoms,
+South Carolina received a federal disaster declaration for COVID-19 on Mar 28.<br>
+With a population of over 5.2 million,<br> South Carolina reports testing 3,675 or 0.07%,<br>
+with 18% positive and most negative tests presumably among health workers.<br>
+Given general population testing effectively limited to those with serious symptoms,<br>
 this may be a good population for estimating how serious are symptoms among
-and between age groups.  For example, the percentage of positive tests
-among those 40-50 is roughly the same as their percentage of SC population.
+and between age groups.<br>  For example, the percentage of positive tests
+among those 40-50 is roughly the same as their percentage of SC population.<br>
 Folks 60-70 appear 73% more likely than them to have severe symptoms
 while children 10-20 are only 30% as likely. <pre>
 SC population positive %  severity
