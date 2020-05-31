@@ -4,7 +4,7 @@ set datafile separator ","
 dates = system("head -1 ".csv." | tr ',' ' '")
 unset border
 set logscale y
-set yrange [1:5000]
+set yrange [1:7000]
 set style data boxes
 set style fill solid 1.0 border -1
 set linetype 1 lc rgb "gray" lw 0 pt 1

@@ -15,7 +15,7 @@ set ytics nomirror
 set grid ytics front
 dates = system("head -1 data.txt")
 set ylabel word(dates,2).' COVID-19 cases per 100K'
-set yrange [1:5000]
+set yrange [1:7000]
 pc(n) = (100000*n)/column(7)
 f(a,b) = (a > b) ? pc(a) : 0
 plot 'data.txt' using (pc($2)) t '> 20 days'

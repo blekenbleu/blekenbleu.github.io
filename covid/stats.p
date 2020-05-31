@@ -3,7 +3,7 @@ set datafile separator ","
 dates = system("head -1 ".csv." | tr ',' ' '")
 unset border
 set logscale y
-set yrange [1:5000]
+set yrange [1:7000]
 set term wxt 0 enhanced size 1400,1200
 set style data boxes
 set style fill solid 1.0 border -1
