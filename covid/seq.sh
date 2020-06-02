@@ -3,7 +3,8 @@ sequence()
   let seq=10000*$3
   let s=100*$1
   let seq=${seq}+${s}
-  let seq=${seq}+$2
+  let n=${2#0*}
+  let seq=${seq}+${n}
   echo "frame${seq}.png"
 }
 
