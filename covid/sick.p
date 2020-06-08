@@ -13,7 +13,8 @@ set linetype 3 lc rgb "red" lw 0 pt 1
 set xtics border rotate 90 offset 0,graph 0 nomirror 
 unset grid
 unset y2tics
-set ytics nomirror
+set ytics nomirror add(3,30,300,3000)
+#set grid ytics back
 set grid ytics front
 stats csv skip 1 nooutput
 c = STATS_columns
