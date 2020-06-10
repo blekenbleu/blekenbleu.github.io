@@ -15,7 +15,7 @@ set linetype 5 lc rgb "#AA0000" lw 0 pt 1
 set xtics border rotate 90 offset 0,graph 0 nomirror 
 unset grid
 unset y2tics
-set ytics nomirror
+set ytics nomirror add(3,30,300,3000)
 set grid ytics front
 # how many columns in csv?
 stats csv skip 1 nooutput
@@ -26,18 +26,20 @@ set key autotitle columnhead
 pc(n) = (100000*n)/column(3)
 g(a,b,k) = (a > b && a > k) ? pc(a) : 0
 s(i,j) = column(d-i)-column(d-j)
+set term wxt 0 enhanced size 1400,1200
 # first 4 columns are NOT cases; need 20 columns (days) of history
 do for [d = 24:c] {
   day = word(dates,d)
   set ylabel day.' COVID-19 cases per 100K'
-  set term wxt 0 enhanced size 1400,1200
   plot csv u (pc(column(d))) t '> 20 days', \
    '' u (pc(s(0,20))) t 'days 7-20', \
    '' u (pc(s(0,6))) t 'days 4-6', \
    '' u (pc(s(0,3))) t 'days 1-3', \
    '' u (g(s(0,3), s(3,6), s(7,10))):xticlabels(2) t 'increasing days 1-3'
+  set term push
   set output 'stats'.day.'.png'
   set term png size 1400,1200
-  replot 
+  replot
+  set term pop
 }
 print 'magick convert -delay 50 stats*.png -rotate 90 -loop 1 -layers optimize anicovopt.gif'
