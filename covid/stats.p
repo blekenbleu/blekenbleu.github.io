@@ -26,7 +26,7 @@ pc(n) = (100000*n)/column(3)
 f(a,b) = (a > b) ? pc(a) : 0
 g(a,b,d) = (a > b && a > d) ? pc(a) : 0
 s(i,j) = column(c-i)-column(c-j)
-set term wxt 0 enhanced size 1400,1200
+set term wxt 0 enhanced size 1400,900
 # first 4 columns are NOT cases; need 20 columns (days) of history
 day = word(dates,c)
 set ylabel day.' COVID-19 cases per 100K'
@@ -39,7 +39,7 @@ set term push
 # fails for Windows gnuplot
 #set output '| magick convert png:- -rotate 90 frame'.day.'.png'
 set output 'stats0.png'
-set term png size 1400,1200
+set term png size 1400,900
 replot
 set term pop
 #
@@ -49,6 +49,6 @@ plot csv u (pc(column(c))) t '> 20 days', \
  '' u (pc(s(0,3))) t 'days 1-3', \
  '' u (g(s(0,3), s(3,6), s(7,10))):xticlabels(2) t 'increasing days 1-3'
 set output 'stats.png'
-set term png size 1400,1200
+set term png size 1400,900
 replot
 system("bash -c 'source seq.sh ".day."'")
