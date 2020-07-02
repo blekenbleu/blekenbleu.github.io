@@ -12,12 +12,12 @@ unset grid
 unset y2tics
 set ytics nomirror add(3,30,300,3000)
 set grid ytics front
-set term wxt 0 enhanced size 1400,800
+set term wxt 0 enhanced size 1600,900
 set ylabel title
 plot 'data.txt' using ($2) t '> 20 days'
 replot 'data.txt' using ($2-$5) t '6-20 days'
 replot 'data.txt' using ($2-$4) t '3-6 days'
 replot 'data.txt' using ($2-$3):xticlabels(6) t '1-3 days'
 unset output
-set term png size 1400,800
+set term png size 1600,900
 replot

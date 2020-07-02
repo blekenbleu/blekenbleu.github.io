@@ -26,7 +26,7 @@ set key autotitle columnhead
 pc(n) = (100000*n)/column(3)
 g(a,b,k) = (a > b && a > k) ? pc(a) : 0
 s(i,j) = column(d-i)-column(d-j)
-set term wxt 0 enhanced size 1400,1200
+set term wxt 0 enhanced size 1600,900
 # first 4 columns are NOT cases; need 20 columns (days) of history
 do for [d = 24:c] {
   day = word(dates,d)
@@ -38,7 +38,7 @@ do for [d = 24:c] {
    '' u (g(s(0,3), s(3,6), s(7,10))):xticlabels(2) t 'increasing days 1-3'
   set term push
   set output 'stats'.day.'.png'
-  set term png size 1400,1200
+  set term png size 1600,900
   replot
   set term pop
 }

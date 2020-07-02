@@ -23,7 +23,7 @@ set key autotitle columnhead
 pc(n) = (100000*n)/column(3)
 f(a,b) = (a < b) ? pc(a) : 0
 s(i,j) = column(c-i)-column(c-j)
-set term wxt 0 enhanced size 1400,1200
+set term wxt 0 enhanced size 1600,900
 # first 4 columns are NOT cases; need 20 columns (days) of history
 day = word(dates,c)
 set ylabel day.' active COVID-19 cases per 100K'
@@ -32,7 +32,7 @@ plot csv u (pc(s(0,20))) t 'days 0-20', \
  '' u (f(s(0,20), s(60,80))):xticlabels(2) t ''
 set term push
 set output 'sick.png'
-set term png size 1400,1200
+set term png size 1600,900
 replot
 set term pop
 replot

@@ -15,7 +15,7 @@ set ytics nomirror add(3,30,300,3000)
 set grid ytics front
 pc(n) = (100000*n)/column(7)
 f(a,b) = (a > b) ? pc(a) : 0
-set term wxt 0 enhanced size 1400,900
+set term wxt 0 enhanced size 1600,900
 dates = system("head -1 data.txt")
 set ylabel word(dates,2).' COVID-19 cases per 100K'
 plot 'data.txt' using (pc($2)) t '> 20 days'
@@ -25,5 +25,5 @@ replot 'data.txt' using (pc($2-$4)) t 'days 4-6'
 replot 'data.txt' using (pc($2-$3)) t 'days 1-3'
 replot 'data.txt' using (f($2-$3,$3-$4)):xticlabels(6) t 'increasing days 1-3'
 unset output
-set term png size 1400,900
+set term png size 1600,900
 replot
