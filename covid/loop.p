@@ -1,5 +1,4 @@
 csv = 'copop.csv'
-system("rm stats*.png")
 set datafile separator ","
 dates = system("head -1 ".csv." | tr ',' ' '")
 unset border
@@ -24,7 +23,8 @@ c = STATS_columns
 set key autotitle columnhead
 # column(3) is population
 pc(n) = (100000*n)/column(3)
-g(a,b,k) = (a > b && a > k) ? pc(a) : 0
+f(a,b) = (a > b) ? pc(a) : 0
+g(a,b,e) = (a > b && a > e) ? pc(a) : 0
 s(i,j) = column(d-i)-column(d-j)
 set term wxt 0 enhanced size 1600,900
 # first 4 columns are NOT cases; need 20 columns (days) of history
@@ -37,9 +37,9 @@ do for [d = 24:c] {
    '' u (pc(s(0,3))) t 'days 1-3', \
    '' u (g(s(0,3), s(3,6), s(7,10))):xticlabels(2) t 'increasing days 1-3'
   set term push
-  set output 'stats'.day.'.png'
+  set output 'stats.png'
   set term png size 1600,900
   replot
   set term pop
+  system("bash -c 'source seq.sh ".day."'")
 }
-print 'magick convert -delay 50 stats*.png -rotate 90 -loop 1 -layers optimize anicovopt.gif'
