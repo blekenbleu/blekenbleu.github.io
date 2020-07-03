@@ -11,18 +11,19 @@ if [ ! -r factFIPS.csv ] ; then
   return 2
 fi
 
-if [ -n "$1" ] ; then
-  a0=$1
-fi
-
 fco=covid_confirmed_usafacts.csv
 url="https://usafactsstatic.blob.core.windows.net/public/data/covid-19/$fco"
 if [ ! -r $CTMP/$fco ] ; then
   curl $url > $CTMP/$fco
+  a0=
 else
   ls -l $CTMP/$fco
 fi
 fco=$CTMP/$fco
+
+if [ -n "$1" ] ; then
+  a0=$1
+fi
 
 count()
 {
