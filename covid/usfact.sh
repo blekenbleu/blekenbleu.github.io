@@ -111,4 +111,5 @@ done < $here/factFIPS.csv
 echo '$GNUPLOT $here/diff_covid.p'
 $GNUPLOT $here/diff_covid.p | $MAGICK convert png:- -rotate 90 diff.png
 $GNUPLOT $here/stats.p
+ls frame*.png
 cd $here
