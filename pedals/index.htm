@@ -1,6 +1,11 @@
 <html>
 <head>
 <title>sim driving</title>
+<style>
+body {
+  margin: 60px;
+}
+</style>
 </head>
 <body>
 <font size=-1><a href="../"><i>back</i></a></font>
@@ -12,49 +17,70 @@
 <h3>Samsung Odyssey+ HMD for WMR</h3>
 <a href="https://www.assettocorsa.net/forum/index.php#assetto-corsa-support-forum-pc-version.12">Assetto Corsa</a>
 is a <a href="https://store.steampowered.com/app/244210/Assetto_Corsa/">Steam</a> "game",
-which when launched for Odyssey+ ends up also running SteamVR and WMR portal.<br>
+which when launched for Odyssey+ also runs SteamVR and WMR portal.<br>
 The game runs fine with TH8A shift and G29 wheel and pedals, when displaying on a monitor.<br>
 When Options->Video->Rendering Mode set from Single Screen to OpenVr,<br>
 then starting Drive launchs WMR portal and SteamVR, but loses TH8A and G29 controls.<br>
 Within Drive, the pit menu usually appears, but disappears once driving, and Esc does not work,<br>
 so unable to e.g. gracefully exit or return to pit.<br>
-This is probably SteamVR expecting inputs from a game controller..<br>
+This may be SteamVR expecting inputs from a game controller..<br>
 <br>
-Sim driving by VR means not seeing controls,
-unless video capture of controls is reinserted in 3D sim view,
-without which controls on steering wheel are useless,
-but that simplifies direct drive options.<br>
-<a href="">AccuForce</a> has a good reputation, but non-standard 14mm shaft
-(shared with Lenze MCS09)
-limits available adapters for 70mm steering wheels to
-<a href="https://www.ascher-racing.com/shop/clamping-set/">Ascher Racing</a><br>
+Instead, what works: Install <a href="contentmgr.htm">Content Manager</a>  in Steam and launch from <a href="steam://open/console">there</a>.<br>
+Customize mouse Forward and Back buttons to [Ctrl + space bar] and [Esc] keystrokes, respectively, e.g. using Logitech SetPoint Settings.<br>
+<img src="Forward.png"><br clear=all>
+<br>
+Sim driving by VR HMD means not seeing physical controls,
+unless video capture of controls is reinserted in 3D view,<br>
+without which controls on steering wheel are IMO useless, simplifying direct drive options.<br>
+<a href="https://www.simxperience.com/en-us/products/accessories/accuforcesteering.aspx">AccuForce</a> has a good reputation, with $599
+<a href="https://www.simxperience.com/products/accessories/accuforcesteering/accuforcewheeldiykit.aspx">DIY details here</a><br>
+and Assetto Corsa force feedback tuning <a href="https://www.racedepartment.com/threads/ffb-vibration-noise-in-direct-drive-accuforce-wheels.168730">here</a>,<br>
+where consensus seems to be programming Device (Accuforce controller) settings, then NOT running SimCommander, just tuning in AC:<br>
+<a href="https://selah.ca/secrets-of-the-simxperience-accuforce-pro/#Force_Feedback_Settings">Secrets of the SimXperience AccuForce Pro</a><br>
+DIY non-standard 14mm shaft (shared with Lenze MCS09)
+<img align=center src="https://www.simxperience.com/Portals/0/Images/AccuForce/Thumbs/AccuForceDIYKit.jpg"><br clear=all>
+limits available adapters for 70mm steering wheels to $27
+<a href="https://www.ascher-racing.com/shop/clamping-set/">Ascher Racing</a>
+<img align=center width=320 src="https://www.ascher-racing.com/wp-content/uploads/shaft_clamp_adapter-768x663.jpg"><br clear=all>
 Installation is described in <a href="https://www.youtube.com/watch?v=Sk_NCV-8R5w">this video</a>.<br>
-Given that AccuForce DIY motor attachment is also non-standard,
-spending another $100 for <a href="https://simxperience.com/Products/Accessories/AccuForceSteering/AccuForceSteeringSystem/tabid/868/ProductID/2267/language/en-US/recordid/4167110/Default.aspx">"Your Way"</a> instead of DIY seems cost-effective..<br>
-<br>
-Ricmotech sells a <a href="https://www.ricmotech.com/Ricmotech_Mini_Mite_Direct_Drive_Steering_System_p/rmt-mm-base.htm">Mini-mite</a> that is <a href="https://www.racedepartment.com/threads/accuforce-mounting-help.171738/post-3021710">reportedly an AccuForce clone</a>.<br>
-They also sell a <a href="https://www.ricmotech.com/Mounting_Bracket_for_SimLab_Heusinkveld_Chassis_p/rmt-ddaf-slabadpt.htm">mounting
-adapter</a> for $28.50 that converts it to Bodnar / Kollmorgen front mounting.
+Motor dimensions are <a href="https://www.simxperience.com/Portals/0/Files/AccuForce/DIY_SimXperience_Motor.PDF">in this PDF diagram</a>.<br>
+14mm diameter shaft extends 55.4mm from motor case, which has 69.5mm center square spacing of mounting holes (6mm??)<br>
+AccuForce DIY motor appears to be NEMA 34:<br>
+<img align=center src="https://www.ato.com/Content/Images/uploaded/nema-34-stepper-motor-dimension.jpg"><br clear=all>
+.. for which <a href="https://www.amazon.com/dp/B079R8W1BH">$10 brackets are available</a>: &nbsp
+<img align=center src="https://images-na.ssl-images-amazon.com/images/I/41XuxzH4sWL._AC_.jpg"><br clear=all>
+Spending another $100 for <a href="https://simxperience.com/Products/Accessories/AccuForceSteering/AccuForceSteeringSystem/tabid/868/ProductID/2267/language/en-US/recordid/4167110/Default.aspx">"Your Way"</a>
+may be cost-effective..<br>
+<img src="https://www.simxperience.com/Portals/0/Images/AccuForce/Thumbs/AF_Pro_V2_Your-Way.jpg"><br clear=all>
+.. but <a href="https://www.simxperience.com/products/accessories/accuforcesteering/accuforcepromountingbracket.aspx">angled mounting brackets</a> cost another $45.
+<img align=center width=320 src="https://www.simxperience.com/portals/0/Images/AccuForce/AccuForceProMountingBracket.jpg"><br clear=all>
 The <a href="https://simxperience.com/Portals/0/Files/AccuForce/Controller_Plug_Descriptions_Dimensions.jpg">AccuForce Controller</a>
 has a <a href="https://simxperience.com/Portals/0/Files/AccuForce/AccuForce_Analog_Input_Connector.png">Pedals / Analog port</a><br>
-<a href="https://www.simxperience.com/products/accessories/accuforcesteering/accuforcepromountingbracket.aspx">Angled mounting brackets cost another $45.<br>
+<br>
+Ricmotech sells a $1200 <a href="https://www.ricmotech.com/Ricmotech_Mini_Mite_Direct_Drive_Steering_System_p/rmt-mm-base.htm">Mini-mite</a>
+<img align=center src="https://cdn3.volusion.com/nzfzp.aykwu/v/vspfiles/photos/RMT-MM-BASE-2S.jpg">
+that is <a href="https://www.racedepartment.com/threads/accuforce-mounting-help.171738/post-3021710">reportedly an AccuForce clone</a>.<br>
+They also sell a $28.50 <a href="https://www.ricmotech.com/Mounting_Bracket_for_SimLab_Heusinkveld_Chassis_p/rmt-ddaf-slabadpt.htm"> front mounting
+plate</a> to adapt that motor for e.g. Bodnar / Kollmorgen front mounting.<br>
+<img width=320 src="https://cdn3.volusion.com/nzfzp.aykwu/v/vspfiles/photos/RMT-DDAF-SLABADPT-3.jpg"><br clear=all>
 Ricmotech sells <a href="https://www.ricmotech.com/Monitor_Angle_Brackets_for_80_20_Aluminum_p/rmt-mangle-tslot.htm">T-slot
 monitor angle brackets for 80/20</a> with 43-60 degree tilt adjustment for $55. &nbsp
 <a href="https://ricmotechcom.fatcow.com/vContent/Manuals/MANGLE-TSLOT.pdf"><i>pdf</i></a><br>
-... and an interesting chassis: <img align=center src="https://cdn3.volusion.com/nzfzp.aykwu/v/vspfiles/photos/APX-500-2T.jpg">
+... and an interesting (IMO) chassis: <img align=center src="https://cdn3.volusion.com/nzfzp.aykwu/v/vspfiles/photos/APX-500-2T.jpg">
 
 <br clear=all>
-<h3>SimLab TR1 Chassis</h3>
-I like the overall design of <a href="https://sim-lab.eu/product/teamredline-tr1-chassis/">this cockpit</a>:
-<img src="https://sim-lab.eu/wp-content/uploads/2018/06/TR105-e1533415335250-100x100.jpg"><br clear=all>
-<img src="https://sim-lab.eu/wp-content/uploads/2018/06/TR109-100x100.jpg"><br clear=all>
+<h3>SimLab TR1 Chassis
+<img align=top src="https://sim-lab.eu/wp-content/uploads/2018/06/TR105-e1533415335250-100x100.jpg"></h3>
+I like the overall <a href="https://sim-lab.eu/product/teamredline-tr1-chassis/">cockpit</a> design:
+<img align=center src="https://sim-lab.eu/wp-content/uploads/2018/06/TR109-100x100.jpg">
 except for being black, back-ordered and 412 Euros + shipping.
 <br>
 The 350 Euro <a href="https://simetik.com/web/product/k2-cockpit/">Simetek K2-R</a> seems similar, except not (much) 80/20<br>
 Adding their proprietary and optional shifter mount, etc, quickly increases the price.<br>
-<a ref="https://www.youtube.com/watch?v=xNMSaH1g0uE">This video</a> shows an AccuForce being mount to a K2-R,<br>
+<a href="https://www.youtube.com/watch?v=xNMSaH1g0uE">This video</a> shows an AccuForce being mounted to a K2-R,<br>
 with close-up of AccuForce base plate at 14:00/15.16.<br>
 <br>
-
+Sim and VR components want proximity to PC for USB,
+making a DD-capable wheel stand seem more practical.
 </body>
 </html>
