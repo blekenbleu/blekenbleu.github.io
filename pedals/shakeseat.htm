@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>shakeseat</title>
+<style>
+body {
+  margin: 60px;
+}
+th {
+  text-align: left;
+}
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<font size=-1><a href="../"><i>back</i></a></font>
+<font size=+1>
+<sl>
+<li><a href="STM32.md">Logitech G29 brake mods using STM32</a>
+<li><a href="ESP8266.md">Logitech G29 brake mods using ESP8266</a>
+<li><a href="TH8A/TH8A.md">TH8A shifter</a>
+<li><a href="contentmgr.htm">Content Manager</a>
+<li><a href="index.htm">pedals</a>
+</sl>
+<h3>SRS ShakeSeat, SimXperience SimCommander and Aurora R7 Windows 10 sound</h3>
+Home sim driving rigs cannot realistically simulate cornering and braking G's;<br>
+better to more cost-effective haptic feedbacks.<br>
+When cornering limits are exceeded, G29 wheel seems to go into 'slow motion', making spins unrecoverable.<br>
+Assetto Corsa physics software overwhelming Gateway i5 was originally suspected,<br>
+but it still happens with Aurora i7, so perhaps G29 is  being overwhelmed by too much I/O.<br>
+Perhaps diverting appropriate feedback from G29 to other haptics will help,<br>
+leaving only those that actually help steer..<br>
+<br>
+Many serious sim racers use sim racing chassis, with actuators at 4 corners.<br>
+Sim Racing Studio offers a
+<a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">$250 ShakeKit</a>,
+comprised of <a href="https://www.simracingstudio.com/product-page/srs-license">software</a>, USB soundcard, amplifiers,<br>
+and 4 <a href="https://www.amazon.com/dp/B0045W10VW">Dayton bass shaker pucks</a> in a thinly padded seat cushion.<br>
+That <a href="https://www.simracingstudio.com/product-page/srs-shakeseat">ShakeSeat cushion</a> is available separately for about half the cost. &nbsp
+<a href="http://simracinggarage.com/sim-racing-studio-shakekit-review">
+Barry Rowland</a> considers the ShakeKit:<br>
+"Probably the easiest way for you to get a proper feeling transducer solution deployed on your Sim Racing setup."<br>
+<table style="width:700px"><tr><td align=center>
+<a href="https://www.youtube.com/watch?v=bbsFZs-hLMg">Karl Gosling YouTube review</a><br>
+<table style="width:200px">
+<caption><a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">ShakeSeat</a> GX16-8p wiring</caption>
+<tr><th>polarity </th><th>left   </th><th>right   </th></tr>
+<tr><td>pos front</td><td>2 black</td><td>1 red   </td></tr>
+<tr><td>neg front</td><td>6 blue </td><td>4 green </td></tr>
+<tr><td>pos rear </td><td>5 white</td><td>7 orange</td></tr>
+<tr><td>neg rear </td><td>8 tan  </td><td>3 yellow</td></tr>
+</table></td><td>
+<img align=center width=360 src="https://static.wixstatic.com/media/092827_f5c3483fde264599adc2122ee3c131df~mv2.jpg">
+</td></tr></table>
+<br>
+Confusingly, <a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">ShakeIt</a>
+(one less K) is/was free software, since integrated into SimHub, equivalent to SRS'.<br>
+My Aurora R7 has unused 7.1 channel audio on the motherboard,
+and audio amplifiers were also on hand.<br>
+<a href="https://www.simxperience.com/Products/SimVibe/SimVibeSoftware.aspx">SimXperience SimVibe</a>
+was a pioneer in converting sim telemetry to bass shaker audio<br>
+now also available from (free) SimHub as well as SRS' ShakeKit.<br>
+SimXperience has since
+integrated SimVibe with <a href="https://www.simxperience.com/en-us/products/software/simcommander4.aspx">Sim Commander 4</a>,<br>
+which also drives their <a href="">AccuForce direct drive steering wheel</a> (<i>on order</i>).<br>
+<br>
+SimXperience warns that multiple identical sound adapters can be problematic.<br>
+Both Aurora motherboard and Samsung Odyssey+ sound identify as Realtek:<br>
+Intel and NVIDIA audio are presumably about HDMI. &nbsp Despite nomenclature,<br>
+Windows 10 Sound Blaster X-Fi support appears to be only stereo.<br>
+Realtek motherboard audio is enabled only after plugging into 1/8 phone jacks.<br>
+Realtek USB2.0 device disappears when Odyssey+ HMD sleeps,<br>
+reportedly confusing SimVibe/Sim Commander 4 (SC4),<br>
+which evidently keys off sequence in list of available devices.<br>
+Since Assetto Corsa already loses access to G29 and TH8A<br>
+unless launched <b>after</b> Steam and Content Manager,<br>
+inserting SC4 launch may also be problematic.<br>
+<img src="AudioDevices.png"><br clear=all>
+
+</font>
+</body>
+</html>
