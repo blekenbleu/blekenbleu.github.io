@@ -5,18 +5,35 @@
 body {
   margin: 60px;
 }
+th {
+  text-align: left;
+}
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
 </style>
 </head>
 <body>
 <font size=-1><a href="../"><i>back</i></a></font>
+<a name=sim><h2>sim driving</h2></a>
+<font size=+1>
 <sl>
 <li><a href="STM32">Logitech G29 brake mods using STM32</a>
 <li><a href="ESP8266">Logitech G29 brake mods using ESP8266</a>
 <li><a href="TH8A/TH8A">TH8A shifter</a>
-<li><a href="wheelstand.htm">wheel stand</a>
-<li><a href="shakeseat.htm">ShakeSeat</a>
+<li><a href="#hmd">Odyssey+ HMD</a>
+<li><a href="#contentmgr">Content Manager</a> &nbsp and <a href="#mods">mods</a>
+<li><a href="#shakeseat">ShakeSeat</a>
+<li><a href="#TR1">SimLab TR1 Chassis</a>
+<li><a href="#wheelstand">wheel stand</a>
+
 </sl>
-<h3>Samsung Odyssey+ HMD for WMR</h3>
+<a name=hmd><h3>Samsung Odyssey+ HMD for WMR</h3></a>
 <a href="https://www.assettocorsa.net/forum/index.php#assetto-corsa-support-forum-pc-version.12">Assetto Corsa</a>
 is a <a href="https://store.steampowered.com/app/244210/Assetto_Corsa/">Steam</a> "game",
 which when launched for Odyssey+ also runs SteamVR and WMR portal.<br>
@@ -41,10 +58,11 @@ where consensus seems to be programming Device (Accuforce controller) settings, 
 <a href="https://selah.ca/secrets-of-the-simxperience-accuforce-pro/#Force_Feedback_Settings">Secrets of the SimXperience AccuForce Pro</a><br>
 DIY non-standard 14mm shaft (shared with Lenze MCS09)
 <img align=center src="https://www.simxperience.com/Portals/0/Images/AccuForce/Thumbs/AccuForceDIYKit.jpg"><br clear=all>
-limits available adapters for 70mm steering wheels to $27
+70mm steering wheel adapter @ $27 from
 <a href="https://www.ascher-racing.com/shop/clamping-set/">Ascher Racing</a>
 <img align=center width=320 src="https://www.ascher-racing.com/wp-content/uploads/shaft_clamp_adapter-768x663.jpg"><br clear=all>
-Installation is described in <a href="https://www.youtube.com/watch?v=Sk_NCV-8R5w">this video</a>.<br>
+Installation: &nbsp
+<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/Sk_NCV-8R5w"></iframe><br>
 Motor dimensions are <a href="https://www.simxperience.com/Portals/0/Files/AccuForce/DIY_SimXperience_Motor.PDF">in this PDF diagram</a>.<br>
 14mm diameter shaft extends 55.4mm from motor case, which has 69.5mm center square spacing of mounting holes (6mm??)<br>
 AccuForce DIY motor appears to be NEMA 34:<br>
@@ -56,8 +74,9 @@ may be cost-effective..<br>
 <img src="https://www.simxperience.com/Portals/0/Images/AccuForce/Thumbs/AF_Pro_V2_Your-Way.jpg"><br clear=all>
 .. but <a href="https://www.simxperience.com/products/accessories/accuforcesteering/accuforcepromountingbracket.aspx">angled mounting brackets</a> cost another $45.
 <img align=center width=320 src="https://www.simxperience.com/portals/0/Images/AccuForce/AccuForceProMountingBracket.jpg"><br clear=all>
+<br>
 The <a href="https://simxperience.com/Portals/0/Files/AccuForce/Controller_Plug_Descriptions_Dimensions.jpg">AccuForce Controller</a>
-has a <a href="https://simxperience.com/Portals/0/Files/AccuForce/AccuForce_Analog_Input_Connector.png">Pedals / Analog port</a><br>
+has a <a href="https://simxperience.com/Portals/0/Files/AccuForce/AccuForce_Analog_Input_Connector.png">Pedals / Analog port</a>, which should address G29 brake pedal nonlinearity...<br>
 <br>
 Chinese quick releases seem fine;  Sim Racing Garage review of one adapted for Thrustmaster covers it well:<br>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/9ZNrmjJzFd4"></iframe>
@@ -74,7 +93,165 @@ monitor angle brackets for 80/20</a> with 43-60 degree tilt adjustment for $55. 
 ... and an interesting (IMO) chassis: <img align=center src="https://cdn3.volusion.com/nzfzp.aykwu/v/vspfiles/photos/APX-500-2T.jpg">
 
 <br clear=all>
-<h3>SimLab TR1 Chassis
+<hr>
+<br><font size=-2><i><a href="#sim">back</a></i></font>
+<a name=contentmgr><h3>Assetto Corsa Content Manager</h3></a>
+Any number of YouTube videos eloquently laud <a href="https://assettocorsa.club/content-manager.html">Content Manager</a>:
+<ul compact>
+<li><a href="https://www.youtube.com/watch?v=0U2REMdpP9E">Chris Haye</a> Content Manager for Assetto Corsa - The Best Assetto Corsa Mod
+<li><a href="https://www.youtube.com/watch?v=T5aoe8RLvXU">GamerMuscleVideos</a>
+<li><a href="https://www.youtube.com/watch?v=h2l2t1sbru4">2Old4Forza</a> How to Assetto Corsa 2020: Content Manager tips + modding 16:48<br>
+settings (good) 2:37 Single 6:10 apps <a href="https://www.racedepartment.com/downloads/helicorsa.5199/">HeliCorsa</a> 8:00 modding 11:24 Content Mgr mod install 15:00<br>
+[ <i>Sadly, 2Old4Forz is too busy talking about how old school he is @ 14:54 to explain wtf he did to start Content Manager mod install</i> ]
+<li><a href="https://www.youtube.com/watch?v=759TcHZCBww">Davy Jones</a> Assetto Corsa PC Getting Started Guide including Content Manager, Sim Racing System & the Crew Chief 1:11:52
+<li><a href="https://www.youtube.com/watch?v=bkZCWlC7ano">Helixxvr</a>This one simple VR trick you didn't know in Assetto Corsa 8:26<br>
+use the UI in Assetto Corsa in VR without ever having to take the HMD off your head and without 3rd party programs.
+<li><a href="https://www.youtube.com/watch?v=D9uKWikvL2M">Alex Nelson</a> Assetto Corsa VR (Oculus) Settings Tutorial [ skip 2:25 ] 23:27<br>
+95% 90fps with full grid
+<li><a href="https://www.youtube.com/watch?v=EMQ8Xj__GT0">mvs36</a> ASSETTO CORSA - How to use Content Manager! 16:12
+<li><a href="https://www.youtube.com/watch?v=hs-5k9fC66g">Highness</a> Beginners guide to presets in Content Manager Assetto Corsa 12:03
+<li><a href="https://www.youtube.com/watch?v=6NaaLjZSE_I">Highness</a> Voice Control Assetto Corsa and Content Manager - no keyboard or mouse 23:30
+<li><a href="https://www.youtube.com/channel/UCb9yJYAgB8_8cJXwKXekLpQ/search?query=content">Highness</a> Content Manager videos
+<li><a href="https://www.youtube.com/watch?v=EDhoYyBb0Ik">Kame Trick</a> Assetto Corsa Drifting - How to Set up Hardware and Wheel in Content Manager (Tutorial Playlist)
+<li><a href="https://www.youtube.com/watch?v=EUgrWDC-i0U">SingleRacer</a> Sim Racing Tutorials | A Content Manager Unbiased Review | for Beginners & Newbies
+<li><a href="https://www.youtube.com/watch?v=_pVh3CJxUWE">ONE37Works</a> The Definitive Assetto Corsa Drifting Guide & Logitech G920 Settings! 1:11<br>
+2018 Drifting Guide for Assetto Corsa on PC, using Content Manager!
+<li><a href="https://www.youtube.com/watch?v=fZoyVoo_9A0">SimRacing604</a> Assetto Corsa PC Graphics Starter Guide - 5 Things You Need 14:46<br>
+find the best graphics settings for Assetto Corsa
+<li><a href="https://www.youtube.com/watch?v=iZMxHrFoUwg">Mauro Ciacchi</a> Logitech G29 force feedback settings tutorial for Assetto Corsa and Content Manager Updated May 2020 (no cc) 3:53
+<li><a href="https://www.youtube.com/watch?v=mLXAdYoCuk0">HokiHoshi</a> Assetto Corsa Mod Install Guide | Content Manager, CSP, Sol, Tracks & Cars (Shutoko Revival Project)<br>
+<i>good for installing Content Manager, but then manually installs Sol and other mods</i>
+<li><a href="https://www.youtube.com/watch?v=3UOzkVUiYqU">VIRTUAL DRIVER</a> Assetto Corsa - Content Manager - Sol + Shaders MODs - SRS Tutorial Español 2020 (cc translates to English) 21:12
+<li><a href="https://www.youtube.com/watch?v=30sBWfcn1L0">Davy Jones</a> Minor bugs & confusion with Sol 1.1.1 & Content Manager for Assetto Corsa Apr 2019 6:18<br>
+upgrading the Sol mod for Assetto Corsa to version 1.1.1 using Content Manager. I noticed some inconsistencies in the instructions<br>
+and also experienced a bug with the latest recommended version of the Custom Shaders Patch, or at least it appeared as a bug in my installation
+<li><a href="https://www.youtube.com/watch?v=8BaNYSyuH6M">Carlos Panades</a> How to install Mods Sol 1.3.2 + CSP Custom Shaders Patch preview.198 in Assetto Corsa Aug 2019 8:44
+<li><a href="https://www.youtube.com/watch?v=rsWeNbMYngk">Assetto Corsa Content Manager</a> Content Manager Episode 1 - How to get started with CM 2018 5:22
+<li><a href="https://www.youtube.com/watch?v=GHu2hMR4Qas">Mauro Ciacchi</a> Assetto Corsa how to install mods, cars and tracks with Content Manager (no audio)
+<li><a href="https://www.youtube.com/watch?v=H-Fji4-boME">Unleashed Drivers</a> How to extract .acd files and repack them with Assetto Corsa Content Manager 1:23<br>
+useful for editing Assetto Corsa car data
+<li><a href="https://www.youtube.com/watch?v=ykV0QiF4fw0">Crazy Cat Guy</a> Assetto Corsa and Content Manager Horizon Lock option comparison 2:16<br>
+I use Horizon Lock to stop the ground from shaking. Unfortunately this brings the issue of the car moving too much to the sides,<br>
+especially at very steep corners (like the one at the video here: https://youtu.be/JcM0_QWqvuk?t=2m12s)<br>
+and also not aligning with the level of the floor of the car (the awesome drawing at the end of my video).
+<li><a href="https://www.youtube.com/watch?v=LNLcX6Rw6vg">Mamiya Motors</a> How To Get Drift Cars On Assetto Corsa | Content Manager Guide | PC 14:34
+<li><a href="https://www.youtube.com/watch?v=I7XACU7kEHs">Humblegeorge</a> Why use the Content Manager Aug 2017 [ skip first 2:30 ] 42:40
+<li><a href="https://www.youtube.com/watch?v=fw-3rGLddHE">random callsign</a> 9 ESSENTIAL Assetto Corsa mods for 2019 9:19
+</ul>
+<a href="https://assettocorsa.club/">Assetto Corsa club</a>'s own <a href="https://assettocorsa.club/content-manager.html">Content Manager page</a> proclaims "Easy and intuitive",
+which generally translates to poorly documented and idiosynchratic.<br>
+Much sim driving software seems overly influenced by video gaming,<br>
+which traditionally delights in making things <b><i>harder and less efficient</i></b>.<br>
+<br>
+<a name=mods><h4>Mods</h4></a>
+For example, no video watched so far recommends downloading new mods <i>within Content Manager</i><br>
+&nbsp by clicking <code>CONTENT</code> in the top bar, then <b>get new mods</b>, perhaps because <b><i>those downloads fail</i></b>...<br>
+Instead, use <a href="https://www.racedepartment.com/threads/how-to-use-content-manager-to-load-cars-skins-into-ac.159093/#post-2823684">BuntqF's CM setup</a>
+to add a <code>DOWNLOADS</code> section.<br>
+<br>
+<i>Tracks</i><br>
+Using Chrome browser, downloaded <a href="https://www.youtube.com/watch?v=OuaoPWsbA4g">Putnam Park</a> v1.2 from RaceRoom to RAM drive,<br>
+then dragged to Content Manager, which reported successful installation,<br>
+but Assetto Corsa crashed: &nbsp <img align=center width=320 src="AIspline.png"><br clear=all>
+Tried again with <a href="https://www.racedepartment.com/downloads/putnam-park.17661/reviews">Putnam Park 0.98</a>, which works,
+as do <a href="https://www.racedepartment.com/downloads/summit-point-raceway.29502/">Summit Point</a>
+and <a href="https://www.racedepartment.com/downloads/dragons-tail-hillclimb.14457/updates">Tail of the Dragon</a>.<br>
+Mont Tremblant remains <a href="https://assettocorsamods.net/threads/circuit-mont-tremblant-st-jovite-1969.1201/page-3">a work in progress</a>,
+but Patrice COte wrote on March 11, "I don't know when I'll call it finished, let's just say 2020 for now."<br>
+
+There appears to be no progress towards an Assetto Corsa mod for New Hampshire Motor Speedway road course...<br>
+<img width=640 src="https://www.diyauto.com/uploads/users/4/2016/05/2lcv0gx-1464266500.jpg"><br clear=all>
+.. where I ran in a <a href="https://www.diyauto.com/manufacturers/bmw/generations/3-series-e90/reviews/go-fast-a-rookie-s-day-at-a-bmw-cca-boston-chapter-driving-school-at-nhms-by-professorcook">BMW CCA event</a>.<br>
+
+Other tracks that I drove are more popular:  <a href="https://www.racedepartment.com/downloads/watkins-glen-international.20204/">Watkins Glen</a>,
+<a href="https://www.racedepartment.com/downloads/road-atlanta.18293/">Road Atlanta</a>,
+<a href="https://www.racedepartment.com/downloads/sebring-international-raceway-rtb.13374/">Sebring</a>,
+<a href="http://www.mediafire.com/file/fl83fbq85unv3ye/mid_ohio.rar/file">Mid-Ohio (installed)</a>,
+<a href="https://www.racedepartment.com/downloads/mosport-2019-ctmp.24486/">Mosport</a><br>
+There is a <a href="http://www.northamericangp.com/board/downloads.php?do=file&id=1190">NAGP Monday Season XXXV Track Pack</a>, but it
+<a href="http://www.northamericangp.com/board/showthread.php?16378-New-File-Added-NAGP-Monday-Season-XXXV-Track-Pack">requires a password</a>.
+<br>
+Mid-Ohio felt more familiar than Putnam Park.<br>
+<br>
+<i>Cars</i><br>
+<a href="https://assettocorsa.club/mods/auto/bmw-m5-e34.html">BMW E34 M5</a>,
+<a href="https://www.racedepartment.com/downloads/bmw-e30-325i-coupe.18782/">BMW E30 325i</a>,
+<a href="http://assettomods.com/lotus-europa-special-1972/">Lotus Europa 1972 (installed -RHD)</a>,
+<a href="https://velosmodsworkshop.com.mx/mg.html">MGA</a>,<br>
+<a href="https://assettoland.wixsite.com/assettoland/fiat">FIAT X1-9 DALLARA 1975 (assettoland - installed)</a>,
+<a href="https://mega.nz/#!1XZVVQiZ!KHGO9tEIEnrZswmwkvfVsgYMU7BGioLe6ar1sBtFgvw">Jaguar E-Type 4.2 1965 (installed)</a><br>
+<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/aHobq89SL1M"></iframe><br>
+I seem to recall a V12 E-type mod, but cannot find it...
+<br>
+
+<hr>
+<br><font size=-2><i><a href="#sim">back</a></i></font>
+<a name=shakeseat>
+<h3>SRS ShakeSeat, SimXperience SimCommander and Aurora R7 Windows 10 sound</h3></a>
+Home sim driving rigs cannot realistically simulate cornering and braking G's;<br>
+better to more cost-effective haptic feedbacks.<br>
+When cornering limits are exceeded, G29 wheel seems to go into 'slow motion', making spins unrecoverable.<br>
+Assetto Corsa physics software overwhelming Gateway i5 was originally suspected,<br>
+but it still happens with Aurora i7, so perhaps G29 is  being overwhelmed by too much I/O.<br>
+Perhaps diverting appropriate feedback from G29 to other haptics will help,<br>
+leaving only those that actually help steer..<br>
+<br>
+Many serious sim racers use sim racing chassis, with actuators at 4 corners.<br>
+Sim Racing Studio offers a
+<a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">$250 ShakeKit</a>,
+comprised of <a href="https://www.simracingstudio.com/product-page/srs-license">software</a>, USB soundcard, amplifiers,<br>
+and 4 <a href="https://www.amazon.com/dp/B0045W10VW">Dayton bass shaker pucks</a> in a thinly padded seat cushion.<br>
+That <a href="https://www.simracingstudio.com/product-page/srs-shakeseat">ShakeSeat cushion</a> is available separately for about half the cost. &nbsp
+<a href="http://simracinggarage.com/sim-racing-studio-shakekit-review">
+Barry Rowland</a> considers the ShakeKit:<br>
+"Probably the easiest way for you to get a proper feeling transducer solution deployed on your Sim Racing setup."<br>
+<table style="width:700px"><tr><td align=center>
+<a href="https://www.youtube.com/watch?v=bbsFZs-hLMg">Karl Gosling YouTube review</a><br>
+<table style="width:200px">
+<caption><a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">ShakeSeat</a> GX16-8p wiring</caption>
+<tr><th>polarity </th><th>left   </th><th>right   </th></tr>
+<tr><td>pos front</td><td>2 black</td><td>1 red   </td></tr>
+<tr><td>neg front</td><td>6 blue </td><td>4 green </td></tr>
+<tr><td>pos rear </td><td>5 white</td><td>7 orange</td></tr>
+<tr><td>neg rear </td><td>8 tan  </td><td>3 yellow</td></tr>
+</table></td><td>
+<img align=center width=360 src="https://static.wixstatic.com/media/092827_f5c3483fde264599adc2122ee3c131df~mv2.jpg">
+</td></tr></table>
+<br>
+Confusingly, <a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">ShakeIt</a>
+(one less K) is/was free software, since integrated into <a href="https://www.simhubdash.com/">SimHub</a>, equivalent to SRS'.<br>
+My Aurora R7 has unused 7.1 channel audio on the motherboard,
+and audio amplifiers were also on hand.<br>
+<a href="https://www.simxperience.com/Products/SimVibe/SimVibeSoftware.aspx">SimXperience SimVibe</a>
+was a pioneer in converting sim telemetry to bass shaker audio<br>
+now also available from (free) SimHub as well as SRS' ShakeKit.<br>
+SimXperience has since
+integrated SimVibe with <a href="https://www.simxperience.com/en-us/products/software/simcommander4.aspx">Sim Commander 4</a>,<br>
+which also drives their <a href="">AccuForce direct drive steering wheel</a> (<i>on order</i>).<br>
+<br>
+SimXperience warns that multiple identical sound adapters can be problematic.<br>
+Both Aurora motherboard and Samsung Odyssey+ sound identify as Realtek:<br>
+Intel and NVIDIA audio are presumably about HDMI. &nbsp Despite nomenclature,<br>
+Windows 10 Sound Blaster X-Fi support appears to be only stereo.<br>
+Realtek motherboard audio is enabled only after plugging into 1/8 phone jacks.<br>
+Realtek USB2.0 device disappears when Odyssey+ HMD sleeps,<br>
+reportedly confusing SimVibe/Sim Commander 4 (SC4),<br>
+which evidently keys off sequence in list of available devices.<br>
+Since Assetto Corsa already loses access to G29 and TH8A<br>
+unless launched <b>after</b> Steam and Content Manager,<br>
+inserting SC4 launch may also be problematic.<br>
+<img src="AudioDevices.png"><br clear=all>
+<h4>[dis]comfort</h4>
+As a frequent bike rider, my butt is not particularly tender,<br>
+but sitting on four hard pucks for hours will be unpleasant,<br>
+and the soft foam used by Sim Racing Studio does little to spread the pressure.<br>
+From available 1/2" INTERLOCKING EVA FOAM MATS:
+<img align=center width=320 src="https://i5.walmartimages.com/asr/dbd9aabc-b658-4264-8006-0af39ec4d544_1.094348d66aacf28d6836b01e75bb7f27.jpeg"><br clear=all>
+<br>
+one was trimmed one to about 17x17 inches and marked using a bowl for disc removal at puck locations:<br>
+<img src="EVAshakeseat.jpg"><br clear=all>
+<hr>
+<a name=TR1><h3>SimLab TR1 Chassis</h3></a>
 <img align=top src="https://sim-lab.eu/wp-content/uploads/2018/06/TR105-e1533415335250-100x100.jpg"></h3>
 I like the overall <a href="https://sim-lab.eu/product/teamredline-tr1-chassis/">cockpit</a> design:
 <img align=center src="https://sim-lab.eu/wp-content/uploads/2018/06/TR109-100x100.jpg">
@@ -89,6 +266,26 @@ Sim and VR components want proximity to PC for USB, making a DD-capable wheel st
 The <a href="https://www.amazon.com/dp/B07HM6DR81">$160 GT Omega APEX wheel stand</a> did OK in this <a href="https://www.youtube.com/watch?v=O5OPW20iTN0">video with a DD1 at 20nm</a>.<br>
 Discount code <a href="https://www.youtube.com/watch?v=twy1wSq6IHA">DAN</a> for 5% off at <a href="https://www.gtomega.com/products/apex-steering-wheel-stand">gtomega.com</a>, where they are $150 on preorder.<br>
 
+<hr>
+<br><font size=-2><i><a href="#sim">back</a></i></font>
+<a name=wheelstand><h3>wheelstand</h3></a>
+Clamping G29 wheel to computer cart compromises computing;  pivoting desk chair to wheel stand makes more sense.<br>
+Harbor Freight camping work bench:<br>
+<img width=640 src="Workbench.jpg"><br clear=all>
+ ...can be repurposed as a wheel stand.<br>
+Ratchet strap secures desk chair to improvised wheel stand. &nbsp
+<img align=center src="ratchet.png"><br clear=all>
+<br>
+5/4 yellow pine scraps salvaged from beach house rennovation clamped to work bench legs<br>
+ mount G29 wheelbase and TH8A shifter;<br>
+<img src="sidestand.jpg"><br clear=all>
+fan and Odyssey+ HMD perch on top.
+<img align=center src="wheelstand.jpg"><br clear=all>
+Repurposed Adcom ACE-515 distributes power to sim equipment,<br>
+including amplifiers for <a href="shakeseat.htm">ShakeSeat cushion</a> controlled by SimHub.<br>
+TH8A shifter plate is rotated slightly ccw to reduce missed shifts.<br>
 
+
+</font>
 </body>
 </html>
