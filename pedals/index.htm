@@ -35,6 +35,8 @@ th, td {
 <li><a href="#HOTAS">Hand-On Throttle-And-Stick in SteamVR</a>
 <li><a href="#Driver4VR">Driver4VR</a>
 <li><a href="#Bigscreen">Bigscreen</a>
+<li><a href="#SteamID">SteamID;  Assetto Corsa keyboard commands</a>
+<li><a href="https://www.racedepartment.com/threads/is-there-a-real-head-motion-like-thing-integrated-to-csp.182875/post-3166712">CM Neck FX</a>
 
 </sl> &nbsp
 <br>
@@ -79,7 +81,49 @@ G-force unlearning / relearning issues: 4:15/15:48 &nbsp
 FWIW, I expect professional and better amateur drivers will generally adapt more quickly between sim and real racing,<br>
 since G-forces differ so much between street and many race cars.
 </details>
+
+
 <a name=hmd><h3>Samsung Odyssey+ HMD for WMR</h3></a>
+<h5>Samsung HMD Odyssey+</h5>
+Miserably documented and barely supported (sold only in the U.S.)<br>
+wants to install HMD Odyssey Home on C:<br>
+.. but not enough space<br>
+<br>
+Plugging in launched Mixed Reality Portal,<br>
+which reported that HMD was sleeping, but [wake] button would not..<br>
+Eventually, things started happening.<br>
+I have no idea how anyone is supposed to navigate WMR portal outhouse.<br>
+Going into Windows 10 Start menu revealed both<br>
+<code>Samsung HMD Odyssey Setup<br>
+Samsung HMD Odyssey+ Setup</code><br>
+<br>
+3D Viewer was installed<br>
+360 Viewer was installed<br>
+<br>
+I uninstalled 'Samsung HMD Odyssey Setup'...<br>
+<br>
+Launching 'Samsung HMD Odyssey+ Setup',<br>
+it prompted to install firmware version 1.0.2;<br>
+having read of problems,<br>
+I first killed Mixed Reality Portal, then update succeeded.<br>
+<br>
+One screen 'Get to know your controller' provided names for 6 controls,<br>
+but not how or when to use them.<br>
+Touchpad, Menu, Grab << wtf<br>
+Trigger - Select   << what??<br>
+Thumbstick - Teleport, rotate << how ??<br>
+Windows button - Go to Start << what 'Start', to start what?<br>
+<br>
+Without HMD, used mouse to launch SteamVR,<br>
+which has its own useless and pointless outhouse.<br>
+that offers 'help', but <b><i>really</i></b> doesn't.<br>
+Launched Assetto Corsa, but it was not in VR.<br>
+<br>
+Amazon Odyssey+ page has both installation and user PDFs,<br>
+but installation PDF is mostly wrong, and<br>
+12/2017 user PDF is older than 07/2018 manual at Samsung site.<br>
+<br>
+<h5>Assetto Corsa</h5>
 <a href="https://www.assettocorsa.net/forum/index.php#assetto-corsa-support-forum-pc-version.12">Assetto Corsa</a>
 is a <a href="https://store.steampowered.com/app/244210/Assetto_Corsa/">Steam</a> "game",
 which when launched for Odyssey+ also runs SteamVR and WMR portal.<br>
@@ -184,7 +228,12 @@ Mid-Ohio felt more familiar than Putnam Park.<br>
 <iframe align=center width="640" height="480" src="https://www.youtube.com/embed/aHobq89SL1M"></iframe><br>
 I seem to recall a V12 E-type mod, but cannot find it...
 <br>
-
+<h5><a href="https://www.racedepartment.com/threads/fixing-messed-up-windshields-on-mod-cars-using-cm.171394/">Fixing messed up windshields on mod cars using CM</a></h5>
+<h5><a href="https://www.racedepartment.com/threads/cm-custom-shader-patch-giving-better-frame-rates-with-cpu-gpu-optimising.162324/">CM/Custom Shader Patch giving better frame rates with CPU/GPU optimising</a></h5>
+<h5><a href="https://www.racedepartment.com/threads/samsung-odyssey-install.160947/post-2874030">MixedRealityVRDriver change renderTargetScale to 2.0 instead of 1.0</a></h5>
+disable Advanced Supersampling Filtering
+<h5>"unpack data" feature in the content tab</h5>
+click CM version number around 10 times quickly to get developer mode
 <hr>
 <br><font size=-2><i><a href="#sim">back</a></i></font>
 <a name=shakeseat>
@@ -262,6 +311,11 @@ and Assetto Corsa force feedback tuning <a href="https://www.racedepartment.com/
 where consensus seems to be programming Device (Accuforce controller) settings,<br>
 then NOT running SimCommander, just tuning in AC:<br>
 <a href="https://selah.ca/secrets-of-the-simxperience-accuforce-pro/#Force_Feedback_Settings">Secrets of the SimXperience AccuForce Pro</a><br>
+Accuforce uses a <a href="https://www.orientalmotor.com/stepper-motors/technology/hybrid-stepper-motors-v-hybrid-control.html">Hybrid Stepper Motor</a> &nbsp
+<img align=center src="https://www.orientalmotor.com/images/stepper-motors/hybrid-stepper-motor-rotor.jpg"><br clear=all>
+A similarly priced Chinese design, Simagic M10, also uses hybrid stepper motor and has a better design for signal connections,<br>
+but <a href="https://us.sim-motion.com/collections/simagic">authorized U.S. source</a> reports pre-order status.<br> 
+
 DIY non-standard 14mm shaft (shared with Lenze MCS09)
 
 <img align=center src="https://www.simxperience.com/Portals/0/Images/AccuForce/Thumbs/AccuForceDIYKit.jpg"><br clear=all>
@@ -420,6 +474,53 @@ At least with Oculus, Bigscreen should allow <a href="https://www.reddit.com/r/o
 Assetto Corsa (or Content Manager) UI in a virtual desktop</a><br>
 Bigscreen works with WMR:
 <iframe align=center width="640" height="480" src="https://www.youtube.com/embed/-Gy15BEm8UQ"></iframe><br>
+<hr>
+<a name="SteamID"><h3>SteamID;  Assetto Corsa keyboard commands</h3></a>
+For Steam ID, in a web browser new tab, enter:<br>
+<code>steam://open/console</code><br>
+<br>
+.. in that console window, enter:<br>
+<code>user_info</code><br>
+<h4>AC keyboard</h4>
+<pre>
+F1: change driving view
+F2: TV camera view
+F3: change TV views
+F5: side view
+F8 : screenshot
+F11: virtual mirror
+Alt+Tab: switch out of sim
+Home: show developer console (*if enabled in .ini)
+
+ESC: return to main menu
+Ctrl+[spacebar]: recenter HMD view
+Ctrl+R: replay
+Ctrl+S: slow motion (replay)
+Ctrl+A: ABS on/off
+Ctrl+T: traction control modes on/off
+Ctrl+H: show/hide apps
+Ctrl+O: restart session
+Ctrl+L: disable names
+Ctrl+G: realism settings (in game)
+Ctrl+D: displays damage for a few seconds
+
++/- : adjust FoV
+
+PageUp/Down: change exposure settings in the cockpit
+</pre>
+
+<h4>For more apps on the sidebar</h4>
+edit:<br>
+<code>Steam/SteamApps/Common/AssettoCorsa/System/Cfg/Assetto Corsa.ini</code><br>
+change the setting to:<br>
+<code>ENABLE_DEV_APPS=1</code><br>
+<br>
+To disable off track penalty, edit:<br>
+<code>Documents/AssettoCorsa/cfg/race.ini</code><br>
+change the setting to:<br>
+<code>ALLOWED_TYRES_OUT=-1</code><br>
+<a href="https://www.racedepartment.com/threads/full-list-of-keyboard-commands.77268/">
+https://www.racedepartment.com/threads/full-list-of-keyboard-commands.77268/</a><br>
 
 </font>
 </body>
