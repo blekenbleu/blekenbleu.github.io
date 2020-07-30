@@ -26,6 +26,7 @@ th, td {
 <li><a href="STM32">Logitech G29 brake mods using STM32</a>
 <li><a href="ESP8266">Logitech G29 brake mods using ESP8266</a>
 <li><a href="TH8A/TH8A">TH8A shifter</a>
+<li><a href="#G29">G29 controls</a>
 <li><a href="#hmd">Odyssey+ HMD</a>
 <li><a href="#contentmgr">Content Manager</a> &nbsp and <a href="#mods">mods</a>
 <li><a href="#shakeseat">ShakeSeat</a>
@@ -79,10 +80,127 @@ G-force unlearning / relearning issues: 4:15/15:48 &nbsp
 <iframe align=center width="640" height="480" src="https://www.youtube.com/embed/XjcW3qzWTyE"></iframe><br>
 <br>
 FWIW, I expect professional and better amateur drivers will generally adapt more quickly between sim and real racing,<br>
-since G-forces differ so much between street and many race cars.
+since G-forces differ so much between street and many race cars.<br>
+<br>
+This is also biased towards streetable BMWs with power steering and brakes,<br>
+minimal aero and enough mods to be pleasant on track, but far from real racing cars.<br>
+Consequently, neither brutally stiff brake pedals nor massive steering effort are goals.
 </details>
 
 
+<a name=G29><h5>Logitech G29 controls</h5></a>
+Refurbished Logitech G29 arrived;<br>
+seemingly unblemished with original contents and dividers in unoriginal plain brown box.<br>
+Single sheet of instructions (one side) of inaccurate diagrams<br>
+and URL: www.logitech.com/support/g29<br>
+.. wildly contrasts to TH8A book (8 pages x 18 languages).<br>
+Actual URL:<br>
+http://support.logitech.com/en_us/product/g29-driving-force<br>
+<br>
+Downloaded &amp Installed seemingly generic gaming software,<br>
+which launched and added itself to Taskbar notifications after reboot.<br>
+Launching it was completely uninformative and confusing until after plugging in G29;<br>
+before that it seemed to assume there was some backlit keyboard...<br>
+Firmware 89.0.25 is up to date.<br>
+Set Assetto Corsa profile to be default but not persistent (application can change).<br>
+<br>
+NOT in instructions:<br>
+"You must select your gaming platform before you connect<br>
+the G29 racing wheel to PlayStation 4, PlayStation 3, or PC.<br>
+PC: Set the mode switch to PS4.<br>
+NOTE: You must install Logitech Gaming Software (LGS) 8.70 or later<br>
+on the PC for full functionality. Once you've installed LGS, all buttons<br>
+and accessories will function in the games that support them."<br>
+<br>
+* Logitech's Gaming Software (LGS) nowhere admits its version,<br>
+ but filename includes it: LGS_8.98.234X64_Logitech.exe<br>
+* Undocumented icon for Overwolf, which evidently defies explanation:<br>
+ https://www.overwolf.com/about-overwolf/<br>
+* LGS documentation avoids device-specific information;<br>
+ ends up being mostly useless..<br>
+https://www.logitech.com/assets/51813/3/lgs-guide.pdf<br>
+<br>
+Relevant (but inconsistent) G29 discussion for Assetto Corsa:<br>
+https://www.racedepartment.com/threads/logitech-g29-setup.140831/<br>
+<br>
+SimHub Force feedback utility - unclear whether available in OpenVR<br>
+https://www.racedepartment.com/threads/ffb-real-time-monitoring-now-possible.159219/<br>
+<br>
+AC FFB percentage directly in game (using Plus and Minus keys of your Numeric Pad)<br>
+https://boxthislap.org/thrustmaster-ts-pc-ts-xw-assetto-corsa-settings/<br>
+<br>
+FFBclip evidently works in VR:<br>
+https://www.youtube.com/watch?v=4qkP77ikMG0<br>
+https://www.racedepartment.com/downloads/ffbclip-app.7910/<br>
+<br>
+Bottom line:<br>
+Settings icon has Profile tab (which I set to default Assetto Corsa),<br>
+G29 tab (which I allowed Game to adjust force settings),<br>
+<br>
+FAQ explaining need to double-click relevant control in Profile tab:<br>
+http://support.logitech.com/en_us/product/g29-driving-force/faq#link_Adjust-sensitivity-on-the-G29-and-G920-racing-wheels-with-Logitech-Gaming-Software<br>
+<br>
+Create/edit/delete profiles<br>
+http://support.logitech.com/en_us/product/g29-driving-force/faq#create<br>
+<br>
+Someone consolidated Logitech LGS &amp G29 info in one PDF<br>
+https://images-na.ssl-images-amazon.com/images/I/B1wg1noyQ7S.pdf<br>
+<br>
+Assetto Corsa G29 steering configuration<br>
+https://www.youtube.com/watch?time_continue=2&v=vPyAs2UBEXc<br>
+Advanced: Gain 100, Filter 0, min Force 20, Kerb 12, Road 35,<br>
+Slip 13, Gamma 1.00 Filter 0.00 Speed Sens 0.00, Brake Gamma 2.40<br>
+Enhanced Understeer &amp Combine checked; Half FFB unchecked.<br>
+<br>
+<br>
+*** G29 completely not detected by Assetto Corsa<br>
+Run joy.cpl<br>
+Game Controllers Advanced - Select the device you want to use with older programs<br>
+G29 dominates; TH8 works when G29 is unplugged<br>
+<br>
+Typically get to joy.cpl on Windows 10 by old Control Panel<br>
+(Not Windows Settings) > Hardware and Sound > Devices and Printers<br>
+TH8 is under Multimedia Devices > right-clock icon and<br>
+select Game Controller Settings > Properties to test input<br>
+<br>
+When G29 USB is connected without running Logitech Gaming Software (LGS),<br>
+G29 is under Unspecified in Windows Devices control panel<br>
+<br>
+Two G29 wheel issues:<br>
+1) small diameter<br>
+ &nbsp - probably reasonable for single seater racers...<br>
+&nbsp - $25 320mm eBay wheel rotational inertia would likely overwhelm its motors<br>
+2) weird feedback, occasional cogging, arbitrary excessive resistance,<br>
+&nbsp goes 'molasses' and unresponsive when cornering limits exceeded.<ul compact>
+<li><a href="https://support.logi.com/hc/en-my/articles/360023349533-Program-buttons-on-the-G29-and-G920-racing-wheels-with-Logitech-Gaming-Software">Logitech
+Gaming Software (LGS) G29 button mapping</a>
+<li>LGS includes a <a href="https://support.logi.com/hc/en-my/articles/360023181494">G29 AC button profile</a>
+
+<li>SingleRacer made a video for 
+<a href="https://www.youtube.com/watch?v=PyX-IdYco4s">taming G29 with FFBclip, Wheel Check and LUT generator</a><br>
+<li><a href="https://www.youtube.com/watch?v=iZMxHrFoUwg">Mauro Ciacchi</a> Logitech G29 force feedback settings tutorial for Assetto Corsa and Content Manager Updated May 2020 (no cc) 3:53
+<li><a href="https://www.racedepartment.com/downloads/rasmusps-lut-guide-for-g27-29-and-dfgt.16799/">
+RasmusP's LUT Guide for G27/29</a> refers to <code>Logitech Profiler</code>, which seemingly is replaced by <code>LGS</code>,<br>
+which seems worthwhile for G29 mainly to set rotation degrees and
+<a href="https://www.softwarert.com/change-sensitivity-clutch-brake-accelerator-logitech-g29/">'sensitivity'</a>.<br>
+Not sure what is meant by <a href="https://www.softwarert.com/change-sensitivity-clutch-brake-accelerator-logitech-g29/">sensitivity</a>,
+except nominal clutch engagement point.<br>
+Perhaps dialing it one way or the other could linearize brake pedal..?
+<li>Checking buttons, pedals and wheels wants <code>joy.cpl</code>,<br>
+for which a shortcut was added to <code>Desktop\more\Sim\</code><br>
+<li>Map G29 buttons to AC keystrokes: <a href="https://github.com/AntiMicro/antimicro">antimicro</a><br>
+"you can unlock the D pad and assign any other action<br>
+with Content Manager/Install Custom Shaders Patch<br>
+... then check 'Stop AC from using POV in Pit App'<br>
+under Custom Shaders Patch/General Settings..."<br>
+You will thereafter need to assign the look left/right etc under the controls section...
+
+</ul>
+Completely lost control of wheel, pedals and shifter;<br>
+AC "Start Configuration Wizard" greyed out:<br>
+<a href="https://steamcommunity.com/app/244210/discussions/0/135514649161570875/">
+"Problem solved. In Steam Big Picture controller settings, generic controller support was checked. "</a><br>
+<br>
 <a name=hmd><h3>Samsung Odyssey+ HMD for WMR</h3></a>
 <h5>Samsung HMD Odyssey+</h5>
 Miserably documented and barely supported (sold only in the U.S.)<br>
@@ -110,7 +228,7 @@ I first killed Mixed Reality Portal, then update succeeded.<br>
 One screen 'Get to know your controller' provided names for 6 controls,<br>
 but not how or when to use them.<br>
 Touchpad, Menu, Grab << wtf<br>
-Trigger - Select   << what??<br>
+Trigger - Select &nbsp << what??<br>
 Thumbstick - Teleport, rotate << how ??<br>
 Windows button - Go to Start << what 'Start', to start what?<br>
 <br>
@@ -129,13 +247,12 @@ is a <a href="https://store.steampowered.com/app/244210/Assetto_Corsa/">Steam</a
 which when launched for Odyssey+ also runs SteamVR and WMR portal.<br>
 The game runs fine with TH8A shift and G29 wheel and pedals, when displaying on a monitor.<br>
 When Options->Video->Rendering Mode set from Single Screen to OpenVr,<br>
-then starting Drive launchs WMR portal and SteamVR, but loses TH8A and G29 controls.<br>
-Within Drive, the pit menu usually appears, but disappears once driving, and Esc does not work,<br>
-so unable to e.g. gracefully exit or return to pit.<br>
-This may be SteamVR expecting inputs from a game controller..<br>
+then starting Drive launched WMR portal and SteamVR, but lost TH8A and G29 controls.<br>
+Within Drive, the pit menu appears, but disappears once driving.
+Esc does not work while pit menu is active, so unable to e.g. gracefully exit.<br>
 <br>
-Instead, what works: Install <a href="#contentmgr">Content Manager</a>  in Steam and launch from <a href="steam://open/console">there</a>.<br>
-Customize mouse Forward and Back buttons to [Ctrl + space bar] and [Esc] keystrokes, respectively, e.g. using Logitech SetPoint Settings.<br>
+Instead, what works: Install <a href="#contentmgr">Content Manager</a> in Steam and launch from <a href="steam://open/console">there</a>.<br>
+Customize mouse Forward and Back buttons to [Ctrl + space bar] and [Esc] keystrokes, respectively, e.g. using <a href="https://www.logitech.com/en-us/articles/11650">Logitech SetPoint Settings</a>.<br>
 <img src="Forward.png"><br clear=all>
 <hr>
 <hr>
@@ -148,7 +265,7 @@ Any number of YouTube videos eloquently laud <a href="https://assettocorsa.club/
 <li><a href="https://www.youtube.com/watch?v=h2l2t1sbru4">2Old4Forza</a> How to Assetto Corsa 2020: Content Manager tips + modding 16:48<br>
 settings (good) 2:37 Single 6:10 apps <a href="https://www.racedepartment.com/downloads/helicorsa.5199/">HeliCorsa</a> 8:00 modding 11:24 Content Mgr mod install 15:00<br>
 [ <i>Sadly, 2Old4Forz is too busy talking about how old school he is @ 14:54 to explain wtf he did to start Content Manager mod install</i> ]
-<li><a href="https://www.youtube.com/watch?v=759TcHZCBww">Davy Jones</a> Assetto Corsa PC Getting Started Guide including Content Manager, Sim Racing System & the Crew Chief 1:11:52
+<li><a href="https://www.youtube.com/watch?v=759TcHZCBww">Davy Jones</a> Assetto Corsa PC Getting Started Guide including Content Manager, Sim Racing System &amp the Crew Chief 1:11:52
 <li><a href="https://www.youtube.com/watch?v=bkZCWlC7ano">Helixxvr</a>This one simple VR trick you didn't know in Assetto Corsa 8:26<br>
 use the UI in Assetto Corsa in VR without ever having to take the HMD off your head and without 3rd party programs.
 <li><a href="https://www.youtube.com/watch?v=D9uKWikvL2M">Alex Nelson</a> Assetto Corsa VR (Oculus) Settings Tutorial [ skip 2:25 ] 23:27<br>
@@ -158,16 +275,15 @@ use the UI in Assetto Corsa in VR without ever having to take the HMD off your h
 <li><a href="https://www.youtube.com/watch?v=6NaaLjZSE_I">Highness</a> Voice Control Assetto Corsa and Content Manager - no keyboard or mouse 23:30
 <li><a href="https://www.youtube.com/channel/UCb9yJYAgB8_8cJXwKXekLpQ/search?query=content">Highness</a> Content Manager videos
 <li><a href="https://www.youtube.com/watch?v=EDhoYyBb0Ik">Kame Trick</a> Assetto Corsa Drifting - How to Set up Hardware and Wheel in Content Manager (Tutorial Playlist)
-<li><a href="https://www.youtube.com/watch?v=EUgrWDC-i0U">SingleRacer</a> Sim Racing Tutorials | A Content Manager Unbiased Review | for Beginners & Newbies
-<li><a href="https://www.youtube.com/watch?v=_pVh3CJxUWE">ONE37Works</a> The Definitive Assetto Corsa Drifting Guide & Logitech G920 Settings! 1:11<br>
+<li><a href="https://www.youtube.com/watch?v=EUgrWDC-i0U">SingleRacer</a> Sim Racing Tutorials | A Content Manager Unbiased Review | for Beginners &amp Newbies
+<li><a href="https://www.youtube.com/watch?v=_pVh3CJxUWE">ONE37Works</a> The Definitive Assetto Corsa Drifting Guide &amp Logitech G920 Settings! 1:11<br>
 2018 Drifting Guide for Assetto Corsa on PC, using Content Manager!
 <li><a href="https://www.youtube.com/watch?v=fZoyVoo_9A0">SimRacing604</a> Assetto Corsa PC Graphics Starter Guide - 5 Things You Need 14:46<br>
 find the best graphics settings for Assetto Corsa
-<li><a href="https://www.youtube.com/watch?v=iZMxHrFoUwg">Mauro Ciacchi</a> Logitech G29 force feedback settings tutorial for Assetto Corsa and Content Manager Updated May 2020 (no cc) 3:53
-<li><a href="https://www.youtube.com/watch?v=mLXAdYoCuk0">HokiHoshi</a> Assetto Corsa Mod Install Guide | Content Manager, CSP, Sol, Tracks & Cars (Shutoko Revival Project)<br>
+<li><a href="https://www.youtube.com/watch?v=mLXAdYoCuk0">HokiHoshi</a> Assetto Corsa Mod Install Guide | Content Manager, CSP, Sol, Tracks &amp Cars (Shutoko Revival Project)<br>
 <i>good for installing Content Manager, but then manually installs Sol and other mods</i>
 <li><a href="https://www.youtube.com/watch?v=3UOzkVUiYqU">VIRTUAL DRIVER</a> Assetto Corsa - Content Manager - Sol + Shaders MODs - SRS Tutorial Espanol 2020 (cc translates to English) 21:12
-<li><a href="https://www.youtube.com/watch?v=30sBWfcn1L0">Davy Jones</a> Minor bugs & confusion with Sol 1.1.1 & Content Manager for Assetto Corsa Apr 2019 6:18<br>
+<li><a href="https://www.youtube.com/watch?v=30sBWfcn1L0">Davy Jones</a> Minor bugs &amp confusion with Sol 1.1.1 &amp Content Manager for Assetto Corsa Apr 2019 6:18<br>
 upgrading the Sol mod for Assetto Corsa to version 1.1.1 using Content Manager. I noticed some inconsistencies in the instructions<br>
 and also experienced a bug with the latest recommended version of the Custom Shaders Patch, or at least it appeared as a bug in my installation
 <li><a href="https://www.youtube.com/watch?v=8BaNYSyuH6M">Carlos Panades</a> How to install Mods Sol 1.3.2 + CSP Custom Shaders Patch preview.198 in Assetto Corsa Aug 2019 8:44
@@ -246,8 +362,9 @@ but it still happens with Aurora i7, so perhaps G29 is  being overwhelmed by too
 Perhaps diverting appropriate feedback from G29 to other haptics will help,<br>
 leaving only those that actually help steer..<br>
 <br>
+
 Many serious sim racers use sim racing chassis, with actuators at 4 corners.<br>
-Sim Racing Studio offers a
+Sim Racing Studio's
 <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">$250 ShakeKit</a>,
 comprised of <a href="https://www.simracingstudio.com/product-page/srs-license">software</a>, USB soundcard, amplifiers,<br>
 and 4 <a href="https://www.amazon.com/dp/B0045W10VW">Dayton bass shaker pucks</a> in a thinly padded seat cushion.<br>
@@ -398,10 +515,9 @@ TH8A shifter plate is rotated slightly ccw to reduce missed shifts.<br>
 Assetto Corsa in Odyssey+ unavoidably involves Windows Mixed Reality Portal and SteamVR,<br>
 which support only controllers that I find intolerable<br>
 and make no sense when sim driving. Without a controller,<br>
-displaying 2-D apps such as Content Manager in HMD is seemingly impossible.<br>
-Remapping G29 wheel buttons to a virtual XBox controller may be acceptable to WMR<br>
-and is advertised for SteamVR, but perhaps only for XBox One and not XBox 360...?<br>
-However, G29 buttons will be unavailable with AccuForce.<br>
+using 2-D apps such as Content Manager in HMD is seemingly impossible,<br>
+except perhaps with a virtual desktop app.<br>
+G29 rim buttons will be unavailable with AccuForce.<br>
 If more than a couple of controller buttons are needed, a flight joystick may be wanted.<br>
 <br>
 <a href="http://www.thrustmaster.com/products/t16000m">Thrustmaster T16000M FCS</a> appears the <a href="https://www.thestreamingblog.com/thrustmaster-t-16000m-fcs-hotas-joystick-review/">likely</a> <a href="https://stormbirds.blog/2019/08/13/thrustmaster-t-16000m-fcs-flight-pack-review/">flight joystick</a>.<br>
