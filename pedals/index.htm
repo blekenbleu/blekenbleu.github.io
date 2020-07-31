@@ -29,7 +29,8 @@ th, td {
 <li><a href="#G29">G29 controls</a>
 <li><a href="#hmd">Odyssey+ HMD</a>
 <li><a href="#contentmgr">Content Manager</a> &nbsp and <a href="#mods">mods</a>
-<li><a href="#shakeseat">ShakeSeat</a>
+<li><a href="#shakeseat">ShakeSeat</a> <a href="#pad">padding</a>
+<li><a href="#ShakeIt">ShakeIt</a>
 <li><a href="#DD">AccuForce wheel base</a>
 <li><a href="#TR1">SimLab TR1 Chassis</a>
 <li><a href="#wheelstand">wheel stand</a>
@@ -89,7 +90,7 @@ Consequently, neither brutally stiff brake pedals nor massive steering effort ar
 
 
 <a name=G29><h5>Logitech G29 controls</h5></a>
-Refurbished Logitech G29 arrived;<br>
+Refurbished Logitech G29 arrived April 2018<br>
 seemingly unblemished with original contents and dividers in unoriginal plain brown box.<br>
 Single sheet of instructions (one side) of inaccurate diagrams<br>
 and URL: www.logitech.com/support/g29<br>
@@ -109,17 +110,16 @@ NOT in instructions:<br>
 the G29 racing wheel to PlayStation 4, PlayStation 3, or PC.<br>
 PC: Set the mode switch to PS4.<br>
 NOTE: You must install Logitech Gaming Software (LGS) 8.70 or later<br>
-on the PC for full functionality. Once you've installed LGS, all buttons<br>
-and accessories will function in the games that support them."<br>
-<br>
-* Logitech's Gaming Software (LGS) nowhere admits its version,<br>
- but filename includes it: LGS_8.98.234X64_Logitech.exe<br>
-* Undocumented icon for Overwolf, which evidently defies explanation:<br>
- https://www.overwolf.com/about-overwolf/<br>
-* LGS documentation avoids device-specific information;<br>
- ends up being mostly useless..<br>
-https://www.logitech.com/assets/51813/3/lgs-guide.pdf<br>
-<br>
+on the PC for full functionality. Once you've installed LGS,<br>
+all buttons and accessories will function in the games that support them."<ul compact>
+<li> Logitech's Gaming Software (LGS) nowhere admits its version,<br>
+ but filename includes it: <code>LGS_8.98.234X64_Logitech.exe</code><br>
+<li> Undocumented icon for Overwolf, which evidently 
+ <a href="https://www.overwolf.com/about-overwolf/">defies explanation</a><br>
+<li> <a href="https://www.logitech.com/assets/51813/3/lgs-guide.pdf">LGS documentation</a>
+ avoids device-specific information;<br>
+ ends up being mostly useless..
+</ul>
 Relevant (but inconsistent) G29 discussion for Assetto Corsa:<br>
 https://www.racedepartment.com/threads/logitech-g29-setup.140831/<br>
 <br>
@@ -369,9 +369,9 @@ Sim Racing Studio's
 comprised of <a href="https://www.simracingstudio.com/product-page/srs-license">software</a>, USB soundcard, amplifiers,<br>
 and 4 <a href="https://www.amazon.com/dp/B0045W10VW">Dayton bass shaker pucks</a> in a thinly padded seat cushion.<br>
 That <a href="https://www.simracingstudio.com/product-page/srs-shakeseat">ShakeSeat cushion</a> is available separately for about half the cost. &nbsp
-<a href="http://simracinggarage.com/sim-racing-studio-shakekit-review">
-Barry Rowland</a> considers the ShakeKit:<br>
-"Probably the easiest way for you to get a proper feeling transducer solution deployed on your Sim Racing setup."<br>
+<a href="http://simracinggarage.com/sim-racing-studio-shakekit-review"><br>
+Barry Rowland</a> considers the ShakeKit: &nbsp
+"Probably the easiest way for you to get<br> a proper feeling transducer solution deployed on your Sim Racing setup."<br>
 <table style="width:700px"><tr><td align=center>
 <a href="https://www.youtube.com/watch?v=bbsFZs-hLMg">Karl Gosling YouTube review</a><br>
 <table style="width:200px">
@@ -384,14 +384,23 @@ Barry Rowland</a> considers the ShakeKit:<br>
 </table></td><td>
 <img align=center width=360 src="https://static.wixstatic.com/media/092827_f5c3483fde264599adc2122ee3c131df~mv2.jpg">
 </td></tr></table>
+Debugged the above and wired a matching bulkhead connector via 6 ft zip cord<br>
+to a couple of mismatched  amplifiers, one with an FM tuner,<br>
+so fed an FM station to the rear pair of ShakeSeat pucks.<br>
+Sound is surprisingly intelligible and the feel is at least not unpleasant.<br>
+Can easily distinguish left from right, then blending nicely<br>
+when fed equal amounts of monaural sound,<br>
+so left rear vs right rear vs both rear should be useful cues.<br>
 <br>
-Confusingly, <a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">ShakeIt</a>
-(one less K) is/was free software, since integrated into <a href="https://www.simhubdash.com/">SimHub</a>, equivalent to SRS'.<br>
-My Aurora R7 has unused 7.1 channel audio on the motherboard,
-and audio amplifiers were also on hand.<br>
-<a href="https://www.simxperience.com/Products/SimVibe/SimVibeSoftware.aspx">SimXperience SimVibe</a>
-was a pioneer in converting sim telemetry to bass shaker audio<br>
-now also available from (free) SimHub as well as SRS' ShakeKit.<br>
+To configure 5.1 surround:<br>
+Press Windows key + R to open a Run window and type <code>mmsys.cpl</code><br>
+The Realtek Speakers / Headphone must be set to 5.1,<br>
+NOT Quadraphonic, which matrixes from stereo.<br>
+Denon failed to drive front pucks from speakers A, but B works.<br>
+
+<h5><a href="https://www.simxperience.com/Products/SimVibe/SimVibeSoftware.aspx">SimXperience SimVibe</a></h5>
+A pioneer in converting sim telemetry to bass shaker audio,<br>
+that is now also available from (free) SimHub as well as SRS' ShakeKit.<br>
 SimXperience has since
 integrated SimVibe with <a href="https://www.simxperience.com/en-us/products/software/simcommander4.aspx">Sim Commander 4</a>,<br>
 which also drives their <a href="">AccuForce direct drive steering wheel</a> (<i>on order</i>).<br>
@@ -408,7 +417,118 @@ Since Assetto Corsa already loses access to G29 and TH8A<br>
 unless launched <b>after</b> Steam and Content Manager,<br>
 inserting SC4 launch may also be problematic.<br>
 <img src="AudioDevices.png"><br clear=all>
-<h4>[dis]comfort</h4>
+The first bullet for Sim Commander 4: "Simple To Use"<br>
+https://simxperience.com/en-us/products/software/simcommander4.aspx<br>
+* if true, users would notice without it being pointed out.<br>
+* as is nearly always the case, emphatically untrue,<br>
+ if "use" means anything other than launching a default<br>
+ or something useful [but painfully] configured and debugged..<br>
+* Consider it a fair warning that, on the same page, Tutorials require Flash.<br>
+ - first (for installation) should be skipped - applied to SC3 and is flat misleading<br>
+ - second may be still somewhat relevant, but requires much homework to correctly fill blanks<br>
+ - last SimVibe could be valuable, if still accurate<br>
+<br>
+At least on my Windows 10 64-bit Home PC,<br>
+pop-up windows essential to Sim Commander 4 installation were hidden beneath the main setup window, resulting in no progress until raised from the taskbar.<br>
+<br>
+Sim Commander license code displayed online was truncated;<br>
+fortunately, gif was fully visible after download (to USB1TB/Sim).<br>
+After initial setup, Sim Commander splash window plays obnoxious drum solo,<br>
+which can be stifled by clearing Background Music in Control Center.<br>
+<br>
+Rerunning Auto Search found Assetto Corsa, but not games in <code>E:\my\SteamLibrary\steamapps\common</code><br>
+.. which were added manually, but still do not show up on SC4 splash screen.<br>
+REALLY need to find getting started documentation!!<br>
+<br>
+Configuring lSC2 launch by Content Manager was doomed;<br>
+no Output Mixer and seemingly no ShakeSeat output.<br>
+<br>
+This was cured by adding a fresh Sim Commander profile<br>
+(using big + at bottom of main screen) and selecting Assetto Corsa,<br>
+then duplicating and changing game to Content Manager.<br>
+After that, even the original Content Manager profile has an Output Mixer...<br>
+<br>
+SimVibe Tuning guide https://simxperience.com/Portals/0/Files/SimVibe/SimVibe%20Tuning%20Guide.pdf<br>
+<br>
+SimVibe chassis appears to support neither traction loss nor ABS,<br>
+but has estimated wheel lockup (mono), oversteer and "custom simvibe effect"<br>
+<br>
+Good news: switching from single screen to openvr in Content Manager<br>
+launched from SC4 did not lose SimVib, but did lose remapped mouse buttons<br>
+until logging out and back in, then launching CM from steam,<br>
+THEN launching (really, just attaching) CM/AC from SC4,<br>
+at which point SimVib and mouse buttons both worked.<br>
+<br>
+Somehow overnight, SC4 loses all profilesexcept Forza 7 and AC from scratch..?<br>
+<br>
+SC4 still launches a useless black abomination that is presumably its so-called Dashboard<br>
+<br>
+After fiddling with Sim Commander 4 SimVibe<br>
+* it is more about simulating road feel than haptics feedback to help drive<br>
+* documentation sucks and effect names are unhelpful<br>
+<br>
+SimHub <a href="#ShakeIt">ShakeIt</a> is a better choice for me..<br>
+<a name=ShakeIt>
+<h5><a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">ShakeIt</a></h5></a>
+(confusingly, one less K) is/was free software, since integrated into <a href="https://www.simhubdash.com/">SimHub</a>,<br>
+equivalent to <a href="https://www.simracingstudio.com/download">SRS' licensed app</a>.<br>
+A SimHub license enables more support..<br>
+SimHub used to be distributed and supported from RaceDepartment, but no more..<br>
+Downloaded SimHub from<br>
+http://www.simhubdash.com/<br>
+based on https://www.youtube.com/watch?v=fwqbx-cA5TE<br>
+ShakeIt GitHub<br>
+https://github.com/SHWotever/SimHub<br>
+<br>
+Support appears to have gravitated to Discord..<br>
+<br>
+<code>SimHubWPF.exe</code> is neither Steam nor Assetto Corsa app;<br>
+it needs launching separately. It optionally starts with Windows..<br>
+<br>
+Installed on Aurora @ <code>E:\my\SimHub</code><br>
+PayPal licensed received promptly, also installed there.<br>
+ShakeIt Bass Shakers Output selection required Custom channel map,<br>
+moving all [ON] settings from channels 3,4 to 5,6 respectively.<br>
+Cannot show all settings at once; cannot drag box height<br>
+There are 2 "Advanced output settings", which at least need some context..<br>
+Looking at Effects Profile, first selecting a game seems appropriate,<br>
+since some say "not supported on the current game"<br>
+Assetto Corsa configured automatically;<br>
+"Game config" seemingly has nothing to do with ShakeIt effect settings..<br>
+New profile starts empty; can only add one at a time; cannot tell if supported until after adding<br>
+"Add group" is another mystery<br>
+SimHub appears to save settings automagically..<br>
+<br>
+Some tuning hints:<br>
+https://www.racedepartment.com/threads/simhub-shakeit-large-buttkicker-lfe-concert-effects-experimentation.176865/<br>
+<br>
+ShakeIt V3 Wiki<br>
+https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Effects-configuration<br>
+<pre>
+---------- Forwarded message ---------
+From: SimHub <nicolas.gbt@gmail.com>
+Date: Thu, Jul 16, 2020 at 6:13 AM
+Subject: Your SimHub license
+To: <blekenbleu@gmail.com>
+
+Hi !
+
+Thanks for your support ! You will find your Personal SimHub License Key attached to this mail.
+Please keep it preciously.
+
+To activate your license simply download the attached file and click on "LOAD MY LICENSE FILE" inside simhub, then pick your license file.
+
+If you encounter any problem concerning your license, do not hesitate to contact me at https://www.simhubdash.com/simhub-contact/
+
+Sincerly,
+Nicolas, SimHub
+</pre>
+
+My Aurora R7 has unused 7.1 channel audio on the motherboard,<br>
+and audio amplifiers were also on hand.<br>
+
+<br>
+<a name=pad><h4>[dis]comfort</h4></a>
 As a frequent bike rider, my butt is not particularly tender,<br>
 but sitting on four hard pucks for hours will be unpleasant,<br>
 and the soft foam used by Sim Racing Studio does little to spread the pressure.<br>
