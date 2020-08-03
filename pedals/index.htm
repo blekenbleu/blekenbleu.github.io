@@ -38,7 +38,8 @@ th, td {
 <li><a href="#HOTAS">Hand-On Throttle-And-Stick in SteamVR</a>
 <li><a href="#Driver4VR">Driver4VR</a>
 <li><a href="#Bigscreen">Bigscreen</a>
-<li><a href="#SteamID">SteamID;  Assetto Corsa keyboard commands</a>
+<li><a href="#SteamID">SteamID</a>
+<li><a href="#AC">Assetto Corsa: installation, keyboard commands</a>
 <li><a href="https://www.racedepartment.com/threads/is-there-a-real-head-motion-like-thing-integrated-to-csp.182875/post-3166712">CM Neck FX</a>
 
 </sl> &nbsp
@@ -141,7 +142,7 @@ but installation PDF is mostly wrong, and<br>
 Odyssey "Optimize for performance" Experience Option in Update 2004<br>
 https://www.reddit.com/r/WindowsMR/comments/hai5km/optimize_for_performance_experience_option_in/<br>
 https://steamcommunity.com/app/719950/<br>
-https://www.racedepartment.com/threads/share-your-vr-graphic-settings.160409/page-36#post-3210220 <br>
+https://www.racedepartment.com/threads/share-your-vr-graphic-settings.160409/page-36#post-3210220<br>
 <br>
 Samsung higher res benefits from GTX-1070 (8GB video RAM)..<br>
 https://www.tomshardware.com/reviews/gpu-hierarchy,4388.html<br>
@@ -150,9 +151,107 @@ Odyssey SteamVR game play with GTX 1070 and i7-4790<br>
 https://www.youtube.com/watch?v=5jM3Dx-6wXU<br>
 <br>
 <hr>
-<a name=AC><h5>Assetto Corsa (AC)</h5></a>
+<a name=AC><h4>Assetto Corsa (AC)</h4></a>
 <a href="https://www.youtube.com/watch?v=IPci88kRgEU">AC setup including VR</a><br>
+<a href="https://forums.overclockers.co.uk/threads/help-with-assetto-corsa-in-vr.18884953/">Help with assetto corsa in VR</a><br>
 <br>
+<details>
+<summary><code>[click for installation details]</code></summary>
+<pre>
+15 Apr 2018 - bought Assetto Corsa from Steam;
+had to reboot to resolve error after installation.
+After splash screens, no idea what to do;
+there had been some brief message about keys to press,
+but I missed whatever it said.
+
+Assetto Corsa packages (base $20)
+Ultimate bundle $40 (but wait for a sale)
+Dream pack 1 $7 - Alfa GTA, Nurburgring-Nordschleife
+others seem less interesting to me...
+
+Assetto Corsa content takes a lot of space;
+mods cannot be added to ~\Documents\Assetto Corsa\
+https://steamcommunity.com/app/244210/discussions/0/619568793783231679/
+
+Moved that folder from SSD && created a <JUNCTION>:
+mklink /J "C:\Users\bleke\Documents\Assetto Corsa" "G:\Gateway\my\Assetto Corsa"
+
+Used Steam to change default content directory to G:\Gateway\my\Steam\
+... and also created Assetto Corsa backup there.
+
+Steam folder in Program Files is 867MB without Assetto Corsa
+Assetto Corsa folder is 24.4GB
+
+In Steam app, under LIBRARY dropdown, select GAMES, right-click
+Assetto Corsa > Properties > LOCAL FILES dropdown >MOVE INSTALL FOLDER..
+</pre>
+
+</details>
+
+<ul compact>
+<li> Single screen sucks, can neither estimate car width<br>
+&nbsp nor see right turn apexes.&nbsp vFOV - approx 33,<br>
+per 15:44/17:37 in https://www.youtube.com/watch?v=cpnlSnqWy6g
+<li> adding 2 carpet spikes (hacked from M6x35 screws) to front holes<br>
+adequately anchored the pedals.
+<li> Remaining two M6x35 screws (from TV VESA mount kit) replaced TH9A clamp.
+<li> After many laps in the NA Miata, the E30 M3 feels like an overpowered boat.<br>
+The Toyota 86 is easier for me to drive quickly..
+</ul>
+
+<h5>AC keyboard</h5>
+<pre>
+F1: change driving view
+F2: TV camera view
+F3: change TV views
+F5: side view
+F8 : screenshot
+F11: virtual mirror
+Alt+Tab: switch out of sim
+Home: show developer console (*if enabled in .ini)
+
+ESC: return to main menu
+Ctrl+[spacebar]: recenter HMD view
+Ctrl+R: replay
+Ctrl+S: slow motion (replay)
+Ctrl+A: ABS on/off
+Ctrl+T: traction control modes on/off
+Ctrl+H: show/hide apps
+Ctrl+O: restart session
+Ctrl+L: disable names
+Ctrl+G: realism settings (in game)
+Ctrl+D: displays damage for a few seconds
+
++/- : adjust FoV
+
+PageUp/Down: change exposure settings in the cockpit
+
+<b>Map G29 buttons to keystrokes</b>:&nbsp <a href="https://github.com/AntiMicro/antimicro">antimicro</a>
+"you can unlock the D pad and assign any other action
+with Content Manager/Install Custom Shaders Patch
+... then check 'Stop AC from using POV in Pit App'
+under Custom Shaders Patch/General Settings..."
+</pre>
+
+<h5>For more apps on the sidebar</h5>
+edit:<br>
+<code>Steam/SteamApps/Common/AssettoCorsa/System/Cfg/Assetto Corsa.ini</code><br>
+change the setting to:<br>
+<code>ENABLE_DEV_APPS=1</code><br>
+<br>
+To disable off track penalty, edit:<br>
+<code>Documents/AssettoCorsa/cfg/race.ini</code><br>
+change the setting to:<br>
+<code>ALLOWED_TYRES_OUT=-1</code><br>
+<a href="https://www.racedepartment.com/threads/full-list-of-keyboard-commands.77268/">
+https://www.racedepartment.com/threads/full-list-of-keyboard-commands.77268/</a><br>
+
+<a name=tuning><h5>Tuning</h5></a>
+Once parts are sorted, learning to use them generally works better taken incrementally.<br>
+Learning a new track in a car with unknown behaviors using controls that do not respond as expected
+can be frustrating, off-putting and inefficient.
+To mitigate information overload, seriously consider first driving a skid pad, then a figure 8.
+Assetto Corsa included neither of those in its offering, but mod tracks are available:
 <a href="https://www.assettocorsa.net/forum/index.php#assetto-corsa-support-forum-pc-version.12">Assetto Corsa</a>
 is a <a href="https://store.steampowered.com/app/244210/Assetto_Corsa/">Steam</a> "game",
 which when launched for Odyssey+ also runs SteamVR and WMR portal.<br>
@@ -214,17 +313,17 @@ and also not aligning with the level of the floor of the car (the awesome drawin
 <li><a href="https://www.youtube.com/watch?v=I7XACU7kEHs">Humblegeorge</a> Why use the Content Manager Aug 2017 [ skip first 2:30 ] 42:40
 <li><a href="https://www.youtube.com/watch?v=fw-3rGLddHE">random callsign</a> 9 ESSENTIAL Assetto Corsa mods for 2019 9:19
 </ul>
-Content Manager  <b>** bought and installed 4 Jul 2020</b><br>
+Content Manager <b>** bought and installed 4 Jul 2020</b><br>
 https://www.youtube.com/watch?v=T5aoe8RLvXU<br>
 https://assettocorsa.club/content-manager.html<br>
 https://www.youtube.com/watch?v=0U2REMdpP9E - Chris Haye<br>
 "Some Alternate launchers such as Content Manager, run AC as administrator,<br>
- please run SimHub as administrator in this case."<br>
+please run SimHub as administrator in this case."<br>
 "Content manager is only supported by SimHub when using "Official" or "AppId" start modes,<br>
 any other modes will make Content Manager modify games files and prevent proper detection from SimHub.<br>
 Content Manager may have already modified the games files<br>
 and only a proper game repair using steam will restore the original files."<br>
-<a href="https://www.youtube.com/watch?v=1fAIW7CoeRo ">Installing AC</a><br>
+<a href="https://www.youtube.com/watch?v=1fAIW7CoeRo">Installing AC</a><br>
 <br>
 <a href="https://assettocorsa.club/">Assetto Corsa club</a>'s own <a href="https://assettocorsa.club/content-manager.html">Content Manager page</a> proclaims "Easy and intuitive",<br>
 which generally translates to poorly documented and idiosynchratic.<br>
@@ -355,10 +454,10 @@ inserting SC4 launch may also be problematic.<br>
 <img src="AudioDevices.png"><br clear=all>
 <br>
 "You have to select the audio-source in SC4 while the Odyssey is running."<br>
-Then launch SC4 after SteamVR and activate the profile last, so don't launch games with SC4.<br>
-I would prefer a fix, but once you got used to it, it's not a game-breaker,<br>
+Then launch SC4 after SteamVR and activate the profile last, so don't launch games with SC4.<br>
+I would prefer a fix, but once you got used to it, it's not a game-breaker,<br>
 because in window-mode you can launch SC4 while the game is loading.<br>
-If the headset falls to sleep mode, the output in SC4 is dead and you need to re-launch it the next time.<br>
+If the headset falls to sleep mode, the output in SC4 is dead and you need to re-launch it the next time.<br>
 <a href="https://simxperience.com/Default.aspx?tabid=742&g=posts&m=24721#post24721">
 https://simxperience.com/Default.aspx?tabid=742&g=posts&m=24721#post24721</a><br>
 <br>
@@ -450,18 +549,21 @@ SimHub appears to save settings automagically..<br>
 Every effect has various controls to manipulate the output: amplitude, frequency, etc.<br>
 Both amplitude and frequency can be changed based on the incoming telemetry.<br>
 Effects can be configured as mono, divided front-rear, left-right, or 4-corners.<br>
-<img src="https://www.racedepartment.com/attachments/1593030117522-png.383988/"><br clear=all>
+<img width=640 src="https://www.racedepartment.com/attachments/1593030117522-png.383988/"><br clear=all>
 https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-142<br>
 <br>
-ShakeIt's wheelslip effects were updatedhttps://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3091486<br>
-ShakeIt custom effect for lateral Gshttps://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3090977<br>
-Mr Latte offers to sharehttps://www.racedepartment.com/threads/simhub-shakeit-large-buttkicker-lfe-concert-effects-experimentation.176865/post-3091315<br>
+ShakeIt's wheelslip effects were updated<br>
+https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3091486<br>
+ShakeIt custom effect for lateral Gs<br>
+https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3090977<br>
+Mr Latte offers to share<br>
+https://www.racedepartment.com/threads/simhub-shakeit-large-buttkicker-lfe-concert-effects-experimentation.176865/post-3091315<br>
 <br>
 SIMSHAKER WHEELS (SSW) reportedly does lateral G's<br>
 https://andres.shop/software/21-simshaker-wheels.html<br>
 <br>
 SimFeedback is PC software that creates motion cues using telemetry data from Racing games/simulations like Assetto Corsa.<br>
-You get a fast, highly reactive motion platformalong with output for tactile effects via a sound card.  Licensing is involved..<br>
+You get a fast, highly reactive motion platformalong with output for tactile effects via a sound card.  Licensing is involved..<br>
 https://github.com/SimFeedback/SimFeedback-AC-Servo/wiki<br>
 <br>
 Some tuning hints:<br>
@@ -589,9 +691,9 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1958400217<br>
 https://www.racedepartment.com/downloads/rasmusps-lut-guide-for-g27-29-and-dfgt.16799/
 <li>SingleRacer made a video for 
 <a href="https://www.youtube.com/watch?v=PyX-IdYco4s">taming G29 with FFBclip, Wheel Check and LUT generator</a><br>
-<li>Alternatively,  
+<li>Alternatively,
 <a href="https://www.racedepartment.com/downloads/rasmusps-lut-guide-for-g27-29-and-dfgt.16799/">RasmusP's LUT Guide for G27/29</a>
-refers to  Logitech Profiler, which seemingly is replaced by <code>LGS</code>,<br>
+refers to Logitech Profiler, which seemingly is replaced by <code>LGS</code>,<br>
 which seems worthwhile for G29 mainly to set rotation degrees and
 <a href="https://www.softwarert.com/change-sensitivity-clutch-brake-accelerator-logitech-g29/">'sensitivity'</a>.<br>
 Not sure what is meant by <a href="https://www.softwarert.com/change-sensitivity-clutch-brake-accelerator-logitech-g29/">sensitivity</a>,
@@ -800,60 +902,17 @@ At least with Oculus, Bigscreen should allow <a href="https://www.reddit.com/r/o
 Assetto Corsa (or Content Manager) UI in a virtual desktop</a><br>
 Bigscreen works with WMR:
 <iframe align=center width="640" height="480" src="https://www.youtube.com/embed/-Gy15BEm8UQ"></iframe><br>
+
+OVRdrop also works by mouse and desktop remains displayed in AC OpenVR, unlike Bigscreen<br>
+purchased 4 Jul 2018
+
 <hr>
-<a name="SteamID"><h3>SteamID;  Assetto Corsa keyboard commands</h3></a>
-For Steam ID, in a web browser new tab, enter:<br>
+<a name="SteamID"><h3>SteamID</h3></a>
+to display Steam ID, in a web browser tab, enter:<br>
 <code>steam://open/console</code><br>
 <br>
 .. in that console window, enter:<br>
 <code>user_info</code><br>
-<h4>AC keyboard</h4>
-<pre>
-F1: change driving view
-F2: TV camera view
-F3: change TV views
-F5: side view
-F8 : screenshot
-F11: virtual mirror
-Alt+Tab: switch out of sim
-Home: show developer console (*if enabled in .ini)
-
-ESC: return to main menu
-Ctrl+[spacebar]: recenter HMD view
-Ctrl+R: replay
-Ctrl+S: slow motion (replay)
-Ctrl+A: ABS on/off
-Ctrl+T: traction control modes on/off
-Ctrl+H: show/hide apps
-Ctrl+O: restart session
-Ctrl+L: disable names
-Ctrl+G: realism settings (in game)
-Ctrl+D: displays damage for a few seconds
-
-+/- : adjust FoV
-
-PageUp/Down: change exposure settings in the cockpit
-</pre>
-
-<h4>For more apps on the sidebar</h4>
-edit:<br>
-<code>Steam/SteamApps/Common/AssettoCorsa/System/Cfg/Assetto Corsa.ini</code><br>
-change the setting to:<br>
-<code>ENABLE_DEV_APPS=1</code><br>
-<br>
-To disable off track penalty, edit:<br>
-<code>Documents/AssettoCorsa/cfg/race.ini</code><br>
-change the setting to:<br>
-<code>ALLOWED_TYRES_OUT=-1</code><br>
-<a href="https://www.racedepartment.com/threads/full-list-of-keyboard-commands.77268/">
-https://www.racedepartment.com/threads/full-list-of-keyboard-commands.77268/</a><br>
-
-<a name=tuning><h4>Tuning</h4></a>
-Once parts are sorted, learning to use them generally works better taken incrementally.<br>
-Learning a new track in a car with unknown behaviors using controls that do not respond as expected
-can be frustrating, off-putting and inefficient.
-To mitigate information overload, seriously consider first driving a skid pad, then a figure 8.
-Assetto Corsa included neither of those in its offering, but mod tracks are available:
 </font>
 </body>
 </html>
