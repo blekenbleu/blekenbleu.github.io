@@ -3,8 +3,8 @@
 - [Special Error Diffusion](ImageProcessing/sped.html)
 - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 
-## [Sim driving](pedals)
-- [ Samsung Odyssey+ for Assetto Corsa ](pedals#hmd) Windows Mixed Reality and SteamVR
+## [Sim driving](pedals/index.htm)
+- [ Samsung Odyssey+ for Assetto Corsa ](pedals/index.htm#hmd) Windows Mixed Reality and SteamVR
 - [TH8A](pedals/index.htm#TH8A) Thrustmaster shifter mods
 ### USB-attached Logitech G29 pedals
 - [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
