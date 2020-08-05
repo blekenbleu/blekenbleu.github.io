@@ -3,7 +3,10 @@
 - [Special Error Diffusion](ImageProcessing/sped.html)
 - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 
-## USB-attached Logitech G29 pedals
+## [Sim driving](pedals)
+- [ Samsung Odyssey+ for Assetto Corsa ](pedals#hmd) Windows Mixed Reality and SteamVR
+- [TH8A](pedals/index.htm#TH8A) Thrustmaster shifter mods
+### USB-attached Logitech G29 pedals
 - [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
 - [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
   - **WeMos D1 UNO R1** AKA *ESPDuino* [background information](Arduino/ESPDuino)
@@ -15,8 +18,6 @@
   - [VJoySerialFeeder](Arduino/VJoySerialFeeder) *least obsolete COM->HID filter*
   - [mi-360](Arduino/mi360) *HID Xiaomi Gamepad -> Xbox360 filter*
   - ESP8266 Arduino IDE Alternative: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
-- [TH8A](pedals/index.htm#TH8A) Thrustmaster shifter mods
-- [ Samsung Odyssey+ for Assetto Corsa ](pedals) Windows Mixed Reality and SteamVR
 
 ## [ab]using Microsoft Visual Studio Community 2017
 * [shared installation](VSC2017)
@@ -45,10 +46,10 @@
 
 ### [COVID-19 plots](covid)
 ### [Vim and X-Mouse](VimTXmouse)
-### [Line 6 JTV-89F guitar](JTV89F/Variax)
 ### [Installing Git-Cola from MacPorts](GitColaMacPorts)
-### [FreshTomato and Linksys EA6500v2](FreshTomato)
 ### macOS local [gitolite](MacGit) server
+### [FreshTomato and Linksys EA6500v2](FreshTomato)
+### [Line 6 JTV-89F guitar](JTV89F/Variax)
 ### [Thorens TD 160 MK II](ThorensTD126MKII/README.md) with SME Series III
 ### [Audio-Technica AT-LP140XP](AT-LP140XP/index.htm) microphonics
 ### [Reichert/American Optical microscopes](microscope/index.html)
