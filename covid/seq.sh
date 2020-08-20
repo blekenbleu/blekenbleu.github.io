@@ -12,7 +12,11 @@ if [ -n "$1" ] ; then
   IFS=-
   png=`sequence $1`
   unset IFS
-  magick convert stats.png -rotate 90 $png
+  if [ -n "$2" ] ; then
+    magick convert ${2}stats.png -rotate 90 ${2}${png}
+  else
+    magick convert stats.png -rotate 90 $png
+  fi
 else
   echo "expected $0 mm/dd/yy"
 fi
