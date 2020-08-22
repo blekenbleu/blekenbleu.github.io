@@ -30,37 +30,7 @@ count()
   if [ -z "$a0" ] ; then
     a0=$#
   fi
-  echo $a0 items in $fco
-  let a3=$a0-3
-  let a6=$a0-6
-  let a20=$a0-20
-  now="${!a0}"
-  now3="${!a3}"
-  now6="${!a6}"
-  now20="${!a20}"
-  echo "#index	$now	$now3	$now6	$now20	Location	Population" > $CTMP/data.txt
-}
-
-county()
-{
-# approx most recent 20 days are contagious
-  d20=${!a20}
-  if [ $a0 -gt $# ] ; then
-    echo "$loc: d20='$d20'; a20='$a20'; \$96=$96; \$#=$#; FIPS='$FIPS'; \$line=
-$line"
-    return
-  fi
-  d6=${!a6}
-  d3=${!a3}
-  d0=${!a0}
-# do not plot identical newer over older
-  if [ $d3 -eq -$d6 ] ; then
-    d3=$d0
-  fi
-  if [ $d6 -eq -$d20 ] ; then
-    d6=$d3
-  fi
-  echo "$i	$d0	$d3	$d6	$d20	$loc	$Pop" >> data.txt
+  echo $# items in $fco
 }
 
 # grab and process county line from $fco based on FIPS ($4)
@@ -70,8 +40,6 @@ grab ()
   loc="\"$2 $5\""
   FIPS=$4
   line=`grep ^$FIPS, $fco`
-# echo "line=$line"
-  county $line
 }
 # dates suitable for filenames
 header=`head -1 $fco | tr '/' '-'`
@@ -79,12 +47,10 @@ header=`head -1 $fco | tr '/' '-'`
 IFS=,
 count $header
 unset IFS
-i=0
 # to be invoked from stats.p
 cp seq.sh $CTMP/
 cd $CTMP
-# generate copop.csv for (eventual) use by gnuplot
-ipl='index,location,population,'
+# generate copop.csv for gnuplot
 dates=`head -1 $fco | cut -d ',' -f 38-$a0 | tr '/' '-'`
 dates=${dates//-1-/-01-}
 dates=${dates//-2-/-02-}
@@ -95,23 +61,18 @@ dates=${dates//-6-/-06-}
 dates=${dates//-7-/-07-}
 dates=${dates//-8-/-08-}
 dates=${dates//-9-/-09-}
-(echo -n $ipl;echo $dates) > copop.csv
+(echo -n 'index,location,population,';echo $dates) > copop.csv
+i=0
 while read foo ; do
   IFS=,
-# echo "foo=$foo"
   grab $foo
   unset IFS
   (echo -n "$i,$loc,$Pop,";echo $line | cut -d ',' -f 38-$a0) >> copop.csv
-# less copop.csv
-# cd $here
-# return
   let i=1+$i
 done < $here/factFIPS.csv
 
 # comparing today with 3 days ago
-# echo '$GNUPLOT $here/diff_covid.p'
-$GNUPLOT $here/diff_covid.p | $MAGICK convert png:- -rotate 90 diff.png
-echo $GNUPLOT $here/stats.p
+# echo '$GNUPLOT $here/stats.p'
 $GNUPLOT $here/stats.p
 ls frame*.png
 cd $here
