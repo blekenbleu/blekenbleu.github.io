@@ -30,25 +30,25 @@ set term wxt 0 enhanced size 1600,900
 # first 4 columns are NOT cases; need 20 columns (days) of history
 day = word(dates,c)
 set ylabel day.' COVID-19 cases per 100K'
-plot csv u (pc(column(c))) t '> 20 days', \
- '' u (pc(column(c)-column(c-20))) t 'days 7-20', \
- '' u (pc(column(c)-column(c-6))) t 'days 4-6', \
- '' u (pc(column(c)-column(c-3))) t 'days 1-3', \
- '' u (f(column(c)-column(c-3), column(c-3)-column(c-6))):xticlabels(2) t 'increasing days 1-3'
-set term push
-# fails for Windows gnuplot
-#set output '| magick convert png:- -rotate 90 frame'.day.'.png'
-set output 'stats0.png'
-set term png size 1600,900
-replot
-set term pop
+# don't bother plotting stats0.png
+# plot csv u (pc(column(c))) t '> 20 days', \
+#  '' u (pc(column(c)-column(c-20))) t 'days 7-20', \
+#  '' u (pc(column(c)-column(c-6))) t 'days 4-6', \
+#  '' u (pc(column(c)-column(c-3))) t 'days 1-3', \
+#  '' u (f(column(c)-column(c-3), column(c-3)-column(c-6))):xticlabels(2) t 'increasing days 1-3'
+# set term push
+# set output 'stats0.png'
+# set term png size 1600,900
+# replot
+# set term pop
 #
+# don't darken red if less than a week prior
 plot csv u (pc(column(c))) t '> 20 days', \
  '' u (pc(s(0,20))) t 'days 7-20', \
  '' u (pc(s(0,6))) t 'days 4-6', \
  '' u (pc(s(0,3))) t 'days 1-3', \
  '' u (g(s(0,3), s(3,6), s(7,10))):xticlabels(2) t 'increasing days 1-3'
 set output 'stats.png'
-set term png size 1400,900
+set term png size 1600,900
 replot
 system("bash -c 'source seq.sh ".day."'")
