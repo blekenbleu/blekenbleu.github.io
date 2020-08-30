@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Assetto Corsa, Content Manager and Custom Shading Patch settings</title>
+<style>
+body {
+  margin: 60px;
+}
+th {
+  text-align: left;
+}
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<font size=-1><a href="index.htm"><i>back</i></a></font>
+<a name=sim><h2>Assetto Corsa, Content Manager and Custom Shading Patch settings</h2></a>
+<a href="https://store.steampowered.com/app/244210/Assetto_Corsa/">Assetto Corsa</a> is a car racing game.&nbsp I own 2 others, but have so far driven only AC.<br>
+This is partly because AC supports most of the cars and tracks that I care to drive,<br>
+but also because game software is generally so idiosynchratic and poorly documented<br>
+that learning to use them is for me more irritating than enjoyable.<br>
+This is NOT to imply that AC is either well-documented or easy to use.<br>
+Basic AC usage is described in around 50 of the 700 pages in <a href="https://www.amazon.com/dp/B00NS918M4">Going Nowhere Fast In Assetto Corsa</a>, a Kindle ebook on Amazon.<br>
+However, it is quite out-of-date
+<br>
+AC has been enhanced by so-called mods, many of which are free and add interesting cars and tracks.<br>
+Other mods, notably Content Manager and Custom Shader Patch, affect AC operation.<br>
+Exactly how CM and CSP work and what they do is similarly idiosynchratic and poorly documented.<br>
+AC settings are stored in about 200 files in over 100 folders under ~/Documents/Assetto Corsa/.<br>
+On a guess, Content Manager mostly works by altering those files before launching AC.<br>
+On the other hand, CSP seems more about actually replacing and extending AC processing routines.<br>
+On a guess, some configuration files are added to control CSP.<br>
+<br>
+When migrating from Logitech G29 to AccuForce wheels,  Assetto Corsa ignored the new wheel when launched from CM.<br>
+Launched from Steam, AC would use the new wheel.  Launched from Sim Commander 4, CM did not launch CSP.<br>
+Previously, some things did not work, depending on the sequence in which Windows Mixed Reality was launched<br>
+relative to Steam, CM and AC.<br>
+I have yet to sort a working configuration for WMR+SteamVR+SC4+CM+CSP+AC,<br>
+but worked around the CM+AC+AccuForce issue by renaming ~/Documents/Assetto Corsa/ to ~/Documents/Assetto Corsa.br/<br>
+then configuring AccuForce in CM and launching AC from there, creating a new ~/Documents/Assetto Corsa/<br>
+which lacks all tweaks made in ~/Documents/Assetto Corsa.b4/ which has 96 files different from those in the new folder.<br>
+<br>
+At least for the differences, I want to understand what the do and reapply as many as make sense.
+<font size=+1>
+<h3>contents</h3>
+<sl>
+<li><a href="#references">references</a>
+<li><a href="#aim">aim</a>
+<li><a href="#bm">benchmarks</a>
+<li><a href="#cfg">cfg</a>
+<li><a href="#ctelemetry">ctelemetry</a>
+<li><a href="#launcherdata">launcherdata</a>
+<li><a href="#logs">logs</a>
+<li><a href="#out">out</a>
+<li><a href="#replay">replay</a>
+<li><a href="#savedData">savedData</a>
+<li><a href="#setups">setups</a>
+<li><a href="#pb">personalbest.ini</a>
+</sl> &nbsp
+<a name=references><h3>references</h3></a>
+<sl compact>
+<li><a href="https://steamcommunity.com/app/244210/guides/">AC Guides</a>
+<li><a href="https://www.assettocorsa.net/forum/index.php?threads/ini-files-on-ac-graphics-how-to.16787/">.ini files on ac graphics - how to</a>
+<br> &nbsp <i>appears to be mostly about still beauty shots</i>
+<li><a href="https://github.com/gro-ove">CM GitHub</a>
+<li><a href="https://acstuff.ru/f/d/2-content-manager-discussion-thread/70">CM developer discussions</a>
+<li><a href="https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki">CSP Wikis</a>
+<li><a href="https://www.gtplanet.net/forum/threads/content-manager-settings-csp-related-only.391459/">Content Manager Settings - CSP related only</a>
+<li><a href="https://steamcommunity.com/app/244210/discussions/0/1637536330459139130/#c1640918469768190620">making setups "stick"</a>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1412485808">Over and Understeer tuning flowcharts</a>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=233360014">Over and Understeer tuning table</a>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=260129087">AC car setup guide</a>
+<li><a href="https://www.en.magicgameworld.com/how-to-fix-assetto-corsa-performance-issues-lag-low-fps/">FIX ASSETTO CORSA PERFORMANCE ISSUES</a>
+<li><a href="https://github.com/ac-custom-shaders-patch">CSP GitHub</a>
+<li><a href="https://www.youtube.com/c/IljaJusupov/videos">CSP videos</a>
+<li><a href="https://trello.com/b/xq54vHsX/ac-patch">CSP trello</a>
+<li><a href="https://discord.com/channels/453595061788344330/453615474710675537">CSP discord</a>
+<li><a href="https://acstuff.ru/patch/">CSP home page</a>
+<li><a href="https://assettocorsamods.net/threads/your-first-car-in-assetto-corsa-basic-guide.1019/">your FIRST car</a> explains .ini files in a car folder
+</sl>
+<a name=aim><h3>aim</h3>
+<dl compact>
+<dt>aim\telemetry_dump.act
+<dd><a href="https://www.racedepartment.com/threads/telemetry.89515/">AC can record a lap and place this file</a>
+</dl>
+<a name=bm><h3>benchmarks</h3>
+<dl compact>
+</dl>
+<a name=cfg><h3>cfg</h3>
+<dl compact>
+<dt>cfg\controllers\savedsetups\
+<dd><a href="https://www.reddit.com/r/assettocorsa/comments/am8men/beginners_guide_to_use_content_manager_presets/">Beginners guide to use Content Manager presets like a pro</a><br>
+What Highness calls presets are savedsetups; presets are supplied by AC for commercial controllers
+<pre>Gamma=2.1
+Filter=0.85
+Speed Sensitivity=73%
+Deadzone=0.05 (0.03 till v0.85)
+Steering Speed=100%</pre>
+<dt>cfg\acos.ini
+<dd>enabled apps on screen and their scale/position<br>
+<a href="https://www.youtube.com/watch?v=untJm5cefnY">HOW TO FIX ASSETTO CORSA CROSSFIRE FLICKERING AND LOW FPS</a><br>
+Just delete the file [acos.ini] found in [Documents \ Assetto Corsa \ cfg \ [cos.ini]
+</dl>
+<br>
+<br>
+</font>
+</body>
+</html>
