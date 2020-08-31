@@ -25,7 +25,8 @@ th, td {
 This is partly because AC supports most of the cars and tracks that I care to drive,<br>
 but also because game software is generally so idiosynchratic and poorly documented<br>
 that learning to use them is for me more irritating than enjoyable.<br>
-This is NOT to imply that AC is either well-documented or easy to use.<br>
+This is NOT to imply that AC is either well-documented or easy to use,<br>
+simply that fighting more than one crappy software is gratuitously masochistic.<br>
 Basic AC usage is described in around 50 of the 700 pages in <a href="https://www.amazon.com/dp/B00NS918M4">Going Nowhere Fast In Assetto Corsa</a>, a Kindle ebook on Amazon.<br>
 However, it is quite out-of-date
 <br>
@@ -44,7 +45,8 @@ relative to Steam, CM and AC.<br>
 I have yet to sort a working configuration for WMR+SteamVR+SC4+CM+CSP+AC,<br>
 but worked around the CM+AC+AccuForce issue by renaming ~/Documents/Assetto Corsa/ to ~/Documents/Assetto Corsa.br/<br>
 then configuring AccuForce in CM and launching AC from there, creating a new ~/Documents/Assetto Corsa/<br>
-which lacks all tweaks made in ~/Documents/Assetto Corsa.b4/ which has 96 files different from those in the new folder.<br>
+which lacks all tweaks made in ~/Documents/Assetto Corsa.b4/ which has 96 files different from those in the new folder,<br>
+based on WinMerge folder comparison. WinMerge external editor was changed to GVim.<br>
 <br>
 At least for the differences, I want to understand what the do and reapply as many as make sense.
 <font size=+1>
@@ -106,6 +108,18 @@ Steering Speed=100%</pre>
 <dd>enabled apps on screen and their scale/position<br>
 <a href="https://www.youtube.com/watch?v=untJm5cefnY">HOW TO FIX ASSETTO CORSA CROSSFIRE FLICKERING AND LOW FPS</a><br>
 Just delete the file [acos.ini] found in [Documents \ Assetto Corsa \ cfg \ [cos.ini]
+<dt>cfg\video.ini
+<dd>Many settings that IMO may have not much to do with video, e.g. LOCK_STEER (which is a mystery)<br>
+<a href="https://www.reddit.com/r/assettocorsa/comments/3lhv6p/assetto_corsa_125_a_graphical_settings_adventure/">reddit descriptions and suggested values</a><br>
+<a href="https://revolutionsimracing.com/threads/graphic-guide.1648/"><b><i>fewer acronyms and more about CM performance impacts preview</i></b></a><br>
+* WORLD_DETAIL &nbsp <a href="https://www.assettocorsa.net/forum/index.php?threads/world-detail.2641">
+used only for Grass and some other minor detail (lollipop man?). It does nothing on textures.<br>
+&nbsp It can't be used on marshalls because they have lods already, as well on any object that has lods.</a><br>
+&nbsp <a href="https://assettocorsamods.net/threads/lods-what-is-the-best-approach.1065">lods = level of detail</a><br>
+<a href="https://apexonlineracing.com/community/threads/ac-graphic-guide.18275">smoke generation and "High Quality Mirror Reflection" have huge FPS impact</a><br>
+<br>
+<b>values restored from .b4:</b><br>
+* HIDE_ARMS=1
 </dl>
 <br>
 <br>
