@@ -13,7 +13,7 @@ table {
   border-collapse: collapse;
 }
 th, td {
-  border: 1px solid black;
+  border: 1px solid white;
   border-collapse: collapse;
 }
 </style>
@@ -35,6 +35,7 @@ th, td {
 <li><a href="#shakeseat">ShakeSeat</a> <a href="#pad">padding</a>
 <li><a href="#ShakeIt">ShakeIt</a>
 <li><a href="#DD">AccuForce wheel base</a>
+<li><a href="#analog">Logitech pedals to AccuForce analog inputs</a>
 <li><a href="DDclamp.htm">DIY DD steering shaft clamp</a>
 <li><a href="#TR1">SimLab TR1 Chassis</a>
 <li><a href="#HOTAS">Hand-On Throttle-And-Stick in SteamVR</a>
@@ -828,15 +829,27 @@ could have been cost-effective..<br>
 .. but <a href="https://www.simxperience.com/products/accessories/accuforcesteering/accuforcepromountingbracket.aspx">angled mounting brackets</a> add another $45.
 <img align=center width=320 src="https://www.simxperience.com/portals/0/Images/AccuForce/AccuForceProMountingBracket.jpg"><br clear=all>
 <br>
+<table><tr><td>
 The <a href="https://simxperience.com/Portals/0/Files/AccuForce/Controller_Plug_Descriptions_Dimensions.jpg">AccuForce Controller</a>
-has a Analog Input:<img align=top src="https://simxperience.com/Portals/0/Files/AccuForce/AccuForce_Analog_Input_Connector.png"><br clear=all>
+<a name=analog>
+has a Analog Input with Molex 0901420008 connector</a>
 which should address G29 brake pedal nonlinearity... my pinout is<br>
 1. orange throttle to DB9-2<br>
 3. yellow brake to DB9-3<br>
 5. green clutch to DB9-4<br>
 7. blue +5V to DB9-6<br>
 8. violet Gnd to DB9-1<br>
+<br>
 <img src="https://www.racedepartment.com/attachments/g25pinout-png.148609/"><br clear=all>
+<br><br>
+<br><br> &nbsp &nbsp Connector pin spacing is 0.1";&nbsp instead of Molex 0901420008, <br>
+ &nbsp &nbsp I used Dupont breadboard jumpers with a <a href="https://www.amazon.com/gp/product/B01AN7A09A">DB-9 female adapter plate</a>:
+</td><td>
+<img align=top src="https://simxperience.com/Portals/0/Files/AccuForce/AccuForce_Analog_Input_Connector.png"><br clear=all>
+&nbsp &nbsp <img src="DB9.jpg">
+</td></tr>
+</table>
+<br>
 <br>
 Chinese quick releases seem fine;  Sim Racing Garage liked one adapted for Thrustmaster:<br>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/9ZNrmjJzFd4"></iframe>
