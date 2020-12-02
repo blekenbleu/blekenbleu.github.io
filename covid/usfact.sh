@@ -72,7 +72,7 @@ while read foo ; do
 done < $here/factFIPS.csv
 
 # comparing today with 3 days ago
-# echo '$GNUPLOT $here/stats.p'
+echo '$GNUPLOT $here/stats.p'
 $GNUPLOT $here/stats.p
 ls frame*.png
 cd $here
