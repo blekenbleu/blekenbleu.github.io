@@ -44,8 +44,8 @@ set ylabel day.' COVID-19 cases per 100K'
 # set term pop
 #
 # don't darken red if less than a week prior
-plot csv u (pc(column(c))) t '>180 days', \
- '' u (pc(s(0,180))) t '20-180 days', \
+plot csv u (pc(column(c))) t '>200 days', \
+ '' u (pc(s(0,200))) t '20-200 days', \
  '' u (pc(s(0,20))) t 'days 7-20', \
  '' u (pc(s(0,6))) t 'days 4-6', \
  '' u (pc(s(0,3))) t 'days 1-3', \
