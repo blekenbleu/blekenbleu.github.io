@@ -20,18 +20,20 @@ set grid ytics front
 # how many columns in csv?
 stats csv skip 1 nooutput
 c = STATS_columns
+# older plot, e.g.:  gnuplot -e "b4=100" stats.p
+if (exists("b4")) c = c - b4
 # do not plot the first row
 set key autotitle columnhead
 # column(3) is population
 pc(n) = (100000*n)/column(3)
-f(a,b) = (a > b) ? pc(a) : 0
 g(a,b,d) = (a > b && a > d) ? pc(a) : 0
-s(i,j) = column(c-i)-column(c-j)
+s(i,j) = (c > j) ? column(c-i)-column(c-j) : column(c-i)
 set term wxt 0 enhanced size 1600,900
 # first 4 columns are NOT cases; need 20 columns (days) of history
 day = word(dates,c)
 set ylabel day.' COVID-19 cases per 100K'
 # don't bother plotting stats0.png
+# f(a,b) = (a > b) ? pc(a) : 0
 # plot csv u (pc(column(c))) t '> 20 days', \
 #  '' u (pc(column(c)-column(c-20))) t 'days 7-20', \
 #  '' u (pc(column(c)-column(c-6))) t 'days 4-6', \
