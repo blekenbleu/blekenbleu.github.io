@@ -15,7 +15,7 @@ set linetype 6 lc rgb "#AA0000" lw 0 pt 1
 set xtics border rotate 90 offset 0,graph 0 nomirror
 unset grid
 unset y2tics
-set ytics nomirror add(3,30,300,3000,30000)
+set ytics nomirror add(3,30,300,3000, 6000, 30000)
 set grid ytics front
 # how many columns in csv?
 stats csv skip 1 nooutput
