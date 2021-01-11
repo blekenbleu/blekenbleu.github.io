@@ -3,7 +3,7 @@ set datafile separator ","
 dates = system("head -1 ".csv." | tr ',' ' '")
 unset border
 set logscale y
-set yrange [1:30000]
+set yrange [1:60000]
 set style data boxes
 set style fill solid 1.0 border -1
 set linetype 1 lc rgb "white" lw 0 pt 1
@@ -15,7 +15,7 @@ set linetype 6 lc rgb "#AA0000" lw 0 pt 1
 set xtics border rotate 90 offset 0,graph 0 nomirror
 unset grid
 unset y2tics
-set ytics nomirror add(3,30,300,3000, 6000, 30000)
+set ytics nomirror add(3,30,300,3000, 6000, 30000, 60000)
 set grid ytics front
 # how many columns in csv?
 stats csv skip 1 nooutput
@@ -53,6 +53,6 @@ plot csv u (pc(column(c))) t '>200 days', \
  '' u (pc(s(0,3))) t 'days 1-3', \
  '' u (g(s(0,3), s(3,6), s(7,10))):xticlabels(2) t 'increasing days 1-3'
 set output 'stats.png'
-set term png size 1600,1007
+set term png size 1600,1061
 replot
 system("bash -c 'source seq.sh ".day."'")
