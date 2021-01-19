@@ -31,7 +31,7 @@ s(i,j) = (c > j) ? column(c-i)-column(c-j) : column(c-i)
 set term wxt 0 enhanced size 1600,900
 # first 4 columns are NOT cases; need 20 columns (days) of history
 day = word(dates,c)
-set ylabel day.' COVID-19 cases per 100K'
+set ylabel 'https://blekenbleu.github.io/covid/blog.htm  '.day.' COVID-19 cases per 100K'
 # don't bother plotting stats0.png
 # f(a,b) = (a > b) ? pc(a) : 0
 # plot csv u (pc(column(c))) t '> 20 days', \
@@ -47,7 +47,7 @@ set ylabel day.' COVID-19 cases per 100K'
 #
 # don't darken red if less than a week prior
 plot csv u (pc(column(c))) t '>200 days', \
- '' u (pc(s(0,200))) t '20-200 days', \
+ '' u (pc(s(0,200))) t 'days 20-200', \
  '' u (pc(s(0,20))) t 'days 7-20', \
  '' u (pc(s(0,6))) t 'days 4-6', \
  '' u (pc(s(0,3))) t 'days 1-3', \
