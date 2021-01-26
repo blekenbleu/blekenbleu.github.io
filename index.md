@@ -6,17 +6,14 @@
 ## [Sim driving](pedals/index.htm)
 - [ Samsung Odyssey+ for Assetto Corsa ](pedals/index.htm#hmd) Windows Mixed Reality and SteamVR
 - [TH8A](pedals/index.htm#TH8A) Thrustmaster shifter mods
-- Logitech G29 pedal mods
+- Logitech [G29 pedal mods](pedals/index.htm#pedals)
 - USB-attached harness tensioning servos
   - [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
     - COM ports are good for driving outputs from SimHub, but games e.g. Assetto Corsa expect HID I/O
     - **WeMos D1 UNO R1** AKA *ESPDuino* [background information](Arduino/ESPDuino)
 - USB-attached steering wheel
   - [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
-- Convert **COM** device to **HID**?
-  - [Serial-Lab](Windows/SerialLab) *fork already working with D1 UNO ESP8266*
-  - [VJoySerialFeeder](Arduino/VJoySerialFeeder) *least obsolete COM->HID filter*
-  - [mi-360](Arduino/mi360) *HID Xiaomi Gamepad -> Xbox360 filter*
+- [Arduino for custom USB devices] e.g. STM32 Black or Blue Pills and ESP8266 D1 UNO or similar  
 - ESP8266 / STM32 Arduino IDE Alternative: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
 
 ## [ab]using Microsoft Visual Studio Community 2017
