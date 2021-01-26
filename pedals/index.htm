@@ -26,11 +26,12 @@ th, td {
 <li><a href="ACcmCSP.htm">Assetto Corsa settings</a>
 <li><a href="#wheelstand">wheel stand</a>
 <li><a href="#hmd">Odyssey+ HMD</a>
-<li><a href="#tuning">Tuning</a>
-<li><a href="STM32">Logitech G29 brake mods using STM32</a>
-<li><a href="ESP8266">Logitech G29 brake mods using ESP8266</a>
-<li><a href="#TH8A">TH8A shifter mods</a>
-<li><a href="#G29">G29 controls</a>
+<li><a href="#tuning">FFB Tuning</a>
+<li><a href="STM32">mods using STM32</a>
+<li><a href="ESP8266">mods using ESP8266</a>
+<li><a href="#TH8A">Thrustmaster TH8A shifter mods</a>
+<li><a href="#G29">Logitech G29 controls</a>
+<li><a href="#pedals">G29 pedals</a>
 <li><a href="#contentmgr">Content Manager</a> &nbsp and <a href="#mods">mods</a>
 <li><a href="#shakeseat">ShakeSeat</a> <a href="#pad">padding</a>
 <li><a href="#ShakeIt">ShakeIt</a>
@@ -270,7 +271,7 @@ change the setting to:<br>
 <a href="https://www.racedepartment.com/threads/full-list-of-keyboard-commands.77268/">
 https://www.racedepartment.com/threads/full-list-of-keyboard-commands.77268/</a><br>
 
-<a name=tuning><h5>Tuning</h5></a>
+<a name=tuning><h5>FFB Tuning</h5></a>
 Once parts are sorted, learning to use them generally works better taken incrementally.<br>
 Learning a new track in a car with unknown behaviors using controls that do not respond as expected
 can be frustrating, off-putting and inefficient.
@@ -288,6 +289,24 @@ Esc does not work while pit menu is active, so unable to e.g. gracefully exit.<b
 Instead, what works: Install <a href="#contentmgr">Content Manager</a> in Steam and launch from <a href="steam://open/console">there</a>.<br>
 Customize mouse Forward and Back buttons to [Ctrl + space bar] and [Esc] keystrokes, respectively, e.g. using <a href="https://www.logitech.com/en-us/articles/11650">Logitech SetPoint Settings</a>.<br>
 <img src="Forward.png"><br clear=all>
+<br>
+<a name=pedals><h3>G29 pedal mods</h3></a>
+<h4> Problems</h4>
+Lacking inertial cues from braking velocity changes, sim racing seems harder than real.<br>
+Although Logitech improved pedal <i>feel</i> with their G29, braking control remains problematic:,<ul compact>
+<li> signal to sim software is based on pedal movement distance, not pressure.
+<li> feedback, if any, for tires losing grip during braking currently comes thru the steering wheel,
+instead of the brake pedal.</ul>
+
+<h4>Project</h4>
+Brake simulation shortcomings can be mitigated by:<ul compact>
+<li> replacing brake potentiometer with a [load cell](https://imgur.com/gallery/gOjAf)<ul compact>
+<li>That mod uses analog op amp, problematic with Logitech's brake curve, but fine with AccuForce</ul>
+<li> simulating ABS feedback at the brake pedal
+<li>e.g. @ 3:47/10:56 of this video: <a href="https://www.youtube.com/watch?v=8aLqqcEaUVk">DIY RUMBLE PEDALS SIM RACING</a><ul compact>
+<li>Get tire slip data from Assetto Corsa via SimHub, which can drive <a href="https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support">Custom serial devices</a>
+</ul>
+<li>Far easier to use <a href="https://www.daytonaudio.com/product/1180/daex32ep-4-thruster-32mm-exciter-40w-4-ohm">an exciter</a> via <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Bass-Shakers---Audio-Output-Configuration">SimHub ShakeIt</a></ul>
 <br>
 <a href="https://www.racedepartment.com/downloads/categories/ac-apps.4/"> AC Apps</a><br>
 <br>
@@ -508,12 +527,12 @@ The first bullet for Sim Commander 4: "Simple To Use"<br>
 https://simxperience.com/en-us/products/software/simcommander4.aspx<br>
 * if true, users would notice without it being pointed out.<br>
 * as is nearly always the case, emphatically untrue,<br>
- if "use" means anything other than launching a default<br>
- or something useful [but painfully] configured and debugged..<br>
+if "use" means anything other than launching a default<br>
+or something useful [but painfully] configured and debugged..<br>
 * Consider it a fair warning that, on the same page, Tutorials require Flash.<br>
- - first (for installation) should be skipped - applied to SC3 and is flat misleading<br>
- - second may be still somewhat relevant, but requires much homework to correctly fill blanks<br>
- - last SimVibe could be valuable, if still accurate<br>
+- first (for installation) should be skipped - applied to SC3 and is flat misleading<br>
+- second may be still somewhat relevant, but requires much homework to correctly fill blanks<br>
+- last SimVibe could be valuable, if still accurate<br>
 <br>
 At least on my Windows 10 64-bit Home PC,<br>
 pop-up windows essential to Sim Commander 4 installation were hidden beneath<br>
@@ -700,12 +719,12 @@ NOTE: You must install Logitech Gaming Software (LGS) 8.70 or later<br>
 on the PC for full functionality. Once you've installed LGS,<br>
 all buttons and accessories will function in the games that support them."<ul compact>
 <li> Logitech's Gaming Software (LGS) nowhere admits its version,<br>
- but filename includes it: <code>LGS_8.98.234X64_Logitech.exe</code><br>
+but filename includes it: <code>LGS_8.98.234X64_Logitech.exe</code><br>
 <li> Undocumented icon for Overwolf, which evidently 
- <a href="https://www.overwolf.com/about-overwolf/">defies explanation</a><br>
+<a href="https://www.overwolf.com/about-overwolf/">defies explanation</a><br>
 <li> <a href="https://www.logitech.com/assets/51813/3/lgs-guide.pdf">LGS documentation</a>
- avoids device-specific information;<br>
- ends up being mostly useless..
+avoids device-specific information;<br>
+ends up being mostly useless..
 </ul>
 Relevant (but inconsistent) G29 discussion for Assetto Corsa:<br>
 https://www.racedepartment.com/threads/logitech-g29-setup.140831/<br>
