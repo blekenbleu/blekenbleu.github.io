@@ -1,23 +1,23 @@
-1 November 2018  
+26 January 2021  
 ## Signal Processing
-- [Special Error Diffusion](ImageProcessing/sped.html)
-- [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
+  - [Special Error Diffusion](ImageProcessing/sped.html)
+  - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 
 ## [Sim driving](pedals/index.htm)
 - [ Samsung Odyssey+ for Assetto Corsa ](pedals/index.htm#hmd) Windows Mixed Reality and SteamVR
 - [TH8A](pedals/index.htm#TH8A) Thrustmaster shifter mods
-### USB-attached Logitech G29 pedals
-- [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
-- [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
-  - **WeMos D1 UNO R1** AKA *ESPDuino* [background information](Arduino/ESPDuino)
-    - functionally similar to [$3 D1 mini](https://www.ebay.com/p/2232496538) and  
- [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU) - ([3 versions](https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/));
-  $5 @ [Amazon](https://www.amazon.com/dp/B07F61FG7V),
-  $2 @ [eBay](https://www.ebay.com/itm/192777702474)
+- Logitech G29 pedal mods
+- USB-attached harness tensioning servos
+  - [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
+    - COM ports are good for driving outputs from SimHub, but games e.g. Assetto Corsa expect HID I/O
+    - **WeMos D1 UNO R1** AKA *ESPDuino* [background information](Arduino/ESPDuino)
+- USB-attached steering wheel
+  - [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
+- Convert **COM** device to **HID**?
   - [Serial-Lab](Windows/SerialLab) *fork already working with D1 UNO ESP8266*
   - [VJoySerialFeeder](Arduino/VJoySerialFeeder) *least obsolete COM->HID filter*
   - [mi-360](Arduino/mi360) *HID Xiaomi Gamepad -> Xbox360 filter*
-  - ESP8266 Arduino IDE Alternative: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
+- ESP8266 / STM32 Arduino IDE Alternative: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
 
 ## [ab]using Microsoft Visual Studio Community 2017
 * [shared installation](VSC2017)
@@ -30,11 +30,12 @@
 **[Ubuntu on Windows (WSL)](GitHubWSL) (or NOT)** with **SmartGit**  and its `git-bash.exe`
 
 *Notes:*
-1. Unlike html pages, markdown pages (files ending with `.md`) get URLs *without* `.md`  
-2. If no [`index.md`](/), then Jekyll uses `README.md` for landing page  
+1. Far easier to *instead* install [Chrome extension **Markdown Viewer**](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en)
+2. Unlike html pages, markdown pages (files ending with `.md`) get URLs *without* `.md`  
+3. If no [`index.md`](/), then Jekyll uses `README.md` for landing page  
    **Workaround**:  
    Create `index.md`, which Jekyll will use instead  
-3. Jekyll expects UTF-8 character encoding and fails badly if/when a BOM (Byte Order Mark) is encountered  
+4. Jekyll expects UTF-8 character encoding and fails badly if/when a BOM (Byte Order Mark) is encountered  
    This was especially problematic with Jekyll style gem files on WSL...  
    **Workaround** (using `vim`):  
 ```
