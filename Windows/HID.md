@@ -8,9 +8,8 @@ title: HID game controllers
 Wanted: [D1 UNO](../Arduino/ESPDuino) as [HID game controller](../pedals/ESP8266).  
 Unlike FTDI USB chips, CH340G on D1 UNO can *only* be
  [serial](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomSerialDeviceAccess).  
-According to [Jan Axelson](http://janaxelson.com/hidpage.htm) Microsoft supports HID devices via **DirectX**  
-... but HID support is NOT found ini
- [.NET APIs](https://docs.microsoft.com/en-us/dotnet/api/index?view=netframework-4.7.2)  
+According to [Jan Axelson](http://janaxelson.com/hidpage.htm), Microsoft supports HID devices via **DirectX**  
+... but HID support is NOT found in [.NET APIs](https://docs.microsoft.com/en-us/dotnet/api/index?view=netframework-4.7.2)  
 
 Microsoft's [MonoGame GamePad Reference](https://docs.microsoft.com/en-us/xamarin/graphics-games/monogame/input)
  strongly implies that [Input for games](https://docs.microsoft.com/en-us/windows/uwp/gaming/input-for-games)
@@ -21,9 +20,13 @@ while avoiding the hassle of releasing custom signed Windows drivers.
 * As of Windows 1809, all drivers are required to be a Universal Windows Driver
   [UWD](https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk)
   AKA (*by Intel*) "Modern Windows Drivers"  
+- Convert **COM** device to **HID**?
+  - Traditional __serial<>HID__ workaround was vJoy - no longer supported  
+  - [Serial-Lab](Windows/SerialLab) *fork already working with D1 UNO ESP8266*
+  - [VJoySerialFeeder](Arduino/VJoySerialFeeder) *least obsolete COM->HID filter*
+  - [mi-360](Arduino/mi360) *HID Xiaomi Gamepad -> Xbox360 filter*  
 * [ViGEm.NET](https://github.com/ViGEm/ViGEm.NET) provides a signed UWD "virtual bus" driver  
   to which userland programs can filter unsupported devices 
-* Traditional __serial<>HID__ workaround was vJoy - no longer supported  
 
 #### workaround for workaround
 * [Arduino IBUS sketch](https://github.com/Cleric-K/vJoySerialFeeder/tree/master/Arduino/Joystick) running on [ESP8266](../pedals/ESP8266)
