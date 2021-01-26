@@ -13,7 +13,7 @@
     - **WeMos D1 UNO R1** AKA *ESPDuino* [background information](Arduino/ESPDuino)
 - USB-attached steering wheel
   - [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
-- [Arduino for custom USB devices] e.g. STM32 Black or Blue Pills and ESP8266 D1 UNO or similar  
+- [Arduino for custom USB devices](Arduino/) e.g. STM32 Black or Blue Pills and ESP8266 D1 UNO or similar  
 - ESP8266 / STM32 Arduino IDE Alternative: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
 
 ## [ab]using Microsoft Visual Studio Community 2017
