@@ -45,21 +45,23 @@ Blue Pill boot jumpers are unchanged for flashing by ST-Link.
 Many STM32 Arduino projects and websites use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader,  
 but STM now supports an stm32duino [core](https://github.com/stm32duino/Arduino_Core_STM32/releases)
 and [board manager](https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/master/STM32/package_stm_index.json),  
-for which there is a new [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
+for which there is now an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
 as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).  
 That video describes using the Blue Pill serial bootloader via USB COM dongle,   
 but we will here describe using an [ST-Link V2 clone](https://www.ebay.com/itm/183320329257).  
-The clone I received happened to have the correct pinout printed on its cover,  
-but one should slide that cover partly open (along the USB plug) to check board pin artwork.  
+My clone happens to have the *correct pinout* printed on its cover;  
+slide that cover partly open (along the USB plug) to **check board pin artwork:**  
+![ST-Link pin artwork](ST-Link.jpg)  
+
 [Here is the Arduino for STM32 bulletin board](https://www.stm32duino.com).  It replaced an earlier one.  
-[Here is the READ-ONLY version of the earlier Arduino for STM32 forum](https://stm32duinoforum.com/forum/index_php.html).  
+[Here is the READ-ONLY version of that earlier Arduino for STM32 forum](https://stm32duinoforum.com/forum/index_php.html).  
 [Here is the Arduino software page](https://www.arduino.cc/en/software).  
 
 ### ST-Link and Blue Pill
-This [YouTube video](https://www.youtube.com/watch?v=KgR3uM21y7o) describes programming Blue Pill
+This [YouTube video](https://www.youtube.com/watch?v=KgR3uM21y7o) programs a Blue Pill
 by ST-LINK using [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html).  
-[This was the first page](https://medium.com/coinmonks/coding-the-stm32-blue-pill-with-rust-and-visual-studio-code-b21615d8a20)
-found with a *useful* image for wiring Blue Pill to ST-LINK V2 clone:
+[This was the first *useful* page](https://medium.com/coinmonks/coding-the-stm32-blue-pill-with-rust-and-visual-studio-code-b21615d8a20)
+found for wiring Blue Pill to ST-LINK V2 clone:
 ![wiring Blue Pill to ST-Link V2 clone](https://miro.medium.com/max/875/1*pFNIcoAq2s3l4lwsM0gj8w.jpeg)  
 ![wiring chart](https://miro.medium.com/max/533/1*NwPYrVoPUbciDWzvGsTavQ.png)  
 Do **NOT** connect USB or any other power to Blue Pill while 3.3V is connected to ST-Link!  
