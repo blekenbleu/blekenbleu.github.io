@@ -47,7 +47,7 @@ but STM now supports an stm32duino [core](https://github.com/stm32duino/Arduino_
 and [board manager](https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/master/STM32/package_stm_index.json),  
 for which there is now an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
 as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).  
-That video describes using the Blue Pill serial bootloader via USB COM dongle,   
+That video installs the Blue Pill serial bootloader via USB COM dongle,   
 but we will here describe using an [ST-Link V2 clone](https://www.ebay.com/itm/183320329257).  
 My clone happens to have the *correct pinout* printed on its cover;  
 slide that cover partly open (along the USB plug) to **check board pin artwork:**  
@@ -64,7 +64,7 @@ by ST-LINK using [STM32 ST-LINK utility](https://www.st.com/en/development-tools
 found for wiring Blue Pill to ST-LINK V2 clone:
 ![wiring Blue Pill to ST-Link V2 clone](https://miro.medium.com/max/875/1*pFNIcoAq2s3l4lwsM0gj8w.jpeg)  
 ![wiring chart](https://miro.medium.com/max/533/1*NwPYrVoPUbciDWzvGsTavQ.png)  
-Do **NOT** connect USB or any other power to Blue Pill while 3.3V is connected to ST-Link!  
+Do **NOT** connect USB or other power to Blue Pill with 3.3V connected to ST-Link!  
 Put another way, when using ST-LINK for debugging,  
   **do NOT connect 3.3V to Blue Pill from ST-Link**.  
 
