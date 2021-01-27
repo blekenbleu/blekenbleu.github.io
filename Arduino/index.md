@@ -65,21 +65,21 @@ was the first I found with a *useful* image for wiring a Blue Pill to ST-LINK V2
 Do **NOT** have USB or any other power connection to Blue Pill when 3.3V is connected to ST-Link!  
 Put another way, when using ST-LINK for debugging, **do NOT connect 3.3V to Blue Pill from ST-Link**.  
 
-### Installing (on Windows by ST-Link) the Blue Pill HID bootloader for STM core
+### Installing (on Windows by ST-Link) Blue Pill HID bootloader for STM core
 Since *only* for ST-Link, Blue Pill and STM core, instructions [have been simplified](https://github.com/Serasidis/STM32_HID_Bootloader/blob/master/README.md):  
 1) Download stlink.org [stlink Tools for Windows (v1.3.0)](https://github.com/stlink-org/stlink/releases/tag/v1.3.0)  
 2) Extract stlink-1.3.0-win64.zip to your hard disk.  
-   * In step 6), you will be running st-flash.exe (it is in the bin folder).  
+   In step 6., you will be running st-flash.exe (it is in the bin folder).  
 3) Download stm32_binaries.zip from [the latest HID Bootloader release](https://github.com/Serasidis/STM32_HID_Bootloader/releases)  
-   * From it, extract:  hid_generic_pc13.bin
+   From it, extract:  hid_generic_pc13.bin
 4) Copy hid_generic_pc13.bin into that bin folder.
-   * The Blue Pill on-board LED is connected to pin PC13.  
+   The Blue Pill on-board LED is connected to pin PC13.  
 5) Connect BOOT-0 and BOOT-1 pins (or on-board jumpers) to '0' *and leave them*!  
-   * disconnect everything except ST-Link from Blue Pill and plug ST-LinK to USB
+   disconnect everything except ST-Link from Blue Pill and plug ST-LinK to USB
 6) To flash HID Bootloader to a Blue Pill, type in Windows CMD:  
     st-flash.exe write hid_generic_pc13.bin 0x8000000  
-   * Here is [stlink Tools Tutorial](https://github.com/stlink-org/stlink/blob/develop/doc/tutorial.md)  
+   Here is [stlink Tools Tutorial](https://github.com/stlink-org/stlink/blob/develop/doc/tutorial.md)  
 7) From Arduino IDE Tools, select:  
-   * Board > [your_stm32_board]  
-   * Upload method > HID Bootloader 2.1 or newer  
+   Board > [your_stm32_board]  
+   Upload method > HID Bootloader 2.1 or newer  
 
