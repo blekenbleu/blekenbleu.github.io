@@ -70,25 +70,32 @@ Put another way, when using ST-LINK for debugging,
   **do NOT connect 3.3V to Blue Pill from ST-LINK**.  
 
 ### Installing (by Windows ST-LINK) Blue Pill HID bootloader for STM core
- - For Windows, stlink-org tools depend on STM's ST-LINK driver, bundled with [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html),  
-   which utility is *also* required to update clone ST-LINK firmware.  
- - Since *already* using [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html), also use it to install HID bootloaders
- - These instructions apply *only* for 64-bit Windows, ST-LINK clone, HID-bootloader, Blue Pill and STM core.  
+ - For Windows, stlink-org tools depend on STM's ST-LINK driver,  
+   bundled with [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html),  
+   which utility was *also* wanted for updating clone ST-LINK firmware.  
+ - Since *already* using [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html), also use it to install HID bootloader.
+ - These instructions apply *specifically* for 64-bit Windows, ST-LINK clone,  
+   HID-bootloader, Blue Pill and STM core.  
 
 1) Download and install [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html)  
    in my case, to D:\packages\STM32\
-2) Plug bare ST-LINK clone into USB.  If it shows up in **Device Manager** under **Other devices** (with a yellow warning),  
-   then drivers *were not* installed; see 1) else it should appear under **Universal Serial Bus Devices**.
+2) Plug bare ST-LINK clone into USB.  
+   If it shows up in **Device Manager** under **Other devices** (with a yellow warning),  
+   then drivers *were not* installed; see 1)  
+   else it should appear under **Universal Serial Bus Devices**.
 3) Launch **STM32 ST-LINK Utility.exe**  
-   in my case, D:\packages\STM32\STM32 ST-LINK Utillity v.4.6.0\ST-LINK Utility\STM32 ST-LINK Utility.exe
+   in my case,  
+D:\packages\STM32\STM32 ST-LINK Utillity v.4.6.0\ST-LINK Utility\STM32 ST-LINK Utility.exe
 4) Select ST-LINK > Firmware update  
    click Device Connect
    click Yes>>>>
 5) Unplug ST-LINK clone from USB and wire it to Blue Pill as shown above.
-6) Connect Blue Pill BOOT-0 and BOOT-1 pins (or on-board jumpers) to '0' *and leave them*!  
-   disconnect everything except ST-LINK from Blue Pill and plug ST-LINK to USB
+6) Connect Blue Pill BOOT-0 and BOOT-1 pins (or on-board jumpers) to '0'  
+   *and leave them*!  
+   Disconnect everything except ST-LINK from Blue Pill, and plug ST-LINK to USB.  
 7) Download stm32_binaries.zip from [the latest HID Bootloader release](https://github.com/Serasidis/STM32_HID_Bootloader/releases)  
-   From it, extract:  hid_generic_pc13.bin (*Blue Pill on-board LED is connected to pin PC13*)  
+   From it, extract:  hid_generic_pc13.bin  
+   (*Blue Pill on-board LED is connected to pin PC13*)  
    in my case, to D:\packages\STM32\
 8) To flash HID Bootloader to a Blue Pill, in STM32 ST-LINK Utility:  
    File > Open File... > hid_generic_pc13.bin  
@@ -112,14 +119,21 @@ no need to install Arduino-specific driver[s]...
 3) Go to **Tools > Board > Boards Manager**, enter search for **STM32**:  
    ![Boards Manager STM32 search](https://www.sgbotic.com/images/companies/1/learn/F103_Arduino/board_manager_install.png?1596271243306)  
    click **STM32 Cores**, then **Install**  (*takes awhile*)  
-4) Quit and restart Arduino; from **Tools > Board: > STM32 Boards**, select [Generic STM32F1 series]  
-   From **Tools > Board Part Number:**, select [BluePill F103C8]  
-   From **Tools > Upload method:**, select [HID Bootloader 2.1] or newer  
+4) Quit and restart Arduino; from **Tools > Board: > STM32 Boards**,  
+   select [Generic STM32F1 series]. 
+   From **Tools > Board Part Number:**, select [BluePill F103C8].  
+   From **Tools > Upload method:**, select [HID Bootloader 2.1] or newer.  
    ![Tools mmenu](tools.gif)  
-   **Port:** COM[5] is unavailable until *after* loading a sketch, e.g. Blue_Blink.ino:
+
+   **Port:** COM[5] is unavailable until a sketch is loaded, e.g. Blue_Blink.ino:
 ![Blue_Blink sketch](Blue_Blink.gif)   
 
-Here is the Blue Pill pinout reference:
+Here is a Blue Pill pinout reference:
 ![Generic STM32F103 board pinout](https://www.electronicshub.org/wp-content/uploads/2020/02/STM32F103C8T6-Blue-Pill-Pin-Layout.gif)  
 - 5V tolerant PWM pins are wanted for driving hobby servos, e.g. PA8-10 and PB6-9.  
-- 5V tolerant serial IO, but not CAN BUS, may be useful;  PB8,9 look good.
+- 5V tolerant CAN BUS pins PB8,9 look good.
+
+The easiest next step would be to add servos to the blink loop sketch.  
+As an additional test, this new sketch is under Git revision control,  
+with a shortcut to that sketch folder in the Arduino "work" folder.  
+Both of these ploys appear to work; the sketch runs..  
