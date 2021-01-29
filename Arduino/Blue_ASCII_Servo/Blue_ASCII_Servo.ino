@@ -39,7 +39,7 @@ void loop() {
       odd = 150;
     }
   }
-  else
+  else  // LED feedback for left vs right vs waiting
     even = odd = 30;
   delay(even);
   digitalWrite (LED, LOW);  // turn the LED on by pulling pin LOW
