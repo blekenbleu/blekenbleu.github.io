@@ -133,7 +133,31 @@ Here is a Blue Pill pinout reference:
 - 5V tolerant PWM pins are wanted for driving hobby servos, e.g. PA8-10 and PB6-9.  
 - 5V tolerant CAN BUS pins PB8,9 look good.
 
-The easiest next step would be to add servos to the blink loop sketch.  
+A simple next step adds servos to the blink loop sketch.  
 As an additional test, [this new sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under Git revision control,  
 with a shortcut to that sketch folder in the Arduino "work" folder.  
 Both of these ploys appear to work; the sketch runs..  
+**This sketch will be good for verifying servo wiring to Blue Pills.**
+
+Here is the [Arduino reference for Serial communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)  
+Probably a good idea to put [**while (!Serial){;}** in setup(){}](https://www.arduino.cc/reference/en/language/functions/communication/serial/ifserial/)  
+The first sketch I found mixing Serial and <Servo.h> is  
+[Matt Williamson's serial_servo_rx.ino](https://github.com/mattwilliamson/Arduino-RC-Receiver/blob/master/serial_servo_rx_ino/serial_servo_rx.ino)  
+
+If strap servos need no more than 128 degrees of rotation,  
+then COM byte values less than 128 could be for one strap  
+and over 127 could be for the other,  
+with no risk of getting out of sync.  
+Otherwise, for e.g. 254 degree excursions,  
+set 2 degree increments,  
+so values 1-127 shifted left 1 bit to one strap  
+and values 128-254 left shifted after subracting 127 for the other.  
+that leaves 0 and 255 for other controls,  
+such as setting strap offsets based on next values.  
+Green LED codes could feedback when awaiting offset values,  
+e.g. briefly off for one belt and briefly on for the other,  
+with normal operation a 50% duty cycle.  
+
+Meanwhile, for serial experiments without SimHub,  
+[this sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo) will send e.g. ASCII characters from a terminal  
+to left or right servo based on least-significant bit.  
