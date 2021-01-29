@@ -18,9 +18,9 @@ void loop() {
   digitalWrite (LED, HIGH); // turn the LED off by letting pin go HIGH
   strap[1].write(90);
   strap[1].write(10);
-  delay(1500);                // wait a 1.5 seconds
+  delay(1500);                // wait 1.5 seconds
   digitalWrite (LED, LOW);  // turn the LED on by pulling pin LOW
   strap[1].write(10);
   strap[1].write(90);
-  delay(3000);               // wait for 2 seconds
+  delay(3000);               // wait for 3 seconds
 }

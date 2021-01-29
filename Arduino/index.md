@@ -134,6 +134,6 @@ Here is a Blue Pill pinout reference:
 - 5V tolerant CAN BUS pins PB8,9 look good.
 
 The easiest next step would be to add servos to the blink loop sketch.  
-As an additional test, this new sketch is under Git revision control,  
+As an additional test, [this new sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under Git revision control,  
 with a shortcut to that sketch folder in the Arduino "work" folder.  
 Both of these ploys appear to work; the sketch runs..  
