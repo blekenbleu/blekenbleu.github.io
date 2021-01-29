@@ -161,3 +161,5 @@ with normal operation a 50% duty cycle.
 Meanwhile, for serial experiments without SimHub,  
 [this sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo) will send e.g. ASCII characters from a terminal  
 to left or right servo based on least-significant bit.  
+
+Corresponding [SimHub hacking is described here](SimHubCustomSerial.md).
