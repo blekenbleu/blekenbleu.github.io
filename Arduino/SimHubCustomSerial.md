@@ -33,11 +33,19 @@ This leaves the trick of sending the message for dynamic harness tensioning.
 An interesting property exists:  `GameData.GlobalAccelerationG`  
 Sure would be nice if there was a reference describing it...  
 
+In [SimHib discord](https://discord.com/channels/299259397060689920/453962780857597966/800365665289502731), Wotever wrote (01/18/2021) about deceleration:  
+"it's DataCorePlugin.GameData.GlobalAccelerationG  
+  deceleration is just a negative acceleration"  
+On 01/25/2021, fhoos wrote: "(Deceleration goes about from 0 to -50)"  
+
+Other properties:  GameData.Sway, GameRawData.Physics.Roll  
+  GameData.OrientationRoll GameData.OrientationYaw
+
 Clicking around in `Property Picker`:  
 ![acc properties](PropertyPicker_acc.gif)  
 
 In the left margin is "Available properties";
-selecting that exposes an Ncalc tester.
-Perhaps, if some game were recorded,
-then Replay here would show how data worked...?
-126+round([GameRawData.Physics.AccG01],0)
+selecting that exposes an Ncalc tester.  
+Perhaps, if some game were recorded,  
+then Replay here would show how data worked...?  
+`round([GameRawData.Physics.AccG01],0)`  
