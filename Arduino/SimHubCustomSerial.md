@@ -16,12 +16,13 @@ for using SimHub Custom serial devices:
 - [simhub-connector](https://www.thecoderscorner.com/products/arduino-libraries/tc-menu/tcmenu-plugins/simhub-connector/)  
 - [SimHub Forum Outputting sim data to Arduino to use with stepper motor gauges](https://www.simhubdash.com/community-2/simhub-support/outputting-sim-data-to-arduino-to-use-with-stepper-motor-gauges/)  
   - This clarifies that it is for "adhoc" protocol with "non simhub" sketches  
-- [SHWotever/SimHub Wiki Custom serial devices support](https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support)  
-  Having been here several times before, alwast failed to scroll down to [Formulas Engines](https://github.com/SHWotever/SimHub/wiki#formulas-engines)
-  
 - [SHWotever/SimHub Custom serial devices](https://github.com/SHWotever/SimHub/wiki/Custom-serial-devices)
   This walks thru enabling the plugin and defining messages:
   ![custom serial device](SimHubCustomSerial.gif)  
+- [SHWotever/SimHub Wiki Custom serial devices support](https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support)  
+  Having been here several times before, alwast failed to scroll down to [Formulas Engines](https://github.com/SHWotever/SimHub/wiki#formulas-engines)
+- [NCalc Wiki](https://github.com/ncalc/ncalc/wiki) appears to be the currently support website for the version of NCalc in SimHub  
+  Here is the [NCalc reference repository to which GitHub points](http://www.codeproject.com/KB/recipes/sota_expression_evaluator.aspx).  
 
 This leaves the trick of sending the message for dynamic harness tensioning.
 An interesting property exists:  GameData.GlobalAccelerationG  
@@ -49,3 +50,5 @@ Sadly, NCalc looks exactly wrong for what I want
 * no array indexing
 * no byte values
 * Integers evidently get written to serial as decimal strings.  
+
+As much as I dislike Javascript, it allows for byte banging..
