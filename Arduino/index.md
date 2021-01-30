@@ -19,10 +19,10 @@ Blue Pill's `FC103C8` chip lacks USB bootloader support in ROM.
 There are at least 4 ways to program STM32 chips:  
 1) SWD via ST-LINK  
 2) STM serial bootloader  
-   [Load firmware via USART1 by jumpering](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html#Boot0_and_Boot1_pin_settings)  
-   - Boot0 HIGH  
-   - Boot1 LOW  
-  ... then resetting MCU  
+   [Load firmware via USART1 by jumpering](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html#Boot0_and_Boot1_pin_settings):  
+   `Boot0 HIGH`  
+   `Boot1 LOW`  
+  ... then resetting MCU
 3) DFU (device firmware update) using DfuSe utility,  
     using the [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
     but USB is [**NOT** supported by Blue Pill's ROM bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html)  
