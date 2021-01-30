@@ -1,7 +1,7 @@
 ---
 title: Arduino for Blue Pill
 ---
-*updated 28 Jan 2021*
+*updated 30 Jan 2021*
 
 #### Background
 Arduino originally employed microcontrollers lacking USB support.  
@@ -130,8 +130,8 @@ no need to install Arduino-specific driver[s]...
 
 Here is a Blue Pill pinout reference:
 ![Generic STM32F103 board pinout](https://www.electronicshub.org/wp-content/uploads/2020/02/STM32F103C8T6-Blue-Pill-Pin-Layout.gif)  
-- 5V tolerant PWM pins are wanted for driving hobby servos, e.g. PA8-10 and PB6-9.  
-- 5V tolerant CAN BUS pins PB8,9 look good.
+- 5V tolerant PWM pins are wanted for driving hobby servos, e.g. `PA8-10` and `PB6-9`.  
+- 5V tolerant CAN BUS pins `PB8,9` look good.
 
 A simple next step adds servos to the blink loop sketch.  
 As an additional test, [this new sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under Git revision control,  
@@ -140,26 +140,31 @@ Both of these ploys appear to work; the sketch runs..
 **This sketch will be good for verifying servo wiring to Blue Pills.**
 
 Here is the [Arduino reference for Serial communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)  
-Probably a good idea to put [**while (!Serial){;}** in setup(){}](https://www.arduino.cc/reference/en/language/functions/communication/serial/ifserial/)  
-The first sketch I found mixing Serial and <Servo.h> is  
+In STM32duino, **`Serial`** device is USB virtual COM port,  
+using `PA11+12`, and **`Serial1`** is UART `PA9+10`,  
+but **Serial** *may be* UART in [PlatformIO Arduino framework](https://platformio.org/frameworks)  
+unless configured as a USB Virtual COM port in Tools.  
+
+Put [`while (!Serial){;}` in `setup(){}`](https://www.arduino.cc/reference/en/language/functions/communication/serial/ifserial/)  
+Toggling LED off before and on or blinking after provides feedback.  
+The first sketch I found mixing `Serial` and `<Servo.h>` is  
 [Matt Williamson's serial_servo_rx.ino](https://github.com/mattwilliamson/Arduino-RC-Receiver/blob/master/serial_servo_rx_ino/serial_servo_rx.ino)  
 
-If strap servos need no more than 128 degrees of rotation,  
-then COM byte values less than 128 could be for one strap  
-and over 127 could be for the other,  
-with no risk of getting out of sync.  
-Otherwise, for e.g. 254 degree excursions,  
-set 2 degree increments,  
-so values 1-127 shifted left 1 bit to one strap  
-and values 128-254 left shifted after subracting 127 for the other.  
-that leaves 0 and 255 for other controls,  
-such as setting strap offsets based on next values.  
-Green LED codes could feedback when awaiting offset values,  
-e.g. briefly off for one belt and briefly on for the other,  
-with normal operation a 50% duty cycle.  
+If strap servos need no more than 255 degrees of rotation,  
+with 2 degree increments,  
+set odd values 1-255 to one strap  
+and even values 0-254 for the other,  
+perhaps reserving values 0-1 and/or 254-5 for other controls,  
+such as setting strap offsets based on **next** values.  
+Single-character control [avoids serial string blocking and overflows](https://www.forward.com.au/pfod/ArduinoProgramming/Serial_IO/index.html).  
 
-Meanwhile, for serial experiments without SimHub,  
-[this sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo) will send e.g. ASCII characters from a terminal  
-to left or right servo based on least-significant bit.  
+Green LED blink codes can feedback when processing servo values,  
+e.g. briefly off for one belt and briefly on for the other,  
+with 50% duty cycle for idle operation.  
+Blink timing by `delay()` impacts serial bandwidth, so use `millis()`.
+
+For serial experiments *without* SimHub,  
+[this sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo) accepts e.g. ASCII characters from a terminal  
+to move left or right servo based on least-significant bit.  
 
 Corresponding [SimHub hacking is described here](SimHubCustomSerial.md).
