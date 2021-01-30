@@ -11,8 +11,8 @@ void setup() {			// put setup code here, to run once:
   digitalWrite (LED, HIGH);	// turn off LED by floating pin HIGH
   left.attach(PB8);		// Blue Pill 5V tolerant PWM pins
   right.attach(PB9);
-  left.write(50);		// initial positions
-  right.write(50);
+  left.write(65);		// initial positions
+  right.write(65);
 
   then = millis();   		// start the clock
   //Initialize serial and wait for port to open:
@@ -45,11 +45,11 @@ void loop() {
   if (Serial.available() > 0) {
     received = Serial.read();
     if (1 & received) {
-      right.write(received);
+      right.write((127&received)+29); // mismatched arms
       even = 60;
       odd = 150;		// right has long odds
     } else {
-      left.write(received);
+      left.write((127&received)+21);
       even = 150;
       odd = 60;	
     }

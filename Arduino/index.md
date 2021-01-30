@@ -166,5 +166,7 @@ Blink timing by `delay()` impacts serial bandwidth, so use `millis()`.
 For serial experiments *without* SimHub,  
 [this sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo) accepts e.g. ASCII characters from a terminal  
 to move left or right servo based on least-significant bit.  
+Sadly, characters `> 127` do not arrive intact from SimHub JavaScript,  
+but useful servo range is `< 127`, so apply offsets to received values.
 
 Corresponding [SimHub hacking is described here](SimHubCustomSerial.md).
