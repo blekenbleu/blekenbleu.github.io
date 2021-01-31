@@ -68,7 +68,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Left tight",
+        "Label": "Left tension",
         "IsVisibleFormula": {
           "Expression": ""
         }
@@ -85,7 +85,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Right tight",
+        "Label": "Right tension",
         "IsVisibleFormula": {
           "Expression": ""
         }
@@ -100,7 +100,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Test tight",
+        "Label": "Test tension",
         "IsVisibleFormula": {
           "Expression": ""
         }
