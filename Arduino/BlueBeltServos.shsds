@@ -60,7 +60,7 @@
         "Maximum": 65,
         "Minimum": 0,
         "PropertyName": "LeftOffset",
-        "CurrentValue": 52,
+        "CurrentValue": 62,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -77,7 +77,7 @@
         "Maximum": 65,
         "Minimum": 0,
         "PropertyName": "RightOffset",
-        "CurrentValue": 50,
+        "CurrentValue": 60,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -86,6 +86,21 @@
         },
         "IsVisible": true,
         "Label": "Right tight",
+        "IsVisibleFormula": {
+          "Expression": ""
+        }
+      },
+      {
+        "PropertyName": "TestOffsets",
+        "CurrentValue": false,
+        "Name": null,
+        "TypeName": "BoolEntry",
+        "IsEnabled": true,
+        "IsEnabledFormula": {
+          "Expression": ""
+        },
+        "IsVisible": true,
+        "Label": "Test tight",
         "IsVisibleFormula": {
           "Expression": ""
         }
