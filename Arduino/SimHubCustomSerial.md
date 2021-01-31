@@ -49,3 +49,5 @@ selecting that exposes an Ncalc tester.
 Perhaps, if some game were recorded,  
 then Replay here would show how data worked...?  
 `round([GameRawData.Physics.AccG01],0)`  
+
+[Rough skeleton for SImHub Custom serial device settings](BlueBeltServos.shsds.txt)
