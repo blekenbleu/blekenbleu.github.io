@@ -1,37 +1,42 @@
 #include <Servo.h>
-// simply echo received Serial bytes back
+// echo received Serial bytes back
+// https://blekenbleu.github.io/Arduino/
+
 #define LED PC13		// Blue Pill green LED
 Servo left, right;
-unsigned long then;
-int next, even, odd;
+unsigned long then, timeout=0;
+int next = HIGH;
+byte even = 30, odd = 30;
 
-void setup() {			// put setup code here, to run once:
+void setup() {			// setup() code runs once
+  then = millis();   		// start the clock
   // initialize as an output digital pin connected to green LED
   pinMode(LED, OUTPUT);
-  digitalWrite (LED, HIGH);	// turn off LED by floating pin HIGH
+  digitalWrite(LED, HIGH);	// turn off LED by floating pin HIGH
   left.attach(PB8);		// Blue Pill 5V tolerant PWM pins
   right.attach(PB9);
-  left.write(65);		// initial positions
+  left.write(65);		// initial servo positions
   right.write(65);
 
-  then = millis();   		// start the clock
-  //Initialize serial and wait for port to open:
+  // Initialize serial and wait for port to be opened:
   Serial.begin(9600);
-  while (!Serial) {
-    ; // wait for serial port to connect. Needed for native USB
-  }
+  while (!Serial)
+    delay(1);			// wait for native USB serial port to connect
   Serial.println("Blue_ASCII: connected");
-  next = HIGH;
-  even = odd = 30;		// even odds
 }
 
+// loop() is not REALLY a loop;
+// it is just the main routine, which gets called often.
 void loop() {
+  // main code goes here, to be called repeatedly:
   byte received;
-  unsigned long now;
+  unsigned long now = millis();	// should initially toggle on (LOW)
 
-  // put your main code here, to run repeatedly:
-  now = millis();		// should initially toggle on (LOW)
   if (then < now) {		// LED feedback for left vs right vs waiting
+    if (1000000 < timeout) {	// idle for a second or so?
+      even = odd = 30;		// idle waiting feedback
+      timeout = 0;
+    }
     if (next == LOW) {
       next = HIGH;
       then = now + odd;		// LED off for odd milliseconds
@@ -40,21 +45,23 @@ void loop() {
       next = LOW;
       then = now + even;	// LED on for even milliseconds
     }
-//  digitalWrite (LED, next);	// toggle LED: HIGH turns it off
+    digitalWrite (LED, next);	// toggle LED: HIGH turns it off
+    if (40 > even)		// idle?
+      delay(30);		// this may facilitate interrupting
   }
-  if (Serial.available() > 0) {
+  if (0 < Serial.available()) {
     received = Serial.read();
     Serial.write(received);
     if (1 & received) {
-//    right.write((127&received)+29); // mismatched arms
-      even = 60;
-      odd = 150;		// right has long odds
+//    right.write((127&received)+radd);
+      even = 40;		// LED briefly on
+      odd = 180;		// right has long odds
     } else {
-//    left.write((127&received)+21);
-      even = 150;
-      odd = 60;	
+//    left.write((127&received)+ladd);
+      even = 180;		// LED mostly on
+      odd = 40;	
     }
+    timeout = 0;
   }
-  else
-      even = odd = 30;		// idle waiting
+  else timeout++;
 }
