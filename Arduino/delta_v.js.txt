@@ -1,0 +1,53 @@
+// Initialize history
+if(root["speed"]==null){
+   root["speed"] = $prop('SpeedMph');
+   root["delta_s"] = 0;
+}
+if(root["yaw"]==null){
+   root["yaw"] = $prop('OrientationYaw');
+   root["delta_y"] = 0;
+}
+var s = $prop('SpeedMph');
+var y = $prop('OrientationYaw');
+var ds = s - root["speed"];
+var dy = y - root["yaw"];
+
+if (ds > 0)	// we are only interested in deceleration
+     ds = 0;
+else ds = - ds;	// positive deceleration
+if (dy > 180) {  // yaw went +/- 180
+  if (root["yaw"] > 150 || root["yaw"] < -150)
+    dy - y + root["yaw"];
+}
+var Gy = Math.round($prop('Settings.yaw_gain')) * dy; 
+var Gs = Math.round($prop('Settings.decel_gain')) * ds; 
+if (Math.abs(dy) > 0.1 && Math.abs(dy) > Math.abs(1.8 * root["delta_y"]))
+  Gy /= 2;	// remove sampling artifacts
+if (Math.abs(ds) > 0.1 && ds > 1.8 * root["delta_s"])
+  Gs /= 2;	// remove sampling artifacts
+
+// store values for next increment
+root["speed"] = s;
+root["yaw"] = y;
+root["delta_y"] = dy;
+root["delta_s"] = ds;
+
+var l = Gs - Gy;
+var r = Gs + Gy;
+if (l > 126)
+  l = 126;
+else if (l < 2)
+  l = 2;
+l &= 0x7E;	// left is even
+if (r > 127)
+  r = 127;
+else if (r < 3)
+  r = 3;
+r |= 1;		// right is odd.
+// var ls = String.fromCharCode.apply(l);
+// var rs = String.fromCharCode.apply(r);
+// for debugging; could be Gs and Gy
+var ls = l.toString();
+var rs = r.toString();
+return ls.concat(rs);
+

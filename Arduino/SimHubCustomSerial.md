@@ -68,8 +68,15 @@ rather than 2. Artifacts could be fairly easily addressed by a non-linear filter
 if (a current delta value is roughly twice the previous)
      then (divide it by 2)...
 ```
-An alternative may be to normalize speed and yaw deltas by `SystemInfoPlugin.Uptime` deltas.
+Normalizing speed and yaw deltas by `SystemInfoPlugin.Uptime` deltas is unlikely to work,  
+since it increments based on SimHub, not the game.
 
 First pass at harness tension setting:  
 ![SimHub tension settings](JavascriptSliders.gif)
 Recompiled Blue_ASCII sketch to echo hex, confirming 0 and 1 are received, all over 127 scrogged.  
+
+While it would be nice to have delta_v filter code in a more legible format,
+my guess is that SimHub live interpreter does not work for JavascriptExtensions.  
+
+SimHub has Visible Bindings and Enabled Bindings for CUSTOM SERIAL DEVICE Setting panel;
+don't know what two different bindings imply.
