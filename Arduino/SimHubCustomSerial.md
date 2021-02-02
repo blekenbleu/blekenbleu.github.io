@@ -55,7 +55,21 @@ Need to understand the nature of available SimHub properties for acceleration.
 First, record a figure 8 track lap, then play it back and record values.  
 Here is a SimHub Custom Serial formula for relevant properties:  
 ![SimHub acceleration recording formula ](formatAccel.gif)  
-Here is a gnuplot of yaw and speed deltas vs scaled `GlobalAccelerationG`:  
+Here is yaw and speed deltas vs scaled `GlobalAccelerationG`,  plotted by [Gnuplot delta_v() script](delta.txt):  
 ![yaw and speed deltas vs accel gnuplot](raw_accel.gif)  
-`SpeedMph` property basically overlays scaled `GlobalAccelerationG`.  
-Here is [Gnuplot delta_v() script](delta.txt) that plotted it. 
+`delta_v(SpeedMph)` property basically overlays scaled `GlobalAccelerationG`.  
+
+`OrientationYaw` presumably reports degrees heading; abrupt +/-180 transitions are a clue.  
+Given figure-8 track telemetry, `delta_v(OrientationYaw)` seems a credible proxy for lateral acceleration.  
+My guess is that delta_v "noise" is an artifact of SimHub sampling data at a rate somewhat slower  
+than that at which Assetto Corsa updates;  deltas occasionally represent differences between 3 game samples,  
+rather than 2. Artifacts could be fairly easily addressed by a non-linear filter which tests:  
+```
+if (a current delta value is roughly twice the previous)
+     then (divide it by 2)...
+```
+An alternative may be to normalize speed and yaw deltas by `SystemInfoPlugin.Uptime` deltas.
+
+First pass at harness tension setting:  
+![SimHub tension settings](JavascriptSliders.gif)
+Recompiled Blue_ASCII sketch to echo hex, confirming 0 and 1 are received, all over 127 scrogged.  
