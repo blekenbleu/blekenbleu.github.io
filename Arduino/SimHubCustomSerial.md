@@ -4,7 +4,7 @@ title: SimHub Custom serial device for Blue Pill
 ---
 *updated 30 Jan 2021*
 
-#### Background
+#### [Background](https://blekenbleu.github.io/Arduino/SimHubCustomSerial.html)
 An [STM32duino sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo) was thrown together  
 that moves either of a pair of servos,  
 depending on least significant bit,  
@@ -51,3 +51,11 @@ then Replay here would show how data worked...?
 `round([GameRawData.Physics.AccG01],0)`  
 
 [Rough skeleton for SImHub Custom serial device settings](BlueBeltServos.shsds.txt)
+Need to understand the nature of available SimHub properties for acceleration.  
+First, record a figure 8 track lap, then play it back and record values.  
+Here is a SimHub Custom Serial formula for relevant properties:  
+![SimHub acceleration recording formula ](formatAccel.gif)  
+Here is a gnuplot of yaw and speed deltas vs scaled `GlobalAccelerationG`:  
+![yaw and speed deltas vs accel gnuplot](raw_accel.gif)  
+`SpeedMph` property basically overlays scaled `GlobalAccelerationG`.  
+Here is [Gnuplot delta_v() script](delta.txt) that plotted it. 
