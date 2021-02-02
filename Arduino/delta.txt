@@ -1,0 +1,8 @@
+set size ratio 0.4
+set yrange [-2.0:3.0]
+d30(x) = (x / 30)
+delta_v(x) = (vD = x - old_v, old_v = x, vD)
+old_v = NaN
+plot 'YawSpeedAccel.txt' using 0:(d30($3)) w l
+replot 'YawSpeedAccel.txt' using 0:(delta_v($2)) w l
+replot 'YawSpeedAccel.txt' using 0:(delta_v($1)) w l
