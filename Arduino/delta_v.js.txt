@@ -7,6 +7,12 @@ if(root["yaw"]==null) {
    root["yaw"] = $prop('OrientationYaw');
    root["delta_y"] = 0.2;
 }
+if (null==root["Gsb4"])
+  root["Gsb4"] = $prop('Settings.decel_gain') * 0.5;
+if (null==root["Gyb4"])
+  root["Gyb4"] = $prop('Settings.yaw_gain') * 0.5;
+var Gsb4 = root["Gsb4"], Gyb4 = root["Gyb4"];       // lowpass IIR outputs
+
 var s = $prop('SpeedMph');
 var y = $prop('OrientationYaw');
 var ds = s - root["speed"];
@@ -34,6 +40,7 @@ if ((ds * root["delta_s"])  > t && ds > 1.8 * root["delta_s"])
 // optional low-pass filters here
 Gsb4 += ms * (Gs - Gsb4) / tcs;
 Gyb4 += my * (Gy - Gyb4) / tcy;
+root["Gsb4"] = Gsb4; root["Gyb4"] = Gyb4; // preserve lowpass IIR outputs for next samples
 
 // store unfiltered values for next increment
 root["speed"] = s;
@@ -42,8 +49,8 @@ root["delta_y"] = dy;
 root["delta_s"] = ds;
 
 // convert from braking and delta yaw to left and right tension control values
-var l = Math.round(Gs - Gy);
-var r = Math.round(Gs + Gy);
+var l = Math.round(Gsb4 - Gyb4);
+var r = Math.round(Gsb4 + Gyb4);
 if (l > 126)
   l = 126;
 else if (l < 2)
@@ -61,6 +68,10 @@ var ls = l.toString();	// to debug, e.g. substitute s,y or ds,dy or Gs,Gy for l,
 var rs = r.toString();
 
 if ($prop('Settings.TestOffsets')) {
+  root["delta_s"] = 0.2;  // re-initialize
+  root["delta_y"] = 0.2;
+  root["Gyb4"] = $prop('Settings.yaw_gain') * 0.5;
+  root["Gsb4"] = $prop('Settings.decel_gain') * 0.5;
   ls = String.fromCharCode.apply(126);
   rs = String.fromCharCode.apply(127);
   return ls.concat(rs);
