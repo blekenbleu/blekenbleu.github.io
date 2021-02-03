@@ -1,8 +1,3 @@
-set size ratio 0.4
-set yrange [-2.0:3.0]
-d30(x) = (x / 30)
-delta_v(x) = (vD = x - old_v, old_v = x, vD)
-old_v = NaN
-plot 'YawSpeedAccel.txt' using 0:(d30($3)) w l
-replot 'YawSpeedAccel.txt' using 0:(delta_v($2)) w l
-replot 'YawSpeedAccel.txt' using 0:(delta_v($1)) w l
+set size ratio 0.3
+set yrange [-200:200]
+p 'tension_log.txt' u 0:1 w l t 'left', '' u 0:2 w l t 'right', '' u 0:3 w l t 'speed', '' u 0:4 w l t 'yaw', '' u 0:5 w l t 'decel', '' u 0:6 w l t 'delta yaw'
