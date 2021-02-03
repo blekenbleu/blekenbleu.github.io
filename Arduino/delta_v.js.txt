@@ -1,11 +1,11 @@
 // Initialize history
-if(root["speed"]==null){
+if(root["speed"]==null) {
    root["speed"] = $prop('SpeedMph');
-   root["delta_s"] = 0;
+   root["delta_s"] = 0.2;
 }
-if(root["yaw"]==null){
+if(root["yaw"]==null) {
    root["yaw"] = $prop('OrientationYaw');
-   root["delta_y"] = 0;
+   root["delta_y"] = 0.2;
 }
 var s = $prop('SpeedMph');
 var y = $prop('OrientationYaw');
@@ -16,30 +16,34 @@ if (ds > 0)     // we are only interested in deceleration
      ds = 0;
 else ds = - ds; // positive deceleration
 
-ds = dy = .5	// force something to test
-
 if (dy > 180) {  // yaw went +/- 180
   if (root["yaw"] > 150 || root["yaw"] < -150)
     dy = y + root["yaw"];
 }
 
+var Gy = $prop('Settings.yaw_gain') * dy;
+var Gs = $prop('Settings.decel_gain') * ds;
+var ms = 1, my = 1;  // sample interval factors
 
-var Gy = Math.round($prop('Settings.yaw_gain')) * dy;
-var Gs = Math.round($prop('Settings.decel_gain')) * ds;
-if (Math.abs(dy) > 2 && Math.abs(dy) > Math.abs(1.8 * root["delta_y"]))
-  Gy /= 2;      // remove sampling artifacts
-if (ds > 2 && ds > 1.8 * root["delta_s"])
-  Gs /= 2;      // remove sampling artifacts
+// check for delta spikes from missed samples
+if (Math.abs(dy * root["delta_y"]) > t && Math.abs(dy) > Math.abs(1.8 * root["delta_y"]))
+  Gy /= (my = 2);      // compensate sampling artifacts
+if ((ds * root["delta_s"])  > t && ds > 1.8 * root["delta_s"])
+  Gs /= (ms = 2);      // compensate sampling artifacts
+  
+// optional low-pass filters here
+Gsb4 += ms * (Gs - Gsb4) / tcs;
+Gyb4 += my * (Gy - Gyb4) / tcy;
 
-// store values for next increment
+// store unfiltered values for next increment
 root["speed"] = s;
 root["yaw"] = y;
 root["delta_y"] = dy;
 root["delta_s"] = ds;
 
 // convert from braking and delta yaw to left and right tension control values
-var l = Gs - Gy;
-var r = Gs + Gy;
+var l = Math.round(Gs - Gy);
+var r = Math.round(Gs + Gy);
 if (l > 126)
   l = 126;
 else if (l < 2)
@@ -53,7 +57,13 @@ r |= 1;         // right lsb is 1
 
 // var ls = String.fromCharCode.apply(l);	// tension control characters
 // var rs = String.fromCharCode.apply(r);
-var ls = l.toString();	// to debug, e.g. substitute s,y or ds,dy for l,r
+var ls = l.toString();	// to debug, e.g. substitute s,y or ds,dy or Gs,Gy for l,r
 var rs = r.toString();
-if (!$prop('Settings.TestOffsets'))	// disable telemetry when testing offsets
-  return ls.concat(' ', rs,'\r\n');
+
+if ($prop('Settings.TestOffsets')) {
+  ls = String.fromCharCode.apply(126);
+  rs = String.fromCharCode.apply(127);
+  return ls.concat(rs);
+}
+else 
+  return ls.concat(' ', rs,'\r\n');	// gnuplot columns for debugging
