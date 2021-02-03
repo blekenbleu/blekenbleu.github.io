@@ -79,4 +79,4 @@ While it would be nice to have delta_v filter code in a more legible format,
 my guess is that SimHub live interpreter does not work for JavascriptExtensions.  
 
 SimHub has Visible Bindings and Enabled Bindings for CUSTOM SERIAL DEVICE Setting panel;
-don't know what two different bindings imply.
+don't know what two different bindings imply.  Sliders work without forcing settings in their Bindings.
