@@ -1,3 +1,7 @@
+// simple low pass IIR filters
+var t = 2;                                   // non-linear spike threshold
+var tc = $prop('Settings.smooth');  // lowpass IIR
+
 // Initialize history
 if(root["speed"]==null) {
    root["speed"] = $prop('SpeedMph');
@@ -49,8 +53,8 @@ root["delta_y"] = dy;
 root["delta_s"] = ds;
 
 // convert from braking and delta yaw to left and right tension control values
-var l = Math.round(Gsb4 - Gyb4);
-var r = Math.round(Gsb4 + Gyb4);
+var l = Math.round(Gsb4 + Gyb4);	// your other left
+var r = Math.round(Gsb4 - Gyb4);
 var tmax = $prop('Settings.tmax') & 126;
 if (l > tmax)
   l = tmax;
