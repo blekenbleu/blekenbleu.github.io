@@ -55,4 +55,5 @@ plot csv u (pc(column(c))) t '>200 days', \
 set output 'stats.png'
 set term png size 1600,1061
 replot
+#system("bash -c 'echo ".day.' '.c."'") 
 system("bash -c 'source seq.sh ".day."'")

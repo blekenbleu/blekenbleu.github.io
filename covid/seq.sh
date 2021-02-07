@@ -1,10 +1,11 @@
 sequence()
 {
-  let seq=10000*$3
-  let s=100*$1
+  let seq=$1%100
+  let seq=10000*$seq
+  let s=100*$2
   let seq=${seq}+${s}
-  let n=${2#0*}
-  let seq=${seq}+${n}
+# let n=${2#0*}
+  let seq=${seq}+${3}
   echo "frame${seq}.png"
 }
 
