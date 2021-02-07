@@ -52,9 +52,9 @@ void loop() {
   }
   if (0 < Serial.available()) {
     received = Serial.read();
-//  Serial.write(received);
-    Serial.write(hex[received>>4]);
-    Serial.write(hex[0x0F&received]);
+    Serial.write(received);
+//  Serial.write(hex[received>>4]);
+//  Serial.write(hex[0x0F&received]);
     if (1 & received) {
 //    right.write((127&received)+radd);
       even = 40;		// LED briefly on
