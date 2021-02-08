@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Haptic engineering</title>
+<style>
+body {
+  margin: 60px;
+}
+th {
+  text-align: left;
+}
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<font size=-1><a href="index.htm"><i>back</i></a></font>
+<a name=sim><h2>Haptic engineering</h2></a>
+<font size=+1>
+<sl>
+<li><a href="#intro">Introduction</a>
+</sl>
+
+<a name=intro>
+<h4>Introduction</h4></a>
+Haptic refers to the touch sensation, for which read <a href="https://en.wikipedia.org/wiki/Haptics">elsewhere</a>.<br>
+Engineering implies economic deployment of resources, where resources include <a href="https://en.wikipedia.org/wiki/Haptic_technology">technology</a>.<br>
+According to the 80/20 rule, we are nearly 80% done...&nbsp  Economic implies math;&nbsp here is some:<ul compact>
+<li><code>log(a)+log(b) = log(a*b)</code><br>
+This means signals additively mixed nonlinearly effectively multiply.
+<li><code>sin(A)*sin(b) = 1/2(cos(a-b) - cos(a+b))</code><br>
+This means that multiplying two sinusoids results in sum and difference frequencies with phase shift.<br>
+suggesting that linearity can be an important consideration in haptic systems.<br>
+<li><code>x''(t) + x(t)*w**2 = 2*w*cos(w*t)</code><br>
+This corresponds to <i>resonance</i> e.g. of a mass and perfectly elastic spring -or- capacitance and inductance without resistance;<br>
+resonances <i>strongly</i> influence haptics.&nbsp Inelasticity or resistance dampen resonances.
+<li><a href="https://www.sciencedirect.com/topics/engineering/transmission-line-theory">Transmission line</a> effects are also involved;&nbsp
+haptic tranducers drive into structures with <a href="https://en.wikipedia.org/wiki/Distributed_parameter_system">distributed parameters</a>.
+</ul>
+Engineering is about weighing tradeoffs among relationships, and <i>weighing</i> implies measurements.<br>
+Here, inexpensive contact microphone elements will proxy for accelerometers in haptic stimulus measurements.<br>
+<img width=650 src="contact.jpg"><br clear=all>
+Relationship of electrical signals x(t) and y(t) is traditionally evaluated using an <a href="https://www.keysight.com/main/editorial.jspx?cc=US&lc=eng&ckey=2838609">x/y oscilloscope</a>,<br>
+which is here implemented by a Windows PC, <a href="http://wa8lmf.net/Scope/index.htm">Visual Analyzer</a> software and sound card.<br>
+While a (US$30) <a href="https://www.amazon.com/dp/B000KW2YEI">Behringer UCA202</a> would suffice,
+an obsolete <a href="https://www.presonus.com/products/audiobox-usb">PreSonus AudioBox USB</a> is repurposed here.<br>
+As with many other audio products, the PreSonus is plug-and-play on macOS,<br> but according to PreSonus on Windows requires
+<a href="https://support.presonus.com/hc/en-us/articles/210044673-How-do-I-uninstall-and-reinstall-my-AudioBox-drivers-in-Windows-8-or-Windows-10-">precisely sequenced proprietary driver installation</a>.<br>
+In the actual event, after downloading and installing the latest AudioBox USB software from PreSonus,<br> Windows 10 installed Microsoft drivers for it...<br>
+The first measurement candidate will be a <a href="https://www.daytonaudio.com/product/1180/daex32ep-4-thruster-32mm-exciter-40w-4-ohm">Dayton DAEX32EP-4 exciter</a>.<br>
+<img src="Dayton.jpg"><br clear=all>
+<p>
+Beyond linearity evaluation, contact mics may be useful for<ul compact>
+<li>frequency response measurements, e.g. <a href="https://www.roomeqwizard.com/">using Room EQ Wizard</a>, which requires Java 8 (1.8)<br>
+which is installed on my PC at <code>/e/my/Android/jre/bin/</code> or <code>E:\my\Android\jre\bin\</code><br>
+REW <a href="https://www.roomeqwizard.com/help/help_en-GB/html/primer.html">measurements</a> include RTA, frequency and phase response, impulse response and waterfalls.
+<li>spectral analyses.&nbsp If (despite <a href="https://www.avnirvana.com/forums/official-rew-room-eq-wizard-support-forum.10/">extensive support</a>) REW disappoints, alternatives include:<ul compact>
+<li><a href="https://sourceforge.net/projects/audmes/">AUDio MEasurement System</a> - already installed - 2-channel audio generator supports phase difference between channels
+<li><a href="http://www.sillanumsoft.org/">Visual Analyser</a> - already installed. x/y oscilloscope supports time delay between channels
+<li><a href="http://www.artalabs.hr/">ARTA</a>
+<li><a href="http://www.techmind.org/audio/specanaly.html">Audio Spectrum Analyser</a>
+<li><a href="https://www.hecticgeek.com/friture-real-time-audio-input-analyzer-with-spectrograms/">Friture</a>
+<li><a href="http://spek.cc/">Spek</a>
+<li><a href="https://www.libinst.com/SynRTA.htm">SynRTA</a>
+<li><a href="https://listoffreeware.com/free-audio-spectrum-analyzer-software-windows/">more...</a>
+</ul>
+</ul>
+</font>
+</body>
+</html>
