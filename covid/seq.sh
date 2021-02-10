@@ -3,9 +3,12 @@ sequence()
   let seq=$1%100
   let seq=10000*$seq
   let s=100*$2
-  let seq=${seq}+${s}
+# strip leading zero
 # let n=${2#0*}
-  let seq=${seq}+${3}
+  let n=${3#0*}
+  let s=$s+$n
+  let seq=${seq}+${s}
+# let seq=${seq}+${n}
   echo "frame${seq}.png"
 }
 

@@ -39,7 +39,7 @@ grab ()
   Pop=$6
   loc="\"$2 $5\""
   FIPS=$4
-  line=`grep ,$FIPS,0, $fco`
+  line=`grep ^$FIPS, $fco`
   if [ -z "$line" ] ; then
     echo $0 fail for $loc FIPS $4 from $fco
     return
