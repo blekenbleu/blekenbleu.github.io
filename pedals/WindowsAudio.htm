@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Windows Audio</title>
+<style>
+body {
+  margin: 60px;
+}
+th {
+  text-align: left;
+}
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<font size=-1><a href="index.htm"><i>back</i></a></font>
+<a name=sim><h2>Windows Audio</h2></a>
+a never ending disaster
+<font size=+1>
+<sl>
+<li><a href="#intro">Introduction</a>
+<li><a href="#listen">Listening</a>
+<li><a href="#channels">Output channels</a>
+<li><a href="#levels">Output channel Levels and Enabling</a>
+<li><a href="#control">Control Panels</a>
+</sl>
+
+<a name=intro>
+<h4>Introduction</h4></a>
+<p>It is useful to keep in mind that Windows became successful by:<ul compact>
+<li>moving fast
+<li>trying to maintain backward compatibility.
+</ul>
+There are many controls on many panels that interact in many unobvious ways to affect<br>
+the many unobvious ways that sound works (or doesn't).</p>
+<a name=listen>
+<h4>microphone</h4></a>
+Windows has a "listening" concept, which is related, but not essential, to microphone usage.<br>
+To disable listening by <code>Host Process for Windows Services</code>:<ol compact>
+<li>Right-click volume icon.
+<li>Select "Open Sound settings"<br>
+This [code]Sound[/code] settings panel is also available from the main [Settings] panel under [System]
+<li>Select "Sound Control Panel" in <code>Settings | Sound </code> right sidebar under <b>Related Settings</b>
+<li>Select "Recording" tab in the newly opened <code>Sound</code> window
+<li>Select, in turn, each device
+<li>Select "Properties" button in bottom right corner
+<li>Select "Listen" tab in the newly opened <code>Properties</code> window
+<li>Un-check the box next to "Listen to this device"
+<li>Select "OK" to exit that <code>Properties</code> window
+<li>Return to 5. for each subsequent device.
+<li>Select "OK" again to exit <code>Sound</code> window
+</ol>
+<a name="channels">
+<h4>Stereeo vs Quadraphonic vs 5.1 Surround vs 7.1 Surround</h4></a>
+Windows supports 4 channel configurations for non-Digital <code>Playback</code> devices<br>
+in the <code>Sound</code> window of step 4., above.<br>
+<code>Quadraphonic</code> seemingly is of no use for haptics.<br>
+To verify and/or configure correct output channel settings,<ol compact>
+<li>Select the <code>Playback</code> tab
+<li>Select, in turn, each non-digital playback device
+<li>Select the lower left "Configure" button
+<li>Select the number of outputs actually available;<br>
+no need to test in this window; press "Next"
+<li>enable all possible "speakers";<br>
+test any currently connected and powered, then press "Next"
+<li>select all speakers as full range;<br>
+otherwise low frequencies will be rerouted, then press "Next", then "Finish".
+</ol>
+<a name=levels>
+<h4>Output channel Levels and Enabling</h4>
+Just because channels are correctly configured does not necessarily mean<br>
+that audio signals will find their way out.<br>
+In the <a href=#channels>above</a> step 3.,<ol compact>
+<li>instead of  "Configure", press "Properties"
+<li>Select the "Levels" tab<br>
+<code>100</code> will generally be the wanted value
+<li>Select the "Advanced" tab<br>
+<code>24 bit, 48000Hz</code> will generally be a good setting,<br>
+but <img align=center src="Test.gif"> if possible
+<li>Select the "Spatial sound" tab, then <code>Off</code>
+<li>back in step 2 of <a href=#listen>microphone</a>,<br>
+Select "Manage sound devices" instead of "Sound Control Panel"
+<li>Select, in turn, each item in <code>Output devices</code> under "Disabled"
+<li>Enable as appropriate
+<li>Enabled devices can also be tested here.<br>
+You may notice that some devices are nonsensical.<br>
+For example, Windows 10 separately lists Sound Blaster X-Fi <code>Speaker</code> and <code>SPDIF-Out</code><br>
+but testing either generates audio from both.&nbsp Blame Microsoft or Creative... I blame both.
+</ol>
+<a name=control>
+<h4>Control Panel</h4>
+Note that while Sound control panels are accesible from Settings menus,<br>
+game controllers (other than X-Box) are NOT; they are accessed from the separate<br>
+<code>Control Panel</code> applet, under "Hardware and Sound" > "Devices and Printers".<br>
+On my system, at least, Thrustmaster's TH8 shifter is under "Multimedia Devices",<br>
+while SideWinder joystick is under "Devices", along with sound cards, routers, mice, VR Headset...<br>
+Right-clicking either SideWinder or TH8 offers <code>Game Controller Settings</code>, so it could be worse...<br>
+
+<p>
+</font>
+</body>
+</html>
