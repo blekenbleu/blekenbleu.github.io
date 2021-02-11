@@ -65,25 +65,33 @@ Adding mass to piezo sandwich backside, e.g. a steel hex nut by hot-glue, also i
 </ol>
 <br>
 Relationship of electrical signals x(t) and y(t) is traditionally evaluated using an <a href="https://www.keysight.com/main/editorial.jspx?cc=US&lc=eng&ckey=2838609">x/y oscilloscope</a>,<br>
-which is here implemented by a Windows PC, <a href="http://wa8lmf.net/Scope/index.htm">Visual Analyzer</a> software and sound card.<br>
-While a (US$30) <a href="https://www.amazon.com/dp/B000KW2YEI">Behringer UCA202</a> would suffice,
+which is here implemented by a Windows PC, software and sound card.<br>
+While a (US$30) <a href="https://www.amazon.com/dp/B000KW2YEI">Behringer UCA202</a> should suffice,
 an obsolete <a href="https://www.presonus.com/products/audiobox-usb">PreSonus AudioBox USB</a> is repurposed here.<br>
 As with many other audio products, the PreSonus is plug-and-play on macOS,<br> but according to PreSonus on Windows requires
 <a href="https://support.presonus.com/hc/en-us/articles/210044673-How-do-I-uninstall-and-reinstall-my-AudioBox-drivers-in-Windows-8-or-Windows-10-">precisely sequenced proprietary driver installation</a>.<br>
 In the actual event, after downloading and installing PreSonus' latest AudioBox USB software,<br>
 Windows 10 installed Microsoft drivers for it...<br>
-The first measurement candidate will be a <a href="https://www.daytonaudio.com/product/1180/daex32ep-4-thruster-32mm-exciter-40w-4-ohm">Dayton DAEX32EP-4 exciter</a>.<br>
+One AudioBox limitation is that  its outputs cannot be <i>fully</i> isolated from inputs;<br>
+attempting to drive haptic amplifier from its output while using its inputs to amplify piezo signals will encounter feedback.<br>
+Consequently, some other audio interface must be employed for driving haptics.<br>
+<br>
+The first measurement candidate was a <a href="https://www.daytonaudio.com/product/1180/daex32ep-4-thruster-32mm-exciter-40w-4-ohm">Dayton DAEX32EP-4 exciter</a>.<br>
 <img src="Dayton.jpg"><br clear=all>
 <p>
 Beyond linearity evaluation, contact mics may be useful for<ul compact>
 <li>frequency response measurements, e.g. <a href="https://www.roomeqwizard.com/">using Room EQ Wizard</a>, which requires Java 8 (1.8)<br>
 which is installed on my PC at <code>/e/my/Android/jre/bin/</code> or <code>E:\my\Android\jre\bin\</code><br>
 REW <a href="https://www.roomeqwizard.com/help/help_en-GB/html/primer.html">measurements</a> include RTA, frequency and phase response, impulse response and waterfalls.
-<li>spectral analyses.&nbsp If (despite <a href="https://www.avnirvana.com/forums/official-rew-room-eq-wizard-support-forum.10/">extensive support</a>) REW disappoints,
+<li>spectral analyses of "live" haptic signasl.&nbsp If (despite <a href="https://www.avnirvana.com/forums/official-rew-room-eq-wizard-support-forum.10/">extensive support</a>) REW disappoints,
 alternatives include:<ul compact>
-<li>already installed:<ul compact>
+<li>installed:<ul compact>
 <li><a href="https://sourceforge.net/projects/audmes/">AUDio MEasurement System</a> - 2-channel audio generator supports phase difference between channels
-<li><a href="http://www.sillanumsoft.org/">Visual Analyser</a> - x/y oscilloscope supports time delay between channels
+<li><a href="http://www.sillanumsoft.org/">Visual Analyser</a> - x/y oscilloscope supports time delay between channels, but insuffient trace persistence for signals below 50Hz.
+<li><a href="https://www.zeitnitz.eu/scope_en">Soundcard Scope</a><br>
+Its separate XY graph tool includes a Time of Persistence slider, which works to low frequencies.<br>
+Its separable signal generator support phase between channels and frequency sweeps,<br>
+but does not sync one generator to the other; frequency settings must be manually coordinated.
 </ul>
 <li>others<ul compact>
 <li><a href="http://www.artalabs.hr/">ARTA</a>
