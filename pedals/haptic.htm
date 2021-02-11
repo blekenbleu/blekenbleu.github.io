@@ -42,8 +42,12 @@ resonances <i>strongly</i> influence haptics.&nbsp Inelasticity or resistance da
 <li><a href="https://www.sciencedirect.com/topics/engineering/transmission-line-theory">Transmission line</a> effects are also involved;&nbsp
 haptic tranducers drive into structures with <a href="https://en.wikipedia.org/wiki/Distributed_parameter_system">distributed parameters</a>.
 </ul>
-Haptics here will be only those controlly by <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Bass-Shakers---Audio-Output-Configuration">SimHub ShakeIt Bass Shakers Audio Output</a>,<br>
-... which only work for properly configured <a href="WindowsAudio.htm">Windows Audio</a>.<br>
+Haptics here will be only those controlled by <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Bass-Shakers---Audio-Output-Configuration">SimHub ShakeIt Bass Shakers Audio Output</a>,<br>
+... which only work for properly configured <a href="WindowsAudio.htm">Windows Audio</a>.
+<p>Before proceeding, haptics and Windows audio can be problematic, even <i>without unreliable electrical connections</i>.<br>
+To that end, both a multimeter and <a href="https://www.ebay.com/itm/362924077798">DeoxIT connector treatments and fader lube</a> are wanted,<br>
+along with <a href="https://www.amazon.com/gp/product/B01HFTYINS">blunt needle applicators</a> to precisely apply DeoxITs without disassembly.
+</p>
 Engineering is about weighing tradeoffs among relationships, and <i>weighing</i> implies measurements.<br>
 Here, inexpensive contact microphone elements will proxy for accelerometers in haptic stimulus measurements.<br>
 <img width=650 src="contact.jpg"><br clear=all>
@@ -52,10 +56,12 @@ Tips:<ol compact>
 <li>Piezos have high source impedance, increasing noise sensitivity;<br>
 given that high impedance, piezos are a better match for so-called instrument inputs,<br>
 for which AudioBox has 500,000 Ohms input impedance, compared to 1200 Ohms for microphones.<br>
-However, instrument inputs are single-ended. A belly-to-belly, electrically parallel, pair with outer metal disks soldered to ground<br>
-and red leads both soldered to "hot" improves shielding and halves source impedance, improving low frequency response.
+However, high impedance instrument inputs are single-ended.<br>
+An electrically parallel, piezo pair <img width=120 align=top src="contact_pair.jpg"> with metal discs grounded,<br>
+red leads both soldered to "hot", and hot-glued together: <img width=200 align=center src="glued_pair.jpg"><br>
+adds shielding and halves source impedance, improving low frequency response.
 <li>As with exciters and other haptic transducers, contact microphones depend on mass loading.<br>
-Adding mass to piezo sandwich backside, e.g. a steel hex nyt by hot-glue, also improves low frequency response
+Adding mass to piezo sandwich backside, e.g. a steel hex nut by hot-glue, also improves low frequency response
 </ol>
 <br>
 Relationship of electrical signals x(t) and y(t) is traditionally evaluated using an <a href="https://www.keysight.com/main/editorial.jspx?cc=US&lc=eng&ckey=2838609">x/y oscilloscope</a>,<br>
