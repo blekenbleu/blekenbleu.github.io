@@ -171,53 +171,11 @@
   "Description": "Assetto Corsa - AS1.siprofile re-imported with shorter name",
   "EffectsContainers": [
     {
-      "BrakeFilter": 10,
-      "Filter": {
-        "GammaValue": 1.0,
-        "InputGain": 76.0,
-        "MinimumForce": 0,
-        "Threshold": 0,
-        "FilterType": "GammaFilter"
-      },
-      "MuteWhenLockEffectIsActive": false,
-      "ThrottleFilter": 10,
-      "UseBrakeFilter": false,
-      "UseThrottleFilter": false,
-      "IsMuted": false,
-      "ContainerId": "9f82a59a-1616-4aa5-b66c-012ed01e31a3",
-      "ContainerType": "WheelsSlipContainer",
-      "Description": "Provide localized wheel slip feedback",
-      "AggregationMode": "Corners",
-      "Gain": 100.0,
-      "IsEnabled": false,
-      "Output": {
-        "UsePrehemptiveMode": false,
-        "Frequency": 120,
-        "UseHighFrequency": true,
-        "HighFrequency": 30,
-        "WhiteNoise": 10,
-        "UseWhiteNoise": false,
-        "EnableDurationModulation": false,
-        "DurationModulationValue": 34,
-        "FrequencyBasedOnPreFilter": false,
-        "Harmonics": 0,
-        "HoldMode": 1,
-        "DelayEnabled": false,
-        "AssignToChannelGroup": false,
-        "ChannelGroupName": "",
-        "PropertyName": "corner_slips",
-        "ExportProperty": true,
-        "DisableOutput": false,
-        "OutputType": "ToneOutput"
-      },
-      "Algorythm": "Slip data"
-    },
-    {
       "Filter": {
         "ControlPoints": [
           "5;79.2202412673804",
-          "17.3583115959213;46.7644493968315",
-          "20.298790609438;0",
+          "21.8164571970595;38.3423768228283",
+          "26.9385819302822;0",
           "93;43",
           "100;58",
           "86;0"
@@ -230,7 +188,7 @@
       "ContainerType": "RPMContainer",
       "Description": "Simulates engine RPMS with a full customizable RPM/response curve",
       "AggregationMode": null,
-      "Gain": 17.400000000000148,
+      "Gain": 20.60000000000008,
       "IsEnabled": true,
       "Output": {
         "UsePrehemptiveMode": false,
