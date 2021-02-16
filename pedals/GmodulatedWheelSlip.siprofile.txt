@@ -81,13 +81,11 @@
               "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
             },
             "Left": {
-              "MapsStore": "0;1;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
+              "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
             },
             "Right": {
-              "MapsStore": "0;0;100;|1;1;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
-            }
-          },
-          "WheelsSlipContainer": {
+              "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
+            },
             "FrontLeft": {
               "MapsStore": "0;1;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
             },
@@ -99,6 +97,20 @@
             },
             "RearRight": {
               "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;1;100;"
+            }
+          },
+          "WheelsSlipContainer": {
+            "FrontLeft": {
+              "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
+            },
+            "FrontRight": {
+              "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
+            },
+            "RearLeft": {
+              "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
+            },
+            "RearRight": {
+              "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
             }
           },
           "RPMContainer": {
@@ -177,7 +189,7 @@
       "Description": "Provide localized wheel slip feedback",
       "AggregationMode": "Corners",
       "Gain": 100.0,
-      "IsEnabled": true,
+      "IsEnabled": false,
       "Output": {
         "UsePrehemptiveMode": false,
         "Frequency": 120,
@@ -218,7 +230,7 @@
       "ContainerType": "RPMContainer",
       "Description": "Simulates engine RPMS with a full customizable RPM/response curve",
       "AggregationMode": null,
-      "Gain": 13.6666666666668,
+      "Gain": 17.400000000000148,
       "IsEnabled": true,
       "Output": {
         "UsePrehemptiveMode": false,
@@ -297,41 +309,41 @@
     {
       "AutocalibrationMax": 95.0,
       "Filter": {
-        "GammaValue": 1.3500000000000003,
+        "GammaValue": 2.3,
         "InputGain": 76.0,
-        "MinimumForce": 0,
-        "Threshold": 0,
+        "MinimumForce": 15,
+        "Threshold": 42,
         "FilterType": "GammaFilter"
       },
       "FrontLeftFormula": {
         "Interpreter": 1,
-        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip01')*(100-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
+        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip01')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
       },
       "FrontRightFormula": {
         "Interpreter": 1,
-        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip02')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left')-0)*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
+        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip02')*(100-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
       },
       "RearLeftFormula": {
         "Interpreter": 1,
-        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip03')*(100-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-0)"
+        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip03')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-0)"
       },
       "RearRightFormula": {
         "Interpreter": 1,
-        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip04')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left')-0)*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-0)"
+        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip04')*(100-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-0)"
       },
       "IsMuted": false,
       "ContainerId": "cc64cec4-9dc5-4e26-bce2-ef087adb2c84",
       "ContainerType": "CustomEffectContainer",
       "Description": "Provides ability to create your own effect based on game data",
       "AggregationMode": "Corners",
-      "Gain": 90.0,
+      "Gain": 100.0,
       "IsEnabled": true,
       "Output": {
         "UsePrehemptiveMode": false,
-        "Frequency": 800,
+        "Frequency": 906,
         "UseHighFrequency": true,
         "HighFrequency": 30,
-        "WhiteNoise": 10,
+        "WhiteNoise": 54,
         "UseWhiteNoise": true,
         "EnableDurationModulation": true,
         "DurationModulationValue": 34,
