@@ -257,7 +257,7 @@
       },
       "FrontRightFormula": {
         "Interpreter": 1,
-        "Expression": "// longitudinal G proxy\r\nvar s = $prop('SpeedKmh');\r\nconst tc = 3;  // IIR smoothing factor\r\nconst noise = 0.01 // non-linear filter threshold\r\n\r\n// initialize IIR filter history\r\nif(null==root[\"speed\"]) {\r\n   root[\"speed\"] = $prop('SpeedKmh');\r\n   root[\"delta_s\"] = 0.2;       // for missed sample\r\n}\r\nif (null==root[\"Gsb4\"])\r\n  root[\"Gsb4\"] = 0.5;\r\n\r\nvar ds = root[\"speed\"] - s;       // negative change between sample intervals\r\nroot[\"speed\"] = s;\r\ns = root[\"delta_s\"];    // previous sample change\r\n\r\n// mitigate delta spikes from missed samples\r\nvar ms = 1;     // sample interval\r\nif ((Math.abs(ds * s) > noise)\r\n && (Math.abs(ds) > Math.abs(1.8 * s)))\r\n  ds /= (ms = 2);\r\n\r\nroot[\"delta_s\"] = ds;\r\n\r\n// IIR low-pass filter\r\nvar Gsb4 = root[\"Gsb4\"];        // lowpass IIR output\r\nGsb4 += ms * (ds - Gsb4) / tc;\r\nroot[\"Gsb4\"] = Gsb4;\r\nreturn 50 + (80*Gsb4);  "
+        "Expression": "// longitudinal G proxy\r\nvar s = $prop('SpeedKmh');\r\nconst tc = 3;  // IIR smoothing factor\r\nconst noise = 0.01 // non-linear filter threshold\r\n\r\n// initialize IIR filter history\r\nif(null==root[\"speed\"]) {\r\n   root[\"speed\"] = $prop('SpeedKmh');\r\n   root[\"delta_s\"] = 0.2;       // for missed sample\r\n}\r\nif (null==root[\"Gsb4\"])\r\n  root[\"Gsb4\"] = 0.5;\r\n\r\nvar ds = root[\"speed\"] - s;       // negative change between sample intervals\r\nroot[\"speed\"] = s;\r\ns = root[\"delta_s\"];    // previous sample change\r\n\r\n// mitigate delta spikes from missed samples\r\nvar ms = 1;     // sample interval\r\nif ((Math.abs(ds * s) > noise)\r\n && (Math.abs(ds) > Math.abs(1.8 * s)))\r\n  ds /= (ms = 2);\r\n\r\nroot[\"delta_s\"] = ds;\r\n\r\n// IIR low-pass filter\r\nvar Gsb4 = root[\"Gsb4\"];        // lowpass IIR output\r\nGsb4 += ms * (ds - Gsb4) / tc;\r\nroot[\"Gsb4\"] = Gsb4;\r\nreturn 50 + (60*Gsb4);  "
       },
       "RearLeftFormula": {
         "Expression": ""
@@ -270,7 +270,7 @@
       "ContainerType": "CustomEffectContainer",
       "Description": "Provides ability to create your own effect based on game data",
       "AggregationMode": "Left/Right",
-      "Gain": 90.0,
+      "Gain": 0.0,
       "IsEnabled": true,
       "Output": {
         "UsePrehemptiveMode": false,
@@ -297,7 +297,7 @@
     {
       "AutocalibrationMax": 95.0,
       "Filter": {
-        "GammaValue": 1.0,
+        "GammaValue": 1.3500000000000003,
         "InputGain": 76.0,
         "MinimumForce": 0,
         "Threshold": 0,
@@ -305,19 +305,19 @@
       },
       "FrontLeftFormula": {
         "Interpreter": 1,
-        "Expression": "return .08*$prop('GameRawData.Physics.WheelSlip01')*(60-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(60-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
+        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip01')*(100-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
       },
       "FrontRightFormula": {
         "Interpreter": 1,
-        "Expression": "return .08*$prop('GameRawData.Physics.WheelSlip02')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left')-40)*(60-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
+        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip02')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left')-0)*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
       },
       "RearLeftFormula": {
         "Interpreter": 1,
-        "Expression": "return .08*$prop('GameRawData.Physics.WheelSlip03')*(60-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-40)"
+        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip03')*(100-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-0)"
       },
       "RearRightFormula": {
         "Interpreter": 1,
-        "Expression": "return .08*$prop('GameRawData.Physics.WheelSlip04')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left')-40)*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-40)"
+        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip04')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left')-0)*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-0)"
       },
       "IsMuted": false,
       "ContainerId": "cc64cec4-9dc5-4e26-bce2-ef087adb2c84",
