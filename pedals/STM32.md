@@ -7,15 +7,19 @@ driving and bicycling were as nearly athletic as I cared to get.
 My wife got a BMW E21 320i when her old Toyota Corolla died in the early 1990s.
 The best BMW garage in town offered discounts to BMW CCA members, so we joined.
 This led, in 1995, to a 5-speed [1985 BMW E23 735i](https://drive-my.com/en/test-drive/item/2201-road-test-1985-bmw-735i-e23.html),
-which I waanted to own since reading the September 1985 Road & Track review.
-By 1997, I was driving it at BMW CCA
-driving schools on Watkins Glen, Mont-Tremblant, Road Atlanta, Mid Ohio, Sebring, Summit Point and Putnam Park.  Driving schools mostly ended for us around 2003, owing to increasing expenses and likelihood of non-trivial track offs as my confidence grew. The [Motronic DME](http://www.unixnerd.demon.co.uk/m30.html) had also became unreliable.  Meanwhile, I still ride bicycles...
+which I wanted to own since reading the September 1985 Road & Track review.
+By 1997, I was driving it at BMW CCA driving schools on Watkins Glen, Mont-Tremblant,
+Road Atlanta, Mid Ohio, Sebring, Summit Point and Putnam Park.  
+Driving schools mostly ended for us around 2003, owing to increasing expenses  
+and likelihood of non-trivial track offs as my confidence grew.   
+The [Motronic DME](http://www.unixnerd.demon.co.uk/m30.html) had also became unreliable.  
+Meanwhile, I still ride bicycles...
 
 Nostalgia being what it is, *VIRTUALLY* revisiting driver schools seems attractive.
-Many cars and tracks that I have driven are available with sim racing program Assetto Corsa
+Many cars and tracks driven are available with sim racing program Assetto Corsa
 and can be played using relatively cheap [Logitech G29](https://www.amazon.com/dp/B00Z0UWWYC) pedals and steering wheel.
 Playing Assetto Corsa on conventional PC monitors limits field-of-view;
- I opted for Samsung mixed reality headset.
+A Samsung Odyssey VR headset has since been replaced by HP Reverb G1.  
 
 ## Problems
 By lacking inertial cues from velocity changes, sim racing seems harder than real.
@@ -29,7 +33,9 @@ Those 2 brake simulation shortcomings can be mitigated, respectively, by:
 *   replacing brake potentiometer with a load cell, e.g
 [Logitec G27 Load cell brake modification](https://imgur.com/gallery/gOjAf)  
     * That mod used analog conversion, but [SP_Adapter](https://github.com/robotsrulz/SP_Adapter) separates pedals from wheel.  
+    * since AccuForce controller supports analog pedals, instrumentation amplifier model is less bother than ADC + USB HID module.
 *   simulating ABS feedback at the brake pedal  
+    * ABS is relatively distracting; consider instead simulating disk runout and road noise.
     * e.g. @ 3:47/10:56 of this video: [DIY RUMBLE PEDALS SIM RACING](https://www.youtube.com/watch?v=8aLqqcEaUVk)  
     * Get tire slip data from Assetto Corsa via UDP socket or [Python](https://gist.github.com/robertcedwards/2f7a061af8ccc987aab2)  
     * [proTyres app](https://www.assettocorsa.net/forum/index.php?threads/protyres-v1-0-0-it%E2%80%99s-all-about-the-tyre.43361/) [*requires registration*]
@@ -37,6 +43,7 @@ includes indicator for Tyre slip during braking
 
 
 ## Assetto Corsa software development
+*  SimHub already solved this...  
 *  [Assetto Corsa Programming](https://www.assettocorsa.net/forum/index.php?forums/programming-language-apps-gui-themes.22/)
 *  [acplugins](https://github.com/minolin/acplugins)
 * [Python reference doc](https://www.assettocorsa.net/forum/index.php?attachments/acpythondocumentation-pdf.110364/)
@@ -61,6 +68,7 @@ Monitor app for more or less the complete AC API
 
 
 ## STM32 [HID](../Windows/HID) adapter for G29 pedals with load cell brake
+- AccuForce controller supports analog pedals; interface load cell using instrumentation amplifier module
 - Unlike [ESP8266](ESP8266), STM32 supports custom native USB
 - Prototype using a $2 [Blue Pill](http://wiki.stm32duino.com/index.php?title=Blue_Pill)
 - Blue Pill uses [STM32F103C8T6](https://www.st.com/en/microcontrollers/stm32f103c8.html)
