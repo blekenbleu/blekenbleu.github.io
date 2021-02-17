@@ -160,8 +160,9 @@ such as setting strap offsets based on **next** values.
 Single-character control [avoids serial string blocking and overflows](https://www.forward.com.au/pfod/ArduinoProgramming/Serial_IO/index.html).  
 
 Green LED blink codes can feedback when processing servo values,  
-e.g. briefly off for one belt and briefly on for the other,  
+e.g. briefly off for one servo and briefly on for the other,  
 with 50% duty cycle for idle operation.  
+Probably better to use that LED to signal when servo values are max...  
 Blink timing by `delay()` impacts serial bandwidth, so use `millis()`.
 
 For serial experiments *without* SimHub,  

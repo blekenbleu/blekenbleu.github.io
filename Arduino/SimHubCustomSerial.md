@@ -50,7 +50,7 @@ Perhaps, if some game were recorded,
 then Replay here would show how data worked...?  
 `round([GameRawData.Physics.AccG01],0)`  
 
-[Rough skeleton for SImHub Custom serial device settings](BlueBeltServos.shsds.txt)
+[Rough skeleton for SImHub Custom serial device settings](tension.shsds.txt)
 Need to understand the nature of available SimHub properties for acceleration.  
 First, record a figure 8 track lap, then play it back and record values.  
 Here is a SimHub Custom Serial formula for relevant properties:  
@@ -80,4 +80,4 @@ my guess is that SimHub live interpreter does not work for JavascriptExtensions.
 
 SimHub has Visible Bindings and Enabled Bindings for CUSTOM SERIAL DEVICE Setting panel;  
 don't know what two different bindings imply.  Sliders work without forcing settings in their Bindings.  
-`cp tension.shsds ../GitHubDesktop/blekenbleu.github.io/Arduino/tension.shsds.txt`  
+`cp proxy_G.shsds ../GitHubDesktop/blekenbleu.github.io/Arduino/proxy_G.shsds.txt`  

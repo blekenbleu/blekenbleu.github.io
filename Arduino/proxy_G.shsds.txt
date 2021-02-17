@@ -42,7 +42,7 @@
   "RtsEnable": true,
   "EditorExpanded": true,
   "Name": "Custom Serial device",
-  "Description": "Blue Pill belt servos",
+  "Description": "Blue Pill harness servos",
   "LastErrorDate": "2021-02-09T16:05:02.5348133-05:00",
   "LastErrorMessage": null,
   "IsFreezed": false,
