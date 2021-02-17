@@ -695,7 +695,7 @@ Usefulness of such haptic feedback may vary widely among users<br>
 * e.g.
 <a href="https://www.youtube.com/watch?v=ExJEGp9itHE&t=3550s">Niels Heusinkveld
 indicated that seat feel is overrated</a><br>
-   .. and he cued more visually off horizon movement.<br>
+&nbsp .. and he cued more visually off horizon movement.<br>
 IMO, this feedback is less compelling than that from
 <a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioners</a>,<br>
 but reduces a sense of "something missing".<br>
@@ -718,41 +718,41 @@ resulting in some changes 2x others, which code here detects and mitigates.<br>
 <br>
 Left channel <b>Lateral G-force proxy</b>:<pre><code>// lateral acceleration proxy
 var y = $prop('OrientationYaw');
-const tc = 3;  // IIR smoothing factor
+const tc = 3;  // IIR smoothing factor
 const noise = 0.01 // non-linear filter threshold
 
 // initialize IIR filter history
 if(null==root["yaw"]) {
-   root["yaw"] = $prop('OrientationYaw');
-   root["delta_y"] = 0.2;
+   root["yaw"] = $prop('OrientationYaw');
+   root["delta_y"] = 0.2;
 }
 if (null==root["Gyb4"])
-  root["Gyb4"] = 0.5;
+  root["Gyb4"] = 0.5;
 
-var dy = y - root["yaw"];       // change between sample intervals
+var dy = y - root["yaw"];       // change between sample intervals
 
 // yaw flips at +/- 180
-if (Math.abs(dy) > 180) {  // yaw went +/- 180
-  if (Math.abs(root["yaw"]) > 150)
-    dy = -(y + root["yaw"]);
+if (Math.abs(dy) > 180) {  // yaw went +/- 180
+  if (Math.abs(root["yaw"]) > 150)
+    dy = -(y + root["yaw"]);
 }
 
 root["yaw"] = y;
-y = root["delta_y"];    // previous sample change
+y = root["delta_y"];    // previous sample change
 
 // mitigate delta spikes from missed samples
-var my = 1;     // sample interval
-if ((Math.abs(dy * y) > noise)  // missed sample?
- && (Math.abs(dy) > Math.abs(1.8 * y)))
-  dy /= (my = 2);
+var my = 1;     // sample interval
+if ((Math.abs(dy * y) > noise)  // missed sample?
+ && (Math.abs(dy) > Math.abs(1.8 * y)))
+  dy /= (my = 2);
 
 root["delta_y"] = dy;
 
 // IIR low-pass filter
-var Gyb4 = root["Gyb4"];        // IIR output
-Gyb4 += my * (dy - Gyb4) / tc;  // low-pass IIR
+var Gyb4 = root["Gyb4"];        // IIR output
+Gyb4 += my * (dy - Gyb4) / tc;  // low-pass IIR
 root["Gyb4"] = Gyb4;
-return 50 + (50 * Gyb4);  // range 0-100
+return 50 + (50 * Gyb4);  // range 0-100
 // 50 corresponds to no G force</code></pre>
 <b>Longitudinal acceleration</b> (right channel) is similar, substituting speed for yaw<br>
 <br>
@@ -761,9 +761,9 @@ return 50 + (50 * Gyb4);  // range 0-100
 // since this multiplies two properties with 0-100 ranges,
 // results must be reduced by 100 to return the same range
 // left vs right G-force distributions are applied to wheel slips
-//  by (proxy_G.Left) and (100-proxy_G.Left),
+//  by (proxy_G.Left) and (100-proxy_G.Left),
 // while front-to-rear G-force distributions are by
-//  ( proxy_G.Right-10) vs (90- proxy_G.Right)
+//  ( proxy_G.Right-10) vs (90- proxy_G.Right)
 // to reflect that, while inner wheels may become fully unloaded in corners,
 // track cars are expected to fully unload neither nor rear wheels
 </code></pre>
