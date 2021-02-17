@@ -82,3 +82,8 @@ Black Magic Probe bootloader expects/requires [dfu-util](http://dfu-util.sourcef
 
 BMP bootloader can be installed by ST-Link..
 
+17 Feb 2021
+
+# [Black Pill](https://www.ebay.com/itm/383727848677)
+## 512KB Flash 128KB RAM STM32F411CEU6 module
+

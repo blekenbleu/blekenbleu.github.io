@@ -35,7 +35,8 @@ th, td {
 <li><a href="#pedals">G29 pedals</a>
 <li><a href="#contentmgr">Content Manager</a> &nbsp and <a href="#mods">mods</a>
 <li><a href="#shakeseat">ShakeSeat</a> <a href="#pad">padding</a>
-<li><a href="#ShakeIt">ShakeIt</a>
+<li><a href="#ShakeIt">SimHub ShakeIt</a>
+<li><a href="#Simshakeseat">SimHub for ShakeSeat</a>
 <li><a href="#DD">AccuForce wheel base</a>
 <li><a href="#OG14">Original 14mm wheel adapter</a>
 <li><a href="#analog">Logitech pedals to AccuForce analog inputs</a>
@@ -616,6 +617,7 @@ Support appears to have gravitated to Discord..<br>
 <br>
 <code>SimHubWPF.exe</code> is neither Steam nor Assetto Corsa app;<br>
 it needs launching separately and optionally starts with Windows..<br>
+It can be (and has been) configured  to launch Content Manager instead of Assetto Corsa<br>
 <br>
 Installed on Aurora @ <code>E:\my\SimHub</code><br>
 PayPal'ed license was received promptly and also stored there.<br>
@@ -631,36 +633,23 @@ New profile starts empty; can only add one at a time; cannot tell if supported u
 "Add group" is another mystery<br>
 SimHub appears to save settings automagically..<br>
 <br>
-<font size=-1><b>Tactile Immersion - General Discussion - Hardware & Software</b></font><br>
+<a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-142">
+<font size=-1><b>Tactile Immersion - General Discussion - Hardware & Software</b></font></a><br>
 Every effect has various controls to manipulate the output: amplitude, frequency, etc.<br>
 Both amplitude and frequency can be changed based on the incoming telemetry.<br>
 Effects can be configured as mono, divided front-rear, left-right, or 4-corners.<br>
 <img width=640 src="https://www.racedepartment.com/attachments/1593030117522-png.383988/"><br clear=all>
-https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-142<br>
+<ul compact>
+<li><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3091486">
+ShakeIt's wheelslip effects were updated</a>
+<li><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3090977">
+ShakeIt 2-4Hz effect to simulate lateral Gs</a>
+<li><a href="https://www.racedepartment.com/threads/simhub-shakeit-large-buttkicker-lfe-concert-effects-experimentation.176865/">Some tuning hints</a>
+<li><a href="https://www.racedepartment.com/threads/holy-shamolee-the-long-requested-buttkicker-gamer-2-simhub-tactile-effects-thread.183124/">HOLY
+Shamolee - The Long Requested / Buttkicker Gamer 2 / Simhub Tactile Effects Thread</a>
 <br>
-ShakeIt's wheelslip effects were updated<br>
-https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3091486<br>
-ShakeIt custom effect for lateral Gs<br>
-https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3090977<br>
-Mr Latte offers to share<br>
-https://www.racedepartment.com/threads/simhub-shakeit-large-buttkicker-lfe-concert-effects-experimentation.176865/post-3091315<br>
-<br>
-SIMSHAKER WHEELS (SSW) reportedly does lateral G's<br>
-https://andres.shop/software/21-simshaker-wheels.html<br>
-<br>
-SimFeedback is PC software that creates motion cues using telemetry data from Racing games/simulations like Assetto Corsa.<br>
-You get a fast, highly reactive motion platformalong with output for tactile effects via a sound card.  Licensing is involved..<br>
-https://github.com/SimFeedback/SimFeedback-AC-Servo/wiki<br>
-<br>
-Some tuning hints:<br>
-https://www.racedepartment.com/threads/simhub-shakeit-large-buttkicker-lfe-concert-effects-experimentation.176865/<br>
-<a href="https://www.racedepartment.com/threads/holy-shamolee-the-long-requested-buttkicker-gamer-2-simhub-tactile-effects-thread.183124/">HOLY
-Shamolee - The Long Requested / Buttkicker Gamer 2 / Simhub Tactile Effects Thread</a><br>
-<br>
-ShakeIt V3 Wiki<br>
-https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Effects-configuration<br>
-<pre>
----------- Forwarded message ---------
+<li><a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Effects-configuration">ShakeIt V3 Wiki</a>
+<li>license: <pre>---------- Forwarded message ---------
 From: SimHub <nicolas.gbt@gmail.com>
 Date: Thu, Jul 16, 2020 at 6:13 AM
 Subject: Your SimHub license
@@ -678,6 +667,110 @@ If you encounter any problem concerning your license, do not hesitate to contact
 Sincerly,
 Nicolas, SimHub
 </pre>
+</ul>
+<h4><a name="Simshakeseat">SimHub for ShakeSeat: G-force modulated 4 corner tire slip</a></h4>
+Background and disclaimers<br>
+My sim driving experience is only with an office chair and wheel stand.<br>
+I have no experience with the
+<a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">full SRS ShakeKit</a>,
+which may offer a superior experience.<br>
+Without a harness to keep one's back contacting them, back transducers in
+<a href="https://www.simracingstudio.com/product-page/srs-shakekit-plus-includes-srs-license-for-bass-shaker">ShakeKit Plus</a> seem of arguable benefit.<br>
+<br>
+Already using SimHub, having unused motherboard 7.1 sound and obsolete Denon surround receiver,<br>
+ a ShakeSeat pad was ordered because:<br>
+* <a href="https://www.youtube.com/watch?v=mlJfIFhdk1c&t=306s">Sim Racing Garage review</a><br>
+* Dayton TT25-16 pucks were, at the time, in short supply elsewhere<br>
+An equivalent can be made using Dayton pucks with e.g.<br>
+<a href="https://www.amazon.com/dp/B07GZFJ1CN">40cm square zippered cushion covers</a>
+and <a href="https://www.amazon.com/dp/B012TWTUMU">EVA foam floor tiles</a><br>
+
+Standard SimHub ShakeIt tire slip does not consider tire loading.<br>
+For example, an inside tire may be fully unloaded during cornering,<br>
+so very high slippage, but no perceived sensation in actual driving.<br>
+<br>
+This attempts to approximate track sensations from street tires,<br>
+when securely harnessed in a fitted racing seat.<br>
+Usefulness of such haptic feedback may vary widely among users<br>
+* e.g.
+<a href="https://www.youtube.com/watch?v=ExJEGp9itHE&t=3550s">Niels Heusinkveld
+indicated that seat feel is overrated</a><br>
+   .. and he cued more visually off horizon movement.<br>
+IMO, this feedback is less compelling than that from
+<a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioners</a>,<br>
+but reduces a sense of "something missing".<br>
+<br>
+Unambiguously directional haptic cues seemingly involve substantially direct stimulation of<br>
+body parts, e.g. left and right thighs, lumbars and/or sit bones.<br>
+Sensations to be simulated here:<br>
+squeal for small slippage, transitioning to moaning with more slippage,
+then shuddering near breakaway,<br>
+with much less feeling from lightly loaded tires
+(rear when braking, inside when cornering).<br>
+<br>
+Implementation replaces SimHub Wheels slip effect with a pair of Custom Effects<br>
+1. latitudinal and longitudinal acceleration properties<br>
+2. loaded tire slips, products of tire slip properties times accelerations<br>
+<br>
+Accelerations are estimated from changes in speed and yaw samples and serve as G force proxies.<br>
+Earlier SimHub versions sampled speed and yaw slower than Assetto Corsa sample updates,<br>
+resulting in some changes 2x others, which code here detects and mitigates.<br>
+<br>
+Left channel <b>Lateral G-force proxy</b>:<pre><code>// lateral acceleration proxy
+var y = $prop('OrientationYaw');
+const tc = 3;  // IIR smoothing factor
+const noise = 0.01 // non-linear filter threshold
+
+// initialize IIR filter history
+if(null==root["yaw"]) {
+   root["yaw"] = $prop('OrientationYaw');
+   root["delta_y"] = 0.2;
+}
+if (null==root["Gyb4"])
+  root["Gyb4"] = 0.5;
+
+var dy = y - root["yaw"];       // change between sample intervals
+
+// yaw flips at +/- 180
+if (Math.abs(dy) > 180) {  // yaw went +/- 180
+  if (Math.abs(root["yaw"]) > 150)
+    dy = -(y + root["yaw"]);
+}
+
+root["yaw"] = y;
+y = root["delta_y"];    // previous sample change
+
+// mitigate delta spikes from missed samples
+var my = 1;     // sample interval
+if ((Math.abs(dy * y) > noise)  // missed sample?
+ && (Math.abs(dy) > Math.abs(1.8 * y)))
+  dy /= (my = 2);
+
+root["delta_y"] = dy;
+
+// IIR low-pass filter
+var Gyb4 = root["Gyb4"];        // IIR output
+Gyb4 += my * (dy - Gyb4) / tc;  // low-pass IIR
+root["Gyb4"] = Gyb4;
+return 50 + (50 * Gyb4);  // range 0-100
+// 50 corresponds to no G force</code></pre>
+<b>Longitudinal acceleration</b> (right channel) is similar, substituting speed for yaw<br>
+<br>
+<b>Loaded tire slip corner effects</b> use products of tire slips and G force proxies:
+<pre><code>return .01*$prop('GameRawData.Physics.WheelSlip01')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))
+// since this multiplies two properties with 0-100 ranges,
+// results must be reduced by 100 to return the same range
+// left vs right G-force distributions are applied to wheel slips
+//  by (proxy_G.Left) and (100-proxy_G.Left),
+// while front-to-rear G-force distributions are by
+//  ( proxy_G.Right-10) vs (90- proxy_G.Right)
+// to reflect that, while inner wheels may become fully unloaded in corners,
+// track cars are expected to fully unload neither nor rear wheels
+</code></pre>
+These two CUSTOM EFFECTS could be combined,<br>
+except that G-force proxy properties are also used by a Custom serial device for harness tensioning.<br>
+The complete SimHub profile is <a href="https://github.com/blekenbleu/blekenbleu.github.io/blob/master/pedals/GmodulatedWheelSlip.siprofile.txt">available here</a>
+
 <br>
 <hr>
 <a name=TH8A><h4>Thrustmaster TH8A shifter mods</h4></a>
