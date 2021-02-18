@@ -769,27 +769,60 @@ return 50 + (50 * Gyb4);  // range 0-100
 // track cars are expected to fully unload neither nor rear wheels
 </code></pre>
 These two CUSTOM EFFECTS could be combined,<br>
-except that G-force proxy properties are also used by a Custom serial device for harness tensioning.<br>
+except that G-force proxy properties are also used by a Custom serial device for <a href="#SimHarness">2DOF harness tensioning</a>.<br>
 The complete SimHub profile is <a href="https://github.com/blekenbleu/blekenbleu.github.io/blob/master/pedals/GmodulatedWheelSlip.siprofile.txt">available here</a>
 
 <br>
 <hr>
-<a name="SimHarness"><h3>SimHub for 2DOF Harness</h3></a>
+<a name="SimHarness"><h3>SimHub 2DOF harness tensioning</h3></a>
 One expedient for simulating sustained G forces is a G Harness.<br>
-SimXperience is a pioneer in that, with a <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a>,<br>
+SimXperience is a pioneer for that, with a <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a>,<br>
 typically sold as an accessory for their <a href="https://www.simxperience.com/en-us/products/motionsimulatorkits/gs-5g-seat.aspx">US$3K GS-5 G-Seat</a>.<br><br>
-<a href="https://www.racedepartment.com/members/racingmat.164315/">RacingMat</a> produced a <a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioner using a pair 35kg.cm hobby servos</a>.<br>
-Modifications of that include:<ul compact>
+
+<a href="https://www.racedepartment.com/members/racingmat.164315">RacingMat</a> developed a <a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioning using a pair of 35kg.cm hobby servos</a>.<br><br>
+Parts budget (US$):<dl compact>
+<dt>41.40<dd><a href="https://www.ebay.com/itm/282250363739">RSD3235 servo pair</a>
+<dt>17.25<dd><a href="https://www.ebay.com/itm/264645806540">6x 100F super capacitors</a>
+<dt>10.00<dd><a href="https://www.amazon.com/gp/product/B08C594VNP">12VDC 5A power supply</a>
+<dt>6.95<dd><a href="https://www.amazon.com/gp/product/B07J9RQ8B6">5A constant current DC-DC buck regulator</a>
+<dt>7.26<dd><a href="https://www.amazon.com/dp/B000I1BWVW">wide bed casters</a>
+<dt>3.03<dd><a href="https://www.ebay.com/itm/143881049059">STM32F103C8T6 Blue Pill</a><br>
+to flash STM32 modules, a <a href="https://www.ebay.com/itm/352694692698">(US$3.19) ST-Link V2 clone</a> is wanted.<br>
+Beware of similar USB-TTL dongles <i>wrongly listed as</i> ST-LINK;<br>
+they are for more generic, but less convenient serial programming. 
+<dt>18.86<dd><a href="https://www.amazon.com/gp/product/B082FPRHGP">2-inch 4 point harness</a></dl>
+Modifications of RacingMat's design include:<ul compact>
 <li>suspending those servos between harness belt segments, reducing noise:<br>
 <iframe align=center width="640" height="360" src="https://www.youtube.com/embed/KSJQ8uF8pIc"></iframe>
 <li>repurposing wide bed casters as harness pulleys:<br>
 <img src="https://www.racedepartment.com/attachments/bedcasters-jpg.437943/">
-<li>improving the servo power supply using super capacitors, increasing servo responsiveness:<br>
-<img width=640 src="https://www.racedepartment.com/attachments/glued-jpg.442520/">
-<li>implementing servo control using Arduino and an STM32 "Blue Pill".<br>
-Here is the <a href="../Arduino/index.md#serial-servos">Arduino STM32 portion</a> of this solution.
-<li>driving the "Blue Pill" from SimHub<br>
-Here is the <a href="../Arduino/SimHubCustomSerial.md">SimHub Custom serial device portion</a> of this solution.
+<li>(optionally) adding super capacitors to the power supply for faster servo response:<ul compact>
+<li>+8VDC from regulator (and super caps) to servo red wires
+<li>-8VDC to servo black wires
+<li>Blue Pill is powered and controlled by USB.
+<li>Blue Pill ground pin to -8VDC
+<li>Blue Pill PWM pins to servo white wires</ul>
+<img width=640 src="https://www.racedepartment.com/attachments/glued-jpg.442520/"><ul compact>
+<li>super capacitors in series require balance circuitry;<br>
+a commodity 16V super capacitor bank with balancing is cheaper and easier, then cut it in half:<br>
+<img src="https://www.racedepartment.com/attachments/halved-jpg.442519/">
+<li>super capacitors effectively short-circuit supplies at power on, requiring current limiting.<br>
+Using an automotive headlamp bulb as a "dummy load",<br> the buck regulator was adjusted for maximum 8V and 4.5A:<br>
+<img src="https://www.racedepartment.com/attachments/controls-jpg.438828/"><ul compact>
+<li>Button left of LED digits turns LEDs (but not power) off/on.
+<li>Right pushbutton controls display mode: Vin, Vout, Aout, Pout, cycle.
+<li>Pots were received set fully clockwise, turning counterclockwise reduces values.
+<li>Left pot controls Vout, right pot controls Aout. Upper blue LED chip illuminates while powered.
+<li>Another LED chip just left of that illuminates when current limited.
+<li>LED chip right of digits illuminates when displaying Vout;
+<li>LED chip left of digits illuminates when displaying Vin.</ul>
+
+</ul>
+<li>PWM servo control by Arduino code running in an STM32 "Blue Pill".<br>
+Here is the <a href="../Arduino/index.md#serial-servos">Arduino STM32 servo driver</a> for this solution.
+<li>harness tensioning signals from SimHub drive the USB-attached "Blue Pill":<br>
+<img width=640 src="../Arduino/SimHubCustomSerial.gif"><br clear=all>
+Here is the <a href="../Arduino/SimHubCustomSerial.md">SimHub Custom serial device harness tensioning control</a> for this solution.
 </ul>
 <br>
 <hr>
