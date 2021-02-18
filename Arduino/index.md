@@ -51,7 +51,7 @@ as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).
 That video installs the Blue Pill HID bootloader via USB COM dongle,   
 but we will here describe using an [ST-LINK V2 clone](https://www.ebay.com/itm/183320329257).  
 My clone happens to have the *correct pinout* printed on its cover;  
-**Check clone pin artwork** by sliding that cover partly open (along the USB plug):
+**Check ST-LINK clone pin artwork** by sliding that cover partly open (along the USB plug):
 ![ST-LINK pin artwork](ST-Link.jpg)  
 
 [Here is the **Arduino for STM32** forum](https://www.stm32duino.com).  It replaced an earlier one.  
@@ -135,12 +135,12 @@ Here is a Blue Pill pinout reference:
 - 5V tolerant CAN BUS pins `PB8,9` look good.
 
 A simple next step adds servos to the blink loop sketch.  
-As an additional test, [this new sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under Git revision control,  
+[This servo cycling sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under Git revision control,  
 with a shortcut to that sketch folder in the Arduino "work" folder.  
 Both of these ploys work; the sketch runs..  
-**This sketch can be used to verify servo wiring to Blue Pills**  
+**This sketch can be used to verify servo wiring to a Blue Pill** *without* serial control. 
 
-### Serial servos
+### Serial servos e.g. for SimHub harness tensioning
 Here is the [Arduino reference for Serial communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)  
 In STM32duino, **`Serial`** device is USB virtual COM port,  
 using `PA11+12`, and **`Serial1`** is UART `PA9+10`,  
@@ -148,30 +148,30 @@ but **Serial** *may be* UART in [PlatformIO Arduino framework](https://platformi
 unless configured as a USB Virtual COM port in Tools.  
 
 Put [`while (!Serial){;}` in `setup(){}`](https://www.arduino.cc/reference/en/language/functions/communication/serial/ifserial/)  
-Toggling LED off before and on or blinking after provides feedback.  
-The first sketch I found mixing `Serial` and `<Servo.h>` is  
+Toggling LED off before and on or blinking after provides connection feedback.  
+The first Arduino sketch I found that combined `Serial` and `<Servo.h>` is  
 [Matt Williamson's serial_servo_rx.ino](https://github.com/mattwilliamson/Arduino-RC-Receiver/blob/master/serial_servo_rx_ino/serial_servo_rx.ino)  
 
-My strap servos usefully rotate less than 127 degrees,  
-set odd values 1-127 to one strap  
-and even values 0-126 for the other,  
-perhaps reserving values 0-1 for other controls,  
-such as setting strap offsets based on **next** values.  
 Single-character control [avoids serial string blocking and overflows](https://www.forward.com.au/pfod/ArduinoProgramming/Serial_IO/index.html).  
+Useful rotation range for my harness' servos is less than 127 degrees;  
+direct odd rotation values 3-127 to the right harness strap  
+and even rotation values 2-126 to the left,  
+reserving values 0-1 to set strap offsets based on **immediately next** values.  
 
-Green LED blink codes can feedback when processing servo values,  
-e.g. briefly off for one servo and briefly on for the other,  
+Green LED blink codes feedback when processing servo values,  
 with 50% duty cycle for idle operation.  
-Probably better to use that LED to signal when servo values are max...  
+Perhaps better to use that LED to signal when servo values are max..?   
 Blink timing by `delay()` impacts serial bandwidth, so use `millis()`.
 
-For serial experiments *without* SimHub,  
-[this sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo) accepts e.g. ASCII characters from Arduino `Tools` > `Serial Monitor`.  
+For serial servo control, with or *even without* **SimHub Custom serial device**,  
+**[this sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo)** accepts e.g. ASCII characters from Arduino `Tools` > `Serial Monitor`.  
 to move left or right servo based on least-significant bit.  
 Characters `> 127` do not arrive intact from SimHub JavaScript,  
-but useful strap servo range is `< 127`, so apply offsets to received values.  
+but useful strap servo range is `< 127`, with offsets applied to received values.  
 Testing suggests that, running on STM32 Blue Pill,  
 this sketch handles 60Hz updates of 4 characters,  
-where 2 should suffice and servos respond less quickly.
+where 2 should suffice and servos respond less quickly.  
+By changing from Blue Pill-specific PWM pin and LED assignments,  
+this sketch should work for other Arduino-supported modules with PWM-capable pins.
 
 Corresponding [SimHub hacking is described here](SimHubCustomSerial.md).
