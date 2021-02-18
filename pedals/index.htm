@@ -43,6 +43,7 @@ th, td {
 <li><a href="#shakeseat">ShakeSeat</a> <a href="#pad">padding</a>
 <li><a href="#ShakeIt">SimHub ShakeIt</a>
 <li><a href="#Simshakeseat">SimHub for ShakeSeat</a>
+<li><a href="#SimHarness">SimHub for 2DOF Harness</a>
 <li><a href="#HOTAS">Hand-On Throttle-And-Stick in SteamVR</a>
 <li><a href="#hmd">Odyssey+ HMD</a>
 <li><a href="#Driver4VR">Driver4VR</a>
@@ -771,6 +772,25 @@ These two CUSTOM EFFECTS could be combined,<br>
 except that G-force proxy properties are also used by a Custom serial device for harness tensioning.<br>
 The complete SimHub profile is <a href="https://github.com/blekenbleu/blekenbleu.github.io/blob/master/pedals/GmodulatedWheelSlip.siprofile.txt">available here</a>
 
+<br>
+<hr>
+<a name="SimHarness"><h3>SimHub for 2DOF Harness</h3></a>
+One expedient for simulating sustained G forces is a G Harness.<br>
+SimXperience is a pioneer in that, with a <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a>,<br>
+typically sold as an accessory for their <a href="https://www.simxperience.com/en-us/products/motionsimulatorkits/gs-5g-seat.aspx">US$3K GS-5 G-Seat</a>.<br><br>
+<a href="https://www.racedepartment.com/members/racingmat.164315/">RacingMat</a> produced a <a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioner using a pair 35kg.cm hobby servos</a>.<br>
+Modifications of that include:<ul compact>
+<li>suspending those servos between harness belt segments, reducing noise:<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/KSJQ8uF8pIc"></iframe>
+<li>repurposing wide bed casters as harness pulleys:<br>
+<img src="https://www.racedepartment.com/attachments/bedcasters-jpg.437943/">
+<li>improving the servo power supply using super capacitors, increasing servo responsiveness:<br>
+<img width=640 src="https://www.racedepartment.com/attachments/glued-jpg.442520/">
+<li>implementing servo control using Arduino and an STM32 "Blue Pill".<br>
+Here is the <a href="../Arduino/index.md#serial-servos">Arduino STM32 portion</a> of this solution.
+<li>driving the "Blue Pill" from SimHub<br>
+Here is the <a href="../Arduino/SimHubCustomSerial.md">SimHub Custom serial device portion</a> of this solution.
+</ul>
 <br>
 <hr>
 <a name=TH8A><h4>Thrustmaster TH8A shifter mods</h4></a>
