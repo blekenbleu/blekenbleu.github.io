@@ -8,28 +8,39 @@ title: SimHub Custom serial device for Blue Pill
 An [STM32duino sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo) was thrown together  
 that moves either of a pair of servos,  
 depending on least significant bit,  
-for byte values (masked with 0x7F) received by serial port,
+for byte values (masked with 0x7F) received by USB COM port,
 [as described here](index.md#serial-servos)  
 
 Google magic revealed likely `SimHub Custom serial devices` help:
 - [SimHub Forum Outputting sim data to Arduino to use with stepper motor gauges](https://www.simhubdash.com/community-2/simhub-support/outputting-sim-data-to-arduino-to-use-with-stepper-motor-gauges/)  
-  - This clarifies that it is for "adhoc" protocol with "non simhub" sketches  
+  - This clarifies that Custom serial device is for "adhoc" protocol with "non-SimHub" sketches  
 - [SHWotever/SimHub Custom serial devices](https://github.com/SHWotever/SimHub/wiki/Custom-serial-devices)
   This walks thru enabling the plugin and defining messages:
   ![custom serial device](SimHubCustomSerial.gif)  
+  The [SimHub `Custom serial device` for **Blue Pill harness servos**](proxy_G.shsds.txt) has two enabled Update messages:
+  1. harness tension settings
+      - click `Test untensioned positions` to adjust `Left untensioned` and `Right untenstioned` sliders  
+        so that harness is most slack
+      - then click `test max tension` to adjust `max tension` slider for most harness tightening;  
+        check power regulator LED current readout to verify that servos are not driven to overload  
+      - unclick both `Test untensioned positions` and `test max tension` for normal operation.  
+  2. live G-force tensions
+      - this uses `proxy_G` properties from [SimHub for ShakeSeat](../pedals/index.htm#accel) G-force `CUSTOM EFFECT`  
+      - `decel gain` and `decel yaw gain` sliders affect relative strenghts of braking and cornering.  
+      - `smoothing` sliders modifies responsiveness and "noise' of servo signals.  
 - [SHWotever/SimHub Wiki Custom serial devices support](https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support)  
-  Previously had always *failed to* scroll to [Formulas Engines](https://github.com/SHWotever/SimHub/wiki#formulas-engines)
+  I previously had always *failed to* scroll to [Formulas Engines](https://github.com/SHWotever/SimHub/wiki#formulas-engines)
 - Here is the [NCalc reference repository to which GitHub points](http://www.codeproject.com/KB/recipes/sota_expression_evaluator.aspx).  
 
-Sadly, NCalc seems exactly wrong for what I want
+Sadly, NCalc seems exactly wrong for what is wanted:
 * next to no string operators
 * no array indexing
 * no byte values
-* Integers evidently get written to serial as decimal strings.  
+* Integers get written to serial as decimal strings.  
 
-As much as I dislike Javascript, it allows for byte banging..
+Much as I dislike Javascript, it supports byte banging..
 
-This leaves the trick of sending the message for dynamic harness tensioning.
+This leaves the trick of sending the message for dynamic harness tensioning.  
 An interesting property exists:  `GameData.GlobalAccelerationG`  
 Sure would be nice if there was a reference describing it...  
 
@@ -80,4 +91,4 @@ my guess is that SimHub live interpreter does not work for JavascriptExtensions.
 
 SimHub has Visible Bindings and Enabled Bindings for CUSTOM SERIAL DEVICE Setting panel;  
 don't know what two different bindings imply.  Sliders work without forcing settings in their Bindings.  
-`cp proxy_G.shsds ../GitHubDesktop/blekenbleu.github.io/Arduino/proxy_G.shsds.txt`  
+`cp proxy_G.shsds` [../GitHubDesktop/blekenbleu.github.io/Arduino/proxy_G.shsds.txt](proxy_G.shsds.txt)  
