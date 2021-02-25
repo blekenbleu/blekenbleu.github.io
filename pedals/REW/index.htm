@@ -59,7 +59,31 @@ but one takeaway for those using massive Bass Shakers is that soundcards may be 
 <br>
 With haptics of interest to me ranging only from 10 to 800Hz, loop-back calibrating yields:<br>
 <img src="cal_soundcard.png"><br>
-While flatter would be nicer, 1dB will seem trivial after amplifier, transducer and sensor are introduced.
+While flatter would be nicer, 1dB will seem trivial after amplifier, transducer and sensor are introduced:<br>
+<img src="thrusterHeld.png"><br>
+Without mass loading, useful piezo low frequency response is not expected.<br>
+<br>
+The Dayton "thruster" transducer audibly rattles at some frequencies if not hand-held against the (30mm MDF) desktop:<br>
+<img src="unheld.png"><br>
+<br>
+
+Sensors being used are piezo contact microphone elements epoxied "belly-to-belly",<br>
+with brass discs facing out, shielding both sides.  Piezos are wired in parallel,<br>
+effectively lowering source impedance, which is still high enough that,<br>
+fed into a 500kOhm input impedance instrument input,<br>
+cable shielding is very important to avoid AC power hum inductive pickup.<br>
+Wireless mouse RF noise and LCD screen refresh interference may still be audible..<br>
+<br>
+Thruster movement can be sensed at 12Hz but seems weak until 15Hz, then noticeably stronger above 22Hz.<br>
+Mechanical resonance of the thruster NOT held to 30mm MDF is around 40-45Hz<br>
+Finger-holding a 13mm steel nut against the piezo to approximate mass-loading yields more credible plots:<br>
+<img src="FingerNut.png"><br>
+.. but results are inconsistent.<br>
+The (consistent) resonance around 15Hz, corresponding to large phase changes, is presumably the 30mm MDF,<br>
+since it corresponds with cancellations.  Sweeps while holding the thruster against difference surfaces<br>
+result in resonances at different frequencies.  This suggests that, while piezos are uncalibrated and<br>
+probably lack ideally uniform frequency response, they should be able to help analyze differences<br>
+in transducer responses in different configurations.<br>
 </font>
 </body>
 </html>
