@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Tactile Transducer measurements</title>
+<!-- for text wrap around images:  https://www.homeandlearn.co.uk/WD/wds4p6.html -->
+<style>
+body {
+  margin: 60px;
+}
+th {
+  text-align: left;
+}
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<font size=-1><a href="../"><i>back</i></a></font>
+<a name=sim><h2>Tactile Transducer Measurements</h2></a>
+<font size=+1>
+<sl>
+<li><a href="#REW">Room Eq Wizard</a>
+
+</sl> &nbsp
+<br>
+<br>
+<h4>Intro</h4>
+<details>
+<summary>REW is not for <i>only</i> rooms <code>[click for details]</code></summary>
+<a href="https://www.roomeqwizard.com/">REW</a> is mostly used to help locate and tune subwoofers,<br>
+mostly by measuring and displaying audio responses.<br>
+Frequency response peaks can be mitigated by equalizing,<br>
+but sharp dips typically result from cancellations AKA destructive interference,<br>
+which are better addressed by relocating a single subwoofer<br>
+or changing phase relations among multiple subwoofers, also possibly by relocation.<br>
+
+The same techniques will apply for tactile transducers,<br>
+keeping in mind that sound travels faster thru solids than air,<br>
+so that substantial changes in phase relationships are more easily done electronically.
+</details>
+<a name=REW><h4>Room EQ Wizard frequency response measurements</h4>
+A first step is to evaluate limitations of equipment:<ul compact>
+<li>sound card[s]
+<li>amplifier
+<li>transducers and sensors
+</ul>
+Here is frequency and phase response of Realtek motherboard audio output<br>
+looped back to PreSonus AUDIOBOX USB line input:<br>
+<img src="soundcard.png"><br clear=all>
+How much of rolloff below 60Hz is attributable to motherboard audio or PreSonus is unknown,<br>
+but one takeaway for those using massive Bass Shakers is that soundcards may be a weak link.<br>
+<br>
+With haptics of interest to me ranging only from 10 to 800Hz, loop-back calibrating yields:<br>
+<img src="cal_soundcard.png"><br>
+While flatter would be nicer, 1dB will seem trivial after amplifier, transducer and sensor are introduced.
+</font>
+</body>
+</html>
