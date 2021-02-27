@@ -87,10 +87,10 @@
               "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
             },
             "FrontLeft": {
-              "MapsStore": "0;1;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
+              "MapsStore": "0;0;100;|1;0;100;|2;1;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
             },
             "FrontRight": {
-              "MapsStore": "0;0;100;|1;1;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
+              "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;1;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
             },
             "RearLeft": {
               "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;1;100;|7;0;100;"
@@ -115,7 +115,7 @@
           },
           "RPMContainer": {
             "All": {
-              "MapsStore": "0;1;100;|1;1;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;1;100;|7;1;100;"
+              "MapsStore": "0;0;100;|1;0;100;|2;1;100;|3;1;100;|4;0;100;|5;0;100;|6;1;100;|7;1;100;"
             }
           }
         },
@@ -124,7 +124,7 @@
             "MapsStore": "0;1;100;Front left|1;1;100;Front right|2;1;100;Rear left|3;1;100;Rear right|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
           },
           "Custom": {
-            "MapsStore": "0;1;100;|1;1;100;|2;1;31;|3;1;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
+            "MapsStore": "0;1;100;|1;1;100;|2;1;100;|3;1;100;|4;0;100;|5;0;100;|6;0;90;|7;0;90;"
           }
         },
         "Name": "Speakers / Headphones (Realtek(R) Audio)",
@@ -215,31 +215,33 @@
     {
       "AutocalibrationMax": 95.0,
       "Filter": {
-        "GammaValue": 1.0,
-        "InputGain": 100.0,
+        "GammaValue": 1.9500000000000008,
+        "InputGain": 96.0,
         "MinimumForce": 0,
-        "Threshold": 0,
+        "Threshold": 2,
         "FilterType": "GammaFilter"
       },
       "FrontLeftFormula": {
         "Interpreter": 1,
-        "Expression": "// lateral acceleration proxy\r\nvar y = $prop('OrientationYaw');\r\nconst tc = 3;  // IIR smoothing factor\r\nconst noise = 0.01 // non-linear filter threshold\r\n\r\n// initialize IIR filter history\r\nif(null==root[\"yaw\"]) {\r\n   root[\"yaw\"] = $prop('OrientationYaw');\r\n   root[\"delta_y\"] = 0.2;\r\n}\r\nif (null==root[\"Gyb4\"])\r\n  root[\"Gyb4\"] = 0.5;\r\n\r\nvar dy = y - root[\"yaw\"];       // change between sample intervals\r\n\r\n// yaw flips at +/- 180\r\nif (Math.abs(dy) > 180) {  // yaw went +/- 180\r\n  if (Math.abs(root[\"yaw\"]) > 150)\r\n    dy = -(y + root[\"yaw\"]);\r\n}\r\n\r\nroot[\"yaw\"] = y;\r\ny = root[\"delta_y\"];    // previous sample change\r\n\r\n// mitigate delta spikes from missed samples\r\nvar my = 1;     // sample interval\r\nif ((Math.abs(dy * y) > noise)\r\n && (Math.abs(dy) > Math.abs(1.8 * y)))\r\n  dy /= (my = 2);\r\n\r\nroot[\"delta_y\"] = dy;\r\n\r\n// IIR low-pass filter\r\nvar Gyb4 = root[\"Gyb4\"];        // lowpass IIR output\r\nGyb4 += my * (dy - Gyb4) / tc;\r\nroot[\"Gyb4\"] = Gyb4;\r\nreturn 50 + (50 * Gyb4);  "
+        "Expression": "// left yaw change proxy\r\nvar y = $prop('OrientationYaw');\r\nconst tc = 3;  // IIR smoothing factor\r\nconst noise = 0.01 // non-linear filter threshold\r\n\r\n// initialize IIR filter history\r\nif(null==root[\"yaw\"]) {\r\n   root[\"yaw\"] = $prop('OrientationYaw');\r\n   root[\"delta_y\"] = 0.2;\r\n}\r\nif (null==root[\"Gyb4\"])\r\n  root[\"Gyb4\"] = 0.5;\r\n\r\nvar dy = y - root[\"yaw\"];       // change between sample intervals\r\n\r\n// yaw flips at +/- 180\r\nif (Math.abs(dy) > 180) {  // yaw went +/- 180\r\n  if (Math.abs(root[\"yaw\"]) > 150)\r\n    dy = -(y + root[\"yaw\"]);\r\n}\r\n\r\nroot[\"yaw\"] = y;\r\ny = root[\"delta_y\"];    // previous sample change\r\n\r\n// mitigate delta spikes from missed samples\r\nvar my = 1;     // sample interval\r\nif ((Math.abs(dy * y) > noise)\r\n && (Math.abs(dy) > Math.abs(1.8 * y)))\r\n  dy /= (my = 2);\r\n\r\nroot[\"delta_y\"] = dy;\r\n\r\n// IIR low-pass filter\r\nvar Gyb4 = root[\"Gyb4\"];        // lowpass IIR output\r\nGyb4 += my * (dy - Gyb4) / tc;\r\nroot[\"Gyb4\"] = Gyb4;\r\nreturn 100 * Gyb4;  "
       },
       "FrontRightFormula": {
         "Interpreter": 1,
-        "Expression": "// longitudinal G proxy\r\nvar s = $prop('SpeedKmh');\r\nconst tc = 3;  // IIR smoothing factor\r\nconst noise = 0.01 // non-linear filter threshold\r\n\r\n// initialize IIR filter history\r\nif(null==root[\"speed\"]) {\r\n   root[\"speed\"] = $prop('SpeedKmh');\r\n   root[\"delta_s\"] = 0.2;       // for missed sample\r\n}\r\nif (null==root[\"Gsb4\"])\r\n  root[\"Gsb4\"] = 0.5;\r\n\r\nvar ds = root[\"speed\"] - s;       // negative change between sample intervals\r\nroot[\"speed\"] = s;\r\ns = root[\"delta_s\"];    // previous sample change\r\n\r\n// mitigate delta spikes from missed samples\r\nvar ms = 1;     // sample interval\r\nif ((Math.abs(ds * s) > noise)\r\n && (Math.abs(ds) > Math.abs(1.8 * s)))\r\n  ds /= (ms = 2);\r\n\r\nroot[\"delta_s\"] = ds;\r\n\r\n// IIR low-pass filter\r\nvar Gsb4 = root[\"Gsb4\"];        // lowpass IIR output\r\nGsb4 += ms * (ds - Gsb4) / tc;\r\nroot[\"Gsb4\"] = Gsb4;\r\nreturn 50 + (60*Gsb4);  "
+        "Expression": "// deceleration proxy\r\nvar s = $prop('SpeedKmh');\r\nconst tc = 3;  // IIR smoothing factor\r\nconst noise = 0.01 // non-linear filter threshold\r\n\r\n// initialize IIR filter history\r\nif(null==root[\"speed\"]) {\r\n   root[\"speed\"] = $prop('SpeedKmh');\r\n   root[\"delta_s\"] = 0.2;       // for missed sample\r\n}\r\nif (null==root[\"Gsb4\"])\r\n  root[\"Gsb4\"] = 0.5;\r\n\r\nvar ds = root[\"speed\"] - s;       // negative change between sample intervals\r\nroot[\"speed\"] = s;\r\ns = root[\"delta_s\"];    // previous sample change\r\n\r\n// mitigate delta spikes from missed samples\r\nvar ms = 1;     // sample interval\r\nif ((Math.abs(ds * s) > noise)\r\n && (Math.abs(ds) > Math.abs(1.8 * s)))\r\n  ds /= (ms = 2);\r\n\r\nroot[\"delta_s\"] = ds;\r\n\r\n// IIR low-pass filter\r\nvar Gsb4 = root[\"Gsb4\"];        // lowpass IIR output\r\nGsb4 += ms * (ds - Gsb4) / tc;\r\nroot[\"Gsb4\"] = Gsb4;\r\nreturn 100 * Gsb4;  "
       },
       "RearLeftFormula": {
-        "Expression": ""
+        "Interpreter": 1,
+        "Expression": "// right yaw change proxy\r\nvar y = $prop('OrientationYaw');\r\nconst tc = 3;  // IIR smoothing factor\r\nconst noise = 0.01 // non-linear filter threshold\r\n\r\n// initialize IIR filter history\r\nif(null==root[\"yaw\"]) {\r\n   root[\"yaw\"] = $prop('OrientationYaw');\r\n   root[\"delta_y\"] = 0.2;\r\n}\r\nif (null==root[\"Gyb4\"])\r\n  root[\"Gyb4\"] = 0.5;\r\n\r\nvar dy = y - root[\"yaw\"];       // change between sample intervals\r\n\r\n// yaw flips at +/- 180\r\nif (Math.abs(dy) > 180) {  // yaw went +/- 180\r\n  if (Math.abs(root[\"yaw\"]) > 150)\r\n    dy = -(y + root[\"yaw\"]);\r\n}\r\n\r\nroot[\"yaw\"] = y;\r\ny = root[\"delta_y\"];    // previous sample change\r\n\r\n// mitigate delta spikes from missed samples\r\nvar my = 1;     // sample interval\r\nif ((Math.abs(dy * y) > noise)\r\n && (Math.abs(dy) > Math.abs(1.8 * y)))\r\n  dy /= (my = 2);\r\n\r\nroot[\"delta_y\"] = dy;\r\n\r\n// IIR low-pass filter\r\nvar Gyb4 = root[\"Gyb4\"];        // lowpass IIR output\r\nGyb4 += my * (dy - Gyb4) / tc;\r\nroot[\"Gyb4\"] = Gyb4;\r\nreturn - 100 * Gyb4;  "
       },
       "RearRightFormula": {
-        "Expression": ""
+        "Interpreter": 1,
+        "Expression": "// acceleration proxy\r\nvar s = $prop('SpeedKmh');\r\nconst tc = 3;  // IIR smoothing factor\r\nconst noise = 0.01 // non-linear filter threshold\r\n\r\n// initialize IIR filter history\r\nif(null==root[\"speed\"]) {\r\n   root[\"speed\"] = $prop('SpeedKmh');\r\n   root[\"delta_s\"] = 0.2;       // for missed sample\r\n}\r\nif (null==root[\"Gsb4\"])\r\n  root[\"Gsb4\"] = 0.5;\r\n\r\nvar ds = root[\"speed\"] - s;       // negative change between sample intervals\r\nroot[\"speed\"] = s;\r\ns = root[\"delta_s\"];    // previous sample change\r\n\r\n// mitigate delta spikes from missed samples\r\nvar ms = 1;     // sample interval\r\nif ((Math.abs(ds * s) > noise)\r\n && (Math.abs(ds) > Math.abs(1.8 * s)))\r\n  ds /= (ms = 2);\r\n\r\nroot[\"delta_s\"] = ds;\r\n\r\n// IIR low-pass filter\r\nvar Gsb4 = root[\"Gsb4\"];        // lowpass IIR output\r\nGsb4 += ms * (ds - Gsb4) / tc;\r\nroot[\"Gsb4\"] = Gsb4;\r\nreturn -100 * Gsb4;  "
       },
       "IsMuted": false,
       "ContainerId": "3fc86d3c-09d9-40df-afeb-061f6e888fcd",
       "ContainerType": "CustomEffectContainer",
       "Description": "Provides ability to create your own effect based on game data",
-      "AggregationMode": "Left/Right",
+      "AggregationMode": "Corners",
       "Gain": 0.0,
       "IsEnabled": true,
       "Output": {
@@ -267,27 +269,27 @@
     {
       "AutocalibrationMax": 95.0,
       "Filter": {
-        "GammaValue": 2.3,
-        "InputGain": 76.0,
-        "MinimumForce": 15,
-        "Threshold": 42,
+        "GammaValue": 3.8999999999999941,
+        "InputGain": 91.0,
+        "MinimumForce": 0,
+        "Threshold": 11,
         "FilterType": "GammaFilter"
       },
       "FrontLeftFormula": {
         "Interpreter": 1,
-        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip01')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
+        "Expression": "// deceleration @ left front\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight');\r\n// acceleration\r\nvar a = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// left load (turning right)\r\nvar l = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// right load (turning left)\r\nvar r = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft')\r\nvar f = (100 + 3 * (Math.sqrt(d*d + l*l) - Math.sqrt(a*a + r*r))) / 4;\r\nreturn $prop('GameRawData.Physics.WheelSlip01') * f / 100;\r\n\r\n"
       },
       "FrontRightFormula": {
         "Interpreter": 1,
-        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip02')*(100-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))"
+        "Expression": "// deceleration @ right front\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight');\r\n// acceleration\r\nvar a = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// left load (turning right)\r\nvar l = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// right load (turning left)\r\nvar r = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft')\r\nvar f = (100 + 3 * (Math.sqrt(d*d + r*r) - Math.sqrt(a*a + l*l))) / 4;\r\nreturn $prop('GameRawData.Physics.WheelSlip02') * f / 100;\r\n//return f;"
       },
       "RearLeftFormula": {
         "Interpreter": 1,
-        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip03')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-0)"
+        "Expression": "// deceleration @ left rear\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight');\r\n// acceleration\r\nvar a = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// left load (turning right)\r\nvar l = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// right load (turning left)\r\nvar r = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft')\r\nvar f = (100 + 3 * (Math.sqrt(a*a + l*l) - Math.sqrt(d*d + r*r))) / 4;\r\nreturn $prop('GameRawData.Physics.WheelSlip03') * f / 100;\r\n//return f;"
       },
       "RearRightFormula": {
         "Interpreter": 1,
-        "Expression": "return .01*$prop('GameRawData.Physics.WheelSlip04')*(100-$prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*($prop('ShakeITBSV3Plugin.Export.proxy_G.Right')-0)"
+        "Expression": "// deceleration @ right rear\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight');\r\n// acceleration\r\nvar a = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// left load (turning right)\r\nvar l = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// right load (turning left)\r\nvar r = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft')\r\nvar f = (100 + 3 * (Math.sqrt(a*a + r*r) - Math.sqrt(d*d + l*l))) / 4;\r\nreturn $prop('GameRawData.Physics.WheelSlip04') * f / 100;\r\n//return f;"
       },
       "IsMuted": false,
       "ContainerId": "cc64cec4-9dc5-4e26-bce2-ef087adb2c84",
