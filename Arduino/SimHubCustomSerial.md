@@ -82,8 +82,8 @@ if (a current delta value is roughly twice the previous)
 Normalizing speed and yaw deltas by `SystemInfoPlugin.Uptime` deltas is unlikely to work,  
 since it increments based on SimHub, not the game.
 
-First pass at harness tension setting:  
-![SimHub tension settings](JavascriptSliders.gif)
+Harness tension, G-force gain and smoothing settings:  
+![SimHub tension settings](SimHubCustomSerial.gif)
 Recompiled Blue_ASCII sketch to echo hex, confirming 0 and 1 are received, all over 127 scrogged.  
 
 While it would be nice to have delta_v filter code in a more legible format,
