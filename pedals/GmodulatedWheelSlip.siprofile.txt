@@ -124,7 +124,7 @@
             "MapsStore": "0;1;100;Front left|1;1;100;Front right|2;1;100;Rear left|3;1;100;Rear right|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
           },
           "Custom": {
-            "MapsStore": "0;1;100;|1;1;100;|2;1;100;|3;1;100;|4;0;100;|5;0;100;|6;0;90;|7;0;90;"
+            "MapsStore": "0;1;100;|1;1;100;|2;1;100;|3;1;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
           }
         },
         "Name": "Speakers / Headphones (Realtek(R) Audio)",
@@ -168,7 +168,7 @@
   "IncludeOutputSettingsInProfile": true,
   "UnmuteEffectsAfterSimhubRestart": false,
   "AutomaticSwitch": false,
-  "Description": "Assetto Corsa - AS1.siprofile re-imported with shorter name",
+  "Description": "Convert proxyG properties to wheel loads\r\nand multiply by proxyS properties.",
   "EffectsContainers": [
     {
       "Filter": {
@@ -207,7 +207,7 @@
         "ChannelGroupName": "",
         "PropertyName": null,
         "ExportProperty": false,
-        "DisableOutput": false,
+        "DisableOutput": true,
         "OutputType": "ToneOutput"
       },
       "Algorythm": null
@@ -240,7 +240,7 @@
       "IsMuted": false,
       "ContainerId": "3fc86d3c-09d9-40df-afeb-061f6e888fcd",
       "ContainerType": "CustomEffectContainer",
-      "Description": "Provides ability to create your own effect based on game data",
+      "Description": "Convert speed and yaw changes to accelerations",
       "AggregationMode": "Corners",
       "Gain": 0.0,
       "IsEnabled": true,
@@ -261,7 +261,7 @@
         "ChannelGroupName": "",
         "PropertyName": "proxy_G",
         "ExportProperty": true,
-        "DisableOutput": false,
+        "DisableOutput": true,
         "OutputType": "ToneOutput"
       },
       "Algorythm": null
@@ -269,34 +269,34 @@
     {
       "AutocalibrationMax": 95.0,
       "Filter": {
-        "GammaValue": 3.8999999999999941,
-        "InputGain": 91.0,
+        "GammaValue": 2.0500000000000105,
+        "InputGain": 100.0,
         "MinimumForce": 0,
-        "Threshold": 11,
+        "Threshold": 0,
         "FilterType": "GammaFilter"
       },
       "FrontLeftFormula": {
         "Interpreter": 1,
-        "Expression": "// deceleration @ left front\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight');\r\n// acceleration\r\nvar a = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// left load (turning right)\r\nvar l = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// right load (turning left)\r\nvar r = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft')\r\nvar f = (100 + 3 * (Math.sqrt(d*d + l*l) - Math.sqrt(a*a + r*r))) / 4;\r\nreturn $prop('GameRawData.Physics.WheelSlip01') * f / 100;\r\n\r\n"
+        "Expression": "// condition wheel slip property\r\nvar s = $prop('GameRawData.Physics.WheelSlip01');\r\nreturn 6 * Math.pow(s, 1/3) - 2;\r\n\r\n"
       },
       "FrontRightFormula": {
         "Interpreter": 1,
-        "Expression": "// deceleration @ right front\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight');\r\n// acceleration\r\nvar a = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// left load (turning right)\r\nvar l = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// right load (turning left)\r\nvar r = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft')\r\nvar f = (100 + 3 * (Math.sqrt(d*d + r*r) - Math.sqrt(a*a + l*l))) / 4;\r\nreturn $prop('GameRawData.Physics.WheelSlip02') * f / 100;\r\n//return f;"
+        "Expression": "// condition wheel slip property\r\nvar s = $prop('GameRawData.Physics.WheelSlip02');\r\nreturn 6 * Math.pow(s, 1/3) - 2;"
       },
       "RearLeftFormula": {
         "Interpreter": 1,
-        "Expression": "// deceleration @ left rear\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight');\r\n// acceleration\r\nvar a = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// left load (turning right)\r\nvar l = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// right load (turning left)\r\nvar r = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft')\r\nvar f = (100 + 3 * (Math.sqrt(a*a + l*l) - Math.sqrt(d*d + r*r))) / 4;\r\nreturn $prop('GameRawData.Physics.WheelSlip03') * f / 100;\r\n//return f;"
+        "Expression": "// condition wheel slip property\r\nvar s = $prop('GameRawData.Physics.WheelSlip03');\r\nreturn 6 * Math.pow(s, 1/3) - 2;"
       },
       "RearRightFormula": {
         "Interpreter": 1,
-        "Expression": "// deceleration @ right rear\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight');\r\n// acceleration\r\nvar a = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// left load (turning right)\r\nvar l = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// right load (turning left)\r\nvar r = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft')\r\nvar f = (100 + 3 * (Math.sqrt(a*a + r*r) - Math.sqrt(d*d + l*l))) / 4;\r\nreturn $prop('GameRawData.Physics.WheelSlip04') * f / 100;\r\n//return f;"
+        "Expression": "// condition wheel slip property\r\nvar s = $prop('GameRawData.Physics.WheelSlip04');\r\nreturn 6 * Math.pow(s, 1/3) - 2;"
       },
       "IsMuted": false,
       "ContainerId": "cc64cec4-9dc5-4e26-bce2-ef087adb2c84",
       "ContainerType": "CustomEffectContainer",
-      "Description": "Provides ability to create your own effect based on game data",
+      "Description": "condition wheel slip for breakaway",
       "AggregationMode": "Corners",
-      "Gain": 100.0,
+      "Gain": 0.0,
       "IsEnabled": true,
       "Output": {
         "UsePrehemptiveMode": false,
@@ -313,6 +313,60 @@
         "DelayEnabled": false,
         "AssignToChannelGroup": false,
         "ChannelGroupName": "",
+        "PropertyName": "proxyS",
+        "ExportProperty": true,
+        "DisableOutput": true,
+        "OutputType": "ToneOutput"
+      },
+      "Algorythm": null
+    },
+    {
+      "AutocalibrationMax": 95.0,
+      "Filter": {
+        "GammaValue": 0.89999999999999991,
+        "InputGain": 127.0,
+        "MinimumForce": 0,
+        "Threshold": 0,
+        "FilterType": "GammaFilter"
+      },
+      "FrontLeftFormula": {
+        "Interpreter": 1,
+        "Expression": "// convert proxyG to load; apply proxyS\r\nvar L = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft');\r\nL -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\nL = 25 + 25 * L / 100;\r\n// deceleration load\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight')\r\nd -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\nL += L * d/100;\r\n//return L;\t// load test\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.FrontLeft');\r\nreturn s *  L / 100;\r\n\r\n"
+      },
+      "FrontRightFormula": {
+        "Interpreter": 1,
+        "Expression": "// right front loaded slip\r\nvar L = - $prop('ShakeITBSV3Plugin.Export.proxyG.FrontLeft');\r\nL += $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\nL = 25 + 25 * L / 100;\r\n// deceleration load\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight')\r\nd -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\nL += L * d/100;\r\n// return L;    // load test\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.FrontRight');\r\nreturn s *  L / 100;  "
+      },
+      "RearLeftFormula": {
+        "Interpreter": 1,
+        "Expression": "// left rear loaded slip\r\nvar L = $prop('ShakeITBSV3Plugin.Export.proxyG.FrontLeft');\r\nL -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\nL = 25 + 25 * L / 100;\r\n// deceleration load\r\nvar d = - $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight')\r\nd += $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\nL += L * d/100;\r\n// return L;    // load test\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.RearLeft');\r\nreturn s *  L / 100;   "
+      },
+      "RearRightFormula": {
+        "Interpreter": 1,
+        "Expression": "// left front loaded slip\r\nvar L = - $prop('ShakeITBSV3Plugin.Export.proxyG.FrontLeft');\r\nL += $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\nL = 25 + 25 * L / 100;\r\n// deceleration load\r\nvar d = - $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight')\r\nd += $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\nL += L * d/100;\r\n// return L;    // load test\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.RearRight');\r\nreturn s *  L / 100;  "
+      },
+      "IsMuted": false,
+      "ContainerId": "fd57e973-7ffd-401b-ba0f-8eaac3e1ebdf",
+      "ContainerType": "CustomEffectContainer",
+      "Description": "loaded wheel slips",
+      "AggregationMode": "Corners",
+      "Gain": 100.0,
+      "IsEnabled": true,
+      "Output": {
+        "UsePrehemptiveMode": false,
+        "Frequency": 815,
+        "UseHighFrequency": true,
+        "HighFrequency": 1,
+        "WhiteNoise": 92,
+        "UseWhiteNoise": true,
+        "EnableDurationModulation": true,
+        "DurationModulationValue": 34,
+        "FrequencyBasedOnPreFilter": true,
+        "Harmonics": 0,
+        "HoldMode": 1,
+        "DelayEnabled": false,
+        "AssignToChannelGroup": false,
+        "ChannelGroupName": "",
         "PropertyName": null,
         "ExportProperty": false,
         "DisableOutput": false,
@@ -321,11 +375,11 @@
       "Algorythm": null
     }
   ],
-  "AutoCalibrationRatio2": 100,
+  "AutoCalibrationRatio2": 0,
   "GameCode": "AssettoCorsa",
-  "LastLoaded": "2021-02-05T19:32:28.5409255-05:00",
-  "Name": "AC1",
-  "ProfileId": "211c687a-d047-44b3-a6c2-6b7f2a68c88c",
+  "LastLoaded": "2021-03-05T06:04:38.2085584-05:00",
+  "Name": "GmodulatedWheelSlip",
+  "ProfileId": "fb99c25d-0c0a-4cda-b589-fb61871a68a9",
   "OutputMode": 1,
   "GlobalGain": 50.0,
   "UseProfileGain": false
