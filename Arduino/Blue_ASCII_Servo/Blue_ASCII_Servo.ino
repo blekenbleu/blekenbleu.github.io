@@ -1,11 +1,12 @@
 #include <Servo.h>
+// set left/right servos based on even/odd ASCII values
+// https://blekenbleu.github.io/Arduino/
 
 #define LED PC13		// Blue Pill green LED
 Servo left, right;
 unsigned long then, timeout=0;
 int next = HIGH;
-int even = 30, odd = 30;	// even odds
-byte ladd=21, radd=29;		// mismatched servo bracket angles
+int even = 30, odd = 30;	// even: LED on count
 
 void setup() {			// setup() code runs once
   then = millis();   		// start the clock
@@ -49,6 +50,8 @@ void loop() {
       delay(30);		// this may facilitate interrupting
   }
   if (0 < Serial.available()) {
+    byte ladd=21, radd=29;	// mismatched servo bracket angles
+
     received = Serial.read();
     if (2 > received) {
       byte add;			// prepare to change servo offset

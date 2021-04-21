@@ -6,8 +6,7 @@
 Servo left, right;
 unsigned long then, timeout=0;
 int next = HIGH;
-byte even = 30, odd = 30;
-char hex[] = "0123456789ABCDEF";
+int even = 30, odd = 30;	// even: LED on count
 
 void setup() {			// setup() code runs once
   then = millis();   		// start the clock
@@ -51,6 +50,8 @@ void loop() {
       delay(30);		// this may facilitate interrupting
   }
   if (0 < Serial.available()) {
+//  char hex[] = "0123456789ABCDEF";
+
     received = Serial.read();
     Serial.write(received);
 //  Serial.write(hex[received>>4]);
