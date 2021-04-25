@@ -88,9 +88,11 @@ Recompiled Blue_ASCII sketch to echo hex, confirming 0 and 1 are received, all o
 
 While it would be nice to have delta_v filter code in a more legible format,
 my guess is that SimHub live interpreter does not work for JavascriptExtensions.  
+Javascript has been updated to exploit acceleration property support added to SimHub 7.3.14.  
 
 SimHub has Visible Bindings and Enabled Bindings for Custom serial devices Setting panel;  
 don't know what two different bindings imply.  Sliders work without forcing settings in their Bindings.  
 
 As with .siprofile files for ShakeIt, .shsds files for Custom serial devices are stored in your `Documents\SimHub\` folder.
 `cp proxy_G.shsds` [../GitHubDesktop/blekenbleu.github.io/Arduino/proxy_G.shsds.txt](proxy_G.shsds.txt)  
+[Here is Javascript](SimHubG.js.txt) extracted from that profile.  
