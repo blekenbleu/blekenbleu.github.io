@@ -22,7 +22,7 @@
 
 ## GitHub Pages Jekyll Installation How-To
 *in order attempted*  
-**[Windows 8.1](GitHubPages)**  with **HitHub Desktop** and **Git for Windows**  
+**[Windows 8.1](GitHubPages)**  with **GitHub Desktop** and **Git for Windows**  
 **[Windows 10](GitHubW10)** with **GitHub Desktop**   
 **[macOS](GitHubMac) High Sierra** with **MacPorts** and **SmartGit**  
 **[Ubuntu on Windows (WSL)](GitHubWSL) (or NOT)** with **SmartGit**  and its `git-bash.exe`
