@@ -7,6 +7,7 @@ Servo left, right;
 unsigned long then, timeout=0;
 int next = HIGH;
 int even = 30, odd = 30;	// even: LED on count
+byte ladd=63, radd=65;		// initial servo offsets:  unloaded bracket angles
 
 void setup() {			// setup() code runs once
   then = millis();   		// start the clock
@@ -15,8 +16,8 @@ void setup() {			// setup() code runs once
   digitalWrite(LED, HIGH);	// turn off LED by floating pin HIGH
   left.attach(PB8);		// Blue Pill 5V tolerant PWM pins
   right.attach(PB9);
-  left.write(65);		// initial servo positions
-  right.write(65);
+  left.write(ladd);		// initial servo positions
+  right.write(radd);
 
   // Initialize serial and wait for port to be opened:
   Serial.begin(9600);
@@ -50,8 +51,6 @@ void loop() {
       delay(30);		// this may facilitate interrupting
   }
   if (0 < Serial.available()) {
-    byte ladd=21, radd=29;	// mismatched servo bracket angles
-
     received = Serial.read();
     if (2 > received) {
       byte add;			// prepare to change servo offset
