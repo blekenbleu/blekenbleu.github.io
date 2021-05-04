@@ -50,14 +50,18 @@ void loop() {
       delay(30);		// this may facilitate interrupting
   }
   if (0 < Serial.available()) {
-//  char hex[] = "0123456789ABCDEF";
+    char hex[] = "0123456789ABCDEF";
 
     received = Serial.read();
-    Serial.write(received);
-//  Serial.write(hex[received>>4]);
-//  Serial.write(hex[0x0F&received]);
+//  Serial.write(received);
+    if (0 == received) {
+      Serial.write('\r');
+      Serial.write('\n');
+    }
+    Serial.write(hex[received>>4]);
+    Serial.write(hex[0x0F&received]);
     if (1 & received) {
-//    right.write((127&received)+radd);
+//    right.write((127&received)+radd);  // for servo, not ASCII echo
       even = 40;		// LED briefly on
       odd = 180;		// right has long odds
     } else {
