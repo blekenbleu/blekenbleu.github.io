@@ -80,7 +80,7 @@
         "EffectToChannelsMapStore": {
           "CustomEffectContainer": {
             "All": {
-              "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
+              "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;1;100;|5;0;100;|6;0;100;|7;0;100;"
             },
             "Left": {
               "MapsStore": "0;0;100;|1;0;100;|2;0;100;|3;0;100;|4;0;100;|5;0;100;|6;0;100;|7;0;100;"
@@ -184,9 +184,9 @@
     {
       "Filter": {
         "ControlPoints": [
-          "5;79.2202412673804",
-          "21.8164571970595;38.3423768228283",
-          "26.9385819302822;0",
+          "5;96.8150668404035",
+          "14.9112426035503;60.4944259446938",
+          "19.4082840236686;0.897881376381449",
           "93;43",
           "100;58",
           "86;0"
@@ -218,7 +218,7 @@
         "ChannelGroupName": "",
         "PropertyName": null,
         "ExportProperty": false,
-        "DisableOutput": true,
+        "DisableOutput": false,
         "OutputType": "ToneOutput"
       },
       "Algorythm": null
@@ -227,31 +227,31 @@
       "AutocalibrationMax": 95.0,
       "Filter": {
         "GammaValue": 1.5000000000000004,
-        "InputGain": 96.0,
+        "InputGain": 90.0,
         "MinimumForce": 0,
         "Threshold": 2,
         "FilterType": "GammaFilter"
       },
       "FrontLeftFormula": {
         "Interpreter": 1,
-        "Expression": "// left acceleration  \r\nreturn -50 * $prop('GameRawData.Physics.AccG01');"
+        "Expression": "// left front wheel load\r\nreturn $prop('GameRawData.Physics.WheelLoad01')/50;"
       },
       "FrontRightFormula": {
         "Interpreter": 1,
-        "Expression": "// deceleration\r\nreturn -50 * $prop('GameRawData.Physics.AccG03');"
+        "Expression": "// right front wheel load\r\nreturn $prop('GameRawData.Physics.WheelLoad03')/50;"
       },
       "RearLeftFormula": {
         "Interpreter": 1,
-        "Expression": "// right acceleration\r\nreturn 50 * $prop('GameRawData.Physics.AccG01');"
+        "Expression": "// left rear wheel load\r\nreturn $prop('GameRawData.Physics.WheelLoad02')/50;"
       },
       "RearRightFormula": {
         "Interpreter": 1,
-        "Expression": "// acceleration\r\nreturn 50 * $prop('GameRawData.Physics.AccG03');"
+        "Expression": "// right rear wheel load\r\nreturn $prop('GameRawData.Physics.WheelLoad04')/50;"
       },
       "IsMuted": false,
       "ContainerId": "3fc86d3c-09d9-40df-afeb-061f6e888fcd",
       "ContainerType": "CustomEffectContainer",
-      "Description": "apply response filter to GameRawData.Physics.AccG01,3",
+      "Description": "apply Response filter to wheel loads - ProxyG property; no output",
       "AggregationMode": "Corners",
       "Gain": 0.0,
       "IsEnabled": true,
@@ -305,7 +305,7 @@
       "IsMuted": false,
       "ContainerId": "cc64cec4-9dc5-4e26-bce2-ef087adb2c84",
       "ContainerType": "CustomEffectContainer",
-      "Description": "condition wheel slip for breakaway",
+      "Description": "condition wheel slip for breakaway - ProxyS property; no output",
       "AggregationMode": "Corners",
       "Gain": 0.0,
       "IsEnabled": true,
@@ -335,26 +335,26 @@
       "AutocalibrationMax": 95.0,
       "Filter": {
         "GammaValue": 1.5000000000000004,
-        "InputGain": 130.0,
+        "InputGain": 122.0,
         "MinimumForce": 0,
         "Threshold": 12,
         "FilterType": "GammaFilter"
       },
       "FrontLeftFormula": {
         "Interpreter": 1,
-        "Expression": "// left front loaded slip\r\n// convert unsigned lateral Gs to signed left G\r\nvar L = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft');\r\nL -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// convert lateral G to left load\r\nL = 25 + 25 * L / 100;\r\n// convert unsigned accelerations to signed deceleration\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight')\r\nd -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// apply deceleration to left load\r\nL += L * d/100;\r\n//return L;\t// load test\r\n// apply left front load to conditioned corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.FrontLeft');\r\nreturn s *  L / 100;\r\n\r\n"
+        "Expression": "// left front loaded slip\r\nvar L = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft');\r\n// apply left front load to conditioned corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.FrontLeft');\r\nreturn s *  L / 100;\r\n\r\n"
       },
       "FrontRightFormula": {
         "Interpreter": 1,
-        "Expression": "// right front loaded slip\r\nvar L = - $prop('ShakeITBSV3Plugin.Export.proxyG.FrontLeft');\r\nL += $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\nL = 25 + 25 * L / 100;\r\n// deceleration load\r\nvar d = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight')\r\nd -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\nL += L * d/100;\r\n// return L;    // load test\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.FrontRight');\r\nreturn s *  L / 100;  "
+        "Expression": "// right front loaded slip\r\nvar L = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight');\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.FrontRight');\r\nreturn s * L / 100;  "
       },
       "RearLeftFormula": {
         "Interpreter": 1,
-        "Expression": "// left rear loaded slip\r\nvar L = $prop('ShakeITBSV3Plugin.Export.proxyG.FrontLeft');\r\nL -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\nL = 25 + 25 * L / 100;\r\n// deceleration load\r\nvar d = - $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight')\r\nd += $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\nL += L * d/100;\r\n// return L;    // load test\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.RearLeft');\r\nreturn s *  L / 100;   "
+        "Expression": "// left rear loaded slip\r\nvar L = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.RearLeft');\r\nreturn L *  s / 100;   "
       },
       "RearRightFormula": {
         "Interpreter": 1,
-        "Expression": "// left front loaded slip\r\nvar L = - $prop('ShakeITBSV3Plugin.Export.proxyG.FrontLeft');\r\nL += $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');\r\nL = 25 + 25 * L / 100;\r\n// deceleration load\r\nvar d = - $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight')\r\nd += $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\nL += L * d/100;\r\n// return L;    // load test\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.RearRight');\r\nreturn s *  L / 100;  "
+        "Expression": "// right rear loaded slip\r\nvar L = $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// corner slip\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.RearRight');\r\nreturn s *  L / 100;  "
       },
       "IsMuted": false,
       "ContainerId": "fd57e973-7ffd-401b-ba0f-8eaac3e1ebdf",
@@ -389,14 +389,14 @@
       "AutocalibrationMax": 95.0,
       "Filter": {
         "GammaValue": 1.0,
-        "InputGain": 185.0,
+        "InputGain": 145.0,
         "MinimumForce": 0,
         "Threshold": 27,
         "FilterType": "GammaFilter"
       },
       "FrontLeftFormula": {
         "Interpreter": 1,
-        "Expression": "// unloaded rear slip 0 to 100\r\n// deceleration load 0 to 200\r\nvar d = 100 + $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontRight')\r\nd -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\n// rear corner slips potentially total 200\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.RearLeft');\r\ns += $prop('ShakeITBSV3Plugin.Export.proxyS.RearRight');\r\nreturn d * s / 100;   "
+        "Expression": "// unloaded rear slip 0 to 100\r\n// \r\nvar L = 90 - $prop('ShakeITBSV3Plugin.Export.proxy_G.RearRight');\r\nL += (90 - $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft'));\r\n// rear corner slips potentially total 200\r\nvar s = $prop('ShakeITBSV3Plugin.Export.proxyS.RearLeft');\r\ns += $prop('ShakeITBSV3Plugin.Export.proxyS.RearRight');\r\nreturn L * s / 100;   "
       },
       "FrontRightFormula": {
         "Expression": ""
@@ -411,9 +411,9 @@
       "IsMuted": false,
       "ContainerId": "ecd78bc4-2e99-4748-83e7-1bc1dee176e2",
       "ContainerType": "CustomEffectContainer",
-      "Description": "unloaded rear wheels slip",
+      "Description": "unloaded rear wheels slip:  oversteer",
       "AggregationMode": "Mono",
-      "Gain": 90.0,
+      "Gain": 66.666666666666742,
       "IsEnabled": true,
       "Output": {
         "UsePrehemptiveMode": false,
