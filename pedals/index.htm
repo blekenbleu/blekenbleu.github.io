@@ -322,8 +322,19 @@ Better feedback wants direct drive steering, load cell brake pedal and <a href="
 
 <h4>Project</h4>
 Brake simulation shortcomings can be mitigated by:<ul compact>
-<li> replacing brake potentiometer with a [load cell](https://imgur.com/gallery/gOjAf)<ul compact>
-<li>That mod uses analog op amp, problematic with Logitech's brake curve, but fine with AccuForce</ul>
+<li> replacing brake potentiometer with a <a href="https://imgur.com/gallery/gOjAf">load cell</a><ul compact>
+<li>That mod uses analog op amp, problematic with Logitech's brake curve, but fine with AccuForce
+<li>instead of custom circuit board, use a cheap <b>INA333</b> (or AD623) low power rail-to-rail instrumentation amplifier module:<br>
+<img src=INA333front.jpg><img src=INA333rear.jpg><br clear=all>
+<b>Instructions</b> &nbsp The on-board 3.3V low-dropout LDO regulator chip directly supplies power to the INA333 amplifier.<br>
+The amplifier uses a single-ended power supply mode, V- is connected to GND, and V+ is connected to the 3.3V output of the LDO.<br>
+The amplifier uses a 3.3V single-ended power supply.
+VIN+ non-inverting input, VIN inverting input. R3 on the board is not soldered.<br>
+VCC regulator LDO input 5V.<br>
+<img src="INA333power.png"><br clear=all>
+<img src="INA333amp.png"><br clear=all>
+<img src="INA333.png">
+</ul>
 <li> simulating ABS feedback at the brake pedal
 <li>e.g. @ 3:47/10:56 of this video: <a href="https://www.youtube.com/watch?v=8aLqqcEaUVk">DIY RUMBLE PEDALS SIM RACING</a><ul compact>
 <li>Get tire slip data from Assetto Corsa via SimHub, which can drive <a href="https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support">Custom serial devices</a>
