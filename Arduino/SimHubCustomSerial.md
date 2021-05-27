@@ -96,3 +96,13 @@ don't know what two different bindings imply.  Sliders work without forcing sett
 As with .siprofile files for ShakeIt, .shsds files for Custom serial devices are stored in your `Documents\SimHub\` folder.
 `cp proxy_G.shsds` [../GitHubDesktop/blekenbleu.github.io/Arduino/proxy_G.shsds.txt](proxy_G.shsds.txt)  
 [Here is Javascript](SimHubG.js.txt) extracted from that profile.  
+
+Since an STM32 Blue Pill is capable of driving more (at least 7) PWM devices,  
+it becomes interesting to investigate useful device control granularity.  
+Specifically, 4-bit granularity leaves 3 bits for addressing 7 PWM pins,  
+leaving address 0x70 to e.g. download LUTs and enable/disable message echo.  
+This [Noticeable.shsds](Noticeable.shsds.txt) GitHub profile has 4 Javascript messages:
+1) Generate LUTs for download to (not yet written) Arduino sketch for equal tension increments
+2) Repurpose decel and yaw can sliders to for equal tension increment testing
+3) Updated (simplified) untensioned and max tension position slider tests
+4) Simulate 4-bit quantized tension LUT in comparison to 7-bit (servo pwm granularity) control.
