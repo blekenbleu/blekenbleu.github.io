@@ -40,30 +40,32 @@ void setup() {			// setup() code runs once
 void loop() {
   if (0 < Serial.available()) {
     byte received = Serial.read();
+    
     if (3 == special) {
-      Serial.write(hex[received >> 4]);
-      Serial.write(hex[0x0F & received]); 
+      Serial.print(received, HEX);
+      Serial.write(' ');
     }
-    if (loading | 0x70 <= received) {	// special commands
+    if (loading || 0x70 <= received) {	// special commands
       if (0 == loading) {		// not in LUT-loading sequence?
-        special = received & 15;	// which special command?
-        if (0 == special) {		// init LUT loading
-	   Serial.println("loading LUTs");
-           loading = 1;
-	}
-	else if (15 == special)
-	  special = 0;			// reset special
+        if (0x7F == received) {		// init LUT loading
+      	  Serial.println("loading LUTs");
+          loading = 1;
+      	} else if (7 == (received >> 4)){
+          special = received & 15;
+          Serial.print("special ");
+          Serial.println(special);
+      	}
       }
       else {				// 0 < loading
         if (3 > loading)
-          offset[loading - 1] = received;
-        else LUT[loading - 2] = received;
-        if (17 < loading)
-          loading++;
-        else {
-	  loading = 0;
-	  Serial.println("LUTs loaded");
-	}
+          offset[loading - 1] = received;  // load = 1 to offset[0]
+        else
+          LUT[loading - 2] = received;  // do not update LUT[0] = 0
+        loading++;
+        if (17 < loading) {
+          Serial.println(" LUTs loaded");
+          loading = 0;
+        }
       }
     }
     else {				// servo movements
@@ -74,15 +76,15 @@ void loop() {
       if (15 == received) {
         digitalWrite(LED, LOW);		// possibly clipped tension
         next = 0;
-	if (special)
-	  Serial.write('F');		// echo possible clips
+	      if (special == 1)
+	        Serial.write('F');		// echo possible clips
       } else {
-	if (next > 1) {			// leave LED on if either update is 15
-	  digitalWrite(LED, HIGH);	// extinguish LED
-	  next = 0;
-	}
-	if (2 == special)		// echo LUT indices
-	  Serial.write(hex[0x0F & received]);
+	      if (next > 1) {			// leave LED on if either update is 15
+	        digitalWrite(LED, HIGH);	// extinguish LED
+	        next = 0;
+	      }
+	      if (2 == special)		// echo LUT indices
+	        Serial.write(hex[received]);
       }
     }
   }
