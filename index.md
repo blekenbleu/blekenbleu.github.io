@@ -7,15 +7,15 @@
 - [ Samsung Odyssey+ for Assetto Corsa ](pedals/index.htm#hmd) Windows Mixed Reality and SteamVR
 - [TH8A](pedals/index.htm#TH8A) Thrustmaster shifter mods
 - Logitech [G29 pedal mods](pedals/index.htm#pedals)
-- USB-attached harness tensioning servos
-  - [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
-    - COM ports are good for driving outputs from SimHub, but games e.g. Assetto Corsa expect HID I/O
-    - **WeMos D1 UNO R1** AKA *ESPDuino* [background information](Arduino/ESPDuino)
-- USB-attached steering wheel
   - [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
-- [Arduino for custom USB devices](Arduino/) e.g. STM32 Black or Blue Pills  
-  and ESP8266 D1 UNO or similar  
-- ESP8266 / STM32 Arduino IDE Alternative: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
+  - [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
+  - **actually ended up keeping pedals [analog](pedals/index.htm#pedals)** plugged into [SimXperience AccuForce controller](pedals/index.htm#analog)  
+- USB-attached harness tensioning servos
+  - [Arduino for custom USB devices](Arduino/)
+    - e.g. STM32 Black or Blue Pills and ESP8266 **WeMos D1 UNO R1** or similar  [background](Arduino/ESPDuino)  
+    - COM ports are good for driving outputs from SimHub, but games e.g. Assetto Corsa expect HID I/O
+      - SimHub *directly* supports *real* Arduinos,  but any serial device by Custom Serial devices
+  - ESP8266 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
 
 ## [ab]using Microsoft Visual Studio Community 2017
 * [shared installation](VSC2017)
