@@ -48,8 +48,8 @@ Clone USB COM dongles *may not* support 3.3V to Blue Pill serial boot pins..
 Blue Pill boot jumpers *are unchanged* when flashing by ST-LINK or HID bootloader.  
 
 #### STM32duino
-Many STM32 Arduino projects and websites use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader,  
-but ST Microelectronics now supports an stm32duino [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
+Many STM32 Arduino projects use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader,  
+but Arduino now has an ST Microelectronics-supported [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
 for which there is an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
 as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).  
 That video installs the Blue Pill HID bootloader via USB COM dongle,   
@@ -63,20 +63,19 @@ My clone ST-Link happens to have the *correct pinout* printed on its cover;
 [Here is the Arduino software page](https://www.arduino.cc/en/software).  
 
 ### ST-LINK and Blue Pill
-This [YouTube video](https://www.youtube.com/watch?v=KgR3uM21y7o) programs a Blue Pill
-by ST-LINK using [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html).  
+[This video](https://www.youtube.com/watch?v=KgR3uM21y7o) programs a Blue Pill using [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html).  
 Wiring Blue Pill to ST-LINK V2 clone:
 ![wiring Blue Pill to ST-LINK V2 clone](https://miro.medium.com/max/875/1*pFNIcoAq2s3l4lwsM0gj8w.jpeg)  
 ![wiring chart](https://miro.medium.com/max/533/1*NwPYrVoPUbciDWzvGsTavQ.png)  
-Do **NOT** connect USB or other power to Blue Pill with 3.3V also connected to ST-LINK!  
-Put another way, when using ST-LINK for debugging Blue Pill plugged to USB,  
+Connect 3.3V from ST-LINK to Blue Pill **only when Blue Pill has no other connections**  
+Put another way, when using ST-LINK to debug Blue Pill e.g. plugged to USB,  
   **do NOT connect 3.3V to Blue Pill from ST-LINK**.  
 
 ### Installing (by Windows ST-LINK) Blue Pill HID bootloader for STM core
  - For Windows, stlink-org tools depend on STM's `ST-LINK driver`,  
    bundled with [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html),  
    which utility was *also* wanted for updating clone ST-LINK firmware.  
- - Since *already* using [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html), also use it to install HID bootloader.
+ - *Also* use [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html) to install HID bootloader.
  - These instructions apply *specifically* for 64-bit Windows, ST-LINK clone,  
    HID-bootloader, Blue Pill and STM core.  
 
