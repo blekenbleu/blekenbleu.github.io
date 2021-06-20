@@ -1,7 +1,7 @@
 ---
 title: Arduino for Blue Pill
 ---
-*updated 30 Jan 2021*
+*updated 20 Jun 2021*
 
 #### Background
 Arduino originally employed microcontrollers lacking USB support.  
