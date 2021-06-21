@@ -4,7 +4,7 @@ repository: blekenbleu/blekenbleu.github.io
 github: [metadata]
 title: blekenbleu documentation
 # markdown: CommonMarkGhPages
-markdown: CommonMarkGhPages
+markdown: kramdown
 # required for Kramdown to support <details>
 kramdown:
   parse_block_html: true
