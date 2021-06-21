@@ -1,5 +1,5 @@
 ---
-title: Jekyll  for GitHub Pages on WSL Ubuntu
+Jekyll for GitHub Pages on WSL Ubuntu
 ---
 I gave up on [Fedora support](https://www.redhat.com/en/blog/monumental-day-open-source-and-red-hat) of
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10),  

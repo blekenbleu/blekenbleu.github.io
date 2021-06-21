@@ -1,5 +1,5 @@
 ---
-title: Install Git_Cola using MacPorts
+Install Git_Cola using MacPorts
 ---
 
 #### Background

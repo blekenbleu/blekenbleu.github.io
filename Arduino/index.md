@@ -1,5 +1,5 @@
 ---
-title: Arduino for Blue Pill
+Arduino for Blue Pill
 ---
 *updated 20 Jun 2021*
 

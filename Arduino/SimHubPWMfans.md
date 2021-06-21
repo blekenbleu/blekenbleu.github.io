@@ -1,6 +1,6 @@
 
 ---
-title: Blue Pill PWM fans for SimHub
+Blue Pill PWM fans for SimHub
 ---
 *updated 21 Jun 2021*
 

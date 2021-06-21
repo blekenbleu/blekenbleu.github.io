@@ -1,5 +1,5 @@
 ---
-title: R&D, Vim, X-Mouse and Logitech Anywhere MX
+R&D, Vim, X-Mouse and Logitech Anywhere MX
 ---
 25 Feb 2019  
 

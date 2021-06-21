@@ -1,5 +1,5 @@
 ---
-title: Jekyll on Windows 10
+Jekyll on Windows 10
 ---
 4 November 2018  
 

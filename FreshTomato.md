@@ -1,5 +1,5 @@
 ---
-title: FreshTomato, Linksys EA6500v2 and the Internet
+FreshTomato, Linksys EA6500v2 and the Internet
 ---
 26 November 2018
 

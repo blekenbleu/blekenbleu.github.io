@@ -1,6 +1,6 @@
 
 ---
-title: SimHub Custom serial device for Blue Pill
+SimHub Custom serial device for Blue Pill
 ---
 *updated 30 Jan 2021*
 

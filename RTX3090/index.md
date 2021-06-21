@@ -1,5 +1,5 @@
 ---
-title: RTX 3090 for Assetto Corsa VR
+RTX 3090 for Assetto Corsa VR
 ---
 *updated 15 Feb 2021*
 

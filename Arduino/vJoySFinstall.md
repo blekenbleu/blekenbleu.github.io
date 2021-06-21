@@ -1,4 +1,7 @@
-# VJoySerialFeeder Installation
+
+---
+VJoySerialFeeder Installation
+---
 * Download from [releases](https://github.com/Cleric-K/vJoySerialFeeder/releases)
 * Create a folder for downloaded contents
 * Unzip/untar release into created folder

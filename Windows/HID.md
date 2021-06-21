@@ -1,5 +1,5 @@
 ---
-title: HID game controllers
+HID game controllers
 ---
 
 [mi-360 fork](https://github.com/blekenbleu/mi-360) - practice for hacking [ViGEm.NET](https://github.com/ViGEm/ViGEm.NET) into [VJoySerialFeeder](https://github.com/Cleric-K/vJoySerialFeeder)  

@@ -1,5 +1,5 @@
 ---
-title: Line 6 JTV-89F guitar
+Line 6 JTV-89F guitar
 ---
 24 Feb 2019
 ## [James Tyler Variax 89 Floyd Rose](https://line6.com/data/6/0a06434d357e5106d40019c0a/application/pdf/JTV-89F%20Onesheet%20-%20English%20(%20Rev%20A%20).pdf)

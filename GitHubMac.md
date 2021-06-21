@@ -1,5 +1,5 @@
 ---
-title:  Jekyl on macOS High Sierra
+Jekyl on macOS High Sierra
 ---
 
 POSIX at heart, macOS serves my LAN for SCP, HTTP and [git](MacGit).  
