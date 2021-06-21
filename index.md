@@ -1,4 +1,4 @@
-26 January 2021  
+21 June 2021  
 ## Signal Processing
   - [Special Error Diffusion](ImageProcessing/sped.html)
   - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
@@ -11,10 +11,10 @@
   - [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
   - **actually ended up keeping pedals [analog](pedals/index.htm#pedals)** plugged into [SimXperience AccuForce controller](pedals/index.htm#analog)  
 - USB-attached harness tensioning servos
-  - [Arduino for custom USB devices](Arduino/)
-    - e.g. STM32 Black or Blue Pills and ESP8266 **WeMos D1 UNO R1** or similar  [background](Arduino/ESPDuino)  
+  - [STM32 Blue Pill for custom USB Arduino devices](Arduino/)
+    - ESP8266 **WeMos D1 UNO R1** or similar [background](Arduino/ESPDuino) can only be COM devices  
     - COM ports are good for driving outputs from SimHub, but games e.g. Assetto Corsa expect HID I/O
-      - SimHub *directly* supports *real* Arduinos,  but any serial device by Custom Serial devices
+      - SimHub *directly* supports *real* Arduinos, but any COM by Custom Serial devices
   - ESP8266 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
 
 ## [ab]using Microsoft Visual Studio Community 2017
