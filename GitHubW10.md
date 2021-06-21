@@ -2421,4 +2421,5 @@ Error reading file E:/my/GitHubDesktop/blekenbleu.github.io/GitHubW10.md: invali
   Liquid Exception: The GitHub API credentials you provided aren't valid. in /_layouts/default.html
 jekyll 3.9.0 | Error:  The GitHub API credentials you provided aren't valid.
 ```
-
+## To fix "invalid byte sequence in UTF-8" errors using vim  
+find them using command keystrokes: **8g8**
