@@ -40,8 +40,13 @@
    :set nobomb
    :wq
 ```
-4. **IPv6** tends to be problematic, requiring Windows reboots  
+5. **IPv6** tends to be problematic, requiring Windows reboots  
    Suggested procedures [for disabling IPv6](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
+6. Helpful URLs:  
+  [GitHub Pages Documentation](https://docs.github.com/en/pages)  
+  [Jekyll Resources](https://jekyllrb.com/resources)  
+  [Jekyll Talk! forum](https://talk.jekyllrb.com/)  
+  [Jekyll github](https://github.com/jekyll) and [github-metadata](https://github.com/jekyll/github-metadata/issues)  
 
 ### [COVID-19 plots](covid)
 ### [Vim and X-Mouse](VimTXmouse)
