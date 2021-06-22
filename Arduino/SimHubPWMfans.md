@@ -2,8 +2,8 @@
 ---
 Blue Pill PWM fans for SimHub
 ---
-*updated 22 Jun 2021*
-
+*updated 22 Jun 2021*  
+![12V 4-wire fan to Blue Pill](BluePillPWMfan.jpg)  
 #### [Background](https://blekenbleu.github.io/Arduino/SimHubCustomSerial.html)
 An [STM32duino sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_PWMfan) was thrown together for controlling speeds of PWM PC fans.  
 Unlike hobby servos, 4-wire PC fans want 25kHz PWM  
