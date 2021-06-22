@@ -10,7 +10,8 @@ Unlike (`50Hz`) hobby servos, 4-wire PC fans want `25kHz` PWM...
 
 ![4-wire PC fan pinout](https://i.pinimg.com/564x/dc/a2/e7/dca2e7ae4074a079bbbe07423d7c58bf.jpg)  
 ## SimHub Custom Serial sends ASCII (7-bit) values to an STM32 Blue Pill.  
-A SimHub ShakeIt Bass Shakers **SPEED WITH CURVING** effect will generate `SpeedCurv` properites.  
+A SimHub ShakeIt Bass Shakers **SPEED WITH CURVING** effect will generate `SpeedCurv` properites:  
+![ShakeIt effect](SpeedCurv.png)  
 A fan speeds message will be added to the SimHub [Custom serial device for harness tensioning](Noticeable.shsds.txt):
 -  It will convert left+right SpeedCurve properties to 4-bit speed indices.  
 -  An Arduino sketch will scale those to (25kHz) PWM fan control values.  
