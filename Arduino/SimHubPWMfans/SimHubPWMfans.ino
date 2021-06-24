@@ -1,6 +1,6 @@
 #include <Servo.h>
 // index fan[] based on 3 bits of ASCII values, with 4 lsb to set PWM duty cycle.
-// https://blekenbleu.github.io/Arduino/BluePWMfan
+// https://blekenbleu.github.io/Arduino/SimHubPWMfans
 
 #define LED PC13			// Blue Pill green LED pin
 Servo servo[7];				// Blue Pill has 7 5-Volt tolerant PWM pins
@@ -42,7 +42,7 @@ void setup() {			// setup() code runs once
   Serial.begin(115200);
   while (!Serial)
     delay(1);			// wait for native USB serial port to connect
-  Serial.println("BlueLUT_Servo: connected");
+  Serial.println("SimHubPWMfans: connected");
   digitalWrite(LED, HIGH);	// extinguish LED until possible tension clipping
 }
 
