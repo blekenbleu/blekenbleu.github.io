@@ -9,6 +9,7 @@ byte LUT[] = {0,8,12,16,20,24,28,32,36,40,45,51,57,64,74,84};  // tension steps
 byte next = 0;				// delay clip LED turnoff if only one servo is 15
 byte special = 0;			// commands in 4 lsb of 0x70
 byte loading = 0;			// LUT loading index
+int col = 0;          // roughly 180 column SimHub incoming display width
 char hex[] = "0123456789ABCDEF";
 
 void setup() {			// setup() code runs once
@@ -44,16 +45,19 @@ void loop() {
     if (3 == special) {
       Serial.print(received, HEX);
       Serial.write(' ');
+      col += 3;
     }
     if (loading || 0x70 <= received) {	// special commands
       if (0 == loading) {		// not in LUT-loading sequence?
         if (0x7F == received) {		// init LUT loading
       	  Serial.println("loading LUTs");
+          col = 0;
           loading = 1;
       	} else if (7 == (received >> 4)){
           special = received & 15;
           Serial.print("special ");
           Serial.println(special);
+          col = 0;
       	}
       }
       else {				// 0 < loading
@@ -64,7 +68,7 @@ void loop() {
         loading++;
         if (17 < loading) {
           Serial.println(" LUTs loaded");
-          loading = 0;
+          col = loading = 0;
         }
       }
     }
@@ -76,16 +80,24 @@ void loop() {
       if (15 == received) {
         digitalWrite(LED, LOW);		// possibly clipped tension
         next = 0;
-	      if (special == 1)
+	      if (special == 1) {
 	        Serial.write('F');		// echo possible clips
+          col++;
+	      }
       } else {
 	      if (next > 1) {			// leave LED on if either update is 15
 	        digitalWrite(LED, HIGH);	// extinguish LED
 	        next = 0;
 	      }
-	      if (2 == special)		// echo LUT indices
+	      if (2 == special) {		// echo LUT indices
 	        Serial.write(hex[received]);
+          col++;
+	      }
       }
+    }
+    if (180 < col) {
+      Serial.println("");
+      col = 0;
     }
   }
 }
