@@ -32,10 +32,11 @@ char hint[] = "0'-'9' for PA8; 'A'-'P' for PA9; 'a'-'p' for PA10";
 char ch[] = "channel = ";
 byte chn = 0;
 uint32_t  ticks = 0;  // reduce overhead?
+int hilo = LOW;
 
 void setup() {			// setup() code runs once
   pinMode(LED, OUTPUT);		// initialize output digital pin connected to green LED
-  digitalWrite(LED, LOW);	// turn on LED by pulling pin LOW
+  digitalWrite(LED, hilo);	// turn on LED by pulling pin LOW
   servo[0].attach(PB8);		// Blue Pill 5V tolerant PWM pins
   servo[1].attach(PB9);
 /*
@@ -61,7 +62,6 @@ void setup() {			// setup() code runs once
   while (!Serial)
     delay(1);			// wait for native USB serial port to connect
   Serial.println("BluePWMfan: connected");
-  digitalWrite(LED, HIGH);	// extinguish LED until possible tension clipping
   Serial.print(ch);
   Serial.print(channel[chn]);
   Serial.print(";  25kHz ticks = ");
@@ -74,8 +74,18 @@ void setup() {			// setup() code runs once
 void loop() {
   if (0 < Serial.available()) {
     byte received = Serial.read();
-    byte dutycycle;
-    
+    uint32_t dutycycle;
+
+    if (10 == received) {
+      return;
+    }
+    if (LOW == hilo)
+      hilo = HIGH;
+    else hilo = LOW;
+    digitalWrite(LED, hilo);
+    Serial.print("received:  ");
+    Serial.print(received);
+    Serial.print("...  ");
     if ('0' <= received && '9' >= received) {
       /* at least 3 possible fan behaviors at/below some minimum pwm (20%?)
        ; https://www.glkinst.com/cables/cable_pics/4_Wire_PWM_Spec.pdf
