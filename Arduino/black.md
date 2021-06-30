@@ -1,28 +1,47 @@
 
 ---
-Arduino for Blue Pill
+Arduino for Black Pill
 ---
-*updated 20 Jun 2021*
+*updated 30 Jun 2021*
 
 #### Background
 Arduino originally employed microcontrollers lacking USB support.  
-Their workaround involved boards with USB-to-TTL converter chips,  
-usually configured as USB COM devices for serial IO,  
-which microcontrollers traditionally support.
+Arduino now offers a few STM32 modules with integrated USB,  
+and ST Microelectronics now supports many STM32 chips and boards.  
+- Black and Blue Pill modules use the same Arduino board manager.
+- Arduino wants STM32CubeProgrammer for Black Pill DFU; installed in Aurora E:\my
+  * added to path  
+  * Setup package in USB1TB\Windows  
   
-While not an official Arduino platform,  
-[WeMos D1 UNO R1](ESPDuino) is a supported ESP8266 board,  
-communicating via CH340 USB-serial chip.
- 
+Here is a Black Pill pinout reference:
+![Generic STM32F4x1 board pinout](https://raw.githubusercontent.com/WeActTC/MiniSTM32F4x1/master/images/STM32F4x1_PinoutDiagram_RichardBalint.png)  
+- 5V tolerant PWM pins are wanted for driving hobby servos or 4-wire PC fans.  
+- Unlike Blue Pills, nearly all F401 Black Pill pins are 5V tolerant, but not PA0 and PB5 on STM32F411.  
+- [Other Black (STM32F411) vs Blue (STM32F103) differences](https://hackaday.com/2021/01/20/blue-pill-vs-black-pill-transitioning-from-stm32f103-to-stm32f411/)  
+- [Black Pill `KEY` button pulls PA0 LOW](https://stm32-base.org/boards/STM32F411CEU6-WeAct-Black-Pill-V2.0.html)  
+- USB-C takes more pins; 14 remaining 5V-tolerant PWM pins:
+PA15,PB3  PB6-9    PB0,1    PB 10  PA6,7    PA1-3
+T2 CH1,2  T4 CH1-4 T3 CH3,4 T2 CH3 T3 CH1,2 T5 CH2-4
+
+T2 and T5 are 32-bit;  T3 and T4 are 16-bit;  T1 is [advanced 16-bit](https://stm32f4-discovery.net/2014/05/stm32f4-stm32f429-discovery-pwm-tutorial)  
+
+Two more complementary PWM: PB13,15: T1 CH 1,3
+
 While STM32 chips' ROM bootloaders typically support USB directly,  
 Blue Pill's `FC103C8` chip lacks USB bootloader support in ROM.  
-While STM32F103C officially has 64K flash, [many have 128K](https://stm32duinoforum.com/forum/viewtopic_f_28_t_4361.html).  
-
 
 There are at least 4 ways to flash STM32 chips:  
-1) SWD via ST-LINK  
-   This will be used to load an HID bootloader to Blue Pills
-2) (Arduino) USB bootloader[s] <- there have been several:  
+1) DFU (device firmware update) using DfuSe utility,  
+    using the [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
+    using the [Black Pill's DFU bootloader with Arduino](https://www.sgbotic.com/index.php?dispatch=pages.view&page_id=49)  
+    By default, must force Black Pill into DFU using buttons on board
+    [Arduino `use_1200bps_touch` sketch code](https://arduino.github.io/arduino-cli/latest/platform-specification) jumps to [STM32 ROM DFU bootloader](https://github.com/arduino/tooling-rfcs/pull/2#issuecomment-825908911).  
+    [Beta enhancement](https://github.com/stm32duino/Arduino_Core_STM32/pull/710)  
+    [Seemingly already supported for Arduino STM32 modules](https://github.com/arduino/arduino-cli/issues/1083)  
+    [May require a resistor and capacitor](https://stackoverflow.com/questions/26891432/jump-to-bootloader-in-stm32-through-application-i-e-using-boot-0-and-boot-1-pins#26958578)  
+2) SWD via ST-LINK  
+   This can be used with any STM32 chip.
+3) (Arduino) USB bootloader[s] <- there have been several:  
    * [STM32duino Bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html) AKA bootloader 2.0 AKA HID bootloader  
      This is wanted for ST Microelectronics-supported Arduino libraries
    * the rest are IMO obsolete:
@@ -31,39 +50,29 @@ There are at least 4 ways to flash STM32 chips:
      - [Roger Clark's 8k bootloader](https://github.com/rogerclarkmelbourne/STM32duino-bootloader)  
        Be aware that some of Roger Clark core code is also called Stm32duino..
      - Not sure which core (libmaple or stm32duino) [this bootloader supports, but is 4k](https://github.com/davidgfnet/stm32-dfu-bootloader)  
-3) STM serial bootloader
+4) STM serial bootloader
    Blue Pill micro has only a serial bootloader  
    [Load firmware via USART1 by jumpering](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html#Boot0_and_Boot1_pin_settings):  
    `Boot0 HIGH`  
    `Boot1 LOW`  
   ... then resetting MCU
-4) DFU (device firmware update) using DfuSe utility,  
-    using the [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
-    but USB is [**NOT** supported by Blue Pill's ROM bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html)  
-
-STM32duino expects a USB HID bootloader,  
-which gets launched by Blue Pill's ROM bootloader,  
-then that USB HID bootloader installs sketches above it in flash.  
 
 A clone ST-LINK V2 costs no more than a USB COM dongle,  
-connects to dedicated Blue Pill pins and supports debug.  
+connects to dedicated pins and supports debug.  
 Clone USB COM dongles *may not* support 3.3V to Blue Pill serial boot pins..  
-Blue Pill boot jumpers *are unchanged* when flashing by ST-LINK or HID bootloader.  
 
 #### STM32duino
-Many STM32 Arduino projects use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader,  
-but Arduino now has an ST Microelectronics-supported [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
-for which there is an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
-as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).  
-That video installs the Blue Pill HID bootloader via USB COM dongle,   
-but we will here use an [ST-LINK V2 clone](https://www.ebay.com/itm/183320329257).  
+Arduino now has an ST Microelectronics-supported [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
 My clone ST-Link happens to have the *correct pinout* printed on its cover;  
 **Verify ST-LINK clone pin artwork** by sliding that cover partly open (along the USB plug):
 ![ST-LINK pin artwork](ST-Link.jpg)  
 
-[Here is the **Arduino for STM32** forum](https://www.stm32duino.com).  It replaced an earlier one.  
-[Here is the READ-ONLY version of that earlier Arduino for STM32 forum](https://stm32duinoforum.com/forum/index_php.html).  
 [Here is the Arduino software page](https://www.arduino.cc/en/software).  
+[Here is the **Arduino for STM32** forum](https://www.stm32duino.com).
+It replaced an earlier one, mostly for Maple/Roger Clark libraries.  
+[Here is the READ-ONLY version of that earlier Arduino for STM32 forum](https://stm32duinoforum.com/forum/index_php.html).  
+
+### [STM32F411xC/E Reference manual](https://www.st.com/resource/en/reference_manual/dm00119316-stm32f411xc-e-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf)  
 
 ### ST-LINK and Blue Pill
 [This video](https://www.youtube.com/watch?v=KgR3uM21y7o) programs a Blue Pill using [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html).  
@@ -74,42 +83,6 @@ Connect 3.3V from ST-LINK to Blue Pill **only when Blue Pill has no other connec
 Put another way, when using ST-LINK to debug Blue Pill e.g. plugged to USB,  
   **do NOT connect 3.3V to Blue Pill from ST-LINK**.  
 
-### Installing (by Windows ST-LINK) Blue Pill HID bootloader for STM core
- - For Windows, stlink-org tools depend on STM's `ST-LINK driver`,  
-   bundled with [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html),  
-   which utility was *also* wanted for updating clone ST-LINK firmware.  
- - *Also* use [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html) to install HID bootloader.
- - These instructions apply *specifically* for 64-bit Windows, ST-LINK clone,  
-   HID-bootloader, Blue Pill and STM core.  
-
-1) Download and install [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html)  
-   in my case, to `D:\packages\STM32\`
-2) Plug bare ST-LINK clone into USB.  
-   If it shows up in **`Device Manager`** under **`Other devices`** (*with a yellow warning*),  
-   then drivers *were not* installed; see 1)  
-   else it should appear under **`Universal Serial Bus Devices`**.
-3) Launch **`STM32 ST-LINK Utility.exe`**  
-   in my case,  
-`D:\packages\STM32\ST-LINK Utility\STM32 ST-LINK Utility.exe`
-4) Select `ST-LINK` > `Firmware update`  
-   click `Device Connect`
-   click `Yes>>>>`
-5) Unplug ST-LINK clone from USB and wire it to Blue Pill as shown above.
-6) Connect Blue Pill `BOOT-0` and `BOOT-1` pins (or on-board jumpers) to `0`  
-   ** *and leave them*! **  
-   Disconnect everything except ST-LINK from Blue Pill, and plug ST-LINK to USB.  
-7) Download `stm32_binaries.zip` from [the latest HID Bootloader release](https://github.com/Serasidis/STM32_HID_Bootloader/releases)  
-   From it, extract:  `hid_generic_pc13.bin`  
-   (*Blue Pill on-board LED is connected to pin `PC13`*)  
-   in my case, to `D:\packages\STM32\`
-8) To flash HID Bootloader to a Blue Pill, in STM32 ST-LINK Utility:  
-   `File` > `Open File...` > `hid_generic_pc13.bin`  
-   `Target` > `Program...` > **`Start address`** `0x8000000` **`File path`** `D:\packages\STM32\hid_generic_pc13.bin`
-   ![Download](Download.gif)  
-   click **`Start`** (*that should complete quickly*)  
-   (*Blue Pill red LED on for power, green LED flickers quickly*)  
-   Unplug ST-LINK, unwire ST_LINK from Blue Pill, and connect Blue Pill to USB.  
-   (*Blue Pill red LED on for power, green LED flickers quickly*)
 
 ### Installing STM32duino support
 Since SimHub already includes an *older version* of Arduino,  
@@ -124,20 +97,9 @@ no need to install Arduino-specific driver[s]...
    ![Boards Manager STM32 search](https://www.sgbotic.com/images/companies/1/learn/F103_Arduino/board_manager_install.png?1596271243306)  
    click **`STM32 Cores`**, then **`Install`**  (*takes quite awhile*)  
 4) Quit and restart Arduino; then  
-   from **`Tools` > `Board:` > `STM32 Boards`**, select [`Generic STM32F1 series`].  
-   From **`Tools` > `Board Part Number:`**, select [`BluePill F103C8`].  
-   From **`Tools` > `Upload method:`**, select [`HID Bootloader 2.1`] or newer.  
-   ![Tools mmenu](tools.gif)  
-
-   Check in Windows' `Device Manager` under `Ports (COM & LPT)` for `USB Serial Device (COM*n*)`,  
-   where in my case `n = 5`.    
-   **`Port:`** `COM[5]` is unavailable until a sketch is loaded, e.g. [`Blue_Servo`](https://github.com/blekenbleu/blekenbleu.github.io/blob/master/Arduino/Blue_Servo):
-![Blue_Blink sketch](Blue_Blink.gif)   
-
-Here is a Blue Pill pinout reference:
-![Generic STM32F103 board pinout](https://www.electronicshub.org/wp-content/uploads/2020/02/STM32F103C8T6-Blue-Pill-Pin-Layout.gif)  
-- 5V tolerant PWM pins are wanted for driving hobby servos, e.g. `PA8-10` and `PB6-9`.  
-- 5V tolerant CAN BUS pins `PB8,9` **work for me**.
+   from **`Tools` > `Board:` > `STM32 Boards`**, select [`Generic STM32F4 series`].  
+   From **`Tools` > `Board Part Number:`**, select [`BlackPill F411CE`].  
+   From **`Tools` > `Upload method:`**, select [`STM32CubeProgrammer (DFU)`].  
 
 A simple next step adds servos to the blink loop sketch.  
 [This servo cycling sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under GitHub revision control,  

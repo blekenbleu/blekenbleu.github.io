@@ -1,4 +1,4 @@
-21 June 2021  
+30 June 2021  
 ## Signal Processing
   - [Special Error Diffusion](ImageProcessing/sped.html)
   - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
@@ -15,6 +15,7 @@
     - ESP8266 **WeMos D1 UNO R1** or similar [background](Arduino/ESPDuino) can only be COM devices  
     - COM ports are good for driving outputs from SimHub, but games e.g. Assetto Corsa expect HID I/O
       - SimHub *directly* supports *real* Arduinos, but any COM by Custom Serial devices
+- [STM32 Black Pill for custom USB Arduino devices](Arduino/Black)
 - USB-attached [PWM PC fans](Arduino/SimHubPWMfans)
 - ESP8266 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
 
