@@ -124,7 +124,7 @@ Ratchet strap secures desk chair to improvised wheel stand. &nbsp
 fan and Odyssey+ HMD perch on top: &nbsp
 <img align=center src="wheelstand.jpg"><br clear=all>
 Repurposed Adcom ACE-515 distributes power to sim equipment,<br>
-including amplifiers for <a href="#shakeseat">ShakeSeat cushion</a> controlled by SimHub.<br>
+including amplifiers for <a href="#shakeseat">ShakeSeat cushion</a> controlled by <a href="https://github.com/SHWotever/SimHub/wiki/Shake-It-for-bass-shakers">SimHub</a>.<br>
 TH8A shifter plate is rotated slightly ccw to reduce missed shifts.<br>
 
 
@@ -337,9 +337,9 @@ VCC regulator LDO input 5V.<br>
 </ul>
 <li> simulating ABS feedback at the brake pedal
 <li>e.g. @ 3:47/10:56 of this video: <a href="https://www.youtube.com/watch?v=8aLqqcEaUVk">DIY RUMBLE PEDALS SIM RACING</a><ul compact>
-<li>Get tire slip data from Assetto Corsa via SimHub, which can drive <a href="https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support">Custom serial devices</a>
+<li>Make a property for <a href="https://github.com/SHWotever/SimHub/issues/430">tire slip data from SimHub's ShakeIt effect</a> to drive <a href="https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support">Custom serial devices</a>
+<li>Easier to use the effect with <a href="https://www.daytonaudio.com/product/1180/daex32ep-4-thruster-32mm-exciter-40w-4-ohm">an exciter</a>.</ul>
 </ul>
-<li>Far easier to use <a href="https://www.daytonaudio.com/product/1180/daex32ep-4-thruster-32mm-exciter-40w-4-ohm">an exciter</a> via <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Bass-Shakers---Audio-Output-Configuration">SimHub ShakeIt</a></ul>
 <br>
 
 <i>Jan 16, 2021</i><br>
@@ -416,13 +416,13 @@ https://assettocorsa.club/content-manager.html<br>
 https://www.youtube.com/watch?v=0U2REMdpP9E - Chris Haye<br>
 "Some Alternate launchers such as Content Manager, run AC as administrator,<br>
 please run SimHub as administrator in this case."<br>
-"Content manager is only supported by SimHub when using "Official" or "AppId" start modes,<br>
-any other modes will make Content Manager modify games files and prevent proper detection from SimHub.<br>
+Content manager is only supported by SimHub when using "Official" or "AppId" start modes,<br>
+any other involve Content Manager modifying games files, preventing proper detection by SimHub.<br>
 Content Manager may have already modified the games files<br>
-and only a proper game repair using steam will restore the original files."<br>
+and only a proper game repair using steam will restore the original files.<br>
 <a href="https://www.youtube.com/watch?v=1fAIW7CoeRo">Installing AC</a><br>
 <br>
-<a href="https://assettocorsa.club/">Assetto Corsa club</a>'s own <a href="https://assettocorsa.club/content-manager.html">Content Manager page</a> proclaims "Easy and intuitive",<br>
+<a href="https://assettocorsa.club/">Assetto Corsa club</a>'s <a href="https://assettocorsa.club/content-manager.html">Content Manager page</a> proclaims "Easy and intuitive",<br>
 which generally translates to poorly documented and idiosynchratic.<br>
 Much sim driving software seems overly influenced by video gaming,<br>
 which traditionally delights in making things <b><i>harder and less efficient</i></b>.<br>
@@ -631,15 +631,14 @@ SimHub <a href="#ShakeIt">ShakeIt</a> is a better choice for me..<br>
 </details>
 <a name=ShakeIt>
 <h5>SimHub <a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">ShakeIt</a></h5></a>
-(confusingly, one less K than SRS product) is/was free software, since integrated into <a href="https://www.simhubdash.com/">SimHub</a>,<br>
+(confusingly, one less K than SRS product) is/was free software,<br>
+since integrated into <a href="https://www.simhubdash.com/">SimHub</a>,<br>
 equivalent to <a href="https://www.simracingstudio.com/download">SRS' licensed app</a>.<br>
 A SimHub license enables more support..<br>
 SimHub used to be distributed and supported from RaceDepartment, but no more..<br>
-Downloaded SimHub from<br>
-http://www.simhubdash.com/<br>
+Downloaded SimHub from <a href="http://www.simhubdash.com">http://www.simhubdash.com/</a><br>
 based on https://www.youtube.com/watch?v=fwqbx-cA5TE<br>
-ShakeIt GitHub<br>
-https://github.com/SHWotever/SimHub<br>
+ShakeIt GitHub: &nbsp <a href="https://github.com/SHWotever/SimHub">https://github.com/SHWotever/SimHub</a><br>
 <br>
 Support appears to have gravitated to Discord..<br>
 <br>
@@ -658,7 +657,7 @@ since some say "not supported on the current game"<br>
 Assetto Corsa configured automatically;<br>
 "Game config" seemingly has nothing to do with ShakeIt effect settings..<br>
 New profile starts empty; can only add one at a time; cannot tell if supported until after adding<br>
-"Add group" is another mystery<br>
+"Add group" is another mystery; <a href="https://www.racedepartment.com/downloads/simhub-shakeit-tactile-effects-multilayer-rpm.40504">here is an example</a>.<br>
 SimHub appears to save settings automagically..<br>
 <br>
 <a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-142">
@@ -737,11 +736,11 @@ then shuddering near breakaway,<br>
 with much less feeling from lightly loaded tires
 (rear when braking, inside when cornering).<br>
 <br>
-Implementation replaces SimHub Wheels slip effect with a pair of Custom Effects<br>
+Implementation embellishes SimHub Wheels slip effect using Custom Effects<br>
 1. latitudinal and longitudinal acceleration properties<br>
 2. loaded tire slips, products of tire slip properties times accelerations<br>
 <br>
-<a name=accel>Accelerations</a> are estimated from changes in speed and yaw samples and serve as G force proxies.<br>
+Recent SimHub versions provide <a name=accel>Acceleration</a> properties that were previously estimated from changes in speed and yaw samples to proxy G force.<br>
 Earlier SimHub versions sampled speed and yaw slower than Assetto Corsa sample updates,<br>
 resulting in some changes 2x others, which code here detects and mitigates.<br>
 <br>
@@ -806,7 +805,23 @@ The complete SimHub profile is <a href="https://github.com/blekenbleu/blekenbleu
 One expedient for simulating sustained G forces is a G Harness.<br>
 SimXperience is a pioneer for that, with a <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a>,<br>
 typically sold as an accessory for their <a href="https://www.simxperience.com/en-us/products/motionsimulatorkits/gs-5g-seat.aspx">US$3K GS-5 G-Seat</a>.<br><br>
-
+For members of <a href="https://www.simhubdash.com">Wotever's SimHub Discord (see Live Support)</a><br>
+he has developed an <a href="https://discord.com/channels/299259397060689920/843488595062423553">#experimental-belt-tensioner</a>.<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/7ao_srZlhNc"></iframe><br>
+.. for which he recently added a dedicated SimHub plugin:<br>
+<img width=640 src="SHtensionner.gif"><br clear=all>
+Issues with it:<ul compact><li>gear-drive stepper motors are both noisy and dangerously torquey
+<li>suboptimal physics linearly adds lateral and longitudinal acceleration, instead of square root of sum of squares
+<li>however, adequate range of motion to allow slackening e.g. for acceleration</ul>
+<a href="https://lebois-racing.fr/seat-belt-tensioner">Lebois</a> built a <a href="https://www.flickr.com/photos/94602950@N04/sets/72157717763752498/">direct-drive tensioner using PWM drive of a (too powerful?) DC motor</a>.<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe><br>
+<a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">Here</a> is another direct-drive tensioner for braking only on shoulder and lap belts.<br>
+<br>
+50mm diameter spools on 8.5Nm motors are estimated to provide adequate but safe tension and belt travel.<br>
+<pre>Torque (N.m) = 9.5488 x Power (kW) / Speed (RPM)</pre>
+For electric scooter motors, stall torque is approximately watts / unloaded RPS.<br>
+For example, a 350W 2750rpm motor might have about 7 N.m stall torque.<br>
+<br>
 <a href="https://www.racedepartment.com/members/racingmat.164315">RacingMat</a> developed a <a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioning using a pair of 35kg.cm hobby servos</a>.<br><br>
 Parts budget (US$):<dl compact>
 <dt>41.40<dd><a href="https://www.ebay.com/itm/282250363739">RSD3235 servo pair</a>
