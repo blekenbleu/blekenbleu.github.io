@@ -2506,16 +2506,16 @@ RubyGems system software updated
 
 
 ```
-bleke@ALIENWARE-R7 MSYS /e/my/GitHubDesktop/blekenbleu.github.io
-$ bundle update
+bleke@ALIENWARE-R7 MSYS /e/my/GitHubDesktop/blekenbleu.github.io  
+$ bundle update  
 Your lockfile is unreadable. Run `rm Gemfile.lock` and then `bundle install` to
 generate a new lockfile.
 
 ```
-bleke@ALIENWARE-R7 MSYS /e/my/GitHubDesktop/blekenbleu.github.io
-$ mv Gemfile.lock Gemfile.lock.b4
-bleke@ALIENWARE-R7 MSYS /e/my/GitHubDesktop/blekenbleu.github.io
-$ bundle install
+bleke@ALIENWARE-R7 MSYS /e/my/GitHubDesktop/blekenbleu.github.io  
+$ mv Gemfile.lock Gemfile.lock.b4  
+bleke@ALIENWARE-R7 MSYS /e/my/GitHubDesktop/blekenbleu.github.io  
+$ bundle install  
 <details>
 <summary>click for details</summary>
 
