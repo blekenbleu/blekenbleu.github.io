@@ -941,7 +941,7 @@ Configuration file: D:/Git/blekenbleu.github.io/_config.yml
   alias unserve="taskkill //IM ruby.exe //F"
   ```
 
-*June 21, 2021 (on Aurora)*  
+### *June 21, 2021 (on Aurora)*  
 ```
 $ ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'
 Here's your Ruby and OpenSSL environment:
@@ -2424,3 +2424,233 @@ jekyll 3.9.0 | Error:  The GitHub API credentials you provided aren't valid.
 ```
 ## To fix "invalid byte sequence in UTF-8" errors using vim  
 find them using command keystrokes: **8g8**
+
+### *July 13, 2021 (on Aurora)*  
+
+$ gem update --system
+<details>
+<summary>click for details</summary>
+
+```
+Updating rubygems-update
+Successfully installed rubygems-update-3.2.23
+Parsing documentation for rubygems-update-3.2.23
+Installing ri documentation for rubygems-update-3.2.23
+Installing darkfish documentation for rubygems-update-3.2.23
+  Successfully built RubyGem
+  Name: bundler
+  Version: 2.2.23
+  File: bundler-2.2.23.gem
+Bundler 2.2.23 installed
+RubyGems 3.2.23 installed
+Regenerating binstubs
+Regenerating plugins
+Parsing documentation for rubygems-3.2.23
+Installing ri documentation for rubygems-3.2.23
+
+# 3.2.23 / 2021-07-09
+
+## Enhancements:
+
+* Rewind IO source to allow working with contents in memory. Pull request
+  #4729 by drcapulet
+
+# 3.2.22 / 2021-07-06
+
+## Enhancements:
+
+* Allow setting `--otp` via `GEM_HOST_OTP_CODE`. Pull request #4697 by
+  CGA1123
+* Fixes for the edge case when openssl library is missing. Pull request
+  #4695 by rhenium
+
+# 3.2.21 / 2021-06-23
+
+## Enhancements:
+
+* Fix typo in OpenSSL detection. Pull request #4679 by osyoyu
+* Add the most recent licenses from spdx.org. Pull request #4662 by nobu
+* Simplify setup.rb code to allow installing rubygems from source on
+  truffleruby 21.0 and 21.1. Pull request #4624 by deivid-rodriguez
+
+## Bug fixes:
+
+* Create credentials folder when setting API keys if not there yet. Pull
+  request #4665 by deivid-rodriguez
+
+
+------------------------------------------------------------------------------
+
+RubyGems installed the following executables:
+        D:/Ruby25-x64/bin/gem
+        D:/Ruby25-x64/bin/bundle
+        D:/Ruby25-x64/bin/bundler
+
+Ruby Interactive (ri) documentation was installed. ri is kind of like man
+pages for Ruby libraries. You may access it like this:
+  ri Classname
+  ri Classname.class_method
+  ri Classname#instance_method
+If you do not wish to install this documentation in the future, use the
+--no-document flag, or set it as the default in your ~/.gemrc file. See
+'gem help env' for details.
+
+Done installing documentation for rubygems-update after 147 seconds
+Parsing documentation for rubygems-update-3.2.23
+Done installing documentation for rubygems-update after 0 seconds
+Installing RubyGems 3.2.23
+RubyGems system software updated
+'''
+
+</details>
+
+
+bleke@ALIENWARE-R7 MSYS /e/my/GitHubDesktop/blekenbleu.github.io
+$ bundle update
+Your lockfile is unreadable. Run `rm Gemfile.lock` and then `bundle install` to
+generate a new lockfile.
+
+bleke@ALIENWARE-R7 MSYS /e/my/GitHubDesktop/blekenbleu.github.io
+$ mv Gemfile.lock Gemfile.lock.b4
+```
+bleke@ALIENWARE-R7 MSYS /e/my/GitHubDesktop/blekenbleu.github.io
+$ bundle install
+<details>
+<summary>click for details</summary>
+
+```
+Fetching gem metadata from http://rubygems.org/.............
+Resolving dependencies.....
+Using concurrent-ruby 1.1.9
+Using i18n 0.9.5
+Using minitest 5.14.4
+Using thread_safe 0.3.6
+Using tzinfo 1.2.9
+Using zeitwerk 2.4.2
+Using activesupport 6.0.4
+Using public_suffix 4.0.6
+Fetching addressable 2.8.0
+Installing addressable 2.8.0
+Using bundler 2.2.23
+Using coffee-script-source 1.11.1
+Using execjs 2.8.1
+Using coffee-script 2.4.1
+Using colorator 1.1.0
+Using ruby-enum 0.9.0
+Using commonmarker 0.17.13
+Using unf_ext 0.0.7.7 (x64-mingw32)
+Using unf 0.1.4
+Using simpleidn 0.2.1
+Fetching dnsruby 1.61.7
+Installing dnsruby 1.61.7
+Using eventmachine 1.2.7 (x64-mingw32)
+Using http_parser.rb 0.6.0
+Using em-websocket 0.5.2
+Using ffi 1.15.3 (x64-mingw32)
+Using ethon 0.14.0
+Using faraday-em_http 1.0.0
+Using faraday-em_synchrony 1.0.0
+Using faraday-excon 1.1.0
+Fetching faraday-httpclient 1.0.1
+Installing faraday-httpclient 1.0.1
+Using faraday-net_http 1.0.1
+Fetching faraday-net_http_persistent 1.2.0
+Installing faraday-net_http_persistent 1.2.0
+Fetching faraday-patron 1.0.0
+Installing faraday-patron 1.0.0
+Using multipart-post 2.1.1
+Using ruby2_keywords 0.0.4
+Fetching faraday 1.5.1
+Installing faraday 1.5.1
+Using forwardable-extended 2.6.0
+Using gemoji 3.0.1
+Using sawyer 0.8.2
+Using octokit 4.21.0
+Using typhoeus 1.4.0
+Using github-pages-health-check 1.17.2
+Using rb-fsevent 0.11.0
+Using rb-inotify 0.10.1
+Using sass-listen 4.0.0
+Using sass 3.7.4
+Using jekyll-sass-converter 1.5.2
+Using listen 3.5.1
+Using jekyll-watch 2.2.1
+Using rexml 3.2.5
+Using kramdown 2.3.1
+Using liquid 4.0.3
+Using mercenary 0.3.6
+Using pathutil 0.16.2
+Using rouge 3.26.0
+Using safe_yaml 1.0.5
+Using jekyll 3.9.0
+Using jekyll-avatar 0.7.0
+Using jekyll-coffeescript 1.1.1
+Using jekyll-commonmark 1.3.1
+Using jekyll-commonmark-ghpages 0.1.6
+Using jekyll-default-layout 0.1.4
+Using jekyll-feed 0.15.1
+Using jekyll-gist 1.5.0
+Using jekyll-github-metadata 2.13.0
+Using racc 1.5.2
+Using nokogiri 1.11.7 (x64-mingw32)
+Using html-pipeline 2.14.0
+Using jekyll-mentions 1.6.0
+Using jekyll-optional-front-matter 0.3.2
+Using jekyll-paginate 1.1.0
+Using jekyll-readme-index 0.3.0
+Using jekyll-redirect-from 0.16.0
+Using jekyll-relative-links 0.6.1
+Fetching rubyzip 2.3.2
+Installing rubyzip 2.3.2
+Using jekyll-remote-theme 0.4.3
+Using jekyll-seo-tag 2.7.1
+Using jekyll-sitemap 1.4.0
+Using jekyll-swiss 1.0.0
+Using jekyll-theme-architect 0.1.1
+Using jekyll-theme-cayman 0.1.1
+Using jekyll-theme-dinky 0.1.1
+Using jekyll-theme-hacker 0.1.2
+Using jekyll-theme-leap-day 0.1.1
+Using jekyll-theme-merlot 0.1.1
+Using jekyll-theme-midnight 0.1.1
+Using jekyll-theme-minimal 0.1.1
+Using jekyll-theme-modernist 0.1.1
+Using jekyll-theme-primer 0.5.4
+Using jekyll-theme-slate 0.1.1
+Using jekyll-theme-tactile 0.1.1
+Using jekyll-theme-time-machine 0.1.1
+Using jekyll-titles-from-headings 0.5.3
+Using jemoji 0.12.0
+Using kramdown-parser-gfm 1.1.0
+Using minima 2.5.1
+Using unicode-display_width 1.7.0
+Using terminal-table 1.8.0
+Using github-pages 215
+Using wdm 0.1.1
+Bundle complete! 2 Gemfile dependencies, 99 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+Post-install message from dnsruby:
+Installing dnsruby...
+  For issues and source code: https://github.com/alexdalitz/dnsruby
+  For general discussion (please tell us how you use dnsruby): https://groups.google.com/forum/#!forum/dnsruby
+Post-install message from rubyzip:
+RubyZip 3.0 is coming!
+**********************
+
+The public API of some Rubyzip classes has been modernized to use named
+parameters for optional arguments. Please check your usage of the
+following classes:
+  * `Zip::File`
+  * `Zip::Entry`
+  * `Zip::InputStream`
+  * `Zip::OutputStream`
+
+Please ensure that your Gemfiles and .gemspecs are suitably restrictive
+to avoid an unexpected breakage when 3.0 is released (e.g. ~> 2.3.0).
+See https://github.com/rubyzip/rubyzip for details. The Changelog also
+lists other enhancements and bugfixes that have been implemented since
+version 2.3.0.
+```
+
+</details>
+
