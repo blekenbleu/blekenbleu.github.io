@@ -337,7 +337,8 @@ VCC regulator LDO input 5V.<br>
 </ul>
 <li> simulating ABS feedback at the brake pedal
 <li>e.g. @ 3:47/10:56 of this video: <a href="https://www.youtube.com/watch?v=8aLqqcEaUVk">DIY RUMBLE PEDALS SIM RACING</a><ul compact>
-<li>Make a property for <a href="https://github.com/SHWotever/SimHub/issues/430">tire slip data from SimHub's ShakeIt effect</a> to drive <a href="https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support">Custom serial devices</a>
+<li>Make a property for <a href="https://github.com/SHWotever/SimHub/issues/430">tire slip data from SimHub's ShakeIt effect</a>
+ to drive <a href="https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support">Custom serial devices</a>
 <li>Easier to use the effect with <a href="https://www.daytonaudio.com/product/1180/daex32ep-4-thruster-32mm-exciter-40w-4-ohm">an exciter</a>.</ul>
 </ul>
 <br>
@@ -631,16 +632,16 @@ SimHub <a href="#ShakeIt">ShakeIt</a> is a better choice for me..<br>
 </details>
 <a name=ShakeIt>
 <h5>SimHub <a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">ShakeIt</a></h5></a>
-(confusingly, one less K than SRS product) is/was free software,<br>
+(confusingly, one less K than <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">SRS product</a>) is/was free software,<br>
 since integrated into <a href="https://www.simhubdash.com/">SimHub</a>,<br>
-equivalent to <a href="https://www.simracingstudio.com/download">SRS' licensed app</a>.<br>
+comparable to <a href="https://www.simracingstudio.com/download">SRS' licensed app</a>.<br>
 A SimHub license enables more support..<br>
 SimHub used to be distributed and supported from RaceDepartment, but no more..<br>
 Downloaded SimHub from <a href="http://www.simhubdash.com">http://www.simhubdash.com/</a><br>
 based on https://www.youtube.com/watch?v=fwqbx-cA5TE<br>
 ShakeIt GitHub: &nbsp <a href="https://github.com/SHWotever/SimHub">https://github.com/SHWotever/SimHub</a><br>
 <br>
-Support appears to have gravitated to Discord..<br>
+Support appears to have gravitated to <a href="https://discord.com/channels/299259397060689920/686133283708207260">discord</a>... &nbsp &nbsp <a href="https://discord.gg/nBBMuX7">Invitation</a><br>
 <br>
 <code>SimHubWPF.exe</code> is neither Steam nor Assetto Corsa app;<br>
 it needs launching separately and optionally starts with Windows..<br>
@@ -653,11 +654,15 @@ moving all [ON] settings from channels 3,4 to 5,6 respectively.<br>
 Cannot show all settings at once; cannot drag box height<br>
 There are 2 "Advanced output settings", which at least need some context..<br>
 Looking at Effects Profile, first selecting a game seems appropriate,<br>
-since some say "not supported on the current game"<br>
+since some say "not supported on the current game",<br>
+but effects ideally should be configured for <code>Any Game</code>.<br>
 Assetto Corsa configured automatically;<br>
 "Game config" seemingly has nothing to do with ShakeIt effect settings..<br>
+... except that SimHub remembers what profile was last used for each game<br>
+and will switch to that last-used profile when reselecting a game.<br>
 New profile starts empty; can only add one at a time; cannot tell if supported until after adding<br>
-"Add group" is another mystery; <a href="https://www.racedepartment.com/downloads/simhub-shakeit-tactile-effects-multilayer-rpm.40504">here is an example</a>.<br>
+"Add group" is another minor mystery; <a href="https://www.racedepartment.com/downloads/simhub-shakeit-tactile-effects-multilayer-rpm.40504">here is an example</a>.<br>
+Existing effects can be dragged into a group,<br> which can be a convenience for copying effects from one profile to others.<br>
 SimHub appears to save settings automagically..<br>
 <br>
 <a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-142">
@@ -797,7 +802,8 @@ return 50 + (50 * Gyb4);  // range 0-100
 </code></pre>
 These two CUSTOM EFFECTS could be combined,<br>
 except that G-force proxy properties are also used by a Custom serial device for <a href="#SimHarness">2DOF harness tensioning</a>.<br>
-The complete SimHub profile is <a href="GmodulatedWheelSlip.siprofile.txt">available here</a>
+The complete SimHub profile is <a href="GmodulatedWheelSlip.siprofile.txt">available here</a><br>
+After awhile, SimHub can accumulate too many profiles; <a href="shakeit.htm">here are mine</a>.<br>
 
 <br>
 <hr>

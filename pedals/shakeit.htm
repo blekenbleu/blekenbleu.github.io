@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>SimHub ShakeIt tactile profiles</title>
+<style>
+body {
+  margin: 60px;
+}
+th {
+  text-align: left;
+}
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<font size=-1><a href="index.htm#ShakeIt"><i>back</i></a></font>
+<a name=sim><h2>SimHub ShakeIt Bass Shaker profiles</h2></a>
+<font size=+1>
+<sl>
+<li><a href="#intro">Introduction</a>
+</sl>
+
+<a name=intro>
+<h4>Introduction</h4></a>
+Bass Shaker effects are output as audio signals, instead of to rumble motors.<br>
+As of 18 Sep 2019, my SimHub lists 28 profiles for Any Game, 1 for RaceRoom and 1 for Assetto Corsa.<br>
+This does not mean that 28 profiles work well with any game;<br>
+merely that 1 depends on a property unique to RR and another uses an AC-unique property.<br>
+<dl>
+<dt>Default profile
+<dd>17 effects as initially received; only RPM was IMO useful as provided
+<dt>AC1
+<dd>2 effects; my first prune to provided Default for only WHEELS SLIPS and RPMS
+<dt>RPM-modulated up/downshifts
+<dd>by request
+<dt>speed shifts
+<dd>Tactile effect for shifts should IMO reflect shift smoothness,<br>
+which presumably corresponds in speed changes during those shifts.<br>
+This effect currently explores three formulae, each gated by gear changes:<ul compact>
+<li>high-pass filtering of changes in speed
+<li>surge acceleration
+<li>surge acceleration and high-pass filtering of same (jerk)</ul>
+<img src="shifts.gif"><br clear=all>
+<font size=-1>
+<i>Front left = Gear; Front right = surge acceleration; Rear left = high pass filter of speed changes;
+Rear right = surge acceleration + high pass filter of acceleration changes</i><br></font><br>
+Since <i>Rear left</i> is arguably a recalculation of <i>Front right</i>, results differ surprisingly..<br>
+</dl>
+</font>
+</body>
+</html>
