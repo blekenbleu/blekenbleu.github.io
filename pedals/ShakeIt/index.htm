@@ -1,8 +1,9 @@
 <html><head>
 <title>SimHub ShakeIt</title>
 </head><body>
+<font size=-1><i><a href="../shakeit.htm">back</i></font><br>
 <h4>ShakeIt Formulae JavaScript</h4>
-These are reused among ShakeIt profiles<br>
+Variations on these are reused among ShakeIt profiles<br>
 <dl>
 <a name=lpiir><dt><b><a href="lowpass.js">low-pass IIR</b></a></a>
 <dd>Discrete IIR is basically a modified rolling average,<br>
@@ -14,10 +15,16 @@ some fraction of the difference between a new sample and previous value.
 <dd>tweak unportable <code>GameRawData.Physics.WheelLoad</code>
 <a name=ACproxyS><dt><b><a href="ACproxyS.js">AC ProxyS</b></a></a>
 <dd>tweak unportable <code>GameRawData.Physics.WheelSlip</code>
+<a name=ACproxy_G><dt><b><a href="ACproxy_G.js">AC Proxy_G</b></a></a>
+<dd>tweak unportable <code>GameRawData.Physics.AccG</code>
 <a name=LWS><dt><b><a href="LoadedWheelSlip.js">Loaded WheelSlip</b></a></a>
 <dd>apply <code>proxyL</code> to <code>proxyS</code> property</code>
 <a name=OS><dt><b><a href="oversteer.js">Unloaded WheelSlip (trailing oversteer)</b></a></a>
-<dd>apply (- rear <code>proxyL</code>) to <code>proxyS</code> property</code>
+<dd>apply (- rear <code>proxyL</code>) to rear <code>proxyS</code> properties</code>
+<a name=GL><dt><b><a href="GproxyL.js">ProxyL from Proxy_G</b></a></a>
+<dd>estimate each corner wheel load from all 4 proxy_G values</code>
+<a name=GOS><dt><b><a href="Goversteer.js">Unloaded WheelSlip (trailing oversteer) from proxy_G</b></a></a>
+<dd>apply (front - rear <code>proxy_G</code>) to rear <code>proxyS</code> properties</code>
 
 
 </dl>

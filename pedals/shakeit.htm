@@ -32,8 +32,8 @@ th, td {
 <h4>Introduction</h4></a>
 Bass Shaker effects are output as audio signals, instead of to rumble motors.<br>
 As of 18 Sep 2019, my SimHub lists 28 profiles for Any Game, 1 for RaceRoom and 1 for Assetto Corsa.<br>
-This does not mean that 28 profiles work well with any game;<br>
-merely that 1 depends on a property unique to RR and another uses an AC-unique property.<br>
+This does not mean that 28 profiles work well with any game supported by SimHub;<br>
+merely that 1 depends on a property unique to RR and another uses AC-unique properties.<br>
 <a name=prof>
 <h4>Profiles</h4></a>
 <dl>
@@ -43,10 +43,10 @@ merely that 1 depends on a property unique to RR and another uses an AC-unique p
 <dd>my first prune of provided Default, leaving only WHEELS SLIPS and RPMS<br>
 <dt><b>RPM-modulated up/downshifts</b> 3 effects
 <dd><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-197#post-3357575">by request</a>
-<dt><b>BrakeRunoutRoadNoise</b> 2 output effects
+<dt><b>BrakeRunoutRoadNoise</b> 2 output effects for mixing to a single tactile channel
 <dd>While ABS is handy, the SimHub effect IMO activates too late for use as braking feedback.<br>
-Instead, this effect simulates some rotor runout for light braking, progressing to road noise for moderate pressure.
-At high pedal pressures, the foot becomes substantially insensitive to less than IMO distracting tactile stimulation.
+Instead, this effect simulates some rotor runout for light braking, progressing to road noise for moderate pressure.<br>
+At high pedal pressures, feet become substantially insensitive to moderate tactile stimulation.
 <a name=u4ssc><dt><b>(un)Loaded 4-Wheel Slips with Speed Curving</b> 6 effects</a>
 <dd><a href=ShakeIt/index.htm#ACproxyL>ACproxyL</a>,
 <a href=ShakeIt/index.htm#ACproxyS>ACproxyS</a>,
@@ -82,8 +82,10 @@ The low pass time constant determined to roughly minimize<br>
 differences between <code>Front right</code> and <code>Rear left</code> was then also applied to <code>Rear right</code>.<br>
 <dt><b>Wind Sim and (un)Loaded Wheel Slips</b> 6 effects
 <dd>perhaps a duplicate of <a href=#u4ssc>(un)Loaded 4-Wheel Slips with Speed Curving</a>
-<dt><b>(un)Loaded 4-Wheel Slips</b> 5 effects
-<dd>perhaps a subset of <a href=#u4ssc>(un)Loaded 4-Wheel Slips with Speed Curving</a>
+<dt><b>(un)Loaded 4-Wheel Slips</b> 4 effects
+<dd><a href="ShakeIt/index.htm#ACproxy_G">AC_Proxy_G</a>, <a href=ShakeIt/index.htm#ACproxyS>AC ProxyS</a>,<br>
+Loaded slips by combined(<a href=ShakeIt/index.htm#GL>ProxyL from Proxy_G</a> and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
+<a href=ShakeIt/index.htm#GOS>Unloaded WheelSlip (trailing oversteer) from proxy_G</a>
 <a name=rrrel><dt><b>RRRELoaded4-chanWheelslipUndersteer</b> 6 effects</a>
 <dd>from <a href="https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/page-4#post-3427571">RangeyRover</a>
 <dt><b>NewLoaded4-chanWheelslipUndersteer</b> 7 effects
