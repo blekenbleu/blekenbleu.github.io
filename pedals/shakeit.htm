@@ -24,7 +24,8 @@ th, td {
 <font size=+1>
 <sl>
 <li><a href="#intro">Introduction</a>
-<li><a href="#form">Formulae</a>
+<li><a href="#prof">Profiles</a>
+<li><a href="ShakeIt/index.htm">Formulae</a>
 </sl>
 
 <a name=intro>
@@ -33,6 +34,8 @@ Bass Shaker effects are output as audio signals, instead of to rumble motors.<br
 As of 18 Sep 2019, my SimHub lists 28 profiles for Any Game, 1 for RaceRoom and 1 for Assetto Corsa.<br>
 This does not mean that 28 profiles work well with any game;<br>
 merely that 1 depends on a property unique to RR and another uses an AC-unique property.<br>
+<a name=prof>
+<h4>Profiles</h4></a>
 <dl>
 <dt><b>Default profile</b> 17 effects
 <dd>ShakeIt plugin as initially received; only RPM was IMO useful as provided<br>
@@ -45,9 +48,9 @@ merely that 1 depends on a property unique to RR and another uses an AC-unique p
 Instead, this effect simulates some rotor runout for light braking, progressing to road noise for moderate pressure.
 At high pedal pressures, the foot becomes substantially insensitive to less than IMO distracting tactile stimulation.
 <a name=u4ssc><dt><b>(un)Loaded 4-Wheel Slips with Speed Curving</b> 6 effects</a>
-<dd>boring RPMS effect, <code>proxy_G</code> from (AC-only?) <code>GameRawData.Physics.WheelLoad</code>,<br>
-<code>proxyS</code> from unportable <code>GameRawData.Physics.WheelSlip</code>,<br>
-<i>loaded wheel slips</i> tactile effect, <i>unloaded rear wheels slip: oversteer</i> effect,<br>
+<dd><a href=ShakeIt/index.htm#ACproxyL>ACproxyL</a>,
+<a href=ShakeIt/index.htm#ACproxyS>ACproxyS</a>,
+<a href="ShakeIt/index.htm#LWS"<i>loaded wheel slips</i></a> tactile effect, <a href=ShakeIt/index.htm#OS><i>trailing oversteer</i></a> tactile effect,<br>
 generic SPEED WITH CURVING effect to export <code>SpeedCurv</code> property for PWM fan custom serial device.
 <dt><b>speed shifts</b>
 <dd>Tactile effect for shifts should IMO reflect shift smoothness,<br>
@@ -70,8 +73,8 @@ Minimizing errors between methods involves tedious juggling of gains and filteri
 Here are two plots evaluating methods, gated neither by gear changes nor clutch releases:<ul compact>
 <li><code>Front left</code> is <code>SpeedKmh</code>
 <li><code>Front right</code> is <code>AccelerationSurge</code>
-<li><code>Rear left</code> is current speed minus <a href=#lpiir>low-pass filtered</a> previous speeds
-<li><code>Rear right</code> is <a href=#hpiir>high-pass filtered</a> accelerations</ul>
+<li><code>Rear left</code> is current speed minus <a href=ShakeIt/index.htm#lpiir>low-pass filtered</a> previous speeds
+<li><code>Rear right</code> is <a href=ShakeIt/index.htm#hpiir>high-pass filtered</a> accelerations</ul>
 <img src="plot1.gif"><br clear=all>
 This next plot is when braking with front tire lockup, a limit condition:<br>
 <img src="plot2.gif"><br clear=all>
@@ -140,15 +143,6 @@ CUSTOM corners output from <code>wslip.ALL</code>
 <dd>vanilla RPMS to test for SimHub ACC bug
 </dl>
 
-<a name=form><h4>Formulae</h4></a>
-<dl>
-<a name=lpiir><dt><b>low-pass IIR</b></a>
-<dd>Discrete IIR is basically a modified rolling average,<br>
-where part of that value is each time replaced by<br>
-some fraction of the difference between a new sample and previous value.
-<a name=hpiir><dt><b>high-pass IIR</b></a>
-<dd>Generate low-pass IIR values, but return differences between<br>new samples and previous low-pass values.
-</dl>
 </font>
 </body>
 </html>

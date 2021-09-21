@@ -1,0 +1,24 @@
+<html><head>
+<title>SimHub ShakeIt</title>
+</head><body>
+<h4>ShakeIt Formulae JavaScript</h4>
+These are reused among ShakeIt profiles<br>
+<dl>
+<a name=lpiir><dt><b><a href="lowpass.js">low-pass IIR</b></a></a>
+<dd>Discrete IIR is basically a modified rolling average,<br>
+where part of that value is each time replaced by<br>
+some fraction of the difference between a new sample and previous value.
+<a name=hpiir><dt><a href=highpass.js><b>high-pass IIR</b></a></a>
+<dd>Generate low-pass IIR values, but return differences between<br>new samplesand previous low-pass values.
+<a name=ACproxyL><dt><b><a href="ACproxyL.js">AC ProxyL</b></a></a>
+<dd>tweak unportable <code>GameRawData.Physics.WheelLoad</code>
+<a name=ACproxyS><dt><b><a href="ACproxyS.js">AC ProxyS</b></a></a>
+<dd>tweak unportable <code>GameRawData.Physics.WheelSlip</code>
+<a name=LWS><dt><b><a href="LoadedWheelSlip.js">Loaded WheelSlip</b></a></a>
+<dd>apply <code>proxyL</code> to <code>proxyS</code> property</code>
+<a name=OS><dt><b><a href="oversteer.js">Unloaded WheelSlip (trailing oversteer)</b></a></a>
+<dd>apply (- rear <code>proxyL</code>) to <code>proxyS</code> property</code>
+
+
+</dl>
+</body></html>
