@@ -9,23 +9,47 @@ Variations on these are reused among ShakeIt profiles<br>
 <dd>Discrete IIR is basically a modified rolling average,<br>
 where part of that value is each time replaced by<br>
 some fraction of the difference between a new sample and previous value.
+<br> &nbsp <br>
 <a name=hpiir><dt><a href=highpass.js><b>high-pass IIR</b></a></a>
 <dd>Generate low-pass IIR values, but return differences between<br>new samplesand previous low-pass values.
+<br> &nbsp <br>
 <a name=ACproxyL><dt><b><a href="ACproxyL.js">AC ProxyL</b></a></a>
 <dd>tweak unportable <code>GameRawData.Physics.WheelLoad</code>
+<br> &nbsp <br>
 <a name=ACproxyS><dt><b><a href="ACproxyS.js">AC ProxyS</b></a></a>
 <dd>tweak unportable <code>GameRawData.Physics.WheelSlip</code>
+<br> &nbsp <br>
 <a name=ACproxy_G><dt><b><a href="ACproxy_G.js">AC Proxy_G</b></a></a>
 <dd>tweak unportable <code>GameRawData.Physics.AccG</code>
+<br> &nbsp <br>
 <a name=LWS><dt><b><a href="LoadedWheelSlip.js">Loaded WheelSlip</b></a></a>
 <dd>apply <code>proxyL</code> to <code>proxyS</code> property</code>
+<br> &nbsp <br>
 <a name=OS><dt><b><a href="oversteer.js">Unloaded WheelSlip (trailing oversteer)</b></a></a>
 <dd>apply (- rear <code>proxyL</code>) to rear <code>proxyS</code> properties</code>
+<br> &nbsp <br>
 <a name=GL><dt><b><a href="GproxyL.js">ProxyL from Proxy_G</b></a></a>
 <dd>estimate each corner wheel load from all 4 proxy_G values</code>
+<br> &nbsp <br>
 <a name=GOS><dt><b><a href="Goversteer.js">Unloaded WheelSlip (trailing oversteer) from proxy_G</b></a></a>
 <dd>apply (front - rear <code>proxy_G</code>) to rear <code>proxyS</code> properties</code>
-
+<br> &nbsp <br>
+<a name=YSG><dt><b><code>proxy_G</code> from <a href="Yproxy_G.js"><code>OrientationYaw</code></a>
+ and <a href=Sproxy_G.js><code>SpeedKmh</code></a></b></a>
+<dd>applys <a href="#lpiir">low-pass IIR</a> to yaw and speed changes
+<br> &nbsp <br>
+<a name=AAL><dt><b><a href="AbsAccLoad.js">load from AbsAcc</b></a></a>
+<dd>estimate <code>proxyL</code> from <code>AbsAcc, AccelerationSurge, AccelerationSway</code> properties
+<br> &nbsp <br>
+<a name=AA><dt><b><a href="AbsAcc.js">AbsAcc</b></a></a>
+<dd>portable 2-channel absolute <code>AccelerationSway</code> and <code>AccelerationSurge</code>; require sign recovery
+<br> &nbsp <br>
+<a name=UOS><dt><b><a href="AbsUnderOversteer.js">under, oversteer</b></a></a>
+<dd>uses <code>proxyS</code> and <code>AbsAcc</code>, but neglects to recover sign to sort acceleration from deceleration
+<br> &nbsp <br>
+<a name=mix><dt><b><a href="mixLoadedSlipUnderOverSteer.js">mix slips and oversteer</b></a></a>
+<dd>mixes <code>proxyS</code>, <code>UnderOversteer</code> and <code>LoadedSlip</code>
+<br> &nbsp <br>
 
 </dl>
 </body></html>
