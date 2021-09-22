@@ -26,32 +26,54 @@ th, td {
 <li><a href="#intro">Introduction</a>
 <li><a href="#prof">Profiles</a>
 <li><a href="ShakeIt/index.htm">Formulae</a>
+<li><a href="#gp">property portability</a>
 </sl>
 
 <a name=intro>
-<h4>Introduction</h4></a>
+<h3>Introduction</h3></a>
 Bass Shaker effects are output as audio signals, instead of to rumble motors.<br>
-As of 18 Sep 2019, my SimHub lists 28 profiles for Any Game, 1 for RaceRoom and 1 for Assetto Corsa.<br>
+As of 18 Sep 2021, my SimHub listed 28 profiles for Any Game, 1 for RaceRoom and 1 for Assetto Corsa.<br>
 This does not mean that 28 profiles work well with any game supported by SimHub;<br>
 merely that 1 depends on a property unique to RR and another uses AC-unique properties.<br>
+The profile count is expected to drop while documenting,<br>
+as duplicates are pruned and others are consolidated.<br>
+<br>
+A SimHub effect may generate a tactile output, a custom property or both.<br>
+Custom tactile effects typically depend on two or more custom properties,<br>
+each of which may involve 4 formulae, one for each wheel.<br>
+Typically, JavaScript for only one formula (corner) of a custom property will be documented,<br>
+with the other 3 hopefully obvious by symmetry.<br>
+Several <i>different</i> JavaScript formulae may share the <i>same custom property name</i>,<br>
+exploiting different SimHub properties available in various versions for various games.<br>
+Among the 28 profiles, there are likely multiple versions of the same formula,<br>
+which should be reduced to a single best version by the completion of this document.
+
 <a name=prof>
-<h4>Profiles</h4></a>
+<h3>Profiles</h3></a>
 <dl>
 <dt><b>Default profile</b> 17 effects
-<dd>ShakeIt plugin as initially received; only RPM was IMO useful as provided<br>
+<dd>ShakeIt plugin as initially received; only RPM was IMO useful as provided
+<br> &nbsp <br>
 <dt><b>AC1</b> 2 effects
-<dd>my first prune of provided Default, leaving only WHEELS SLIPS and RPMS<br>
+<dd>my first prune of provided Default, leaving only WHEELS SLIPS and RPMS
+<br> &nbsp <br>
 <dt><b>RPM-modulated up/downshifts</b> 3 effects
 <dd><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-197#post-3357575">by request</a>
+<br> &nbsp <br>
 <dt><b>BrakeRunoutRoadNoise</b> 2 output effects for mixing to a single tactile channel
-<dd>While ABS is handy, the SimHub effect IMO activates too late for use as braking feedback.<br>
-Instead, this effect simulates some rotor runout for light braking, progressing to road noise for moderate pressure.<br>
-At high pedal pressures, feet become substantially insensitive to moderate tactile stimulation.
+<dd>While ABS is handy, the SimHub effect IMO activates too late for use as a braking aid.<br>
+Instead, a first effect simulates some rotor runout for light braking,<br>
+progressing to a second, road noise effect for moderate pressure.<br>
+At high pedal pressures, feet become substantially insensitive to moderate tactile stimulation.<br>
+Attempting to generate tactile stimulus powerful enough to be sensed with strong pedal pressure<br>
+ is liable to overheat the associated transducer; ask me how I know.
+<br> &nbsp <br>
 <a name=u4ssc><dt><b>(un)Loaded 4-Wheel Slips with Speed Curving</b> 6 effects</a>
 <dd><a href=ShakeIt/index.htm#ACproxyL>ACproxyL</a>,
 <a href=ShakeIt/index.htm#ACproxyS>ACproxyS</a>,
 <a href="ShakeIt/index.htm#LWS"<i>loaded wheel slips</i></a> tactile effect, <a href=ShakeIt/index.htm#OS><i>trailing oversteer</i></a> tactile effect,<br>
 generic SPEED WITH CURVING effect to export <code>SpeedCurv</code> property for PWM fan custom serial device.
+<br> &nbsp <br>
 <dt><b>speed shifts</b>
 <dd>Tactile effect for shifts should IMO reflect shift smoothness,<br>
 which presumably corresponds in speed changes during those shifts.<br>
@@ -80,82 +102,101 @@ This next plot is when braking with front tire lockup, a limit condition:<br>
 <img src="plot2.gif"><br clear=all>
 The low pass time constant determined to roughly minimize<br>
 differences between <code>Front right</code> and <code>Rear left</code> was then also applied to <code>Rear right</code>.<br>
+<br> &nbsp <br>
 <dt><b>Wind Sim and (un)Loaded Wheel Slips</b> 6 effects
 <dd>perhaps a duplicate of <a href=#u4ssc>(un)Loaded 4-Wheel Slips with Speed Curving</a>
+<br> &nbsp <br>
 <dt><b>(un)Loaded 4-Wheel Slips</b> 4 effects
 <dd><a href="ShakeIt/index.htm#ACproxy_G">AC_Proxy_G</a>, <a href=ShakeIt/index.htm#ACproxyS>AC ProxyS</a>,<br>
 Loaded slips by combined(<a href=ShakeIt/index.htm#GL>ProxyL from Proxy_G</a> and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
 <a href=ShakeIt/index.htm#GOS>Unloaded WheelSlip (trailing oversteer) from proxy_G</a>
+<br> &nbsp <br>
 <a name=rrrel><dt><b>RRRELoaded4-chanWheelslipUndersteer</b> 6 effects</a>
 <dd>from <a href="https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/page-4#post-3427571">RangeyRover</a>
+<br> &nbsp <br>
 <dt><b>NewLoaded4-chanWheelslipUndersteer</b> 7 effects
 <dd>from <a href=#rrrel>RRRELoaded4-chanWheelslipUndersteer</a>
+<br> &nbsp <br>
 <dt><b>Loaded4-chanWheelslipUndersteer</b> 8 effects
 <dd>(RPMS), <i><b>unused</b></i> <code>proxy_G</code> from <code>OrientationYaw</code> and <code>SpeedKmh</code>,<br>
 <code>AbsAcc</code> from <code>AccelerationSway</code> and <code>AccelerationSurge</code>,<br>
 <code>proxyL</code> from <code>AccelerationSway</code>, <code>AccelerationSurge</code> and <code>AbsAcc</code>,<br>
 <code>proxyS</code> from WHEELS SLIP, <code>LoadedSlip</code> from <code>proxyL</code> and <code>proxyS</code>,<br>
 <code>UnderOversteer</code> from <code>proxyS</code> and <code>AbsAcc</code>,<br>
-<i>mix slips and oversteer</i> from <code>UnderOversteer</code>, <code>proxyS</code> and <code>LoadedSlip</code><br>
+<i>mix slips and oversteer</i> from <code>UnderOversteer</code>, <code>proxyS</code> and <code>LoadedSlip</code>
+<br> &nbsp <br>
 <a name=nl4cwsu><dt><b>NewLoaded4-chanWheelslipUndersteer</b> 6 effects</a>
 <dd><code>AbsAcc</code> from <code>AccelerationSway</code> and <code>AccelerationSurge</code>,<br>
 <code>proxyL</code> from <code>AccelerationSway</code>, <code>AccelerationSurge</code> and <code>AbsAcc</code>,<br>
 <code>proxyS</code> from WHEELS SLIP, <code>LoadedSlip</code> from <code>proxyL</code> and <code>proxyS</code>,<br>
 <code>UnderOversteer</code> from <code>proxyS</code> and <code>AbsAcc</code>,<br>
 <i>mix slips and oversteer</i> from <code>UnderOversteer</code>, <code>proxyS</code> and <code>LoadedSlip</code>
+<br> &nbsp <br>
 <dt><b>NewLoaded4-chanWheelslipUndersteer</b> 6 effects
-<dd>duplicate of <a href="nl4cwsu">NewLoaded4-chanWheelslipUndersteer</a>, except <code>UnderOversteer</code> is also a tactile output
+<dd>duplicate of <a href="nl4cwsu">NewLoaded4-chanWheelslipUndersteer</a>,<br> except <code>UnderOversteer</code> is also a tactile output
+<br> &nbsp <br>
 <dt><b>Aug14Loaded4-chanWheelslipUndersteer</b> 6 effects
 <dd><i>mix slips and oversteer</i> disabled, output <code>LoadedSlip</code>
+<br> &nbsp <br>
 <dt><b>Aug14Loaded4-chanWheelslipUndersteer</b> 6 effects
 <dd><i>mix slips and oversteer</i> disabled, output <code>LoadedSlip</code>
+<br> &nbsp <br>
 <dt><b>Aug19Loaded4-chanWheelslipUndersteer</b> 6 effects
 <dd>group non-output effects
+<br> &nbsp <br>
 <dt><b>joystick telemetry</b> 2 effects
 <dd>output based on SideWinder slider when button 7 is pressed<br>
 ROAD IMPACTS (curiosity?)
+<br> &nbsp <br>
 <dt><b>front/rear Wheel Slip experiments</b> 5 effects
 <dd><code>proxy_G</code> from <code>GameRawData.Physics.WheelLoad</code>,<br>
 <code>slip</code> from WHEELS SLIP,<br>
 <i>average vs correlated front slip</i> tactile output from <code>slip</code><br>
 <code>proxyS</code> from <code>GameRawData.Physics.WheelSlip</code>,<br>
 <i>loaded wheel slips</i> output from <code>proxy_G</code> and <code>proxyS</code>
+<br> &nbsp <br>
 <dt><b>Schnirbus tweaked slip</b>
 <dd><i>Experimental 4-corner Wheelslip for iRacing</i> group (4 effects, 1 output),<ul compact>
 <li><code>wslip</code> from WHEELS SLIP
 <li><code>sideways</code> from SPEED WITH CURVING <i>only generate in turns</i>
 <li><code>long shift</code> from <code>GameRawData.Telemetry.LongAccel</code>
-<li><i>4-Corner Slip output from <code>sideways</code> and <code>long shift</code>
+<li><i>4-Corner Slip output</i> from <code>wslip</code>, <code>sideways</code> and <code>long shift</code>
 </ul>
-WHEELS SLIP output
-<dt><b>Schnirbus experimental slip</b> 2 effects
-<dd><i>Experimental 4-corner Wheelslip for iRacing</i> group (4 effects, 1 output),<br>
-CUSTOM corners output from <code>wslip.ALL</code>
-<dt><b>Schnirbus experimental slip</b> 1 effect
-<dd><i>Experimental 4-corner Wheelslip for iRacing</i> group (4 effects, 1 output),<br>
-<dt><b>Schnirbus experimental slip</b> 1 effect
-<dd><i>Experimental 4-corner Wheelslip for iRacing</i> group (4 effects, 1 output),<br>
-<dt><b>portable Loaded 4-Wheel Slips</b> 1 effect
-<dd><i>blekenbleu Effects group</i> (7 effects, 2 outputs, 3 disabled),<br>
-<dt><b>Loaded4-chanWheelSlipsUndersteer</b> 9 effects
-<dt><b>Loaded4-chanWheelSlipsUndersteer</b> 5 effects
-<dd><a href=ShakeIt/index.htm#G><code>proxyG</code> from <code>AccelerationSurge</code> and <code>Sway</code></a>,
- <code>proxyS</code> from WHEELS SLIP effect,<br>
-<a href=ShakeIt/index.htm#GL><code>proxyL</code> from <code>proxyG</code></a>, 
-<a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>,
-<a href=ShakeIt/index.htm#UOS>loaded under, oversteer</a>
-
+<dt><b>portable Loaded 4-Wheel Slips</b> 1 group
+<dd><i>blekenbleu Effects group</i> (7 effects, 2 outputs, 3 disabled)
+<br> &nbsp <br>
+<dt><b>portable Loaded 4-Wheel Slips group</b> 1 group w/6 effects
+<br> &nbsp <br>
 <dt><b>Loaded4-chanWheelSlipsUndersteer</b> 7 effects
-<dd>(unused?) <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from Yaw, Speed</a>, <a href=ShakeIt/index.htm#AAL><code>proxyL</code> from AbsAcc</a>,
-<code>proxyS</code> from WHEELS SLIP effect,<br>
-<a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>,
-<a href=ShakeIt/index.htm#UOS>loaded under, oversteer</a>, <a href=ShakeIt/index.htm#AA>AbsAcc</a>,
-<a href=ShakeIt/index.htm#mix>mix slips and oversteer</a>
+<dd>(unused) <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from Yaw, Speed</a>,
+<a href=ShakeIt/index.htm#G><code>proxyG</code> from <code>AccelerationSurge</code> and <code>Sway</code></a>,<br>
+<a href=ShakeIt/index.htm#GL><code>proxyL</code> from <code>proxyG</code></a>, 
+<code>proxyS</code> from WHEELS SLIP effect,
+<a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>,<br>
+<a href=ShakeIt/index.htm#UOS>unloaded under, oversteer from <code>proxyG</code> and <code>proxyS</code></a>,
+(unused)<a href=ShakeIt/index.htm#mix>mix slips and oversteer</a>
+<br> &nbsp <br>
 <dt><b>Empty</b> 0 effects
+<br> &nbsp <br>
 <dt><b>New</b> 1 effect
 <dd>vanilla RPMS to test for SimHub ACC bug
 </dl>
 
+<a name=gp><h3>property portability</h3></a>
+A year ago, SimHub lacked properties for lateral accelerations.<br>
+Consequently those were derived from changes in the <code>OrientationYaw</code> property.<br>
+SimHub subsequently made <code>GameRawData.Physics.Acc</code> available in AC but not elsewhere.<br>
+The profile version currently on GitHub uses those unportable properties.<br>
+SimHub now has <code>GameData.Accelerations</code> that seeemingly are available for most games.<br>
+Here is a comparison of the original formulae:<br>
+<img src="YawSpeed.gif"><br clear=all>
+.. and SimHub's properties, rescaled:<br>
+<img src="Accprop.gif"><br clear=all>
+.. where <code>Front right</code> is deceleration, <code>Rear right</code> is acceleration,<br>
+<code>Front left</code> is right G and <code>Rear left</code> is left G.<br>
+While agreement between these implementations is acceptable,<br>
+neither acceleration and deceleration nor left and right G should <i>ever</i> be <b>simultaneously positive</b>.<br>
+Whether observed violations are plotting artifacts or actual property implementation bugs is unknown.
 </font>
 </body>
 </html>

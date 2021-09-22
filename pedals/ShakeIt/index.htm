@@ -22,6 +22,15 @@ some fraction of the difference between a new sample and previous value.
 <a name=ACproxy_G><dt><b><a href="ACproxy_G.js">AC Proxy_G</b></a></a>
 <dd>tweak unportable <code>GameRawData.Physics.AccG</code>
 <br> &nbsp <br>
+<a name=YSG><dt><b><code>proxy_G</code> from <a href="Yproxy_G.js"><code>OrientationYaw</code></a>
+ and <a href=Sproxy_G.js><code>SpeedKmh</code></a></b></a>
+<dd>applys <a href="#lpiir">low-pass IIR</a> to yaw and speed changes.<br>
+This is the original proxy for accelerations, before SimHub added (AC-specific) acceleration properties,<br>
+then eventually <code>AccelerationSurge</code> and <code>AccelerationSway</code> e.g. for harness tensioners.
+<br> &nbsp <br>
+<a name=G><dt><b><a  href="proxyG.js"><code>proxyG</code> from <code>AccelerationSurge</code> and <code>AccelerationSway</code></b></a></a>
+<dd>apply <code>proxyL</code> to <code>proxyS</code> property</code>
+<br> &nbsp <br>
 <a name=LWS><dt><b><a href="LoadedWheelSlip.js">Loaded WheelSlip</b></a></a>
 <dd>apply <code>proxyL</code> to <code>proxyS</code> property</code>
 <br> &nbsp <br>
@@ -29,14 +38,14 @@ some fraction of the difference between a new sample and previous value.
 <dd>apply (- rear <code>proxyL</code>) to rear <code>proxyS</code> properties</code>
 <br> &nbsp <br>
 <a name=GL><dt><b><a href="GproxyL.js">ProxyL from Proxy_G</b></a></a>
-<dd>estimate each corner wheel load from all 4 proxy_G values</code>
+<dd>estimate each corner wheel load from all 4 proxy_G values</code><br>
+By default, each wheel is supposed to have 25% load.<br>
+For 100% (braking) deceleration, each front wheel would have 50% load<br>
+and rear wheels would be fully unloaded.  For some peak braking while turning,<br>
+one front wheel could have 100% load.
 <br> &nbsp <br>
 <a name=GOS><dt><b><a href="Goversteer.js">Unloaded WheelSlip (trailing oversteer) from proxy_G</b></a></a>
 <dd>apply (front - rear <code>proxy_G</code>) to rear <code>proxyS</code> properties</code>
-<br> &nbsp <br>
-<a name=YSG><dt><b><code>proxy_G</code> from <a href="Yproxy_G.js"><code>OrientationYaw</code></a>
- and <a href=Sproxy_G.js><code>SpeedKmh</code></a></b></a>
-<dd>applys <a href="#lpiir">low-pass IIR</a> to yaw and speed changes
 <br> &nbsp <br>
 <a name=AAL><dt><b><a href="AbsAccLoad.js">load from AbsAcc</b></a></a>
 <dd>estimate <code>proxyL</code> from <code>AbsAcc, AccelerationSurge, AccelerationSway</code> properties
