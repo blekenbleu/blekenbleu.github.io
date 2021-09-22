@@ -46,7 +46,12 @@ with the other 3 hopefully obvious by symmetry.<br>
 Several <i>different</i> JavaScript formulae may share the <i>same custom property name</i>,<br>
 exploiting different SimHub properties available in various versions for various games.<br>
 Among the 28 profiles, there are likely multiple versions of the same formula,<br>
-which should be reduced to a single best version by the completion of this document.
+which should be reduced to a single best version by the completion of this document.<br>
+<br>
+My main interest in tactile effects is for driving aids.</a>
+My tactile transducers are small and generally dedicated to single effects.</a>
+Others may wish to repurpose and mix these effects for more elaborate transducer configurations,<br>
+which would likely want substantially different (e.g. frequency) settings.
 
 <a name=prof>
 <h3>Profiles</h3></a>
@@ -55,7 +60,7 @@ which should be reduced to a single best version by the completion of this docum
 <dd>ShakeIt plugin as initially received; only RPM was IMO useful as provided
 <br> &nbsp <br>
 <dt><b>AC1</b> 2 effects
-<dd>my first prune of provided Default, leaving only WHEELS SLIPS and RPMS
+<dd>prune of provided Default, leaving only WHEELS SLIPS and RPMS
 <br> &nbsp <br>
 <dt><b>RPM-modulated up/downshifts</b> 3 effects
 <dd><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-197#post-3357575">by request</a>
@@ -71,7 +76,8 @@ Attempting to generate tactile stimulus powerful enough to be sensed with strong
 <a name=u4ssc><dt><b>(un)Loaded 4-Wheel Slips with Speed Curving</b> 6 effects</a>
 <dd><a href=ShakeIt/index.htm#ACproxyL>ACproxyL</a>,
 <a href=ShakeIt/index.htm#ACproxyS>ACproxyS</a>,
-<a href="ShakeIt/index.htm#LWS"<i>loaded wheel slips</i></a> tactile effect, <a href=ShakeIt/index.htm#OS><i>trailing oversteer</i></a> tactile effect,<br>
+<a href="ShakeIt/index.htm#LWS"<i>loaded wheel slips</i></a> tactile effect,
+<a href=ShakeIt/index.htm#OS><i>trailing oversteer</i></a> tactile effect,<br>
 generic SPEED WITH CURVING effect to export <code>SpeedCurv</code> property for PWM fan custom serial device.
 <br> &nbsp <br>
 <dt><b>speed shifts</b>
@@ -101,14 +107,17 @@ Here are two plots evaluating methods, gated neither by gear changes nor clutch 
 This next plot is when braking with front tire lockup, a limit condition:<br>
 <img src="plot2.gif"><br clear=all>
 The low pass time constant determined to roughly minimize<br>
-differences between <code>Front right</code> and <code>Rear left</code> was then also applied to <code>Rear right</code>.<br>
+differences between <code>Front right</code> and <code>Rear left</code>
+was then also applied to <code>Rear right</code>.<br>
 <br> &nbsp <br>
 <dt><b>Wind Sim and (un)Loaded Wheel Slips</b> 6 effects
 <dd>perhaps a duplicate of <a href=#u4ssc>(un)Loaded 4-Wheel Slips with Speed Curving</a>
 <br> &nbsp <br>
 <dt><b>(un)Loaded 4-Wheel Slips</b> 4 effects
-<dd><a href="ShakeIt/index.htm#ACproxy_G">AC_Proxy_G</a>, <a href=ShakeIt/index.htm#ACproxyS>AC ProxyS</a>,<br>
-Loaded slips by combined(<a href=ShakeIt/index.htm#GL>ProxyL from Proxy_G</a> and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
+<dd><a href="ShakeIt/index.htm#ACproxy_G">AC_Proxy_G</a>,
+<a href=ShakeIt/index.htm#ACproxyS>AC ProxyS</a>,<br>
+Loaded slips by combined(<a href=ShakeIt/index.htm#GL>ProxyL from Proxy_G</a>
+and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
 <a href=ShakeIt/index.htm#GOS>Unloaded WheelSlip (trailing oversteer) from proxy_G</a>
 <br> &nbsp <br>
 <a name=rrrel><dt><b>RRRELoaded4-chanWheelslipUndersteer</b> 6 effects</a>
@@ -133,7 +142,8 @@ Loaded slips by combined(<a href=ShakeIt/index.htm#GL>ProxyL from Proxy_G</a> an
 <i>mix slips and oversteer</i> from <code>UnderOversteer</code>, <code>proxyS</code> and <code>LoadedSlip</code>
 <br> &nbsp <br>
 <dt><b>NewLoaded4-chanWheelslipUndersteer</b> 6 effects
-<dd>duplicate of <a href="nl4cwsu">NewLoaded4-chanWheelslipUndersteer</a>,<br> except <code>UnderOversteer</code> is also a tactile output
+<dd>duplicate of <a href="nl4cwsu">NewLoaded4-chanWheelslipUndersteer</a>,<br>
+except <code>UnderOversteer</code> is also a tactile output
 <br> &nbsp <br>
 <dt><b>Aug14Loaded4-chanWheelslipUndersteer</b> 6 effects
 <dd><i>mix slips and oversteer</i> disabled, output <code>LoadedSlip</code>
