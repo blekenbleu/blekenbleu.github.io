@@ -1,6 +1,9 @@
 // left front wheel load
+var L = $prop('GameRawData.Physics.WheelLoad01')/90;
+if (null != L)
+  return L;
 // convert unsigned lateral Gs to signed left G
-var L = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft');
+L = $prop('ShakeITBSV3Plugin.Export.proxy_G.FrontLeft');
 L -= $prop('ShakeITBSV3Plugin.Export.proxy_G.RearLeft');
 // convert lateral G to left load
 L = 25 + 25 * L / 100;
