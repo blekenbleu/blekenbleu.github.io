@@ -1,7 +1,7 @@
 <html><head>
-<title>SimHub ShakeIt</title>
+<title>ShakeIt formulae</title>
 </head><body>
-<font size=-1><i><a href="../shakeit.htm">back</i></font><br>
+<font size=-1><a href="../shakeit.htm"><i>back</i></a></font><br>
 <h4>ShakeIt Formulae JavaScript</h4>
 Variations on these are reused among ShakeIt profiles<br>
 <dl>
@@ -25,17 +25,14 @@ some fraction of the difference between a new sample and previous value.
 <a name=YSG><dt><b><code>proxy_G</code> from <a href="Yproxy_G.js"><code>OrientationYaw</code></a>
  and <a href=Sproxy_G.js><code>SpeedKmh</code></a></b></a>
 <dd>applys <a href="#lpiir">low-pass IIR</a> to yaw and speed changes.<br>
-This is the original proxy for accelerations, before SimHub added (AC-specific) acceleration properties,<br>
+This is the original proxy for accelerations,<br> before SimHub added (AC-specific) acceleration properties,<br>
 then eventually <code>AccelerationSurge</code> and <code>AccelerationSway</code> e.g. for harness tensioners.
 <br> &nbsp <br>
 <a name=G><dt><b><a  href="proxyG.js"><code>proxyG</code> from <code>AccelerationSurge</code> and <code>AccelerationSway</code></b></a></a>
-<dd>apply <code>proxyL</code> to <code>proxyS</code> property</code>
+<dd>portable acceleration properties in recend SimHub versions
 <br> &nbsp <br>
-<a name=LWS><dt><b><a href="LoadedWheelSlip.js">Loaded WheelSlip</b></a></a>
-<dd>apply <code>proxyL</code> to <code>proxyS</code> property</code>
-<br> &nbsp <br>
-<a name=OS><dt><b><a href="oversteer.js">Unloaded WheelSlip (trailing oversteer)</b></a></a>
-<dd>apply (- rear <code>proxyL</code>) to rear <code>proxyS</code> properties</code>
+<a name=AA><dt><b><a href="AbsAcc.js">AbsAcc</b></a></a>
+<dd>portable 2-channel absolute <code>AccelerationSway</code> and <code>AccelerationSurge</code>; require sign recovery
 <br> &nbsp <br>
 <a name=GL><dt><b><a href="GproxyL.js">ProxyL from Proxy_G</b></a></a>
 <dd>estimate each corner wheel load from all 4 proxy_G values</code><br>
@@ -44,14 +41,20 @@ For 100% (braking) deceleration, each front wheel would have 50% load<br>
 and rear wheels would be fully unloaded.  For some peak braking while turning,<br>
 one front wheel could have 100% load.
 <br> &nbsp <br>
-<a name=GOS><dt><b><a href="Goversteer.js">Unloaded WheelSlip (trailing oversteer) from proxy_G</b></a></a>
-<dd>apply (front - rear <code>proxy_G</code>) to rear <code>proxyS</code> properties</code>
-<br> &nbsp <br>
 <a name=AAL><dt><b><a href="AbsAccLoad.js">load from AbsAcc</b></a></a>
 <dd>estimate <code>proxyL</code> from <code>AbsAcc, AccelerationSurge, AccelerationSway</code> properties
 <br> &nbsp <br>
-<a name=AA><dt><b><a href="AbsAcc.js">AbsAcc</b></a></a>
-<dd>portable 2-channel absolute <code>AccelerationSway</code> and <code>AccelerationSurge</code>; require sign recovery
+<a name=LWS><dt><b><a href="LoadedWheelSlip.js">Loaded WheelSlip</b></a></a>
+<dd>apply <code>proxyL</code> to <code>proxyS</code> property</code>
+<br> &nbsp <br>
+<a name=OS><dt><b><a href="oversteer.js">Unloaded WheelSlip (trailing oversteer)</b></a></a>
+<dd>apply (- rear <code>proxyL</code>) to rear <code>proxyS</code> properties</code>
+<br> &nbsp <br>
+<a name=GOS><dt><b><a href="Goversteer.js">Unloaded WheelSlip (trailing oversteer) from proxy_G</b></a></a>
+<dd>apply (front - rear <code>proxy_G</code>) to rear <code>proxyS</code> properties</code>
+<br> &nbsp <br>
+<a name=GUOS><dt><b><a href="GAbsUnderOversteer.js">gated under, oversteer</b></a></a>
+<dd>uses <code>proxyS</code> and <code>AbsAcc</code>, sorting acceleration from deceleration
 <br> &nbsp <br>
 <a name=UOS><dt><b><a href="AbsUnderOversteer.js">under, oversteer</b></a></a>
 <dd>uses <code>proxyS</code> and <code>AbsAcc</code>, but neglects to recover sign to sort acceleration from deceleration
@@ -59,6 +62,53 @@ one front wheel could have 100% load.
 <a name=mix><dt><b><a href="mixLoadedSlipUnderOverSteer.js">mix slips and oversteer</b></a></a>
 <dd>mixes <code>proxyS</code>, <code>UnderOversteer</code> and <code>LoadedSlip</code>
 <br> &nbsp <br>
-
+<a name=joy><dt><b><a href="joystick.js">joystick</b></a></a>
+<dd>uses <code>InputStatus.JoystickPlugin.SideWinder_Precision_2_Joystick_B07</code><br>
+and <code>JoystickPlugin.SideWinder_Precision_2_Joystick_Slider0</code><br>
+from <b>Controls and events</b> plugin, which enables HID device events as properties.
+<br> &nbsp <br>
+<a name=B><dt><b>Brake pedal tactile: rotor runout and road noise</b></a>
+<dd><a href="RotorRunout.js"><i>rotor runout</i></a> for low pedal effort,<br>
+<a href="RoadNoise.js"><i>road noise</i></a> for higher pedal effort.
+<br> &nbsp <br>
 </dl>
-</body></html>
+
+<a name=gp><h3>property portability</h3></a>
+A year ago, SimHub lacked properties for lateral accelerations.<br>
+Consequently those were derived from changes in the <code>OrientationYaw</code> property.<br>
+SimHub subsequently made <code>GameRawData.Physics.Acc</code> available in AC but not elsewhere.<br>
+The profile version currently on GitHub uses those unportable properties.<br>
+SimHub now has <code>GameData.Accelerations</code> that seeemingly are available for most games.<br>
+Here is a comparison of the original formulae:<br>
+<img src="../YawSpeed.gif"><br clear=all>
+.. and SimHub's properties, rescaled:<br>
+<img src="../Accprop.gif"><br clear=all>
+.. where <code>Front right</code> is deceleration, <code>Rear right</code> is acceleration,<br>
+<code>Front left</code> is right G and <code>Rear left</code> is left G.<br>
+While agreement between these implementations is acceptable,<br>
+neither acceleration and deceleration<br>
+&nbsp nor left and right G should <i>ever</i> be <b>simultaneously positive</b>.<br>
+Whether observed violations are plotting artifacts<br>
+&nbsp or actual property implementation bugs is unknown.
+
+<a name=tp><h3>telemetry proxies</h3></a>
+Some telemetry which can be helpful for generating driving aid effects
+has not been available from some games.<br>
+Profile proliferation was driven by ad hoc experiments for improving that telemetry.<dl>
+<dt><b>proxyG</b>
+<dd>lateral acceleration can be derived from changes in yaw.<br>
+This proxy is liable to jitter distortion if time between yaws samples varies.<br>
+After accounting for jitter, various derivations of <b>proxyG</b> are acceptably comparable.
+<dt><b>proxyL</b>
+<dd>Wheel loads can be roughly estimated from accelerations if otherwise unavailable.<br>
+Here are simultaneous plots, first from Assetto Corsa <code>GameRawData.Physics.WheelLoad0[1-4]</code>:<br>
+<img src="../ACload.gif"><br clear=all><br>... then a proxy for loads estimated from accelerations:<br>
+<img src="../Gload.gif"><br clear=all>
+<dt><b>proxyS</b>
+<dd>Wheel slips can be calculated from vehicle and wheel speeds, if available.<br>
+iRacing wheel slip is reportedly estimated from relative changes between engine and vehicle speeds,<br>
+so relevant for driven wheels.
+</dl>
+<!-- blank space, so that links go to top of browser -->
+<br> &nbsp <br> <br> &nbsp <br> <br> &nbsp <br> <br> &nbsp <br> <br> &nbsp <br> <br> &nbsp <br> <br> &nbsp <br>
+<br> &nbsp <br> <br> &nbsp <br> <br> &nbsp <br> <br> &nbsp <br> </body></html>
