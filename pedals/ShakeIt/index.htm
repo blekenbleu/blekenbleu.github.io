@@ -13,13 +13,13 @@ some fraction of the difference between a new sample and previous value.
 <a name=hpiir><dt><a href=highpass.js><b>high-pass IIR</b></a></a>
 <dd>Generate low-pass IIR values, but return differences between<br>new samplesand previous low-pass values.
 <br> &nbsp <br>
-<a name=ACproxyL><dt><b><a href="ACproxyL.js">AC ProxyL</b></a></a>
+<a name=ACproxyL><dt><b><a href="ACproxyL.js">AC proxyL</b></a></a>
 <dd>tweak unportable <code>GameRawData.Physics.WheelLoad</code>
 <br> &nbsp <br>
-<a name=ACproxyS><dt><b><a href="ACproxyS.js">AC ProxyS</b></a></a>
+<a name=ACproxyS><dt><b><a href="ACproxyS.js">AC proxyS</b></a></a>
 <dd>tweak unportable <code>GameRawData.Physics.WheelSlip</code>
 <br> &nbsp <br>
-<a name=ACproxy_G><dt><b><a href="ACproxy_G.js">AC Proxy_G</b></a></a>
+<a name=ACproxy_G><dt><b><a href="ACproxy_G.js">AC proxy_G</b></a></a>
 <dd>tweak unportable <code>GameRawData.Physics.AccG</code>
 <br> &nbsp <br>
 <a name=YSG><dt><b><code>proxy_G</code> from <a href="Yproxy_G.js"><code>OrientationYaw</code></a>
@@ -34,24 +34,28 @@ then eventually <code>AccelerationSurge</code> and <code>AccelerationSway</code>
 <a name=AA><dt><b><a href="AbsAcc.js">AbsAcc</b></a></a>
 <dd>portable 2-channel absolute <code>AccelerationSway</code> and <code>AccelerationSurge</code>; require sign recovery
 <br> &nbsp <br>
-<a name=GL><dt><b><a href="proxyL.js">ProxyL from Proxy_G or AC property</b></a></a>
+<a name=GL><dt><b><a href="proxyL.js">proxyL from proxy_G or AC property</b></a></a>
 <dd>estimate each corner wheel load from all 4 proxy_G values</code><br>
 By default, each wheel is supposed to have 25% load.<br>
 For 100% (braking) deceleration, each front wheel would have 50% load<br>
 and rear wheels would be fully unloaded.  For some peak braking while turning,<br>
 one front wheel could have 100% load.
 <br> &nbsp <br>
-<a name=AAL><dt><b><a href="AbsAccLoad.js">load from AbsAcc</b></a></a>
+<a name=AAL><dt><b><a href="AbsAccLoad.js">proxyL from AbsAcc</b></a></a>
 <dd>estimate <code>proxyL</code> from <code>AbsAcc, AccelerationSurge, AccelerationSway</code> properties
 <br> &nbsp <br>
 <a name=LWS><dt><b><a href="LoadedWheelSlip.js">Loaded WheelSlip</b></a></a>
-<dd>apply <code>proxyL</code> to <code>proxyS</code> property</code>
+<dd>apply <code>proxyL</code> to <code>proxyS</code>
+ or <code>GameRawData.Physics.WheelSlip</code> property</code>
 <br> &nbsp <br>
-<a name=OS><dt><b><a href="oversteer.js">Unloaded WheelSlip (trailing oversteer)</b></a></a>
+<a name=OS><dt><b><a href="oversteer.js">Unloaded rear WheelSlip (trailing oversteer)</b></a></a>
 <dd>apply (- rear <code>proxyL</code>) to rear <code>proxyS</code> properties</code>
 <br> &nbsp <br>
 <a name=GOS><dt><b><a href="Goversteer.js">Unloaded WheelSlip (trailing oversteer) from proxy_G</b></a></a>
 <dd>apply (front - rear <code>proxy_G</code>) to rear <code>proxyS</code> properties</code>
+<br> &nbsp <br>
+<a name=LOU><dt><b><a href="Loversteer.js">Loaded over, understeer from <code>proxyLS</code></b></a></a>
+<dd>correlated front corner <code>proxyLS</code>, rear corner <code>proxyLS</code> properties</code>
 <br> &nbsp <br>
 <a name=GUOS><dt><b><a href="GAbsUnderOversteer.js">gated under, oversteer</b></a></a>
 <dd>uses <code>proxyS</code> and <code>AbsAcc</code>, sorting acceleration from deceleration
