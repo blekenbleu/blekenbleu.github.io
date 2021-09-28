@@ -9,15 +9,15 @@ SimHub stores profiles in <code>Documents/SimHub</code>,<br>
 while this site stores some in <a href="../">Arduino</a>,<br>
 since they are highly dependent on matching Arduino sketches.<br>
 <br>
-Earliest versions of harness tensioner profiles, e.g. <a href="delta_v.js.txt">delta_v.js</a> estimated G forces from changes in yaw and speed,<br>
-but SimHub made available acceleration properties for Assetto Corsa by late April 2021, as used in <a href="SimHubG.js.txt">SimHubG.js</a>.<br>
+Earliest versions of harness tensioner profiles used e.g. <a href="delta_v.js.txt">delta_v.js</a> to estimate G forces from changes in yaw and speed,<br>
+but SimHub made available proprietary acceleration properties for Assetto Corsa by late April 2021, as used in <a href="SimHubG.js.txt">SimHubG.js</a>.<br>
 Otherwise, despite significant code reorganization, logic is mostly similar between these two JavaScript messages.
 <dl>
 <dt><a href=tension.shsds.txt><b>Arduino/tension.shsds</b></a> &nbsp Feb 17  2021 3 messages
 <dd>first (unused): &nbsp <code>format([OrientationYaw],0)+'\t'+format([SpeedMph],0)+'\t'+format([GlobalAccelerationG],0)+'\r\n'</code><br>
 second: &nbsp <a href="messages/offsets.js">offsets.js</a>, a subset of <a href="messages/new_range.js">new_range.js</a>,<br>
 <a href="messages/tension.js">tension.js</a> replaces single <code>tc</code> with separate ones for <code>delta_s</code> and <code>delta_y</code>,<br>
-adds <code>Settings.tmax</code>, adds more gnuplot columns and otherwise reorders <a href="delta_v.js.txt">delta_v.js</a> code.
+ &nbsp adds <code>Settings.tmax</code>, adds more gnuplot columns and otherwise reorders <a href="delta_v.js.txt">delta_v.js</a> code.
 <br> &nbsp <br>
 <dt><a href=running.shsds><b>Arduino/running.shsds</b></a> &nbsp Feb 23  2021
 <dd>3 messages: &nbsp first same as <a href="messages/new_range.js">new_range.js</a>,<br>
@@ -32,39 +32,38 @@ and a tensioner message that is functionally identical to <a href="SimHubG.js.tx
 duplicated in <code>Documents/SimHub</code>
 <br> &nbsp <br>
 <dt><a href=Noticeable.shsds.txt><b>Arduino/Noticeable.shsds</b></a> &nbsp Jun 14  2021
-<dd>Currently replacing 6-bit servo tension values with 4-bit LUT entries<br>
-duplicated in <code>Documents/SimHub</code>
-3 messages: &nbsp <a href="messages/setLUT.js">setLUT.js</a> resamples 20 just noticeable steps to 4-bit LUT,<br>
+<dd>Currently used; 4-bit LUT replaced 6-bit servo tension values; duplicated in <code>Documents/SimHub</code><br>
+3 messages: &nbsp <a href="messages/NotLUT.js">NotLUT.js</a> resamples 20 just noticeable steps to 4-bit LUT,<br>
 same <a href="messages/special.js">special.js</a> as elsewhere,<br>
-same as <a href="messages/new_tens.js">new_tens.js</a>
+same tension update message as <a href="messages/new_tens.js">new_tens.js</a>
 <br> &nbsp <br>
 <dt><b>Documents/SimHub/JustNoticeable.shsds</b> &nbsp Jun 14  2021
-<dd>3 messages:  <a href="messages/setLUT.js">setLUT.js</a> resamples just-noticeable steps to 4-bit LUT,<br>
-<a href="messages/special.js">updates special command value</a><br>
-<a href="messages/tensLUT.js">updates 4-bit tension indices</a>
+<dd>3 messages:  <a href="messages/NotLUT.js">NotLUT.js</a> resamples just-noticeable steps to 4-bit LUT,<br>
+<a href="messages/special.js">special.js</a> updates special command value<br>
+<a href="messages/Justens.js">Justens.js</a> updates 4-bit tension indices
 <br> &nbsp <br>
 <dt><b>Documents/SimHub/Devices3messages6.shsds</b> &nbsp Jun 14  2021
-<dd>6 messages: &nbsp <a href="messages/DevLUT.js">resample just-noticeable steps to 4-bit LUT</a>,<br>
- &nbsp <a href="messages/DevLUT.js">DevLUT.js</a> differs from <a href="messages/setLUT.js">setLUT.js</a> only in most slack control indices.<br>
+<dd>6 messages: &nbsp <a href="messages/DevLUT.js">DevLUT.js</a> resamples just-noticeable steps to 4-bit LUT,<br>
+ &nbsp <a href="messages/DevLUT.js">DevLUT.js</a> differs from <a href="messages/NotLUT.js">NotLUT.js</a> only in most slack control indices.<br>
 same as <a href="messages/JNDtest.js">JNDtest.js</a> (disabled),<br>
 same as <a href="messages/JNDrange.js">JNDrange.js</a> (disabled),<br>
-<a href="messages/Devsim.js">simulate 4-bit LUT</a> (disabled),<br>
+<a href="messages/Devsim.js">/Devsim.js</a> simulates 4-bit LUT to 6-bit Arduino sketch</a> (disabled),<br>
 same as <a href="messages/special.js">special.js</a>,<br>
-<a href="messages/Devtens.js">Devtens.js</a> is comparable to <a href="messages/tensLUT.js">tensLUT.js</a> and <a href="messages/new_tens.js">new_tens.js</a>
+<a href="messages/Devtens.js">Devtens.js</a> is comparable to <a href="messages/Justens.js">Justens.js</a> and <a href="messages/new_tens.js">new_tens.js</a>
 <br> &nbsp <br>
 <dt><b>Documents/SimHub/UpdatedProxyG.shsds</b> &nbsp May 22  2021
-<dd>2 messages: &nbsp same as <a href="messages/JNDrange.js">JNDrange.js</a>,<br>
-<a href="messages/Upset.js">update 6-bit tensions using <code>GameRawData.Physics.AccG</code><br>
+<dd>2 messages: &nbsp first same as <a href="messages/JNDrange.js">JNDrange.js</a>,<br>
+<a href="messages/Upset.js">Upset.js</a> updates 6-bit tensions still using <code>GameRawData.Physics.AccG</code><br>
 <br> &nbsp <br>
 <dt><b>Documents/SimHub/JND_LUT.shsds</b> &nbsp May 21 2021
-<dd>3 messages: &nbsp <a href="messages/JNDLUT.js">resample and update 4-bit LUT</a> &nbsp (disabled),<br>
-<a href="messages/JNDtest.js">test differences based on yaw and decel gain setting changes</a> &nbsp (disabled),<br>
-<a href="messages/JNDrange.js">set and test offsets and tmax</a><br>
+<dd>3 messages: &nbsp <a href="messages/JNDLUT.js">JNDLUT.js</a> resamples and updates 4-bit LUT &nbsp (disabled),<br>
+<a href="messages/JNDtest.js">JNDtest.js</a> tests differences based on yaw and decel gain setting changes &nbsp (disabled),<br>
+<a href="messages/JNDrange.js">JNDrange.js</a> sets and test offsets and tmax<br>
 <br>
-JNDLUT.js is nearly the same as setLUT.js, except<ul compact>
-<li>Arduino LUT load command change from 0x7E to 0
+JNDLUT.js is nearly the same as NotLUT.js, except<ul compact>
+<li>Arduino LUT load code changed from 0 in <a href="messages/JNDLUT.js">JNDLUT.js</a> to 0x7E in  <a href="messages/NotLUT.js">NotLUT.js</a> and newer messages.
 <li>JNDLUT.js returns step.toString() without tension control indices, while<br>
-setLUT.js appends least or most tense indices to step[], then returns String.fromCharCode.apply(null,step)
+NotLUT.js appends least or most tense indices to step[], then returns String.fromCharCode.apply(null,step)
 </ul>
 <dt><b>Documents/SimHub/BeltTensionner1705.shsds</b> &nbsp May 17  2021
 <dd> 3 messages: Wotever's updated tensioner serial device
@@ -73,9 +72,9 @@ setLUT.js appends least or most tense indices to step[], then returns String.fro
 <dd> 3 messages: Wotever's first tensioner serial device
 <br> &nbsp <br>
 <dt><b>Documents/SimHub/new_serial.shsds</b> &nbsp Apr 24  2021
-<dd>2 messages: &nbsp <a href="messages/new_range.js">set and tested tension offsets</a><br>
-and <a href="messages/new_tens.js">send 4-bit LUT indices based on <code>AccelerationSurge</code> and <code>AccelerationSurge</code>
-if not <code>Settings.TestOffsets</code></a><br>
+<dd>2 messages: &nbsp <a href="messages/new_range.js">new_range.js</a> sets and tests tension offsets,<br>
+<a href="messages/new_tens.js">new_tens.js</a> sends 4-bit LUT indices based on <code>AccelerationSurge</code> and <code>AccelerationSurge</code>
+if not <code>Settings.TestOffsets</code><br>
 <i>where did LUT get downloaded??</i>
 <br> &nbsp <br>
 <dt><b>Documents/SimHub/compare.shsds</b> &nbsp Apr 21  2021
