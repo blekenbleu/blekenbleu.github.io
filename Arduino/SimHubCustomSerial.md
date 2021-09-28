@@ -106,3 +106,8 @@ This [Noticeable.shsds](Noticeable.shsds.txt) GitHub profile has 4 Javascript me
 2) Repurpose decel and yaw can sliders to for equal tension increment testing
 3) Updated (simplified) untensioned and max tension position slider tests
 4) Simulate 4-bit quantized tension LUT in comparison to 7-bit (servo pwm granularity) control.
+
+As with Bass Shaker profiles, SimHub Custom serial profiles have proliferated.  
+Also similarly, key differences are in embedded JavaScript,  
+which is hard to sort by casual inspection.  
+Consequently, a dedicated [atlas for SimHub Custom serial profiles](shsds.htm).
