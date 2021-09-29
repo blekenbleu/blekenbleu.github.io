@@ -54,15 +54,16 @@ void loop() {
         Serial.println("resetting..");
       else if (1 == special)
 	Serial.println("R");
-      next = special = loading = 0;
-      offset[0] = 63; offset[0] = 65;
+      next = special = loading = col = 0;
       tmax = 0x7E;
+      offset[0] = 63; offset[0] = 65;
       servo[0].write(offset[0]);
       servo[1].write(offset[1]);
       return;
     } 
 
     if (0x40 & received) {
+      digitalWrite(LED, LOW);	// illuminate LED
       if (loading) { 	// did preceding character also have 0x40 set?
 	if (2 == special) {
 	  Serial.println("sync error: consecutive characters with 0x40 bit set");
@@ -75,13 +76,13 @@ void loop() {
 	loading = 0;
       }
       else loading = received;
-      digitalWrite(LED, LOW);	// illuminate LED
       return;
     }
 
     if (loading) {	// sync bit == 0
-      byte addr;  // really only 5 lsb;
-      
+      byte addr = 0x1F & loading;  // really only 5 lsb;
+
+      digitalWrite(LED, HIGH);  // extinguish LED
       if (0x5F == loading) {		// special?
 	special = received;
 	if (2 == special) {
@@ -93,16 +94,20 @@ void loop() {
 	  tmax = special << 1;
       } else {		// not so special
 	received |= ((0x20 & loading) << 1);	// restore msb of 7-bit data
-        if (2 > (addr = 0x1F & loading))
+        if (2 > addr)
 	  offset[addr] = received;
       	else if (4 > addr) {
-	  if (tmax <= received && 1 == special) {
-	    Serial.print("F");
-	    col++;
-	  }
           servo[addr].write(offset[addr - 2] + received);
+      	  if (tmax <= received) {
+            digitalWrite(LED, LOW);  // illuminate LED
+	    if (1 == special) {
+	      Serial.print("F");
+	      col++;
+	    }
+	  }
 	}
 	else {
+	  digitalWrite(LED, LOW);  // illuminate LED
 	  if (2 == special) {
       	    Serial.print("Channel address out of implemented range: ");
       	    Serial.println(addr);
@@ -115,8 +120,8 @@ void loop() {
 	}
       }
       loading = 0;
-      digitalWrite(LED, HIGH);	// extinguish LED
     } else {		// NOT loading
+      digitalWrite(LED, LOW);	// illuminate LED
       if (2 == special) {
         Serial.println("consecutive byte without sync bit:  ignored");
         col = 0;
@@ -125,7 +130,6 @@ void loop() {
 	Serial.print("E");
 	col++;
       }
-      digitalWrite(LED, LOW);	// illuminate LED
     }
 
     if (180 < col) {
