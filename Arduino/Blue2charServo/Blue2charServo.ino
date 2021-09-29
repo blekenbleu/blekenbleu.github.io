@@ -81,9 +81,9 @@ void loop() {
     }
 
     if (loading) {	// sync bit == 0
+      byte addr;  // really only 5 lsb;
+      
       if (0x5F == loading) {		// special?
-	byte addr;	// really only 5 lsb;
-
 	special = received;
 	if (2 == special) {
       	  Serial.print("special ");
@@ -99,7 +99,7 @@ void loop() {
       	else if (4 > addr) {
 	  if (tmax <= received && 1 == special) {
 	    Serial.print("F");
-	    col++
+	    col++;
 	  }
           servo[addr].write(offset[addr - 2] + received);
 	}
