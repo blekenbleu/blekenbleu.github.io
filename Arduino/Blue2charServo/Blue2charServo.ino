@@ -12,7 +12,6 @@ byte special = 0;			// commands in 6 lsb of character after 0x5F
 byte loading = 0;			// state: waiting for second character
 byte tmax = 0x7E;			// tension threshold for overload echo 'F'
 byte col = 0;          			// roughly 180 column SimHub Incoming serial data
-char hex[] = "0123456789ABCDEF";
 
 void setup() {			// setup() code runs once
   pinMode(LED, OUTPUT);		// initialize output digital pin connected to green LED
