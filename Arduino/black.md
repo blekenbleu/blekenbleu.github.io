@@ -27,39 +27,25 @@ T2 and T5 are 32-bit;  T3 and T4 are 16-bit;  T1 is [advanced 16-bit](https://st
 
 Two more complementary PWM: PB13,15: T1 CH 1,3
 
-While STM32 chips' ROM bootloaders typically support USB directly,  
-Blue Pill's `FC103C8` chip lacks USB bootloader support in ROM.  
-
 There are at least 4 ways to flash STM32 chips:  
 1) DFU (device firmware update) using DfuSe utility,  
     using the [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
     using the [Black Pill's DFU bootloader with Arduino](https://www.sgbotic.com/index.php?dispatch=pages.view&page_id=49)  
     By default, must force Black Pill into DFU using buttons on board
-    [Arduino `use_1200bps_touch` sketch code](https://arduino.github.io/arduino-cli/latest/platform-specification) jumps to [STM32 ROM DFU bootloader](https://github.com/arduino/tooling-rfcs/pull/2#issuecomment-825908911).  
+    [Arduino `use_1200bps_touch` sketch code](https://arduino.github.io/arduino-cli/latest/platform-specification) jumps to
+[STM32 ROM DFU bootloader](https://github.com/arduino/tooling-rfcs/pull/2#issuecomment-825908911).  
     [Beta enhancement](https://github.com/stm32duino/Arduino_Core_STM32/pull/710)  
     [Seemingly already supported for Arduino STM32 modules](https://github.com/arduino/arduino-cli/issues/1083)  
     [May require a resistor and capacitor](https://stackoverflow.com/questions/26891432/jump-to-bootloader-in-stm32-through-application-i-e-using-boot-0-and-boot-1-pins#26958578)  
 2) SWD via ST-LINK  
-   This can be used with any STM32 chip.
-3) (Arduino) USB bootloader[s] <- there have been several:  
-   * [STM32duino Bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html) AKA bootloader 2.0 AKA HID bootloader  
-     This is wanted for ST Microelectronics-supported Arduino libraries
-   * the rest are IMO obsolete:
-     - [Maple-derivative bootloaders](https://github.com/jonatanolofsson/maple-bootloader)  
-     - Maple boards had USB reset hardware to force re-enumeration  
-     - [Roger Clark's 8k bootloader](https://github.com/rogerclarkmelbourne/STM32duino-bootloader)  
-       Be aware that some of Roger Clark core code is also called Stm32duino..
-     - Not sure which core (libmaple or stm32duino) [this bootloader supports, but is 4k](https://github.com/davidgfnet/stm32-dfu-bootloader)  
-4) STM serial bootloader
-   Blue Pill micro has only a serial bootloader  
-   [Load firmware via USART1 by jumpering](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html#Boot0_and_Boot1_pin_settings):  
-   `Boot0 HIGH`  
-   `Boot1 LOW`  
-  ... then resetting MCU
+   This can be used for any STM32 chip.
+3) (Arduino) USB bootloader[s] <- there is seemingly at least one Adruino bootloader for Black Pill,  
+perhaps linked into sketches?  
+   [WeAct HID bootloader on Black Pill](https://hardwareliberopinerolo.github.io/site/blackpill/)  
+4) STM serial bootloader [for use with Arduino](https://www.etechpath.com/how-to-flash-usb-bootloader-in-stm32-black-pill-board-to-program-it-with-arduino-ide/)  
 
 A clone ST-LINK V2 costs no more than a USB COM dongle,  
 connects to dedicated pins and supports debug.  
-Clone USB COM dongles *may not* support 3.3V to Blue Pill serial boot pins..  
 
 #### STM32duino
 Arduino now has an ST Microelectronics-supported [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
@@ -74,14 +60,12 @@ It replaced an earlier one, mostly for Maple/Roger Clark libraries.
 
 ### [STM32F411xC/E Reference manual](https://www.st.com/resource/en/reference_manual/dm00119316-stm32f411xc-e-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf)  
 
-### ST-LINK and Blue Pill
-[This video](https://www.youtube.com/watch?v=KgR3uM21y7o) programs a Blue Pill using [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html).  
-Wiring Blue Pill to ST-LINK V2 clone:
-![wiring Blue Pill to ST-LINK V2 clone](https://miro.medium.com/max/875/1*pFNIcoAq2s3l4lwsM0gj8w.jpeg)  
-![wiring chart](https://miro.medium.com/max/533/1*NwPYrVoPUbciDWzvGsTavQ.png)  
-Connect 3.3V from ST-LINK to Blue Pill **only when Blue Pill has no other connections**  
-Put another way, when using ST-LINK to debug Blue Pill e.g. plugged to USB,  
-  **do NOT connect 3.3V to Blue Pill from ST-LINK**.  
+### ST-LINK and Black Pill
+Wiring Black Pill to ST-LINK V2 clone:
+![wiring Black Pill to ST-LINK V2 clone](https://jorgegarciadev.gitlab.io/images/bmp.jpg)  
+Connect 3.3V from ST-LINK to Black Pill **only when Black Pill has no other connections**  
+Put another way, when using ST-LINK to debug Black Pill e.g. plugged to USB,  
+  **do NOT connect 3.3V to Black Pill from ST-LINK**.  
 
 
 ### Installing STM32duino support
@@ -101,45 +85,6 @@ no need to install Arduino-specific driver[s]...
    From **`Tools` > `Board Part Number:`**, select [`BlackPill F411CE`].  
    From **`Tools` > `Upload method:`**, select [`STM32CubeProgrammer (DFU)`].  
 
-A simple next step adds servos to the blink loop sketch.  
-[This servo cycling sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under GitHub revision control,  
-with a shortcut to that sketch folder in the Arduino "work" folder.  
-Both of these ploys work; the sketch runs..  
-**This sketch can be used to verify servo wiring to a Blue Pill** *without* serial control. 
+A simple next step uploads an Arduino blink loop sketch.  
 
-### Serial servos e.g. for SimHub harness tensioning
-Here is the [Arduino reference for Serial communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)  
-In STM32duino, **`Serial`** device is USB virtual COM port,  
-using `PA11+12`, and **`Serial1`** is UART `PA9+10`,  
-but **Serial** *may be* UART in [PlatformIO Arduino framework](https://platformio.org/frameworks)  
-unless configured as a USB Virtual COM port in Tools.  
-
-Put [`while (!Serial){;}` in `setup(){}`](https://www.arduino.cc/reference/en/language/functions/communication/serial/ifserial/)  
-Toggling LED off before and on or blinking after provides connection feedback.  
-The first Arduino sketch I found that combined `Serial` and `<Servo.h>` is  
-[Matt Williamson's serial_servo_rx.ino](https://github.com/mattwilliamson/Arduino-RC-Receiver/blob/master/serial_servo_rx_ino/serial_servo_rx.ino)  
-
-Single-character control [avoids serial string blocking and overflows](https://www.forward.com.au/pfod/ArduinoProgramming/Serial_IO/index.html).  
-Useful rotation range for my harness' servos is less than 127 degrees;  
-direct odd rotation values 3-127 to the right harness strap  
-and even rotation values 2-126 to the left,  
-reserving values 0-1 to set strap offsets based on **immediately next** values.  
-
-Green LED blink codes feedback when processing servo values,  
-with 50% duty cycle for idle operation.  
-Perhaps better to use that LED to signal when servo values are max..?   
-Blink timing by `delay()` impacts serial bandwidth, so use `millis()`.
-
-For serial servo control, with or *even without* **SimHub Custom serial device**,  
-**[this sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo)** accepts e.g. ASCII characters from Arduino `Tools` > `Serial Monitor`.  
-to move left or right servo based on least-significant bit.  
-**See [above](#stm32duino) for Blue Pill flash programming information.**  
-Characters `> 127` do not arrive intact from SimHub JavaScript,  
-but useful strap servo range is `< 127`, with offsets applied to received values.  
-Testing suggests that, running on STM32 Blue Pill,  
-this sketch handles 60Hz updates of 4 characters,  
-where 2 should suffice and servos respond less quickly.  
-By changing from Blue Pill-specific PWM pin and LED assignments,  
-this sketch should work for other Arduino-supported modules with PWM-capable pins.
-
-Corresponding [SimHub Custom serial hacking is described here](SimHubCustomSerial.md).
+[SimHub Custom serial hacking is described here](SimHubCustomSerial.md).
