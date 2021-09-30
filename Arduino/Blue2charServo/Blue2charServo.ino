@@ -62,6 +62,11 @@ void loop() {
       return;
     } 
 
+    if (3 == special) {
+      Serial.print((char)received);
+      return;
+    }
+
     if (0x40 & received) {
       digitalWrite(LED, LOW);	// illuminate LED
       if (loading) { 	// did preceding character also have 0x40 set?
@@ -84,14 +89,20 @@ void loop() {
 
       digitalWrite(LED, HIGH);  // extinguish LED
       if (0x5F == loading) {		// special?
-	special = received;
-	if (2 == special) {
-      	  Serial.print("special ");
-      	  Serial.println(special);
-          col = 0;
+	if (3 < received)
+	  tmax = received << 1;
+	else if (special != received) {	// special change?
+	  if (2 == received || 2 == special) {
+	    Serial.print("special = ");
+	    Serial.println(received);
+	    col = 0;
+	  }
+	  special = received;
+	  if (3 == special) {
+	    Serial.println("ASCII echo enabled; reset to disable");
+	    return; 
+	  }
 	}
-	if (2 < special)
-	  tmax = special << 1;
       } else {		// not so special
 	received |= ((0x20 & loading) << 1);	// restore msb of 7-bit data
         if (2 > addr)
