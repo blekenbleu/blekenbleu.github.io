@@ -195,13 +195,15 @@ Corresponding [SimHub Custom serial hacking is described here](SimHubCustomSeria
 ### Blue Pill servo firmware generations
 As described above, **first generation** use the least signficant of 7 bits  
 to select servos for left or right harness tensioning..   
-A **second generation** allocates 3 bits for PWM pin selection,  
-with 0 being reserved for special commands e.g. LUT loading,
-leaving 4 bits to index into a 16-entry LUT of PWM values.  
-A **third generation** pairs ASCII characters (14 bits), of which  
-the most significant bit in each character  
+A **second generation** allocates 3 msb for PWM pin selection,  
+with 0x70 reserved for special commands e.g. 0x7F for servo LUT loading,  
+leaving 4 lsb to index into a 16-entry LUT of PWM values.  
+A **third generation** pairs ASCII characters (14 bits),  
+of which the most significant bit in each character  
 identifies it as first (1) or second (0) of a pair.  
 The next bit in the first character is most significant of 7 data bits,  
 while the 5 lsb index a channel, which may e.g. be a PWM pin.  
 The largest channel value is reserved for special commands.  
 The 6 lsb of second characters is 6 lsb of channel data values.
+
+[**PWM fan code is described here**](SimHubPWMfans)  
