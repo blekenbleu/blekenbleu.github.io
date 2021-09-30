@@ -14,30 +14,31 @@ While not an official Arduino platform,
 [WeMos D1 UNO R1](ESPDuino) is a supported ESP8266 board,  
 communicating via CH340 USB-serial chip.
  
-While STM32 chips' ROM bootloaders typically support USB directly,  
+While many STM32 chips' ROM bootloaders support (DFU) USB directly,  
 Blue Pill's `FC103C8` chip lacks USB bootloader support in ROM.  
-While STM32F103C officially has 64K flash, [many have 128K](https://stm32duinoforum.com/forum/viewtopic_f_28_t_4361.html).  
+While STM32F103C officially has 64K flash,
+[many have 128K](https://stm32duinoforum.com/forum/viewtopic_f_28_t_4361.html).  
 
 
 There are at least 4 ways to flash STM32 chips:  
 1) SWD via ST-LINK  
-   This will be used to load an HID bootloader to Blue Pills
+   **This will be used to load an HID bootloader to Blue Pills** 
 2) (Arduino) USB bootloader[s] <- there have been several:  
-   * [STM32duino Bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html) AKA bootloader 2.0 AKA HID bootloader  
-     This is wanted for ST Microelectronics-supported Arduino libraries
+   * [STM32duino Bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html) AKA bootloader 2.0 AKA **HID bootloader**  
+     **Arduino uses this to download Blue Pill sketches using ST Microelectronics-supported libraries**
    * the rest are IMO obsolete:
      - [Maple-derivative bootloaders](https://github.com/jonatanolofsson/maple-bootloader)  
      - Maple boards had USB reset hardware to force re-enumeration  
      - [Roger Clark's 8k bootloader](https://github.com/rogerclarkmelbourne/STM32duino-bootloader)  
        Be aware that some of Roger Clark core code is also called Stm32duino..
      - Not sure which core (libmaple or stm32duino) [this bootloader supports, but is 4k](https://github.com/davidgfnet/stm32-dfu-bootloader)  
-3) STM serial bootloader
+3) STM serial bootloader  
    Blue Pill micro has only a serial bootloader  
    [Load firmware via USART1 by jumpering](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html#Boot0_and_Boot1_pin_settings):  
    `Boot0 HIGH`  
    `Boot1 LOW`  
   ... then resetting MCU
-4) DFU (device firmware update) using DfuSe utility,  
+4) DFU (device firmware update) using DfuSe utility, e.g. for Black Pills   
     using the [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
     but USB is [**NOT** supported by Blue Pill's ROM bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html)  
 
@@ -51,7 +52,7 @@ Clone USB COM dongles *may not* support 3.3V to Blue Pill serial boot pins..
 Blue Pill boot jumpers *are unchanged* when flashing by ST-LINK or HID bootloader.  
 
 #### STM32duino
-Many STM32 Arduino projects use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader,  
+Many STM32 Arduino projects use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader AKA Maple,  
 but Arduino now has an ST Microelectronics-supported [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
 for which there is an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
 as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).  
@@ -112,7 +113,10 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
    click **`Start`** (*that should complete quickly*)  
    (*Blue Pill red LED on for power, green LED flickers quickly*)  
    Unplug ST-LINK, unwire ST_LINK from Blue Pill, and connect Blue Pill to USB.  
-   (*Blue Pill red LED on for power, green LED flickers quickly*)
+   (*Blue Pill red LED on for power, green LED flickers quickly*)  
+
+   **Note** A bad Arduino sketch download can leave a Blue Pill unable to be recognized by Windows,  
+   and reflashing the HID Bootloader without wiping the bad sketch by `erase chip` may not recover it.  
 
 ### Installing STM32duino support
 Since SimHub already includes an *older version* of Arduino,  
@@ -187,3 +191,17 @@ By changing from Blue Pill-specific PWM pin and LED assignments,
 this sketch should work for other Arduino-supported modules with PWM-capable pins.
 
 Corresponding [SimHub Custom serial hacking is described here](SimHubCustomSerial.md).
+
+### Blue Pill servo firmware generations
+As described above, **first generation** use the least signficant of 7 bits  
+to select servos for left or right harness tensioning..   
+A **second generation** allocates 3 bits for PWM pin selection,  
+with 0 being reserved for special commands e.g. LUT loading,
+leaving 4 bits to index into a 16-entry LUT of PWM values.  
+A **third generation** pairs ASCII characters (14 bits), of which  
+the most significant bit in each character  
+identifies it as first (1) or second (0) of a pair.  
+The next bit in the first character is most significant of 7 data bits,  
+while the 5 lsb index a channel, which may e.g. be a PWM pin.  
+The largest channel value is reserved for special commands.  
+The 6 lsb of second characters is 6 lsb of channel data values.
