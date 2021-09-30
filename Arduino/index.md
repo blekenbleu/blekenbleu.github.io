@@ -206,4 +206,5 @@ while the 5 lsb index a channel, which may e.g. be a PWM pin.
 The largest channel value is reserved for special commands.  
 The 6 lsb of second characters is 6 lsb of channel data values.
 
-[**PWM fan code is described here**](SimHubPWMfans)  
+[**PWM fan code is described here**](SimHubfans)  
+[**PWM fan sketch is here**](SimHubPWMfans)  

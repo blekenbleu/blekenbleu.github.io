@@ -15,7 +15,8 @@ and ST Microelectronics now supports many STM32 chips and boards.
   
 Here is a Black Pill pinout reference:
 ![Generic STM32F4x1 board pinout](https://raw.githubusercontent.com/WeActTC/MiniSTM32F4x1/master/images/STM32F4x1_PinoutDiagram_RichardBalint.png)  
-- 5V tolerant PWM pins are wanted for driving hobby servos or 4-wire PC fans.  
+- 5V tolerant PWM pins are wanted for driving hobby servos
+or [4-wire PC fans](SimHubfans).  
 - Unlike Blue Pills, nearly all F401 Black Pill pins are 5V tolerant, but not PA0 and PB5 on STM32F411.  
 - [Other Black (STM32F411) vs Blue (STM32F103) differences](https://hackaday.com/2021/01/20/blue-pill-vs-black-pill-transitioning-from-stm32f103-to-stm32f411/)  
 - [Black Pill `KEY` button pulls PA0 LOW](https://stm32-base.org/boards/STM32F411CEU6-WeAct-Black-Pill-V2.0.html)  
