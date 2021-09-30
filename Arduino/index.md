@@ -73,6 +73,8 @@ Wiring Blue Pill to ST-LINK V2 clone:
 Connect 3.3V from ST-LINK to Blue Pill **only when Blue Pill has no other connections**  
 Put another way, when using ST-LINK to debug Blue Pill e.g. plugged to USB,  
   **do NOT connect 3.3V to Blue Pill from ST-LINK**.  
+Here is my ST-LINK connected to my harness tensioning Blue Pill:
+![violet grey white black](STLinkBluePill.jpg)  
 
 ### Installing (by Windows ST-LINK) Blue Pill HID bootloader for STM core
  - For Windows, stlink-org tools depend on STM's `ST-LINK driver`,  
@@ -104,6 +106,7 @@ Put another way, when using ST-LINK to debug Blue Pill e.g. plugged to USB,
    in my case, to `D:\packages\STM32\`
 8) To flash HID Bootloader to a Blue Pill, in STM32 ST-LINK Utility:  
    `File` > `Open File...` > `hid_generic_pc13.bin`  
+   `Target` > `Erase Chip`  
    `Target` > `Program...` > **`Start address`** `0x8000000` **`File path`** `D:\packages\STM32\hid_generic_pc13.bin`
    ![Download](Download.gif)  
    click **`Start`** (*that should complete quickly*)  
@@ -129,9 +132,12 @@ no need to install Arduino-specific driver[s]...
    From **`Tools` > `Upload method:`**, select [`HID Bootloader 2.1`] or newer.  
    ![Tools mmenu](tools.gif)  
 
+   **Be sure** to check Tools settings before Sketch upload; Arduino seemingly likes to change them,   
+   then Blue Pill will not be a recognized device after uploads.  
    Check in Windows' `Device Manager` under `Ports (COM & LPT)` for `USB Serial Device (COM*n*)`,  
-   where in my case `n = 5`.    
-   **`Port:`** `COM[5]` is unavailable until a sketch is loaded, e.g. [`Blue_Servo`](https://github.com/blekenbleu/blekenbleu.github.io/blob/master/Arduino/Blue_Servo):
+   where in my case `n = 3,5 or 10`.    
+   **`Port:`** `COM[5]` is unavailable until a sketch is loaded, e.g.
+[`Blue_Servo`](https://github.com/blekenbleu/blekenbleu.github.io/blob/master/Arduino/Blue_Servo):
 ![Blue_Blink sketch](Blue_Blink.gif)   
 
 Here is a Blue Pill pinout reference:
