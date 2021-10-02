@@ -8,7 +8,7 @@ Arduino for Black Pill
 Arduino originally employed microcontrollers lacking USB support.  
 Arduino now offers a few STM32 modules with integrated USB,  
 and ST Microelectronics now supports many STM32 chips and boards.  
-- Black and Blue Pill modules use the same Arduino board manager.
+- Black and [Blue Pill](index) modules use the same Arduino board manager.
 - Arduino wants STM32CubeProgrammer for Black Pill DFU; installed in Aurora E:\my
   * added to path  
   * Setup package in USB1TB\Windows  

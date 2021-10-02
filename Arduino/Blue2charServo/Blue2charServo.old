@@ -1,0 +1,146 @@
+#include <Servo.h>
+/* Two ASCII cnaracter commands = 2 x 7 - 1 sync bit per character = 12 available bits: 5 address + 7 data
+ ; compatible with e.g. this SimHub Custom serial profile:
+ ; https://blekenbleu.github.io/Arduino/Blue2charServo/proto2char.shsds
+ */
+
+#define LED PC13			// Blue Pill green LED pin
+#define num_servos 2
+Servo servo[7];				// Blue Pill has 7 5-Volt tolerant PWM pins
+byte offset[] = {63,65,0,0,0,0,0};	// initial servo offsets:  unloaded arm angles
+byte special = 0;			// commands in 6 lsb of character after 0x5F
+byte loading = 0;			// state: waiting for second character
+byte tmax = 0x7E;			// tension threshold for overload echo 'F'
+#define max_cols 180    // SimHub incoming serial data display width
+byte col = 0;
+
+/* Blue Pill 5V tolerant pins until PA1, then 3.3V excluding PS15
+ ;                   ______T4__________  ________T1___   ________T3________  _______T2_________
+ ;                   CH3  CH4  CH1  CH2  CH1  CH2  CH3   CH1  CH2  CH3  CH4  CH2  CH3  CH4  CH1*/
+const int pin[15] = {PB8, PB9, PB6, PB7, PA8, PA9, PA10, PA6, PA7, PB0, PB1, PA1, PA2, PA3, PA15};
+
+const char *msg = "Blue2charServo: connected\n";
+
+void setup() {			// setup() code runs once
+  pinMode(LED, OUTPUT);		// initialize output digital pin connected to green LED
+  digitalWrite(LED, LOW);	// turn on LED by pulling pin LOW
+
+  for (int i = 0; i < num_servos; i++) {
+    servo[i].attach(pin[i]);		// Blue Pill 5V tolerant PWM pins
+    servo[i].write(offset[i]);	// initial servo positions
+  }
+
+  // Initialize serial and wait for port to be opened:
+  Serial.begin(115200);
+  while (!Serial)
+    delay(1);			// wait for native USB serial port to connect
+  Serial.write(msg);
+  digitalWrite(LED, HIGH);	// extinguish LED until possible tension clipping
+}
+
+// not REALLY a loop; just Arduino's designated user routine which main() calls often.
+void loop() {
+  if (0 < Serial.available()) {
+    byte received = Serial.read();
+    
+    if (2 == special) {
+      Serial.print(received, HEX);
+      Serial.write(' ');
+      col += 3;
+    }
+
+    if (0x7F == received) {
+      Serial.write("resetting...  ");
+      special = loading = col = 0;
+      tmax = 0x7E;
+      for (byte i = 0; i < num_servos; i++)
+	servo[i].write(offset[i] = 65);  // initial servo positions
+      Serial.write(msg);
+    } 
+
+    if (3 == special) {
+      Serial.print((char)received);
+    }
+
+    else if (0x40 & received) {
+      digitalWrite(LED, LOW);	// illuminate LED
+      if (loading) { 	// did preceding character also have 0x40 set?
+	if (2 == special) {
+	  Serial.write("sync error: consecutive characters with 0x40 bit set\n");
+	  col = 0;
+	}
+	else if (1 == special) {
+	  Serial.write("E");
+	  col++;
+	}
+	loading = 0;
+      }
+      else loading = received;
+    }
+
+    else if (loading) {  // sync bit == 0
+      byte addr = 0x1F & loading;  // really only 5 lsb;
+
+      digitalWrite(LED, HIGH);  // extinguish LED
+      if (0x5F == loading) {		// special?
+	if (3 < received)
+	  tmax = received << 1;
+	else if (special != received) {	// special change?
+	  if (2 == received || 2 == special) {
+	    Serial.write("special = ");
+	    Serial.println(received);
+	    col = 0;
+	  }
+	  special = received;
+	  if (3 == special) {
+	    Serial.write("ASCII echo enabled; reset to disable\n");
+	    return; 
+	  }
+	}
+      } else {		// not so special
+	received |= ((0x20 & loading) << 1);	// restore msb of 7-bit data
+	if (7 < addr) {
+	  digitalWrite(LED, LOW);  // illuminate LED
+	  if (2 == special) {
+      	    Serial.write("Channel address out of implemented range: ");
+      	    Serial.println(addr);
+	    col = 0;
+	  }
+	  else if (1 == special) {
+	    Serial.write("E");
+	    col++;
+	  }
+	}
+      	else if (2 & addr) {
+	  servo[addr].write(offset[addr] + received);
+      	  if (tmax <= received) {
+	    digitalWrite(LED, LOW);  // illuminate LED
+	    if (1 == special) {
+	      Serial.write("F");
+	      col++;
+	    }
+	  }
+	}
+	else offset[addr] = received;
+      }
+      loading = 0;
+    }
+
+    else {			// NOT loading
+      digitalWrite(LED, LOW);	// illuminate LED
+      if (2 == special) {
+	Serial.write("consecutive byte without sync bit:  ignored\n");
+	col = 0;
+      }
+      else if (1 == special) {
+	Serial.write("E");
+	col++;
+      }
+    }
+
+    if (max_cols < col) {
+      Serial.write("\n");
+      col = 0;
+    }
+  }	// 0 < Serial.available()
+}

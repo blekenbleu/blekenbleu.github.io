@@ -38,7 +38,7 @@ There are at least 4 ways to flash STM32 chips:
    `Boot0 HIGH`  
    `Boot1 LOW`  
   ... then resetting MCU
-4) DFU (device firmware update) using DfuSe utility, e.g. for Black Pills   
+4) DFU (device firmware update) using DfuSe utility, e.g. for [Black Pills](black)   
     using the [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
     but USB is [**NOT** supported by Blue Pill's ROM bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html)  
 
@@ -148,6 +148,8 @@ Here is a Blue Pill pinout reference:
 ![Generic STM32F103 board pinout](https://www.electronicshub.org/wp-content/uploads/2020/02/STM32F103C8T6-Blue-Pill-Pin-Layout.gif)  
 - 5V tolerant PWM pins are wanted for driving hobby servos, e.g. `PA8-10` and `PB6-9`.  
 - 5V tolerant CAN BUS pins `PB8,9` **work for me**.
+- In addition to seven 5V tolerant PWM pins, up to 7 more can be available by level-shifting:  
+  ![Blue pill w/level-shifting module](BlueLevel.jpg)  
 
 A simple next step adds servos to the blink loop sketch.  
 [This servo cycling sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under GitHub revision control,  
