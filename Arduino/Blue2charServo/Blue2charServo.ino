@@ -9,13 +9,15 @@
 //#define BLACKPILL 1
 
 #ifdef BLACKPILL
-// Black Pill
-// STM32F401: all pins are 5V tolerant (25 5V PWM pins)
-// STM32F411: PA0(pin10) and PB5(pin41) are 3.3V only (23 5V PWM pins)
-//            PA11(pin32) prevents device from being recognized in windows
-//            15 PWM pins assigned
+/* Black Pill
+ ; STM32F401: all pins are 5V tolerant (25 5V PWM pins)
+ ; STM32F411: PA0(pin10) and PB5(pin41) are 3.3V only (23 5V PWM pins)
+ ;            PA11(pin32) prevents device from being recognized in windows
+ ;            15 PWM pins assigned
+ ;                  ________T4________  ________T1___   ________T2________   ________T3________
+ ;                  CH1  CH2  CH3  CH4  CH1  CH2  CH3   CH1  CH2  CH3  CH4   CH1  CH2  CH3  CH4 */
 const byte pin[] = {PB6, PB7, PB8, PB9, PA8, PA9, PA10, PA15, PA1, PA2, PA3, PA6, PA7, PB0, PB1};
-const char *msg = "Black Pill two_char_servo: connected\n";
+const char *msg = "Black Pill 2charServo: connected\n";
 
 #else
 
