@@ -3,15 +3,15 @@
   "SerialPortName": "COM11",
   "StartupDelayMs": 0,
   "IsConnecting": false,
-  "IsEnabled": true,
+  "IsEnabled": false,
   "LogIncomingData": true,
-  "IsConnected": true,
+  "IsConnected": false,
   "BaudRate": 115200,
   "UpdateMessages": [
     {
       "Message": {
         "Interpreter": 1,
-        "Expression": "// special: 0 = silent; 1 = clip(*); 3 = hex; 4 = ASCII\r\nvar str = String.fromCharCode(0x5F, 0x3F & $prop('Settings.info'));\r\n//return str.length;\t// 2\r\nreturn str;"
+        "Expression": "// special: 0 = silent; 1 = clip(*); 3 = hex; 4 = ASCII; 5 = LUT\r\nvar i = $prop('Settings.info');\r\nif (5 > i) {\r\n  var str = String.fromCharCode(0x5F, 0x3F & i);\r\n  //return str.length;\t// 2\r\n  return str;\r\n}"
       },
       "IsEnabled": true,
       "MaximumFrequency": 0
@@ -47,6 +47,22 @@
       },
       "IsEnabled": true,
       "MaximumFrequency": 0
+    },
+    {
+      "Message": {
+        "Interpreter": 1,
+        "Expression": "// Max tension LUT special command 5\r\nvar maxt = [66];\r\nvar i;\r\nif (null == root[\"maxt\"]) {\r\n  for (i = 1; i < $prop('Settings.ns'); i++)\r\n    maxt[i] = 66;\r\n  root[\"maxt\"] = maxt;\r\n}\r\nelse maxt = root[\"maxt\"];\r\n\r\nvar s = [0x5F,5,$prop('Settings.ns')];\t// special 5, length 0\r\nvar j = 0;\r\ni = $prop('Settings.servo_a');\r\nvar a = $prop('Settings.tmax_a');\r\nif (i && a != maxt[i-1]) {\r\n  maxt[i-1] = a;\r\n  j++;\r\n}\r\nvar k = $prop('Settings.servo_b');\r\nvar b = $prop('Settings.tmax_b');\r\nif (k && k != i && b != maxt[k-1]) {\r\n  maxt[k-1] = b;\r\n  j++;\r\n}\r\n//return j;\r\nif (j) {\r\n  root[\"maxt\"] = maxt;\r\n  var str = String.fromCharCode.apply(null,s.concat(maxt))  // ASCII codes for special 5 LUT\r\n//return str.length\t\t\t// up to 3+28 characters\r\n  return str;\t\t\t\t\t// send servo max tension LUT\r\n}\r\n//return s.concat(root[\"maxt\"]).toString();\t// debugging"
+      },
+      "IsEnabled": true,
+      "MaximumFrequency": 0
+    },
+    {
+      "Message": {
+        "Interpreter": 1,
+        "Expression": "// DEBUG ASCII string: Current slider selected offset values\r\nvar sa = $prop('Settings.servo_a') - 1;\r\nvar oa = $prop('Settings.offset_a');\r\nvar sb = $prop('Settings.servo_b') - 1;\r\nvar ob = $prop('Settings.offset_b');\r\nvar s = (sa) ? ('a:'+ sa.toString()+'='+ oa.toString()) : '(no a)';\r\nvar t = (sb) ? ('b:'+ sb.toString()+'='+ ob.toString()) : '(no b)';\r\nreturn s+'; '+t;"
+      },
+      "IsEnabled": false,
+      "MaximumFrequency": 0
     }
   ],
   "OnConnectMessage": {
@@ -61,7 +77,7 @@
   "RtsEnable": false,
   "EditorExpanded": true,
   "Name": "Custom Serial device",
-  "Description": "Black Pill 2-character commands",
+  "Description": "multi-channel black2char",
   "LastErrorDate": "2021-10-01T12:12:23.8092538-04:00",
   "LastErrorMessage": null,
   "IsFreezed": false,
@@ -101,7 +117,7 @@
         "Maximum": 14,
         "Minimum": 0,
         "PropertyName": "servo_a",
-        "CurrentValue": 1,
+        "CurrentValue": 5,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -135,7 +151,7 @@
         "Maximum": 127,
         "Minimum": 0,
         "PropertyName": "tmax_a",
-        "CurrentValue": 80,
+        "CurrentValue": 83,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -143,7 +159,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Servo A: max tension (TODO)",
+        "Label": "Servo A: max tension",
         "IsVisibleFormula": {
           "Expression": ""
         }
@@ -152,7 +168,7 @@
         "Maximum": 14,
         "Minimum": 0,
         "PropertyName": "servo_b",
-        "CurrentValue": 2,
+        "CurrentValue": 8,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -169,7 +185,7 @@
         "Maximum": 110,
         "Minimum": 0,
         "PropertyName": "offset_b",
-        "CurrentValue": 61,
+        "CurrentValue": 62,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -186,7 +202,7 @@
         "Maximum": 127,
         "Minimum": 12,
         "PropertyName": "tmax_b",
-        "CurrentValue": 80,
+        "CurrentValue": 87,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -194,7 +210,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Servo B: max tension (TODO)",
+        "Label": "Servo B: max tension",
         "IsVisibleFormula": {
           "Expression": ""
         }
