@@ -88,7 +88,11 @@ void loop() {
     }
 
     else if (4 == info_level) {
-      if (32 > received) {
+      if (10 == received) {
+        Serial.write('\n');
+	col = 0;
+      }
+      else if (32 > received) {
 	Serial.write('x');
 	Serial.write(hex[received >> 4]);
 	Serial.write(hex[15 & received]);
@@ -96,7 +100,7 @@ void loop() {
 	col += 3;
       }
       else {
-	Serial.print((char)received);
+	Serial.write((char)received);
 	col++;
       }
     }
