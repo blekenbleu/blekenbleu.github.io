@@ -30,7 +30,10 @@ const char *msg = "Blue2charServo: connected\n";
 #endif		// BLACKPILL
 
 const byte num_pwm = sizeof(pin);
-byte num_servos = 4;
+byte lut0[num_pwm], lut1[num_pwm], *LUT=NULL;  // e.g. per-channel gains, offsets
+#define NL 2
+byte* table[NL] = {lut0, lut1};     // subtract 5 from special to index table[]
+byte num_servos = 4, Lcount = 0, Lidx = 0, Lid = 0;
 Servo servo[num_pwm];
 byte offset[15];
 byte offset_defaults[] = {60,60,60,60,60,60,60,60,60,60,60,60,60,60,60};  // initial servo offsets:  unloaded arm angles
@@ -98,10 +101,10 @@ void loop() {
       }
     }
 
-    else if (0x40 & received) {	// sync bit == 1
+    else if (0x40 & received && LUT == NULL) {	// sync bit == 1
       digitalWrite(LED, LOW);	// illuminate LED
       if (loading) {  // did preceding character also have 0x40 set?
-	if (3 & info_level) {
+	if (2 & info_level) {
 	  Serial.write("sync error: consecutive characters with 0x40 bit set\n");
 	        col = 0;
 	}
@@ -115,12 +118,43 @@ void loop() {
     }
 
     else if (loading) {  // sync bit == 0
-      digitalWrite(LED, HIGH);     // extinguish LED
-      byte addr = 0x1F & loading;  // really only 5 lsb;
+      if (Lcount) {
+	if (Lidx < num_servos) {
+	  LUT[Lidx++] = received;
+	}
+	else
+	  Serial.write("\nWARNING: ignoring LUT entry that would overflow allocated space!\n");
+	if (Lcount <= Lidx) {
+	  LUT = NULL;
+	  Lcount = loading = Lidx = 0;
+	}
+	return;
+      }
+
+      if (LUT) {
+	if (num_servos != received) {
+	  Serial.write("\nWARNING: LUT length "); Serial.print(received); Serial.write(" != servo count "); Serial.println(num_servos);
+	}
+	if (!received) {
+	  LUT = NULL;
+	  loading = 0;
+	}
+	else {
+	  Lcount = received;
+	  Serial.write("Loading "); Serial.print(received); Serial.write(" bytes to LUT "); Serial.println(Lidx);
+	  Lidx = 0;
+	}
+	return;
+      }
 
       if (0x5F == loading) {			// info_level?
-	if (4 < received)
+	if (4 + NL < received)
 	  tmax = received << 1;
+	else if (4 < received) {		// LUT loading
+	  LUT = table[Lid = received - 5];	// point to the LUT
+	  digitalWrite(LED, LOW);     		// illuminate LED during LUT loads
+	  return;				// continue loading
+	}
 	else if (info_level != received) {	// info_level change?
 	  if (3 == received || 3 & info_level) {
 	    Serial.write("info_level = ");
@@ -136,6 +170,9 @@ void loop() {
       }
 
       else {	// write to servo
+ 	digitalWrite(LED, HIGH);     // extinguish LED
+	byte addr = 0x1F & loading;  // really only 5 lsb;
+
 	received |= ((0x20 & loading) << 1);	// restore msb of 7-bit data
 
 	if (30 == addr) {
@@ -173,7 +210,7 @@ void loop() {
 	  }
 	  if (tmax <= received) {  // clipping
 	    digitalWrite(LED, LOW);  // illuminate LED
-	    if (3 & info_level) {
+	    if (2 & info_level) {
 	      Serial.write("*");
 	      col++;
 	    }
@@ -181,7 +218,7 @@ void loop() {
 	}
 	else {
 	  digitalWrite(LED, LOW);  // illuminate LED
-	  if (3 & info_level) {
+	  if (2 & info_level) {
 	    Serial.write("channel address out of implemented range of ");
 	    Serial.print(num_servos);
 	    Serial.write(": ");
@@ -199,7 +236,7 @@ void loop() {
 
     else {			// NOT loading
       digitalWrite(LED, LOW);	// illuminate LED
-      if (3 & info_level) {
+      if (2 & info_level) {
 	Serial.write("ignore consecutive byte without sync bit: ");
 	Serial.println(received, HEX);
 	col = 0;
