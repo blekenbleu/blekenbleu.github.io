@@ -77,8 +77,12 @@ ts[13] = Math.max(rearHeave + 10, 0);			// rear seat
 var tc = 1 - ($prop('Settings.smooth') * 0.2);
 var str = '';
 var tt = 99;    // no such servo
-if ($prop('Settings.page') > 1 && 0 < $prop('Settings.test_servos'))
-  tt = $prop('Settings.servo') - 1;
+var wysiwyg = false;
+if ($prop('Settings.page') > 1 && 0 < $prop('Settings.test_servos')) {
+  if ($prop('Settings.test_one'))
+    tt = $prop('Settings.servo') - 1;	// update all but the one servo being tested
+  else wysiwyg = true;			// disable all servos while testing
+}
 for (var i = 0; i < ns; i++) {
   // Low-pass IIR filter
   var ft = root['ft'][i];
@@ -86,7 +90,7 @@ for (var i = 0; i < ns; i++) {
   if (ft > tm[i]) ft = tm[i];  // limit tension
 
   // skip change if it is smaller than e or servo is being tested
-  if (Math.abs(ft - root['ft'][i]) > e && i != tt) {
+  if (Math.abs(ft - root['ft'][i]) > e && i != tt && !wysiwyg) {
     str += String.fromCharCode(0x40 | (ns + i) | ((0x40 & ft)>>1));  // set tension
     str += String.fromCharCode(0x3F & ft);                           // 6 lsb
   }
