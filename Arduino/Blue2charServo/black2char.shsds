@@ -11,7 +11,7 @@
     {
       "Message": {
         "Interpreter": 1,
-        "Expression": "// special: 0 = silent; 1 = clip(*); 3 = hex; 4 = ASCII; 5 = LUT\r\nvar i = $prop('Settings.info');\r\nif (5 > i) {\r\n  var str = String.fromCharCode(0x5F, 0x3F & i);\r\n  //return str.length;\t// 2\r\n  return str;\r\n}"
+        "Expression": "// special: 0 = silent; 1 = clip(*); 3 = hex; 4 = ASCII; 5 = LUT\r\nreturn String.fromCharCode(0x5F, 0x3F & $prop('Settings.info'));\r\n"
       },
       "IsEnabled": true,
       "MaximumFrequency": 0
@@ -19,7 +19,7 @@
     {
       "Message": {
         "Interpreter": 1,
-        "Expression": "// update Arduino servo count\r\nvar str = String.fromCharCode(0x40 + 30, $prop('Settings.ns'));\r\n//return str.length;    // 2\r\nreturn str;"
+        "Expression": "// servo count\r\nreturn String.fromCharCode(0x5E, $prop('Settings.ns'));"
       },
       "IsEnabled": true,
       "MaximumFrequency": 0
@@ -27,7 +27,7 @@
     {
       "Message": {
         "Interpreter": 1,
-        "Expression": "// set tmax;  Arduino clips, echoes '*' for tension values >= tmax\r\nvar str = String.fromCharCode(0x5F, 0x3F & $prop('Settings.tmax') >> 1);\r\n// return str.length;\t// 2\r\nreturn str;"
+        "Expression": "// update servo positions from telemetry or test & set\r\nvar a = $prop('Settings.tmax_a');\r\nvar b = $prop('Settings.tmax_b');\r\n\r\nvar ns = $prop('Settings.ns');  // number of supported servos\r\nif (null == root['offsets']) {  // servo untensioned positions\r\n  // offset values here get updated by adjusting sliders\r\n  root['offsets'] = [61, 62, 63, 64, 65, 66, 66, 68, 69, 70, 71, 72, 73, 73];\r\n  root['t1'] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];   // IIR for servos\r\n  root['tmaxs'] = [a, b, a, b, a, b, a, b, a, b, a, b, a, b];\r\n}\r\n\r\nvar no = root['offsets'].length;\r\nfor (var i = no; i < ns; i++) { // extend arrays as needed\r\n  root['offsets'][i] = 61 + i;\r\n  root['t1'][i] = 0;\r\n  root['tmaxs'] = (1 & i) ? b : a;\r\n}\r\n//return root['offsets'].length;\r\n\r\na = $prop('Settings.servo_a');\r\na = (ns < a) ? -1 : a - 1;\r\nb = $prop('Settings.servo_b');\r\nb = (ns < b) ? -1 : b - 1;\r\n//return b;\r\nvar ts = '';    // initialize string to send\r\nvar o;\r\nif (0 <= a && root['offsets'][a] != (o = $prop('Settings.offset_a'))) {\r\n  ts += String.fromCharCode(0x40 + a | (0x40 & o)>>1);                // set offsets\r\n  ts += String.fromCharCode(0x3F & o);                                  // 6 lsb\r\n  root['offsets'][a] = o;\r\n}\r\n//return o\r\nif (0 <= b && root['offsets'][b] != (o = $prop('Settings.offset_b')) && b != a) {\r\n  ts += String.fromCharCode(0x40 + b | (0x40 & o)>>1);                // set offsets\r\n  ts += String.fromCharCode(0x3F & o);                                  // 6 lsb\r\n  root['offsets'][b] = o;\r\n}\r\n//return root['offsets'].toString();\r\n//return ts.charCodeAt(0);\r\n//return ts.split('').toString();\r\n\r\n// update servo positions from telemetry\r\n// Set up data and reset IIR filters\r\n// G-forces from SimHub properties\r\nvar Gsway  = - $prop('AccelerationSway');       // lateral acceleration (feels like yaw)\r\nvar Gsurge = - $prop('AccelerationSurge');      // deceleration\r\nGsway  *= $prop('Settings.yaw_gain');\r\nGsurge *= $prop('Settings.decel_gain');\r\nif (0 > Gsurge)\r\n  Gsurge = 0;    // non-negative deceleration\r\n  \r\n// convert speed and yaw changes to left and right tension values\r\n// turning right should increase right harness tension (body pushed left)\r\nvar r = Math.sqrt(Gsurge*Gsurge + Gsway*Gsway)\r\nvar l = Gsurge + Gsurge - r\r\nif (0 > Gsway) {\r\n  var n = r;    // negative Gsway increases left tension\r\n  r = l;\r\n  l = n;\r\n}\r\n\r\nvar tc = 1 - ($prop('Settings.smooth') * 0.2);\r\nvar test = $prop('Settings.test_tmax');\r\n// update Arduino tmax table?\r\nvar tt = 0;     // min tension test\r\nif (test && ((0 <= a && root['tmaxs'][a] != $prop('Settings.tmax_a'))\r\n         || (0 <= b && root['tmaxs'][b] != $prop('Settings.tmax_b' && b != a)))) {\r\n  tt = 1;  // max tension test\r\n  if (0 <= a)\r\n    root['tmaxs'][a] = $prop('Settings.tmax_a');\r\n  if (0 <= b && b != a)\r\n    root['tmaxs'][b] = $prop('Settings.tmax_b');\r\n  // add special 5 command for ns tmax entries\r\n  ts +=  String.fromCharCode(0x5F,5,ns)+String.fromCharCode.apply(null, root['tmaxs'].slice(0,ns));\r\n}\r\ntest = test || $prop('Settings.test_offsets');  // max / min tension test\r\n//return root['tmaxs'].toString();\r\nvar tmax = root['tmaxs'];\r\n\r\nvar e = 3;      // epsilon for perceptible change threshold\r\nvar t1 = [0];   // array of tensions from telemetry\r\nfor (var i = 0; i < ns; i++) {\r\n  t1[i] = (1 & i) ? r : l;      // only for test purposes\r\n  // Low-pass IIR filter\r\n  var ft = root['t1'][i];\r\n  ft += (t1[i] - ft) * tc;   // filtered tension\r\n  if (ft > tmax[i]) ft = tmax[i];  // limit tension to tmax\r\n\r\n  if ((i == a || i == b) && test ) {    // override telemetry for limit tests\r\n    var tab = tmax[i] * tt;\r\n    ts += String.fromCharCode(0x40 | (ns + i) | ((0x40 & tab)>>1));\r\n    ts += String.fromCharCode(0x3F & tab);\r\n  }\r\n  // skip change if it is smaller than e\r\n  else if (Math.abs(ft - root['t1'][i]) > e) {\r\n    ts += String.fromCharCode(0x40 | (ns + i) | ((0x40 & ft)>>1));  // set tension\r\n    ts += String.fromCharCode(0x3F & ft);                           // 6 lsb\r\n  }\r\n  root['t1'][i] = ft;\r\n}\r\n//return ts.length;\r\nif (0 & ts.length) {\r\n  var s = '; '+ts.charCodeAt(0);\r\n  for (i = 1; i < ts.length; i++)\r\n    s += ','+ts.charCodeAt(i);\r\n  return s;\r\n}\r\n//return ts.split('').toString();\r\nreturn ts;"
       },
       "IsEnabled": true,
       "MaximumFrequency": 0
@@ -35,31 +35,7 @@
     {
       "Message": {
         "Interpreter": 1,
-        "Expression": "// 2-character servo untensioned positions\r\nif (null == root[\"offsets\"]) {\r\n  // set offset values here after adjusting with sliders\r\n  root[\"offsets\"] = [61, 62, 63, 64, 65, 66, 66, 68, 69, 70, 71, 72, 73, 73];\r\n//root[\"tmaxs\"] =   [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80] // TODO\r\n}\r\nif ($prop('Settings.servo_a')) {\r\n  root[\"offsets\"][$prop('Settings.servo_a') - 1] = $prop('Settings.offset_a');\r\n//return $prop('Settings.offset_a');\r\n}\r\nif ($prop('Settings.servo_b') && ($prop('Settings.servo_b') != $prop('Settings.servo_a'))) {\r\n  root[\"offsets\"][$prop('Settings.servo_b') - 1] = $prop('Settings.offset_b');\r\n//return $prop('Settings.offset_b');\r\n}\r\n//return root[\"offsets\"].toString();\r\n\r\nvar ns = $prop('Settings.ns');  // number of supported servos\r\nvar step = [];\r\nfor (var i = 0; i < ns; i++) {\r\n    var o = root[\"offsets\"][i];\r\n    \r\n    step[i + i] = (0x40 + i) | ((0x40 & o)>>1);\t\t// set offsets\r\n    step[i + i + 1] = 0x3F & o;\t\t\t\t\t\t// 6 lsb\r\n}\r\n\r\n// send offsets\r\n//return step.toString()\t// comma-separated string of numeric values\r\nvar str = String.fromCharCode.apply(null,step)  // ASCII codes for step[] values\r\n//return str.length\t\t\t// up to 28 characters\r\nreturn str;\t\t\t\t\t// send servo offsets"
-      },
-      "IsEnabled": true,
-      "MaximumFrequency": 0
-    },
-    {
-      "Message": {
-        "Interpreter": 1,
-        "Expression": "// Calculate servo tensions from G-forces\r\nvar ns = $prop('Settings.ns');       // servo count\r\nvar ts = [0];\r\n//return ns;\r\n// Set up data and reset IIR filters\r\nif (null == root[\"t1\"] || $prop('Settings.test_tmax') || $prop('Settings.test_offsets')) {\r\n  for (i = 1; i < ns; i++)\r\n     ts[i] = 0;\r\n  // first message will output changes\r\n  root[\"t1\"] = ts;  // T-1\r\n//root[\"t2\"] = ts;  // T-2\r\n}\r\n\r\nvar tmax = $prop('Settings.tmax');  // max servo tension\r\nvar e = 3;  // epsilon approximation to reduce imperceptible changes\r\n\r\n// G-forces from SimHub properties\r\nvar Gsway  = - $prop('AccelerationSway');    // lateral acceleration (feels like yaw)\r\nvar Gsurge = - $prop('AccelerationSurge');  // deceleration\r\nGsway  *= $prop('Settings.yaw_gain');\r\nGsurge *= $prop('Settings.decel_gain');\r\nif (0 > Gsurge)\r\n  Gsurge = 0;    // non-negative deceleration\r\n/*\r\nelse if (tmax < Gsurge)\r\n  $prop('Settings.decel_gain') *= Math.round(tmax/Gsurge - 0.5);\t// unsupported...\r\n */\r\n\r\n// convert speed and yaw changes to left and right tension values\r\n// turning right should increase right harness tension (body pushed left)\r\nvar r = Math.sqrt(Gsurge*Gsurge + Gsway*Gsway)\r\nvar l = Gsurge + Gsurge - r\r\nif (0 > Gsway) {\r\n  var t = r  // negative Gsway increases left tension\r\n  r = l\r\n  l = t\r\n}\r\n\r\nvar tc = 1 - ($prop('Settings.smooth') * 0.2);\r\nvar step = [];\r\nvar i;\r\n// max / min tension test\r\nif ($prop('Settings.test_tmax') || $prop('Settings.test_offsets')) {\r\n  var t = $prop('Settings.test_tmax') ? tmax : 0;  // max : min tension\r\n  for (i = 0; i < ns; i++) {\r\n    step[i+i] = (0x40 | (ns + ns - (i + 1)) | ((0x40 & t)>>1));\r\n    step[1+i+i] = 0x3F & t;\r\n  }\r\n}\r\nelse for (i = 0; i < ns; i++) {\r\n  ts[i] = (1 & i) ? r : l;\t// only for test purposes\r\n  // Low-pass IIR filter\r\n  var ft = root[\"t1\"][i];\r\n  ft += (ts[i] - ft) * tc;   // filtered tension\r\n  if (ft > tmax) ft = tmax;  // limit tension to tmax\r\n  \r\n  // skip change if it is smaller than e\r\n  if (Math.abs(ft - root[\"t1\"][i]) > e) {\r\n    step.push(0x40 | (ns + i) | ((0x40 & ft)>>1));  // set tension\r\n    step.push(0x3F & ft);                           // 6 lsb\r\n  }\r\n  root[\"t1\"][i] = ft;\r\n}\r\n//return ts.length\r\n//return step.length;\r\nif (0 < step.length) {\r\n  var str = String.fromCharCode.apply(null,step)\r\n  //return str.length;    // 2\r\n  return str;\r\n}"
-      },
-      "IsEnabled": true,
-      "MaximumFrequency": 0
-    },
-    {
-      "Message": {
-        "Interpreter": 1,
-        "Expression": "// Max tension LUT special command 5\r\nvar maxt = [66];\r\nvar i;\r\nif (null == root[\"maxt\"]) {\r\n  for (i = 1; i < $prop('Settings.ns'); i++)\r\n    maxt[i] = 66;\r\n  root[\"maxt\"] = maxt;\r\n}\r\nelse maxt = root[\"maxt\"];\r\n\r\nvar s = [0x5F,5,$prop('Settings.ns')];\t// special 5, length 0\r\nvar j = 0;\r\ni = $prop('Settings.servo_a');\r\nvar a = $prop('Settings.tmax_a');\r\nif (i && a != maxt[i-1]) {\r\n  maxt[i-1] = a;\r\n  j++;\r\n}\r\nvar k = $prop('Settings.servo_b');\r\nvar b = $prop('Settings.tmax_b');\r\nif (k && k != i && b != maxt[k-1]) {\r\n  maxt[k-1] = b;\r\n  j++;\r\n}\r\n//return j;\r\nif (j) {\r\n  root[\"maxt\"] = maxt;\r\n  var str = String.fromCharCode.apply(null,s.concat(maxt))  // ASCII codes for special 5 LUT\r\n//return str.length\t\t\t// up to 3+28 characters\r\n  return str;\t\t\t\t\t// send servo max tension LUT\r\n}\r\n//return s.concat(root[\"maxt\"]).toString();\t// debugging"
-      },
-      "IsEnabled": true,
-      "MaximumFrequency": 0
-    },
-    {
-      "Message": {
-        "Interpreter": 1,
-        "Expression": "// DEBUG ASCII string: Current slider selected offset values\r\nvar sa = $prop('Settings.servo_a') - 1;\r\nvar oa = $prop('Settings.offset_a');\r\nvar sb = $prop('Settings.servo_b') - 1;\r\nvar ob = $prop('Settings.offset_b');\r\nvar s = (sa) ? ('a:'+ sa.toString()+'='+ oa.toString()) : '(no a)';\r\nvar t = (sb) ? ('b:'+ sb.toString()+'='+ ob.toString()) : '(no b)';\r\nreturn s+'; '+t;"
+        "Expression": "// DEBUG ASCII string: Current slider selected offset values\r\nvar sa = $prop('Settings.servo_a') - 1;\r\nvar oa = $prop('Settings.offset_a');\r\nvar sb = $prop('Settings.servo_b') - 1;\r\nvar ob = $prop('Settings.offset_b');\r\nvar s;\r\nvar t;\r\nif (null == root[\"foo\"])\r\n  root[\"foo\"] = [61, 62, 63, 64, 65, 66, 66, 68, 69, 70, 71, 72, 73, 73];\r\nif (0 <= sa) {\r\n  s = ('a:'+ sa.toString()+'='+ oa.toString());\r\n  root['foo'][sa] = oa;\r\n} else s = '(no a)';\r\nif (0 <= sb && sb != sa) {\r\n  t = ('a:'+ sb.toString()+'='+ ob.toString());\r\n  root['foo'][sb] = ob;\r\n} else t = '(no b)';\r\nreturn s+'; '+t+' ['+root['foo']+']\\n';"
       },
       "IsEnabled": false,
       "MaximumFrequency": 0
@@ -67,7 +43,7 @@
   ],
   "OnConnectMessage": {
     "Interpreter": 1,
-    "Expression": "return String.fromCharCode(0x7F);\t// reset Arduino"
+    "Expression": "var reset = String.fromCharCode(0x7F);\t// reset Arduino, initialize offsets\r\nvar o = [61, 62, 63, 64, 65, 66, 66, 68, 69, 70, 71, 72, 73, 73]; // also in telemetry message\r\nvar ns = $prop('Settings.ns');  // number of supported servos\r\nfor (var i = 0; i < ns; i++) {\r\n    reset += String.fromCharCode((0x40 + i) | ((0x40 & o[i])>>1));\t\t// set offsets\r\n    reset += String.fromCharCode(0x3F & o[i]);\t\t\t\t\t\t// 6 lsb\r\n}\r\nreturn reset;"
   },
   "OnDisconnectMessage": {
     "Interpreter": 1,
@@ -93,14 +69,14 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Test all minimum tension positions",
+        "Label": "Test and set selected A,B minimum tension positions",
         "IsVisibleFormula": {
           "Expression": ""
         }
       },
       {
         "PropertyName": "test_tmax",
-        "CurrentValue": false,
+        "CurrentValue": true,
         "Name": null,
         "TypeName": "BoolEntry",
         "IsEnabled": true,
@@ -108,7 +84,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Test all maximum tension positions",
+        "Label": "Test and set selected A,B maximum tension positions",
         "IsVisibleFormula": {
           "Expression": ""
         }
@@ -117,7 +93,7 @@
         "Maximum": 14,
         "Minimum": 0,
         "PropertyName": "servo_a",
-        "CurrentValue": 5,
+        "CurrentValue": 6,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -125,7 +101,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Servo A (0 is off)",
+        "Label": "Servo A select (0 is off)",
         "IsVisibleFormula": {
           "Expression": ""
         }
@@ -134,7 +110,7 @@
         "Maximum": 110,
         "Minimum": 0,
         "PropertyName": "offset_a",
-        "CurrentValue": 63,
+        "CurrentValue": 69,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -168,7 +144,7 @@
         "Maximum": 14,
         "Minimum": 0,
         "PropertyName": "servo_b",
-        "CurrentValue": 8,
+        "CurrentValue": 7,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -176,7 +152,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Servo B (0 is off)",
+        "Label": "Servo B select (0 is off)",
         "IsVisibleFormula": {
           "Expression": ""
         }
@@ -185,7 +161,7 @@
         "Maximum": 110,
         "Minimum": 0,
         "PropertyName": "offset_b",
-        "CurrentValue": 62,
+        "CurrentValue": 55,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -262,23 +238,6 @@
         },
         "IsVisible": true,
         "Label": "Smoothing (20% per step)",
-        "IsVisibleFormula": {
-          "Expression": ""
-        }
-      },
-      {
-        "Maximum": 127,
-        "Minimum": 20,
-        "PropertyName": "tmax",
-        "CurrentValue": 83,
-        "Name": null,
-        "TypeName": "SliderEntry",
-        "IsEnabled": true,
-        "IsEnabledFormula": {
-          "Expression": ""
-        },
-        "IsVisible": true,
-        "Label": "Max Tension",
         "IsVisibleFormula": {
           "Expression": ""
         }
