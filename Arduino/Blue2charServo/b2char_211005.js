@@ -1,21 +1,17 @@
 // Calculate servo tensions from G-forces
 var ns = $prop('Settings.ns');       // servo count
-var to = [0];
 var tm = [0];
 // Set up data and reset IIR filters
 if (null == root['ft']) {
   var ft = [0];
   for (i = 1; i <= ns; i++) {
      tm[i-1] = $prop('Settings.p'+i+'max');
-     to[i-1] = $prop('Settings.p'+i+'off');
      ft[i-1] = 0;
   }
   // first message initializes Arduino offsets
-  root["tm"] = to;  // max tensions
-  root["to"] = to;  // offsets
   root['ft'] = ft;  // IIR
+  root["tm"] = tm;  // max tensions
 }
-to = root["to"];
 tm = root["tm"];
 
 var e = 3;  // epsilon approximation to reduce imperceptible changes
@@ -26,7 +22,7 @@ var gain = $prop('Settings.force_gain') * 0.02;
 var surge = $prop('AccelerationSurge') * gain;
 if (surge < 0)
   surge *= $prop('Settings.accel_gain');
-else 
+else
   surge *= $prop('Settings.decel_gain');
 
 // lateral acceleration (positive is right) (feels like yaw)
@@ -78,19 +74,17 @@ ts[12] = Math.max(frontHeave + 10, 0);			// front seat
 ts[13] = Math.max(rearHeave + 10, 0);			// rear seat
 //*/
 
-
 var tc = 1 - ($prop('Settings.smooth') * 0.2);
 var str = '';
-var i;
-var tt = 99;	no such servo
-if ($prop('Settings.page') > 1 && 0 < $prop('Settings.test_servos')) {
+var tt = 99;    // no such servo
+if ($prop('Settings.page') > 1 && 0 < $prop('Settings.test_servos'))
   tt = $prop('Settings.servo') - 1;
-for (i = 0; i < ns; i++) {
+for (var i = 0; i < ns; i++) {
   // Low-pass IIR filter
   var ft = root['ft'][i];
   ft += (ts[i] - ft) * tc;   // filtered tension
   if (ft > tm[i]) ft = tm[i];  // limit tension
-  
+
   // skip change if it is smaller than e or servo is being tested
   if (Math.abs(ft - root['ft'][i]) > e && i != tt) {
     str += String.fromCharCode(0x40 | (ns + i) | ((0x40 & ft)>>1));  // set tension
@@ -102,3 +96,4 @@ if (0 < str.length) {
   //return str.length;    // 2 * ns
   return str;
 }
+//return tt
