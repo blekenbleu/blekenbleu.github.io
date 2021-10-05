@@ -2655,3 +2655,68 @@ version 2.3.0.
 
 </details>
 
+
+### *Oct 5, 2021 (on Aurora)*  
+GitHub notified of high severity security advisory on nokogiri
+
+```
+cd /e/my/GitHubDesktop/blekenbleu.github.io
+grep -i nokogiri Gemfile.lock
+Gemfile.lock:      nokogiri (>= 1.10.4, < 2.0)
+Gemfile.lock:      nokogiri (>= 1.4)
+Gemfile.lock:    nokogiri (1.11.7-x64-mingw32)
+
+ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'
+```   
+failed several times, but for different hosts,   
+so presumably server overloading...   
+
+This succeeded on second attempt:
+`$ gem update --system`
+<details>
+<summary>click for details</summary>
+
+```
+...
+RubyGems installed the following executables:
+        D:/Ruby25-x64/bin/gem
+        D:/Ruby25-x64/bin/bundle
+        D:/Ruby25-x64/bin/bundler
+
+Ruby Interactive (ri) documentation was installed. ri is kind of like man
+pages for Ruby libraries. You may access it like this:
+  ri Classname
+  ri Classname.class_method
+  ri Classname#instance_method
+If you do not wish to install this documentation in the future, use the
+--no-document flag, or set it as the default in your ~/.gemrc file. See
+'gem help env' for details.
+
+Done installing documentation for rubygems-update after 157 seconds
+Parsing documentation for rubygems-update-3.2.28
+Done installing documentation for rubygems-update after 0 seconds
+Installing RubyGems 3.2.28
+RubyGems system software updated
+```
+
+</details>
+
+Basically, just repeated July 13 rigamarole, then  
+```
+grep -i nokogiri Gemfile*
+Gemfile.lock:      nokogiri (>= 1.10.4, < 2.0)
+Gemfile.lock:      nokogiri (>= 1.4)
+Gemfile.lock:    nokogiri (1.12.5-x64-mingw32)
+
+serve
+bundle exec jekyll serve --incremental
+Configuration file: E:/my/GitHubDesktop/blekenbleu.github.io/_config.yml
+            Source: E:/my/GitHubDesktop/blekenbleu.github.io
+       Destination: E:/my/GitHubDesktop/blekenbleu.github.io/_site
+ Incremental build: enabled
+      Generating...
+                    done in 0.754 seconds.
+ Auto-regeneration: enabled for 'E:/my/GitHubDesktop/blekenbleu.github.io'
+    Server address: http://127.0.0.1:4000
+  Server running... press ctrl-c to stop.
+```
