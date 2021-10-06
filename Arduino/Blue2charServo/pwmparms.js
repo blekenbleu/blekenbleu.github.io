@@ -28,7 +28,7 @@ if (null == root['tn']) {
   root['temp'] = 0;
 }
 
-var wisiwyg = $prop('Settings.wysiwyg');
+var wysiwyg = $prop('Settings.wysiwyg');
 var ts = $prop('Settings.test_servos');
 var t1 = $prop('Settings.test_one') && 0 < ts;
 var pg = $prop('Settings.page');
@@ -64,7 +64,7 @@ function undo() { // undo changes
 };
 //undo();
 
-if (2 > pg || ! (wisiwyg || t1)) { // nothing new to change
+if (2 > pg || ! (wysiwyg || t1)) { // nothing new to change
   if (0 < root['temp']) { // temporary test to undo?
     temp = root['temp'];
     tp = 7 & (temp>>7);
@@ -84,15 +84,16 @@ to = root['to'];
 var change = false;	// Only one page at a time
 var i;
 
+var prev;		// store previous value, potentially for root['temp']
 if (root['temp']) {
   temp = root['temp'];
   tp = 7 & (temp>>7);
   ss = 0x7F & temp ;
-  temp = temp >> 10;
+  prev = temp >> 10;
   if (t1 && 1 == ts && s == ss && pg == tp) {
-    if ((pg == 2 && temp == $prop('Settings.p'+ss+'off'))
-     || (pg == 3 && temp == $prop('Settings.p'+ss+'min'))
-     || (pg == 4 && temp == $prop('Settings.p'+ss+'max')))
+    if ((pg == 2 && prev == $prop('Settings.p'+ss+'off'))
+     || (pg == 3 && prev == $prop('Settings.p'+ss+'min'))
+     || (pg == 4 && prev == $prop('Settings.p'+ss+'max')))
       return;  // no change in temporary test_one parm
   // otherwise, fall thru and replace that parm value
   }
@@ -105,6 +106,8 @@ for (i = 1; i <= ns; i++) {
   if (4 == pg) {		// max
     d = $prop('Settings.p'+i+'max') + $prop('Settings.p'+i+'off') - $prop('Settings.p'+i+'min');
     if (tm[i-1] != $prop('Settings.p'+i+'max')) {
+      if(0 == root['temp'])
+        prev = tm[i-1];
       change = true;
       tm[i-1] = $prop('Settings.p'+i+'max');
     }
@@ -112,6 +115,8 @@ for (i = 1; i <= ns; i++) {
   else if (2 == pg) {	// offset
     d = $prop('Settings.p'+i+'off') - $prop('Settings.p'+i+'min');
     if (to[i-1] != $prop('Settings.p'+i+'off')) {
+      if(0 == root['temp'])
+        prev = to[i-1];
       change = true;
       var o = to[i-1] = $prop('Settings.p'+i+'off');
       os += String.fromCharCode((0x40 + i - 1) | (0x40 & o)>>1, 0x3F & o);
@@ -119,13 +124,15 @@ for (i = 1; i <= ns; i++) {
   }
   else if (3 == pg) {	//min
     if (tn[i-1] != $prop('Settings.p'+i+'min')) {
+      if(0 == root['temp'])
+        prev = tn[i-1];
       change = true;
       tn[i-1] = $prop('Settings.p'+i+'min');
     }
   }
   t = String.fromCharCode(0x40 + ns + i - 1 | (0x40 & d) >>1, 0x3F & d);
 
-  if (wisiwyg || (t1 && i == s))
+  if (wysiwyg || (t1 && i == s))
     str += t;
 }
 
@@ -137,7 +144,7 @@ if (change) {
   if (3 == pg)	// change to min table?  update min table, then tension
     str = String.fromCharCode(0x5E,ns)+String.fromCharCode.apply(null,tn) + str;
 
-  if ($prop('Settings.wisiwyg')) {	// no change left unsaved!!
+  if ($prop('Settings.wysiwyg')) {	// no change left unsaved!!
     if (3 == pg)
       root['tn'] = tn;
     else if (4 == pg)
@@ -148,16 +155,15 @@ if (change) {
   }
   else { // assumption: SimHub is fast enough that no more than 1 change at a time
     i = s - 1;
-    temp = (3 == pg) ? tn[i] : (4 == pg) ? tm[i] : to[i];
     if (2 == ts) {	// save a single parm;
       if (3 == pg)
-        root['tn'][i] = temp;
+        root['tn'][i] = tn[i];
       else if (4 == pg)
-        root['tm'][i] = temp;
-      else root['to'][i] = temp;
+        root['tm'][i] = tm[i];
+      else root['to'][i] = to[i];
       root['temp'] = 0;
     }
-    else root['temp'] = (temp << 10) | (pg << 7) | s;
+    else root['temp'] = (prev << 10) | (pg << 7) | s;
   }
   return str;
 }
