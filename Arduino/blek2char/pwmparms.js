@@ -1,5 +1,5 @@
 // pwmparms.js update per-channel parameters
-var ns = $prop('Settings.ns');		// servo count
+var ns = $prop('Settings.np');		// servo count
 /* other (unused here) settings:
    $prop('Settings.accel_gain')
    $prop('Settings.decel_gain')

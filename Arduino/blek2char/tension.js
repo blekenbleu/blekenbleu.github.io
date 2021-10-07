@@ -1,18 +1,20 @@
 // Calculate servo tensions from G-forces
-var np = $prop('Settings.np');       // PWM count
-var tm = [0];
+var ns = $prop('Settings.np');       // PWM count
+var t3=[[0],[0],[0]];
+for (var i = 0; i < ns; i++) {
+   t3[0][i] = $prop('Settings.neu'+i);  // pg = 2
+   t3[1][i] = $prop('Settings.min'+i);  // pg = 3
+   t3[2][i] = $prop('Settings.max'+i);  // pg = 4
+}
+
 // Set up data and reset IIR filters
 if (null == root['ft']) {
   var ft = [0];
-  for (i = 1; i <= np; i++) {
-     tm[i-1] = $prop('Settings.p'+i+'max');
-     ft[i-1] = 0;
-  }
-  // first message initializes Arduino offsets
+  for (i = 0; i < ns; i++)
+     ft[i] = 0;
+  // first message initializes Arduino min table
   root['ft'] = ft;  // IIR
-  root["tm"] = tm;
 }
-tm = root["tm"];
 
 var e = 3;  // epsilon approximation to reduce imperceptible changes
 var gain = $prop('Settings.force_gain') * 0.02;
@@ -72,28 +74,36 @@ ts[8] = Math.max(monoSwayHeave + 10, 0);                // left lap belt
 ts[9] = Math.max(monoSwayHeave + 10, 0);                // right lap belt
 ts[12] = Math.max(frontHeave + 10, 0);                  // front seat
 ts[13] = Math.max(rearHeave + 10, 0);                   // rear seat
-//*/
+ */
 
 var tc = 1 - ($prop('Settings.smooth') * 0.2);
 var str = '';
-var tt = 99;    // no such servo
-if ($prop('Settings.page') > 1 && 0 < $prop('Settings.test_servos'))
-  tt = $prop('Settings.servo') - 1;
-for (var i = 0; i < np; i++) {
-  // Low-pass IIR filter
-  var ft = root['ft'][i];
-  ft += (ts[i] - ft) * tc;   // filtered tension
-  if (ft > tm[i]) ft = tm[i];  // limit tension
+var wysiwyg = $prop('Settings.wysiwyg');
+var s = $prop('Settings.servo') - 1;            // zero - based
+var t1 = $prop('Settings.test_one') && 0 < $prop('Settings.test_servos');
+if (!t1)
+  s = 99;	// don't block any real servos
+
+for (var i = 0; i < ns; i++) {
+  var max = Math.round(t3[2][i] * 180 * (100 - t3[1][i]) / 10000);
+  var ft = root['ft'][i];	// Low-pass IIR filter
+
+  ft += (ts[i] - ft) * tc;	// filtered tension
+  if (ft > max) ft = max;	// limit tension
+  root['ft'][i] = ft;
 
   // skip change if it is smaller than e or servo is being tested
-  if (Math.abs(ft - root['ft'][i]) > e && i != tt) {
-    str += String.fromCharCode(0x40 | (np + i) | ((0x40 & ft)>>1));  // set tension
+  if (Math.abs(ft - root['ft'][i]) > e && (!wysiwyg) && i != s) {
+    // add difference between min and offset to ft
+    ft += Math.round(t3[0][i] * t3[3][i] * 180 * (100 - t3[1][i]) / 1000000);
+    if (0 > ft)
+      ft = 0;
+    str += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));  // set tension
     str += String.fromCharCode(0x3F & ft);                           // 6 lsb
   }
-  root['ft'][i] = ft;
 }
 if (0 < str.length) {
-  //return str.length;    // 2 * np
+  //return str.length;    // 2 * ns
   return str;
 }
-//return tt
+//return s
