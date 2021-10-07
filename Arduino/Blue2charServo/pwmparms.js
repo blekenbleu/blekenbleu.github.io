@@ -12,10 +12,10 @@ var ns = $prop('Settings.ns');		// servo count
  */
 var t3=[[0],[0],[0]];
 //return ns;
-for (i = 1; i <= ns; i++) {
-   t3[0][i-1] = $prop('Settings.p'+i+'off');	// pg = 2
-   t3[1][i-1] = $prop('Settings.p'+i+'min');	// pg = 3
-   t3[2][i-1] = $prop('Settings.p'+i+'max');	// pg = 4
+for (i = 0; i < ns; i++) {
+   t3[0][i] = $prop('Settings.neu'+i);	// pg = 2
+   t3[1][i] = $prop('Settings.min'+i);	// pg = 3
+   t3[2][i] = $prop('Settings.max'+i);	// pg = 4
 }
 
 if (null == root['t3']) {
