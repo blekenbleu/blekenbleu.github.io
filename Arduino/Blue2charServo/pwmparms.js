@@ -49,24 +49,20 @@ if (wysiwyg)
       d = 0;		// should become Math.round(t3[pg][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
 
     if (ci) {	// change in our time?
-      st += String.fromCharCode(0x40 + ns + i | (0x40 & d)>>1, 0x3F & d); // tension command for changed parm
-      if (0 == pg) {	// offset?
-	// offset is a percentage of max, which is a percentage of what remains of 180 * (100 - min) / 100
-	var o = Math.round(t3[0][i] * t3[2][i] * 180 * (100 - t3[1]) / 1000000);
-	ss += String.fromCharCode((0x40 + i) | (0x40 & o)>>1, 0x3F & o);
-      }
+      st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension command for changed parm
     }
   }
 else if (i == s && tr[pg][i] != t3[pg][i]) {
   var d = 0;
 
+  if (2 == pg) 		// max
+    d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // % of 180 * (100 - min) /100
   change = true;
-  st += String.fromCharCode(0x40 + ns + i | (0x40 & d)>>1, 0x3F & d);
-  if (0 == pg) {
-//  offset is a % of max, which is a % of what remains of 180 * (100 - min) / 100
+  st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d);
+ /*
+    offset is a % of max, which is a % of what remains of 180 * (100 - min) / 100
     var o = Math.round(t3[0][i] * t3[2] * 180 * (100 - t3[1]) / 1000000);
-    ss += String.fromCharCode((0x40 + i) | (0x40 & o)>>1, 0x3F & o);
-  }
+  */
 }
 
 //return st.length;
