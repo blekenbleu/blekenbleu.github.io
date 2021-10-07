@@ -44,7 +44,7 @@ if (wysiwyg)
     if (tr[pg][i] != t3[pg][i])
       ci = change = true;
     if (2 == pg) 		// max
-      d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); / % of 180 * (100 - min) /100
+      d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // % of 180 * (100 - min) /100
     else if (0 == pg) 	// offset
       d = 0;		// should become Math.round(t3[pg][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
 
@@ -52,7 +52,7 @@ if (wysiwyg)
       st += String.fromCharCode(0x40 + ns + i | (0x40 & d)>>1, 0x3F & d); // tension command for changed parm
       if (0 == pg) {	// offset?
 	// offset is a percentage of max, which is a percentage of what remains of 180 * (100 - min) / 100
-	o = Math.round(int t3[0][i] * t3[2] * 180 * (100 - t3[1]) / 1000000);
+	var o = Math.round(t3[0][i] * t3[2][i] * 180 * (100 - t3[1]) / 1000000);
 	ss += String.fromCharCode((0x40 + i) | (0x40 & o)>>1, 0x3F & o);
       }
     }
@@ -63,8 +63,8 @@ else if (i == s && tr[pg][i] != t3[pg][i]) {
   change = true;
   st += String.fromCharCode(0x40 + ns + i | (0x40 & d)>>1, 0x3F & d);
   if (0 == pg) {
-//  offset is a percentage of max, which is a percentage of what remains of 180 * (100 - min) / 100
-    o = Math.round(int t3[0][i] * t3[2] * 180 * (100 - t3[1]) / 1000000);
+//  offset is a % of max, which is a % of what remains of 180 * (100 - min) / 100
+    var o = Math.round(t3[0][i] * t3[2] * 180 * (100 - t3[1]) / 1000000);
     ss += String.fromCharCode((0x40 + i) | (0x40 & o)>>1, 0x3F & o);
   }
 }
@@ -83,6 +83,6 @@ if (change) {
   if (wysiwyg)	// no change left unsaved!!
     root['t3'][pg] = t3[pg];
   else if (t1) // assumption: SimHub is fast enough that no more than 1 change at a time
-    root['t3'][pg][s] = t3[pg[s];	// save a single parm;
+    root['t3'][pg][s] = t3[pg][s];	// save a single parm;
   return ss+st;
 }

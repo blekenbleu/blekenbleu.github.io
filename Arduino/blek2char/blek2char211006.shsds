@@ -1,11 +1,11 @@
 {
   "AutomaticReconnect": true,
-  "SerialPortName": "COM7",
+  "SerialPortName": "COM11",
   "StartupDelayMs": 0,
   "IsConnecting": false,
-  "IsEnabled": true,
+  "IsEnabled": false,
   "LogIncomingData": true,
-  "IsConnected": true,
+  "IsConnected": false,
   "BaudRate": 115200,
   "UpdateMessages": [
     {
@@ -27,9 +27,9 @@
     {
       "Message": {
         "Interpreter": 1,
-        "Expression": "// pwmparam.js update per-channel parameters\r\nvar np = $prop('Settings.np');         // pwm count\r\nvar pg = $prop('Settings.page');       // page number\r\n\r\nvar t3=[[0],[0],[0]];\r\nfor (i = 0; i < np; i++) {\r\n   t3[0][i] = $prop('Settings.neu'+i);\t// pg = 2\r\n   t3[1][i] = $prop('Settings.min'+i);\t// pg = 3\r\n   t3[2][i] = $prop('Settings.max'+i);\t// pg = 4\r\n}\r\n\r\nif (null == root['t3']) {\r\n  // first message initialized Arduino offsets\r\n  root['t3'] = t3;\r\n  root['t2c'] = [[0],[0]]; // test [min, max]: last n changed outputs\r\n}\r\n\r\n// do not run on general page\r\nif (2 > pg) return\r\n\r\nvar str = '';\t\t // watch this space\r\nvar tr = root['t3']; // previous t3\r\n\r\nvar change = false;\t // Only one page at a time\r\nvar i;\r\n\r\nfor (i = 0; i < np; i++) {\r\n  // last changed outputs\r\n  var ci = false\r\n  if (tr[pg-2][i] !== t3[pg-2][i]) {\r\n    ci = change = true;\r\n    if (3 === pg || 4 === pg) {\r\n      var dup = root['t2c'][pg-3].indexOf(i);\r\n      if (dup)\r\n        root['t2c'][pg-3].splice(dup, 1)\r\n      root['t2c'][pg-3].push(i);\r\n      if (root['t2c'][0].length > $prop('Settings.testmin'))\r\n        root['t2c'][0].shift();\r\n      if (root['t2c'][1].length > $prop('Settings.testmax'))\r\n        root['t2c'][1].shift();\r\n    }\r\n  }\r\n\r\n  // calculate test tension\r\n  var d = 0; // min (page 3)\r\n  if (4 === pg && -1 < root['t2c'][1].indexOf(i))      // max\r\n    d = (t3[2][i] - t3[0][i]) * 1.27;\r\n  else if (3 === pg && -1 < root['t2c'][0].indexOf(i)) // min, min with change\r\n    // d === 0\r\n    if (ci) {\r\n      var o = t3[1][i] * 1.27;  // scale to 7 bits\r\n      str += String.fromCharCode((0x40 + i) | (0x40 & o)>>1, 0x3F & o); // min offset str\r\n    }\r\n  else // neutral\r\n    d = (t3[0][i]) * 1.27;\r\n  //return d\r\n  str += String.fromCharCode(0x40 + np + i | (0x40 & d)>>1, 0x3F & d);\r\n}\r\n\r\n//return str.length;\r\n//return t3[1].toString()\r\n//str = [pg,t3[0][0],tr[0][0]].toString()+'\\n'\r\nchange = true;\r\nif (change) {\r\n  if (3 == pg)\t// change to min table?  update min table, then tension\r\n    str = String.fromCharCode(0x5E,np) + String.fromCharCode.apply(null,t3[1]) + str;\r\n\r\n  root['t3'] = t3;\r\n  return str;\r\n}"
+        "Expression": "// pwmparms.js update per-channel parameters\r\nvar ns = $prop('Settings.ns');          // servo count\r\n/* other (unused here) settings:\r\n   $prop('Settings.accel_gain')\r\n   $prop('Settings.decel_gain')\r\n   $prop('Settings.force_gain')\r\n   $prop('Settings.heave_gain')\r\n   $prop('Settings.info')\r\n   $prop('Settings.nf')\r\n   $prop('Settings.smooth')\r\n   $prop('Settings.yaw_gain')\r\n */\r\nvar t3=[[0],[0],[0]];\r\n//return ns;\r\nfor (i = 0; i < ns; i++) {\r\n   t3[0][i] = $prop('Settings.neu'+i);  // pg = 2\r\n   t3[1][i] = $prop('Settings.min'+i);  // pg = 3\r\n   t3[2][i] = $prop('Settings.max'+i);  // pg = 4\r\n}\r\n\r\nif (null == root['t3']) {\r\n  // device connect message initialized Arduino offsets; should initialize minima\r\n  root['t3'] = t3;\r\n  root['temp'] = 0;\r\n}\r\n\r\nvar wysiwyg = $prop('Settings.wysiwyg');\r\nvar t1 = $prop('Settings.test_one') && 0 < $prop('Settings.test_servos');\r\nvar pg = $prop('Settings.page') - 2;            // zero - based\r\n\r\nif (0 > pg || ! (wysiwyg || t1))                // no changes enabled?\r\n  return;\r\n\r\nvar s = $prop('Settings.servo') - 1;            // zero - based\r\nvar st = '';                                    // tension string:  watch this space\r\nvar ss = '';                                    // changed setting strings\r\nvar change = false;                             // Only one page at a time\r\nvar i;\r\n\r\nif (wysiwyg)\r\n  for (i = 0; i < ns; i++) {\r\n    var d = 0;  // calculate tension to apply, based on test being done; d = 0 for min (page 3)\r\n    var ci = false;\r\n\r\n    if (tr[pg][i] != t3[pg][i])\r\n      ci = change = true;\r\n    if (2 == pg)                // max\r\n      d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // % of 180 * (100 - min) /100\r\n    else if (0 == pg)   // offset\r\n      d = 0;            // should become Math.round(t3[pg][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);\r\n\r\n    if (ci) {   // change in our time?\r\n      st += String.fromCharCode(0x40 + ns + i | (0x40 & d)>>1, 0x3F & d); // tension command for changed parm\r\n      if (0 == pg) {    // offset?\r\n        // offset is a percentage of max, a percentage of what remains of 180 * (100 - min) / 100\r\n        var o = Math.round(t3[0][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);\r\n        ss += String.fromCharCode((0x40 + i) | (0x40 & o)>>1, 0x3F & o);\r\n      }\r\n    }\r\n  }\r\nelse if (i == s && tr[pg][i] != t3[pg][i]) {\r\n  var d = 0;\r\n\r\n  change = true;\r\n  st += String.fromCharCode(0x40 + ns + i | (0x40 & d)>>1, 0x3F & d);\r\n\r\n  if (0 == pg) {\r\n//  offset is a % of max, which is a % of what remains of 180 * (100 - min) / 100\r\n    var o = Math.round(t3[0][i] * t3[2] * 180 * (100 - t3[1]) / 1000000);\r\n    ss += String.fromCharCode((0x40 + i) | (0x40 & o)>>1, 0x3F & o);\r\n  }\r\n}\r\n\r\n//return st.length;\r\n//return page+ '+[pg+2,s,t3[pg][0],tr[pg][0]].toString()+'\\n'\r\n//return t3[pg].toString()\r\n//change = true;\r\nif (change) {\r\n  if (1 == pg) {        // min table change?  update min table, then tension\r\n    var min = [0];\r\n    for (i = 0; i < ns; i++)\r\n       min[i] = Math.round(180 * t3[1][i] / 100); // convert percentages to servo\r\n    st = String.fromCharCode(0x5E,ns)+String.fromCharCode.apply(null,min) + st;\r\n  }\r\n  if (wysiwyg)  // no change left unsaved!!\r\n    root['t3'][pg] = t3[pg];\r\n  else if (t1) // assumption: SimHub is fast enough that no more than 1 change at a time\r\n    root['t3'][pg][s] = t3[pg][s];       // save a single parm;\r\n  return ss+st;\r\n}\r\n\r\nreturn 'done'"
       },
-      "IsEnabled": true,
+      "IsEnabled": false,
       "MaximumFrequency": 0
     },
     {
@@ -53,7 +53,7 @@
   "RtsEnable": false,
   "EditorExpanded": true,
   "Name": "Custom Serial device",
-  "Description": "blekenbleu b2char_211006",
+  "Description": "blek2char_211006",
   "LastErrorDate": "0001-01-01T00:00:00",
   "LastErrorMessage": null,
   "IsFreezed": false,
@@ -63,7 +63,7 @@
         "Maximum": 5,
         "Minimum": 1,
         "PropertyName": "page",
-        "CurrentValue": 1,
+        "CurrentValue": 4,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -84,7 +84,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "General",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -101,7 +101,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "Global gain",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -118,7 +118,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "Acceleration gain",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -135,7 +135,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "Deceleration gain",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -152,7 +152,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "Yaw (sway) gain",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -169,7 +169,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "Heave gain",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -186,7 +186,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "Smoothing (20% per step)",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -203,7 +203,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "Active PWM",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -237,7 +237,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "Info: 0=silent; 1=clipping; 2=tension; 3=hex; 4=ASCII",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -316,7 +316,7 @@
           "Expression": ""
         },
         "IsVisible": false,
-        "Label": "PWM Device: Neutral Offset Percentage (zero g-forces)",
+        "Label": "PWM Device: Neutral Offset % of Max (zero g-forces)",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2"
         }
@@ -330,7 +330,7 @@
           "Expression": ""
         },
         "IsVisible": false,
-        "Label": "Extra notes...",
+        "Label": "Min + Max < 100%;  Neutral is % of Max",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2"
         }
@@ -599,7 +599,7 @@
           "Expression": ""
         },
         "IsVisible": false,
-        "Label": "PWM Device: Min Offset",
+        "Label": "PWM Device: Min Offset: % of 180",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==3"
         }
@@ -884,8 +884,8 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
-        "Label": "PWM Device: Max Range",
+        "IsVisible": true,
+        "Label": "PWM Device: Max Range: % of 180 * (100% - Min)",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==4"
         }
@@ -901,7 +901,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "Test Max PWM Range {0:none, 1-4:last n changed outputs}",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==4"
@@ -918,7 +918,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 0: Max",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==4"
@@ -935,7 +935,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 1: Max",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==4"
@@ -952,7 +952,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 2: Max",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==4&&[Settings.np]>2"
@@ -969,7 +969,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 3: Max",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==4&&[Settings.np]>3"
@@ -986,7 +986,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 4: Max",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==4&&[Settings.np]>4"
@@ -1003,7 +1003,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 5: Max",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==4&&[Settings.np]>5"
