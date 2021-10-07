@@ -19,117 +19,70 @@ for (i = 0; i < ns; i++) {
 }
 
 if (null == root['t3']) {
-  // first message initialized Arduino offsets
+  // device connect message initialized Arduino offsets; should initialize minima
   root['t3'] = t3;
   root['temp'] = 0;
 }
 
 var wysiwyg = $prop('Settings.wysiwyg');
-var ts = $prop('Settings.test_servos');
-var t1 = $prop('Settings.test_one') && 0 < ts;
-var pg = $prop('Settings.page');
-var s = $prop('Settings.servo');
-var str = '';		// watch this space
-var os = '';		// offset string
+var t1 = $prop('Settings.test_one') && 0 < $prop('Settings.test_servos');
+var pg = $prop('Settings.page') - 2;		// zero - based
 
-var temp; // used by undo()
-var tp;
-var ss;
-var tr = root['t3'];
+if (0 > pg || ! (wysiwyg || t1))		// no changes enabled?
+  return;
 
-function undo() { // undo changes
-  t3[tp-1][ss-1] = temp;
-
-  var d = 0;  // calculate tension to apply, based on test being done
-  if (tp == 4)		// Arduino is not yet aware of max tension limits
-    d = tr[2][ss-1] + tr[0][ss-1] - tr[1][ss-1];
-  else if (tp == 2) {	// restore Arduino offset
-    str += String.fromCharCode(0x40 + ss-1 | (0x40 & temp) >>1, 0x3F & temp);
-    d = tr[0][ss-1] - tr[1][ss-1];
-  }
-  else			// tp == 2:  restore min table
-    os += String.fromCharCode(0x5E,ns)+String.fromCharCode.apply(null,t3[1]);
-
-  // include data so that Arduino will set servo position with restored offset
-  str += String.fromCharCode(0x40 + ns + ss-1 | (0x40 & d) >>1, 0x3F & d);
-  root['temp'] = 0;
-};
-//undo();
-
-if (2 > pg || ! (wysiwyg || t1)) { // nothing new to change
-  if (0 < root['temp']) {	// temporary test to undo?
-    temp = root['temp'];
-    tp = 7 & (temp>>7);
-    ss = temp & 0x7F;
-    temp = temp >> 10;
-    pg = 2; // force min table update
-    undo();
-    root['t3'][tp-1][ss-1] = temp;
-    return os+str;
-  }
-  else return;
-}
-//return os.length
-
-var change = false;	// Only one page at a time
+var s = $prop('Settings.servo') - 1;		// zero - based
+var st = '';					// tension string:  watch this space
+var ss = '';					// changed setting strings
+var change = false;				// Only one page at a time
 var i;
+if (wysiwyg)
+  for (i = 0; i < ns; i++) {
+    var d = 0;  // calculate tension to apply, based on test being done; d = 0 for min (page 3)
+    var ci = false;
 
-var prev;		// store previous value, potentially for root['temp']
-if (root['temp']) {
-  temp = root['temp'];
-  tp = 7 & (temp>>7);
-  ss = 0x7F & temp ;
-  prev = temp >> 10;
-  if (t1 && 1 == ts && s == ss && pg == tp) {
-    if (prev == tr[pg-2][ss-1])
-      return;  // no change in temporary test_one parm
-  // otherwise, fall thru and replace that parm value
-  }
-  else undo();  // restore that parm value; another parm will be changed.
-}
+    if (tr[pg][i] != t3[pg][i])
+      ci = change = true;
+    if (2 == pg) 		// max
+      d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); / % of 180 * (100 - min) /100
+    else if (0 == pg) 	// offset
+      d = 0;		// should become Math.round(t3[pg][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
 
-for (i = 0; i < ns; i++) {
-  var d = 0;  // calculate tension to apply, based on test being done; d = 0 for min (page 3)
-  var ci = false;
-
-  if (tr[pg-2][i] != t3[pg-2][i]) {
-    if(0 == root['temp'])
-      prev = tr[pg-2][i];
-    ci = change = true;
-    tr[pg-2][i] = t3[pg-2][i];
-  }
-  if (4 == pg) 		// max
-    d = t3[2][i] + t3[0][i] - t3[1][i];
-  else if (2 == pg) {	// offset
-    d = t3[0][i] - t3[1][i];
-    if (ci) {
-      o = t3[1][i];
-      os += String.fromCharCode((0x40 + i-1) | (0x40 & o)>>1, 0x3F & o);
+    if (ci) {	// change in our time?
+      st += String.fromCharCode(0x40 + ns + i | (0x40 & d)>>1, 0x3F & d); // tension command for changed parm
+      if (0 == pg) {	// offset?
+	// offset is a percentage of max, which is a percentage of what remains of 180 * (100 - min) / 100
+	o = Math.round(int t3[0][i] * t3[2] * 180 * (100 - t3[1]) / 1000000);
+	ss += String.fromCharCode((0x40 + i) | (0x40 & o)>>1, 0x3F & o);
+      }
     }
   }
+else if (i == s && tr[pg][i] != t3[pg][i]) {
+  var d = 0;
 
-  if (wysiwyg || (t1 && i == s))
-    str += String.fromCharCode(0x40 + ns + i-1 | (0x40 & d) >>1, 0x3F & d);
+  change = true;
+  st += String.fromCharCode(0x40 + ns + i | (0x40 & d)>>1, 0x3F & d);
+  if (0 == pg) {
+//  offset is a percentage of max, which is a percentage of what remains of 180 * (100 - min) / 100
+    o = Math.round(int t3[0][i] * t3[2] * 180 * (100 - t3[1]) / 1000000);
+    ss += String.fromCharCode((0x40 + i) | (0x40 & o)>>1, 0x3F & o);
+  }
 }
 
-//return str.length;
-//return [pg,s,t3[0][0],tr[0][0]].toString()+'\n'
-//return t3[1].toString()
+//return st.length;
+//return page+ '+[pg+2,s,t3[pg][0],tr[pg][0]].toString()+'\n'
+//return t3[pg].toString()
 //change = true;
 if (change) {
-  if (3 == pg)	// change to min table?  update min table, then tension
-    str = String.fromCharCode(0x5E,ns)+String.fromCharCode.apply(null,t3[1]) + str;
-
-  if ($prop('Settings.wysiwyg')) {	// no change left unsaved!!
-    root['t3'][pg-2] = t3[pg-2];
-    root['temp'] = 0;
+  if (1 == pg) {	// min table change?  update min table, then tension
+    var min = [0];
+    for (i = 0; i < ns; i++)
+       min[i] = Math.round(180 * t3[1][i] / 100); // convert percentages to servo
+    st = String.fromCharCode(0x5E,ns)+String.fromCharCode.apply(null,min) + st;
   }
-  else { // assumption: SimHub is fast enough that no more than 1 change at a time
-    if (2 == ts) {	// save a single parm;
-      root['t3'][pg-2][s-1] = t3[pg-2[s-1];
-      root['temp'] = 0;
-    }
-    else root['temp'] = (prev << 10) | (pg << 7) | s;
-  }
-  return str;
+  if (wysiwyg)	// no change left unsaved!!
+    root['t3'][pg] = t3[pg];
+  else if (t1) // assumption: SimHub is fast enough that no more than 1 change at a time
+    root['t3'][pg][s] = t3[pg[s];	// save a single parm;
+  return ss+st;
 }
