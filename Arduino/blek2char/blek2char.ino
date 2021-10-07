@@ -1,6 +1,6 @@
 #include <Servo.h>
 /* blek2char 2 ASCII character commands = 2 x 7 - 1 sync bit per character = 12 available bits: 5 address + 7 data
- ; of 32 possible channels, 0x7F reserved reset and 0x7E for special commands leaves 30 for servos and other PWM pins
+ ; of 32 possible channels, 0x7F reserved reset and 0x5E for special commands leaves 30 for servos and other PWM pins
  ; compatible with e.g. this SimHub Custom serial profile:
  ; https://blekenbleu.github.io/Arduino/blek2char/blek2char.shsds
  */
@@ -197,8 +197,8 @@ void loop() {
 	  Serial.write("num_servos: ");
 	  Serial.println(received);
 	}
-	if (num_servos > addr) {
 
+	else if (num_servos > addr) {
 	  if (tmax[addr] <= received) {  // clipping
 	    digitalWrite(LED, LOW);  // illuminate LED
 	    if (2 & info_level) {
