@@ -6,7 +6,7 @@ for (var i = 0; i < ns; i++) {
    t3[1][i] = $prop('Settings.min'+i);  // pg = 3
    t3[2][i] = $prop('Settings.max'+i);  // pg = 4
 }
-
+//return t3[1].toString()
 // Set up data and reset IIR filters
 if (null == root['ft']) {
   var ft = [0];
@@ -15,32 +15,26 @@ if (null == root['ft']) {
   // first message initializes Arduino min table
   root['ft'] = ft;  // IIR
 }
-
+//return root['ft'].toString()
 var e = 3;  // epsilon approximation to reduce imperceptible changes
-var gain = $prop('Settings.force_gain') * 0.02;
+var gain = $prop('Settings.gain_global') * 0.02;
 
 // G-forces from SimHub properties ---------------
 // longitudinal acceleration (positive is back)
 var surge = $prop('AccelerationSurge') * gain;
-if (surge < 0)
-  surge *= $prop('Settings.accel_gain');
-else
-  surge *= $prop('Settings.decel_gain');
 
+if (surge < 0)
+  surge *= $prop('Settings.gain_accel');
+else
+  surge *= $prop('Settings.gain_decel');
+//return surge
 // lateral acceleration (positive is right) (feels like yaw)
 var sway  = $prop('AccelerationSway') * gain;
-sway  *= $prop('Settings.yaw_gain');
+sway  *= $prop('Settings.gain_sway');
 
 // vertical acceleration (positive is up)
 var heave = $prop('AccelerationHeave') * gain;
-heave *= $prop('Settings.heave_gain');
-
-// neutral position test
-if ($prop('Settings.test_servos') === 2) {
-  surge = sway = heave = 0;
-}
-
-//return surge + ' ' + sway + ' ' + heave;
+heave *= $prop('Settings.gain_heave');
 
 // Combine forces
 //
@@ -64,6 +58,7 @@ ts[2] = Math.max(rightSurgeSway + 20, 0);               // left head
 ts[3] = Math.max(leftSurgeSway + 20, 0);                // right head
 ts[4] = Math.max(surge + 40, 0);                        // upper back
 ts[5] = Math.max(monoSurgeSway + 5, 0);                 // mono shoulder belt
+//return ts.toString()
 /*
 ts[5] = Math.max(surge + 10, 0);                        // lower back
 ts[6] = Math.max(rightSurgeSway + 10, 0);               // left side back
@@ -77,31 +72,32 @@ ts[13] = Math.max(rearHeave + 10, 0);                   // rear seat
  */
 
 var tc = 1 - ($prop('Settings.smooth') * 0.2);
-var str = '';
 var wysiwyg = $prop('Settings.wysiwyg');
-var s = $prop('Settings.servo') - 1;            // zero - based
-var t1 = $prop('Settings.test_one') && 0 < $prop('Settings.test_servos');
-if (!t1)
-  s = 99;	// don't block any real servos
+var str = '';
 
 for (var i = 0; i < ns; i++) {
   var max = Math.round(t3[2][i] * 180 * (100 - t3[1][i]) / 10000);
-  var ft = root['ft'][i];	// Low-pass IIR filter
+  var ft = root['ft'][i];       // Low-pass IIR filter
 
-  ft += (ts[i] - ft) * tc;	// filtered tension
-  if (ft > max) ft = max;	// limit tension
-  root['ft'][i] = ft;
+  ft += (ts[i] - ft) * tc;      // filtered tension
+  if (ft > max) ft = max;       // limit tension
 
+  // wysiwyg = false
+  if (i >= 90)
+    return [i,ns,max,ft,Math.abs(ft-root['ft'][i]),e].toString()
   // skip change if it is smaller than e or servo is being tested
-  if (Math.abs(ft - root['ft'][i]) > e && (!wysiwyg) && i != s) {
+  if (Math.abs(ft - root['ft'][i]) > e && ! wysiwyg) {
+    root['ft'][i] = ft;
     // add difference between min and offset to ft
-    ft += Math.round(t3[0][i] * t3[3][i] * 180 * (100 - t3[1][i]) / 1000000);
+    ft += Math.round(t3[0][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
     if (0 > ft)
-      ft = 0;
-    str += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));  // set tension
+      ft = 0;		// below min 
+    str += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));  // set tension msb
     str += String.fromCharCode(0x3F & ft);                           // 6 lsb
   }
+  else root['ft'][i] = ft;
 }
+//return str.length
 if (0 < str.length) {
   //return str.length;    // 2 * ns
   return str;
