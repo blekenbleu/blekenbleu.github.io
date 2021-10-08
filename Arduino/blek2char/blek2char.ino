@@ -144,7 +144,7 @@ void loop() {
 	}
 	else {
 	  Lcount = received;
-	  Serial.write(" Loading "); Serial.print(received); Serial.write(" bytes to LUT "); Serial.print(Lidx); Serial.write(": ");
+	  Serial.write(" Loading "); Serial.print(received); Serial.write(" bytes to LUT "); Serial.print(Lid); Serial.write(": ");
 	  col += 29;
 	  Lidx = 0;
 	}
