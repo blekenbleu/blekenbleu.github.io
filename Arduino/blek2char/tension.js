@@ -51,11 +51,15 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
 //return st.length;
 //change = true;
   if (change) {
-    if (1 == pg) {        // min table change?  update min table, then tension
-      var min = [0];
-      for (i = 0; i < ns; i++)
-         min[i] = Math.round(180 * t3[1][i] / 100); // convert percentages to servo
-      st = String.fromCharCode(0x5F,5,ns)+String.fromCharCode.apply(null,min) + st;
+    if (1 <= pg) {        // table change?  update table, then tension
+      var m = [0];
+      if (1 == pg)			// min
+	for (i = 0; i < ns; i++)
+	  m[i] = Math.round(180 * t3[pg][i] / 100); // convert percentages to PWM min
+      else if (2 == pg)			// max
+	for (i = 0; i < ns; i++)
+	  m[i] = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // max from %
+      st = String.fromCharCode(0x5F,4+pg,ns)+String.fromCharCode.apply(null,m) + st;
     }
     root['t3'][pg] = t3[pg];      // no change left unsaved!!
   }
