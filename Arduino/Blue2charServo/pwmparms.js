@@ -1,5 +1,5 @@
 // pwmparms.js update per-channel parameters
-var ns = $prop('Settings.ns');		// servo count
+var ns = $prop('Settings.np');          // servo count
 /* other (unused here) settings:
    $prop('Settings.accel_gain')
    $prop('Settings.decel_gain')
@@ -31,11 +31,13 @@ var pg = $prop('Settings.page') - 2;		// zero - based
 if (0 > pg || ! (wysiwyg || t1))		// no changes enabled?
   return;
 
-var s = $prop('Settings.servo') - 1;		// zero - based
+var s = $prop('Settings.servo');		// zero - based
 var st = '';					// tension string:  watch this space
 var ss = '';					// changed setting strings
 var change = false;				// Only one page at a time
 var i;
+
+//return ' '+[s,ns,tr[pg][s],t3[pg][s],wysiwyg].toString()
 if (wysiwyg)
   for (i = 0; i < ns; i++) {
     var d = 0;  // calculate tension to apply, based on test being done; d = 0 for min (page 3)
@@ -45,26 +47,28 @@ if (wysiwyg)
       ci = change = true;
     if (2 == pg) 		// max
       d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // % of 180 * (100 - min) /100
-    else if (0 == pg) 	// offset
-      d = 0;		// should become Math.round(t3[pg][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
+    else if (0 == pg)	// offset
+      d = Math.round(t3[pg][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
 
     if (ci) {	// change in our time?
-      st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension command for changed parm
+      st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
     }
   }
-else if (i == s && tr[pg][i] != t3[pg][i]) {
+else if (tr[pg][s] != t3[pg][s]) {
   var d = 0;
 
-  if (2 == pg) 		// max
-    d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // % of 180 * (100 - min) /100
+  if (0 == pg)		// offset
+    d = Math.round(t3[pg][s] * t3[2][s] * 180 * (100 - t3[1][s]) / 1000000); // % of max
+  else if (2 == pg)          // max
+    d = Math.round(t3[pg][s] * 180 * (100 - t3[1][s]) / 10000); // % of 180 * (100 - min) /100
   change = true;
   st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d);
- /*
-    offset is a % of max, which is a % of what remains of 180 * (100 - min) / 100
-    var o = Math.round(t3[0][i] * t3[2] * 180 * (100 - t3[1]) / 1000000);
-  */
+/*
+  offset is a % of max, which is a % of what remains of 180 * (100 - min) / 100
+  var o = Math.round(t3[0][s] * t3[2][s] * 180 * (100 - t3[1][s]) / 1000000);
+ */
 }
-
+//return[pg,tr[pg][s], t3[pg][s], change].toString()+''+st
 //return st.length;
 //return page+ '+[pg+2,s,t3[pg][0],tr[pg][0]].toString()+'\n'
 //return t3[pg].toString()
