@@ -23,7 +23,7 @@ if (null == root['t3']) {
   root['t3'] = t3;
   root['temp'] = 0;
 }
-
+var tr = root['t3'];
 var wysiwyg = $prop('Settings.wysiwyg');
 var t1 = $prop('Settings.test_one') && 0 < $prop('Settings.test_servos');
 var pg = $prop('Settings.page') - 2;		// zero - based
