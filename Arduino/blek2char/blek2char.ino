@@ -30,9 +30,10 @@ const char *msg = "blek2char: connected\n";
 #endif		// BLACKPILL
 
 const byte num_pwm = sizeof(pin);
-byte tmin[num_pwm], tmax[num_pwm], *LUT=NULL;  // e.g. per-channel offsets, tmax, gains
-#define NL 2
-byte* table[NL] = {tmin, tmax};     // subtract 5 from special to index table[]
+byte tmin[num_pwm], tmax[num_pwm], *LUT=NULL;	// e.g. per-channel offsets, tmax
+byte gain[num_pwm], spare[num_pwm];		// room to grow
+#define NL 4
+byte* table[NL+1] = {tmin, tmax, gain, spare};     // subtract 5 from special to index table[]
 byte num_servos = 4, Lcount = 0, Lidx = 0, Lid = 0;
 Servo servo[num_pwm];
 byte min_defaults[] = {60,60,60,60,60,60,60,60,60,60,60,60,60,60,60};  // initial servo min angles
@@ -78,7 +79,7 @@ void loop() {
 
     if (0x7F == received) {
       Serial.write("resetting...  ");
-      info_level = loading = col = 0;
+      info_level = (loading = col = 0);
       for (byte i = 0; i < num_servos; i++) {
         tmax[i] = tmax_defaults[i];
 	servo[i].write(tmin[i] = min_defaults[i]);  // initial servo positions
@@ -122,7 +123,7 @@ void loop() {
 
     else if (loading) {  // sync bit == 0
       if (Lcount) {
-	if (Lidx < num_servos) {
+	if (Lidx < num_servos && Lid < NL) {
 	  LUT[Lidx++] = received;
 	}
 	else
@@ -144,14 +145,21 @@ void loop() {
 	}
 	else {
 	  Lcount = received;
-	  Serial.write(" Loading "); Serial.print(received); Serial.write(" bytes to LUT "); Serial.print(Lid); Serial.write(": ");
-	  col += 29;
+	  if(Lid < NL) {
+	    Serial.write(" Loading "); Serial.print(received); Serial.write(" bytes to LUT "); Serial.print(Lid); Serial.write(": ");
+	    col += 29;
+	  }
 	  Lidx = 0;
 	}
 	return;
       }
 
       if (0x5F == loading) {			// info_level?
+	if (4 + NL < received) {
+	  Serial.write("info_level exceeds defined LUTs: ");
+	  Serial.println(received);
+	  col += 47;	
+        }
 	if (4 < received) {			// LUT loading
 	  LUT = table[Lid = received - 5];	// point to the LUT
 	  digitalWrite(LED, LOW);     		// illuminate LED during LUT loads

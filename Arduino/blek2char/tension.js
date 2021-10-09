@@ -5,6 +5,7 @@ for (i = 0; i < ns; i++) {
    t3[0][i] = $prop('Settings.neu'+i);	// pg = 2
    t3[1][i] = $prop('Settings.min'+i);	// pg = 3
    t3[2][i] = $prop('Settings.max'+i);	// pg = 4
+   t3[3][i] = $prop('Settings.sca'+i);	// pg = 5
 }
 /* other (unused here) settings:
    $prop('Settings.info')
@@ -29,39 +30,36 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
   var tr = root['t3'];
   var change = false;				// Only one page at a time
   var i;
-
-  for (i = 0; i < ns; i++) {
-    var d = 0;		// calculate tension to apply for test; d = 0 for min (page 3)
-    var ci = false;
-
-    if (tr[pg][i] != t3[pg][i])
-  //  return ' '+[pg,i,ns,tr[pg][i],t3[pg][i],wysiwyg].toString()
-      ci = change = true;
-    if (2 == pg)                // max
-      d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // % of 180 * (100 - min) /100
-    else if (0 == pg)   // offset
-      d = Math.round(t3[pg][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
-
-    if (ci) {   // change in our time?
-  //  st += ' '+[ns,pg,s,tr[pg][s],t3[pg][s],wysiwyg,t1].toString()+' '+d+'; '
+ 
+  for (i = 0; i < ns; i++)
+    if (tr[pg][i] != t3[pg][i]) {
+      var d = 0;          // calculate tension to apply for test; d = 0 for min (page 3)
+     
+      change = true;
+      if (2 == pg)		// max
+        d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // % of 180 * (100 - min) /100
+      else if (0 == pg)		// offset
+        d = Math.round(t3[pg][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
       st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
     }
-  }
+//  return st;
 
 //return st.length;
 //change = true;
   if (change) {
-    if (1 <= pg) {        // table change?  update table, then tension
+    if (1 <= pg) {				// table change?  update table, then tension
       var m = [0];
-      if (1 == pg)			// min
-	for (i = 0; i < ns; i++)
-	  m[i] = Math.round(180 * t3[pg][i] / 100); // convert percentages to PWM min
-      else if (2 == pg)			// max
-	for (i = 0; i < ns; i++)
-	  m[i] = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // max from %
-      st = String.fromCharCode(0x5F,4+pg,ns)+String.fromCharCode.apply(null,m) + st;
+      if (1 == pg)				// min
+        for (i = 0; i < ns; i++)
+          m[i] = Math.round(180 * t3[pg][i] / 100); // convert percentages to PWM min
+      else if (2 == pg)				// max
+        for (i = 0; i < ns; i++)
+          m[i] = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // max from %
+      else for (i = 0; i < ns; i++)
+        m[i] = t3[pg][i];			// brain-dead table loading
+      st = String.fromCharCode(0x5F,4+pg,ns)+String.fromCharCode.apply(null,m)+st;
     }
-    root['t3'][pg] = t3[pg];      // no change left unsaved!!
+    root['t3'][pg] = t3[pg];			// no change left unsaved!!
   }
 }
 //return st;
@@ -145,4 +143,10 @@ for (var i = 0; i < ns; i++) {
 if (0 < st.length) {
   //return st.length;    // 2 * ns
   return st;
+}
+if (990 < st.length) {
+  var s = ' 0x'+(st.charCodeAt(0)).toString(16);
+  for(i=1;i<st.length;i++)
+    s+=',0x'+(st.charCodeAt(i)).toString(16);
+  return s;
 }
