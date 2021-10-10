@@ -1,9 +1,9 @@
 // servo tensions from G-forces;  parms from sliders
 var ns = $prop('Settings.np');		// PWM count
-var t3=[[0],[0],[0],[0,[0]];
+var t3=[[0],[0],[0],[0],[0]];
 var neut = [0];			// precalculate run-time values
 var tmax = [0];			
-for (i = 0; i < ns; i++) {
+for (var i = 0; i < ns; i++) {
    t3[0][i] = $prop('Settings.neu'+i);	// pg = 2
    t3[1][i] = $prop('Settings.min'+i);	// pg = 3
    t3[2][i] = $prop('Settings.max'+i);	// pg = 4
@@ -34,14 +34,13 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
   var tr = root['t3'];
   var change = false;				// Only one page at a time
   var i;
- 
+
   for (i = 0; i < ns; i++)
     if (tr[pg][i] != t3[pg][i]) {
       var d = 0;          // calculate tension to apply for test; d = 0 for min (page 3)
      
       change = true;
-      
-      tmax[i] = Math.round(t3[2][i] * 180 * (100 - t3[1][i]) / 10000);	// % of 180 * (100 - min) /100
+      tmax[i] = Math.round(t3[2][i] * (100 - t3[1][i]) * 0.018);	// % of 180 * (100 - min) /100
       if (2 == pg)			// max
         d = tmax[i];
       else if (0 == pg) 		// offset
@@ -54,7 +53,7 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
 //change = true;
   if (change) {
     if (1 <= pg) {					// table change?  update table, then tension
-      var m = tmax;					// for either 1 or 2 == pg
+      var m = [0];					// for either 1 or 2 == pg
       var tp = pg + 4;					// Arduino table to update
 
       if (2 < pg)
@@ -62,9 +61,10 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
       else if (1 == pg) {				// min: update both min and max
         for (i = 0; i < ns; i++)
           m[i] = Math.round(t3[pg][i] * 1.8);		// percentages to PWM min: 180 / 100
-	st = String.fromCharCode(0x5F,4+pg,ns)+String.fromCharCode.apply(null,m)+st;
-	tp = 6;						// also update tmax
+	st = String.fromCharCode(0x5F,tp,ns)+String.fromCharCode.apply(null,m)+st;
+	tp = 6;  m = tmax;				// also update tmax
       }
+      else m = tmax;
       st = String.fromCharCode(0x5F,tp,ns)+String.fromCharCode.apply(null,m)+st;
     }
     root['t3'][pg] = t3[pg];				// no change left unsaved!!
@@ -131,23 +131,22 @@ ts[5] = rearHeave;				// rear center seat
 
 var tc = 1 - ($prop('Settings.smooth') * 0.2);
 for (var i = 0; i < ns; i++) {
-  var max = tmax[i];
   var ft = root['ft'][i];					// Low-pass IIR filter
 
   ft += (ts[i] - ft) * tc;					// filtered tension
 
   if (i >= 90)							// debugging
-    return [i,ns,max,ft,Math.abs(ft-root['ft'][i]),e].toString()
+    return [i,ns,ft,Math.abs(ft-root['ft'][i]),e].toString()
 
-/* Skip change if difference in current unfiltered tension with last filtered tension
- ; is smaller than e or servo is being tested */
+/* Skip change if current unfiltered tension differs from previous filtered tension
+ ; by less than e or servo is being tested */
   var tension = Math.abs(ts[i] - root['ft'][i] > e && ! wysiwyg);
   root['ft'][i] = ft;
   if (tension) {
 //  Center forces by (offset)
     ft += neut[i];
     if (0 > ft) ft = 0;						// below min 
-    else if (ft > max) ft = max;				// limit tension
+    else if (ft > 127) ft = 127;				// 7 bit limit limit 
     st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1)); 	// set tension msb
     st += String.fromCharCode(0x3F & ft);			// 6 lsb
   }
