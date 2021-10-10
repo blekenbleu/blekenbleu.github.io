@@ -1,8 +1,8 @@
 // servo tensions from G-forces;  parms from sliders
 var ns = $prop('Settings.np');		// PWM count
 var t3=[[0],[0],[0],[0],[0]];
-var neut = [0];			// precalculate run-time values
-var tmax = [0];			
+var neut = [];			// precalculate run-time parms
+var tmax = [];			
 for (var i = 0; i < ns; i++) {
    t3[0][i] = $prop('Settings.neu'+i);	// pg = 2
    t3[1][i] = $prop('Settings.min'+i);	// pg = 3
@@ -20,17 +20,17 @@ if (null == root['t3']) {	// device connect message initialized Arduino minima
   var ft = [0];			// Set up data and reset IIR filters
 
   root['t3'] = t3;
-  for (i = 0; i < ns; i++)
+  for (i = 1; i < ns; i++)
      ft[i] = 0;
   root['ft'] = ft;	// IIR
 }
 //return root['ft'].toString()
 
-var wysiwyg = $prop('Settings.wysiwyg');
 var pg = $prop('Settings.page') - 2;		// zero - based
+var wysiwyg = $prop('Settings.wysiwyg') && 0 <= pg;
 
 var st = '';					// tension string:  watch this space
-if (0 <= pg && wysiwyg) {			// changes enabled?
+if (wysiwyg) {					// changes enabled?
   var tr = root['t3'];
   var change = false;				// Only one page at a time
   var i;
@@ -42,7 +42,7 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
       change = true;
       tmax[i] = Math.round(t3[2][i] * (100 - t3[1][i]) * 0.018);	// % of 180 * (100 - min) /100
       if (2 == pg)			// max
-        d = tmax[i];
+	d = tmax[i];
       else if (0 == pg) 		// offset
 	neut[i] = d = Math.round(t3[pg][i] * tmax[i] / 100);
       st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
@@ -53,19 +53,20 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
 //change = true;
   if (change) {
     if (1 <= pg) {					// table change?  update table, then tension
-      var m = [0];					// for either 1 or 2 == pg
+      var t = tmax;					// Update tmax for either 1 or 2 == pg
       var tp = pg + 4;					// Arduino table to update
 
       if (2 < pg)
-	m = t3[pg];					// brain-dead table loading
+	t = t3[pg];					// brain-dead table loading
       else if (1 == pg) {				// min: update both min and max
-        for (i = 0; i < ns; i++)
-          m[i] = Math.round(t3[pg][i] * 1.8);		// percentages to PWM min: 180 / 100
+	var m = [];
+	for (i = 0; i < ns; i++)
+	  m[i] = Math.round(t3[pg][i] * 1.8);		// percentages to PWM min: 180 / 100
+
 	st = String.fromCharCode(0x5F,tp,ns)+String.fromCharCode.apply(null,m)+st;
-	tp = 6;  m = tmax;				// also update tmax
+	tp = 6;						// also update tmax
       }
-      else m = tmax;
-      st = String.fromCharCode(0x5F,tp,ns)+String.fromCharCode.apply(null,m)+st;
+      st = String.fromCharCode(0x5F,tp,ns)+String.fromCharCode.apply(null,t)+st;
     }
     root['t3'][pg] = t3[pg];				// no change left unsaved!!
   }
