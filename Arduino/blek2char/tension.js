@@ -1,11 +1,16 @@
 // Calculate servo tensions from G-forces
 var ns = $prop('Settings.np');		// PWM count
 var t3=[[0],[0],[0]];
+var neut = [0];			// precalculate run-time values
+var tmax = [0];			
 for (i = 0; i < ns; i++) {
    t3[0][i] = $prop('Settings.neu'+i);	// pg = 2
    t3[1][i] = $prop('Settings.min'+i);	// pg = 3
    t3[2][i] = $prop('Settings.max'+i);	// pg = 4
    t3[3][i] = $prop('Settings.sca'+i);	// pg = 5
+   // run-time values
+   tmax[i] = Math.round(t3[2][i] * 180 * (100 - t3[1][i]) / 10000);
+   neut[i] = Math.round((t3[0][i] * tmax[i] - t3[1][i] * 180) / 100);
 }
 /* other (unused here) settings:
    $prop('Settings.info')
@@ -36,10 +41,14 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
       var d = 0;          // calculate tension to apply for test; d = 0 for min (page 3)
      
       change = true;
+      
+      tmax[i] = Math.round(t3[2][i] * 180 * (100 - t3[1][i]) / 10000);	// % of 180 * (100 - min) /100
       if (2 == pg)		// max
-        d = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // % of 180 * (100 - min) /100
-      else if (0 == pg)		// offset
-        d = Math.round(t3[pg][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
+        d = tmax[i];
+      else if (0 == pg) {		// offset
+        d = Math.round(t3[pg][i] * tmax[i] / 100);
+	neut[i] = d - Math.round(t3[1][i] * 180 / 100);
+      }
       st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
     }
 //  return st;
@@ -47,19 +56,18 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
 //return st.length;
 //change = true;
   if (change) {
-    if (1 <= pg) {				// table change?  update table, then tension
+    if (1 <= pg) {					// table change?  update table, then tension
       var m = [0];
-      if (1 == pg)				// min
+      if (1 == pg)					// min
         for (i = 0; i < ns; i++)
-          m[i] = Math.round(180 * t3[pg][i] / 100); // convert percentages to PWM min
-      else if (2 == pg)				// max
-        for (i = 0; i < ns; i++)
-          m[i] = Math.round(t3[pg][i] * 180 * (100 - t3[1][i]) / 10000); // max from %
+          m[i] = Math.round(180 * t3[pg][i] / 100);	// convert percentages to PWM min
+      else if (2 == pg)					// max
+        m = tmax;
       else for (i = 0; i < ns; i++)
-        m[i] = t3[pg][i];			// brain-dead table loading
+        m[i] = t3[pg][i];				// brain-dead table loading
       st = String.fromCharCode(0x5F,4+pg,ns)+String.fromCharCode.apply(null,m)+st;
     }
-    root['t3'][pg] = t3[pg];			// no change left unsaved!!
+    root['t3'][pg] = t3[pg];				// no change left unsaved!!
   }
 }
 //return st;
@@ -117,7 +125,7 @@ ts[13] = Math.max(rearHeave + 10, 0);			// rear seat
 
 var tc = 1 - ($prop('Settings.smooth') * 0.2);
 for (var i = 0; i < ns; i++) {
-  var max = Math.round(t3[2][i] * 180 * (100 - t3[1][i]) / 10000);
+  var max = tmax[i];
   var ft = root['ft'][i];					// Low-pass IIR filter
 
   ft += (ts[i] - ft) * tc;					// filtered tension
@@ -130,8 +138,8 @@ for (var i = 0; i < ns; i++) {
   var tension = Math.abs(ft - root['ft'][i] > e && ! wysiwyg);
   root['ft'][i] = ft;
   if (tension) {
-//  Use (offset - min) to set center point of forces
-    ft += Math.round(t3[0][i] * t3[2][i] * 180 * (100 - t3[1][i]) / 1000000);
+//  Set neutral or center point of forces
+    ft += neut[i];
     if (0 > ft) ft = 0;						// below min 
     else if (ft > max) ft = max;				// limit tension
     st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1)); 	// set tension msb
