@@ -36,7 +36,7 @@ byte gain[num_pwm], spare[num_pwm];		// room to grow
 byte* table[NL+1] = {tmin, tmax, gain, spare};     // subtract 5 from special to index table[]
 byte num_servos = 4, Lcount = 0, Lidx = 0, Lid = 0;
 Servo servo[num_pwm];
-byte min_defaults[] = {60,60,60,60,60,60,60,60,60,60,60,60,60,60,60};  // initial servo min angles
+byte min_defaults[] = {52,52,52,52,52,52,52,52,52,52,52,52,52,52,52};  // initial servo min angles; 52 + 126 = 178 
 byte tmax_defaults[] = {0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E};     // tension thresholds for overload echo '*'
 
 byte info_level = 0;  // commands in 6 lsb of character after 0x5F
@@ -70,10 +70,8 @@ void loop() {
     byte received = Serial.read();
     
     if (3 == info_level) {
-      // Serial.print(received, HEX);
-      Serial.write(hex[received >> 4]);
-      Serial.write(hex[15 & received]);
-      Serial.write(' ');
+      char h[4] = "   "; h[1] = hex[received >> 4]; h[2] = hex[15 & received]; h[3] = '\0';
+      Serial.write(h);
       col += 3;
     }
 
@@ -209,10 +207,10 @@ void loop() {
 	else if (num_servos > addr) {
 	  if (tmax[addr] <= received) {  // clipping
 	    digitalWrite(LED, LOW);  // illuminate LED
-	    if (2 & info_level) {
+	    if (3 & info_level) {
 	      Serial.write("*");
 	      col++;
-	      if(2 < info_level) {
+	      if(2 == info_level) {
 		Serial.write('Channel '); Serial.print(addr); Serial.write('clipped from ');
 		Serial.print(received); Serial.write(' to '); Serial.println(tmax[addr]);
 		col = 0;
