@@ -141,7 +141,7 @@ for (var i = 0; i < ns; i++) {
 
 /* Skip change if current unfiltered tension differs from previous filtered tension
  ; by less than e or servo is being tested */
-  var tension = Math.abs(ft - root['ft'][i] > e && ! wysiwyg);
+  var tension = Math.abs(ft - root['ft'][i]) > e && ! wysiwyg;
   root['ft'][i] = ft;
   if (tension) {
 //  Center forces by (offset)
