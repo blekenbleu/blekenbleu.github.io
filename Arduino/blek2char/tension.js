@@ -1,6 +1,6 @@
-// Calculate servo tensions from G-forces
+// servo tensions from G-forces;  parms from sliders
 var ns = $prop('Settings.np');		// PWM count
-var t3=[[0],[0],[0]];
+var t3=[[0],[0],[0],[0,[0]];
 var neut = [0];			// precalculate run-time values
 var tmax = [0];			
 for (i = 0; i < ns; i++) {
@@ -9,14 +9,13 @@ for (i = 0; i < ns; i++) {
    t3[2][i] = $prop('Settings.max'+i);	// pg = 4
    t3[3][i] = $prop('Settings.sca'+i);	// pg = 5
    // run-time values
-   tmax[i] = Math.round(t3[2][i] * 180 * (100 - t3[1][i]) / 10000);
+   tmax[i] = Math.round(t3[2][i] * (100 - t3[1][i]) * 0.018);		// 180 / 10000
    neut[i] = Math.round((t3[0][i] * tmax[i] - t3[1][i] * 180) / 100);
 }
 /* other (unused here) settings:
    $prop('Settings.info')
    $prop('Settings.nf')
  */
-
 if (null == root['t3']) {	// device connect message initialized Arduino minima
   var ft = [0];			// Set up data and reset IIR filters
 
@@ -43,12 +42,10 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
       change = true;
       
       tmax[i] = Math.round(t3[2][i] * 180 * (100 - t3[1][i]) / 10000);	// % of 180 * (100 - min) /100
-      if (2 == pg)		// max
+      if (2 == pg)			// max
         d = tmax[i];
-      else if (0 == pg) {		// offset
-        d = Math.round(t3[pg][i] * tmax[i] / 100);
-	neut[i] = d - Math.round(t3[1][i] * 180 / 100);
-      }
+      else if (0 == pg) 		// offset
+	neut[i] = d = Math.round(t3[pg][i] * tmax[i] / 100);
       st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
     }
 //  return st;
@@ -57,22 +54,25 @@ if (0 <= pg && wysiwyg) {			// changes enabled?
 //change = true;
   if (change) {
     if (1 <= pg) {					// table change?  update table, then tension
-      var m = [0];
-      if (1 == pg)					// min
+      var m = tmax;					// for either 1 or 2 == pg
+      var tp = pg + 4;					// Arduino table to update
+
+      if (2 < pg)
+	m = t3[pg];					// brain-dead table loading
+      else if (1 == pg) {				// min: update both min and max
         for (i = 0; i < ns; i++)
-          m[i] = Math.round(180 * t3[pg][i] / 100);	// convert percentages to PWM min
-      else if (2 == pg)					// max
-        m = tmax;
-      else for (i = 0; i < ns; i++)
-        m[i] = t3[pg][i];				// brain-dead table loading
-      st = String.fromCharCode(0x5F,4+pg,ns)+String.fromCharCode.apply(null,m)+st;
+          m[i] = Math.round(t3[pg][i] * 1.8);		// percentages to PWM min: 180 / 100
+	st = String.fromCharCode(0x5F,4+pg,ns)+String.fromCharCode.apply(null,m)+st;
+	tp = 6;						// also update tmax
+      }
+      st = String.fromCharCode(0x5F,tp,ns)+String.fromCharCode.apply(null,m)+st;
     }
     root['t3'][pg] = t3[pg];				// no change left unsaved!!
   }
 }
 //return st;
 
-var e = 3;  // epsilon approximation to reduce imperceptible changes
+var e = 0.15;  // epsilon approximation to reduce imperceptible changes
 var gain = $prop('Settings.gain_global') * 0.02;
 
 // G-forces from SimHub properties ---------------
@@ -98,28 +98,34 @@ var leftSurgeSway = Math.sqrt(surge*surge + sway*sway);
 var rightSurgeSway = surge + surge - leftSurgeSway;
 //return leftSurgeSway + ' ' + rightSurgeSway;
 
-var monoSurgeSway = surge * 0.8 + Math.abs(sway) * 0.2;
-var monoSwayHeave = heave * 0.8 + Math.abs(sway) * 0.2;
-var frontHeave = heave * 0.8 + Math.max(surge * 0.2, 0);
-var rearHeave = heave * 0.8 + Math.max(-surge * 0.2, 0);
+var monoSurgeSway = surge * 0.7 + Math.abs(sway) * 0.3;
+var monoSurgeHeave = surge * 0.7 + Math.abs(heave) * 0.3;
+var monoSwayHeave = heave * 0.7 + Math.abs(sway) * 0.3;
+var frontHeave = heave * 0.7 + Math.max(surge * 0.3, 0);
+var rearHeave = heave * 0.7 + Math.max(-surge * 0.3, 0);
+// 100*((x/100)^(1/gamma))
+var swayGamma = 10 * Math.pow(Math.abs(sway * .01),(1 / 0.7));
+if (0 > sway)
+  swayGamma *= -1;
+//return swayGamma + ' ' + sway
 
-							// Assign forces to servos
-var ts = [Math.max(leftSurgeSway, 0)];			// left shoulder belt
-ts[1] = Math.max(rightSurgeSway, 0);			// right shoulder belt
-ts[2] = Math.max(rightSurgeSway + 20, 0);		// left head
-ts[3] = Math.max(leftSurgeSway + 20, 0);		// right head
-ts[4] = Math.max(surge + 40, 0);			// upper back
-ts[5] = Math.max(monoSurgeSway + 5, 0);			// mono shoulder belt
+var ts = [];					// Assign forces to servos
+ts[0] = 0;					// left shoulder belt (leftSurgeSway)
+ts[1] = 0;					// right shoulder belt (rightSurgeSway)
+ts[2] = surge;					// upper back (neutral 25)
+ts[3] = swayGamma;				// head cushion twist (neutral 50)
 /*
-ts[5] = Math.max(surge + 10, 0);			// lower back
-ts[6] = Math.max(rightSurgeSway + 10, 0);		// left side back
-ts[7] = Math.max(leftSurgeSway + 10, 0);		// right side back
-ts[8] = Math.max(sway + 10, 0);				// left thigh
-ts[7] = Math.max(-sway + 10, 0);			// right thigh
-ts[8] = Math.max(monoSwayHeave + 10, 0);		// left lap belt
-ts[9] = Math.max(monoSwayHeave + 10, 0);		// right lap belt
-ts[12] = Math.max(frontHeave + 10, 0);			// front seat
-ts[13] = Math.max(rearHeave + 10, 0);			// rear seat
+ts[4] = sway;					// left side back
+ts[5] = -sway;					// right side back
+ts[5] = surge;					// lower back
+ts[5] = monoSurgeHeave;				// mono lap belt
+ts[5] = sway;					// left thigh
+ts[5] = -sway;					// right thigh
+ts[5] = monoSwayHeave;				// left lap belt
+ts[5] = monoSwayHeave;				// right lap belt
+ts[5] = monoSurgeSway;				// mono shoulder belt
+ts[5] = frontHeave;				// front center seat
+ts[5] = rearHeave;				// rear center seat
  */
 //return ts.toString()
 
@@ -129,16 +135,16 @@ for (var i = 0; i < ns; i++) {
   var ft = root['ft'][i];					// Low-pass IIR filter
 
   ft += (ts[i] - ft) * tc;					// filtered tension
-  if (ft > max) ft = max;					// limit tension
 
   if (i >= 90)							// debugging
     return [i,ns,max,ft,Math.abs(ft-root['ft'][i]),e].toString()
 
-// Skip change if it is smaller than e or servo is being tested
-  var tension = Math.abs(ft - root['ft'][i] > e && ! wysiwyg);
+/* Skip change if difference in current unfiltered tension with last filtered tension
+ ; is smaller than e or servo is being tested */
+  var tension = Math.abs(ts[i] - root['ft'][i] > e && ! wysiwyg);
   root['ft'][i] = ft;
   if (tension) {
-//  Set neutral or center point of forces
+//  Center forces by (offset)
     ft += neut[i];
     if (0 > ft) ft = 0;						// below min 
     else if (ft > max) ft = max;				// limit tension
