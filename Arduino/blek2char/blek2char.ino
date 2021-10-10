@@ -70,7 +70,7 @@ void loop() {
     byte received = Serial.read();
     
     if (3 == info_level) {
-      char h[4] = "   "; h[1] = hex[received >> 4]; h[2] = hex[15 & received]; h[3] = '\0';
+      char h[4] = "   "; h[1] = hex[received >> 4]; h[2] = hex[15 & received];
       Serial.write(h);
       col += 3;
     }
@@ -111,7 +111,7 @@ void loop() {
 	  col = 0;
 	}
 	else if (1 == info_level) {
-	  Serial.write("E");
+	  Serial.write('E');
 	  col++;
 	}
 	loading = 0;
@@ -205,14 +205,19 @@ void loop() {
 	}
 
 	else if (num_servos > addr) {
-	  if (tmax[addr] <= received) {  // clipping
+	  if (tmax[addr] <= received || 1 > received) {  // clipping
 	    digitalWrite(LED, LOW);  // illuminate LED
 	    if (3 & info_level) {
-	      Serial.write("*");
+	      char clip = (1 > received) ? '#' : '*';
+	      Serial.write(clip);
 	      col++;
 	      if(2 == info_level) {
-		Serial.write('Channel '); Serial.print(addr); Serial.write('clipped from ');
-		Serial.print(received); Serial.write(' to '); Serial.println(tmax[addr]);
+		Serial.write(" Channel "); Serial.print(addr);
+	        if (1 > received)
+		  Serial.write(" clipped at 0\n");
+		else {
+		  Serial.write(" clipped from "); Serial.print(received); Serial.write(" to "); Serial.println(tmax[addr]);
+	        }
 		col = 0;
 	      }
 	    }
