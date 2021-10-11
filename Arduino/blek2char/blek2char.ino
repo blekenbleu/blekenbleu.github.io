@@ -34,7 +34,7 @@ byte tmin[num_pwm], tmax[num_pwm], *LUT=NULL;	// e.g. per-channel offsets, tmax
 byte gain[num_pwm], spare[num_pwm];		// room to grow
 #define NL 4
 byte* table[NL+1] = {tmin, tmax, gain, spare};     // subtract 5 from special to index table[]
-byte num_servos = 4, Lcount = 0, Lidx = 0, Lid = 0;
+byte active_PWMs = 4, Lcount = 0, Lidx = 0, Lid = 0;
 Servo servo[num_pwm];
 byte min_defaults[] = {52,52,52,52,52,52,52,52,52,52,52,52,52,52,52};  // initial servo min angles; 52 + 126 = 178 
 byte tmax_defaults[] = {0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E};     // tension thresholds for overload echo '*'
@@ -46,11 +46,11 @@ const char *hex = "0123456789ABCDEF";
 int col = 0;
 
 
-void setup() {      // setup() code runs once
+void setup() {            // setup() code runs once
   pinMode(LED, OUTPUT);   // initialize output digital pin connected to green LED
   digitalWrite(LED, LOW); // turn on LED by pulling pin LOW
 
-  for (byte i = 0; i < num_servos; i++) {
+  for (byte i = 0; i < active_PWMs; i++) {
     servo[i].attach(pin[i]);
     servo[i].write(tmin[i] = min_defaults[i]);  // initialize servo positions
   }
@@ -69,7 +69,7 @@ void loop() {
   if (0 < Serial.available()) {
     byte received = Serial.read();
     
-    if (3 == info_level) {
+    if (3 == info_level) {               // echo hex
       char h[4] = "   "; h[1] = hex[received >> 4]; h[2] = hex[15 & received];
       Serial.write(h);
       col += 3;
@@ -78,16 +78,16 @@ void loop() {
     if (0x7F == received) {
       Serial.write("resetting...  ");
       info_level = (loading = col = 0);
-      for (byte i = 0; i < num_servos; i++) {
+      for (byte i = 0; i < active_PWMs; i++) {
         tmax[i] = tmax_defaults[i];
 	servo[i].write(tmin[i] = min_defaults[i]);  // initial servo positions
       }
       Serial.write(msg);
     }
 
-    else if (4 == info_level) {
+    else if (4 == info_level) {          // echo ASCII values
       if (10 == received) {
-        Serial.write('\n');
+        Serial.write('\n');              // special case new line
 	col = 0;
       }
       else if (32 > received) {
@@ -106,7 +106,7 @@ void loop() {
     else if (0x40 & received && LUT == NULL) {	// sync bit == 1
       digitalWrite(LED, LOW);	// illuminate LED
       if (loading) {  // did preceding character also have 0x40 set?
-	if (2 & info_level) {
+	if (2 <= info_level) {
 	  Serial.write("sync error: consecutive characters with 0x40 bit set\n");
 	  col = 0;
 	}
@@ -120,8 +120,8 @@ void loop() {
     }
 
     else if (loading) {  // sync bit == 0
-      if (Lcount) {
-	if (Lidx < num_servos && Lid < NL) {
+      if (Lcount) {                                     // LUT load in progress?
+	if (Lidx < active_PWMs && Lid < NL) {
 	  LUT[Lidx++] = received;
 	}
 	else
@@ -133,9 +133,9 @@ void loop() {
 	return;
       }
 
-      if (LUT) {
-	if (num_servos != received) {
-	  Serial.write("\nWARNING: LUT length "); Serial.print(received); Serial.write(" != servo count "); Serial.println(num_servos);
+      if (LUT) {                                       // LUT load initiating?
+	if (active_PWMs != received) {
+	  Serial.write("\nWARNING: LUT length "); Serial.print(received); Serial.write(" != active PWM count "); Serial.println(active_PWMs);
 	}
 	if (!received) {
 	  LUT = NULL;
@@ -183,28 +183,28 @@ void loop() {
 
 	received |= ((0x20 & loading) << 1);	// restore msb of 7-bit data
 
-	if (30 == addr) {
+	if (30 == addr) {            // active PWM count
 	  if (num_pwm < received) {
-	    Serial.write("Error: num_servos update exceeds allowable ");
+	    Serial.write("Error: active_PWMs update exceeds available pins ");
 	    Serial.print(num_pwm);
 	    Serial.write(": ");
 	    Serial.println(received);
 	    col = 0;
 	    received = num_pwm;  // ignore invalid setting
 	  }
-	  for (byte i = received - 1; i < num_servos; i++) {
+	  for (byte i = received - 1; i < active_PWMs; i++) {
 	    servo[i].detach();
 	  }
-	  for (byte i = num_servos - 1; i < received; i++) {
+	  for (byte i = active_PWMs - 1; i < received; i++) {
 	    tmin[i] = min_defaults[i];
 	    servo[i].attach(pin[i]);
 	  }
-	  num_servos = received;
-	  Serial.write("num_servos: ");
+	  active_PWMs = received;
+	  Serial.write("active_PWMs: ");
 	  Serial.println(received);
 	}
 
-	else if (num_servos > addr) {
+	else if (active_PWMs > addr) {
 	  if (tmax[addr] <= received || 1 > received) {  // clipping
 	    digitalWrite(LED, LOW);  // illuminate LED
 	    if (3 & info_level) {
@@ -237,8 +237,8 @@ void loop() {
 	else {
 	  digitalWrite(LED, LOW);  // illuminate LED
 	  if (2 & info_level) {
-	    Serial.write("channel address out of implemented range of ");
-	    Serial.print(num_servos);
+	    Serial.write("channel address beyond active range of ");
+	    Serial.print(active_PWMs);
 	    Serial.write(": ");
 	    Serial.println(addr);
 	    col = 0;
