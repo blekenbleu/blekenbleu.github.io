@@ -1,8 +1,8 @@
-// servo tensions from G-forces;  parms from sliders
-var ns = $prop('Settings.np');                // PWM count
+// servo positions from properties; parms from settings
+var ns = $prop('Settings.np');       // PWM count
 var t3=[[0],[0],[0],[0],[0]];
-var neut = [];                                // precalculate run-time parms
-var tmax = [];                        
+var neut = [];                 // precalculate run-time parms                                                                            
+var tmax = [];
 for (var i = 0; i < ns; i++) {
    t3[0][i] = $prop('Settings.neu'+i);        // pg = 2
    t3[1][i] = $prop('Settings.min'+i);        // pg = 3
@@ -26,7 +26,7 @@ if (null == root['t3']) {              // device connect message initialized 2 A
 }
 //return root['ft'].toString()
 
-var pg = $prop('Settings.page') - 2;                // zero - based
+var pg = $prop('Settings.page') - 2;            // zero - based
 var wysiwyg = $prop('Settings.wysiwyg') && 0 <= pg;
 
 var st = '';                                        // tension string:  watch this space
@@ -53,7 +53,7 @@ if (wysiwyg) {                                      // changes enabled?
 //change = true;
   if (change) {
     if (1 <= pg) {                                       // table change?  update table, then tension
-      var t = tmax;                                      // Update tmax for either 1 or 2 == pg
+      var t = tmax;                                      // do NOT set values in t; t is a pointer!!
       var tp = pg + 4;                                   // Arduino table to update
 
       if (2 < pg)
@@ -67,6 +67,12 @@ if (wysiwyg) {                                      // changes enabled?
         tp = 6;                                          // also update tmax
       }
       st = String.fromCharCode(0x5F,tp,ns)+String.fromCharCode.apply(null,t)+st;
+      if (90 < st.length) {
+        var s = ' 0x'+(st.charCodeAt(0)).toString(16);
+        for(i=1;i<st.length;i++)
+	s+=',0x'+(st.charCodeAt(i)).toString(16);
+        return s;
+      } // else return 'zero length\n';
     }
     root['t3'][pg] = t3[pg];                             // no change left unsaved!!
   }
@@ -110,23 +116,23 @@ if (0 > sway)
   swayGamma *= -1;
 //return swayGamma + ' ' + sway
 
-var ts = [];                                      // Assign forces to servos
-ts[0] = 0;                                        // left shoulder belt (leftSurgeSway)
-ts[1] = 0;                                        // right shoulder belt (rightSurgeSway)
-ts[2] = surge;                                    // upper back (neutral 25)
-ts[3] = swayGamma;                                // head cushion twist (neutral 50)
+var ts = [];                                    // Assign forces to servos
+ts[0] = 0;                                      // left shoulder belt (leftSurgeSway)
+ts[1] = 0;                                      // right shoulder belt (rightSurgeSway)
+ts[2] = surge;                                  // upper back (neutral 25)
+ts[3] = swayGamma;                              // head cushion twist (neutral 50)
 /*
-ts[4] = sway;                                     // left side back
-ts[5] = -sway;                                    // right side back
-ts[5] = surge;                                    // lower back
-ts[5] = monoSurgeHeave;                           // mono lap belt
-ts[5] = sway;                                     // left thigh
-ts[5] = -sway;                                    // right thigh
-ts[5] = monoSwayHeave;                            // left lap belt
-ts[5] = monoSwayHeave;                            // right lap belt
-ts[5] = monoSurgeSway;                            // mono shoulder belt
-ts[5] = frontHeave;                               // front center seat
-ts[5] = rearHeave;                                // rear center seat
+ts[4] = sway;                                   // left side back
+ts[5] = -sway;                                  // right side back
+ts[5] = surge;                                  // lower back
+ts[5] = monoSurgeHeave;                         // mono lap belt
+ts[5] = sway;                                   // left thigh
+ts[5] = -sway;                                  // right thigh
+ts[5] = monoSwayHeave;                          // left lap belt
+ts[5] = monoSwayHeave;                          // right lap belt
+ts[5] = monoSurgeSway;                          // mono shoulder belt
+ts[5] = frontHeave;                             // front center seat
+ts[5] = rearHeave;                              // rear center seat
  */
 //return ts.toString()
 
@@ -139,8 +145,7 @@ for (var i = 0; i < ns; i++) {
   if (i >= 90)                                    // debugging
     return [i,ns,ft,Math.abs(ft-root['ft'][i]),e].toString()
 
-/* Skip change if current unfiltered tension differs from previous filtered tension
- ; by less than e or servo is being tested */
+// Skip change if it is smaller than e or servo is being tested
   var tension = Math.abs(ft - root['ft'][i]) > e && ! wysiwyg;
   root['ft'][i] = ft;
   if (tension) {
