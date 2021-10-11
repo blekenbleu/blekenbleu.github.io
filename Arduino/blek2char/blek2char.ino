@@ -14,17 +14,17 @@
  ; STM32F411: PA0(pin10) and PB5(pin41) are 3.3V only (23 5V PWM pins)
  ;            PA11(pin32) prevents device from being recognized in windows
  ;            15 PWM pins assigned
- ;                  ________T4________  ________T1___   ________T2________   ________T3________
- ;                  CH1  CH2  CH3  CH4  CH1  CH2  CH3   CH1  CH2  CH3  CH4   CH1  CH2  CH3  CH4 */
-const byte pin[] = {PB6, PB7, PB8, PB9, PA8, PA9, PA10, PA15, PA1, PA2, PA3, PA6, PA7, PB0, PB1};
+ ;                  ________T4________  ______T1______  ________T3________  ________T2________
+ ;                  CH4  CH3  CH2  CH1  CH3   CH2  CH1  CH4  CH3  CH2  CH1  CH4  CH3  CH2  CH1 */
+const byte pin[] = {PB9, PB8, PB7, PB6, PA10, PA9, PA8, PB1, PB0, PA7, PA6, PA3, PA2, PA1, PA15};
 const char *msg = "Black Pill 2char PWM: connected\n";
 
 #else
 
-/* Blue Pill: seven 5V tolerant pins until PA6, then 3.3V excluding PS15
- ;                  ________T4________  ________T1___   ________T3________  _______T2_________
- ;                  CH3  CH4  CH1  CH2  CH1  CH2  CH3   CH1  CH2  CH3  CH4  CH2  CH3  CH4  CH1	*/
-const byte pin[] = {PB8, PB9, PB6, PB7, PA8, PA9, PA10, PA6, PA7, PB0, PB1, PA1, PA2, PA3};//PA15};
+/* Blue Pill: seven 5V tolerant pins until PB1, then 3.3V excluding PS15
+ ;                  ________T4________  ______T1______  ________T3________  ________T2________
+ ;                  CH4  CH3  CH2  CH1  CH3   CH2  CH1  CH4  CH3  CH2  CH1  CH4  CH3  CH2  CH1 */
+const byte pin[] = {PB9, PB8, PB7, PB6, PA10, PA9, PA8, PB1, PB0, PA7, PA6, PA3, PA2, PA1};//PA15};
 const char *msg = "blek2char: connected\n";
 
 #endif		// BLACKPILL
@@ -214,14 +214,15 @@ void loop() {
 	      if(2 == info_level) {
 		Serial.write(" Channel "); Serial.print(addr);
 	        if (1 > received)
-		  Serial.write(" clipped at 0\n");
+		  Serial.write(" clipped:0\n");
 		else {
-		  Serial.write(" clipped from "); Serial.print(received); Serial.write(" to "); Serial.println(tmax[addr]);
+		  Serial.write(" clipped:"); Serial.print(received); Serial.write("->"); Serial.println(tmax[addr]);
 	        }
 		col = 0;
 	      }
 	    }
-	    received = tmax[addr];
+            if (tmax[addr] <= received)
+	      received = tmax[addr];
 	  }
 	  servo[addr].write(tmin[addr] + received);
 	  if (2 == info_level) { // servo:value
