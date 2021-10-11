@@ -52,6 +52,8 @@ if (wysiwyg) {                                      // changes enabled?
         d = tmax[i];
       else if (0 == pg)                                              // offset
         d = neut[i];
+      else if (1 == pg)                                              // send it twice, making it unique to SimHUb
+      	st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
       st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
     }
 //return st;
