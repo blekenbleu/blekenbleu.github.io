@@ -3,15 +3,15 @@
   "SerialPortName": "COM11",
   "StartupDelayMs": 0,
   "IsConnecting": false,
-  "IsEnabled": false,
+  "IsEnabled": true,
   "LogIncomingData": true,
-  "IsConnected": false,
+  "IsConnected": true,
   "BaudRate": 115200,
   "UpdateMessages": [
     {
       "Message": {
         "Interpreter": 1,
-        "Expression": "// special: 0 = silent; 1 = clip(*); 3 = hex; 4 = ASCII; 5 = LUT\r\nreturn String.fromCharCode(0x5F, 0x3F & $prop('Settings.info'));\r\n//return [0x5F, 0x3F & $prop('Settings.info')].toString();"
+        "Expression": "// special: 0 = silent; 1 = clip(*); 3 = hex; 4 = ASCII; 5 = LUT\r\nreturn String.fromCharCode(0x5F, 0x3F & $prop('Settings.info'));"
       },
       "IsEnabled": true,
       "MaximumFrequency": 0
@@ -27,7 +27,7 @@
     {
       "Message": {
         "Interpreter": 1,
-        "Expression": "// servo positions from properties; parms from settings\r\nvar np = $prop('Settings.np');       // PWM count\r\nvar pg = $prop('Settings.page') - 2; // zero - based\r\nvar wysiwyg = $prop('Settings.wysiwyg') && 0 <= pg;\r\nvar t5=[[0],[0],[0],[0],[0]];        // slider settings\r\nvar neut = [];                       // run-time parms\r\nvar tmax = [];\r\nvar i;\r\n\r\nfunction t5load() {\r\n  for (i = 0; i < np; i++) {\r\n    t5[0][i] = $prop('Settings.neu'+i);        // pg = 2\r\n    t5[1][i] = $prop('Settings.min'+i);        // pg = 3\r\n    t5[2][i] = $prop('Settings.max'+i);        // pg = 4\r\n    t5[3][i] = $prop('Settings.sca'+i);        // pg = 5\r\n  }\r\n}\r\n\r\n/* other (unused here) settings:\r\n   $prop('Settings.info')\r\n   $prop('Settings.nf')\r\n */\r\nif (null == root['t5']) {              // device connect message initialized 2 Arduino LUTs\r\n  var ft = [0];                        // Set up data and reset IIR filters\r\n\r\n  for (i = 0; i < np; i++)\r\n     ft[i] = 0;\r\n  root['ft'] = ft;                     // IIR\r\n  t5load();\r\n  root['t5'] = t5;\r\n}\r\nelse if (wysiwyg)\r\n  t5load();\r\nelse t5 = root['t5'];\r\nfor (i = 0; i < np; i++) { // run-time values\r\n   tmax[i] = Math.round(t5[2][i] * (100 - t5[1][i]) * 0.018);  // 180 / 10000\r\n   neut[i] = Math.round(t5[0][i] * tmax[i] * .01);\r\n}\r\n//return root['ft'].toString()\r\n\r\nvar st = '';                                        // tension string:  watch this space\r\nif (wysiwyg) {                                      // changes enabled?\r\n  var tr = root['t5'];\r\n  var change = false;                               // Only one page at a time\r\n\r\n  for (i = 0; i < np; i++)\r\n    if (tr[pg][i] != t5[pg][i]) {\r\n      var d = 0;                       // tension to apply for test; d = 0 for min (page 3)\r\n\r\n      change = true;\r\n      if (2 == pg)                     // max\r\n        d = tmax[i];\r\n      else if (0 == pg)                // offset\r\n        d = neut[i];\r\n      else if (1 == pg)                // send twice, making message unique to SimHUb\r\n        st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // changed parm tension\r\n      st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tensionfor changed parm\r\n    }\r\n//return st;\r\n//return st.length;\r\n//change = true;\r\n  if (change) {\r\n    if (1 <= pg) {                                       // table change?  update table, then tension\r\n      var tp = pg + 4;                                   // Arduino table to update\r\n\r\n      if (2 < pg)\r\n        st = String.fromCharCode(0x5F,tp,np)+String.fromCharCode.apply(null,t5[pg])+st; // brain-dead table loading\r\n      else {\r\n        if (1 == pg) {                                   // min: update both min and max\r\n          var m = [];\r\n          for (i = 0; i < np; i++)\r\n            m[i] = Math.round(t5[pg][i] * 1.8);          // % to min: 180 / 100\r\n          st = String.fromCharCode(0x5F,tp,np)+String.fromCharCode.apply(null,m)+st;\r\n        }\r\n        st = String.fromCharCode(0x5F,6,np)+String.fromCharCode.apply(null,tmax)+st;\r\n      }\r\n    }\r\n    root['t5'][pg] = t5[pg];                             // no change left unsaved!!\r\n  }\r\n  return st;                                             // ignore telemetry during wysiwyg\r\n  if (90 < st.length) {\r\n    var s = ' 0x'+(st.charCodeAt(0)).toString(16);\r\n    for(i = 1; i < st.length; i++)\r\n      s += ',0x'+(st.charCodeAt(i)).toString(16);\r\n    return s;\r\n  } // else return 'zero length\\n';\r\n}\r\n\r\n// G-forces from SimHub properties ---------------\r\nvar e = 0.15;  // epsilon approximation to reduce imperceptible changes\r\nvar gain = $prop('Settings.gain_global') * 0.02;\r\n\r\n// longitudinal acceleration (positive is back)\r\nvar surge = $prop('AccelerationSurge') * gain;\r\n\r\nif (surge < 0)\r\n  surge *= $prop('Settings.gain_accel');\r\nelse\r\n  surge *= $prop('Settings.gain_decel');\r\n//return surge\r\n\r\n// lateral acceleration (positive is right) (feels like yaw)\r\nvar sway  = $prop('AccelerationSway') * gain * $prop('Settings.gain_sway');\r\n\r\n// vertical acceleration (positive is up)\r\nvar heave = $prop('AccelerationHeave') * gain * $prop('Settings.gain_heave');\r\n\r\n// Combine forces\r\n//\r\n// convert speed and yaw changes to left and right tension values\r\nvar leftSurgeSway = Math.sqrt(surge*surge + sway*sway);\r\nvar rightSurgeSway = surge + surge - leftSurgeSway;\r\n//return leftSurgeSway + ' ' + rightSurgeSway;\r\n\r\nvar surgeSway = surge * 0.7 + Math.abs(sway) * 0.3;\r\nvar reverseSurgeSway = -surge * 0.7 + Math.abs(sway) * 0.3;\r\nvar surgeHeave = surge * 0.7 + Math.abs(heave) * 0.3;\r\nvar swayHeave = heave * 0.7 + Math.abs(sway) * 0.3;\r\nvar frontHeave = heave * 0.7 + Math.max(surge * 0.3, 0);\r\nvar rearHeave = heave * 0.7 + Math.max(-surge * 0.3, 0);\r\n// 100*((x/100)^(1/gamma))\r\nvar swayGamma = 10 * Math.pow(Math.abs(sway * .01),(1 / 0.7));\r\nif (0 > sway)\r\n  swayGamma *= -1;\r\n//return swayGamma + ' ' + sway\r\n\r\n/** Assign forces to servos\r\n\r\nleftSurgeSway     // left shoulder belt\r\nrightSurgeSway    // right shoulder belt\r\nsurge             // upper back; lower back\r\nsway              // left side back; left thigh\r\n-sway             // right side back; right thigh\r\nreverseSurgeSway  // mono both side back\r\nswayGamma         // head cushion twist\r\nswayHeave         // lap belt\r\nsurgeSway         // mono shoulder belt\r\nfrontHeave        // center front seat\r\nrearHeave         // center rear seat\r\n\r\n*/\r\nvar ts = [];\r\nts[0] = 0;\r\nts[1] = 0;\r\nts[2] = surge;\r\nts[3] = swayGamma;\r\nts[4] = reverseSurgeSway;\r\nts[5] = 0;\r\nts[6] = 0;\r\nts[7] = 0;\r\nts[8] = 0;\r\nts[9] = 0;\r\nts[10] = 0;\r\nts[11] = 0;\r\nts[12] = 0;\r\nts[13] = 0;\r\nts[14] = 0;\r\n\r\n//return ts.toString()\r\n\r\nvar tc = 1 - ($prop('Settings.smooth') * 0.2);\r\nfor (i = 0; i < np; i++) {\r\n  var ft = root['ft'][i];                         // Low-pass IIR filter\r\n\r\n  ft += (ts[i] - ft) * tc;                        // filtered tension\r\n\r\n  if (i >= 90)                                    // debugging\r\n    return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString()\r\n\r\n// Skip change if it is smaller than e\r\n  var tension = Math.abs(ft - root['ft'][i]) > e;\r\n  root['ft'][i] = ft;\r\n  if (tension) {\r\n//  Center forces by (offset)\r\n    ft += neut[i];\r\n    if (0 > ft) ft = 0;                                         // below min\r\n    else if (ft > 126) ft = 126;                                // Arduino datalimit\r\n    st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb\r\n    st += String.fromCharCode(0x3F & ft);                       // 6 lsb\r\n  }\r\n}\r\n\r\n//return st.length\r\nreturn st;\r\nif (990 < st.length) {\r\n  var s = ' 0x'+(st.charCodeAt(0)).toString(16);\r\n  for(i=1;i<st.length;i++)\r\n    s+=',0x'+(st.charCodeAt(i)).toString(16);\r\n  return s;\r\n}"
+        "Expression": "// servo positions from properties; parms from settings\r\nvar np = $prop('Settings.np');       // PWM count\r\nvar pg = $prop('Settings.page') - 2; // zero - based\r\nvar wysiwyg = $prop('Settings.wysiwyg') && 0 <= pg;\r\nvar t5=[[0],[0],[0],[0],[0]];        // slider settings\r\nvar neut = [];                       // run-time parms\r\nvar tmax = [];\r\nvar i;\r\n\r\nfunction t5load() {\r\n  for (i = 0; i < np; i++) {\r\n    t5[0][i] = $prop('Settings.neu'+i);        // pg = 2\r\n    t5[1][i] = $prop('Settings.min'+i);        // pg = 3\r\n    t5[2][i] = $prop('Settings.max'+i);        // pg = 4\r\n    t5[3][i] = $prop('Settings.sca'+i);        // pg = 5\r\n  }\r\n}\r\n\r\n/* other (unused here) settings:\r\n   $prop('Settings.info')\r\n   $prop('Settings.nf')\r\n */\r\nif (null == root['t5']) {              // device connect message initialized 2 Arduino LUTs\r\n  var ft = [0];                        // Set up data and reset IIR filters\r\n\r\n  for (i = 0; i < np; i++)\r\n     ft[i] = 0;\r\n  root['ft'] = ft;                     // IIR\r\n  t5load();\r\n  root['t5'] = t5;\r\n}\r\nelse if (wysiwyg)\r\n  t5load();\r\nelse t5 = root['t5'];\r\nfor (i = 0; i < np; i++) { // run-time values\r\n   tmax[i] = Math.round(t5[2][i] * (100 - t5[1][i]) * 0.018);  // 180 / 10000\r\n   neut[i] = Math.round(t5[0][i] * tmax[i] * .01);\r\n}\r\n//return root['ft'].toString()\r\n\r\nvar st = '';                                        // tension string:  watch this space\r\nif (wysiwyg) {                                      // changes enabled?\r\n  var tr = root['t5'];\r\n  var change = false;                               // Only one page at a time\r\n\r\n  for (i = 0; i < np; i++)\r\n    if (tr[pg][i] != t5[pg][i]) {\r\n      var d = 0;                       // tension to apply for test; d = 0 for min (page 3)\r\n\r\n      change = true;\r\n      if (2 == pg)                                                   // max\r\n        d = tmax[i];\r\n      else if (0 == pg)                                              // offset\r\n        d = neut[i];\r\n      else if (1 == pg)                                              // send it twice, making it unique to SimHUb\r\n        st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm\r\n      st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm\r\n    }\r\n//return st;\r\n//return st.length;\r\n//change = true;\r\n  if (change) {\r\n    if (1 <= pg) {                                       // table change?  update table, then tension\r\n      var tp = pg + 4;                                   // Arduino table to update\r\n\r\n      if (2 < pg)\r\n        st = String.fromCharCode(0x5F,tp,np)+String.fromCharCode.apply(null,t5[pg])+st; // brain-dead table loading\r\n      else {\r\n        if (1 == pg) {                                   // min: update both min and max\r\n          var m = [];\r\n          for (i = 0; i < np; i++)\r\n            m[i] = Math.round(t5[pg][i] * 1.8);          // % to min: 180 / 100\r\n          st = String.fromCharCode(0x5F,tp,np)+String.fromCharCode.apply(null,m)+st;\r\n        }\r\n        st = String.fromCharCode(0x5F,6,np)+String.fromCharCode.apply(null,tmax)+st;\r\n      }\r\n    }\r\n    root['t5'][pg] = t5[pg];                             // no change left unsaved!!\r\n  }\r\n  return st;                                             // ignore telemetry during wysiwyg\r\n  if (90 < st.length) {\r\n    var s = ' 0x'+(st.charCodeAt(0)).toString(16);\r\n    for(i = 1; i < st.length; i++)\r\n      s += ',0x'+(st.charCodeAt(i)).toString(16);\r\n    return s;\r\n  } // else return 'zero length\\n';\r\n}\r\n\r\n// G-forces from SimHub properties ---------------\r\nvar e = 0.15;  // epsilon approximation to reduce imperceptible changes\r\nvar gain = $prop('Settings.gain_global') * 0.02;\r\n\r\n// longitudinal acceleration (positive is back)\r\nvar surge = $prop('AccelerationSurge') * gain;\r\n\r\nif (surge < 0)\r\n  surge *= $prop('Settings.gain_accel');\r\nelse\r\n  surge *= $prop('Settings.gain_decel');\r\n//return surge\r\n\r\n// lateral acceleration (positive is right) (feels like yaw)\r\nvar sway  = $prop('AccelerationSway') * gain * $prop('Settings.gain_sway');\r\n\r\n// vertical acceleration (positive is up)\r\nvar heave = $prop('AccelerationHeave') * gain * $prop('Settings.gain_heave');\r\n\r\n// Combine forces\r\n//\r\n// convert speed and yaw changes to left and right tension values\r\nvar leftSurgeSway = Math.sqrt(surge*surge + sway*sway);\r\nvar rightSurgeSway = surge + surge - leftSurgeSway;\r\n//return leftSurgeSway + ' ' + rightSurgeSway;\r\n\r\nvar surgeSway = surge * 0.7 + Math.abs(sway) * 0.3;\r\nvar reverseSurgeSway = -surge * 0.7 + Math.abs(sway) * 0.3;\r\nvar surgeHeave = surge * 0.7 + Math.abs(heave) * 0.3;\r\nvar swayHeave = heave * 0.7 + Math.abs(sway) * 0.3;\r\nvar frontHeave = heave * 0.7 + Math.max(surge * 0.3, 0);\r\nvar rearHeave = heave * 0.7 + Math.max(-surge * 0.3, 0);\r\n// 100*((x/100)^(1/gamma))\r\nvar swayGamma = 60 * Math.pow(Math.abs(sway * .01),(1 / 0.7));\r\nif (0 > sway)\r\n  swayGamma = - swayGamma;\r\n//return swayGamma + ' ' + sway\r\n\r\n/** Assign forces to servos\r\n\r\nleftSurgeSway     // left shoulder belt\r\nrightSurgeSway    // right shoulder belt\r\nsurge             // upper back; lower back\r\nsway              // left side back; left thigh\r\n-sway             // right side back; right thigh\r\nreverseSurgeSway  // mono both side back\r\nswayGamma         // head cushion twist\r\nswayHeave         // lap belt\r\nsurgeSway         // mono shoulder belt\r\nfrontHeave        // center front seat\r\nrearHeave         // center rear seat\r\n\r\n*/\r\nvar ts = [];\r\nts[0] = 0;\r\nts[1] = 0;\r\nts[2] = surge;\r\nts[3] = swayGamma;\r\nts[4] = reverseSurgeSway;\r\nts[5] = 0;\r\nts[6] = 0;\r\nts[7] = 0;\r\nts[8] = 0;\r\nts[9] = 0;\r\nts[10] = 0;\r\nts[11] = 0;\r\nts[12] = 0;\r\nts[13] = 0;\r\nts[14] = 0;\r\n\r\nif (5 == $prop('Settings.info')) {    // gnuplot format\r\n  st = format(surge,'0.00')+' '+format(sway,'0.00')+' '+format(heave,'0.00');\r\n  for (i = 0; i  < np; i++)\r\n    st += ' '+format(ts[i],'0.00');\r\n  return st+'\\n';\r\n}\r\n\r\nvar tc = 1 - ($prop('Settings.smooth') * 0.2);\r\nfor (i = 0; i < np; i++) {\r\n  var ft = root['ft'][i];                         // Low-pass IIR filter\r\n\r\n  ft += (ts[i] - ft) * tc;                        // filtered tension\r\n\r\n  if (i >= 90)                                    // debugging\r\n    return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString()\r\n\r\n// Skip change if it is smaller than e\r\n  var tension = Math.abs(ft - root['ft'][i]) > e;\r\n  root['ft'][i] = ft;\r\n  if (tension) {\r\n//  Center forces by (offset)\r\n    ft += neut[i];\r\n    if (0 > ft) ft = 0;                                         // below min\r\n    else if (ft > 126) ft = 126;                                // Arduino data limit\r\n    st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb\r\n    st += String.fromCharCode(0x3F & ft);                       // 6 lsb\r\n  }\r\n}\r\n\r\n//return st.length\r\nreturn st;\r\nif (990 < st.length) {\r\n  var s = ' 0x'+(st.charCodeAt(0)).toString(16);\r\n  for(i=1;i<st.length;i++)\r\n    s+=',0x'+(st.charCodeAt(i)).toString(16);\r\n  return s;\r\n}"
       },
       "IsEnabled": true,
       "MaximumFrequency": 0
@@ -35,7 +35,7 @@
   ],
   "OnConnectMessage": {
     "Interpreter": 1,
-    "Expression": "var reset = [0x7F];\t// reset Arduino; initialize min[], tmax[]\r\nreset[1] = 0x5E; reset[2] = np = $prop('Settings.np');\t// number of supported servos\r\nreset[3] = 0x5F; reset[4] = $prop('Settings.info');\t// 3 == HEX trace\r\nvar l = reset.length;\r\nreset[l] = 0x5F; reset[l+1] = 5; reset[l+2] = np;\t// min LUT header\r\nl = reset.length;\r\nvar min = [0];\r\nfor (var i = 0; i < np; i++) {\r\n    min[i] = $prop('Settings.min'+i) * 1.8\r\n    reset[l+i] = Math.round(126 >= min[i] ? min[i] : 126);\t\t\t\t// set minima\r\n}\r\nl = reset.length\r\nreset[l] = 0x5F; reset[l+1] = 6; reset[l+2] = np;\t// max LUT header\r\nl = reset.length; \r\nfor (var i = 0; i < np; i++) {\r\n    var tmax = .01 * $prop('Settings.max'+i) * (180 - min[i]);\r\n    reset[l+i] = Math.round(126 >= tmax ? tmax : 126);\t\t\t// set maxima\r\n}\r\n//return reset.toString();\r\nreturn String.fromCharCode.apply(null,reset);\r\n/*\r\nvar s = reset.charCodeAt(0);\r\nfor(i=1;i<np;i++)\r\n  s+=','+reset.charCodeAt(i)\r\nreturn s;\r\n*/"
+    "Expression": "var reset = [0x7F];\t// reset Arduino; initialize min[], tmax[]\r\nreset[1] = 0x5E; reset[2] = np = $prop('Settings.np');\t// number of supported servos\r\nvar info = $prop('Settings.info');\r\nif (3 < info) {\r\n  reset[3] = 0x5F; reset[4] = 4;\t// 3 == ASCII\r\n  return String.fromCharCode.apply(null,reset);\r\n}\r\nelse reset[4] = info;               // 0 to 3\r\nvar l = reset.length;\r\nreset[l] = 0x5F; reset[l+1] = 5; reset[l+2] = np;\t// min LUT header\r\nl = reset.length;\r\nvar min = [0];\r\nfor (var i = 0; i < np; i++) {\r\n    min[i] = $prop('Settings.min'+i) * 1.8\r\n    reset[l+i] = Math.round(126 >= min[i] ? min[i] : 126);\t\t\t\t// set minima\r\n}\r\nl = reset.length\r\nreset[l] = 0x5F; reset[l+1] = 6; reset[l+2] = np;\t// max LUT header\r\nl = reset.length; \r\nfor (var i = 0; i < np; i++) {\r\n    var tmax = .01 * $prop('Settings.max'+i) * (180 - min[i]);\r\n    reset[l+i] = Math.round(126 >= tmax ? tmax : 126);\t\t\t// set maxima\r\n}\r\n//return reset.toString();\r\nreturn String.fromCharCode.apply(null,reset);\r\n/*\r\nvar s = reset.charCodeAt(0);\r\nfor(i=1;i<np;i++)\r\n  s+=','+reset.charCodeAt(i)\r\nreturn s;\r\n*/"
   },
   "OnDisconnectMessage": {
     "Interpreter": 1,
@@ -45,7 +45,7 @@
   "RtsEnable": false,
   "EditorExpanded": true,
   "Name": "Custom Serial device",
-  "Description": "blek2char",
+  "Description": "new2char",
   "LastErrorDate": "2021-10-11T10:07:33.9839922-04:00",
   "LastErrorMessage": null,
   "IsFreezed": false,
@@ -103,7 +103,7 @@
         "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "gain_accel",
-        "CurrentValue": 30,
+        "CurrentValue": 90,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -120,7 +120,7 @@
         "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "gain_decel",
-        "CurrentValue": 40,
+        "CurrentValue": 50,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -137,7 +137,7 @@
         "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "gain_sway",
-        "CurrentValue": 40,
+        "CurrentValue": 80,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -154,7 +154,7 @@
         "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "gain_heave",
-        "CurrentValue": 20,
+        "CurrentValue": 100,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -219,10 +219,10 @@
         }
       },
       {
-        "Maximum": 4,
+        "Maximum": 5,
         "Minimum": 0,
         "PropertyName": "info",
-        "CurrentValue": 2,
+        "CurrentValue": 5,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -230,7 +230,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Info: 0=silent; 1=clipping; 2=tension; 3=hex; 4=ASCII",
+        "Label": "Info: 0=silent; 1=clipping; 2=tension; 3=hex; 4=ASCII;  5=gnuplot",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
         }
