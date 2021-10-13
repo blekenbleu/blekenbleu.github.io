@@ -52,7 +52,7 @@ if (wysiwyg) {                                      // changes enabled?
       else if (0 == pg)                                              // offset
         d = neut[i];
       else if (1 == pg)                                              // send it twice, making it unique to SimHUb
-      	st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
+        st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
       st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
     }
 //return st;
@@ -106,11 +106,6 @@ var heave = $prop('AccelerationHeave') * gain * $prop('Settings.gain_heave');
 
 // Combine forces
 //
-// convert speed and yaw changes to left and right tension values
-var leftSurgeSway = Math.sqrt(surge*surge + sway*sway);
-var rightSurgeSway = surge + surge - leftSurgeSway;
-//return leftSurgeSway + ' ' + rightSurgeSway;
-
 var surgeSway = surge * 0.7 + Math.abs(sway) * 0.3;
 var reverseSurgeSway = -surge * 0.7 + Math.abs(sway) * 0.3;
 var surgeHeave = surge * 0.7 + Math.abs(heave) * 0.3;
@@ -122,6 +117,39 @@ var swayGamma = 60 * Math.pow(Math.abs(sway * .01),(1 / 0.7));
 if (0 > sway)
   swayGamma = - swayGamma;
 //return swayGamma + ' ' + sway
+
+// convert speed and yaw changes to left and right tension values
+var leftSurgeSway;
+var rightSurgeSway;
+var su03 = surge * .0023;
+var sw03 = sway * .2;
+if (surge < 0) {  // tension reductions during acceleration
+  su03 *= $prop('Settings.gain_accel');
+  // acceleration decreases harness tensions
+  var s = sw03*sw03 - su03*su03;
+  leftSurgeSway = Math.sqrt(Math.abs(s));
+  if (s < 0)
+    leftSurgeSway = - leftSurgeSway;
+  if (0 > sw03) {
+    rightSurgeSway = leftSurgeSway;
+    leftSurgeSway = su03;
+  }
+  else rightSurgeSway = su03;
+}
+else {
+  su03 *= $prop('Settings.gain_decel');
+  leftSurgeSway = Math.sqrt(su03*su03 + sw03*sw03);
+  rightSurgeSway = su03 + su03 - leftSurgeSway;
+  if (1 > rightSurgeSway)
+    rightSurgeSway = 1;                // reduce bogus clip warnings
+  if (0 > sway) {
+    var s = leftSurgeSway;
+    leftSurgeSway = rightSurgeSway;
+    rightSurgeSway = s;
+  }
+}
+//return neut.toString();
+//return format(su03,'0.00') + ' ' + format(sw03, '0.00') + ' ' + format(neut[0]+leftSurgeSway,'0.00') + ' ' + format(neut[1]+rightSurgeSway,'0.00') + '\n';
 
 /** Assign forces to servos
 
@@ -139,8 +167,8 @@ rearHeave         // center rear seat
 
 */
 var ts = [];
-ts[0] = 0;
-ts[1] = 0;
+ts[0] = leftSurgeSway;
+ts[1] = rightSurgeSway;
 ts[2] = surge;
 ts[3] = swayGamma;
 ts[4] = reverseSurgeSway;
@@ -176,7 +204,7 @@ for (i = 0; i < np; i++) {
   root['ft'][i] = ft;
   if (tension) {
 //  Center forces by (offset)
-    ft += neut[i];
+    ft = Math.round(ft + neut[i]);
     if (0 > ft) ft = 0;                                         // below min
     else if (ft > 126) ft = 126;                                // Arduino data limit
     st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb
