@@ -184,7 +184,7 @@ ts[13] = 0;
 ts[14] = 0;
 
 if (5 == $prop('Settings.info')) {    // gnuplot format
-  st = format(su03,'0.00')+' '+format(sw03,'0.00')+' '+format(heave,'0.00');
+  st = format(surge,'0.00')+' '+format(sway,'0.00')+' '+format(heave,'0.00');
   for (i = 0; i  < np; i++)
     st += ' '+format(ts[i],'0.00');
   return st+'\n';
@@ -200,6 +200,7 @@ for (i = 0; i < np; i++) {
 
 // Skip change if it is smaller than e
   var send = 2 > i || Math.abs(ft - root['ft'][i]) > e;
+  
   root['ft'][i] = ft;
   if (send) {
     ft = Math.round(neut[i] + t5[3][i]*ft);                     // scale and offset
