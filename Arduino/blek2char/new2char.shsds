@@ -47,7 +47,7 @@
         "Maximum": 5,
         "Minimum": 1,
         "PropertyName": "page",
-        "CurrentValue": 5,
+        "CurrentValue": 2,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -55,7 +55,7 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "Page: 1=General; 2=Neutral; 3=Min; 4=Max; 5=Scale",
+        "Label": "Settings: 1=General; 2=Neutral; 3=Min; 4=Max; 5=Scale",
         "IsVisibleFormula": {
           "Expression": ""
         }
@@ -180,7 +180,7 @@
         "Maximum": 15,
         "Minimum": 2,
         "PropertyName": "np",
-        "CurrentValue": 5,
+        "CurrentValue": 2,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -188,7 +188,7 @@
           "Expression": ""
         },
         "IsVisible": false,
-        "Label": "Active PWM",
+        "Label": "Active PWMs",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
         }
@@ -239,7 +239,7 @@
         "IsVisible": true,
         "Label": "Test/update PWMs (WYSIWYG)",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]>1&&![Settings.test_one]"
+          "Expression": "[Settings.page]>1"
         }
       },
       {
@@ -250,10 +250,10 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
-        "Label": "PWM Device: Neutral Offset % of Max (zero g-forces)",
+        "IsVisible": true,
+        "Label": "PWM Devices: Neutral Offset % of Max (zero g-forces)",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==2"
+          "Expression": "[Settings.page]==2 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -267,7 +267,7 @@
         "IsVisible": false,
         "Label": "Min + Max < 100%;  Neutral is % of Max",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==2"
+          "Expression": "[Settings.page]==2 && 2 < [Settings.np]"
         }
       },
       {
@@ -279,12 +279,12 @@
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
-          "Expression": ""
+          "Expression": "[Settings.page]==2"
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 0: Neutral",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==2"
+          "Expression": "[Settings.page]==2 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -296,12 +296,12 @@
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
-          "Expression": ""
+          "Expression": "[Settings.page]==2"
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 1: Neutral",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==2"
+          "Expression": "[Settings.page]==2 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -529,31 +529,31 @@
         "Settings": [],
         "Name": null,
         "TypeName": "GroupEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
-          "Expression": ""
-        },
-        "IsVisible": false,
-        "Label": "PWM Device: Min Offset: % of 180",
-        "IsVisibleFormula": {
           "Expression": "[Settings.page]==3"
+        },
+        "IsVisible": true,
+        "Label": "PWM Devices: Min Position: % of 180",
+        "IsVisibleFormula": {
+          "Expression": "[Settings.page]==3 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
         "Maximum": 70,
         "Minimum": 0,
         "PropertyName": "min0",
-        "CurrentValue": 31,
+        "CurrentValue": 32,
         "Name": null,
         "TypeName": "SliderEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
-          "Expression": ""
+          "Expression": "[Settings.page]==3"
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 0: Min",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==3"
+          "Expression": "[Settings.page]==3 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -563,14 +563,14 @@
         "CurrentValue": 32,
         "Name": null,
         "TypeName": "SliderEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
-          "Expression": ""
+          "Expression": "[Settings.page]==3"
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 1: Min",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==3"
+          "Expression": "[Settings.page]==3 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -802,10 +802,10 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
-        "Label": "PWM Device: Max Range: % of 180 * (100% - Min)",
+        "IsVisible": true,
+        "Label": "PWM Devices: Max Range: % of 180 * (100% - Min)",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==4"
+          "Expression": "[Settings.page]==4 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -815,14 +815,14 @@
         "CurrentValue": 100,
         "Name": null,
         "TypeName": "SliderEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
-          "Expression": ""
+          "Expression": "[Settings.page]==4"
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 0: Max",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==4"
+          "Expression": "[Settings.page]==4 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -832,14 +832,14 @@
         "CurrentValue": 99,
         "Name": null,
         "TypeName": "SliderEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
-          "Expression": ""
+          "Expression": "[Settings.page]==4"
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "PWM 1: Max",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==4"
+          "Expression": "[Settings.page]==4 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -1072,9 +1072,9 @@
           "Expression": ""
         },
         "IsVisible": true,
-        "Label": "PWM rescale before adding offset:  [50 = unity gain]",
+        "Label": "PWM devices:  rescale before adding Neutral offsets:  [50 = unity gain]",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==5"
+          "Expression": "[Settings.page]==5 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -1084,14 +1084,14 @@
         "CurrentValue": 20,
         "Name": null,
         "TypeName": "SliderEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
-          "Expression": ""
+          "Expression": "[Settings.page]==5"
         },
         "IsVisible": true,
         "Label": "PWM 0: Scale",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==5"
+          "Expression": "[Settings.page]==5 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -1101,14 +1101,14 @@
         "CurrentValue": 20,
         "Name": null,
         "TypeName": "SliderEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
-          "Expression": ""
+          "Expression": "[Settings.page]==5"
         },
         "IsVisible": true,
         "Label": "PWM 1: Scale",
         "IsVisibleFormula": {
-          "Expression": "[Settings.page]==5"
+          "Expression": "[Settings.page]==5 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
@@ -1122,7 +1122,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 2: Scale",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==5&&[Settings.np]>2"
@@ -1139,7 +1139,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 3: Scale",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==5&&[Settings.np]>3"
@@ -1156,7 +1156,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 4: Scale",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==5&&[Settings.np]>4"

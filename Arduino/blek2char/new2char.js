@@ -123,7 +123,7 @@ var leftSurgeSway;
 var rightSurgeSway;
 var su03 = surge * .0023;
 var sw03 = sway * .2;
-if (surge < 0) {  // tension reductions during acceleration
+if (su03 < 0) {  // tension reductions during acceleration
   su03 *= $prop('Settings.gain_accel');
   // acceleration decreases harness tensions
   var s = sw03*sw03 - su03*su03;
@@ -142,7 +142,7 @@ else {
   rightSurgeSway = su03 + su03 - leftSurgeSway;
   if (1 > rightSurgeSway)
     rightSurgeSway = 1;                // reduce bogus clip warnings
-  if (0 > sway) {
+  if (0 > sw03) {
     var s = leftSurgeSway;
     leftSurgeSway = rightSurgeSway;
     rightSurgeSway = s;
@@ -184,7 +184,7 @@ ts[13] = 0;
 ts[14] = 0;
 
 if (5 == $prop('Settings.info')) {    // gnuplot format
-  st = format(surge,'0.00')+' '+format(sway,'0.00')+' '+format(heave,'0.00');
+  st = format(su03,'0.00')+' '+format(sw03,'0.00')+' '+format(heave,'0.00');
   for (i = 0; i  < np; i++)
     st += ' '+format(ts[i],'0.00');
   return st+'\n';
