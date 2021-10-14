@@ -12,7 +12,7 @@ function t5load() {
     t5[0][i] = $prop('Settings.neu'+i);        // pg = 2
     t5[1][i] = $prop('Settings.min'+i);        // pg = 3
     t5[2][i] = $prop('Settings.max'+i);        // pg = 4
-    t5[3][i] = $prop('Settings.sca'+i);        // pg = 5
+    t5[3][i] = $prop('Settings.sca'+i) * .02;  // pg = 5:  50 == unity gain
   }
 }
 
@@ -196,15 +196,13 @@ for (i = 0; i < np; i++) {
 
   ft += (ts[i] - ft) * tc;                        // filtered tension
 
-  if (i >= 90)                                    // debugging
-    return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString()
+//return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString();
 
 // Skip change if it is smaller than e
-  var tension = Math.abs(ft - root['ft'][i]) > e;
+  var send = 2 > i || Math.abs(ft - root['ft'][i]) > e;
   root['ft'][i] = ft;
-  if (tension) {
-//  Center forces by (offset)
-    ft = Math.round(ft + neut[i]);
+  if (send) {
+    ft = Math.round(neut[i] + t5[3][i]*ft);                     // scale and offset
     if (0 > ft) ft = 0;                                         // below min
     else if (ft > 126) ft = 126;                                // Arduino data limit
     st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb
