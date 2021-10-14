@@ -17,7 +17,7 @@
  ;                  ________T4________  ______T1______  ________T3________  ________T2________
  ;                  CH4  CH3  CH2  CH1  CH3   CH2  CH1  CH4  CH3  CH2  CH1  CH4  CH3  CH2  CH1 */
 const byte pin[] = {PB9, PB8, PB7, PB6, PA10, PA9, PA8, PB1, PB0, PA7, PA6, PA3, PA2, PA1, PA15};
-const char *msg = "Black Pill 2char PWM: connected\n";
+const char *msg = "Black Pill 2char PWM: connected.  ";
 
 #else
 
@@ -25,7 +25,7 @@ const char *msg = "Black Pill 2char PWM: connected\n";
  ;                  ________T4________  ______T1______  ________T3________  ________T2________
  ;                  CH4  CH3  CH2  CH1  CH3   CH2  CH1  CH4  CH3  CH2  CH1  CH4  CH3  CH2  CH1 */
 const byte pin[] = {PB9, PB8, PB7, PB6, PA10, PA9, PA8, PB1, PB0, PA7, PA6, PA3, PA2, PA1};//PA15};
-const char *msg = "blek2char: connected\n";
+const char *msg = "blek2char Blue Pill: connected.  ";
 
 #endif		// BLACKPILL
 
@@ -135,7 +135,8 @@ void loop() {
 
       if (LUT) {                                       // LUT load initiating?
 	if (active_PWMs != received) {
-	  Serial.write("\nWARNING: LUT length "); Serial.print(received); Serial.write(" != active PWM count "); Serial.println(active_PWMs);
+	  Serial.write("\nWARNING: LUT length "); Serial.print(received);
+          Serial.write(" != active PWM count "); Serial.println(active_PWMs);
 	}
 	if (!received) {
 	  LUT = NULL;
@@ -201,7 +202,7 @@ void loop() {
 	  }
 	  active_PWMs = received;
 	  Serial.write("active_PWMs: ");
-	  Serial.println(received);
+	  Serial.print(received); 
 	}
 
 	else if (active_PWMs > addr) {
