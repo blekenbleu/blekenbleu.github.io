@@ -12,12 +12,11 @@ function t5load() {
     t5[0][i] = $prop('Settings.neu'+i);        // pg = 2
     t5[1][i] = $prop('Settings.min'+i);        // pg = 3
     t5[2][i] = $prop('Settings.max'+i);        // pg = 4
-    t5[3][i] = $prop('Settings.sca'+i);        // pg = 5
+    t5[3][i] = $prop('Settings.sca'+i) * .02;  // pg = 5:  50 == unity gain
   }
 }
 
 /* other (unused here) settings:
-   $prop('Settings.info')
    $prop('Settings.nf')
  */
 if (null == root['t5']) {              // device connect message initialized 2 Arduino LUTs
@@ -53,7 +52,7 @@ if (wysiwyg) {                                      // changes enabled?
       else if (0 == pg)                                              // offset
         d = neut[i];
       else if (1 == pg)                                              // send it twice, making it unique to SimHUb
-      	st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
+        st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
       st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
     }
 //return st;
@@ -107,11 +106,6 @@ var heave = $prop('AccelerationHeave') * gain * $prop('Settings.gain_heave');
 
 // Combine forces
 //
-// convert speed and yaw changes to left and right tension values
-var leftSurgeSway = Math.sqrt(surge*surge + sway*sway);
-var rightSurgeSway = surge + surge - leftSurgeSway;
-//return leftSurgeSway + ' ' + rightSurgeSway;
-
 var surgeSway = surge * 0.7 + Math.abs(sway) * 0.3;
 var reverseSurgeSway = -surge * 0.7 + Math.abs(sway) * 0.3;
 var surgeHeave = surge * 0.7 + Math.abs(heave) * 0.3;
@@ -121,8 +115,41 @@ var rearHeave = heave * 0.7 + Math.max(-surge * 0.3, 0);
 // 100*((x/100)^(1/gamma))
 var swayGamma = 10 * Math.pow(Math.abs(sway * .01),(1 / 0.7));
 if (0 > sway)
-  swayGamma *= -1;
+  swayGamma = - swayGamma;
 //return swayGamma + ' ' + sway
+
+// convert speed and yaw changes to left and right tension values
+var leftSurgeSway;
+var rightSurgeSway;
+var su03 = surge * .0023;
+var sw03 = sway * .2;
+if (su03 < 0) {  // tension reductions during acceleration
+  su03 *= $prop('Settings.gain_accel');
+  // acceleration decreases harness tensions
+  var s = sw03*sw03 - su03*su03;
+  leftSurgeSway = Math.sqrt(Math.abs(s));
+  if (s < 0)
+    leftSurgeSway = - leftSurgeSway;
+  if (0 > sw03) {
+    rightSurgeSway = leftSurgeSway;
+    leftSurgeSway = su03;
+  }
+  else rightSurgeSway = su03;
+}
+else {
+  su03 *= $prop('Settings.gain_decel');
+  leftSurgeSway = Math.sqrt(su03*su03 + sw03*sw03);
+  rightSurgeSway = su03 + su03 - leftSurgeSway;
+  if (1 > rightSurgeSway)
+    rightSurgeSway = 1;                // reduce bogus clip warnings
+  if (0 > sw03) {
+    var s = leftSurgeSway;
+    leftSurgeSway = rightSurgeSway;
+    rightSurgeSway = s;
+  }
+}
+//return neut.toString();
+//return format(su03,'0.00') + ' ' + format(sw03, '0.00') + ' ' + format(neut[0]+leftSurgeSway,'0.00') + ' ' + format(neut[1]+rightSurgeSway,'0.00') + '\n';
 
 /** Assign forces to servos
 
@@ -140,8 +167,8 @@ rearHeave         // center rear seat
 
 */
 var ts = [];
-ts[0] = 0;
-ts[1] = 0;
+ts[0] = leftSurgeSway;
+ts[1] = rightSurgeSway;
 ts[2] = surge;
 ts[3] = swayGamma;
 ts[4] = reverseSurgeSway;
@@ -156,7 +183,12 @@ ts[12] = 0;
 ts[13] = 0;
 ts[14] = 0;
 
-//return ts.toString()
+if (5 == $prop('Settings.info')) {    // gnuplot format
+  st = format(surge,'0.00')+' '+format(sway,'0.00')+' '+format(heave,'0.00');
+  for (i = 0; i  < np; i++)
+    st += ' '+format(ts[i],'0.00');
+  return st+'\n';
+}
 
 var tc = 1 - ($prop('Settings.smooth') * 0.2);
 for (i = 0; i < np; i++) {
@@ -164,15 +196,14 @@ for (i = 0; i < np; i++) {
 
   ft += (ts[i] - ft) * tc;                        // filtered tension
 
-  if (i >= 90)                                    // debugging
-    return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString()
+//return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString();
 
 // Skip change if it is smaller than e
-  var tension = Math.abs(ft - root['ft'][i]) > e;
+  var send = 2 > i || Math.abs(ft - root['ft'][i]) > e;
+  
   root['ft'][i] = ft;
-  if (tension) {
-//  Center forces by (offset)
-    ft += neut[i];
+  if (send) {
+    ft = Math.round(neut[i] + t5[3][i]*ft);                     // scale and offset
     if (0 > ft) ft = 0;                                         // below min
     else if (ft > 126) ft = 126;                                // Arduino data limit
     st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb
