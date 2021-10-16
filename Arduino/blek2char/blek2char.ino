@@ -208,9 +208,13 @@ void loop() {
 	else if (active_PWMs > addr) {
 	  if (tmax[addr] <= received || 1 > received) {  // clipping
 	    digitalWrite(LED, LOW);  // illuminate LED
-	    if (3 & info_level) {
-	      char clip = (1 > received) ? '#' : '*';
-	      Serial.write(clip);
+            if (1 == info_level) {
+              Serial.print(addr);
+              Serial.write((1 > received) ? "# " : "* ");
+	      col += 3;
+            }
+	    else if (2 & info_level) {
+	      Serial.write((1 > received) ? '#' : '*');
 	      col++;
 	      if(2 == info_level) {
 		Serial.write(" Channel "); Serial.print(addr);
