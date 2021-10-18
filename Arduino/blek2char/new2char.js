@@ -91,11 +91,16 @@ var gain = $prop('Settings.gain_global') * 0.02;
 
 // longitudinal acceleration (positive is back)
 var surge = $prop('AccelerationSurge') * gain;
+var su03 = .01 * t5[0][0] * surge;                // accel gain based on neut
 
-if (surge < 0)
+if (surge < 0) {
+  su03 *= .23;
   surge *= $prop('Settings.gain_accel');
-else
+}
+else {
+  su03= (surge - su03) * .23;
   surge *= $prop('Settings.gain_decel');
+}
 //return surge
 
 // lateral acceleration (positive is right) (feels like yaw)
@@ -121,10 +126,8 @@ if (0 > sway)
 // convert speed and yaw changes to left and right tension values
 var leftSurgeSway;
 var rightSurgeSway;
-var su03 = surge * .0023;
 var sw03 = sway * .2;
 if (su03 < 0) {  // tension reductions during acceleration
-  su03 *= $prop('Settings.gain_accel');
   // acceleration decreases harness tensions
   var s = sw03*sw03 - su03*su03;
   leftSurgeSway = Math.sqrt(Math.abs(s));
@@ -137,7 +140,6 @@ if (su03 < 0) {  // tension reductions during acceleration
   else rightSurgeSway = su03;
 }
 else {
-  su03 *= $prop('Settings.gain_decel');
   leftSurgeSway = Math.sqrt(su03*su03 + sw03*sw03);
   rightSurgeSway = su03 + su03 - leftSurgeSway;
   if (1 > rightSurgeSway)
