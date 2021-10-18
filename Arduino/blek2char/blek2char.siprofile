@@ -123,20 +123,20 @@
             "FilterType": "GammaFilter"
           },
           "FrontLeftFormula": {
-            "Expression": "10*[AccelerationHeave]"
+            "Expression": "10*isnull([AccelerationHeave],[GameRawData.YD]*100)"
           },
           "FrontRightFormula": {
             "Expression": ""
           },
           "RearLeftFormula": {
-            "Expression": "-10*[AccelerationHeave]"
+            "Expression": "-10*isnull([AccelerationHeave],[GameRawData.YD]*100)"
           },
           "RearRightFormula": {
             "Expression": ""
           },
           "ContainerId": "3f871688-d0a9-4561-b05b-691006f698eb",
           "ContainerType": "CustomEffectContainer",
-          "Description": "Provides ability to create your own effect based on game data",
+          "Description": "Heave or whatever is available",
           "AggregationMode": "Front/Rear",
           "Gain": 0.0,
           "IsEnabled": true,
