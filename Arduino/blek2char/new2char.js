@@ -3,6 +3,9 @@ var np = $prop('Settings.np');       // PWM count
 var pg = $prop('Settings.page') - 2; // zero - based
 var wysiwyg = $prop('Settings.wysiwyg') && 0 <= pg;
 var t5=[[0],[0],[0],[0],[0]];        // slider settings
+var ss = [1 - $prop('Settings.smooth0') * .2,
+          1 - $prop('Settings.smooth1') * .2,
+          1 - $prop('Settings.smooth2') * .2];
 var neut = [];                       // run-time parms
 var tmax = [];
 var i;
@@ -14,6 +17,10 @@ function t5load() {
     t5[2][i] = $prop('Settings.max'+i);        // pg = 4
     t5[3][i] = $prop('Settings.sca'+i) * .02;  // pg = 5:  50 == unity gain
   }
+  t5[4][0] = t5[4][1] = ss[0];                 // assign smoothing per channel
+  t5[4][2] = t5[4][3] = ss[1];
+  for ( i = 4; i < np; i++)
+    t5[4][i] = ss[2];
 }
 
 /* other (unused here) settings:
@@ -87,7 +94,7 @@ if (wysiwyg) {                                      // changes enabled?
 }
 
 // G-forces from SimHub properties ---------------
-var gain = $prop('Settings.gain_global') * 0.02;
+var gain = $prop('Settings.gain_global') * 0.08;
 
 
 // longitudinal acceleration (positive is back)
@@ -199,11 +206,10 @@ if (5 == $prop('Settings.info')) {    // gnuplot format
   return st+'\n';
 }
 
-var tc = 1 - ($prop('Settings.smooth') * 0.2);
 for (i = 0; i < np; i++) {
   var ft = root['ft'][i];                         // Low-pass IIR filter
 
-  ft += (ts[i] - ft) * tc;                        // filtered tension
+  ft += (ts[i] - ft) * t5[4][i];                        // filtered tension
 
 //return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString();
 
