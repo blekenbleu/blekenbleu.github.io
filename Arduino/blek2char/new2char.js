@@ -27,6 +27,7 @@ if (null == root['t5']) {              // device connect message initialized 2 A
   root['ft'] = ft;                     // IIR
   t5load();
   root['t5'] = t5;
+  root['swft'] = 0;                    // sway IIR
 }
 else if (wysiwyg)
   t5load();
@@ -86,94 +87,100 @@ if (wysiwyg) {                                      // changes enabled?
 }
 
 // G-forces from SimHub properties ---------------
-var e = 0.15;  // epsilon approximation to reduce imperceptible changes
 var gain = $prop('Settings.gain_global') * 0.02;
 
-// longitudinal acceleration (positive is back)
-var surge = $prop('AccelerationSurge') * gain;
-var su03 = .01 * t5[0][0] * surge;                // accel gain based on neut
 
-if (surge < 0) {
-  su03 *= .23;
-  surge *= $prop('Settings.gain_accel');
-}
-else {
-  su03= (surge - su03) * .23;
-  surge *= $prop('Settings.gain_decel');
-}
+// longitudinal acceleration (positive is back)
+var surge = $prop('ShakeITBSV3Plugin.Export.blek2decel.Front') * gain;
+if (0 == surge)
+  surge = - $prop('ShakeITBSV3Plugin.Export.blek2accel.Rear');
 //return surge
 
+
 // lateral acceleration (positive is right) (feels like yaw)
-var sway  = $prop('AccelerationSway') * gain * $prop('Settings.gain_sway');
+var sway  = $prop('ShakeITBSV3Plugin.Export.blek2sway.Right') * gain
+var swft = root['swft'];     // Low-pass IIR filter
+if (0 == sway)
+  sway = - $prop('ShakeITBSV3Plugin.Export.blek2sway.Left') * gain;  
+swft += (sway - swft) * .7;  // filtered sway
+root['swft'] = swft;
+//return sway+' '+swft
+
 
 // vertical acceleration (positive is up)
-var heave = $prop('AccelerationHeave') * gain * $prop('Settings.gain_heave');
+var heave = $prop('ShakeITBSV3Plugin.Export.blek2heave.Front') * gain;
+if (0 == heave)
+  heave = - $prop('ShakeITBSV3Plugin.Export.blek2heave.Rear') * gain;
 
-// Combine forces
+
+// Combined forces
 //
-var surgeSway = surge * 0.7 + Math.abs(sway) * 0.3;
-var reverseSurgeSway = -surge * 0.7 + Math.abs(sway) * 0.3;
-var surgeHeave = surge * 0.7 + Math.abs(heave) * 0.3;
-var swayHeave = heave * 0.7 + Math.abs(sway) * 0.3;
-var frontHeave = heave * 0.7 + Math.max(surge * 0.3, 0);
-var rearHeave = heave * 0.7 + Math.max(-surge * 0.3, 0);
-// 100*((x/100)^(1/gamma))
-var swayGamma = 60 * Math.pow(Math.abs(sway * .01),(1 / 0.7));
-if (0 > sway)
-  swayGamma = - swayGamma;
-//return swayGamma + ' ' + sway
+var heaveSurge =  heave * 0.7 - surge * 0.3;
+var surgeSway  =  surge * 0.7 + Math.abs(sway) * 0.3;
+var rSurgeSway = -surge * 1.2 + Math.abs(sway) * 0.5;
+var surgeHeave =  surge * 0.7 + Math.abs(heave) * 0.3;
+var swayHeave  =  sway * 0.7 + heave * 0.3;
+var rSwayHeave = -sway * 0.7 + heave * 0.3;
+var swayRSurge =  sway * 0.7 - surge * 0.3;
+var rSwayRSurge = -sway * 0.7 - surge * 0.3;
+
 
 // convert speed and yaw changes to left and right tension values
 var leftSurgeSway;
 var rightSurgeSway;
-var sw03 = sway * .2;
-if (su03 < 0) {  // tension reductions during acceleration
+if (surge < 0) {  // tension reductions during acceleration
   // acceleration decreases harness tensions
-  var s = sw03*sw03 - su03*su03;
+  var s = sway*sway - surge*surge;
   leftSurgeSway = Math.sqrt(Math.abs(s));
   if (s < 0)
     leftSurgeSway = - leftSurgeSway;
-  if (0 > sw03) {
+  if (0 > sway) {
     rightSurgeSway = leftSurgeSway;
-    leftSurgeSway = su03;
+    leftSurgeSway = surge;
   }
-  else rightSurgeSway = su03;
+  else rightSurgeSway = surge;
 }
 else {
-  leftSurgeSway = Math.sqrt(su03*su03 + sw03*sw03);
-  rightSurgeSway = su03 + su03 - leftSurgeSway;
+  leftSurgeSway = Math.sqrt(surge*surge + sway*sway);
+  rightSurgeSway = surge + surge - leftSurgeSway;
   if (1 > rightSurgeSway)
     rightSurgeSway = 1;                // reduce bogus clip warnings
-  if (0 > sw03) {
+  if (0 > sway) {
     var s = leftSurgeSway;
     leftSurgeSway = rightSurgeSway;
     rightSurgeSway = s;
   }
 }
 //return neut.toString();
-//return format(su03,'0.00') + ' ' + format(sw03, '0.00') + ' ' + format(neut[0]+leftSurgeSway,'0.00') + ' ' + format(neut[1]+rightSurgeSway,'0.00') + '\n';
+//return format(surge,'0.00') + ' ' + format(sway, '0.00') + ' ' + format(neut[0]+leftSurgeSway,'0.00') + ' ' + format(neut[1]+rightSurgeSway,'0.00') + '\n';
+//return leftSurgeSway + '  ' + rightSurgeSway + '  ' + surge
+
 
 /** Assign forces to servos
 
 leftSurgeSway     // left shoulder belt
 rightSurgeSway    // right shoulder belt
-surge             // upper back; lower back
-sway              // left side back; left thigh
--sway             // right side back; right thigh
-reverseSurgeSway  // mono both side back
-swayGamma         // head cushion twist
-swayHeave         // lap belt
 surgeSway         // mono shoulder belt
-frontHeave        // center front seat
-rearHeave         // center rear seat
+-surge            // middle upper back
+surge             // both side lower back
+rSurgeSway        // both side upper back
+rightSurgeSway    // left side lower back (swapped compared to belts)
+leftSurgeSway     // right side lower back ("")
+swayRSurge        // left side upper back
+rSwayRSurge       // right side upper back
+swayHeave         // left seat
+rSwayHeave        // right seat
+heaveSurge        // center/back seat
+-surge*0.4        // lap belt
+sway*0.1          // head cushion sway
 
 */
 var ts = [];
 ts[0] = leftSurgeSway;
 ts[1] = rightSurgeSway;
 ts[2] = surge;
-ts[3] = swayGamma;
-ts[4] = reverseSurgeSway;
+ts[3] = rSurgeSway;
+ts[4] = 0;//sway;
 ts[5] = 0;
 ts[6] = 0;
 ts[7] = 0;
@@ -200,17 +207,14 @@ for (i = 0; i < np; i++) {
 
 //return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString();
 
-// Skip change if it is smaller than e
-  var send = 2 > i || Math.abs(ft - root['ft'][i]) > e;
   
   root['ft'][i] = ft;
-  if (send) {
-    ft = Math.round(neut[i] + t5[3][i]*ft);                     // scale and offset
-    if (0 > ft) ft = 0;                                         // below min
-    else if (ft > 126) ft = 126;                                // Arduino data limit
-    st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb
-    st += String.fromCharCode(0x3F & ft);                       // 6 lsb
-  }
+
+  ft = Math.round(neut[i] + t5[3][i]*ft);                     // scale and offset
+  if (0 > ft) ft = 0;                                         // below min
+  else if (ft > 126) ft = 126;                                // Arduino data limit
+  st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb
+  st += String.fromCharCode(0x3F & ft);                       // 6 lsb
 }
 
 //return st.length

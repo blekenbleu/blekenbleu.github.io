@@ -7,7 +7,7 @@
       "EffectsContainers": [
         {
           "Filter": {
-            "GammaValue": 1.0,
+            "GammaValue": 1.5000000000000004,
             "FilterType": "SimpleGammaFilter"
           },
           "LowForce": 1,
@@ -43,7 +43,7 @@
         },
         {
           "Filter": {
-            "GammaValue": 1.0,
+            "GammaValue": 1.5000000000000004,
             "FilterType": "SimpleGammaFilter"
           },
           "LowForce": 1,
@@ -79,7 +79,7 @@
         },
         {
           "Filter": {
-            "GammaValue": 1.0,
+            "GammaValue": 0.69999999999999973,
             "FilterType": "SimpleGammaFilter"
           },
           "LowForce": 1,
@@ -116,7 +116,7 @@
         {
           "AutocalibrationMax": 95.0,
           "Filter": {
-            "GammaValue": 1.0,
+            "GammaValue": 0.69999999999999973,
             "InputGain": 100.0,
             "MinimumForce": 0,
             "Threshold": 0,
