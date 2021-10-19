@@ -27,6 +27,7 @@ if (null == root['t5']) {              // device connect message initialized 2 A
   root['ft'] = ft;                     // IIR
   t5load();
   root['t5'] = t5;
+  root['swft'] = 0;                    // sway IIR
 }
 else if (wysiwyg)
   t5load();
@@ -86,45 +87,61 @@ if (wysiwyg) {                                      // changes enabled?
 }
 
 // G-forces from SimHub properties ---------------
-var e = 0.15;  // epsilon approximation to reduce imperceptible changes
+var e = 0.02;  // epsilon approximation to reduce imperceptible changes
 var gain = $prop('Settings.gain_global') * 0.02;
+
 
 // longitudinal acceleration (positive is back)
 var surge = $prop('AccelerationSurge') * gain;
+var su03 = .01 * t5[0][0] * surge;  // accel gain based on neut
+var suGamma;                        // 100*((x/100)^(1/gamma))
 
-if (surge < 0)
+if (surge < 0) {
+  su03 *= .23;
   surge *= $prop('Settings.gain_accel');
-else
+  suGamma = -100 * Math.pow(Math.abs(surge * .01),(1 / 1.5));
+} else {
+  su03 = (surge - su03) * .23;
   surge *= $prop('Settings.gain_decel');
-//return surge
+  suGamma = 100 * Math.pow(Math.abs(surge * .01),(1 / 1.5));
+}
+//return surge + '  ' + su03 + '  ' + suGamma
+
 
 // lateral acceleration (positive is right) (feels like yaw)
 var sway  = $prop('AccelerationSway') * gain * $prop('Settings.gain_sway');
+var swft = root['swft'];     // Low-pass IIR filter
+swft += (sway - swft) * .7;  // filtered sway
+root['swft'] = swft;
+
+var sw03 = swft * .2;        // sway gain for l|r surge sway
+var swGamma = 100 * Math.pow(Math.abs(sway * .01),(1 / 0.7)); // 100*((x/100)^(1/gamma))
+if (0 > sway)
+  swGamma = - swGamma;
+//return swGamma + ' ' + sway
+
 
 // vertical acceleration (positive is up)
 var heave = $prop('AccelerationHeave') * gain * $prop('Settings.gain_heave');
+var hvGamma = 100 * Math.pow(Math.abs(heave * .01),(1 / 0.7)); // 100*((x/100)^(1/gamma))
 
-// Combine forces
+
+// Combined forces
 //
-var surgeSway = surge * 0.7 + Math.abs(sway) * 0.3;
-var reverseSurgeSway = -surge * 0.7 + Math.abs(sway) * 0.3;
-var surgeHeave = surge * 0.7 + Math.abs(heave) * 0.3;
-var swayHeave = heave * 0.7 + Math.abs(sway) * 0.3;
-var frontHeave = heave * 0.7 + Math.max(surge * 0.3, 0);
-var rearHeave = heave * 0.7 + Math.max(-surge * 0.3, 0);
-// 100*((x/100)^(1/gamma))
-var swayGamma = 10 * Math.pow(Math.abs(sway * .01),(1 / 0.7));
-if (0 > sway)
-  swayGamma = - swayGamma;
-//return swayGamma + ' ' + sway
+var heaveSurge =  hvGamma * 0.7 - suGamma * 0.3;
+var surgeSway  =  suGamma * 0.7 + Math.abs(swGamma) * 0.3;
+var rSurgeSway = -suGamma * 0.7 + Math.abs(swGamma) * 0.3;
+var surgeHeave =  suGamma * 0.7 + Math.abs(hvGamma) * 0.3;
+var swayHeave  =  swGamma * 0.7 + hvGamma * 0.3;
+var rSwayHeave = -swGamma * 0.7 + hvGamma * 0.3;
+var swayRSurge =  swGamma * 0.7 - suGamma * 0.3;
+var rSwayRSurge = -swGamma * 0.7 - suGamma * 0.3;
+
 
 // convert speed and yaw changes to left and right tension values
 var leftSurgeSway;
 var rightSurgeSway;
-var su03 = surge * .0023;
-var sw03 = sway * .2;
 if (su03 < 0) {  // tension reductions during acceleration
-  su03 *= $prop('Settings.gain_accel');
   // acceleration decreases harness tensions
   var s = sw03*sw03 - su03*su03;
   leftSurgeSway = Math.sqrt(Math.abs(s));
@@ -137,7 +154,6 @@ if (su03 < 0) {  // tension reductions during acceleration
   else rightSurgeSway = su03;
 }
 else {
-  su03 *= $prop('Settings.gain_decel');
   leftSurgeSway = Math.sqrt(su03*su03 + sw03*sw03);
   rightSurgeSway = su03 + su03 - leftSurgeSway;
   if (1 > rightSurgeSway)
@@ -150,28 +166,34 @@ else {
 }
 //return neut.toString();
 //return format(su03,'0.00') + ' ' + format(sw03, '0.00') + ' ' + format(neut[0]+leftSurgeSway,'0.00') + ' ' + format(neut[1]+rightSurgeSway,'0.00') + '\n';
+//return leftSurgeSway + '  ' + rightSurgeSway + '  ' + surge
+
 
 /** Assign forces to servos
 
 leftSurgeSway     // left shoulder belt
 rightSurgeSway    // right shoulder belt
-surge             // upper back; lower back
-sway              // left side back; left thigh
--sway             // right side back; right thigh
-reverseSurgeSway  // mono both side back
-swayGamma         // head cushion twist
-swayHeave         // lap belt
 surgeSway         // mono shoulder belt
-frontHeave        // center front seat
-rearHeave         // center rear seat
+-suGamma          // middle upper back
+suGamma           // both side lower back
+rSurgeSway        // both side upper back
+rightSurgeSway    // left side lower back (swapped compared to belts)
+leftSurgeSway     // right side lower back ("")
+swayRSurge        // left side upper back
+rSwayRSurge       // right side upper back
+swayHeave         // left seat
+rSwayHeave        // right seat
+heaveSurge        // center/back seat
+-suGamma*0.4      // lap belt
+swGamma*0.1       // head cushion sway
 
 */
 var ts = [];
 ts[0] = leftSurgeSway;
 ts[1] = rightSurgeSway;
-ts[2] = surge;
-ts[3] = swayGamma;
-ts[4] = reverseSurgeSway;
+ts[2] = suGamma;
+ts[3] = rSurgeSway;
+ts[4] = 0;//swGamma;
 ts[5] = 0;
 ts[6] = 0;
 ts[7] = 0;
@@ -199,7 +221,7 @@ for (i = 0; i < np; i++) {
 //return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString();
 
 // Skip change if it is smaller than e
-  var send = 2 > i || Math.abs(ft - root['ft'][i]) > e;
+  var send = /*2 > i ||*/ Math.abs(ft - root['ft'][i]) > e;
   
   root['ft'][i] = ft;
   if (send) {

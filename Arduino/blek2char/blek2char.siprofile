@@ -165,7 +165,7 @@
       "Filter": null,
       "ContainerId": "c06a86ea-08f0-4dea-b5b1-cba656df3711",
       "ContainerType": "GroupContainer",
-      "Description": "G forces",
+      "Description": "G forces for blek2char Arduino sketch and Custom Serial profile",
       "AggregationMode": null,
       "Gain": 100.0,
       "IsEnabled": true,
