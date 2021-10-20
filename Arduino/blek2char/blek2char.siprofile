@@ -160,14 +160,52 @@
             "DisableOutput": true,
             "OutputType": "ToneOutput"
           }
+        },
+        {
+          "Filter": {
+            "GammaValue": 1.0,
+            "FilterType": "SimpleGammaFilter"
+          },
+          "LowSpeed": 5,
+          "HighSpeed": 120,
+          "AutoMaxSpeed": true,
+          "MaxSpeedPercent": 90.0,
+          "OnlyInTurns": false,
+          "Curvature": 50,
+          "ContainerId": "c1b5be72-33c6-4618-bd54-6743717f4395",
+          "ContainerType": "LocalizedSpeedContainer",
+          "Description": "export SpeedCurv property for PWM custom serial fans",
+          "AggregationMode": null,
+          "Gain": 0.0,
+          "IsEnabled": true,
+          "Output": {
+            "UsePrehemptiveMode": false,
+            "Frequency": 55,
+            "UseHighFrequency": false,
+            "HighFrequency": 50,
+            "WhiteNoise": 10,
+            "UseWhiteNoise": false,
+            "EnableDurationModulation": false,
+            "DurationModulationValue": 34,
+            "FrequencyBasedOnPreFilter": false,
+            "Harmonics": 0,
+            "HoldMode": 1,
+            "DelayEnabled": false,
+            "AssignToChannelGroup": false,
+            "ChannelGroupName": "",
+            "PropertyName": "blek2SpeedCurv",
+            "ExportProperty": true,
+            "DisableOutput": true,
+            "OutputType": "ToneOutput"
+          }
         }
       ],
       "Filter": null,
       "ContainerId": "c06a86ea-08f0-4dea-b5b1-cba656df3711",
       "ContainerType": "GroupContainer",
-      "Description": "G forces for blek2char Arduino sketch and Custom Serial profile",
+      "Description": "G forces and SpeedCurv for blek2char Arduino sketch and Custom Serial profile",
       "AggregationMode": null,
-      "Gain": 100.0,
+      "Gain": 0.0,
       "IsEnabled": true,
       "Output": null
     }
@@ -177,7 +215,7 @@
   "GlobalGain": 50.0,
   "UseProfileGain": false,
   "Error": "",
-  "LastLoaded": "2021-10-18T07:03:44.2290775-04:00",
+  "LastLoaded": "2021-10-20T13:33:48.5731692-04:00",
   "Name": "blek2char",
   "ProfileId": "00000000-0000-0000-0000-000000000000",
   "GameCode": null
