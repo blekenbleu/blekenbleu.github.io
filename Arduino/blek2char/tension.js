@@ -3,6 +3,9 @@ var np = $prop('Settings.np');       // PWM count
 var pg = $prop('Settings.page') - 2; // zero - based
 var wysiwyg = $prop('Settings.wysiwyg') && 0 <= pg;
 var t5=[[0],[0],[0],[0],[0]];        // slider settings
+var ss = [1 - $prop('Settings.smooth0') * .2,
+          1 - $prop('Settings.smooth1') * .2,
+          1 - $prop('Settings.smooth2') * .2];
 var neut = [];                       // run-time parms
 var tmax = [];
 var i;
@@ -14,6 +17,10 @@ function t5load() {
     t5[2][i] = $prop('Settings.max'+i);        // pg = 4
     t5[3][i] = $prop('Settings.sca'+i) * .02;  // pg = 5:  50 == unity gain
   }
+  t5[4][0] = t5[4][1] = ss[0];                 // assign smoothing per channel
+  t5[4][2] = t5[4][3] = ss[1];
+  for ( i = 4; i < np; i++)
+    t5[4][i] = ss[2];
 }
 
 /* other (unused here) settings:
@@ -87,85 +94,72 @@ if (wysiwyg) {                                      // changes enabled?
 }
 
 // G-forces from SimHub properties ---------------
-var e = 0.02;  // epsilon approximation to reduce imperceptible changes
-var gain = $prop('Settings.gain_global') * 0.02;
+var gain = $prop('Settings.gain_global') * 0.08;
 
 
 // longitudinal acceleration (positive is back)
-var surge = $prop('AccelerationSurge') * gain;
-var su03 = .01 * t5[0][0] * surge;  // accel gain based on neut
-var suGamma;                        // 100*((x/100)^(1/gamma))
-
-if (surge < 0) {
-  su03 *= .23;
-  surge *= $prop('Settings.gain_accel');
-  suGamma = -100 * Math.pow(Math.abs(surge * .01),(1 / 1.5));
-} else {
-  su03 = (surge - su03) * .23;
-  surge *= $prop('Settings.gain_decel');
-  suGamma = 100 * Math.pow(Math.abs(surge * .01),(1 / 1.5));
-}
-//return surge + '  ' + su03 + '  ' + suGamma
+var surge = $prop('ShakeITBSV3Plugin.Export.blek2decel.Front') * gain;
+if (0 == surge)
+  surge = - $prop('ShakeITBSV3Plugin.Export.blek2accel.Rear');
+//return surge
 
 
 // lateral acceleration (positive is right) (feels like yaw)
-var sway  = $prop('AccelerationSway') * gain * $prop('Settings.gain_sway');
+var sway  = $prop('ShakeITBSV3Plugin.Export.blek2sway.Right') * gain
 var swft = root['swft'];     // Low-pass IIR filter
+if (0 == sway)
+  sway = - $prop('ShakeITBSV3Plugin.Export.blek2sway.Left') * gain;  
 swft += (sway - swft) * .7;  // filtered sway
 root['swft'] = swft;
-
-var sw03 = swft * .2;        // sway gain for l|r surge sway
-var swGamma = 100 * Math.pow(Math.abs(sway * .01),(1 / 0.7)); // 100*((x/100)^(1/gamma))
-if (0 > sway)
-  swGamma = - swGamma;
-//return swGamma + ' ' + sway
+//return sway+' '+swft
 
 
 // vertical acceleration (positive is up)
-var heave = $prop('AccelerationHeave') * gain * $prop('Settings.gain_heave');
-var hvGamma = 100 * Math.pow(Math.abs(heave * .01),(1 / 0.7)); // 100*((x/100)^(1/gamma))
+var heave = $prop('ShakeITBSV3Plugin.Export.blek2heave.Front') * gain;
+if (0 == heave)
+  heave = - $prop('ShakeITBSV3Plugin.Export.blek2heave.Rear') * gain;
 
 
 // Combined forces
 //
-var heaveSurge =  hvGamma * 0.7 - suGamma * 0.3;
-var surgeSway  =  suGamma * 0.7 + Math.abs(swGamma) * 0.3;
-var rSurgeSway = -suGamma * 0.7 + Math.abs(swGamma) * 0.3;
-var surgeHeave =  suGamma * 0.7 + Math.abs(hvGamma) * 0.3;
-var swayHeave  =  swGamma * 0.7 + hvGamma * 0.3;
-var rSwayHeave = -swGamma * 0.7 + hvGamma * 0.3;
-var swayRSurge =  swGamma * 0.7 - suGamma * 0.3;
-var rSwayRSurge = -swGamma * 0.7 - suGamma * 0.3;
+var heaveSurge =  heave * 0.7 - surge * 0.3;
+var surgeSway  =  surge * 0.7 + Math.abs(sway) * 0.3;
+var rSurgeSway = -surge * 1.2 + Math.abs(sway) * 0.5;
+var surgeHeave =  surge * 0.7 + Math.abs(heave) * 0.3;
+var swayHeave  =  sway * 0.7 + heave * 0.3;
+var rSwayHeave = -sway * 0.7 + heave * 0.3;
+var swayRSurge =  sway * 0.7 - surge * 0.3;
+var rSwayRSurge = -sway * 0.7 - surge * 0.3;
 
 
 // convert speed and yaw changes to left and right tension values
 var leftSurgeSway;
 var rightSurgeSway;
-if (su03 < 0) {  // tension reductions during acceleration
+if (surge < 0) {  // tension reductions during acceleration
   // acceleration decreases harness tensions
-  var s = sw03*sw03 - su03*su03;
+  var s = sway*sway - surge*surge;
   leftSurgeSway = Math.sqrt(Math.abs(s));
   if (s < 0)
     leftSurgeSway = - leftSurgeSway;
-  if (0 > sw03) {
+  if (0 > sway) {
     rightSurgeSway = leftSurgeSway;
-    leftSurgeSway = su03;
+    leftSurgeSway = surge;
   }
-  else rightSurgeSway = su03;
+  else rightSurgeSway = surge;
 }
 else {
-  leftSurgeSway = Math.sqrt(su03*su03 + sw03*sw03);
-  rightSurgeSway = su03 + su03 - leftSurgeSway;
+  leftSurgeSway = Math.sqrt(surge*surge + sway*sway);
+  rightSurgeSway = surge + surge - leftSurgeSway;
   if (1 > rightSurgeSway)
     rightSurgeSway = 1;                // reduce bogus clip warnings
-  if (0 > sw03) {
+  if (0 > sway) {
     var s = leftSurgeSway;
     leftSurgeSway = rightSurgeSway;
     rightSurgeSway = s;
   }
 }
 //return neut.toString();
-//return format(su03,'0.00') + ' ' + format(sw03, '0.00') + ' ' + format(neut[0]+leftSurgeSway,'0.00') + ' ' + format(neut[1]+rightSurgeSway,'0.00') + '\n';
+//return format(surge,'0.00') + ' ' + format(sway, '0.00') + ' ' + format(neut[0]+leftSurgeSway,'0.00') + ' ' + format(neut[1]+rightSurgeSway,'0.00') + '\n';
 //return leftSurgeSway + '  ' + rightSurgeSway + '  ' + surge
 
 
@@ -174,8 +168,8 @@ else {
 leftSurgeSway     // left shoulder belt
 rightSurgeSway    // right shoulder belt
 surgeSway         // mono shoulder belt
--suGamma          // middle upper back
-suGamma           // both side lower back
+-surge            // middle upper back
+surge             // both side lower back
 rSurgeSway        // both side upper back
 rightSurgeSway    // left side lower back (swapped compared to belts)
 leftSurgeSway     // right side lower back ("")
@@ -184,16 +178,16 @@ rSwayRSurge       // right side upper back
 swayHeave         // left seat
 rSwayHeave        // right seat
 heaveSurge        // center/back seat
--suGamma*0.4      // lap belt
-swGamma*0.1       // head cushion sway
+-surge*0.4        // lap belt
+sway*0.1          // head cushion sway
 
 */
 var ts = [];
 ts[0] = leftSurgeSway;
 ts[1] = rightSurgeSway;
-ts[2] = suGamma;
+ts[2] = surge;
 ts[3] = rSurgeSway;
-ts[4] = 0;//swGamma;
+ts[4] = 0;//sway;
 ts[5] = 0;
 ts[6] = 0;
 ts[7] = 0;
@@ -212,25 +206,21 @@ if (5 == $prop('Settings.info')) {    // gnuplot format
   return st+'\n';
 }
 
-var tc = 1 - ($prop('Settings.smooth') * 0.2);
 for (i = 0; i < np; i++) {
   var ft = root['ft'][i];                         // Low-pass IIR filter
 
-  ft += (ts[i] - ft) * tc;                        // filtered tension
+  ft += (ts[i] - ft) * t5[4][i];                        // filtered tension
 
 //return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString();
 
-// Skip change if it is smaller than e
-  var send = /*2 > i ||*/ Math.abs(ft - root['ft'][i]) > e;
   
   root['ft'][i] = ft;
-  if (send) {
-    ft = Math.round(neut[i] + t5[3][i]*ft);                     // scale and offset
-    if (0 > ft) ft = 0;                                         // below min
-    else if (ft > 126) ft = 126;                                // Arduino data limit
-    st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb
-    st += String.fromCharCode(0x3F & ft);                       // 6 lsb
-  }
+
+  ft = Math.round(neut[i] + t5[3][i]*ft);                     // scale and offset
+  if (0 > ft) ft = 0;                                         // below min
+  else if (ft > 126) ft = 126;                                // Arduino data limit
+  st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb
+  st += String.fromCharCode(0x3F & ft);                       // 6 lsb
 }
 
 //return st.length
