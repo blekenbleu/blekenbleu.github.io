@@ -218,13 +218,13 @@
           "Expression": ""
         },
         "IsVisible": false,
-        "Label": "PWM Channels:  Max PWM Range",
+        "Label": "PWM Channels:  Max % of Pulse Width Range to use",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2 || (2 == [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max0",
         "CurrentValue": 99,
@@ -241,7 +241,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max1",
         "CurrentValue": 99,
@@ -258,7 +258,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max2",
         "CurrentValue": 98,
@@ -275,7 +275,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max3",
         "CurrentValue": 97,
@@ -292,7 +292,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max4",
         "CurrentValue": 96,
@@ -309,7 +309,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max5",
         "CurrentValue": 51,
@@ -326,7 +326,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max6",
         "CurrentValue": 50,
@@ -343,7 +343,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max7",
         "CurrentValue": 50,
@@ -360,7 +360,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max8",
         "CurrentValue": 50,
@@ -377,7 +377,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max9",
         "CurrentValue": 50,
@@ -394,7 +394,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max10",
         "CurrentValue": 50,
@@ -411,7 +411,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max11",
         "CurrentValue": 50,
@@ -428,7 +428,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max12",
         "CurrentValue": 50,
@@ -445,7 +445,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max13",
         "CurrentValue": 50,
@@ -462,7 +462,7 @@
         }
       },
       {
-        "Maximum": 126,
+        "Maximum": 100,
         "Minimum": 0,
         "PropertyName": "max14",
         "CurrentValue": 50,
