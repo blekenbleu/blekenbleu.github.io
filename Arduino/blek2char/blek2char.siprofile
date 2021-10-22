@@ -79,7 +79,7 @@
         },
         {
           "Filter": {
-            "GammaValue": 0.69999999999999973,
+            "GammaValue": 1.0,
             "FilterType": "SimpleGammaFilter"
           },
           "LowForce": 1,
@@ -166,10 +166,10 @@
             "GammaValue": 1.0,
             "FilterType": "SimpleGammaFilter"
           },
-          "LowSpeed": 5,
+          "LowSpeed": 1,
           "HighSpeed": 120,
           "AutoMaxSpeed": true,
-          "MaxSpeedPercent": 90.0,
+          "MaxSpeedPercent": 100.0,
           "OnlyInTurns": false,
           "Curvature": 50,
           "ContainerId": "c1b5be72-33c6-4618-bd54-6743717f4395",

@@ -27,7 +27,7 @@
   ],
   "OnConnectMessage": {
     "Interpreter": 1,
-    "Expression": "var reset = [0x7F];\t// reset Arduino; initialize min[], tmax[]\r\nreset[1] = 0x5E; reset[2] = np = $prop('Settings.np');\t// number of supported servos\r\nvar info = $prop('Settings.info');\r\nif (3 < info) {\r\n  reset[3] = 0x5F; reset[4] = 4;\t// 3 == ASCII\r\n  return String.fromCharCode.apply(null,reset);\r\n}\r\nelse reset[4] = info;               // 0 to 3\r\nvar l = reset.length;\r\nreset[l] = 0x5F; reset[l+1] = 5; reset[l+2] = np;\t// min LUT header\r\nl = reset.length;\r\nvar min = [0];\r\nfor (var i = 0; i < np; i++) {\r\n    min[i] = $prop('Settings.min'+i) * 1.8\r\n    reset[l+i] = Math.round(126 >= min[i] ? min[i] : 126);\t\t\t\t// set minima\r\n}\r\nl = reset.length\r\nreset[l] = 0x5F; reset[l+1] = 6; reset[l+2] = np;\t// max LUT header\r\nl = reset.length; \r\nfor (var i = 0; i < np; i++) {\r\n    var tmax = .01 * $prop('Settings.max'+i) * (180 - min[i]);\r\n    reset[l+i] = Math.round(126 >= tmax ? tmax : 126);\t\t\t// set maxima\r\n}\r\n//return reset.toString();\r\nreturn String.fromCharCode.apply(null,reset);\r\n/*\r\nvar s = reset.charCodeAt(0);\r\nfor(i=1;i<np;i++)\r\n  s+=','+reset.charCodeAt(i)\r\nreturn s;\r\n*/"
+    "Expression": "var reset = [0x7F];                                     // initialize Arduino\r\nreset[1] = 0x5E; reset[2] = np = $prop('Settings.np');  // PWM channel count\r\nreset[3] = 0x5F;\r\nvar info = $prop('Settings.info');\r\nif (3 < info) {\r\n  reset[4] = 4;                                         // 4 == ASCII\r\n  return String.fromCharCode.apply(null,reset);\r\n}\r\nelse reset[4] = info;                                   // 0 to 3\r\nvar l = reset.length\r\nreset[l] = 0x5F; reset[l+1] = 6; reset[l+2] = np;       // max LUT header\r\nl = reset.length;\r\nfor (var i = 0; i < np; i++) {\r\n    var tmax = $prop('Settings.max'+i);\r\n    reset[l+i] = Math.round(100 >= tmax ? tmax : 100);\t// set maxima %\r\n}\r\nl = reset.length;\r\nreset[l] = 0x5F; reset[l+1] = 5; reset[l+2] = np;       // min LUT header\r\nl = reset.length;\r\nfor (var i = 0; i < np; i++) {\r\n    var min = $prop('Settings.min'+i);\r\n    reset[l+i] = Math.round(100 >= min ? min : 100);\t// set minima % of maxima\r\n}\r\nreturn String.fromCharCode.apply(null,reset);\r\n/*\r\nvar s = reset.charCodeAt(0);\r\nfor(i=1;i<np;i++)\r\n  s+=','+reset.charCodeAt(i)\r\nreturn s;\r\n*/"
   },
   "OnDisconnectMessage": {
     "Interpreter": 1,
@@ -37,7 +37,7 @@
   "RtsEnable": false,
   "EditorExpanded": true,
   "Name": "Custom Serial device",
-  "Description": "new2char",
+  "Description": "blek2char",
   "LastErrorDate": "2021-10-11T10:07:33.9839922-04:00",
   "LastErrorMessage": null,
   "IsFreezed": false,
@@ -181,7 +181,7 @@
         "Maximum": 5,
         "Minimum": 0,
         "PropertyName": "info",
-        "CurrentValue": 5,
+        "CurrentValue": 1,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
