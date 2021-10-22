@@ -1,6 +1,6 @@
 // servo positions from properties; parms from settings
 var np = $prop('Settings.np');       // PWM count
-var pg = $prop('Settings.page') - 2; // zero - based
+var pg = $prop('Settings.page') - 2; // zero - based: 0==max; 1==min; 2==neut
 var wysiwyg = $prop('Settings.wysiwyg') && 0 <= pg;
 var t5=[[0],[0],[0],[0],[0]];        // slider settings
 var ss = [1 - $prop('Settings.smooth0') * .2,
@@ -12,10 +12,10 @@ var i;
 
 function t5load() {
   for (i = 0; i < np; i++) {
-    t5[0][i] = $prop('Settings.neu'+i);        // pg = 2
-    t5[1][i] = $prop('Settings.min'+i);        // pg = 3
-    t5[2][i] = $prop('Settings.max'+i);        // pg = 4
-    t5[3][i] = $prop('Settings.sca'+i) * .02;  // pg = 5:  50 == unity gain
+    t5[0][i] = $prop('Settings.max'+i);        // pg = 0
+    t5[1][i] = $prop('Settings.min'+i);        // pg = 1
+    t5[2][i] = $prop('Settings.neu'+i);        // pg = 2
+    t5[3][i] = $prop('Settings.sca'+i) * .02;  // pg = 3:  50 == unity gain
   }
   t5[4][0] = t5[4][1] = ss[0];                 // assign smoothing per channel
   t5[4][2] = t5[4][3] = ss[1];
@@ -40,8 +40,8 @@ else if (wysiwyg)
   t5load();
 else t5 = root['t5'];
 for (i = 0; i < np; i++) { // run-time values
-   tmax[i] = Math.round(t5[2][i] * (100 - t5[1][i]) * 0.018);  // 180 / 10000
-   neut[i] = Math.round(t5[0][i] * tmax[i] * .01);
+   tmax[i] = Math.round(t5[0][i] * (100 - t5[1][i]) * 0.018);  // 180 / 10000
+   neut[i] = Math.round(t5[2][i] * tmax[i] * .01);
 }
 //return root['ft'].toString()
 
@@ -55,9 +55,9 @@ if (wysiwyg) {                                      // changes enabled?
       var d = 0;                       // tension to apply for test; d = 0 for min (page 3)
 
       change = true;
-      if (2 == pg)                                                   // max
+      if (0 == pg)                                                   // max
         d = tmax[i];
-      else if (0 == pg)                                              // offset
+      else if (2 == pg)                                              // offset
         d = neut[i];
       else if (1 == pg)                                              // send it twice, making it unique to SimHUb
         st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
@@ -67,8 +67,8 @@ if (wysiwyg) {                                      // changes enabled?
 //return st.length;
 //change = true;
   if (change) {
-    if (1 <= pg) {                                       // table change?  update table, then tension
-      var tp = pg + 4;                                   // Arduino table to update
+    if (2 != pg) {                                       // table change?  update table, then tension
+      var tp = pg + 4;                                   // Arduino table to update; ignored for tmax, which is 6
 
       if (2 < pg)
         st = String.fromCharCode(0x5F,tp,np)+String.fromCharCode.apply(null,t5[pg])+st; // brain-dead table loading
@@ -77,9 +77,9 @@ if (wysiwyg) {                                      // changes enabled?
           var m = [];
           for (i = 0; i < np; i++)
             m[i] = Math.round(t5[pg][i] * 1.8);          // % to min: 180 / 100
-          st = String.fromCharCode(0x5F,tp,np)+String.fromCharCode.apply(null,m)+st;
+          st = String.fromCharCode(0x5F,tp,np)+String.fromCharCode.apply(null,m)+st;    // min LUT
         }
-        st = String.fromCharCode(0x5F,6,np)+String.fromCharCode.apply(null,tmax)+st;
+        st = String.fromCharCode(0x5F,6,np)+String.fromCharCode.apply(null,tmax)+st;    // max LUT
       }
     }
     root['t5'][pg] = t5[pg];                             // no change left unsaved!!
