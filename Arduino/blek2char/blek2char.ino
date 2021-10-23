@@ -32,12 +32,12 @@ const char *msg = "blek2char Blue Pill: connected.  ";
 const byte num_pwm = sizeof(pin);
 byte tmin[num_pwm], tmax[num_pwm], *LUT=NULL;	// e.g. per-channel offsets, tmax
 byte gain[num_pwm], spare[num_pwm];		// room to grow
-#define NL 4
-byte* table[NL+1] = {tmin, tmax, gain, spare};     // subtract 5 from special to index table[]
+#define NL 4                                    // base 0 LUT count
+byte* table[NL+1] = {tmin, tmax, gain, spare};  // subtract 5 from special to index table[]
 byte active_PWMs = 4, Lcount = 0, Lidx = 0, Lid = 0;
 Servo servo[num_pwm];
 byte min_defaults[] = {52,52,52,52,52,52,52,52,52,52,52,52,52,52,52};  // initial servo min angles; 52 + 126 = 178 
-byte tmax_defaults[] = {0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E,0x7E};     // tension thresholds for overload echo '*'
+byte tmax_defaults[] = {126,126,126,126,126,126,126,126,126,126,126,126,126,126,126};     // tension thresholds for overload echo '*'
 
 byte info_level = 0;  // commands in 6 lsb of character after 0x5F
 byte loading = 0;     // state: waiting for second character
