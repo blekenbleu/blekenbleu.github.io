@@ -1,23 +1,26 @@
 // servo positions from properties; parms from settings
 var np = $prop('Settings.np');       // PWM count
-var pg = $prop('Settings.page') - 2; // zero - based: 0==max; 1==min; 2==neut
+var pg = $prop('Settings.page') - 2; // zero - based: 0==min; 1==max; 2==neut
 var wysiwyg = $prop('Settings.wysiwyg') && 0 <= pg;
 var t5=[[0],[0],[0],[0],[0]];        // slider settings
 var ss = [1 - $prop('Settings.smooth0') * .2,
           1 - $prop('Settings.smooth1') * .2,
           1 - $prop('Settings.smooth2') * .2];
-var neut = [];                       // run-time parms
-var tmax = [];
 var i;
 
 function t5load() {
   for (i = 0; i < np; i++) {
-    t5[0][i] = $prop('Settings.max'+i);        // pg = 0
-    t5[1][i] = $prop('Settings.min'+i);        // pg = 1
-    t5[2][i] = $prop('Settings.neu'+i);        // pg = 2
-    t5[3][i] = $prop('Settings.sca'+i) * .02;  // pg = 3:  50 == unity gain
+    // pg 0   current sketch servo[addr].write([addr] + received);
+    var m = t5[0][i] = $prop('Settings.min'+i);
+    // pg 1   current sketch received = (tmax[addr] < received) ? tmax[addr] : received
+    t5[1][i] = $prop('Settings.max'+i);
+    if ((180 - m) < t5[1][i])
+       t5[1][i] = 180 - m;                         // max + min <= 180
+    m = $prop('Settings.neu'+i);
+    t5[2][i] = Math.round(m * t5[1][i] * .01);     // pg 2  neut % of max
+    t5[3][i] = $prop('Settings.sca'+i) * .02;      // pg 3  50 == unity gain - unused
   }
-  t5[4][0] = t5[4][1] = ss[0];                 // assign smoothing per channel
+  t5[4][0] = t5[4][1] = ss[0];                     // assign smoothing per channel
   t5[4][2] = t5[4][3] = ss[1];
   for ( i = 4; i < np; i++)
     t5[4][i] = ss[2];
@@ -26,110 +29,94 @@ function t5load() {
 /* other (unused here) settings:
    $prop('Settings.nf')
  */
+
 if (null == root['t5']) {              // device connect message initialized 2 Arduino LUTs
   var ft = [0];                        // Set up data and reset IIR filters
 
   for (i = 0; i < np; i++)
      ft[i] = 0;
   root['ft'] = ft;                     // IIR
+  root['swft'] = 0;                    // sway IIR
   t5load();
   root['t5'] = t5;
-  root['swft'] = 0;                    // sway IIR
 }
 else if (wysiwyg)
   t5load();
 else t5 = root['t5'];
-for (i = 0; i < np; i++) { // run-time values
-   tmax[i] = Math.round(t5[0][i] * (100 - t5[1][i]) * 0.018);  // 180 / 10000
-   neut[i] = Math.round(t5[2][i] * tmax[i] * .01);
-}
 //return root['ft'].toString()
 
 var st = '';                                        // tension string:  watch this space
+var d;
+
 if (wysiwyg) {                                      // changes enabled?
   var tr = root['t5'];
   var change = false;                               // Only one page at a time
 
   for (i = 0; i < np; i++)
     if (tr[pg][i] != t5[pg][i]) {
-      var d = 0;                       // tension to apply for test; d = 0 for min (page 3)
-
       change = true;
-      if (0 == pg)                                                   // max
-        d = tmax[i];
-      else if (2 == pg)                                              // offset
-        d = neut[i];
-      else if (1 == pg)                                              // send it twice, making it unique to SimHUb
-        st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
-      st += String.fromCharCode(0x40 + i | (0x40 & d)>>1, 0x3F & d); // tension for changed parm
+      break;
     }
-//return st;
-//return st.length;
 //change = true;
   if (change) {
-    if (2 != pg) {                                       // table change?  update table, then tension
-      var tp = pg + 4;                                   // Arduino table to update; ignored for tmax, which is 6
-
-      if (2 < pg)
-        st = String.fromCharCode(0x5F,tp,np)+String.fromCharCode.apply(null,t5[pg])+st; // brain-dead table loading
-      else {
-        if (1 == pg) {                                   // min: update both min and max
-          var m = [];
-          for (i = 0; i < np; i++)
-            m[i] = Math.round(t5[pg][i] * 1.8);          // % to min: 180 / 100
-          st = String.fromCharCode(0x5F,tp,np)+String.fromCharCode.apply(null,m)+st;    // min LUT
-        }
-        st = String.fromCharCode(0x5F,6,np)+String.fromCharCode.apply(null,tmax)+st;    // max LUT
-      }
+    if (2 > pg) {                               // Arduino table change?  update table, then tension
+        if (0 == pg)                            // min: update both min and max
+          st = String.fromCharCode(0x5F,5,np)+String.fromCharCode.apply(null,t5[0]);  // min LUT
+        st +=  String.fromCharCode(0x5F,6,np)+String.fromCharCode.apply(null,t5[1]);  // max LUT
     }
-    root['t5'][pg] = t5[pg];                             // no change left unsaved!!
+    root['t5'][pg] = t5[pg];                    // no change left unsaved!!
   }
-  return st;                                             // ignore telemetry during wysiwyg
-  if (90 < st.length) {
+  if (0 == pg)                                  // min?
+    for (i = 0; i < np; i++)
+      st += String.fromCharCode(0x40 + i, 0);
+  else if (3 > pg) {
+    d = (2 == pg) ? t5[2] : t5[1];                     // neut or max
+    for (i = 0; i < np; i++)
+      st += String.fromCharCode(0x40 + i | (0x40 & d[i])>>1, 0x3F & d[i]);
+  }
+  return st;            // ignore telemetry during wysiwyg
+/*
+  if (0 < st.length) {
     var s = ' 0x'+(st.charCodeAt(0)).toString(16);
     for(i = 1; i < st.length; i++)
       s += ',0x'+(st.charCodeAt(i)).toString(16);
     return s;
   } // else return 'zero length\n';
+ */
 }
+
 
 // G-forces from SimHub properties ---------------
 var gain = $prop('Settings.gain_global') * 0.08;
 
-
-// longitudinal acceleration (positive is back)
-var surge = $prop('ShakeITBSV3Plugin.Export.blek2decel.Front') * gain;
-if (0 == surge)
-  surge = - $prop('ShakeITBSV3Plugin.Export.blek2accel.Rear');
+// longitudinal acceleration (positive is Rear)
+var surge = ($prop('ShakeITBSV3Plugin.Export.blek2decel.Front')
+           - $prop('ShakeITBSV3Plugin.Export.blek2accel.Rear')) * gain; 
 //return surge
 
-
 // lateral acceleration (positive is right) (feels like yaw)
-var sway  = $prop('ShakeITBSV3Plugin.Export.blek2sway.Right') * gain
+var sway  = ($prop('ShakeITBSV3Plugin.Export.blek2sway.Right')
+           - $prop('ShakeITBSV3Plugin.Export.blek2sway.Left')) * gain;
 var swft = root['swft'];     // Low-pass IIR filter
-if (0 == sway)
-  sway = - $prop('ShakeITBSV3Plugin.Export.blek2sway.Left') * gain;  
 swft += (sway - swft) * .7;  // filtered sway
 root['swft'] = swft;
 //return sway+' '+swft
 
-
 // vertical acceleration (positive is up)
-var heave = $prop('ShakeITBSV3Plugin.Export.blek2heave.Front') * gain;
-if (0 == heave)
-  heave = - $prop('ShakeITBSV3Plugin.Export.blek2heave.Rear') * gain;
+var heave = ($prop('ShakeITBSV3Plugin.Export.blek2heave.Front')
+           - $prop('ShakeITBSV3Plugin.Export.blek2heave.Rear')) * gain;
 
 
 // Combined forces
 //
-var heaveSurge =  heave * 0.7 - surge * 0.3;
-var surgeSway  =  surge * 0.7 + Math.abs(sway) * 0.3;
+//var heaveSurge =  heave * 0.7 - surge * 0.3;
+//var surgeSway  =  surge * 0.7 + Math.abs(sway) * 0.3;
 var rSurgeSway = -surge * 1.2 + Math.abs(sway) * 0.5;
-var surgeHeave =  surge * 0.7 + Math.abs(heave) * 0.3;
-var swayHeave  =  sway * 0.7 + heave * 0.3;
-var rSwayHeave = -sway * 0.7 + heave * 0.3;
-var swayRSurge =  sway * 0.7 - surge * 0.3;
-var rSwayRSurge = -sway * 0.7 - surge * 0.3;
+//var surgeHeave =  surge * 0.7 + Math.abs(heave) * 0.3;
+//var swayHeave  =  sway * 0.7 + heave * 0.3;
+//var rSwayHeave = -sway * 0.7 + heave * 0.3;
+//var swayRSurge =  sway * 0.7 - surge * 0.3;
+//var rSwayRSurge = -sway * 0.7 - surge * 0.3;
 
 
 // convert speed and yaw changes to left and right tension values
@@ -158,8 +145,8 @@ else {
     rightSurgeSway = s;
   }
 }
-//return neut.toString();
-//return format(surge,'0.00') + ' ' + format(sway, '0.00') + ' ' + format(neut[0]+leftSurgeSway,'0.00') + ' ' + format(neut[1]+rightSurgeSway,'0.00') + '\n';
+//return t5[2].toString();
+//return format(surge,'0.00') + ' ' + format(sway, '0.00') + ' ' + format(t5[2][0] + leftSurgeSway,'0.00') + ' ' + format(t5[2][1] + rightSurgeSway,'0.00') + '\n';
 //return leftSurgeSway + '  ' + rightSurgeSway + '  ' + surge
 
 
@@ -210,13 +197,11 @@ for (i = 0; i < np; i++) {
   var ft = root['ft'][i];                         // Low-pass IIR filter
 
   ft += (ts[i] - ft) * t5[4][i];                        // filtered tension
-
+  root['ft'][i] = ft;
 //return [i,np,ft,Math.abs(ft-root['ft'][i]),e].toString();
 
-  
-  root['ft'][i] = ft;
 
-  ft = Math.round(neut[i] + t5[3][i]*ft);                     // scale and offset
+  ft = Math.round(t5[2][i] + t5[3][i] * ft);                  // scale and offset
   if (0 > ft) ft = 0;                                         // below min
   else if (ft > 126) ft = 126;                                // Arduino data limit
   st += String.fromCharCode(0x40 | i | ((0x40 & ft)>>1));     // set tension msb
@@ -225,9 +210,11 @@ for (i = 0; i < np; i++) {
 
 //return st.length
 return st;
-if (990 < st.length) {
+/*
+if (0 < st.length) {
   var s = ' 0x'+(st.charCodeAt(0)).toString(16);
   for(i=1;i<st.length;i++)
     s+=',0x'+(st.charCodeAt(i)).toString(16);
   return s;
 }
+ */
