@@ -91,7 +91,7 @@
           "Description": "Provide lateral acceleration feedback based on G-Force",
           "AggregationMode": null,
           "Gain": 0.0,
-          "IsEnabled": true,
+          "IsEnabled": false,
           "Output": {
             "UsePrehemptiveMode": false,
             "Frequency": 44,
@@ -100,6 +100,54 @@
             "WhiteNoise": 10,
             "UseWhiteNoise": false,
             "EnableDurationModulation": false,
+            "DurationModulationValue": 34,
+            "FrequencyBasedOnPreFilter": false,
+            "Harmonics": 0,
+            "HoldMode": 1,
+            "DelayEnabled": false,
+            "AssignToChannelGroup": false,
+            "ChannelGroupName": "",
+            "PropertyName": "blek2sway",
+            "ExportProperty": true,
+            "DisableOutput": true,
+            "OutputType": "ToneOutput"
+          }
+        },
+        {
+          "AutocalibrationMax": 95.0,
+          "Filter": {
+            "GammaValue": 1.8000000000000007,
+            "InputGain": 100.0,
+            "MinimumForce": 0,
+            "Threshold": 18,
+            "FilterType": "GammaFilter"
+          },
+          "FrontLeftFormula": {
+            "Expression": "-[AccelerationSway]*2"
+          },
+          "FrontRightFormula": {
+            "Expression": "[AccelerationSway]*2\r\n"
+          },
+          "RearLeftFormula": {
+            "Expression": ""
+          },
+          "RearRightFormula": {
+            "Expression": ""
+          },
+          "ContainerId": "828b95e3-7a33-47a5-9d65-9d736523e027",
+          "ContainerType": "CustomEffectContainer",
+          "Description": "lateral acceleration with threshold - alternative to LATERAL G-FORCE - enable only one of them",
+          "AggregationMode": "Left/Right",
+          "Gain": 0.0,
+          "IsEnabled": true,
+          "Output": {
+            "UsePrehemptiveMode": false,
+            "Frequency": 44,
+            "UseHighFrequency": false,
+            "HighFrequency": 50,
+            "WhiteNoise": 10,
+            "UseWhiteNoise": false,
+            "EnableDurationModulation": true,
             "DurationModulationValue": 34,
             "FrequencyBasedOnPreFilter": false,
             "Harmonics": 0,
@@ -177,7 +225,7 @@
           "Description": "export SpeedCurv property for PWM custom serial fans",
           "AggregationMode": null,
           "Gain": 0.0,
-          "IsEnabled": true,
+          "IsEnabled": false,
           "Output": {
             "UsePrehemptiveMode": false,
             "Frequency": 55,
@@ -215,7 +263,7 @@
   "GlobalGain": 50.0,
   "UseProfileGain": false,
   "Error": "",
-  "LastLoaded": "2021-10-20T13:33:48.5731692-04:00",
+  "LastLoaded": "2021-10-23T03:52:45.7082972-04:00",
   "Name": "blek2char",
   "ProfileId": "00000000-0000-0000-0000-000000000000",
   "GameCode": null
