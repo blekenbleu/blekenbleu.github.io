@@ -19,7 +19,7 @@
           "Description": "Provide longitudinal acceleration feedback based on G-Force",
           "AggregationMode": null,
           "Gain": 0.0,
-          "IsEnabled": true,
+          "IsEnabled": false,
           "Output": {
             "UsePrehemptiveMode": false,
             "Frequency": 44,
@@ -48,7 +48,7 @@
           },
           "LowForce": 1,
           "HighForce": 12,
-          "MaxGPercent": 90.0,
+          "MaxGPercent": 100.0,
           "AutoMaxG": true,
           "ContainerId": "48a18f0f-d1e0-4d33-8eca-d1dbb6f37641",
           "ContainerType": "DecelerationGforceContainer",
@@ -116,17 +116,17 @@
         {
           "AutocalibrationMax": 95.0,
           "Filter": {
-            "GammaValue": 1.8000000000000007,
+            "GammaValue": 1.0,
             "InputGain": 100.0,
             "MinimumForce": 0,
-            "Threshold": 18,
+            "Threshold": 0,
             "FilterType": "GammaFilter"
           },
           "FrontLeftFormula": {
-            "Expression": "-[AccelerationSway]*2"
+            "Expression": "-[AccelerationSway]*6"
           },
           "FrontRightFormula": {
-            "Expression": "[AccelerationSway]*2\r\n"
+            "Expression": "[AccelerationSway]*6\r\n"
           },
           "RearLeftFormula": {
             "Expression": ""
@@ -138,7 +138,7 @@
           "ContainerType": "CustomEffectContainer",
           "Description": "lateral acceleration with threshold - alternative to LATERAL G-FORCE - enable only one of them",
           "AggregationMode": "Left/Right",
-          "Gain": 0.0,
+          "Gain": 2.0,
           "IsEnabled": true,
           "Output": {
             "UsePrehemptiveMode": false,
@@ -225,7 +225,7 @@
           "Description": "export SpeedCurv property for PWM custom serial fans",
           "AggregationMode": null,
           "Gain": 0.0,
-          "IsEnabled": false,
+          "IsEnabled": true,
           "Output": {
             "UsePrehemptiveMode": false,
             "Frequency": 55,
@@ -263,7 +263,7 @@
   "GlobalGain": 50.0,
   "UseProfileGain": false,
   "Error": "",
-  "LastLoaded": "2021-10-23T03:52:45.7082972-04:00",
+  "LastLoaded": "2021-10-25T12:15:05.8103944-04:00",
   "Name": "blek2char",
   "ProfileId": "00000000-0000-0000-0000-000000000000",
   "GameCode": null
