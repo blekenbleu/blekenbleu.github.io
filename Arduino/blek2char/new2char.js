@@ -87,7 +87,7 @@ if (wysiwyg) {                                      // changes enabled?
 
 
 // G-forces from SimHub properties ---------------
-var gain = $prop('Settings.gain_global') * 0.08;
+var gain = $prop('Settings.gain_global') * 0.04;
 
 // longitudinal acceleration (positive is Rear)
 var surge = ($prop('ShakeITBSV3Plugin.Export.blek2decel.Front')
@@ -139,7 +139,7 @@ else {
   rightSurgeSway = surge + surge - leftSurgeSway;
   if (1 > rightSurgeSway)
     rightSurgeSway = 1;                // reduce bogus clip warnings
-  if (0 > sway) {
+  if (0 < sway) {
     var s = leftSurgeSway;
     leftSurgeSway = rightSurgeSway;
     rightSurgeSway = s;
