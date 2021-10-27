@@ -27,7 +27,7 @@
   ],
   "OnConnectMessage": {
     "Interpreter": 1,
-    "Expression": "var reset = [0x7F];                                 // initialize Arduino\r\nvar np = $prop('Settings.np');\r\nreset[1] = 0x5E; reset[2] = np;                     // PWM channel count\r\nreset[3] = 0x5F;\r\nvar info = $prop('Settings.info');\r\nif (3 < info) {\r\n  reset[4] = 4;                                     // 4 == ASCII\r\n  return String.fromCharCode.apply(null,reset);\r\n}\r\nelse reset[4] = info;                               // 0 to 3\r\nl = reset.length;\r\nreset[l] = 0x5F; reset[l+1] = 5; reset[l+2] = np;   // min LUT header\r\nl = reset.length;\r\nfor (var i = 0; i < np; i++)\r\n    reset[l+i] = Math.round(1.8*$prop('Settings.min'+i));\r\nvar l = reset.length\r\nreset[l] = 0x5F; reset[l+1] = 6; reset[l+2] = np;   // max LUT header\r\nl = reset.length;\r\nfor (var i = 0; i < np; i++) {\r\n  var m = 100 - $prop('Settings.min'+i);            // % for max\r\n  m = Math.round(1.8 * $prop('Settings.max'+i) * m);\r\n  reset[l+i] = Math.min(126,m);                     // legal limit\r\n}\r\nreturn String.fromCharCode.apply(null,reset);\r\n/*\r\nvar s = reset.charCodeAt(0);\r\nfor(i=1;i<np;i++)\r\n  s+=','+reset.charCodeAt(i)\r\nreturn s;\r\n*/"
+    "Expression": "var reset = [0x7F];                                 // initialize Arduino\r\nvar np = $prop('Settings.np');\r\nreset[1] = 0x5E; reset[2] = np;                     // PWM channel count\r\nreset[3] = 0x5F;\r\nvar info = $prop('Settings.info');\r\nif (3 < info) {\r\n  reset[4] = 4;                                     // 4 == ASCII\r\n  return String.fromCharCode.apply(null,reset);\r\n}\r\nelse reset[4] = info;                               // 0 to 3\r\nl = reset.length;\r\nreset[l] = 0x5F; reset[l+1] = 5; reset[l+2] = np;   // min LUT header\r\nl = reset.length;\r\nfor (var i = 0; i < np; i++)                        // % to degrees \r\n    reset[l+i] = Math.round(1.8*$prop('Settings.min'+i));\r\nvar l = reset.length\r\nreset[l] = 0x5F; reset[l+1] = 6; reset[l+2] = np;   // max LUT header\r\nl = reset.length;\r\nfor (var i = 0; i < np; i++) {\r\n  var m = 100 - $prop('Settings.min'+i); // % for max\r\n  m = Math.round(.018 * $prop('Settings.max'+i) * m);\r\n  reset[l+i] = Math.min(126,m);                     // legal limit\r\n}\r\nreturn String.fromCharCode.apply(null,reset);\r\n/*\r\nvar s = reset.charCodeAt(0);\r\nfor(i=1;i<np;i++)\r\n  s+=','+reset.charCodeAt(i)\r\nreturn s;\r\n*/"
   },
   "OnDisconnectMessage": {
     "Interpreter": 1,
@@ -47,7 +47,7 @@
         "Maximum": 4,
         "Minimum": 1,
         "PropertyName": "page",
-        "CurrentValue": 2,
+        "CurrentValue": 1,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -117,7 +117,7 @@
             "Maximum": 50,
             "Minimum": 0,
             "PropertyName": "gain_global",
-            "CurrentValue": 16,
+            "CurrentValue": 22,
             "Name": null,
             "TypeName": "SliderEntry",
             "IsEnabled": true,
@@ -131,10 +131,10 @@
             }
           },
           {
-            "Maximum": 15,
+            "Maximum": 14,
             "Minimum": 2,
             "PropertyName": "np",
-            "CurrentValue": 13,
+            "CurrentValue": 2,
             "Name": null,
             "TypeName": "SliderEntry",
             "IsEnabled": true,
@@ -188,7 +188,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": false,
+        "IsVisible": true,
         "Label": "General",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==1"
@@ -203,7 +203,7 @@
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "Test/update PWMs (WYSIWYG)",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]>1"
@@ -213,242 +213,242 @@
         "Settings": [],
         "Name": null,
         "TypeName": "GroupEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
           "Expression": "[Settings.page]==2"
         },
-        "IsVisible": true,
-        "Label": "PWM Device Min Positions: up to 70% of full range",
+        "IsVisible": false,
+        "Label": "PWM Device Min Pulse Width (percent of full range)",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2 || (4 > [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min0",
         "CurrentValue": 30,
         "Name": null,
         "TypeName": "SliderEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
           "Expression": "[Settings.page]==2"
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 0: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2 || (4 > [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min1",
-        "CurrentValue": 32,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
           "Expression": "[Settings.page]==2"
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 1: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2 || (4 > [Settings.np] && 1 < [Settings.page])"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min2",
-        "CurrentValue": 33,
+        "CurrentValue": 30,
         "Name": null,
         "TypeName": "SliderEntry",
-        "IsEnabled": true,
+        "IsEnabled": false,
         "IsEnabledFormula": {
           "Expression": "[Settings.page]==2 && 2 < [Settings.np]"
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 2: Min",
         "IsVisibleFormula": {
           "Expression": "2 < [Settings.np] && ([Settings.page]==2 || (4 > [Settings.np] && 1 < [Settings.page]))"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min3",
-        "CurrentValue": 34,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 3: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>3"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min4",
-        "CurrentValue": 35,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 4: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>4"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min5",
-        "CurrentValue": 40,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 5: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>5"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min6",
-        "CurrentValue": 50,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 6: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>6"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min7",
-        "CurrentValue": 50,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 7: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>7"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min8",
-        "CurrentValue": 50,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 8: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>8"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min9",
-        "CurrentValue": 50,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 9: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>9"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min10",
-        "CurrentValue": 50,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 10: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>10"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min11",
-        "CurrentValue": 50,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 11: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>11"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min12",
-        "CurrentValue": 50,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
         "IsEnabledFormula": {
           "Expression": ""
         },
-        "IsVisible": true,
+        "IsVisible": false,
         "Label": "PWM 12: Min",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==2&&[Settings.np]>12"
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min13",
-        "CurrentValue": 50,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -462,10 +462,10 @@
         }
       },
       {
-        "Maximum": 70,
+        "Maximum": 60,
         "Minimum": 0,
         "PropertyName": "min14",
-        "CurrentValue": 50,
+        "CurrentValue": 0,
         "Name": null,
         "TypeName": "SliderEntry",
         "IsEnabled": true,
@@ -487,7 +487,7 @@
           "Expression": ""
         },
         "IsVisible": false,
-        "Label": "PWM Channel Max Position: up to 100% of (full - Min)",
+        "Label": "PWM Channel Max Pulse Width: percent of  (full range - Min)",
         "IsVisibleFormula": {
           "Expression": "[Settings.page]==3 || (4 > [Settings.np] && 1 < [Settings.page])"
         }
