@@ -50,7 +50,7 @@
   [Jekyll Talk! forum](https://talk.jekyllrb.com/)  
   [Jekyll github](https://github.com/jekyll) and [github-metadata](https://github.com/jekyll/github-metadata/issues)  
 
-### [Android Wireless Mixer - MIDI](WirelessMixer)
+### [Android Wireless Mixer - MIDI](MIDI)
 ### [COVID-19 plots](covid)
 ### [Vim and X-Mouse](VimTXmouse)
 ### [Installing Git-Cola from MacPorts](GitColaMacPorts)
