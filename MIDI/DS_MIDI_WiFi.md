@@ -11,8 +11,6 @@ by 0xtob
 
 ### Usage
 
-  - Install [Wireless Mixer - MIDI](http://play.google.com/store/apps/details?id=com.bti.wirelessMixer) on your Android device.  
-    - [support](https://trajkovski.net/support.html)  
   - On Windows, install [LoopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html)
     - [configure it](http://www.midicontrol.net/server)  
       ![configure](loopMIDIcfg.png)  
@@ -21,9 +19,11 @@ by 0xtob
   - Install and configure [DSWiFiMIDI](https://trajkovski.net/dsmidiwifi-v1.01.zip)  
     ![Input and Output port](DSWifiMIDI.png)  
     - <i><b>Minimize it to the taskbar</b></i>.
-    - Unlike LoopMIDI, closing the DSWifiMIDI window kills the server.
+      - Unlike LoopMIDI, closing DSWifiMIDI's window kills its service.
       - Restarting DSWifiMIDI will fail until after rebooting.
   - Reboot Windows to clear any `Error initing` reported during DSWiFiMIDI startup.
+  - Install [Wireless Mixer - MIDI](http://play.google.com/store/apps/details?id=com.bti.wirelessMixer) on your Android device.  
+    - [support](https://trajkovski.net/support.html)  
   - Start mixing!
 
 
