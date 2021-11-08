@@ -19,6 +19,8 @@
 - USB-attached [PWM PC fans](Arduino/SimHubPWMfans)
 - ESP8266 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
 
+## [ESP32-S2](ESP32/index.htm) for composite USB devices
+
 ## [ab]using Microsoft Visual Studio Community 2017
 * [shared installation](VSC2017)
 
