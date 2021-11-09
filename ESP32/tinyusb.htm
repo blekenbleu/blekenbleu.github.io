@@ -1,0 +1,49 @@
+<html><head>
+<style> body { margin: 80px; } </style>
+<title>TinyUSB for composite USB using Arduino and ESP32-S2-Saola-1</title></head>
+<body><font size=+1>
+<h4><a href="https://github.com/hathach/tinyusb">TinyUSB</a> Geneology</h4>
+adafruit ported <a href="https://blog.adafruit.com/2020/04/10/tinyusb-esp32-s2-support-merged-and-a-live-stream-in-4-hours-about-it">TinyUSB to ESP32-S2</a>
+for <a href="https://www.adafruit.com/product/4775">Metro</a> and <a href="https://www.adafruit.com/product/4769">FeatherS2</a> products,<br>
+mostly with CircuitPython but also <a href="https://learn.adafruit.com/adafruit-metro-esp32-s2/arduino-ide-setup-2">the Arduino IDE</a>.<br><br>
+
+There are now also ESP32-S2 boards from <a href="https://www.amazon.com/dp/B093BH5Z7P">LILYGO</a>, <a href="https://www.amazon.com/dp/B098TZ64LK">SparkFun</a>,
+<a href="https://www.amazon.com/dp/B093CJ4V3Y">UnexpectedMaker</a><ul compact>
+<li>LILYGO provides <a href="https://github.com/Xinyuan-LilyGO/ESP32_S2">absolutely minimal documentation</a>, none useful for Arduino.
+
+<li><a href="https://learn.sparkfun.com/tutorials/esp32-s2-thing-plus-hookup-guide/software-overview">SparkFun's hookup guide</a> includes the <a href="https://cdn.sparkfun.com/assets/learn_tutorials/8/5/2/CP210x_Universal_Windows_Driver.zip">Silicon Labs' Windows VCP driver for Arduino loading.</a>
+
+<li><a href="https://unexpectedmaker.com/tinys2">UnexpectedMaker</a> describes using <a href="https://github.com/espressif/esptool">esptool</a> to flash ESP32-S2.</ul>
+<dl>
+<dt>Arduino TinyUSB libraries include
+<dd><a href="https://www.arduino.cc/reference/en/libraries/adafruit-tinyusb-library/">Adafruit TinyUSB Library</a>
+<dd><a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb/">ESP32TinyUSB</a>
+<dt>Both link to GitHub for releases
+<dd>adafruit has <a href="https://github.com/adafruit/Adafruit_TinyUSB_Arduino">https://github.com/adafruit/Adafruit_TinyUSB_Arduino</a> and
+    <a href="https://github.com/adafruit/tinyuf2">TinyUF2 Bootloader</a>
+<br> &nbsp Their ESP32 port depends on <a href="https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/esp32-hal-tinyusb.c">Espressif's esp32-hal-tinyusb.c</a> for building USB descriptors.
+<br> &nbsp It includes <a href="https://github.com/chegewara/EspTinyUSB">examples updated to work with esp32s2</a>
+<br> &nbsp adafruit also has <a href="https://learn.adafruit.com/using-webusb-with-arduino-and-tinyusb">a webpage guide</a>
+<dd>ESP32TinyUSB is the <a href="https://github.com/chegewara/EspTinyUSB">chegewara / EspTinyUSB implementation</a> with seemingly useful example sketches..
+</dl>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/3uViG48xwoQ"></iframe><br>
+<font size=-1><i>April 30, 2021 using <a href="http://arduino-er.blogspot.com/2021/04/install-arduino-esp32-200-alpha1-on.html">developer version board manager</a></i></font><br>
+
+<h4><a href="https://www.hackster.io/news/create-custom-usb-devices-with-the-esp32s2stick-458bf370a522">Create Custom USB Devices with the esp32s2Stick</a></h4>
+
+<h4>Create an ESP32-S2 webserver with <a href="slider.htm">HTML sliders</a> for e.g. USB MIDI control surface UI:</h4>
+<iframe width="960" height=380 src="slider.htm"></iframe><br>
+<p><a href="https://simeydotme.github.io/jQuery-ui-Slider-Pips/#styling-flat"><font size=-1><i>CSS + Javascript sliders</i></font></a></p>
+
+GitHub:
+<ul compact>
+<li><a href="https://github.com/marcel-licence/esp32_usb_midi">ESP32 TinyUSB MIDI synth</a> using a USB host shield
+<li><a href="https://github.com/Open-ESP/tinyusb-arduino/blob/master/changelog.md">Open-ESP TinyUSB</a>
+<li><a href="https://github.com/chegewara/EspTinyUSB">MIDI in chegewara/EspTinyUSB</a>
+ &nbsp <a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device/midi">example</a>
+ &nbsp <a href="https://github.com/chegewara/EspTinyUSB/issues/52#issuecomment-915718146">fix for MIDI Not working</a>
+<li><a href="https://github.com/adafruit/Adafruit_TinyUSB_Arduino">AdafruitTinyUSB Library for Arduino</a>
+<li><a href="https://esp32.com/viewtopic.php?f=12&t=23798&p=85401&hilit=midi#p85401">ESP32-S2 TinyUSB composite reconfiguration</a><br>
+</ul>
+
+</font></body></html>
