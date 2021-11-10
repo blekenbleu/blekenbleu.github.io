@@ -4,24 +4,41 @@
 <body><font size=+1>
 <h4>Ordered from JameCo:  ESP32-S2-Saola-1M <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/hw-reference/esp32s2/user-guide-saola-1-v1.2.html">ESP32-S2-WROOM Dev 4MB Flash</a></h4>
 <img  width=640 src="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/_images/esp32-s2_saola1-pinout.jpg"><br clear=all>
-&nbsp <a href="https://www.espressif.com/sites/default/files/documentation/esp32-s2-wroom_esp32-s2-wroom-i_datasheet_en.pdf">ESP32-S2-WROOM Data sheet</a>
+ &nbsp <a href="https://www.espressif.com/sites/default/files/documentation/esp32-s2-wroom_esp32-s2-wroom-i_datasheet_en.pdf">ESP32-S2-WROOM Data sheet</a>
  &nbsp <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/hw-reference/esp32s2/user-guide-saola-1-v1.2.html">ESP32-S2-Saola-1 user guide</a><br><br>
+
+There are now also ESP32-S2 boards from <a href="https://www.amazon.com/dp/B093BH5Z7P">LILYGO</a>,
+ <a href="https://www.amazon.com/dp/B098TZ64LK">SparkFun</a>,
+ <a href="https://www.amazon.com/dp/B093CJ4V3Y">UnexpectedMaker</a>
+<ul compact>
+<li>LILYGO provides <a href="https://github.com/Xinyuan-LilyGO/ESP32_S2">absolutely minimal documentation</a>, none useful for Arduino.
+<li><a href="https://learn.sparkfun.com/tutorials/esp32-s2-thing-plus-hookup-guide/software-overview">SparkFun's hookup guide</a>
+ includes the <a href="https://cdn.sparkfun.com/assets/learn_tutorials/8/5/2/CP210x_Universal_Windows_Driver.zip">Silicon Labs'
+ Windows VCP driver for Arduino loading.</a>
+<li><a href="https://unexpectedmaker.com/tinys2">UnexpectedMaker</a> describes using
+ <a href="https://github.com/espressif/esptool">esptool</a> to flash ESP32-S2.
+</ul> 
 
 <a href="https://www.esp32.com/viewtopic.php?f=19&t=22209">Arduino support</a>
   <a href="https://github.com/espressif/arduino-esp32/releases/tag/2.0.0">ESP32 Arduino 2.0.0 released Aug 31 2021</a><br>
 <a href="https://docs.espressif.com/projects/arduino-esp32/en/latest/">ESP32 Arduino Core's documentation</a><br>
+<a href="https://www.arduinolibraries.info/">Arduino Library List</a>
+For ESP32-S2-Saola-1, select board of <a href="https://embedded-things.blogspot.com/2021/10/arduino-esp32-camerawebserver-examples.html">"ESP32S2 Dev Module"</a><br>
 
-Oct 21, 2021 <a href="https://embedded-things.blogspot.com/2021/10/install-arduino-esp32-200-on-arduino.html">Install arduino-esp32 2.0.0 on Arduino IDE, to program ESP32-S2/C3</a><br>
-<a href="https://embedded-things.blogspot.com/2021/10/drive-esp32-c3-devkitm-1esp32-s2-saola.html">Driving on-board RGB LED (WS2812) on GPIO 18</a><br>
+Oct 21, 2021 <a href="https://embedded-things.blogspot.com/2021/10/install-arduino-esp32-200-on-arduino.html">Install
+ arduino-esp32 2.0.0 on Arduino IDE, to program ESP32-S2/C3</a><br>
+<a href="https://embedded-things.blogspot.com/2021/10/drive-esp32-c3-devkitm-1esp32-s2-saola.html">Driving
+ on-board RGB LED (WS2812) on GPIO 18</a><br>
 
 <h3><a href="https://maker.pro/esp8266/tutorial/a-comparison-of-the-new-esp32-s2-to-the-esp32">ESP32-S2 compared to ESP32</a> - Jun 14, 2020</h3>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/L6IoSVdKwNM?start=80"></iframe><br>
+
 <h3>ESP32-S2 compared to STM32, Raspberry Pi Pico</h3>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/cVHCllbN3bQ?start=82"></iframe><br>
-<h4>ESP32-S2 HID</h4>
-<iframe width="640" height="480" src="https://www.youtube.com/embed/XnqDEV21BSA?start=53"></iframe><br>
 
 <h4><a href="tinyusb.htm">TinyUSB for Arduino ESP32-S2</a></h4>
+
+<h4><a href="webserver.htm">Arduino ESP32-S2 webservers</a></h4>
 
 <h4><a href="https://www.hackster.io/news/create-custom-usb-devices-with-the-esp32s2stick-458bf370a522">Create Custom USB Devices with the esp32s2Stick</a></h4>
 
@@ -37,7 +54,11 @@ GitHub:
 <br> &nbsp &nbsp Arduino forum reference: <a href="https://forum.arduino.cc/t/how-to-specify-unique-compiling-options-for-multiple-sketches/679370">How to specify unique compiling options for multiple sketches?</a>
 <br> &nbsp official documentation:  <a href="https://arduino.github.io/arduino-cli/0.19/platform-specification/#custom-board-options">Custom board options</a>
 <br> &nbsp &nbsp Arduino forum reference: <a href="https://forum.arduino.cc/t/multiple-boards-configuration-options/891994">Multiple board’s configuration options</a><br>
-</ul>Other:<ul compact>
+<li><a href="https://github.com/topics/esp32-s2">ESP32-S2 topics</a> list
+<li>Interrupt-driven <a href="https://github.com/khoih-prog/ESP32_PWM">ESP32-PWM</a>
+</ul>
+
+Other:<ul compact>
 <li>ESP32 English forum <a href="https://www.esp32.com/viewforum.php?f=23&sid=bebe71cd2d736539a1cad65d96eab1cd">https://www.esp32.com/viewforum.php?f=23&sid=bebe71cd2d736539a1cad65d96eab1cd</a>
 <br> &nbsp with Arduino IDE <a href="https://www.esp32.com/viewtopic.php?f=19&t=20364">https://www.esp32.com/viewtopic.php?f=19&t=20364</a>
 <li>USB pin wiring: <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/usb_device.html">https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/usb_device.html</a>
