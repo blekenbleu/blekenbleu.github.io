@@ -1,0 +1,49 @@
+<html><head>
+<style> body { margin-left: 80px; } </style>
+<title>ESP32-S2-Saola-1 Arduino installation</title></head>
+<body><font size=+1>
+<ul>
+<li><a href="https://learn.sparkfun.com/tutorials/esp32-s2-thing-plus-hookup-guide/software-overview">SparkFun's hookup guide</a>
+ includes the <a href="https://cdn.sparkfun.com/assets/learn_tutorials/8/5/2/CP210x_Universal_Windows_Driver.zip">Silicon Labs'
+ Windows VCP driver for Arduino loading.</a>
+<li><a href="https://unexpectedmaker.com/tinys2">UnexpectedMaker</a> describes using
+ <a href="https://github.com/espressif/esptool">esptool</a> to flash ESP32-S2.
+<li>espressif <a href="https://github.com/espressif/arduino-esp32#esp32-s2-and-esp32-c3-support">installing ESP32-S2 board manager support</a>
+<li><a href="https://github.com/jandrassy/my_boards">Arduino custom board definitions</a>
+   &nbsp <a href="https://www.instructables.com/Arduino-IDE-Creating-Custom-Boards/"><b>instructables</b>:   Creating Arduino IDE Custom Boards</a>
+<li>Custom board configurations can be available under the <code>Tools > Processor</code> menu.
+<br> &nbsp &nbsp Arduino forum reference: <a href="https://forum.arduino.cc/t/how-to-specify-unique-compiling-options-for-multiple-sketches/679370">How
+ to specify unique compiling options for multiple sketches?</a>
+<br> &nbsp Official documentation:  <a href="https://arduino.github.io/arduino-cli/0.19/platform-specification/#custom-board-options">Custom board options</a>
+<br> &nbsp &nbsp Arduino forum reference: <a href="https://forum.arduino.cc/t/multiple-boards-configuration-options/891994">Multiple board’s configuration options</a><br> 
+
+<li>Oct 21, 2021 <a href="https://embedded-things.blogspot.com/2021/10/install-arduino-esp32-200-on-arduino.html">Install
+ arduino-esp32 2.0.0 on Arduino IDE, to program ESP32-S2/C3</a>
+<li>For ESP32-S2-Saola-1, select board of
+ <a href="https://embedded-things.blogspot.com/2021/10/arduino-esp32-camerawebserver-examples.html">"ESP32S2 Dev Module"</a>
+<li><a href="https://embedded-things.blogspot.com/2021/10/drive-esp32-c3-devkitm-1esp32-s2-saola.html">Driving
+ on-board RGB LED (WS2812) on GPIO 18</a>
+</ul>
+
+With 31 Aug 2021 release of <a href="https://github.com/espressif/arduino-esp32/releases/tag/2.0.0">ESP32 Arduino 2.0.0</a>,<br>
+ESP32-S2 can be added to Arduino IDE <a href="https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#installing-using-boards-manager">using board manager</a>,<br>
+but espressif is still publishing <a href="https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#windows">beta board support</a>.
+<ul>
+<li>Downloaded <a href="https://www.arduino.cc/en/software">Arduino IDE 1.8.16</a><br>
+ &nbsp 1.8.13 is being used for STM32; sadly, both versions wanted to share<br>
+ &nbsp <code>C:\Users\bleke\AppData\Local\Arduino15\preferences.txt</code>
+<li>In the <code>arduino-1.8.16</code> installation folder, <a href="https://www.arduino.cc/en/Guide/PortableIDE">add a <code>portable</code> folder</a>:<br>
+  <img src="portable.png">
+<li>In Arduino <code>File > Preferences</code>, note <code>Sketchbook Directory</code><br>
+<img src="sketchbook.png"><br clear=all>
+ ... and set <code>File > Preferences > Additional Boards Manager URLs:</code><br><font size=-2>
+ <a href="https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json">
+  https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json</a></font>
+<li>In <a href="https://desktop.github.com/">GitHub Desktop</a> <code>File > Clone repository > URL</code><br>
+<img src="clone.png"><br clear=all>
+Use <a href="https://github.com/espressif/arduino-esp32">https://github.com/espressif/arduino-esp32</a><br>
+ and set a path in that sketch directory,
+ e.g. <code>C:\Users\bleke\Documents\Arduino\hardware\espressif\esp32\arduino-esp32</code><br>
+<img src="repository.png">
+</ul>
+</font></body></html>
