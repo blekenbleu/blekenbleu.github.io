@@ -7,10 +7,13 @@
 <a href="https://github.com/blekenbleu/midi_examples#esp32tinyusb-known-issue">Known Issue</a> with current Arduino ESP32TinyUSB library:<br>
 <code>"tinyusb callbacks cant be overriden and are used by arduino-esp32"</code><br>
 Most Arduino MIDI examples want hacking for ESP32-S2<br>
-  if only for <code>digitalWrite(LED_BUILTIN, HIGH);</code>,<br>
-  which <code>LED_BUILTIN</code> does not exist.<br>
-  Instead, downloaded <a href="https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/">https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/</a>
-  and created <a href="">esp32s2LED</a> library to minimize LED substitution hassles.
+  &nbsp if only for <code>digitalWrite(LED_BUILTIN, HIGH);</code>,<br>
+  &nbsp which <code>LED_BUILTIN</code> does not exist.<br>
+  Instead, downloaded <a href="https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/">https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/</a><br>
+  &nbsp and created <a href="">esp32s2LED</a> library to minimize LED substitution hassles.
+
+<h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">USBMIDI_CREATE_DEFAULT_INSTANCE()</a> test</h4>
+Hacking <a href="https://github.com/blekenbleu/midi_examples/tree/master/midi_test">midi_test</a> to use <code>#include &ltUSB-MIDI.h&gt</code> provoked <a href="errors.txt"</a>this error</a>.
 
 <h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">Arduino MIDI Library - GitHub</a>
  &nbsp <a href="https://www.arduino.cc/en/Reference/MIDIUSB">MIDIUSB library</a>
