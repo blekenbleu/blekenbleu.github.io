@@ -32,18 +32,42 @@ but espressif is still publishing <a href="https://docs.espressif.com/projects/a
 <li>Downloaded <a href="https://www.arduino.cc/en/software">Arduino IDE 1.8.16</a><br>
  &nbsp 1.8.13 is being used for STM32; sadly, both versions wanted to share<br>
  &nbsp <code>C:\Users\bleke\AppData\Local\Arduino15\preferences.txt</code>
+
 <li>In the <code>arduino-1.8.16</code> installation folder, <a href="https://www.arduino.cc/en/Guide/PortableIDE">add a <code>portable</code> folder</a>:<br>
   <img src="portable.png">
+
 <li>In Arduino <code>File > Preferences</code>, note <code>Sketchbook Directory</code><br>
+
 <img src="sketchbook.png"><br clear=all>
  ... and set <code>File > Preferences > Additional Boards Manager URLs:</code><br><font size=-2>
  <a href="https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json">
   https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json</a></font>
+
 <li>In <a href="https://desktop.github.com/">GitHub Desktop</a> <code>File > Clone repository > URL</code><br>
 <img src="clone.png"><br clear=all>
 Use <a href="https://github.com/espressif/arduino-esp32">https://github.com/espressif/arduino-esp32</a><br>
  and set a path in that sketch directory,
- e.g. <code>C:\Users\bleke\Documents\Arduino\hardware\espressif\esp32\arduino-esp32</code><br>
-<img src="repository.png">
+ e.g. <code>C:\Users\bleke\Documents\Arduino\hardware\espressif\esp32</code><br>
+ <img src="repository.png">
+
+<li>In bash:<br> <code>cd /c/Users/bleke/Documents/Arduino/hardware/espressif/esp32</code><br>
+  <code>git submodule update --init --recursive</code><br>
+  <code>cd tools</code><br><code>./get.exe</code>
+  <pre>System: Windows, Info: Windows-10-10.0.19041
+Platform: i686-mingw32
+Tool riscv32-esp-elf-gcc8_4_0-esp-2021r2-win32.zip already downloaded
+Extracting riscv32-esp-elf-gcc8_4_0-esp-2021r2-win32.zip
+Tool xtensa-esp32-elf-gcc8_4_0-esp-2021r2-win32.zip already downloaded
+Extracting xtensa-esp32-elf-gcc8_4_0-esp-2021r2-win32.zip
+Tool xtensa-esp32s2-elf-gcc8_4_0-esp-2021r2-win32.zip already downloaded
+Extracting xtensa-esp32s2-elf-gcc8_4_0-esp-2021r2-win32.zip
+Tool esptool-3.1.0-windows.zip already downloaded
+Extracting esptool-3.1.0-windows.zip
+Tool i686-w64-mingw32.mklittlefs-c41e51a.200706.zip already downloaded
+Extracting i686-w64-mingw32.mklittlefs-c41e51a.200706.zip
+Tool mkspiffs-0.2.3-arduino-esp32-win32.zip already downloaded
+Extracting mkspiffs-0.2.3-arduino-esp32-win32.zip
+Renaming mkspiffs-0.2.3-arduino-esp32-win32/ to mkspiffs
+Done</pre>
 </ul>
 </font></body></html>
