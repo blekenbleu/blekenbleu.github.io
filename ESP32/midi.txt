@@ -1,0 +1,1957 @@
+
+
+
+
+
+
+
+
+
+
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\midi_examples\midi\midi.ino:5:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\usb_descriptors.cpp:15:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\esptinyusb.cpp:9:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\cdc\cdcusb.cpp:2:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/dfuusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\dfu\dfuusb.cpp:4:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgeneric.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgeneric.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidcomposite.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidcomposite.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidgamepad.h:1,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidgamepad.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidkeyboard.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidkeyboard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/hidmouse.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\hid\hidmouse.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/midiusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\midi\midiusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/sdusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\sdcard.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\mscusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/mscusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/ramdisk.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\msc\ramdisk.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:76: warning: "CFG_TUSB_RHPORT0_MODE" redefined
+ #define CFG_TUSB_RHPORT0_MODE       OPT_MODE_DEVICE
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:171: note: this is the location of the previous definition
+   #define CFG_TUSB_RHPORT0_MODE OPT_MODE_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:77: warning: "CFG_TUSB_OS" redefined
+ #define CFG_TUSB_OS                 OPT_OS_FREERTOS
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:220: note: this is the location of the previous definition
+   #define CFG_TUSB_OS             OPT_OS_NONE
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:102: warning: "CFG_TUD_CDC" redefined
+ #define CFG_TUD_CDC     CONFIG_TINYUSB_CDC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:236: note: this is the location of the previous definition
+   #define CFG_TUD_CDC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:103: warning: "CFG_TUD_MSC" redefined
+ #define CFG_TUD_MSC     CONFIG_TINYUSB_MSC_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:240: note: this is the location of the previous definition
+   #define CFG_TUD_MSC             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:104: warning: "CFG_TUD_HID" redefined
+ #define CFG_TUD_HID     CONFIG_TINYUSB_HID_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:244: note: this is the location of the previous definition
+   #define CFG_TUD_HID             0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:105: warning: "CFG_TUD_MIDI" redefined
+ #define CFG_TUD_MIDI     CONFIG_TINYUSB_MIDI_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:256: note: this is the location of the previous definition
+   #define CFG_TUD_MIDI            0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:106: warning: "CFG_TUD_VIDEO" redefined
+ #define CFG_TUD_VIDEO               CONFIG_TINYUSB_VIDEO_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:252: note: this is the location of the previous definition
+   #define CFG_TUD_VIDEO           0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:108: warning: "CFG_TUD_DFU_RUNTIME" redefined
+ #define CFG_TUD_DFU_RUNTIME   CONFIG_TINYUSB_DFU_RT_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:268: note: this is the location of the previous definition
+   #define CFG_TUD_DFU_RUNTIME     0
+ 
+In file included from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:109: warning: "CFG_TUD_VENDOR" redefined
+ #define CFG_TUD_VENDOR     CONFIG_TINYUSB_VENDOR_ENABLED
+ 
+In file included from D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/include/tusb_config.h:28,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/esptinyusb.h:7,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src/webusb.h:2,
+                 from C:\Users\bleke\Documents\Arduino\libraries\ESP32TinyUSB\src\classes\web\webusb.cpp:1:
+D:\packages\Arduino\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/src/tusb_option.h:260: note: this is the location of the previous definition
+   #define CFG_TUD_VENDOR          0
+ 
+Sketch uses 251242 bytes (19%) of program storage space. Maximum is 1310720 bytes.
+Global variables use 27236 bytes (8%) of dynamic memory, leaving 300444 bytes for local variables. Maximum is 327680 bytes.
+
