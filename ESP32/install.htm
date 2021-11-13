@@ -71,5 +71,80 @@ Extracting mkspiffs-0.2.3-arduino-esp32-win32.zip
 Renaming mkspiffs-0.2.3-arduino-esp32-win32/ to mkspiffs
 Done</pre>
 <li>Install <a href="libraries">additional libraries</a>
+
+<li>Arduino Tools Board: "ESP32S2 Dev Module"
+<dl compact>
+<dt>Upload Speed (what determines?)
+<dd>921600
+<dd>115200 *
+<dd>256000
+<dd>230400
+<dd>512000
+<dt>USB CDC On Boot (native USB?)
+<dd>Disabled *
+<dd>Enabled
+<dt>USB Firmware MSC On Boot (mass storage class)
+<dd>Disabled *
+<dd>Enabled
+<dt>USB DFU On Boot (native USB?)
+<dd>Disabled *
+<dd>Enabled
+<dt>Upload Mode (Boot ROM?)
+<dd>UART0 *
+<dd>Internal USB
+<dt>CPU Frequency (what determines?)
+<dd>240MHz (WiFi)
+<dd>160MHz (WiFi)
+<dd>80MHz (WiFi)
+<dd>40MHz
+<dd>20MHz
+<dd>10MHz
+<dt>Flash Frequency (what determines?)
+<dd>80MHz
+<dd>40MHz *
+<dt>Flash Mode (what determines?)
+<dd>QIO *
+<dd>DIO
+<dd>QOUT
+<dd>DOUT
+<dt>Flash Size
+<dd>4MB (32Mb) *
+<dd>8MB (64Mb)
+<dd>2MB (16Mb)
+<dd>16MB (128Mb)
+<dt>Partition Scheme
+<dd>Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS) *
+<dd>Default 4MB with ffat (1.2MB APP/1.5MB FATFS)
+<dd>8M Flash (3MB APP/1.5MB FATFS)
+<dd>Minimal (1.3MB APP/700KB SPIFFS)
+<dd>No OTA (2MB APP/2MB SPIFFS)
+<dd>No OTA (1MB APP/3MB SPIFFS)
+<dd>No OTA (2MB APP/2MB FATFS)
+<dd>No OTA (1MB APP/3MB FATFS)
+<dd>Huge APP (3MB No OTA/1MB SPIFFS)
+<dd>Minimal SPIFFS (1.9MB APP with OTA/190KB SPIFFS)
+<dd>16MB Flash (2MB APP/12.5MB FAT)
+<dd>16MB Flash (3MB APP/9MB FATFS)
+<dt>Core Debug Level
+<dd>None *
+<dd>Error
+<dd>Warn
+<dd>Info
+<dd>Debug
+<dd>Verbose
+<dt>PSRAM
+<dd>Disabled (WROOM) *
+<dd>Enabled  (WROVER)
+<dt>Port
+<dd>Serial ports
+<dt>Get Board Info
+<dd>(App option?)
+<hr>
+<dt>Programmer (can one be configured?)
+<dd>No programmers available for this board
+<dt>Burn Bootloader
+<dd>(applicable?)
+</dl>
+
 </ul>
 </font></body></html>
