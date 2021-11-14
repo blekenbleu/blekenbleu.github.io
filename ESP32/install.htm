@@ -70,9 +70,20 @@ Tool mkspiffs-0.2.3-arduino-esp32-win32.zip already downloaded
 Extracting mkspiffs-0.2.3-arduino-esp32-win32.zip
 Renaming mkspiffs-0.2.3-arduino-esp32-win32/ to mkspiffs
 Done</pre>
-<li>Install <a href="libraries">additional libraries</a>
+<li>Eliminate Arduino build warnings for <code>"CFG_TUSB_*" redefined</code> in sketches using <code>midiusb.h</code>:<br>
+In <code>Documents/Arduino/hardware/espressif/esp32/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/tusb_config.h</code>,<br>
+move all unconditional #define's (<code>COMMON CONFIGURATION</code> and <code>DRIVER CONFIGURATION</code>) from near the file end<br>
+to before <code>#include "tusb_option.h"</code>
 
-<li>Arduino Tools Board: "ESP32S2 Dev Module"
+<li>Install <a href="libraries"><b>additional libraries</b></a>
+
+<li>Arduino Tools Board: "ESP32S2 Dev Module"<br>
+These are <i>somewhat</i> documented at the
+ <a href="https://docs.platformio.org/en/latest/platforms/espressif32.html#configuration">platformio Esprissif32</a> page,<br>
+ with some information in <a href="https://github.com/platformio/platform-espressif32/blob/develop/boards/esp32-s2-saola-1.json">platform-espressif32/boards/esp32-s2-saola-1.json</a><br>
+While PlatformIO generally runs down-level versions of Arduino code,<br>
+Espressif appears to implement Arduino stuff there first,<br>
+perhaps an easier intermediate step from their proprietary <a href="https://github.com/espressif/esp-idf">esp-idf</a>.
 <dl compact>
 <dt>Upload Speed (what determines?)
 <dd>921600
