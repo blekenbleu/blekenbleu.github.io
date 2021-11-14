@@ -13,7 +13,10 @@ Most Arduino MIDI examples want hacking for ESP32-S2<br>
   &nbsp and created <a href="">esp32s2LED</a> library to minimize LED substitution hassles.
 
 <h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">USBMIDI_CREATE_DEFAULT_INSTANCE()</a> test</h4>
-Hacking <a href="https://github.com/blekenbleu/midi_examples/tree/master/midi_test">midi_test</a> to use <code>#include &ltUSB-MIDI.h&gt</code> provoked <a href="errors.txt"</a>this error</a>.
+Hacking <a href="https://github.com/blekenbleu/midi_examples/tree/master/midi_test">midi_test</a> to use <code>#include &ltUSB-MIDI.h&gt</code> provoked <a href="errors.txt"</a>this error</a>.<br>
+So far as I can determine, gluing Arduino's <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI</a> transport layer to
+ <a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb">ESP32TinyUSB</a><br>
+ &nbsp has yet to <a href="MIDIUSB.md"><b>be hacked</b></a>.<br>
 
 <h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">Arduino MIDI Library - GitHub</a>
  &nbsp <a href="https://www.arduino.cc/en/Reference/MIDIUSB">MIDIUSB library</a>
