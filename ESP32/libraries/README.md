@@ -1,7 +1,7 @@
 # Description
 
 ### Libraries to support [ESP32-S2-Saola-1 Arduino sketches](https://github.com/blekenbleu/midi_examples)
-- [AsyncTCP](file:///C:/Users/bleke/Documents/Arduino/libraries/AsyncTCP) from [GitHub](https://github.com/chegewara/EspTinyUSB)
+- [AsyncTCP](file:///C:/Users/bleke/Documents/Arduino/libraries/AsyncTCP) from [GitHub](https://github.com/me-no-dev/AsyncTCP)
 - [esp32s2LED](file:///C:/Users/bleke/Documents/Arduino/libraries/esp32s2LED) wrapper for [Freenove_WS2812_Lib_for_ESP32](Freenove_WS2812_Lib_for_ESP32)
 - [ESPAsyncWebServer](file:///C:/Users/bleke/Documents/Arduino/libraries/ESPAsyncWebServer) from [GitHub](https://github.com/me-no-dev/ESPAsyncWebServer)  
 - [Freenove_WS2812_Lib_for_ESP32](file:///C:/Users/bleke/Documents/Arduino/libraries/Freenove_WS2812_Lib_for_ESP32)
@@ -9,7 +9,8 @@
     control ws2812b LED on ESP32  
     install by:  `Sketch > Include Library > Manage Libraries`  
   Sample `midi.ino` reported many redefined's: CFG_TUSB_RHPORT0_MODE, CFG_TUSB_OS, CFG_TUD_CDC, CFG_TUD_MSC, CFG_TUD_HID, CFG_TUD_MIDI, CFG_TUD_VIDEO, CFG_TUD_DFU_RUNTIME, CFG_TUD_VENDOR
-- [ESP32TinyUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/ESP32TinyUSB) from [Arduino](https://www.arduino.cc/reference//en/libraries/esp32tinyusb)  
+- [ESP32TinyUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/ESP32TinyUSB) from [GitHub](https://github.com/chegewara/EspTinyUSB)  
+  originally from [Arduino](https://www.arduino.cc/reference//en/libraries/esp32tinyusb), but need change[s]  
   provides `midiusb.h`  
 - [MIDI_Library](file:///C:/Users/bleke/Documents/Arduino/libraries/MIDI_Library) from [Arduino](https://www.arduino.cc/reference/en/libraries/midi-library/)  
   provides `MIDI.h`  
