@@ -9,9 +9,13 @@
     control ws2812b LED on ESP32  
     install by:  `Sketch > Include Library > Manage Libraries`  
   Sample `midi.ino` reported many redefined's: CFG_TUSB_RHPORT0_MODE, CFG_TUSB_OS, CFG_TUD_CDC, CFG_TUD_MSC, CFG_TUD_HID, CFG_TUD_MIDI, CFG_TUD_VIDEO, CFG_TUD_DFU_RUNTIME, CFG_TUD_VENDOR
+
 - [ESP32TinyUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/ESP32TinyUSB) from [GitHub](https://github.com/chegewara/EspTinyUSB)  
-  originally from [Arduino](https://www.arduino.cc/reference//en/libraries/esp32tinyusb), but need change[s]  
   provides `midiusb.h`  
+  originally from [Arduino](https://www.arduino.cc/reference//en/libraries/esp32tinyusb), but need change[s]  
+  `msc/flashdisk.cpp` and `flashdisk.h` needed hacking to stifle warnings
+  `arduino-1.8.16/portable/packages/esp32` was built with different compiler flags than `Documents\Arduino\hardware\espressif`; problematic for `libfatfs`    
+
 - [MIDI_Library](file:///C:/Users/bleke/Documents/Arduino/libraries/MIDI_Library) from [Arduino](https://www.arduino.cc/reference/en/libraries/midi-library/)  
   provides `MIDI.h`  
 - [MIDIUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/MIDIUSB) from [Arduino](https://www.arduino.cc/reference/en/libraries/midiusb/) - does NOT support ESP32-S2-Saola-1  
