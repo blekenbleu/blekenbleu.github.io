@@ -32,6 +32,9 @@
   MIDI that is seemingly missing from the [Arduino ESP32 package](https://github.com/espressif/arduino-esp32)
 
 #### How to install [libraries from Arduino](https://www.arduino.cc/en/Guide/Libraries?setlang=en)  
+#### Disabling libraries bundled with Arduino:  
+`bleke@ALIENWARE-R7 MSYS /d/packages/Arduino/arduino-1.8.16/libraries`  
+`$ mv Adafruit_Circuit_Playground Esplora Firmata Keyboard Mouse Robot_Motor ../not_libraries/`  
 #### Installing Arduino libraries from GitHub by clone, using GitHub Desktop
     ... which handles submodule automagically...  
 In [GitHub Desktop](https://desktop.github.com):  
@@ -42,6 +45,12 @@ In [GitHub Desktop](https://desktop.github.com):
 - push clone
 - the Arduino IDE console window will show complaints about an invalid library
 
+#### Where Arduino builds objects
+`/c/Users/bleke/Local Settings/Temp/arduino_build_857189/core`  
+`/c/Users/bleke/Local Settings/Temp/arduino_build_857189/libraries`  
+Sadly, Windows Explorer cannot browse `/c/Users/bleke/Local Settings/`
+
+#### [Changing the `Tools > Board selection` causes Arduino's cache to be cleared](https://forum.arduino.cc/t/how-to-rebuild-3rd-party-library/527157) e.g. for library rebuilds  
 
 ## ESP32TinyUSB Known issue
 Library currently is not working with vanila arduino-esp32,
