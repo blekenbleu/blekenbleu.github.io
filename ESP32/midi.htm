@@ -10,7 +10,7 @@ Most Arduino MIDI examples want hacking for ESP32-S2<br>
   &nbsp if only for <code>digitalWrite(LED_BUILTIN, HIGH);</code>,<br>
   &nbsp which <code>LED_BUILTIN</code> does not exist.<br>
   Instead, downloaded <a href="https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/">https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/</a><br>
-  &nbsp and created <a href="">esp32s2LED</a> library to minimize LED substitution hassles.
+  &nbsp and created <a href="https://github.com/blekenbleu/esp32s2LED">esp32s2LED</a> library to minimize LED substitution hassles.
 
 <h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">USBMIDI_CREATE_DEFAULT_INSTANCE()</a> test</h4>
 Hacking <a href="https://github.com/blekenbleu/midi_examples/tree/master/midi_test">midi_test</a> to use <code>#include &ltUSB-MIDI.h&gt</code> provoked <a href="errors.txt"</a>this error</a>.<br>
@@ -21,6 +21,11 @@ So far as I can determine, gluing Arduino's <a href="https://github.com/lathoub/
 <h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">Arduino MIDI Library - GitHub</a>
  &nbsp <a href="https://www.arduino.cc/en/Reference/MIDIUSB">MIDIUSB library</a>
  &nbsp <a href="https://www.arduino.cc/reference/en/libraries/midiusb">reference</a></h4>
+
+<h4>Glue <a href="https://github.com/blekenbleu/EspTinyUSB">Esp32TinyUSB</a> to <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI</a>
+ by hacking MIDIUSB with glue class <a href="https://github.com/blekenbleu/TinyMIDIUSB/blob/main/src/MIDIUSB.h#L13"CMidiUSB</a></h4>
+First <a href="midi.txt">success</a>: <a href="https://github.com/blekenbleu/midi_examples/tree/master/midi_test"><code>miditest.ino</code></a>, but only implementing <code>MIDI.read()</code>,<br>
+which means that writes are going elsewhere... need to investigate USB-MIDI code...<br><br>
 
 <a href="https://github.com/little-scale/arduino-sketches/tree/master/xiao_mx">Seed Studio Xiao M0 USB MIDI Arduino sketch</a>
  &nbsp <a href="https://blog.adafruit.com/2021/05/19/a-small-usb-midi-device-using-the-seed-studio-xiao-m0-tinyusb/">adafruit article</a><br>
