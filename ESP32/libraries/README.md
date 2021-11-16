@@ -8,7 +8,8 @@
   from [Arduino](https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/)   
     control ws2812b LED on ESP32  
     install by:  `Sketch > Include Library > Manage Libraries`  
-  Sample `midi.ino` reported many redefined's: CFG_TUSB_RHPORT0_MODE, CFG_TUSB_OS, CFG_TUD_CDC, CFG_TUD_MSC, CFG_TUD_HID, CFG_TUD_MIDI, CFG_TUD_VIDEO, CFG_TUD_DFU_RUNTIME, CFG_TUD_VENDOR
+  Sample `midi.ino` reported many redefined's: CFG_TUSB_RHPORT0_MODE, CFG_TUSB_OS, CFG_TUD_CDC,
+        CFG_TUD_MSC, CFG_TUD_HID, CFG_TUD_MIDI, CFG_TUD_VIDEO, CFG_TUD_DFU_RUNTIME, CFG_TUD_VENDOR
 
 - [ESP32TinyUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/ESP32TinyUSB) from [GitHub](https://github.com/chegewara/EspTinyUSB)  
   provides `midiusb.h`  
@@ -18,7 +19,8 @@
 
 - [MIDI_Library](file:///C:/Users/bleke/Documents/Arduino/libraries/MIDI_Library) from [Arduino](https://www.arduino.cc/reference/en/libraries/midi-library/)  
   provides `MIDI.h`  
-- [MIDIUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/MIDIUSB) from [Arduino](https://www.arduino.cc/reference/en/libraries/midiusb/) - does NOT support ESP32-S2-Saola-1  
+- [MIDIUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/MIDIUSB) from [Arduino](https://www.arduino.cc/reference/en/libraries/midiusb/)
+    - does NOT support ESP32-S2-Saola-1  
     allows *other* Arduino microcontrollers with native USB to appear as MIDI peripherals
 - [USB-MIDI](file:///C:/Users/bleke/Documents/Arduino/libraries/USB-MIDI) from [Arduino](https://www.arduino.cc/reference/en/libraries/usbmidi/)  
   depends on MIDIUSB  
@@ -45,10 +47,9 @@ In [GitHub Desktop](https://desktop.github.com):
 - push clone
 - the Arduino IDE console window will show complaints about an invalid library
 
-#### Where Arduino builds objects
-`/c/Users/bleke/Local Settings/Temp/arduino_build_857189/core`  
-`/c/Users/bleke/Local Settings/Temp/arduino_build_857189/libraries`  
-Sadly, Windows Explorer cannot browse `/c/Users/bleke/Local Settings/`
+#### Where Arduino builds and caches objects
+`/c/Users/bleke/AppData/Local/Temp/arduino_build_857189/core`  
+`/c/Users/bleke/AppData/Local/Temp/arduino_build_857189/libraries`  
 
 #### [Changing the `Tools > Board selection` causes Arduino's cache to be cleared](https://forum.arduino.cc/t/how-to-rebuild-3rd-party-library/527157) e.g. for library rebuilds  
 
