@@ -1,17 +1,18 @@
 <html>
 <head>
+<style> body { margin-left: 80px; } </style>
 <title>Wireless Mixer MIDI</title>
 </head>
 <body>
-<h2>Wireless Mixer MIDI</h2>
-<a href="https://trajkovski.net/support.html">Trajkovski Labs support page</a><br>
-<a href="DS_MIDI_WiFi">Installation</a><br>
-<br>
-<h4>see also: <a href="../ESP32/midi.htm">ESP32-S2 MIDI</a></h4>
-<h4><a href="https://projectgus.github.io/hairless-midiserial">Hairless MIDI&lt-&gtSerial Bridge</a></h4> 
-<h3>Wireless Mixer MIDI map (CC numbers, decimal):</h3>
-Master volume = 7<br>
-<br>
+<h3>Wireless Mixer MIDI</h3>
+<dl>
+<dt>See also: <a href="../ESP32/midi.htm"><b>ESP32-S2 MIDI</b></a>
+<dd> &nbsp
+<dt>Android app
+<dd><a href="https://trajkovski.net/support.html">Trajkovski Labs support page</a><br>
+<a href="DS_MIDI_WiFi">Installation</a>
+<dd>Wireless Mixer MIDI map (CC numbers, decimal)<br>
+  &nbsp  &nbsp Master volume = 7<br>
   &nbsp  &nbsp Play = 118<br>
   &nbsp  &nbsp Stop = 120<br>
   &nbsp  &nbsp Record = 119<br>
@@ -19,20 +20,20 @@ Master volume = 7<br>
   &nbsp  &nbsp Right = 5<br>
   &nbsp  &nbsp Previous = 2<br>
   &nbsp  &nbsp Next = 1<br>
-<br>
-  &nbsp  &nbsp Slider1 = 8<br>
-  &nbsp  &nbsp Slider2 = 9<br>
-  &nbsp  &nbsp Slider3 = 10<br>
-  &nbsp  &nbsp Slider4 = 12<br>
-  &nbsp  &nbsp Slider5 = 13<br>
-  &nbsp  &nbsp Slider6 = 14<br>
-  &nbsp  &nbsp Slider7 = 15<br>
-  &nbsp  &nbsp Slider8 = 16<br>
-  &nbsp  &nbsp Slider9 = 17<br>
-  &nbsp  &nbsp Slider10 = 18<br>
-  &nbsp  &nbsp Slider11 = 19<br>
-  &nbsp  &nbsp Slider12 = 20<br>
-<br>
+<table><tr><td>
+   Slider1 = 8<br>
+   Slider2 = 9<br>
+   Slider3 = 10<br>
+   Slider4 = 12<br>
+   Slider5 = 13<br>
+   Slider6 = 14<br>
+   Slider7 = 15<br>
+   Slider8 = 16<br>
+   Slider9 = 17<br>
+   Slider10 = 18<br>
+   Slider11 = 19<br>
+   Slider12 = 20<br>
+</td><td>
   &nbsp  &nbsp Pan1 = 23<br>
   &nbsp  &nbsp Pan2 = 24<br>
   &nbsp  &nbsp Pan3 = 25<br>
@@ -45,7 +46,7 @@ Master volume = 7<br>
   &nbsp  &nbsp Pan10 = 33<br>
   &nbsp  &nbsp Pan11 = 34<br>
   &nbsp  &nbsp Pan12 = 35<br>
-<br>
+</td><td>
   &nbsp  &nbsp Knob1-1 = 39<br>
   &nbsp  &nbsp Knob1-2 = 40<br>
   &nbsp  &nbsp Knob1-3 = 41<br>
@@ -58,7 +59,7 @@ Master volume = 7<br>
   &nbsp  &nbsp Knob1-10 = 48<br>
   &nbsp  &nbsp Knob1-11 = 49<br>
   &nbsp  &nbsp Knob1-12 = 50<br>
-<br>
+</td><td>
   &nbsp  &nbsp Knob2-1 = 53<br>
   &nbsp  &nbsp Knob2-2 = 54<br>
   &nbsp  &nbsp Knob2-3 = 55<br>
@@ -71,7 +72,7 @@ Master volume = 7<br>
   &nbsp  &nbsp Knob2-10 = 62<br>
   &nbsp  &nbsp Knob2-11 = 63<br>
   &nbsp  &nbsp Knob2-12 = 65<br>
-<br>
+</td><td>
   &nbsp  &nbsp Knob3-1 = 102<br>
   &nbsp  &nbsp Knob3-2 = 103<br>
   &nbsp  &nbsp Knob3-3 = 104<br>
@@ -84,20 +85,20 @@ Master volume = 7<br>
   &nbsp  &nbsp Knob3-10 = 111<br>
   &nbsp  &nbsp Knob3-11 = 112<br>
   &nbsp  &nbsp Knob3-12 = 113<br>
-<br>
-  &nbsp  &nbsp Mute1 = 66<br>
-  &nbsp  &nbsp Mute2 = 67<br>
-  &nbsp  &nbsp Mute3 = 68<br>
-  &nbsp  &nbsp Mute4 = 69<br>
-  &nbsp  &nbsp Mute5 = 70<br>
-  &nbsp  &nbsp Mute6 = 71<br>
-  &nbsp  &nbsp Mute7 = 72<br>
-  &nbsp  &nbsp Mute8 = 73<br>
-  &nbsp  &nbsp Mute9 = 74<br>
-  &nbsp  &nbsp Mute10 = 75<br>
-  &nbsp  &nbsp Mute11 = 76<br>
-  &nbsp  &nbsp Mute12 = 77<br>
-<br>
+</td></tr><tr><td>
+  Mute1 = 66<br>
+  Mute2 = 67<br>
+  Mute3 = 68<br>
+  Mute4 = 69<br>
+  Mute5 = 70<br>
+  Mute6 = 71<br>
+  Mute7 = 72<br>
+  Mute8 = 73<br>
+  Mute9 = 74<br>
+  Mute10 = 75<br>
+  Mute11 = 76<br>
+  Mute12 = 77<br>
+</td><td>
   &nbsp  &nbsp Solo1 = 78<br>
   &nbsp  &nbsp Solo2 = 79<br>
   &nbsp  &nbsp Solo3 = 80<br>
@@ -110,7 +111,7 @@ Master volume = 7<br>
   &nbsp  &nbsp Solo10 = 87<br>
   &nbsp  &nbsp Solo11 = 88<br>
   &nbsp  &nbsp Solo12 = 89<br>
-<br>
+</td><td>
   &nbsp  &nbsp Rec1 = 90<br>
   &nbsp  &nbsp Rec2 = 91<br>
   &nbsp  &nbsp Rec3 = 92<br>
@@ -123,7 +124,7 @@ Master volume = 7<br>
   &nbsp  &nbsp Rec10 = 99<br>
   &nbsp  &nbsp Rec11 = 100<br>
   &nbsp  &nbsp Rec12 = 101<br>
-<br>
+</td><td>
   &nbsp  &nbsp ExBtn1_1 = 11<br>
   &nbsp  &nbsp ExBtn1_2 = 21<br>
   &nbsp  &nbsp ExBtn1_3 = 22<br>
@@ -136,8 +137,7 @@ Master volume = 7<br>
   &nbsp  &nbsp ExBtn1_10 = 124<br>
   &nbsp  &nbsp ExBtn1_11 = 125<br>
   &nbsp  &nbsp ExBtn1_12 = 126<br>
-</body>
-</html>
+</td><td>
   &nbsp  &nbsp ExBtn2_1 = 114<br>
   &nbsp  &nbsp ExBtn2_2 = 115<br>
   &nbsp  &nbsp ExBtn2_3 = 116<br>
@@ -149,3 +149,11 @@ Master volume = 7<br>
   &nbsp  &nbsp ExBtn2_9 = 64<br>
   &nbsp  &nbsp ExBtn2_10 = 6<br>
   &nbsp  &nbsp ExBtn2_11 = 5<br>
+  &nbsp  &nbsp ExBtn2_12 = 3(?)<br>
+</td></tr></table>
+<dd> &nbsp
+<dt><a href="https://projectgus.github.io/hairless-midiserial">Hairless MIDI&lt-&gtSerial Bridge</a>
+<dd>connect serial devices (e.g. Arduinos) to send and receive MIDI signals
+</dl>
+</body>
+</html>
