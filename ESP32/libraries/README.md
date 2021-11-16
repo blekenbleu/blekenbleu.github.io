@@ -2,7 +2,7 @@
 
 ### Libraries to support [ESP32-S2-Saola-1 Arduino sketches](https://github.com/blekenbleu/midi_examples)
 - [AsyncTCP](file:///C:/Users/bleke/Documents/Arduino/libraries/AsyncTCP) from [GitHub](https://github.com/me-no-dev/AsyncTCP)
-- [esp32s2LED](file:///C:/Users/bleke/Documents/Arduino/libraries/esp32s2LED) wrapper for [Freenove_WS2812_Lib_for_ESP32](Freenove_WS2812_Lib_for_ESP32)
+- [**esp32s2LED**](https://github.com/blekenbleu/esp32s2LED) wrapper for [Freenove_WS2812_Lib_for_ESP32](Freenove_WS2812_Lib_for_ESP32)
 - [ESPAsyncWebServer](file:///C:/Users/bleke/Documents/Arduino/libraries/ESPAsyncWebServer) from [GitHub](https://github.com/me-no-dev/ESPAsyncWebServer)  
 - [Freenove_WS2812_Lib_for_ESP32](file:///C:/Users/bleke/Documents/Arduino/libraries/Freenove_WS2812_Lib_for_ESP32)
   from [Arduino](https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/)   
@@ -11,19 +11,26 @@
   Sample `midi.ino` reported many redefined's: CFG_TUSB_RHPORT0_MODE, CFG_TUSB_OS, CFG_TUD_CDC,
         CFG_TUD_MSC, CFG_TUD_HID, CFG_TUD_MIDI, CFG_TUD_VIDEO, CFG_TUD_DFU_RUNTIME, CFG_TUD_VENDOR
 
-- [ESP32TinyUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/ESP32TinyUSB) from [GitHub](https://github.com/chegewara/EspTinyUSB)  
-  provides `midiusb.h`  
-  originally from [Arduino](https://www.arduino.cc/reference//en/libraries/esp32tinyusb), but need change[s]  
-  `msc/flashdisk.cpp` and `flashdisk.h` needed hacking to stifle warnings
-  `arduino-1.8.16/portable/packages/esp32` was built with different compiler flags than `Documents\Arduino\hardware\espressif`; problematic for `libfatfs`    
+- [ESP32TinyUSB](https://github.com/blekenbleu/TinyMIDIUSB) from [GitHub](https://github.com/chegewara/EspTinyUSB)  
+  originally from [Arduino](https://www.arduino.cc/reference//en/libraries/esp32tinyusb), but wanted change[s]  
+  `msc/flashdisk.cpp` and `flashdisk.h` were hacked to stifle warnings  
+  `arduino-1.8.16/portable/packages/esp32` is built with different compiler flags than `Documents\Arduino\hardware\espressif`; problematic for `libfatfs`    
+
+- [**TinyMIDIUSB**](https://github.com/blekenbleu/TinyMIDIUSB) wrapper for [ESP32TinyUSB](https://github.com/blekenbleu/TinyMIDIUSB)
+   to emulate Arduino [MIDIUSB](https://www.arduino.cc/reference/en/libraries/midiusb/)  
+  `MIDIUSB.h` includes `"esptinyusb.h"` as well as `"Tmidiusb.h"` renamed from `midiusb.h`  
+   to work around Arduino bug.  
 
 - [MIDI_Library](file:///C:/Users/bleke/Documents/Arduino/libraries/MIDI_Library) from [Arduino](https://www.arduino.cc/reference/en/libraries/midi-library/)  
-  provides `MIDI.h`  
-- [MIDIUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/MIDIUSB) from [Arduino](https://www.arduino.cc/reference/en/libraries/midiusb/)
+  provides `MIDI.h`;  *usually* includes `midiusb.h`, `serialMIDI.h`  
+
+- [MIDIUSB](file:///C:/Users/bleke/Documents/Arduino/libraries/MIDIUSB) from [Arduino](https://www.arduino.cc/reference/en/libraries/midiusb/)  
+  *usually* provides `MIDIUSB.h`
     - does NOT support ESP32-S2-Saola-1  
     allows *other* Arduino microcontrollers with native USB to appear as MIDI peripherals
+
 - [USB-MIDI](file:///C:/Users/bleke/Documents/Arduino/libraries/USB-MIDI) from [Arduino](https://www.arduino.cc/reference/en/libraries/usbmidi/)  
-  depends on MIDIUSB  
+  provides `midiusb.h`;  depends on `MIDIUSB.h`  
   Provides transport layer for the Arduino MIDI Library and Arduino's MIDIUSB;  
   compatibly with AppleMIDI, ipMIDI and BLE-MIDI transports.
 

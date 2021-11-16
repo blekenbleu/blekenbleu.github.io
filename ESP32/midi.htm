@@ -3,38 +3,42 @@
 <title>USB MIDI using Arduino and ESP32-S2-Saola-1</title></head>
 <body><font size=+1>
 
-<h4><a href="https://github.com/hathach/tinyusb">TinyUSB MIDI - GitHub</a></h4>
+<h3><a href="https://github.com/hathach/tinyusb">TinyUSB MIDI - GitHub</a></h3>
+<dl>
+<dt>
 <a href="https://github.com/blekenbleu/midi_examples#esp32tinyusb-known-issue">Known Issue</a> with current Arduino ESP32TinyUSB library:<br>
-<code>"tinyusb callbacks cant be overriden and are used by arduino-esp32"</code><br>
-Most Arduino MIDI examples want hacking for ESP32-S2<br>
-  &nbsp if only for <code>digitalWrite(LED_BUILTIN, HIGH);</code>,<br>
-  &nbsp which <code>LED_BUILTIN</code> does not exist.<br>
-  Instead, downloaded <a href="https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/">https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/</a><br>
-  &nbsp and created <a href="https://github.com/blekenbleu/esp32s2LED">esp32s2LED</a> library to minimize LED substitution hassles.
-
-<h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">USBMIDI_CREATE_DEFAULT_INSTANCE()</a> test</h4>
-Hacking <a href="https://github.com/blekenbleu/midi_examples/tree/master/midi_test">midi_test</a> to use <code>#include &ltUSB-MIDI.h&gt</code> provoked <a href="errors.txt"</a>this error</a>.<br>
-So far as I can determine, gluing Arduino's <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI</a> transport layer to
- <a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb">ESP32TinyUSB</a><br>
- &nbsp has yet to <a href="MIDIUSB.md"><b>be hacked</b></a>.<br>
+<dd><code>"tinyusb callbacks cant be overriden and are used by arduino-esp32"</code><br> &nbsp
+<dt><b>Most Arduino MIDI examples want hacking for ESP32-S2</b>
+<dd>Most Arduino MIDI sketches use <code>#include "MIDI.h"</code> paradigm;<br>
+<dd>often, also <code>digitalWrite(LED_BUILTIN, HIGH);</code><br>
+  &nbsp ...which <code>LED_BUILTIN</code> does not exist on most ESP32-S2 boards.
+<dd>Instead, downloaded <a href="https://www.arduino.cc/reference/en/libraries/freenove-ws2812-lib-for-esp32/">freenove-ws2812-lib-for-esp32/</a><br>
+ &nbsp and created <a href="https://github.com/blekenbleu/esp32s2LED">esp32s2LED</a> library to minimize LED substitution hassles.
+</dl>
 
 <h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">Arduino MIDI Library - GitHub</a>
  &nbsp <a href="https://www.arduino.cc/en/Reference/MIDIUSB">MIDIUSB library</a>
  &nbsp <a href="https://www.arduino.cc/reference/en/libraries/midiusb">reference</a></h4>
+Arduino <code>MIDI.h</code> was originally intended for specific MIDI hardware connections,<br>
+then <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI transport layer</a> was inserted for optional USB or serial connections.<br>
 
-<h4>Glue <a href="https://github.com/blekenbleu/EspTinyUSB">Esp32TinyUSB</a> to <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI</a>
- by hacking MIDIUSB with glue class <a href="https://github.com/blekenbleu/TinyMIDIUSB/blob/main/src/MIDIUSB.h#L13"CMidiUSB</a></h4>
+<h4>Testing <a href="https://github.com/FortySevenEffects/arduino_midi_library">USBMIDI_CREATE_DEFAULT_INSTANCE()</a></h4>
+Simply hacking <a href="https://github.com/blekenbleu/midi_examples/tree/master/midi_test">midi_test</a> to use <code>#include &ltUSB-MIDI.h&gt</code>
+ provoked <a href="errors.txt"</a>this error</a>.<br><br>
+Tricking Arduino's <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI</a> transport layer to use
+ <a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb">ESP32TinyUSB</a><br>
+ &nbsp seemingly has not previously <a href="https://github.com/blekenbleu/TinyMIDIUSB"><b>been hacked</b></a> by creating a <code>USBMIDI.h</code> doppelgänger.<br>
+
+<h3>Using <a href="https://github.com/blekenbleu/EspTinyUSB">Esp32TinyUSB</a> with <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI</a>
+ by replacing <a href="https://www.arduino.cc/en/Reference/MIDIUSB">Arduino's MIDIUSB</a> with a "glue" class <a href="https://github.com/blekenbleu/TinyMIDIUSB/blob/main/src/MIDIUSB.h#L13"CMidiUSB</a></h3>
 First <a href="midi.txt">success</a>: <a href="https://github.com/blekenbleu/midi_examples/tree/master/midi_test"><code>miditest.ino</code></a>, but only implementing <code>MIDI.read()</code>,<br>
 which means that writes are going elsewhere... need to investigate USB-MIDI code...<br><br>
-
-<a href="https://github.com/little-scale/arduino-sketches/tree/master/xiao_mx">Seed Studio Xiao M0 USB MIDI Arduino sketch</a>
- &nbsp <a href="https://blog.adafruit.com/2021/05/19/a-small-usb-midi-device-using-the-seed-studio-xiao-m0-tinyusb/">adafruit article</a><br>
 
 <h4><a href="https://github.com/tttapa/Control-Surface">tttapa / Control-Surface - GitHub</a> many example sketches</h4>
 
 <b><a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device/midi">EspTinyUSB/examples/device/midi</a></b><br>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/C94DsWar3S0"></iframe><br><br>
-<i>Useful MIDI links:</i><br>
+<h4>Other Arduino MIDI links:</h4>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/JZ5yPdoPooU"></iframe><br>
 <a href="https://github.com/SwitchAndLever/theMIDInator"><i>source @ GitHub</i></a><br><br>
 <a href="https://drive.google.com/file/d/0BwnVMB_6yujwR1dydVJ6MHJib2M/view?resourcekey=0-pn-udeWBz6syK75kNbdIkg">Arduino MIDI sketch</a>
@@ -45,5 +49,7 @@ which means that writes are going elsewhere... need to investigate USB-MIDI code
 <a href="https://github.com/silveirago/DIY-Midi-Controller/tree/master/Code%20-%20c%C3%B3digo/en-DIY_midi_controller">silveirago / DIY-Midi-Controller Workshop sketch</a><br>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/nh7J71ItDn8"></iframe><br><br>
 <br>
+<a href="https://github.com/little-scale/arduino-sketches/tree/master/xiao_mx">Seed Studio Xiao M0 USB MIDI Arduino sketch</a>
+ &nbsp <a href="https://blog.adafruit.com/2021/05/19/a-small-usb-midi-device-using-the-seed-studio-xiao-m0-tinyusb/">adafruit article</a><br>
 
 </font></body></html>
