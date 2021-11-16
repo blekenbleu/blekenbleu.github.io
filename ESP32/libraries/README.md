@@ -30,15 +30,12 @@
     allows *other* Arduino microcontrollers with native USB to appear as MIDI peripherals
 
 - [USB-MIDI](file:///C:/Users/bleke/Documents/Arduino/libraries/USB-MIDI) from [Arduino](https://www.arduino.cc/reference/en/libraries/usbmidi/)  
-  provides `midiusb.h`;  depends on `MIDIUSB.h`  
+  provides `midiusb.h`;  depends on `MIDIUSB.h`, using `MidiUSB.read()`, `MidiUSB.sendMIDI(packet)` and `MidiUSB.flush()`, while not declaring `MidiUSB`  
   Provides transport layer for the Arduino MIDI Library and Arduino's MIDIUSB;  
   compatibly with AppleMIDI, ipMIDI and BLE-MIDI transports.
 
 #### Libraries with possibly interesting examples:
-- [esp-idf](file:///C:/Users/bleke/Documents/Arduino/esp-idf) from [GitHub](https://github.com/espressif/esp-idf/tree/release/v4.4) - switched from master to release 4.4  
-  Arduino reports this as Invalid library: no headers files (.h) found  
-  It was downloaded to understand TinyUSB changes and  
-  MIDI that is seemingly missing from the [Arduino ESP32 package](https://github.com/espressif/arduino-esp32)
+- [Control Surface](https://github.com/tttapa/Control-Surface) provides support and extensive documentation for MIDI control surface sketches.  
 
 #### How to install [libraries from Arduino](https://www.arduino.cc/en/Guide/Libraries?setlang=en)  
 #### Disabling libraries bundled with Arduino:  
