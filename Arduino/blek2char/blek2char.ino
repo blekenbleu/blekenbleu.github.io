@@ -221,7 +221,7 @@ void loop() {
               Serial.write((1 > received) ? '#' : '*');
               col++;
               if(2 == info_level) {
-                Serial.write(" Channel "); Serial.print(addr+': '+received);
+                Serial.write(" Channel "); Serial.print(addr+": "+received);
                 if (1 > received)
                   Serial.write(" <= 0\n");
                 else Serial.println(">= "+tmax[addr]);
