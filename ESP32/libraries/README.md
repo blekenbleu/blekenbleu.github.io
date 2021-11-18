@@ -41,15 +41,6 @@
 #### Disabling libraries bundled with Arduino:  
 `bleke@ALIENWARE-R7 MSYS /d/packages/Arduino/arduino-1.8.16/libraries`  
 `$ mv Adafruit_Circuit_Playground Esplora Firmata Keyboard Mouse Robot_Motor ../not_libraries/`  
-#### Installing Arduino libraries from GitHub by clone, using GitHub Desktop
-    ... which handles submodule automagically...  
-In [GitHub Desktop](https://desktop.github.com):  
-- File > Clone repository...
-- URL
-- fill in username/repository, e.g. `chegewara/EspTinyUSB`  
-- fill in Local path. e.g. `C:\Users\popeye\Documents\Arduino\libraries`
-- push clone
-- the Arduino IDE console window will show complaints about an invalid library
 
 #### Where Arduino builds and caches objects
 `/c/Users/bleke/AppData/Local/Temp/arduino_build_857189/core`  
