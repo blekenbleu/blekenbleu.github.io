@@ -44,6 +44,23 @@ USB signalling is differential, but <i>signal voltages are still relative to dev
 Provided <a href="https://github.com/blekenbleu/otherESP32S2examples/tree/main/cdc"><code>cdc.ino</code> sketch</a> loaded and ran fine, after re-enabling MSC and DFU devices...<br>
 <img src="ready.jpg"><br clear=all>
 
+<h4>USB HID device</h4>
+Provided <a href="https://github.com/blekenbleu/otherESP32S2examples/tree/main/gamepad"><code>gamepad.ino</code> sketch</a> loaded and ran,<br>
+<code>joy.cpl</code> detected <code>ESP32S2 arduino device</code>, but Test showed no activity...<br>
+Serial message were added to the sketch; the <code>if(!digitalRead(0))</code> was never true while using <code>joy.cpl</code>...<br>
+Another <a href="https://github.com/espressif/arduino-esp32/blob/master/libraries/USB/examples/Gamepad/Gamepad.ino"><code>Gamepad.ino</code></a> had no such test.<br>
+<b>ESP32S2 arduino devices > Properties > Test</b> got busy after rebuilding with that test defeated.<br>
+Meanwhile, there was also a LOT of serial traffic from <code>Hidusb.cpp</code>:<pre>...
+...
+[ 74914][D][hidusb.cpp:37] write(): len: 11
+[ 75013][D][hidusb.cpp:36] write(): write hid: 
+[ 75014][D][hidusb.cpp:37] write(): len: 11
+[ 75113][D][hidusb.cpp:36] write(): write hid: 
+[ 75114][D][hidusb.cpp:37] write(): len: 11
+...</pre>
+Commented out two logging lines in <code>hidusb.cpp</code> to stiffle serial traffic.<br>
+<b>Note:</b> &nbsp Windows' Game Controllers Test only updates while it has focus.<br>
+
 <h4>GitHub:</h4>
 <ul compact>
 <li><a href="https://esp32.com/viewtopic.php?f=12&t=23798&p=85401&hilit=midi#p85401">ESP32-S2 TinyUSB composite reconfiguration</a><br>
