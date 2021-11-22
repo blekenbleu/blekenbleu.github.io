@@ -1,6 +1,6 @@
 <html><head>
-<style> body { margin-left: 80px; } ul {margin-top:0; } </style>
-<title>ESP32-S2 for composite USB using Arduino and ESP32-S2-Saola-1</title></head>
+<style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } h4 {margin-bottom:0; } </style>
+<title>Composite USB, web server and Servo control using Arduino and ESP32-S2-Saola-1</title></head>
 <body><font size=+1>
 <h3>Arduino and ESP32-S2-Saola-1</h3>
 <h4>Ordered from <a href="https://www.jameco.com/z/ESP32-S2-Saola-1M-Espressif-Systems-ESP32-S2-WROOM-Series-Evaluation-Board-4MB-Flash-802-11-b-g-n-WiFi-WLAN-_2324583.html">JameCo</a>:
@@ -36,27 +36,30 @@ There are now also ESP32-S2 boards from <a href="https://www.amazon.com/dp/B093B
 
 <h4><a href="midi.htm">Arduino ESP32-S2 MIDI</a></h4>
 
-<h4><a href="https://www.hackster.io/news/create-custom-usb-devices-with-the-esp32s2stick-458bf370a522">Create Custom USB Devices with the esp32s2Stick</a></h4>
+<h4><a href="https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/motor/servo.html">Servo</a> support</h4>
+<dl>
+<dt><a href="https://www.arduino.cc/reference/en/libraries/esp32_s2_isr_servo/">Arduino <b>ESP32_S2_ISR_Servo</b> library</a>
+<dt><a href="https://randomnerdtutorials.com/esp32-servo-motor-web-server-arduino-ide">Random Nerd Tutorial</a>
+<dd><a href="https://forum.arduino.cc/t/servo-control-on-esp32-s2/858913">forum issues</a>
+<dt>Interrupt-driven <a href="https://github.com/khoih-prog/ESP32_PWM">ESP32-PWM</a>
+</dl>
 
 GitHub:
 <ul compact>
 <li><a href="https://github.com/espressif/arduino-esp32/releases/tag/2.0.0">ESP32 Arduino 2.0.0 released Aug 31 2021</a>
 <li>Andreas Spiess: <a href="https://github.com/SensorsIot/ESP32-S2">https://github.com/SensorsIot/ESP32-S2</a>
-<li><a href="https://github.com/lathoub/Arduino-AppleMIDI-Library">https://github.com/lathoub/Arduino-AppleMIDI-Library</a>
-<li><a href="https://github.com/marcel-licence/esp32_usb_midi">ESP32 TinyUSB MIDI synth</a> using a USB host shield
 <li><a href="https://github.com/topics/esp32-s2">ESP32-S2 topics</a> list
-<li>Interrupt-driven <a href="https://github.com/khoih-prog/ESP32_PWM">ESP32-PWM</a>
 </ul>
 
 Other:<ul compact>
+<li>WUD-Ducky <a href="https://bestofcpp.com/repo/tobozo-WUD-Ducky">CDC + HID + MIDI</a>
+<li><a href="https://docs.arduino.cc/software/ide-v2">Arduino 2 IDE (no ESP32)</a>
 <li>espressif <a href="https://docs.espressif.com/projects/arduino-esp32/en/latest/">ESP32 Arduino Core's documentation</a>
 <li><a href="https://www.arduinolibraries.info/">Arduino Library List</a>
 <li>ESP32.com <a href="https://www.esp32.com/viewtopic.php?f=19&t=22209">Arduino support</a><br>
 <li>ESP32.com <a href="https://www.esp32.com/viewforum.php?f=23&sid=bebe71cd2d736539a1cad65d96eab1cd">English forum</a>
  &nbsp <a href="https://www.esp32.com/viewtopic.php?f=19&t=20364">with Arduino IDE</a>
 <li><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/usb_device.html">USB pin wiring</a>
-<li>WUD-Ducky <a href="https://bestofcpp.com/repo/tobozo-WUD-Ducky">CDC + HID + MIDI</a>
-<li><a href="https://docs.arduino.cc/software/ide-v2">Arduino 2 IDE (no ESP32)</a>
 </ul>
 
 <h4><a href="https://maker.pro/esp8266/tutorial/a-comparison-of-the-new-esp32-s2-to-the-esp32">ESP32-S2 compared to ESP32</a> - Jun 14, 2020</h4>

@@ -1,9 +1,9 @@
 <html><head>
-<style> body { margin-left: 80px; } </style>
+<style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
 <title>USB MIDI using Arduino and ESP32-S2-Saola-1</title></head>
 <body><font size=+1>
 
-<h3><a href="https://github.com/hathach/tinyusb">TinyUSB MIDI - GitHub</a></h3>
+<h4><a href="https://github.com/hathach/tinyusb">TinyUSB MIDI - GitHub</a></h4>
 <dl>
 <dt>
 <a href="https://github.com/blekenbleu/midi_examples#esp32tinyusb-known-issue">Known Issue</a> with current Arduino ESP32TinyUSB library:<br>
@@ -16,11 +16,12 @@
  &nbsp and created <a href="https://github.com/blekenbleu/esp32s2LED">esp32s2LED</a> library to minimize LED substitution hassles.
 </dl>
 
-<h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">Arduino MIDI Library - GitHub</a>
- &nbsp <a href="https://www.arduino.cc/en/Reference/MIDIUSB">MIDIUSB library</a>
- &nbsp <a href="https://www.arduino.cc/reference/en/libraries/midiusb">reference</a></h4>
-Arduino <code>MIDI.h</code> was originally intended for specific MIDI hardware connections,<br>
-then <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI transport layer</a> was inserted for optional USB or serial connections.<br>
+<h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">Arduino MIDI Library - GitHub</a></h4>
+ <dl><dt><a href="https://www.arduino.cc/en/Reference/MIDIUSB">MIDIUSB library</a>
+ <dt><a href="https://www.arduino.cc/reference/en/libraries/midiusb">reference</a>
+<dt>Arduino <code>MIDI.h</code> was originally intended for specific MIDI hardware connections,
+<dd>then <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI transport layer</a> was inserted for optional USB or serial connections.
+</dl>
 
 <h4>Testing <a href="https://github.com/FortySevenEffects/arduino_midi_library">USBMIDI_CREATE_DEFAULT_INSTANCE()</a></h4>
 Simply hacking <a href="https://github.com/blekenbleu/midi_examples/tree/master/midi_test">midi_test</a> to use <code>#include &ltUSB-MIDI.h&gt</code>
@@ -41,6 +42,17 @@ which means that writes are going elsewhere... need to investigate USB-MIDI code
 
 <b><a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device/midi">EspTinyUSB/examples/device/midi</a></b><br>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/C94DsWar3S0"></iframe><br><br>
+
+<h4>GitHub</h4>
+<ul>
+<li><a href="https://github.com/chegewara/EspTinyUSB">MIDI in chegewara/EspTinyUSB</a>
+ &nbsp <a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device/midi">MIDI example</a>
+ &nbsp <a href="https://github.com/chegewara/EspTinyUSB/issues/52#issuecomment-915718146">fix for MIDI Not working</a>
+<li><a href="https://github.com/lathoub/Arduino-AppleMIDI-Library">https://github.com/lathoub/Arduino-AppleMIDI-Library</a>
+<li><a href="https://github.com/marcel-licence/esp32_usb_midi">ESP32 TinyUSB MIDI synth</a> using a USB host shield
+</ul>
+
+
 <h4>Other Arduino MIDI links:</h4>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/JZ5yPdoPooU"></iframe><br>
 <a href="https://github.com/SwitchAndLever/theMIDInator"><i>source @ GitHub</i></a><br><br>

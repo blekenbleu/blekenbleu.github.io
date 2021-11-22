@@ -1,40 +1,52 @@
 <html><head>
-<style> body { margin-left: 80px; } </style>
+<style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
 <title>TinyUSB for composite USB using Arduino and ESP32-S2-Saola-1</title></head>
 <body><font size=+1>
 
 <h4><a href="https://docs.tinyusb.org/en/latest/reference/getting_started.html">Add TinyUSB to your project</a></h4>  
 
 <h4><a href="https://github.com/hathach/tinyusb">TinyUSB</a> Geneology</h4>
-adafruit ported <a href="https://blog.adafruit.com/2020/04/10/tinyusb-esp32-s2-support-merged-and-a-live-stream-in-4-hours-about-it">TinyUSB to ESP32-S2</a>
+Adafruit ported <a href="https://blog.adafruit.com/2020/04/10/tinyusb-esp32-s2-support-merged-and-a-live-stream-in-4-hours-about-it">TinyUSB to ESP32-S2</a>
 for <a href="https://www.adafruit.com/product/4775">Metro</a> and <a href="https://www.adafruit.com/product/4769">FeatherS2</a> products,<br>
 mostly with CircuitPython but also <a href="https://learn.adafruit.com/adafruit-metro-esp32-s2/arduino-ide-setup-2">the Arduino IDE</a>.<br>
 
 <dl>
-<dt>Arduino TinyUSB libraries include
+<dt>Adafruit TinyUSB support:
 <dd><a href="https://www.arduino.cc/reference/en/libraries/adafruit-tinyusb-library/">Adafruit TinyUSB Library</a>
-<dd><a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb/">ESP32TinyUSB</a>
-<dt>Both link to GitHub for releases
+<dt>GitHub releases
 <dd>adafruit has <a href="https://github.com/adafruit/Adafruit_TinyUSB_Arduino">https://github.com/adafruit/Adafruit_TinyUSB_Arduino</a> and
     <a href="https://github.com/adafruit/tinyuf2">TinyUF2 Bootloader</a>
 <br> &nbsp Their ESP32 port depends on <a href="https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/esp32-hal-tinyusb.c">Espressif's esp32-hal-tinyusb.c</a> for building USB descriptors.
-<br> &nbsp It includes <a href="https://github.com/chegewara/EspTinyUSB">examples updated to work with esp32s2</a>
-<br> &nbsp adafruit also has <a href="https://learn.adafruit.com/using-webusb-with-arduino-and-tinyusb">a WebUSB guide</a>
-<dd>ESP32TinyUSB is the <a href="https://github.com/chegewara/EspTinyUSB">chegewara / EspTinyUSB implementation</a> with seemingly useful example sketches..
+<br>adafruit also has <a href="https://learn.adafruit.com/using-webusb-with-arduino-and-tinyusb">a WebUSB guide</a>
 </dl>
-<iframe width="640" height="480" src="https://www.youtube.com/embed/XnqDEV21BSA"></iframe><br>
+<h4>ESP32TinyUSB</h4>
+This appears to be Expressif's "official" USB library implementation
+<dl>
+<dt><a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb">ESP32TinyUSB Arduino link</a>
+<dt>ESP32TinyUSB is the <a href="https://github.com/chegewara/EspTinyUSB">chegewara / EspTinyUSB implementation</a> with seemingly useful example sketches..
+<dd>It includes <a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device">device examples updated to work with esp32s2</a>
+<dt><a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb/">Arduino ESP32TinyUSB</a> library reference (<i>points back to GitHub</i>).
+<dt>Builds disabling e.g. MSC filesystem support <a href="https://github.com/chegewara/EspTinyUSB/issues/61">require source code hacking...</a>
+</dl>
+
+<h4><a href="midi.htm">TinyUSB MIDI</a></h4>
 
 <h4><a href="https://www.hackster.io/news/create-custom-usb-devices-with-the-esp32s2stick-458bf370a522">Create Custom USB Devices with the esp32s2Stick</a></h4>
 
-GitHub:
+<h4><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/usb_device.html">ESP32-S2 Hardware USB connection</a></h4>
+<img width=640 src="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/_images/usb-board-connection.png"><br clear=all>
+<font color="red"><b>USB GBD should be connected to ESP32-S2 Board GND</b></font><br>
+USB signalling is differential, but <i>signal voltages are still relative to device ground</i>.<br>
+<img width=640 src="https://miro.medium.com/max/1300/1*S0ej_0Um4uLzUK4VDwy3LQ.jpeg"><br clear=all>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/l3MmrVHMd94"></iframe><br>
+
+<h4>GitHub:</h4>
 <ul compact>
-<li><a href="https://github.com/marcel-licence/esp32_usb_midi">ESP32 TinyUSB MIDI synth</a> using a USB host shield
-<li><a href="https://github.com/Open-ESP/tinyusb-arduino/blob/master/changelog.md">Open-ESP TinyUSB</a>
-<li><a href="https://github.com/chegewara/EspTinyUSB">MIDI in chegewara/EspTinyUSB</a>
- &nbsp <a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device/midi">example</a>
- &nbsp <a href="https://github.com/chegewara/EspTinyUSB/issues/52#issuecomment-915718146">fix for MIDI Not working</a>
-<li><a href="https://github.com/adafruit/Adafruit_TinyUSB_Arduino">AdafruitTinyUSB Library for Arduino</a>
 <li><a href="https://esp32.com/viewtopic.php?f=12&t=23798&p=85401&hilit=midi#p85401">ESP32-S2 TinyUSB composite reconfiguration</a><br>
+<li><a href="https://github.com/adafruit/Adafruit_TinyUSB_Arduino">AdafruitTinyUSB Library for Arduino</a>
+<li><a href="https://github.com/Open-ESP/tinyusb-arduino/blob/master/changelog.md">Open-ESP TinyUSB</a>
 </ul>
+
+<iframe width="640" height="480" src="https://www.youtube.com/embed/XnqDEV21BSA"></iframe><br>
 
 </font></body></html>
