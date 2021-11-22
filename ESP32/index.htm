@@ -74,4 +74,38 @@ ESP32-S2-Saola-1 width is inconvenient for 400-point breadboards:<br>
 .. but merely a temporary obstacle for those with bandsaw access:<br>
 <img width=640 src="cut.jpg"><br clear=all><br>
 
+<h4>ESP32-S2 pin allocations</h4>
+per <a href="https://github.com/blekenbleu/esp32s2LED/blob/master/src/Servo.h"><code>libraries/esp32s2LED/src/Servo.h</code></a>:<br>
+<pre>// Map Arduino pins to available ESP32-S2 PWM pins
+#define PC13 2                          // typical LED pin:  GPIO0
+#define WS2812_PIN  18                  // GPIO18 for ESP32-S2-Saola-1M (WROOM)
+// 8,9 are SDA, SCL; 15-16 are XTAL; 17 is DAC1; 19-20 are USB; 22-25 are nc
+// 26 is Flash; 27-32 are nc; 39-42 are JTAG; 43-44 are COM port; 46 is input-only
+#define PB9  6
+#define PB8  7
+#define PB7  10
+#define PB6  11
+#define PA10 12
+#define PA9  13
+#define PA8  14
+#define PB1  21
+#define PB0  33 // <- level converted
+#define PA7  34 // <- level converted
+#define PA6  35
+#define PA3  36
+#define PA2  37 // <- level converted
+#define PA1  38 // <- level converted
+#define PA15 45</pre>
+<h4>USB OTG pinout</h4>
+<img width=640 src="USB.jpg"><br clear=all>
+<ul>
+<li>Green to GPIO20
+<li>White to GPIO19
+<li>Black to <font size = +3 color=blue><b>-</b></font> bus
+<li>GND to <font size = +3 color=blue><b>-</b></font> bus
+</ul>
+
+<h4>Level converter for 5V PWM fans and Servos</h4>
+<img src="level_converter.jpg"><br clear=all>
+
 </font></body></html>
