@@ -1,36 +1,46 @@
 <html><head>
-<style> body { margin-left: 80px; } </style>
+<style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
 <title>Web Server using Arduino and ESP32-S2-Saola-1</title></head>
-<body><font size=+1>
+<body>
+<font size=-1>
+<a href="index.htm"><i>back to Arduino and ESP32-S2-Saola-1</i></a><br>
+</font> 
+<font size=+1>
 
 <h4>Create an ESP32-S2 webserver with <a href="slider.htm">HTML sliders</a>
  for e.g. USB MIDI control surface UI:</h4>
-<iframe width="800" height=390 src="slider.htm"></iframe><br>
-<p><a href="https://simeydotme.github.io/jQuery-ui-Slider-Pips/#styling-flat"><font size=-1><i>CSS
- + Javascript sliders</i></font></a></p>
+<iframe width="800" height=390 src="slider.htm"></iframe>
 
-<h4>Using <a href="http://arduino-er.blogspot.com/2021/04/install-arduino-esp32-200-alpha1-on.html">developer
- version board manager</a> - April 30, 2021</h4>
-<iframe width="640" height="480" src="https://www.youtube.com/embed/3uViG48xwoQ"></iframe><br>
+<h4><a href="https://github.com/blekenbleu/otherESP32S2examples/tree/main/ESP32WebRGBsliders">working example</a></h4>
 
-<h4><a href="https://embedded-things.blogspot.com/2021/10/arduino-esp32-camerawebserver-examples.html">CameraWebServer
- example, run on ESP32-S2-Saola-1</a></h4>
-<iframe width="640" height="480" src="https://www.youtube.com/embed/qsBIUTUxpEM"></iframe><br><br>
+<h4>Projects around the web</h4><ul>
+<li><a href="https://simeydotme.github.io/jQuery-ui-Slider-Pips/#styling-flat"><font size=-1><i>CSS
+ + Javascript sliders</i></font></a>
 
-<a href="https://randomnerdtutorials.com/esp32-async-web-server-espasyncwebserver-library/">ESP32-S2 fix for ESPAsyncWebServer</a><br>
-<h3><a href="http://arduino-er.blogspot.com/2021/04/esp32-s2arduino-esp32-s2-saola-1-web.html">Arduino ESP32-S2-Saola-1 web server</a> using <a href="https://github.com/me-no-dev/ESPAsyncWebServer">ESPAsyncWebServer</a> and the AsyncTCP libraries</h3>
-Sketch was on the web page; <a href="https://github.com/blekenbleu/midi_examples">hacked</a> to replace <code>Adafruit_NeoPixel.h</code> with <code>esp32s2LED.h</code><br>
+<li><a href="https://randomnerdtutorials.com/esp32-web-server-websocket-sliders">ESP32
+ Web Server (WebSocket) with Multiple Sliders: Control LEDs Brightness (PWM)</a>
 
-<h3><a href="https://microcontrollerslab.com/esp32-asynchronous-web-server-espasyncwebserver-library">ESP32 Asynchronous Web Server</a> using Arduino IDE and <a href="https://microcontrollerslab.com/esp32-asynchronous-web-server-espasyncwebserver-library/">ESPAsyncWebServer library</a></h3>
-<a href="https://randomnerdtutorials.com/esp32-web-server-arduino-ide/">A basic Arduino webserver app</a><br>
-<a href="https://esp32.com/viewtopic.php?t=17371">Slow webserver response?</a><br>
- &nbsp "The problem has been solved by adding a delay(1) in handleClient() or loop()"<br>
-<a href="https://shawnhymel.com/1882/how-to-create-a-web-server-with-websockets-using-an-esp32-in-arduino/">How
- to Create a Web Server (with WebSockets) Using an ESP32 in Arduino</a><br><br>
+<li><a href="https://shawnhymel.com/1882/how-to-create-a-web-server-with-websockets-using-an-esp32-in-arduino/">How
+ to Create a Web Server (with WebSockets) Using an ESP32 in Arduino</a>
 
+<li><a href="https://randomnerdtutorials.com/esp32-async-web-server-espasyncwebserver-library/">ESP32-S2 fix for ESPAsyncWebServer</a>
 
-GitHub:
-<ul compact>
+<li><a href="http://arduino-er.blogspot.com/2021/04/esp32-s2arduino-esp32-s2-saola-1-web.html">Arduino ESP32-S2-Saola-1 web server</a>
+ using <a href="https://github.com/me-no-dev/ESPAsyncWebServer">ESPAsyncWebServer</a> and the AsyncTCP libraries<br>
+Sketch was on the web page; <a href="https://github.com/blekenbleu/midi_examples">hacked</a>
+ to replace <code>Adafruit_NeoPixel.h</code> with <code>esp32s2LED.h</code>
+
+<li><a href="https://microcontrollerslab.com/esp32-asynchronous-web-server-espasyncwebserver-library">ESP32 Asynchronous Web Server</a>
+ using Arduino IDE and <a href="https://microcontrollerslab.com/esp32-asynchronous-web-server-espasyncwebserver-library/">ESPAsyncWebServer library</a>
+
+<li><a href="https://randomnerdtutorials.com/esp32-web-server-arduino-ide/">A basic Arduino webserver app</a>
+
+<li><a href="https://esp32.com/viewtopic.php?t=17371">Slow webserver response?</a><br>
+ &nbsp "The problem has been solved by adding a delay(1) in handleClient() or loop()"
+
+</ul>
+
+<h4>GitHub:</h4> <ul compact>
 <li><a href="https://github.com/me-no-dev/ESPAsyncWebServer/issues/1054">https://github.com/me-no-dev/ESPAsyncWebServer/issues/1054</a>
 <li><a href="https://github.com/me-no-dev/ESPAsyncWebServer">ESPAsyncWebServer</a>
 <li>ESPAsyncWebServer requires <a href="https://github.com/me-no-dev/AsyncTCP">AsyncTCP</a>
@@ -39,5 +49,13 @@ GitHub:
 <li><a href="https://github.com/khoih-prog/AsyncTCP_SSL">AsyncTCP_SSL</a><br>
 describes <a href="https://github.com/khoih-prog/AsyncTCP_SSL#howto-fix-multiple-definitions-linker-error">Multiple Definitions fix</a>
 </ul>
+
+<h4>Using <a href="http://arduino-er.blogspot.com/2021/04/install-arduino-esp32-200-alpha1-on.html">developer
+ version board manager</a> - April 30, 2021</h4>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/3uViG48xwoQ"></iframe>
+
+<h4><a href="https://embedded-things.blogspot.com/2021/10/arduino-esp32-camerawebserver-examples.html">CameraWebServer
+ example, run on ESP32-S2-Saola-1</a></h4>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/qsBIUTUxpEM"></iframe>
 
 </font></body></html>
