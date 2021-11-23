@@ -24,53 +24,54 @@ mostly with CircuitPython but also <a href="https://learn.adafruit.com/adafruit-
 </dl>
 <h4>ESP32TinyUSB</h4>
 This appears to be Expressif's "official" USB library implementation
-<dl>
-<dt><a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb">ESP32TinyUSB Arduino link</a>
-<dt>ESP32TinyUSB is the <a href="https://github.com/chegewara/EspTinyUSB">chegewara / EspTinyUSB implementation</a> with seemingly useful example sketches..
-<dd>It includes <a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device">device examples updated to work with esp32s2</a>
-<dt><a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb/">Arduino ESP32TinyUSB</a> library reference (<i>points back to GitHub</i>).
-<dt>Builds disabling e.g. MSC filesystem support <a href="https://github.com/chegewara/EspTinyUSB/issues/61">require source code hacking...</a>
-</dl>
+<ul>
+<li><a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb">ESP32TinyUSB Arduino link</a>
+<li>ESP32TinyUSB is the <a href="https://github.com/chegewara/EspTinyUSB">chegewara / EspTinyUSB implementation</a> with seemingly useful example sketches..
+<br>It includes <a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device">device examples updated to work with esp32s2</a>
+<li><a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb/">Arduino ESP32TinyUSB</a> library reference (<i>points back to GitHub</i>).
+<br>Builds disabling e.g. MSC filesystem support <a href="https://github.com/chegewara/EspTinyUSB/issues/61">require source code hacking...</a>
+<li><a href="https://esp32.com/viewtopic.php?f=12&t=23798&p=85401&hilit=midi#p85401">ESP32-S2 TinyUSB composite reconfiguration</a><br>
+</ul>
 
 <h4><a href="midi.htm">TinyUSB MIDI</a></h4>
 
 <h4><a href="https://www.hackster.io/news/create-custom-usb-devices-with-the-esp32s2stick-458bf370a522">Create Custom USB Devices with the esp32s2Stick</a></h4>
 
 <h4><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/usb_device.html">ESP32-S2 Hardware USB connection</a></h4>
+<a href="install.htm#USB_cable">USB cable preparation</a><br>
 <img width=640 src="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/_images/usb-board-connection.png"><br clear=all>
-<font color="red"><b>USB GBD should be connected to ESP32-S2 Board GND</b></font><br>
+<font color="red"><b>USB GND should be connected to ESP32-S2 Board GND</b></font><br>
 USB signalling is differential, but <i>signal voltages are still relative to device ground</i>.<br>
 <img width=640 src="https://miro.medium.com/max/1300/1*S0ej_0Um4uLzUK4VDwy3LQ.jpeg"><br clear=all>
-<iframe width="640" height="480" src="https://www.youtube.com/embed/l3MmrVHMd94"></iframe><br>
 
-<h4>USB CDC device</h4>
-Provided <a href="https://github.com/blekenbleu/otherESP32S2examples/tree/main/cdc"><code>cdc.ino</code> sketch</a> loaded and ran fine, after re-enabling MSC and DFU devices...<br>
-<img src="ready.jpg"><br clear=all>
+<h4>USB CDC device</h4><ul>
+<li>Provided <a href="https://github.com/blekenbleu/otherESP32S2examples/tree/main/cdc"><code>cdc.ino</code> sketch</a> loaded and ran fine, after re-enabling MSC and DFU devices...<br>
+<img src="ready.jpg"></ul>
 
-<h4>USB HID device</h4>
-Provided <a href="https://github.com/blekenbleu/otherESP32S2examples/tree/main/gamepad"><code>gamepad.ino</code> sketch</a> loaded and ran,<br>
-<code>joy.cpl</code> detected <code>ESP32S2 arduino device</code>, but Test showed no activity...<br>
-Serial message were added to the sketch; the <code>if(!digitalRead(0))</code> was never true while using <code>joy.cpl</code>...<br>
-Another <a href="https://github.com/espressif/arduino-esp32/blob/master/libraries/USB/examples/Gamepad/Gamepad.ino"><code>Gamepad.ino</code></a> had no such test.<br>
-<b>ESP32S2 arduino devices > Properties > Test</b> got busy after rebuilding with that test defeated.<br>
-Meanwhile, there was also a LOT of serial traffic from <code>Hidusb.cpp</code>:<pre>...
+<h4>USB HID device</h4><ul>
+<li>Provided <a href="https://github.com/blekenbleu/otherESP32S2examples/tree/main/gamepad"><code>gamepad.ino</code> sketch</a> loaded and ran,
+<li><code>joy.cpl</code> detected <code>ESP32S2 arduino device</code>, but Test showed no activity...<ul>
+<li>Serial message were added to the sketch;<br> <code>if(!digitalRead(0))</code> was never true while using <code>joy.cpl</code>...
+<li>Another <a href="https://github.com/espressif/arduino-esp32/blob/master/libraries/USB/examples/Gamepad/Gamepad.ino"><code>Gamepad.ino</code></a> had no such test.
+<li><b>ESP32S2 arduino devices > Properties > Test</b><br> got busy after rebuilding with that test defeated.
+<li>Meanwhile, there was also a LOT of serial traffic from <code>Hidusb.cpp</code>:<pre>...
 ...
 [ 74914][D][hidusb.cpp:37] write(): len: 11
 [ 75013][D][hidusb.cpp:36] write(): write hid: 
 [ 75014][D][hidusb.cpp:37] write(): len: 11
 [ 75113][D][hidusb.cpp:36] write(): write hid: 
-[ 75114][D][hidusb.cpp:37] write(): len: 11
+[ 75114][D][hidusb.cpp:37] write(): len: 11
 ...</pre>
-Commented out two logging lines in <code>hidusb.cpp</code> to stiffle serial traffic.<br>
-<b>Note:</b> &nbsp Windows' Game Controllers Test only updates while it has focus.<br>
+<li>Commenting out 2 logging lines in <code>hidusb.cpp</code> stiffled that traffic.</ul>
+<li><b>Note:</b> &nbsp Windows' <b>Game Controllers</b> &gt Test only updates while it has focus.</ul>
 
 <h4>GitHub:</h4>
 <ul compact>
-<li><a href="https://esp32.com/viewtopic.php?f=12&t=23798&p=85401&hilit=midi#p85401">ESP32-S2 TinyUSB composite reconfiguration</a><br>
 <li><a href="https://github.com/adafruit/Adafruit_TinyUSB_Arduino">AdafruitTinyUSB Library for Arduino</a>
 <li><a href="https://github.com/Open-ESP/tinyusb-arduino/blob/master/changelog.md">Open-ESP TinyUSB</a>
 </ul>
 
-<iframe width="640" height="480" src="https://www.youtube.com/embed/XnqDEV21BSA"></iframe><br>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/XnqDEV21BSA"></iframe><br><hr>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/l3MmrVHMd94"></iframe><br>
 
 </font></body></html>
