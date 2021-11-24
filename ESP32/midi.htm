@@ -45,9 +45,9 @@ which means that writes are going elsewhere... need to investigate USB-MIDI code
 
 <b><a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device/midi">EspTinyUSB/examples/device/midi</a></b><br>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/C94DsWar3S0"></iframe><br>
-This video is misleading; as delivered as Arduino library,<br>
-ESP32TinyUSB is broken for MIDI by enumeration value of 5,<br>
-which evidently <a href="https://github.com/chegewara/EspTinyUSB/issues/52">exceeds ESP32-S2 endpoints</a>; enable it by<br>
+This video is misleading; it may have worked for platformio, but as a Arduino library,<br>
+ESP32TinyUSB is broken for MIDI by an enumeration value of 5,<br>
+which <a href="https://github.com/chegewara/EspTinyUSB/issues/52">exceeds ESP32-S2 active endpoints</a>; enable it by<br>
 changing <code>midiusb.cpp://#define EPNUM_MIDI 0x05</code> to <code>0x04</code><br>
 but more than 3 or so USB composite devices is probably doomed.
 <br>

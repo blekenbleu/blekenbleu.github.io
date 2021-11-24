@@ -32,7 +32,15 @@ This appears to be Expressif's "official" USB library implementation
 <br>Builds disabling e.g. MSC filesystem support <a href="https://github.com/chegewara/EspTinyUSB/issues/61">require source code hacking...</a>
 <li><a href="https://esp32.com/viewtopic.php?f=12&t=23798&p=85401&hilit=midi#p85401">ESP32-S2 TinyUSB composite reconfiguration</a>
 <li><a href="https://github.com/chegewara/EspTinyUSB/issues/52">limited endpoints</a><ul>
-<li>MIDI was broken by <code>midiusb.cpp:#define EPNUM_MIDI 0x05</code>; change to 4 fixed it
+<li>ESP32-S2 provides 6 endpoint pairs, not counting pair 0.<br>
+  Only 5 IN endpoints can be active at a time, so usually just 5 pairs available.
+<li>Device endpoint requirements for each instance:<ul>
+<li>Endpoint pair 0 is always reserved for USB setup and control
+<li>MIDI: 1 IN/OUT pair
+<li>CDC: 1 IN/OUT pair for data + 1 IN endpoint for control
+<li>HID: 1 IN/OUT pair
+</ul>
+<li>MIDI was broken by <a href="https://github.com/chegewara/EspTinyUSB/blob/master/src/device/midi/midiusb.cpp"><code>midiusb.cpp:#define EPNUM_MIDI 0x05</code></a>; <b>fix by changing</b> to <code>0x40</code>
 <li>current assignments:<pre>grep -R EPNUM_ libraries | grep 0x | grep define
 libraries/ESP32TinyUSB/src/device/cdc/cdcusb.cpp:#define EPNUM_CDC   0x02
 libraries/ESP32TinyUSB/src/device/hid/hidcomposite.cpp:#define EPNUM_HID 0x03
@@ -45,7 +53,11 @@ libraries/ESP32TinyUSB/src/device/midi/midiusb.cpp:#define EPNUM_MIDI 0x04
 libraries/ESP32TinyUSB/src/device/msc/mscusb.cpp:#define EPNUM_MSC 0x04
 libraries/ESP32TinyUSB/src/webusb.h:#define EPNUM_VENDOR 0x04
 </pre>
-<li>This should allow CDC (2), gamepad (3) and MIDI (4) to play together..
+<li>This should allow CDC (1 &amp 2), gamepad (3) and MIDI (4) to play together..
+<li>EspTinyUSB configuration (including serial number) is discussed
+ <a href="https://github.com/chegewara/EspTinyUSB/blob/f9ab4843b1bbd70e53bb6bb40651046138beee6c/README.md">here</a>
+<li>If more than one ESP32-S2 module will be connected to a single USB host (e.g., Windows PC),<br>
+  <a href="https://github.com/chegewara/EspTinyUSB/blob/master/examples/device/basic_setup/basic_setup.ino"><i>different serial numbers should be set</i></a>
 </ul>
 </ul>
 
