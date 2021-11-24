@@ -1,46 +1,65 @@
 <html><head>
 <style> body {margin-left: 80px;} ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
-<title>ESP32-S2-Saola-1 Arduino installation</title></head>
+<title>ESP32-S2-Saola-1 GitHub Desktop Arduino installation</title></head>
 <body>
 <font size=-1>
 <a href="index.htm"><i>back to Arduino and ESP32-S2-Saola-1</i></a><br>
 </font>
 <font size=+1>
-<h3>ESP32-S2-Saola-1 Arduino installation - Windows 10</h3>
+<h3>ESP32-S2-Saola-1 GitHub Desktop Arduino installation - Windows 10</h3>
 This may work on other platforms; <i>do not ask me how</i>.
 This should be a <a href="https://www.arduino.cc/en/Guide/PortableIDE"><i>portable installation</i></a>.<br>
 It is incompatible with Arduino for other boards.
 <ol>
-<li>Download Arduino 1.8.16 <a href="https://www.arduino.cc/en/software">Windows ZIP file</a><br>
+<li>Download Arduino's <a href="https://www.arduino.cc/en/software">Windows ZIP file</a><br>
    &nbsp - not (yet) Arduino 2.0
 <li>Right-click the downloaded zip file; select <code>Extract All...</code><br>
-    &nbsp - set a destination, preferably with a short path (e.g. <code>D:\my\Arduino</code>)<br>
+    &nbsp - set a destination, preferably with a short path (e.g. <code>C:\my\Arduino</code>)<br>
    &nbsp - <code>Extract</code>
 <li>In that installation folder, <b>be sure to add</b> a <a href="https://www.arduino.cc/en/Guide/PortableIDE"><code>portable</code></a> folder:<br>
   <img src="portable.png">
 <li>Launch <code>arduino.exe</code> (or a shortcut to it)<br>
    &nbsp - <code>File > Preferences > Sketchbook location:</code><br>
-   &nbsp - must differ from install destination <i>or other Arduino Sketchbook locations</i>;<br>
-   &nbsp - usually in <code>Documents\</code>; &nbsp I used a separate <code>D:\my\Documents\</code>
-<li>There are 2 ways to proceed.  Do you feel <b><i>lucky</i></b>?<ul>
-<li>using <a href="GITinstall.htm">(experimental) GitHub esp32 core and TinyUSB library for ESP32-S2</a>,<br>
-  which worked <i>one time</i> for me, then <b><i>failed badly</i></b> a second time...
-<li>using Arduino core and library, as described here, which <i>still</i> involves some faffing.
-</ul>
-
-<li>In Arduino &gt File &gt > Preferences, set <code>Additional Boards Manager URLs:</code> to<br>
-<a href="https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json">https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</a>
-<li>In Arduino Sketch &gt Include Library &gt Manage Libraries.. search for <code>tinyusb</code><br>
-   and select <b>ESP32TinyUSB</b>
+   &nbsp - must differ from install destination <i>or other Arduino Sketcbook locations</i>;<br>
+   &nbsp - usually in <code>Documents\</code>
+<li>Quit Arduino (for now)
+<li>Install (if not already) <a href="https://desktop.github.com/">GitHub Desktop</a><br>
+   &nbsp - This is the <i>easiest way</i> to install and maintain custom Arduino libraries<br>
+   &nbsp - click <a href="https://docs.github.com/en/desktop">Help</a> for set up instructions.
+<li>Launch GitHub Desktop<br>
+   &nbsp - <code>File > Clone repository...</code><br>
+   &nbsp <img src="clone.png"><br clear=all>
+<li>click <code>URL</code><br>
+   &nbsp <img src="repository.png"><br clear=all>
+   &nbsp - For <code>Repository</code>, enter <a href="espressif/arduino-esp32"><code>espressif/arduino-esp32</code></a><br>
+   &nbsp - set a <code>hardware\espressif\esp32</code> path in that sketch directory,<br>
+   &nbsp &nbsp e.g. <code>C:\Users\bleke\Documents\Arduino\hardware\espressif\esp32</code><br>
+   &nbsp - click <code>Clone</code>.
+<li>As <a href="https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#windows">expressif instructs for beta board support</a>,<br>
+  &nbsp - open a command prompt in the <code>hardware\espressif\esp32\tools</code> folder,<br>
+  &nbsp - Enter:<br>
+  &nbsp <code>get.exe</code>
+  <pre>System: Windows, Info: Windows-10-10.0.19041
+Platform: i686-mingw32
+Tool riscv32-esp-elf-gcc8_4_0-esp-2021r2-win32.zip already downloaded
+Extracting riscv32-esp-elf-gcc8_4_0-esp-2021r2-win32.zip
+Tool xtensa-esp32-elf-gcc8_4_0-esp-2021r2-win32.zip already downloaded
+Extracting xtensa-esp32-elf-gcc8_4_0-esp-2021r2-win32.zip
+Tool xtensa-esp32s2-elf-gcc8_4_0-esp-2021r2-win32.zip already downloaded
+Extracting xtensa-esp32s2-elf-gcc8_4_0-esp-2021r2-win32.zip
+Tool esptool-3.1.0-windows.zip already downloaded
+Extracting esptool-3.1.0-windows.zip
+Tool i686-w64-mingw32.mklittlefs-c41e51a.200706.zip already downloaded
+Extracting i686-w64-mingw32.mklittlefs-c41e51a.200706.zip
+Tool mkspiffs-0.2.3-arduino-esp32-win32.zip already downloaded
+Extracting mkspiffs-0.2.3-arduino-esp32-win32.zip
+Renaming mkspiffs-0.2.3-arduino-esp32-win32/ to mkspiffs
+Done</pre>
    
-<li>Eliminate Arduino build warnings for <code>"CFG_TUSB_*" redefined</code> in sketches using <code>midiusb.h</code> :<br>
-In <code>my\Arduino\hardware\espressif\esp32\tools\sdk\esp32s2\include\arduino_tinyusb\tinyusb\tusb_config.h</code>,<br>
+<li>Eliminate Arduino build warnings for <code>"CFG_TUSB_*" redefined</code> in sketches using <code>midiusb.h</code>:<br>
+In <code>Documents/Arduino/hardware/espressif/esp32/tools/sdk/esp32s2/include/arduino_tinyusb/tinyusb/tusb_config.h</code>,<br>
 move <b>all</b> unconditional #define's (<code>COMMON CONFIGURATION</code> and <code>DRIVER CONFIGURATION</code>) from near the file end<br>
 to before <code>#include "tusb_option.h"</code>
-
-<li>Enable USB MIDI traffic:<br>
-In <code>my\Documents\libraries\ESP32TinyUSB\src\device\midi\<a href="https://github.com/chegewara/EspTinyUSB/blob/master/src/device/midi/midiusb.cpp">midiusb.cpp</a></code>,<br>
- <i>change</i> <code>midiusb.cpp://#define EPNUM_MIDI 0x05</code> to <code>0x04</code><br>
 
 <li>In Arduino: &nbsp <code>Tools > Board</code>: "ESP32S2 Dev Module"<br>
    &nbsp <img src="board.jpg"><br clear=all</a>
@@ -50,10 +69,10 @@ In <code>my\Documents\libraries\ESP32TinyUSB\src\device\midi\<a href="https://gi
    &nbsp In [GitHub Desktop](https://desktop.github.com):<br>
    &nbsp - <code>File > Clone repository...<code><br>
    &nbsp - <code>URL<br>
-   &nbsp - fill in username/repository, e.g. <a href="https://github.com/chegewara/EspTinyUSB"><code>chegewara/EspTinyUSB<code></a><br>
-   &nbsp - fill in Local path. e.g. <code>D:\my\Documents\libraries<code><br>
+   &nbsp - fill in username/repository, e.g. <code>chegewara/EspTinyUSB<code><br>
+   &nbsp - fill in Local path. e.g. <code>C:\Users\popeye\Documents\Arduino\libraries<code><br>
    &nbsp - click <code>clone<code><br>
-   &nbsp - Arduino's IDE console window will show <code>invalid library</code> complaints if this fails.<br>
+   &nbsp - Arduino's IDE console window shows <code>invalid library</code> complaints.<br>
 
 <li>Install <a href="libraries"><b>these additional libraries</b></a>
 </ol>
