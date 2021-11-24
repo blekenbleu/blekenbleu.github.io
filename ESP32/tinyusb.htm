@@ -1,5 +1,5 @@
 <html><head>
-<style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
+<style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } pre {margin-top:0;) </style>
 <title>TinyUSB for composite USB using Arduino and ESP32-S2-Saola-1</title></head>
 <body>
 <font size=-1>
@@ -30,7 +30,23 @@ This appears to be Expressif's "official" USB library implementation
 <br>It includes <a href="https://github.com/chegewara/EspTinyUSB/tree/master/examples/device">device examples updated to work with esp32s2</a>
 <li><a href="https://www.arduino.cc/reference/en/libraries/esp32tinyusb/">Arduino ESP32TinyUSB</a> library reference (<i>points back to GitHub</i>).
 <br>Builds disabling e.g. MSC filesystem support <a href="https://github.com/chegewara/EspTinyUSB/issues/61">require source code hacking...</a>
-<li><a href="https://esp32.com/viewtopic.php?f=12&t=23798&p=85401&hilit=midi#p85401">ESP32-S2 TinyUSB composite reconfiguration</a><br>
+<li><a href="https://esp32.com/viewtopic.php?f=12&t=23798&p=85401&hilit=midi#p85401">ESP32-S2 TinyUSB composite reconfiguration</a>
+<li><a href="https://github.com/chegewara/EspTinyUSB/issues/52">limited endpoints</a><ul>
+<li>MIDI was broken by <code>midiusb.cpp:#define EPNUM_MIDI 0x05</code>; change to 4 fixed it
+<li>current assignments:<pre>grep -R EPNUM_ libraries | grep 0x | grep define
+libraries/ESP32TinyUSB/src/device/cdc/cdcusb.cpp:#define EPNUM_CDC   0x02
+libraries/ESP32TinyUSB/src/device/hid/hidcomposite.cpp:#define EPNUM_HID 0x03
+libraries/ESP32TinyUSB/src/device/hid/hidgamepad.cpp:#define EPNUM_HID   0x03
+libraries/ESP32TinyUSB/src/device/hid/hidgeneric.cpp:#define EPNUM_HID   0x03
+libraries/ESP32TinyUSB/src/device/hid/hidkeyboard.cpp:#define EPNUM_HID 0x02
+libraries/ESP32TinyUSB/src/device/hid/hidmouse.cpp:#define EPNUM_HID 0x03
+libraries/ESP32TinyUSB/src/device/hid/hidusb.cpp:#define EPNUM_HID   0x03
+libraries/ESP32TinyUSB/src/device/midi/midiusb.cpp:#define EPNUM_MIDI 0x04
+libraries/ESP32TinyUSB/src/device/msc/mscusb.cpp:#define EPNUM_MSC 0x04
+libraries/ESP32TinyUSB/src/webusb.h:#define EPNUM_VENDOR 0x04
+</pre>
+<li>This should allow CDC (2), gamepad (3) and MIDI (4) to play together..
+</ul>
 </ul>
 
 <h4><a href="midi.htm">TinyUSB MIDI</a></h4>
