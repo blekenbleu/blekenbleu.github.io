@@ -33,14 +33,14 @@ It is incompatible with Arduino for other boards.
 <li>In Arduino Sketch &gt Include Library &gt Manage Libraries.. search for <code>tinyusb</code><br>
    and select <b>ESP32TinyUSB</b>
    
-<li>Eliminate Arduino build warnings for <code>"CFG_TUSB_*" redefined</code> in sketches using <code>midiusb.h</code> :<br>
-In <code>my\Arduino\hardware\espressif\esp32\tools\sdk\esp32s2\include\arduino_tinyusb\tinyusb\tusb_config.h</code>,<br>
-move <b>all</b> unconditional #define's (<code>COMMON CONFIGURATION</code> and <code>DRIVER CONFIGURATION</code>) from near the file end<br>
-to before <code>#include "tusb_option.h"</code>
-
+<li>Eliminate Arduino build warnings for <code>"CFG_TUSB_*" redefined</code> in sketches using <code>midiusb.h</code> :<ul>
+<li>In <code>my\arduino-1.8.16\portable\packages\esp32\hardware\esp32\2.0.1\tools\sdk\esp32s2\include\arduino_tinyusb\include\tusb_config.h</code>:
+<li>move <b>all</b> unconditional #define's (<code>COMMON CONFIGURATION</code> and <code>DRIVER CONFIGURATION</code>) from near the file end<br>
+to <b>before</b> <code>#include "tusb_option.h"</code> <a href="libraries/tusb_config.h"><b>like this</b></a>.
+</ul>
 <li>Enable USB MIDI traffic:<br>
 In <code>my\Documents\libraries\ESP32TinyUSB\src\device\midi\<a href="https://github.com/chegewara/EspTinyUSB/blob/master/src/device/midi/midiusb.cpp">midiusb.cpp</a></code>,<br>
- <i>change</i> <code>midiusb.cpp://#define EPNUM_MIDI 0x05</code> to <code>0x04</code><br>
+ <i>change</i> <code>midiusb.cpp://#define EPNUM_MIDI 0x05</code> to <code>0x04</code> <a href="libraries/midiusb.cpp"><b>like this</b></a><br>
 
 <li>In Arduino: &nbsp <code>Tools > Board</code>: "ESP32S2 Dev Module"<br>
    &nbsp <img src="board.jpg"><br clear=all</a>
