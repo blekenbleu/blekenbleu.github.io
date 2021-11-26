@@ -1,17 +1,18 @@
 <html>
 <head>
 <style> body { margin-left: 80px; } </style>
-<title>Wireless Mixer MIDI</title>
+<title>Wi-Fi MIDI</title>
 </head>
 <body>
-<h3>Wireless Mixer MIDI</h3>
+<h3>Wi-Fi MIDI</h3>
+ESP32-S2 USB MIDI does not composite well with other devices (CDC, HID gamepad)
 <dl>
 <dt>See also: <a href="../ESP32/midi.htm"><b>ESP32-S2 MIDI</b></a>
-<dd> &nbsp
-<dt>Android app
+<dd> &nbsp <a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/post-3446448">my Race Department thread</a>
+<dt>Android app using <a href="https://forum.gbadev.org/viewtopic.php?t=11811">DSMI</a>
 <dd><a href="https://trajkovski.net/support.html">Trajkovski Labs support page</a><br>
 <a href="DS_MIDI_WiFi">Installation</a>
-<dd>Wireless Mixer MIDI map (CC numbers, decimal)<br>
+<details><summary>Wireless Mixer MIDI map (CC numbers, decimal)</summary>
   &nbsp  &nbsp Master volume = 7<br>
   &nbsp  &nbsp Play = 118<br>
   &nbsp  &nbsp Stop = 120<br>
@@ -150,10 +151,41 @@
   &nbsp  &nbsp ExBtn2_10 = 6<br>
   &nbsp  &nbsp ExBtn2_11 = 5<br>
   &nbsp  &nbsp ExBtn2_12 = 3(?)<br>
-</td></tr></table>
+</td></tr></table></details>
 <dd> &nbsp
+
+<dt><font size=+1><b>MIDI over WebSocket directly from the web page</b></font>
+<dd><a href="https://github.com/hhromic/midi-websocket">A general purpose MIDI over WebSocket approach</a>
+<br> &nbsp using <a href="https://github.com/Olical/EventEmitter">EventEmitter JavaScript</a>
+
+<dt><font size=+1><b>MIDI over WebSocket
+<dd><a href="https://xmmc.de/mnet">mnet</b></font> 32/64-bit WinMM MIDI driver with RTP, WebSocket or Bluetooth server</a>
+<dd><a href="https://randomnerdtutorials.com/esp32-websocket-server-arduino/">ESP32 WebSocket Server</a> - Random Nerd
+<dd><a href="https://github.com/TrollStation/obs-websockets-midi">OBS-Websockets-MIDI Bridge</a>
+<dd><a href="https://github.com/me-no-dev/ESPAsyncWebServer">ESPAsyncWebServer</a> examples include WebSocket server and client examples
+<dd><a href="https://www.mischianti.org/2020/12/07/websocket-on-arduino-esp8266-and-esp32-client-1">esp32 WebSocket client</a> - Mischianti
+<dd><a href="https://www.dfrobot.com/blog-776.html">ESP32 Arduino Tutorial: Websocket client</a> - DFRobot 2017
+<br><a href="https://techtutorialsx.com/2017/11/01/esp32-arduino-websocket-client/">ESP32 Arduino: Websocket client</a>
+<br> &nbsp <a href="https://github.com/morrissinger/ESP8266-Websocket/tree/master/examples/WebSocketClient_Demo">ESP8266-Websocket/examples/WebSocketClient_Demo</a>
+<br> &nbsp <a href="https://github.com/skaarj1989/mWebSockets/tree/master/examples/simple-client">simple-client sketch</a>
+<dd><a href="https://www.tutorialspoint.com/html5/html5_websocket.htm">HTML5 - WebSockets tutorial</a> with Client-side HTML &amp JavaScript code
+<dd><a href="https://medium.com/nebo-15/tutorial-how-to-create-midi-synthesizer-with-midi-api-and-node-js-48d41c162009">Tutorial. How to create a MIDI synthesizer with MIDI API and Node JS</a>
+<dd> &nbsp
+
+<dt>MIDI over UDP or TCP
+<dd><a href="https://www.turboirc.com/mcp/manual.htm#connectwin">MCPW.EXE</a>, seemingly compatible with RTP MIDI.
+
+<dt>MIDI over UDP
+<dd><a href="https://www.nerds.de/en/ipmidi.html">ipMIDI</a> - proprietary $79 (60 min. free trial)
+<dd><a href="DS_MIDI_WiFi.md">DSMI</a>
+<dd><a href="https://john-lazzaro.github.io//rtpmidi"><b>RTP MIDI</b></a>:
+ &nbsp <a href="https://developer.apple.com/library/archive/documentation/Audio/Conceptual/MIDINetworkDriverProtocol/MIDI/MIDI.html">Apple network MIDI (UDP)</a>, <a href="https://www.tobias-erichsen.de/software/rtpmidi.html">rtpMIDI server</a><br>
+ &nbsp <a href="https://github.com/ohnoitsalobo/sound-reactive-esp32">AppleMIDI with ESPAsyncWebServer examples</a>
+<dd> &nbsp
+
 <dt><a href="https://projectgus.github.io/hairless-midiserial">Hairless MIDI&lt-&gtSerial Bridge</a>
 <dd>connect serial devices (e.g. Arduinos) to send and receive MIDI signals
+
 </dl>
 </body>
 </html>
