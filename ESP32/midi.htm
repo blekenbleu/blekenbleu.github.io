@@ -8,9 +8,15 @@
 
 <h4><a href="https://github.com/hathach/tinyusb">TinyUSB MIDI - GitHub</a></h4>
 <dl>
-<dt>
-<a href="https://github.com/blekenbleu/midi_examples#esp32tinyusb-known-issue">Known Issue</a> with current Arduino ESP32TinyUSB library:<br>
+<dt><b>Bottom line</b>: &nbspESP32TinyUSB MIDI does not composite with other devices of interest (CDC, gamepad)
+<dd>trying <a href="/MIDI">MIDI over Wi-Fi</a>, and specifically WebSocket (TCP),<br> to avoid running
+ <a href="https://github.com/espressif/arduino-esp32/tree/master/libraries/AsyncUDP">AsyncUDP</a> in addition to 
+ <a href="https://github.com/me-no-dev/ESPAsyncWebServer">AsyncTCP/ESPAsyncWebServer</a>
+<dd> &nbsp
+
+<dt><a href="https://github.com/blekenbleu/midi_examples#esp32tinyusb-known-issue">Known Issue</a> with current Arduino ESP32TinyUSB library:<br>
 <dd><code>"tinyusb callbacks cant be overriden and are used by arduino-esp32"</code><br> &nbsp
+
 <dt><b>Most Arduino MIDI examples want hacking for ESP32-S2</b>
 <dd>Most Arduino MIDI sketches use <code>#include "MIDI.h"</code> paradigm;<br>
 <dd>often, also <code>digitalWrite(LED_BUILTIN, HIGH);</code><br>
@@ -21,7 +27,7 @@
 
 <h4><a href="https://github.com/FortySevenEffects/arduino_midi_library">Arduino MIDI Library - GitHub</a></h4>
  <dl><dt><a href="https://www.arduino.cc/en/Reference/MIDIUSB">MIDIUSB library</a>
- <dt><a href="https://www.arduino.cc/reference/en/libraries/midiusb">reference</a>
+   &nbsp - <a href="https://www.arduino.cc/reference/en/libraries/midiusb">reference</a>
 <dt>Arduino <code>MIDI.h</code> was originally intended for specific MIDI hardware connections,
 <dd>then <a href="https://github.com/lathoub/Arduino-USBMIDI">USB-MIDI transport layer</a> was inserted for optional USB or serial connections.
 </dl>
