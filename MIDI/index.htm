@@ -5,11 +5,13 @@
 </head>
 <body>
 <h3>Wi-Fi MIDI</h3>
-ESP32-S2 USB MIDI does not composite well with other devices (CDC, HID gamepad)
 <dl>
-<dt>See also: <a href="../ESP32/midi.htm"><b>ESP32-S2 MIDI</b></a>
-<dd> &nbsp <a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/post-3446448">my Race Department thread</a>
-<dt>Android app using <a href="https://forum.gbadev.org/viewtopic.php?t=11811">DSMI</a>
+<dt><font color=red>ESP32-S2 USB MIDI does not composite well with other devices (CDC, HID gamepad)</font>
+<dd>Instead, send MIDI over Wi-Fi, preferably by WebSocket
+<dd><i>See also</i>: <a href="../ESP32/midi.htm"><b>ESP32-S2 MIDI</b></a> and
+<a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/post-3446448">Race Department thread</a>
+<dd> &nbsp
+<dt>Android <b>Wireless Mixer</b> app using <a href="https://forum.gbadev.org/viewtopic.php?t=11811">DSMI</a>
 <dd><a href="https://trajkovski.net/support.html">Trajkovski Labs support page</a><br>
 <a href="DS_MIDI_WiFi">Installation</a>
 <details><summary>Wireless Mixer MIDI map (CC numbers, decimal)</summary>
@@ -161,7 +163,7 @@ ESP32-S2 USB MIDI does not composite well with other devices (CDC, HID gamepad)
 <dt><font size=+1><b>MIDI over WebSocket
 <dd><a href="https://xmmc.de/mnet">mnet MIDIHub</b></font> 32/64-bit WinMM MIDI driver with ipMIDI, RTP, WebSocket or Bluetooth servers</a><br>
   <img src="MIDIHub.png"><ul>
-  <li>as warned, get firewall pop-ups for MIDI apps<br>
+  <li>as warned, MIDIHub provokes firewall pop-ups for MIDI apps<br>
       <img src="firewall.png">
   <li>"owned" by voicemeeterpro on initial launch
   </ul>
@@ -191,6 +193,11 @@ ESP32-S2 USB MIDI does not composite well with other devices (CDC, HID gamepad)
 <dt><a href="https://projectgus.github.io/hairless-midiserial">Hairless MIDI&lt-&gtSerial Bridge</a>
 <dd>connect serial devices (e.g. Arduinos) to send and receive MIDI signals
 
+<h4>Learning by doing</h4><ul>
+<li><a href="">AsyncUDP example</a> - library provided with Expressif ESP32 core for Arduino;<br>
+   may be extended for MIDI support as a learning step;  <a href="https://github.com/lathoub/Arduino-AppleMIDI-Library">AppleMIDI for Arduino</a> supports ESP32
+<li><a href="">AsyncTCP example</a> - GitHub library; will be extended for MIDI support,<br>
+   to avoid running both it (for webserver) and AsyncUDP
 </dl>
 </body>
 </html>
