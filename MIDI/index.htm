@@ -197,7 +197,29 @@
 <li><a href="">AsyncUDP example</a> - library provided with Expressif ESP32 core for Arduino;<br>
    may be extended for MIDI support as a learning step;  <a href="https://github.com/lathoub/Arduino-AppleMIDI-Library">AppleMIDI for Arduino</a> supports ESP32
 <li><a href="">AsyncTCP example</a> - GitHub library; will be extended for MIDI support,<br>
-   to avoid running both it (for webserver) and AsyncUDP
+   to avoid running both it (for webserver) and AsyncUDP<ul>
+   <li>this sketch can only make a single response per opening</ul>
+<li>Restarting Serial Monitor for either of the above examples <i>restarts the connection</i>..
+<li>ESP32_NoteOnOffEverySec.ino from
+  <a href="https://github.com/lathoub/Arduino-AppleMIDI-Library/tree/master/examples">Arduino-AppleMidi-Library examples</a><ul>
+  <li><a href="https://xmmc.de/mnet/">mnet MIDIHub</a> does not seem to work as described<br>
+      supposedly hidden by default, multicast ports appear
+  <li>RTP ports seemingly <i>only appear if detected</i> by
+  <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/mdns.html">multicast DNS</a><br>
+  <code>service_type</code> evidently should be <a href="http://www.dns-sd.org/serviceTypes.html"><code>_apple-midi</code></a>.
+  </ul>
+<li><a href="https://github.com/lathoub/Arduino-AppleMIDI-Library/blob/master/examples/wESP32_NoteOnOffEverySec/wESP32_NoteOnOffEverySec.ino">wESP32_NoteOnOffEverySec.ino</a>
+ includes <code>MDNS.addService("apple-midi", "udp", AppleMIDI.getPort());</code><ul>
+ <li>replaced <code>ETH.begin();</code> in <code>ETH_Heelper.h:ETH_startup()</code> with <code>WiFi.begin()</code>
+ <li>MIDIHub recognizes the device, and the sketch reports <code>Connected to session 4155933516 mnet (ALIENWARE-R7_144) 8</code>,<br>
+    but also reports <code>*** ListenerTimeOutException</code> and many <code>*** ParseException</code>,<br>
+    which occur in <code>AppleMIDI.hpp:parseControlPackets(),<br>
+    based on <code>UnexpectedData</code> returned from <code>AppleMIDI_Parser.h: parse()</code> returning <code>UnexpectedData</code><br>
+    which it does for too many reasons: signature, protocolVersion, or not having previously returned something.
+ <li>Adding debugging code to <code>AppleMIDI_Parser.h</code> revealed that most ParseExceptions were an unexpected and long signature.<br>
+ </ul>
+
+</ul>
 </dl>
 </body>
 </html>
