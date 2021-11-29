@@ -2,7 +2,9 @@
 <style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } h4 {margin-bottom:0; } </style>
 <title>Composite USB, web server and Servo control using Arduino and ESP32-S2-Saola-1</title></head>
 <body><font size=+1>
+
 <h3>Arduino and ESP32-S2-Saola-1</h3>
+
 <h4>Ordered from <a href="https://www.jameco.com/z/ESP32-S2-Saola-1M-Espressif-Systems-ESP32-S2-WROOM-Series-Evaluation-Board-4MB-Flash-802-11-b-g-n-WiFi-WLAN-_2324583.html">JameCo</a>:
   ESP32-S2-Saola-1M <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/hw-reference/esp32s2/user-guide-saola-1-v1.2.html">ESP32-S2-WROOM Dev 4MB Flash</a></h4>
 <img  width=640 src="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/_images/esp32-s2_saola1-pinout.jpg"><br clear=all>
@@ -30,11 +32,15 @@ There are now also ESP32-S2 boards from <a href="https://www.amazon.com/dp/B093B
 
 <h4><a href="install.htm">ESP32-S2-Saola-1 Arduino installation</a></h4>
 
-<h4><a href="tinyusb.htm">TinyUSB for Arduino ESP32-S2</a></h4>
-
 <h4><a href="webserver.htm">Arduino ESP32-S2 webservers</a></h4>
+Specifically, ESPAsyncWebServer with WebSocket e.g. for MIDI
 
-<h4><a href="midi.htm">Arduino ESP32-S2 MIDI</a></h4>
+<h4><a href="tinyusb.htm">TinyUSB for Arduino ESP32-S2</a></h4>
+Gamepad, second serial port and (perhaps) flash filesystem
+
+<h4><a href="midi.htm">Arduino ESP32-S2 USB MIDI</a></h4>
+Does not (currently) make a useful composite device e.g. with gamepad and CDC serial;<br>
+<a href="../MIDI">Wi-Fi MIDI</a>, particularly by WebSocket, seems a promising alternative.
 
 <h4><a href="https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/motor/servo.html">Servo</a> support</h4>
 <ul>
