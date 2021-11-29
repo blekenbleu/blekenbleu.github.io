@@ -258,7 +258,8 @@ One of two MIDI-over-UDP protocols, uses "well-known" port;
     based on <code>UnexpectedData</code> returned from <code>AppleMIDI_Parser.h: parse()</code> returning <code>UnexpectedData</code><br>
     which it does for too many reasons: signature, protocolVersion, or not having previously returned something.
  <li>Adding debugging code to <code>AppleMIDI_Parser.h</code> revealed that most ParseExceptions were an unexpected and long signature.
- <li>Added more debugging code to understand AppleMIDI_Parser; then MIDI traffic sometimes began flowing:
+ <li>Added more debugging code to understand AppleMIDI_Parser
+<details><summary>then MIDI traffic <i>sometimes</i> began flowing:</summary>
 <pre>ESP-ROM:esp32s2-rc4-20191025
 Build:Oct 25 2019
 rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
@@ -299,16 +300,19 @@ amSignature match
 amInvitation match
 amProtocolVersion match
 Connected to session 3522777916 mnet (ALIENWARE-R7_144)
-first MIDI.sendNoteOn()</pre>
-MIDI-OX must connect to the configured MIDIHub port (e.g. <code>MIDIHUB PORT 2</code> <i>after</i>
+first MIDI.sendNoteOn()</pre></details>
+  MIDI-OX must connect to the configured MIDIHub port (e.g. <code>MIDIHUB PORT 2</code> <i>after</i>
+  <li><i>Without</i> Serial Monitor running and <i>with</i> MidiView already watching <code>MIDIHUB PORT 2</code>,<br>
+  MIDI traffic seems to flow OK..<br>
+  &nbsp MIDIHub <i>sometimes</i> allows both MIDI_OX and MidiView
+  to simultaneously read <code>MIDIHUB PORT</code>.
  </ul>
-<li><i>Without</i>Serial Monitor running and <i>with</i> MidiView already watching  <code>MIDIHUB PORT 2</code>,<br>
-MIDI traffic seems to flow OK.. &nbsp MIDIHub <i>sometimes</i> allows both MIDI_OX and Midiview to simultaneously read <code>MIDIHUB PORT 2</code>.
 </ul>
-<dt><a href="https://github.com/lathoub/Arduino-ipMIDI"><b>Arduino ipMIDI Transport</b><a>
-<dd>the <a href="https://github.com/blekenbleu/composite_sketches/blob/main/ESP32_NoteOnOffipMIDI/ESP32_NoteOnOffipMIDI.ino">ESP32_NoteOnOffipMIDI
-  sketch</a> seems too simple to work with MIDIHub.. but it <i>sometimes works</i>.<br>
-  It seems to work most consistently when Serial Monitor is used until notes start, then connecting MidiView to MIDIHUB PORT 1,<br>
+<dt><a href="https://github.com/lathoub/Arduino-ipMIDI"><b>Arduino ipMIDI Transport</b><a> on <code>MIDIHUB PORT 1</code>
+<dd>The <a href="https://github.com/blekenbleu/composite_sketches/blob/main/ESP32_NoteOnOffipMIDI/ESP32_NoteOnOffipMIDI.ino">ESP32_NoteOnOffipMIDI
+  sketch</a> seems too simple to work with MIDIHub.. but it <i>sometimes does</i>.<br>
+  It seems to work most consistently when Serial Monitor is used until notes start,<br>
+  &nbsp then connecting MidiView to MIDIHUB PORT 1,<br>
   but it still (also) occasionally stops for no known reason..<br>
   <a href="http://livehelp.solidstatelogic.com/Help/ipMIDI.html">This page</a> describes IP routing magic for ipMIDI.
 </dl>
