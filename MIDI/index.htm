@@ -1,6 +1,6 @@
 <html>
 <head>
-<style> body { margin-left: 80px; } ul {margin-top:0} </style>
+<style> body { margin-left: 80px; } h4 {margin-bottom:0} ul {margin-top:0} </style>
 <title>Wi-Fi MIDI</title>
 </head>
 <body>
@@ -210,9 +210,9 @@ One of two MIDI-over-UDP protocols, uses "well-known" port;
  &nbsp requires a separate MIDI port provider, e.g. <a href="https://www.tobias-erichsen.de/software/loopmidi.html">loopMIDI</a>
 <dd><a href="https://www.tobias-erichsen.de/software/rtpmidi.html">rtpMIDI server</a><br>
 <dd><a href="https://xmmc.de/mnet">mnet MIDIHub</b></font></a> 32/64-bit WinMM MIDI driver<br>
- &nbsp with ipMIDI, RTP, WebSocket, WebMIDI and Bluetooth services;<br>
- &nbsp provides its own MIDI ports.<br>
-  <img src="MIDIHub.png"><ul>
+ &nbsp supports ipMIDI, RTP, WebSocket, WebMIDI and Bluetooth;<br>
+ &nbsp provides its own MIDI ports:<ul>
+  <img src="MIDIHub.png"><br clear=all><br>
   <li>as warned, MIDIHub provokes firewall pop-ups for MIDI apps<br>
       <img src="firewall.png">
   <li>"owned" by voicemeeterpro on initial launch
@@ -256,7 +256,7 @@ One of two MIDI-over-UDP protocols, uses "well-known" port;
  <li>replaced <code>ETH.begin();</code> in <code>ETH_Heelper.h:ETH_startup()</code> with <code>WiFi.begin()</code>
  <li>MIDIHub recognizes the device, and the sketch reports <code>Connected to session 4155933516 mnet (ALIENWARE-R7_144) 8</code>,<br>
     but also reports <code>*** ListenerTimeOutException</code> and many <code>*** ParseException</code>,<br>
-    which occur in <code>AppleMIDI.hpp:parseControlPackets(),<br>
+    which occur in <code>AppleMIDI.hpp:parseControlPackets()</code>,<br>
     based on <code>UnexpectedData</code> returned from <code>AppleMIDI_Parser.h: parse()</code> returning <code>UnexpectedData</code><br>
     which it does for too many reasons: signature, protocolVersion, or not having previously returned something.
  <li>Adding debugging code to <code>AppleMIDI_Parser.h</code> revealed that most ParseExceptions were an unexpected and long signature.
@@ -303,20 +303,19 @@ amInvitation match
 amProtocolVersion match
 Connected to session 3522777916 mnet (ALIENWARE-R7_144)
 first MIDI.sendNoteOn()</pre></details>
-  MIDI-OX must connect to the configured MIDIHub port (e.g. <code>MIDIHUB PORT 2</code> <i>after</i>
+  MIDI-OX must connect to the configured MIDIHub port (e.g. <code>MIDIHUB PORT 2</code>) <i>after</i>
   <li><i>Without</i> Serial Monitor running and <i>with</i> MidiView already watching <code>MIDIHUB PORT 2</code>,<br>
   MIDI traffic seems to flow OK..<br>
   &nbsp MIDIHub <i>sometimes</i> allows both MIDI_OX and MidiView
   to simultaneously read <code>MIDIHUB PORT</code>.
  </ul>
-</ul>
-<dt><a href="https://github.com/lathoub/Arduino-ipMIDI"><b>Arduino ipMIDI Transport</b><a> on <code>MIDIHUB PORT 1</code>
-<dd>The <a href="https://github.com/blekenbleu/composite_sketches/blob/main/ESP32_NoteOnOffipMIDI/ESP32_NoteOnOffipMIDI.ino">ESP32_NoteOnOffipMIDI
-  sketch</a> seems too simple to work with MIDIHub.. but it <i>sometimes does</i>.<br>
-  It seems to work most consistently when Serial Monitor is used until notes start,<br>
+<li><a href="https://github.com/lathoub/Arduino-ipMIDI"><b>Arduino ipMIDI Transport</b><a> on <code>MIDIHUB PORT 1</code>
+<br>The <a href="https://github.com/blekenbleu/composite_sketches/blob/main/ESP32_NoteOnOffipMIDI/ESP32_NoteOnOffipMIDI.ino">ESP32_NoteOnOffipMIDI
+  sketch</a> seemed too simple to work with MIDIHub.. but it <i>sometimes does</i>.<br>
+  It seems to work more consistently when Serial Monitor is used until notes start,<br>
   &nbsp then connecting MidiView to MIDIHUB PORT 1,<br>
   but it still (also) occasionally stops for no known reason..<br>
   <a href="http://livehelp.solidstatelogic.com/Help/ipMIDI.html">This page</a> describes IP routing magic for ipMIDI.
-</dl>
+</ul>
 </body>
 </html>
