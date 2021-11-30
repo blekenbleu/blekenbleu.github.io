@@ -236,7 +236,7 @@ One of two MIDI-over-UDP protocols, uses "well-known" port;
 <dt><a href="https://github.com/madnerdorg/libreconnect">LibreConnect Server</a><dd>generates websockets for serial USB-attached Arduinos
 </dl>
 
-<h4>Learning by doing</h4><ul>
+<h4><a href="https://github.com/blekenbleu/composite_sketches">Learning by doing</a></h4><ul>
 <li><a href="">AsyncUDP example</a> - library provided with Expressif ESP32 core for Arduino;<br>
    may be extended for MIDI support as a learning step;  <a href="https://github.com/lathoub/Arduino-AppleMIDI-Library">AppleMIDI for Arduino</a> supports ESP32
 <li><a href="">AsyncTCP example</a> - GitHub library; will be extended for MIDI support,<br>
@@ -309,6 +309,7 @@ first MIDI.sendNoteOn()</pre></details>
   &nbsp MIDIHub <i>sometimes</i> allows both MIDI_OX and MidiView
   to simultaneously read <code>MIDIHUB PORT</code>.
  </ul>
+
 <li><a href="https://github.com/lathoub/Arduino-ipMIDI"><b>Arduino ipMIDI Transport</b><a> on <code>MIDIHUB PORT 1</code>
 <br>The <a href="https://github.com/blekenbleu/composite_sketches/blob/main/ESP32_NoteOnOffipMIDI/ESP32_NoteOnOffipMIDI.ino">ESP32_NoteOnOffipMIDI
   sketch</a> seemed too simple to work with MIDIHub.. but it <i>sometimes does</i>.<br>
@@ -316,6 +317,15 @@ first MIDI.sendNoteOn()</pre></details>
   &nbsp then connecting MidiView to MIDIHUB PORT 1,<br>
   but it still (also) occasionally stops for no known reason..<br>
   <a href="http://livehelp.solidstatelogic.com/Help/ipMIDI.html">This page</a> describes IP routing magic for ipMIDI.
+
+<li>Arduino <a href="https://microdigisoft.com/esp32-web-server-spi-flash-file-system-spiffs"><b>ESP32 Sketch Data Upload</b></a> tool installation<ul>
+  <li>Download the latest <a href="https://github.com/lorol/arduino-esp32fs-plugin/releases/latest">esp32fs.zip file</a>
+  <li>Unzip <code>esp32fs.jar</code> into <code>arduino-1.8.16\tools\ESP32FS\tool\</code><br><img src="tools.png">
+  <li>Launch Arduino and check for <b>ESP32 Sketch Data Upload</b> under Tools:<br><img src="Upload.png">
+  <li>Files to be uploaded should be in a <code>Data</code> folder inside the sketch folder:<br><img src="data_folder.png">
+  <li>Launch that tool <i>after</i> uploading the sketch, then in Serial Monitor: &nbsp <code>SPIFFS mounted successfully</code><br>
+      take care to select SPIFF: &nbsp <img align=top src="SPIFFS.png">
+</ul>
 </ul>
 </body>
 </html>
