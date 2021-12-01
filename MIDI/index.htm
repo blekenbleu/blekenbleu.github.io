@@ -14,6 +14,66 @@
 
 <dt><b>Wireless MIDI flavors</b><ul>
 
+<li><details><summary><b>Background</b>: servers, clients, senders, receivers, control surfaces, sequencers, editors, recorders, instruments</summary>
+Historically, MIDI was a variation on asynchronous serial communication,<br>
+using the same UART <a href="https://en.wikipedia.org/wiki/MIDI#Technical_specifications">technology</a> as in serial printers, terminals and modems,<br>
+but with idiosynchratic 31.5kbps data rate, 5-pin (ground + 2 in + 2 out) DIN connectors and 5 Volt signals,<br>
+ instead of D-subminiature 25 or 9-pin connectors with +/-12 Volt signals
+for <a href="https://en.wikipedia.org/wiki/RS-232">RS-232</a>.<br><br>
+More crucially, while RS-232 is essentially point-to-point between data terminals and carriers,<br>
+MIDI was daisy-chained, with signals passed among devices with could both initiate and receive packets.<br>
+Consequently, MIDI packets include addressing for 16 channels, to selectively send and receive packets along the shared bus.<br><br>
+While all MIDI devices may send and receive messages, instruments are typically receivers,<br>
+while control surfaces and sequencers are typically senders.<br>
+Once IP networking is involved, server and client roles get involved.<br>
+Either senders or receivers can be either servers or clients.<br>
+Since web browsers can play music, JavaScript to behave as client instruments is relatively popular.
+<a href="https://xmmc.de/mnet/">mnet MIDIHub</a>, our designated bridge between IP and MIDI,<br>
+behaves as a client for UDP, but a server for ipMIDI AKA multicast IP.<br>
+It also behaves as a client for TCP WebSocket, looking for servers to announce (via DNS) MIDI service.<br>
+For Apple MIDI (AKA RTP), it uses one UDP port for control and another for MIDI messages<br>
+Whether it wants one or two ports for TCP WebSockets is unclear.<br>
+At any rate, code for Websocket MIDI control surface servers is relatively rare.<br>
+<br></details>
+
+<li><details><summary><a href="https://users.cs.cf.ac.uk/Dave.Marshall/Multimedia/node158.html"><b>MIDI 1.0 messages</b></a> <i>mostly</i> include 3 bytes, one for status and 2 for data.</summary><ul>
+<li>Data bytes are constrained to have msb=0, so only 7 bits for information.<br>
+<li>The status byte has most-significant bit = 1, 4 least significant bits for addressing 16 channels,<br>
+leaving 3 bits for message types, 7 of which (8x - Ex) are for channel messages:<table>
+<th>Status Byte</td><td>hex</td><td>Data Byte1 </td><td>Data Byte2</td></th>
+<tr><td>Note off         </td><td>8x</td><td>Key number      </td><td>Note Off velocity</td></tr>
+<tr><td>Note on          </td><td>9x</td><td>Key number      </td><td>Note on velocity</td></tr>
+<tr><td>Polyphonic Key Pressure</td><td>Ax</td><td>Key number</td><td>Amount of pressure</td></tr>
+<tr><td><b>Control Change</b> (CC)   </td><td>Bx</td><td>Controller 0-120 </td><td>Controller value</td></tr>
+<tr><td>Control Mode     </td><td>Bx</td><td>79: reset all    </td><td>00              </td></tr>
+<tr><td>Control Mode     </td><td>Bx</td><td>7A: Local        </td><td>0:off 127:on    </td></tr>
+<tr><td>Control Mode     </td><td>Bx</td><td>7B: All notes off</td><td>00              </td></tr>
+<tr><td>Control Mode     </td><td>Bx</td><td>7C: Omni off     </td><td>00              </td></tr>
+<tr><td>Control Mode     </td><td>Bx</td><td>7D: Omni on      </td><td>00              </td></tr>
+<tr><td>Control Mode     </td><td>Bx</td><td>7E: Mono on      </td><td>0 or channel cnt</td></tr>
+<tr><td>Control Mode     </td><td>Bx</td><td>7F: Poly on      </td><td>00              </td></tr>
+<tr><td>Program Change   </td><td>Cx</td><td>Program number   </td><td>None</td></tr>
+<tr><td>Channel Pressure </td><td>Dx</td><td>Pressure value   </td><td>None</td></tr>
+<tr><td>Pitch Bend       </td><td>Ex</td><td>MSB              </td><td>LSB</td></tr>
+<tr><td>SysEX start      </td><td>F0</td><td>many bytes       </td><td>... </td></tr>
+<tr><td>Timing code      </td><td>F1</td><td>only 1 byte      </td><td>(na)</td></tr>
+<tr><td>Song position    </td><td>F2</td><td>MSB              </td><td>LSB</td></tr>
+<tr><td>Timing code      </td><td>F3</td><td>only 1 byte      </td><td>(na)</td></tr>
+<tr><td>Timing code      </td><td>F6</td><td>(na)             </td><td>(na)</td></tr>
+<tr><td>SysEX stop       </td><td>F7</td><td>(na)             </td><td>(na)</td></tr>
+<tr><td>Timing clock     </td><td>F8</td><td>MSB              </td><td>LSB</td></tr>
+<tr><td>Start sequence   </td><td>FA</td><td>MSB              </td><td>LSB</td></tr>
+<tr><td>Continue sequence</td><td>FB</td><td>MSB              </td><td>LSB</td></tr>
+<tr><td>Stop sequence    </td><td>FC</td><td>MSB              </td><td>LSB</td></tr>
+<tr><td>Active sensing   </td><td>FE</td><td>MSB              </td><td>LSB</td></tr>
+<tr><td>System reset     </td><td>FF</td><td>MSB              </td><td>LSB</td></tr></table><br>
+MIDI messages F4, F5, F9, FD are undefined.<br>
+<a href="https://logosfoundation.org/kursus/1075.html"><b>Control Change</b> (CC) messages</a> are of particular interest here;<br>
+many second byte values support 127 third byte values and appropriate for sliders:<br>
+Hex 00-13 for MSB and 20-33 for corresponding LSB.<br>
+First data byte values 70-83, 85-95 are for LSB-only second data bytes
+<br></details>
+
 <li><a href="#DSMI">DSMI</a> - old <a href="DS_MIDI_WiFi.md">protocol for Nintendo DS</a>
 
 <li><a href="https://www.nerds.de/en/ipmidi.html">ipMIDI</a> - proprietary $79 (60 min. free trial)<br>
@@ -216,6 +276,12 @@ One of two MIDI-over-UDP protocols, uses "well-known" port;
   <li>as warned, MIDIHub provokes firewall pop-ups for MIDI apps<br>
       <img src="firewall.png">
   <li>"owned" by voicemeeterpro on initial launch
+  <li>Its documentation suggests that it can be both a websocket server and client.
+  <li><code>mnet.log</code> reports: <code>WebSocketIO - server listening on port: 6504</code>
+  <li>Web browser JavaScript is not allowed to create a WebSocket server,<br>
+      but a JavaScript client to open a WebSocket to that port and try sending some MIDI messages <i>may not be too hard</i>;<br>
+      here are <a href="https://code.tutsplus.com/tutorials/introduction-to-web-midi--cms-25220">an article</a>
+      and <a href="https://github.com/fa-m/midi-websocket">sample browser code</a>.
   </ul>
 <dd><a href="https://github.com/hhromic/midi-websocket">MIDI WebSocket</a> - includes both nodejs client and server, as well as JavaScript for a web browser client<br>
   &nbsp whether and how compatible with e.g. mnet MIDIHub is unknown..
