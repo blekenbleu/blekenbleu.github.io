@@ -397,9 +397,16 @@ first MIDI.sendNoteOn()</pre></details>
       take care to select SPIFF: &nbsp <img align=top src="SPIFFS.png"><br clear=all>
       &nbsp
 </ul>
+
 <li><a href="https://github.com/blekenbleu/composite_sketches/tree/main/ESP32-SPIFFS-RGB-sliders">ESP32-SPIFFS-RGB-sliders</a> uses WebSockets.<br>
   The Arduino server updates all webpage clients to current slider settings;<br>
   need to sort how to separately send binary MIDI to <code>mnet MIDIHub</code>
+
+<li><a href="https://github.com/blekenbleu/composite_sketches/tree/main/midi-websocket-fa-m">midi-websocket-fa-m</a> client connects to mnet MIDIHUb<br>
+    and attempts to send MIDI to it (so far, unsuccessfully)
+
+<li>NodeJS MIDI websocket server, for debugging the above MIDI websocket client<br>
+   and perhaps capturing traffic from a mnet MIDIHub client
 </ul>
 </body>
 </html>
