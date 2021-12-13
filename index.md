@@ -21,7 +21,7 @@
 
 ## [ESP32-S2](ESP32/index.htm) for composite USB devices
 ### [Wireless MIDI](MIDI), including Android Wireless MIDI app
-#### [Node.js WebSocket MIDI server](midisrv)
+#### [Node.js WebSocket MIDI server](MIDI/midisrv)
 
 ## [ab]using Microsoft Visual Studio Community 2017
 * [shared installation](VSC2017)
