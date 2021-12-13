@@ -1,4 +1,4 @@
-30 June 2021  
+13 Dec 2021  
 ## Signal Processing
   - [Special Error Diffusion](ImageProcessing/sped.html)
   - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
@@ -17,9 +17,11 @@
       - SimHub *directly* supports *real* Arduinos, but any COM by Custom Serial devices
 - [STM32 Black Pill for custom USB Arduino devices](Arduino/black)
 - USB-attached [PWM PC fans](Arduino/SimHubPWMfans)
-- ESP8266 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
+- ESP8266 / ESP32 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
 
 ## [ESP32-S2](ESP32/index.htm) for composite USB devices
+### [Wireless MIDI](MIDI), including Android Wireless MIDI app
+#### [Node.js WebSocket MIDI server](midisrv)
 
 ## [ab]using Microsoft Visual Studio Community 2017
 * [shared installation](VSC2017)
@@ -52,7 +54,6 @@
   [Jekyll Talk! forum](https://talk.jekyllrb.com/)  
   [Jekyll github](https://github.com/jekyll) and [github-metadata](https://github.com/jekyll/github-metadata/issues)  
 
-### [Android Wireless Mixer - MIDI](MIDI)
 ### [COVID-19 plots](covid)
 ### [Vim and X-Mouse](VimTXmouse)
 ### [Installing Git-Cola from MacPorts](GitColaMacPorts)
