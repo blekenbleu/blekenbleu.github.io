@@ -192,7 +192,7 @@ where 2 should suffice and servos respond less quickly.
 By changing from Blue Pill-specific PWM pin and LED assignments,  
 this sketch should work for other Arduino-supported modules with PWM-capable pins.
 
-Corresponding [SimHub Custom serial hacking is described here](SimHubCustomSerial.md).
+Corresponding [SimHub Custom serial hacking is described here](SimHubCustomSerial).
 
 ### Blue Pill servo firmware generations
 As described above, **first generation** use the least signficant of 7 bits  

@@ -88,4 +88,4 @@ no need to install Arduino-specific driver[s]...
 
 A simple next step uploads an Arduino blink loop sketch.  
 
-[SimHub Custom serial hacking is described here](SimHubCustomSerial.md).
+[SimHub Custom serial hacking is described here](SimHubCustomSerial).
