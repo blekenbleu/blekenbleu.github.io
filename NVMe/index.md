@@ -81,6 +81,7 @@ and may require additional research, trial and error for other CLOVER versions.
   * launch BDUtility.exe  
   * highlight the flash drive  
   * click [Format Disk]  
+   ![warning](Warning.gif)  
    - this not only [re]formats the flash drive,  
      but also downloads and installs CLOVER on it.  
      That all takes awhile; wait for **All done**:  
@@ -89,11 +90,12 @@ and may require additional research, trial and error for other CLOVER versions.
   - Using Windows Explorer, navigate on that flash drive  
     ![Explorer window](EFI.gif)  
     to *EFI* > *CLOVER*.  
-  - If not already present, create a *drivers64* folder.  
-  - In that *drivers64* folder, create *UEFI* and *BIOS* folders.  
-  - from *EFI* > *CLOVER* > *drivers* > *off*, copy *NvmExpressDxe-64.efi* to both:  
-    *EFI* > *CLOVER* > *drivers64* > *UEFI* >  
-    *EFI* > *CLOVER* > *drivers64* > *BIOS* >  
+  - from *EFI* > *CLOVER* > *drivers* > *off*, copy *NvmExpressDxe-64.efi*  
+    ![copy](copy.gif)  
+     to both:  
+    *EFI* > *CLOVER* > *drivers* > *UEFI*
+    *EFI* > *CLOVER* > *drivers* > *BIOS*
+    ![UEFI](UEFI.gif)  
 * For the PC to boot from CLOVER USB flash,  
   not only must USB drives have first boot priority,  
   but BIOS must also have Secure Boot and CSM (Load Legacy OPROM) disabled:  
