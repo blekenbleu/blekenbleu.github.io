@@ -112,3 +112,17 @@ and may require additional research, trial and error for other CLOVER versions.
       and that version of CLOVER searches elsewhere for drivers;  
       check newer entries in the [Win-Raid Forum](https://www.win-raid.com/t2375f50-Guide-NVMe-boot-w-o-BIOS-modding-Clover-EFI-bootloader-method-32.html#msg107724)...    
   - CLOVER records the most recent selection option and defaults to it subsequently.  
+* Edit `\EFI\CLOVER\config.plist`, changing the `Timeout` value:
+  ```
+  <key>Timeout</key>
+  <integer>5</integer>
+  ```
+  Reducing 5 to 1 or 2 will boot 3 or 4 seconds faster.
+
+#### CLOVER references
+* [SourceForege Wiki](https://sourceforge.net/p/cloverefiboot/wiki)  
+  - [Description of tasks](https://sourceforge.net/p/cloverefiboot/wiki/Technical-Background)  
+* [GitHub website](https://github.com/CloverHackyColor/CloverBootloader)  
+* [Manually doing what BDUtility does](https://www.insanelymac.com/forum/topic/310038-manually-install-clover-and-configure-boot-priority-with-easyuefi-in-windows)  
+* [Translated from Russian: Khaki clover](https://drovosek01.github.io/CloverHackyColor-WebVersion/english/from%20Word/Clover_Of_Khaki_Color_eng_5129.htm)
+* [Win-Raid Forum NVMe Support for old Systems: Clover-EFI bootloader method](https://www.win-raid.com/t2375f50-Guide-NVMe-boot-w-o-BIOS-modding-Clover-EFI-bootloader-method.html)  
