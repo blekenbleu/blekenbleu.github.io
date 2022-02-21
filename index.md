@@ -55,6 +55,7 @@
   [Jekyll github](https://github.com/jekyll) and [github-metadata](https://github.com/jekyll/github-metadata/issues)  
 
 ### [COVID-19 plots](covid)
+### [Boot Windows 10 from NVMe on PCIe PCs without NVMe BIOS](NVMe)  
 ### [Vim and X-Mouse](VimTXmouse)
 ### [Installing Git-Cola from MacPorts](GitColaMacPorts)
 ### macOS local [gitolite](MacGit) server
