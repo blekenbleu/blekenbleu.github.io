@@ -57,6 +57,7 @@
 ### [COVID-19 plots](covid)
 ### [Blu-Ray movies on Windows PC](WinBluRay)  
 ### [Boot Windows 10 from NVMe on PCIe PCs without NVMe BIOS](NVMe)  
+### [Flight Simulator and Alienware Area 51 R2](Windows/FS2020)  
 ### [Vim and X-Mouse](VimTXmouse)
 ### [Installing Git-Cola from MacPorts](GitColaMacPorts)
 ### macOS local [gitolite](MacGit) server
