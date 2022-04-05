@@ -31,7 +31,7 @@ ASRock H670 Steel Legend comes with a 9 Phase DrMOS Power Design for the CPU and
 DrMOS is a highly efficient power system that provides a more synchronous response to voltages by stepping down voltages providing stable power input.
 ASRock H670 Steel Legend uses 50A DrMOS and 12K Nichicon premium capacitors for firm power response.
 A 6-layer PCB design helps lower temperatures and efficiently dissipate heat.
-With continuous power delivery and lower temps, you won’t find a lot of issues with Memory overclocking.
+With continuous power delivery and lower temps, you won't find a lot of issues with Memory overclocking.
 ![H670 Steel Legend](https://www.asrock.com/mb/photo/H670%20Steel%20Legend(L2).png)  
 
 ASRock H670 PG Riptide has a 50A 9 Phase Dr.MOS Power Design, [but lesser power/caps/heatsink than Steel Legend](https://www.reddit.com/r/hardware/comments/rxnckv/listingdiscussion_of_gigabyte_msi_asus_asrock/).
