@@ -7,13 +7,22 @@
 ![Intel LGA1700 chipsets](chipset.jpg)  
 ### Available H670 ATX DDR4 motherboards
 
-| model                    | DDR4 MHz | NVMe Gen4 | ethernet | PCIe 5.0 x16 | PCIe 4.0 x16 | PCIe 3.0 x16 | PCIe 3.0 x1  | USB G2x2 |USB G2x1 | USB G1 | USB 2.0 | VRM stages |  
-| ------------------------ | -------- | --------- | -------- | ------------ | ------------ | ------------ | -----------  | -------- | ------- | ------ | ------- | ---------- |  
-| [ASUS Prime H670-PLUS D4](https://www.asus.com/Motherboards-Components/Motherboards/PRIME/PRIME-H670-PLUS-D4/) | 5066 | 3 | 2.5Gb | | 2 | 1 | 2 | | 3 | 3+4 | 2+3 | 8 |   
-| [ASUS TUF GAMING H670-PRO](https://www.asus.com/Motherboards-Components/Motherboards/TUF-Gaming/TUF-GAMING-H670-PRO-WIFI-D4/) | 5333     | 4         | 2.5Gb    | 1            |              | 1            | 2            | 1        | 2       | 4+3    | 0+4     | 14+1 |  
-| [ASRock H670 Steel Legend](https://www.asrock.com/mb/Intel/H670%20Steel%20Legend/) | 5000     | 3         | 2.5Gb    | 1            | 1            |              | 3            | 0+1      | 2       | 6      | 2+2     | 13 |  
-| [ASRock PG Riptide](http://us.asrock.com/MB/Intel/H670%20PG%20Riptide/)        | 5000     | 3         | 1.0Gb    | 1            | 1            |              | 3            | 0+1      | 2       | 8      | 2+2     | 8 |  
-| [MSI MAG H670 TOMAHAWK](https://www.msi.com/Motherboard/MAG-H670-TOMAHAWK-WIFI-DDR4)    | 4800     | 3         | 2.5Gb    | 1            |              | 2            | 1            | 1        | 1+1     | 4      | 6+4     | 14+1+1 |  
+| model                    | DDR4 MHz | NVMe Gen4 | USB G2x2 | USB G2x1 | USB G1 | USB 2.0 |  
+| ------------------------ | -------- | --------- | -------- | -------- | ------ | ------- |  
+| [ASRock H670 Steel Legend](https://www.asrock.com/mb/Intel/H670%20Steel%20Legend/)                                            | 5000 | 3 | 0+1 | 2   | 6   | 2+2 |  
+| [ASRock PG Riptide](http://us.asrock.com/MB/Intel/H670%20PG%20Riptide/)                                                       | 5000 | 3 | 0+1 | 2   | 8   | 2+2 |  
+| [ASUS Prime H670-PLUS D4](https://www.asus.com/Motherboards-Components/Motherboards/PRIME/PRIME-H670-PLUS-D4/)                | 5066 | 3 |     | 3   | 3+4 | 2+3 |   
+| [ASUS TUF GAMING H670-PRO](https://www.asus.com/Motherboards-Components/Motherboards/TUF-Gaming/TUF-GAMING-H670-PRO-WIFI-D4/) | 5333 | 4 | 1   | 2   | 4+3 | 0+4 |  
+| [MSI MAG H670 TOMAHAWK](https://www.msi.com/Motherboard/MAG-H670-TOMAHAWK-WIFI-DDR4)                                          | 4800 | 3 | 1   | 1+1 | 4   | 6+4 |  
+
+
+| model                    | PCIe 5.0 x16 | PCIe 4.0 x16 | PCIe 3.0 x16 | PCIe 3.0 x1  | VRM stages | ethernet |  
+| ------------------------ | ------------ | ------------ | ------------ | -----------  | ---------- | -------- |
+| [ASRock H670 Steel Legend](https://www.asrock.com/mb/Intel/H670%20Steel%20Legend/)   | 1 | 1 | | 3 | 13 | 2.5Gb |   
+| [ASRock PG Riptide](http://us.asrock.com/MB/Intel/H670%20PG%20Riptide/)              | 1 | 1 | | 3 | 8 | 1.0Gb |  
+| [ASUS Prime H670-PLUS D4](https://www.asus.com/Motherboards-Components/Motherboards/PRIME/PRIME-H670-PLUS-D4/) | | 2 | 1 | 2 | 8 | 2.5Gb |   
+| [ASUS TUF GAMING H670-PRO](https://www.asus.com/Motherboards-Components/Motherboards/TUF-Gaming/TUF-GAMING-H670-PRO-WIFI-D4/) | 1 | | 1 | 2 | 14+1 | 2.5Gb |  
+| [MSI MAG H670 TOMAHAWK](https://www.msi.com/Motherboard/MAG-H670-TOMAHAWK-WIFI-DDR4) | 1 | | 2 | 1 | 14+1+1 | 2.5Gb |  
 
 #### VRM
 MSI MAG H670 TOMAHAWK WIFI DDR4 has a 14 DrMOS with Duet Rail Power System (14+1+1 Duet Rail Power System) VRM with a digital CPU power system.
