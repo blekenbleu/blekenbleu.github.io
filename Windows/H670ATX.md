@@ -48,4 +48,5 @@ With continuous power delivery and lower temps, you won't find a lot of issues w
 ASRock H670 PG Riptide has a 50A 9 Phase Dr.MOS Power Design,
 [but lesser power/caps/heatsink](https://www.reddit.com/r/hardware/comments/rxnckv/listingdiscussion_of_gigabyte_msi_asus_asrock/) than Steel Legend.
 ![H670 PG Riptide](Riptide.png)  
+Presumably, the Riptide is for those of us who will not be cranking power into DDR4 for max OC with an i9.  
 
