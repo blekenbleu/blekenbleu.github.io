@@ -2737,3 +2737,16 @@ rm *b4
 It turned out that, after a pull request merge,  
 local Ruby installation needs updating to >= 2.6  
 
+## Ruby 2.7.5p203
+Devkit is also required, for wdm  
+msys64 was too old to update  
+environmental variable for `gem update --system`:  
+
+```
+$ export MSYSTEM=MINGW64
+$ pacman -S msys/diffutils
+$ gem update --system
+$ gem install wdm --platform=ruby
+$ cd /e/my/GitHubDesktop/blekenbleu.github.io
+$ bundle update
+```
