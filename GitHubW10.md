@@ -2733,3 +2733,7 @@ bundle install
 diff Gemfile.lock Gemfile.lock.b4
 rm *b4
 ```
+
+It turned out that, after a pull request merge,  
+local Ruby installation needs updating to >= 2.6  
+
