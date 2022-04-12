@@ -2720,3 +2720,16 @@ Configuration file: E:/my/GitHubDesktop/blekenbleu.github.io/_config.yml
     Server address: http://127.0.0.1:4000
   Server running... press ctrl-c to stop.
 ```
+
+#### 12 Apr 2022
+```
+cd blekenbleu.github.io/
+gem update --system
+bundle update
+gem install bundler
+bundle exec jekyll serve
+mv Gemfile.lock Gemfile.lock.b4
+bundle install
+diff Gemfile.lock Gemfile.lock.b4
+rm *b4
+```
