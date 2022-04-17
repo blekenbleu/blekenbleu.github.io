@@ -33,7 +33,7 @@ while Zerene concentrates more on support for tweaking and touching up stacked i
 
 Free solutions includes Canon's DPP, which supports only their lenses and their cameras which support focus bracketing,  
 CombineZP, which does not support 16-bit images,  
-Picolay, ImageJ, TuFuse,
+Picolay, ImageJ, [TuFuse](https://tawbaware.com/tufusepro_help/tufusepro_help.htm),
 [Chasys Draw IES](https://www.jpchacha.com/chasysdraw) supports CR2/3 and [Focus Stacking](https://www.jpchacha.com/chasysdraw/help.php?file=artist_process_stack_focus.htm),  
 which seemingly does not involve alignment, which is used when stacking for [image averaging](https://www.jpchacha.com/chasysdraw/help.php?file=artist_tutorials_stacking.htm).  
 
