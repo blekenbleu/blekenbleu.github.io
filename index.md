@@ -65,7 +65,7 @@
 ### [Line 6 JTV-89F guitar](JTV89F/Variax)
 ### [Thorens TD 160 MK II](ThorensTD126MKII/README.md) with SME Series III
 ### [Audio-Technica AT-LP140XP](AT-LP140XP/index.htm) microphonics
-### [Reichert/American Optical microscopes](microscope/index.html)
+### [Reichert/American and Nikon Optiphot 66 Optical microscopes, macro photography and photomicrography](microscope/index.html)
 ### [PC misguided buying - January 2022](PC)  
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 
