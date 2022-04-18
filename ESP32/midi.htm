@@ -1,5 +1,9 @@
 <html><head>
-<style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
+<style> body {
+  width:960px;
+  margin-left: 80px;
+}
+ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
 <title>USB MIDI using Arduino and ESP32-S2-Saola-1</title></head>
 <body>
 <font size=-1>
@@ -8,7 +12,7 @@
 
 <h4><a href="https://github.com/hathach/tinyusb">TinyUSB MIDI - GitHub</a></h4>
 <dl>
-<dt><b>Bottom line</b>: &nbspESP32TinyUSB MIDI does not composite with other devices of interest (CDC, gamepad)
+<dt><b>Bottom line</b>: &nbspESP32TinyUSB MIDI does not composite with other devices of interest <br>(CDC, gamepad)
 <dd>trying <a href="/MIDI"><b>MIDI over Wi-Fi</b></a>, and specifically WebSocket (TCP),<br> to avoid running
  <a href="https://github.com/espressif/arduino-esp32/tree/master/libraries/AsyncUDP">AsyncUDP</a> in addition to 
  <a href="https://github.com/me-no-dev/ESPAsyncWebServer">AsyncTCP/ESPAsyncWebServer</a>

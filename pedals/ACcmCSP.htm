@@ -3,6 +3,7 @@
 <title>Assetto Corsa, Content Manager and Custom Shading Patch settings</title>
 <style>
 body {
+  width:960px;
   margin: 60px;
 }
 th {
@@ -27,7 +28,8 @@ but also because game software is generally so idiosynchratic and poorly documen
 that learning to use them is for me more irritating than enjoyable.<br>
 This is NOT to imply that AC is either well-documented or easy to use,<br>
 simply that fighting more than one crappy software is gratuitously masochistic.<br>
-Basic AC usage is described in around 50 of the 700 pages in <a href="https://www.amazon.com/dp/B00NS918M4">Going Nowhere Fast In Assetto Corsa</a>, a Kindle ebook on Amazon.<br>
+Basic AC usage is described in around 50 of the 700 pages in <a href="https://www.amazon.com/dp/B00NS918M4">Going Nowhere Fast In Assetto Corsa</a>,<br>
+ a Kindle ebook on Amazon. &nbsp
 However, it is quite out-of-date
 <br>
 AC has been enhanced by so-called mods, many of which are free and add interesting cars and tracks.<br>
@@ -41,7 +43,8 @@ So far, the only configuration files there are <code>NeckFX</code> in <code>Cust
 <br>
 <a href="https://www.nutrimatic.cc/assetto-corsa/reducing-or-changing-windscreen-dirt/">To just get rid of the dirt completely, use CSP’s WindscreenFX feature</a><br>
 <br>
-When migrating from Logitech G29 to AccuForce wheels,  Assetto Corsa ignored the new wheel when launched from CM.<br>
+When migrating from Logitech G29 to AccuForce wheels,<br>
+Assetto Corsa ignored the new wheel when launched from CM.<br>
 Launched from Steam, AC would use the new wheel.  Launched from Sim Commander 4, CM did not launch CSP.<br>
 Previously, some things did not work, depending on the sequence in which Windows Mixed Reality was launched<br>
 relative to Steam, CM and AC.<br>
@@ -101,7 +104,8 @@ At least for the differences, I want to understand what the do and reapply as ma
 <dl compact>
 <dt>cfg\controllers\savedsetups\
 <dd><a href="https://www.reddit.com/r/assettocorsa/comments/am8men/beginners_guide_to_use_content_manager_presets/">Beginners guide to use Content Manager presets like a pro</a><br>
-What Highness calls presets are savedsetups; presets are supplied by AC for commercial controllers
+What Highness calls presets are savedsetups;<br>
+presets are supplied by AC for commercial controllers
 <pre>Gamma=2.1
 Filter=0.85
 Speed Sensitivity=73%
@@ -110,14 +114,15 @@ Steering Speed=100%</pre>
 <dt>cfg\acos.ini
 <dd>enabled apps on screen and their scale/position<br>
 <a href="https://www.youtube.com/watch?v=untJm5cefnY">HOW TO FIX ASSETTO CORSA CROSSFIRE FLICKERING AND LOW FPS</a><br>
-Just delete the file [acos.ini] found in [Documents \ Assetto Corsa \ cfg \ [cos.ini]
+Just delete the file [acos.ini] found in<br>
+ <code>Documents \ Assetto Corsa \ cfg \ [cos.ini]</code>
 <dt>cfg\video.ini
 <dd>Many settings that IMO may have not much to do with video, e.g. LOCK_STEER (which is a mystery)<br>
 <a href="https://www.reddit.com/r/assettocorsa/comments/3lhv6p/assetto_corsa_125_a_graphical_settings_adventure/">reddit descriptions and suggested values</a><br>
 <a href="https://revolutionsimracing.com/threads/graphic-guide.1648/"><b><i>fewer acronyms and more about CM performance impacts preview</i></b></a><br>
 * WORLD_DETAIL &nbsp <a href="https://www.assettocorsa.net/forum/index.php?threads/world-detail.2641">
-used only for Grass and some other minor detail (lollipop man?). It does nothing on textures.<br>
-&nbsp It can't be used on marshalls because they have lods already, as well on any object that has lods.</a><br>
+used only for Grass and some other minor detail</a> (lollipop man?).<br> &nbsp It does nothing on textures.<br>
+&nbsp It can't be used on marshalls because they have lods already<br> &nbsp as well on any object that has lods.<br>
 &nbsp <a href="https://assettocorsamods.net/threads/lods-what-is-the-best-approach.1065">lods = level of detail</a><br>
 <a href="https://apexonlineracing.com/community/threads/ac-graphic-guide.18275">smoke generation and "High Quality Mirror Reflection" have huge FPS impact</a><br>
 <br>
