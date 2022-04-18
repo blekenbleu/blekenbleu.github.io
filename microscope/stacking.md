@@ -32,7 +32,8 @@ with Zerene supporting more tweaking and touching up stacked images.
 
 [2014 comparison of CombineZP, Auto-Montage, Heli-con Focus and Zerene Stacker](https://www.researchgate.net/publication/269630893_Focus_stacking_Comparing_commercial_top-end_set-ups_with_a_semi-automatic_low_budget_approach_A_possible_solution_for_mass_digitization_of_type_specimens)  
 
-Free solutions includes Canon's DPP, which supports only their lenses and their cameras which support focus bracketing,  
+Free solutions includes [Canon's DPP 4](https://www.canon-europe.com/support/consumer_products/software/digital-photo-professional.html?language=en&os=windows%2010%20(64-bit)&productid=tcm:13-1870570),
+which works only for their lenses and cameras with focus bracketing support,  
 CombineZP, which does not support 16-bit images,  
 Picolay, ImageJ, [TuFuse](https://tawbaware.com/tufusepro_help/tufusepro_help.htm),  
 [Chasys Draw IES](https://www.jpchacha.com/chasysdraw) supports CR2/3 and [Focus Stacking](https://www.jpchacha.com/chasysdraw/help.php?file=artist_process_stack_focus.htm),  
