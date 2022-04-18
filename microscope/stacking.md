@@ -1,3 +1,4 @@
+  *[back](index.html)*
 ### focus stacking
 Some images, including highly magnified, want more depth of focus.  
 Other than by retaking with smaller aperture,  
@@ -65,5 +66,8 @@ Moving GIFs with perspective shift(?!)
   - [ExifTool by Phil Harvey](https://www.exiftool.org) [on SourceForge](https://www.exiftool.org)  
     [Everything You Ever Wanted to Know about ExifTool](https://adamtheautomator.com/exiftool)  
     [ExifToolGUI for Windows v5.xx](https://exiftool.org/gui/)  
-
-
+- [Focus Stacking with Hugin and Enfuse](https://www.youtube.com/watch?v=FMKABaISlXg) - YouTube - **hugin now incorporates enfuse**  
+  - [Using Hugin for focus stacking](https://macrocam.blogspot.com/2013/09/using-hugin-for-focus-stacking.html)  
+  - [Focus stacking from the command line](https://estar.photography/tag/focus-stacking-hugin) - *[discussion](https://groups.google.com/g/hugin-ptx/c/dZ2kL4hjbnE?pli=1)*
+- [Focus Stacking Macro Photos with Enfuse](https://patdavid.net/2013/01/focus-stacking-macro-photos-enfuse)  
+- [Enfuse can also be used to build extended DOF images, by blending a focus stack](https://wiki.panotools.org/Enfuse)  
