@@ -23,7 +23,6 @@ Optiphot frames come in 4 flavors:
   have considerably stronger focus gears and stages with more space to examine solid objects.  
 * Optiphot-200,300, which (like 150) uses infinity objectives, but on a frame more similar to Eclipse  
 
-#### [Optiphot 66 curiosities](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43374)  
-#### [Nikon Multiphot system](https://www.prc68.com/I/Multiphot.html#Optiphot)  
+#### [Optiphot-66 curiosities](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43374)  
 #### [Nikon Optiphot Series Microscopes](https://lavinia.as.arizona.edu/~mtuell/scopes/Optiphot.php)  
-#### [Optiphot-66/77/88 | Nikon Multiphot system](http://www.prc68.com/I/Multiphot.html#Optiphot)  
+#### [Optiphot-66/77/88 | Nikon Multiphot system](https://www.prc68.com/I/Multiphot.html#Optiphot)  
