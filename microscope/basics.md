@@ -7,7 +7,7 @@ The vertical dotted line where rays cross at right end of tube length is called 
 To the extent that it is, a finite objective's correction is designed for that tube length,  
 keeping in mind than many objectives depend on both slide cover glass and eyepiece for correction.  
 
-Classic (RMS) compound microscope magnification: `m = (L/fo)×(D/fe)`, where:  
+### Classic (RMS) compound microscope magnification: `m = (L/fo)×(D/fe)`, where:  
 - `m` = magnification    
 - `L` = tube length (160mm)  
 - `D` = normal vision relaxed distance (250mm)  
@@ -19,3 +19,16 @@ and a 10x eyepiece has 25mm focal length.
 For infinity scopes, substitute "tube lens focal length" for "tube length".  
 Olympus infinity objectives expect 180mm tube lens focal length;  
 Nikon Optiphot BD objectives expect 210mm tube length.  
+
+### N.A. vs aperture : `N.A. = 1/(2 * f/#)`  
+| f/# |  1.2  |  1.4 |  1.8 |  2  |  2.8  |   4  |  5.6  |   8   |  11  |   16   |  
+| --- | ----- | ---- | ---- | --- | ----- | ---- | ----- | ----- | ---- | ------ |  
+| N.A.| .4167 | .357 | .417 | .25 | .1786 | .125 | .0893 | .0625 | .045 | .03125 |  
+
+### [Zerene step size tables](https://zerenesystems.com/cms/stacker/docs/tables/macromicrodof): magnification vs frame width, magnification vs aperture  
+- magnification `m = sensor width / frame width`  
+- DoF (mm) = `0.0022*(((m+1)*f/#)m)**2`  
+- DoF (mm) = `0.00055/(N.A.**2)`  
+
+### [Zerene landscape focus tables](https://zerenesystems.com/cms/stacker/docs/tables/landscapes)  
+### *effective* aperture = `m * lens aperture`  
