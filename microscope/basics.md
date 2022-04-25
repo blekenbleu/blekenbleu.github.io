@@ -16,7 +16,7 @@ keeping in mind than many objectives also depend on both slide cover glass and e
 - `d2 = d1 + f*(m2 - m1)`  
 - `m2 = m1 + (d2 - d1)/f`  *change magnification by changing focus distance*  
 
-### Classic (RMS) compound microscope magnification: `m = (L/fo)×(D/fe)`, where:  
+### Classic (RMS) compound microscope magnification: `m = (L/fo)*(D/fe)`, where:  
 - `m` = magnification    
 - `L` = tube length (160mm)  
 - `D` = normal vision relaxed distance (250mm)  
