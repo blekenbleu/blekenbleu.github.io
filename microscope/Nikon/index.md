@@ -24,5 +24,6 @@ Optiphot frames come in 4 flavors:
 * Optiphot-200 and -300, which (like 150) uses infinity objectives, but on frames more similar to Eclipse  
 
 #### [Optiphot-66 curiosities](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43374)  
+#### [Episcopic MTF targets](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=44878)  
 #### [Nikon Optiphot Series Microscopes](https://lavinia.as.arizona.edu/~mtuell/scopes/Optiphot.php)  
 #### [Optiphot-66/77/88 | Nikon Multiphot system](https://www.prc68.com/I/Multiphot.html#Optiphot)  

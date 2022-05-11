@@ -1,11 +1,26 @@
  *[back](./)*
 ## microscope basics - finite vs infinity-corrected objectives  
+To prime your thinking about lenses and ray diagrams, review [this explanation by Bill Otto](https://www.quora.com/Where-would-the-image-go-on-this-ray-diagram-of-a-telescope-What-about-the-axis-of-symmetry-Im-extremely-confused/answer/Bill-Otto-5).  
 ![Finite-conjugate microscope system with standardised tube length and infinite-conjugate microscope system with standardised tube lens](https://www.researchgate.net/publication/333091817/figure/fig4/AS:769795272220674@1560544903396/Finite-conjugate-microscope-system-with-standardised-tube-length-and-infinite-conjugate.png)  
 *Finite-conjugate microscope system vs. infinite-conjugate microscope system with tube lens.*  
 from:  [Systematic design of microscope objectives](https://www.researchgate.net/publication/333091817_Systematic_design_of_microscope_objectives_Part_I_System_review_and_analysis)  
 The vertical dotted line where rays cross at right end of tube length is called the objective's *rear conjugate*.  
 To the extent that it is, a finite objective's correction is designed for that tube length,  
 keeping in mind than many objectives also depend on both slide cover glass and eyepiece for correction.  
+#### More explanation
+The upper diagram is supposed to represent a traditional (RMS == Royal Microscope Society) microscope.  
+"tube length" is approximately the objective's focal length, if that objective was a simple convex lens.  
+The lower diagram, which is nominally about more modern microscopes, is arguably also more accurate for tradition "finite" microscopes,
+if `Objective+Infinity space+Tube lens` are considered together as a classic "finite" objective.  
+
+#### Contrast and non-image-forming light.  
+While lenses can and do allow images to be focused on your retina,  
+they do not prevent other photons from also stimulating sensors.  
+When viewing a three-dimensional scene, perhaps focusing on a near object, 
+photons scattered from more distant objects may also land on the same photosensors.
+Some non-image-forming light can be blocked by an iris diaphragm, as in this diagram:  
+![light field microscope diagram](https://www.researchgate.net/profile/Lois-Mignard-Debise/publication/324525451/figure/fig21/AS:615507233353755@1523759768932/Sketch-of-our-light-field-microscope.png)  
+*ignore that `Microlens Array`. That `Relay part` is afocal photography, where `Field Lens` is the eyepiece or ocular.*  
 
 ### simple lens formulae:
 - `1/f = 1/do + 1/di`	{1} `di` *becomes* `f` *for infinite* `do`   
