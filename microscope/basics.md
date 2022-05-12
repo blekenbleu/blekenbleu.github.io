@@ -13,6 +13,8 @@ The upper diagram is supposed to represent a traditional (RMS == Royal Microscop
 The lower diagram, which is nominally about more modern microscopes, is arguably also more accurate for tradition "finite" microscopes,
 if `Objective+Infinity space+Tube lens` are considered together as a classic "finite" objective.  
 
+#### [Another (pr68.com) attempt at basics for Nikon BD](http://www.prc68.com/I/MicroPhotography.html)  
+
 #### Contrast and non-image-forming light.  
 While lenses can and do allow images to be focused on your retina,  
 they do not prevent other photons from also stimulating sensors.  
@@ -68,3 +70,6 @@ Nikon Optiphot BD objectives expect 210mm tube length.
 ### [1:4 to 8:1 magnification FAQ](https://www.photomacrography.net/forum/viewtopic.php?f=29&t=24891)
 ### [Depth-of-Focus scaling](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=19755)  
 - `DoF2 = DoF1 * (f/#2/f/#1) * (m1/m2)**2`
+
+### [Canon EF sensor-to-flange depth: 44mm](https://briansmith.com/flange-focal-distance-guide/)  
+Add to extension tubes when testing lens focal lengths  
