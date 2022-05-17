@@ -17,5 +17,6 @@ a camera with 250mm telephoto lens focused at infinity:
 ![calibration slide](EPIscale.jpg)  
 *same target as below*  
 
-... however those strongly vignetted images are magnified about 3X relative to oculars (by iPhone):
+... however those strongly vignetted images are magnified about 3X  
+relative to oculars (image by iPhone):
 ![ocular scale](AfocalEPIscale.jpg)  
