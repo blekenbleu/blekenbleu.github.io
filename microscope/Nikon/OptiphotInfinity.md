@@ -10,7 +10,8 @@ a camera with 250mm telephoto lens focused at infinity:
 ![Canon 90D+250mm](Optiphot_Infinity.jpg)  
 
 ... captures those images:  
-![250mm "infinity" scale](EPIscale.jpg)  
+<img width=48% src="EPIscale.jpg"> <img width=48% src="mmRule.jpg">    
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *same target as below &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; stainless millimeter rule*
 
 ... however those strongly vignetted images are magnified about 3X relative to oculars (by iPhone):
 ![ocular scale](AfocalEPIscale.jpg)  
