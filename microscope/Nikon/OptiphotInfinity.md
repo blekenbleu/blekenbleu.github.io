@@ -9,9 +9,12 @@ Removing that chimney allows the infinite image to continue;
 a camera with 250mm telephoto lens focused at infinity:
 ![Canon 90D+250mm](Optiphot_Infinity.jpg)  
 
-... captures those images:  
-<img width=48% src="EPIscale.jpg"> <img width=48% src="mmRule.jpg">    
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *same target as below &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; stainless millimeter rule*
+... captured these images:  
+![stainless millimeter rule](mmRule.jpg)   
+*stainless millimeter rule*  
+
+![calibration slide](EPIscale.jpg)  
+*same target as below*  
 
 ... however those strongly vignetted images are magnified about 3X relative to oculars (by iPhone):
 ![ocular scale](AfocalEPIscale.jpg)  
