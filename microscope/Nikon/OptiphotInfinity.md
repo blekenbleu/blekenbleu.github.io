@@ -1,4 +1,4 @@
- *[back](./)*
+ *[back](photo)*
 ## Infinity-focused Optiphot EPI  
 Nikon EPI objectives of the Optiphot era were designed for 210mm tube length.  
 Actually, "F" was the only trinolar head in which rays focused at 210mm.  
