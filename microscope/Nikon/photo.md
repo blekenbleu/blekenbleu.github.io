@@ -30,5 +30,6 @@ which gets epoxied in place:
 
 
 
+#### [CF PL projection](CFPL2.5X)
 #### [Infinity-focused Optiphot EPI](OptiphotInfinity)
 
