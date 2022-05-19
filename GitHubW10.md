@@ -2750,3 +2750,20 @@ $ gem install wdm --platform=ruby
 $ cd /e/my/GitHubDesktop/blekenbleu.github.io
 $ bundle update
 ```
+
+## 19 May 2022 Dependabot alert: Upgrade nokogiri to version 1.13.5 or later
+```
+$ g
+$ cd blekenbleu.github.io/
+$ gem update --system
+$ bundle update
+$ grep -i nokogiri Gemfile*
+Gemfile.lock:      nokogiri (>= 1.13.4, < 2.0)
+Gemfile.lock:      nokogiri (>= 1.4)
+Gemfile.lock:    nokogiri (1.13.6-x64-mingw32)
+# manually edit Gemfile.lock
+$ grep -i nokogiri Gemfile*
+Gemfile.lock:      nokogiri (>= 1.13.6, < 2.0)
+Gemfile.lock:      nokogiri (>= 1.13.5)
+Gemfile.lock:    nokogiri (1.13.6-x64-mingw32)
+ 
