@@ -1,4 +1,4 @@
-*[back](../)*
+*[back](./)*
 ## Optiphot photography  
 Released when photography meant film,
 semi-automated image capture involved complex optics:  
