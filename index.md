@@ -66,7 +66,7 @@
 ### [Thorens TD 160 MK II](ThorensTD126MKII/README.md) with SME Series III
 ### [Audio-Technica AT-LP140XP](AT-LP140XP/index.htm) microphonics
 ### [Microscopes and photomicrography](microscope/index.html)
-#### &nbsp; [American Optical](microscope/index.html#) / [Reichert EPIStar](microscope/index.html#EPIStar)
+#### &nbsp; [American Optical](microscope/index.html#AO) / [Reichert EPIStar](microscope/index.html#EPIStar)
 #### &nbsp; [Nikon Optiphot 66](microscope/Nikon)
 ### [PC misguided buying - January 2022](PC)  
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
