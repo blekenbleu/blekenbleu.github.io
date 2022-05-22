@@ -27,6 +27,7 @@ Some years, it may not matter whether a new PC has the latest processor.<br>
 <li> Gamers Nexus may be relatively credible and current, but information density is low</ul>
 </details>
 
+### [Tom's GPU ranking](https://www.tomshardware.com/reviews/gpu-hierarchy,4388.html)  
 
 ### Not all major vendors offer 12G Intel; these currently do  
 * Dell and Alienware  
