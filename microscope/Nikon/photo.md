@@ -12,10 +12,21 @@ semi-automated image capture involved complex optics:
 
 ... so trinocular chimneys mount projection lenses for 210mm tube length  
 and clamp proprietary Microflex units, which are obsoleted by digital cameras.  
+
+With (trincular) head removed, vertical illuminator flange-to-camera body flange distance  
+for parfocal Canon EF DSLR is about 58mm:  
+![headless Optiphot 66 to Canon 6D](headless58mm.jpg)  
+*Canon EF DSLR flange-to-sensor distance is 44mm*  
+
+Canon's RF camera bodies have 20mm flange-to-sensor distance.  With its chimney removed,  
+Nikon's F trinocular head has about 76mm flange-to-flange distance.  
+Canon RF mirrorless bodies should be able to achieve parfocality
+with Nikon 210mm objectives and F trinocular heads...  
+
 A (sprayed black) PVC reducer from 2 inch o.d. to 1.5 inch i.d.  
-has 42mm o.d which precisely fits the trinocular chimney  
-and 48mm i.d. which nicely fits a Pentax K/M to T2 adapter
-which gets epoxied in place:  
+has 42mm o.d., which precisely fits Nikon's trinocular chimneys,  
+and 48mm i.d., which nicely fits a Pentax K/M to T2 adapter,
+that gets epoxied in place:  
 ![chimney adapter parts](epoxy.jpg)  
 *SUPER-FAST epoxy cures in 5 minutes, but wants 24 hours for full strength*  
 
