@@ -1,7 +1,7 @@
   *[back](index.html)* 
 ### Macro links:  Mark Goodman, Allan Walls, Andy Murray and Rik Littlefield  
 
-Mark Goodman's [CoinImaging.com](https://www.coinimaging.com) website has useful [articles](https://coinimaging.com/photo_articles.html) and [lens tests](https://www.coinimaging.com/lens_tests_new.html)  
+Mark Goodman's [CoinImaging.com](https://www.coinimaging.com) website has useful [articles](https://coinimaging.com/photo_articles.html) and [lens tests](https://www.coinimaging.com/lens_tests_new.html).  
 Most that I have read by or about Andy Murray is at his website:  
 <https://www.chaosofdelight.org>  
 

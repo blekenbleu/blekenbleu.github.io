@@ -12,7 +12,9 @@ instead using AO/Reichert microscopes until concluding that:
 * fewer old optics in paths to camera sensors help contrast and sharpness.  
 
 ... which suggests Nikon's [210mm CF Plan BD objectives](https://krebsmicro.com/mplan.pdf),  
-which have [M26x0.75 threads](https://www.coinimaging.com/nikon_bd5.html).
+which have [M26x0.75 threads](https://www.coinimaging.com/nikon_bd5.html);
+comparable [Mitutoyo objectives](https://www.closeuphotography.com/mitutoyo-10x-m-plan-apo) have M26x0.70 threads.  
+*Beware of incompatible M26x1 (robot lens) and M26x0.5 (Roedenstock schneider enlarger Lens shutter) threads...*   
 While Nikon's newer infinity objectives are more highly rated,  
 they are also more expensive, since still current technology.  
 Obvious frames for 210 BD objectives are Nikon's Optiphots,
