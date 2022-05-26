@@ -9,9 +9,11 @@ To the extent that it is, a finite objective's correction is designed for that t
 keeping in mind than many objectives also depend on both slide cover glass and eyepiece for correction.  
 #### More explanation
 The upper diagram is supposed to represent a traditional (RMS == Royal Microscope Society) microscope.  
-"tube length" is approximately the objective's focal length, if that objective was a simple convex lens.  
-The lower diagram, which is nominally about more modern microscopes, is arguably also more accurate for tradition "finite" microscopes,
-if `Objective+Infinity space+Tube lens` are considered together as a classic "finite" objective.  
+"tube length" is approximately the objective's focal length for its specified magnification,  
+if that objective was a simple convex lens.  
+The lower diagram, which is nominally about more modern microscopes,   
+is arguably also more accurate for tradition "finite" microscopes,  
+if `Objective+Infinity space+Tube lens` are considered together as a nontrivial classic "finite" objective.  
 
 #### [Another (pr68.com) attempt at basics for Nikon BD](http://www.prc68.com/I/MicroPhotography.html)  
 
