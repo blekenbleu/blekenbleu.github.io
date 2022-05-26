@@ -8,12 +8,12 @@ which massive frame used Nikon's highly popular [Model S](https://www.microscopy
 That Apophot was too large to move from KY,
 instead using AO/Reichert microscopes until concluding that:  
 * their episcopic illumination was "not ideal"  
-* larger than RMS objectivess are wanted for bright darkfield epi  
+* larger than RMS objectives are wanted for bright darkfield epi  
 * fewer old optics in paths to camera sensors help contrast and sharpness.  
 
 ... which suggests Nikon's [210mm CF Plan BD objectives](https://krebsmicro.com/mplan.pdf),  
 which have [M26x0.75 threads](https://www.coinimaging.com/nikon_bd5.html);
-comparable [Mitutoyo objectives](https://www.closeuphotography.com/mitutoyo-10x-m-plan-apo) have M26x0.70 threads.  
+comparable [Mitutoyo objectives](https://www.closeuphotography.com/mitutoyo-10x-m-plan-apo) have [M26x0.706 threads](https://photomacrography.net/forum/viewtopic.php?f=25&t=12404&sid=288e49e2b20a0c6cb445637a13f255cc) (36TPI, same as RMS).  
 *Beware of incompatible M26x1 (robot lens) and M26x0.5 (Roedenstock schneider enlarger Lens shutter) threads...*   
 While Nikon's newer infinity objectives are more highly rated,  
 they are also more expensive, since still current technology.  
