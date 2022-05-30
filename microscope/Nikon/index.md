@@ -24,13 +24,14 @@ Optiphot frames come in 4 flavors:
 * Optiphot-2, which are fairly famous for [fragile white plastic gears](https://www.microscopesolutions.com/product-page/nikon-labophot-2-optiphot-2-te200-300-fine-focus)  
 * Optiphot(-1), which used less plastic than Optiphot-2, but also 50W instead of 100W illumination   
   Although vertical illuminators are often installed on Optiphot-1 and -2,  
-  IC inspection frames have stronger gears and stages with more space to examine solid objects.  
+  IC inspection frames MAY have stronger gears and stages with more space to examine solid objects.  
 * Optiphot-200 and -300, which (like 150) uses infinity objectives, but on frames more similar to Eclipse  
 
 #### [Optiphot photography](photo)  
 #### [Optiphot-66 curiosities](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43374)  
 #### [Episcopic MTF targets](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=44878)  
-#### [Nikon Optiphot Series Microscopes](https://lavinia.as.arizona.edu/~mtuell/scopes/Optiphot.php)  
-#### [Optiphot-66/77/88 | Nikon Multiphot system](https://www.prc68.com/I/Multiphot.html#Optiphot)  
+#### [Nikon Optiphot Series Microscopes - lavinia.as.arizona.edu](https://lavinia.as.arizona.edu/~mtuell/scopes/Optiphot.php)  
+#### [Optiphot-66/77/88 | Nikon Multiphot system - prc68.com](https://www.prc68.com/I/Multiphot.html#Optiphot)  
+#### Nikon Optiphot 66 Questions - Sure Squintsalot [Part 1: polarizing](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15495) __<->__ [Part 2: fine focus, hacked diascopic base](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15566)  
 #### [Universal Vertical Illuminator](VertIllum/index.html)  
 #### [Phase Contrast-2 ELWD 0.3](PhaseContrast/index.html)  
