@@ -32,3 +32,5 @@ Optiphot frames come in 4 flavors:
 #### [Episcopic MTF targets](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=44878)  
 #### [Nikon Optiphot Series Microscopes](https://lavinia.as.arizona.edu/~mtuell/scopes/Optiphot.php)  
 #### [Optiphot-66/77/88 | Nikon Multiphot system](https://www.prc68.com/I/Multiphot.html#Optiphot)  
+#### [Universal Vertical Illuminator](VertIllum/index.html)  
+#### [Phase Contrast-2 ELWD 0.3](PhaseContrast/index.html)  

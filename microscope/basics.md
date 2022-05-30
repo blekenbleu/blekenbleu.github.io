@@ -1,5 +1,5 @@
  *[back](./)*
-## microscope basics - finite vs infinity-corrected objectives  
+## microscope optics basics - finite vs infinity-corrected objectives  
 To prime your thinking about lenses and ray diagrams, review [this explanation by Bill Otto](https://www.quora.com/Where-would-the-image-go-on-this-ray-diagram-of-a-telescope-What-about-the-axis-of-symmetry-Im-extremely-confused/answer/Bill-Otto-5).  
 ![Finite-conjugate microscope system with standardised tube length and infinite-conjugate microscope system with standardised tube lens](https://www.researchgate.net/publication/333091817/figure/fig4/AS:769795272220674@1560544903396/Finite-conjugate-microscope-system-with-standardised-tube-length-and-infinite-conjugate.png)  
 *Finite-conjugate microscope system vs. infinite-conjugate microscope system with tube lens.*  
