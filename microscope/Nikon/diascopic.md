@@ -24,16 +24,19 @@ Cutout for 6V receptical is approx 25x11.6mm;  perhaps for a small panel meter..
 ## Restored base wiring  
 
 An Optiphot would originally have had wiring from its
-**DIA EPI**
-switch to adjacent receptical  
-for powering a (6V, 20W) EPI illuminator, which is useless without compatible cable connectors and illuminator.  
-Wiring to that switch presumably was yellow and orange from lamp connections and red from the bridge rectifier.  
+**DIA EPI** switch  
+to adjacent receptical for powering a (6V, 20W) EPI illuminator,  
+which is useless without compatible cable connectors and illuminator.  
+Wiring to that switch presumably was yellow and orange  
+from lamp connections and red from the bridge rectifier.  
 
 #### AC neutral:  
- White from cord to binding post, white from binding post to transformer primary  .
+ White from cord to binding post,  
+ white from binding post to transformer primary  .
 #### AC hot:  
  Black from cord to binding post, black from binding post to fuse,  
- black from fuse to control switch, black from control switch to transformer primary.
+ black from fuse to control switch,  
+ black from control switch to transformer primary.
 ####  AC ground:  
  Green from cord to chassis.
 #### 6 VAC:  
