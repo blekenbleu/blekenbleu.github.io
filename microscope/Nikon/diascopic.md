@@ -18,3 +18,30 @@ running green wire roung and unfused AC hot from the right side rear
 to the left side added 4PDT switch and tranformer power cord.  
   
 6V wiring to 20W base lamp also appears to have been hacked...  
+
+Cutout for 6V receptical is approx 25x11.6mm;  perhaps for a small panel meter...  
+
+### "Restored" base wiring  
+The original Optiphot would have had wiring from its <b>DIA &nbsp; &nbsp; &nbsp; &nbsp; EPI</b> switch to adjacent receptical  
+for powering a (6V, 20W) EPI illuminator, but is useless without compatible cable connectors and illuminator.  
+Wiring to that switch presumably was yellow and orange from lamp connections and red from the bridge rectifier.  
+
+#### AC neutral:  
+ White from cord to binding post, white from binding post to transformer primary  .
+#### AC hot:  
+ Black from cord to binding post, black from binding post to fuse,  
+ black from fuse to control switch, black from control switch to transformer primary.
+####  AC ground:  
+ Green from cord to chassis.
+#### 6 VAC:  
+ Red pair from transformer to bridge rectifier.  
+#### 6 VDC+:  
+ Red from bridge rectifier to lamp connector.  
+#### 6 VDC-:  
+ Blue from bridge rectifier to power transistor emitter.
+ Yellow from transistor collector to potentiometer;
+ red from transistor collector to yellow to lamp connector.
+#### Intensity control:  
+ Brown from power transistor base to potentiometer.
+
+![base wiring](chassis.jpg)  
