@@ -21,16 +21,12 @@ to the left side added 4PDT switch and tranformer power cord.
 
 Cutout for 6V receptical is approx 25x11.6mm;  perhaps for a small panel meter...  
 
-<a name=wiring>
+## Restored base wiring  
 
-### "Restored" base wiring  
-
-</a>
-The original Optiphot would have had wiring from its
-<b>DIA</b> &nbsp; &nbsp; &nbsp; &nbsp;
-<b>EPI</b>
-switch to adjacent receptical<br>   
-for powering a (6V, 20W) EPI illuminator, but is useless without compatible cable connectors and illuminator.<br>  
+An Optiphot would originally have had wiring from its
+**DIA EPI**
+switch to adjacent receptical  
+for powering a (6V, 20W) EPI illuminator, which is useless without compatible cable connectors and illuminator.  
 Wiring to that switch presumably was yellow and orange from lamp connections and red from the bridge rectifier.  
 
 #### AC neutral:  
