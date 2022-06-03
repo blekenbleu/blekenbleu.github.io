@@ -36,5 +36,5 @@ Optiphot frames come in 4 flavors:
 #### [Optiphot-66/77/88 | Nikon Multiphot system - prc68.com](https://www.prc68.com/I/Multiphot.html#Optiphot)  
 #### Nikon Optiphot 66 Questions - Sure Squintsalot [Part 1: polarizing](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15495) __<->__ [Part 2: fine focus, hacked diascopic base](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15566)  
 #### [Universal Vertical Illuminator](VertIllum/index.html)  
-#### [Phase Contrast-2 ELWD 0.3](PhaseContrast/index.html)  
+#### [Phase Contrast-2 ELWD 0.3 turret](PhaseContrast/index.html)  
 #### [ELWD 0.3 Condenser](ELWDcondenser/index.html)  
