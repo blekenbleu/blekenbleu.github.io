@@ -28,13 +28,18 @@ Optiphot frames come in 4 flavors:
 * Optiphot-200 and -300, which (like 150) uses infinity objectives, but on frames more similar to Eclipse  
 
 #### [Optiphot photography](photo)  
-#### [Optiphot 66 diascopic conversion](diascopic)  
+#### [Optiphot 66 illumination](BaseIllum/index.html)
+* [Optiphot 66 diascopic conversion](diascopic)   
+* [Universal Vertical Illuminator](VertIllum/index.html)  
+
 #### [ELWD Phase Contrast](PhaseContrast) as [Dark Field Turret](CondenserTurret)  
 #### [Optiphot-66 curiosities](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43374)  
 #### [Episcopic MTF targets](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=44878)  
 #### [Nikon Optiphot Series Microscopes - lavinia.as.arizona.edu](https://lavinia.as.arizona.edu/~mtuell/scopes/Optiphot.php)  
 #### [Optiphot-66/77/88 | Nikon Multiphot system - prc68.com](https://www.prc68.com/I/Multiphot.html#Optiphot)  
-#### Nikon Optiphot 66 Questions - Sure Squintsalot [Part 1: polarizing](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15495) __<->__ [Part 2: fine focus, hacked diascopic base](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15566)  
-#### [Universal Vertical Illuminator](VertIllum/index.html)  
+#### Nikon Optiphot 66 Questions - Sure Squintsalot  
+* [Part 1: polarizing](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15495)  
+* [Part 2: fine focus, hacked diascopic base](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15566)  
+
 #### [Phase Contrast-2 ELWD 0.3 turret](PhaseContrast/index.html)  
 #### [ELWD 0.3 Condenser](ELWDcondenser/index.html)  
