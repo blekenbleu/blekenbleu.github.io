@@ -51,3 +51,16 @@ from lamp connections and red from the bridge rectifier.
  Brown from power transistor base to potentiometer.
 
 ![base wiring](chassis.jpg)  
+
+## Restored base wiring  
+The section of broken centering screw remaining in the condenser carrier was short,  
+about 3mm or so.  After careful setup, that remaining segment was drilled out,  leaving threads intact.
+![illumination thru condenser carrier](field.jpg)  
+A centering screw and field lens are still needed.  
+
+## Labophot (?) Optiphot 2  
+What was [listed as a Labophot](Optiphot-2) appears to be an Optiphot 2.  
+If so, in addition to the field lens and both centering screws,  
+it has a more powerful lamp house and what appears to be a circular stage rack.  
+Whether the lamp house can be adapted to the 66 base is unclear..  
+
