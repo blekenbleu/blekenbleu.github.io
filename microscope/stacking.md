@@ -1,23 +1,21 @@
   *[back](index.html)*
 ### focus stacking
 Some images, including highly magnified, want more depth of focus.  
-Other than by retaking with smaller aperture,  
-which is liable to more noise, motion blur and/or diffraction,  
+Other than by retaking with smaller aperture  
+(which is liable to increasing noise, motion blur and/or diffraction),  
 combining sharper parts of multiple images of a scene   
-captured at overlapping different focus distances  
+captured at overlapping focus distance increments  
 is called *focus stacking* and involves two parts:
-* capturing those images
+* capturing those images (AKA focus bracketing)
 * combining them
 
-Some cameras support focus stacking (or bracketing)  
-with so-called autofocus lenses,  
-where the lens itself merely provides some control  
-by which the camera can change its focus.
+Some cameras support focus bracketing  
+using so-called autofocus lenses which include mechanisms    
+by which cameras can change their focus.
 
-An alternative for focus bracketing is by mechanically changing  
+An alternative for focus bracketing is by mechanically incrementing  
 distance from camera and lens to scene object[s].   
-Macro rails do this, as can microscope focus knobs.  
-Although perhaps not uniquely,  
+Macro rails do this, as can microscope focus knobs.    
 [WeMacro](https://www.wemacro.com) offers automation for both  
 a focus [dial](https://www.wemacro.com/?product=micromate-bracket-only):  
 ![MicroMate bracket](https://www.wemacro.com/wp-content/uploads/2017/06/mm-working-1.jpg)  
