@@ -44,3 +44,4 @@ Optiphot frames come in 4 flavors:
 #### [Phase Contrast-2 ELWD 0.3 turret](PhaseContrast/index.html)  
 #### [ELWD 0.3 Condenser](ELWDcondenser/index.html)  
 #### [Optiphot 2](Optiphot-2)  
+#### [CFI BE Plan Achromat 4x](CFI4x)  
