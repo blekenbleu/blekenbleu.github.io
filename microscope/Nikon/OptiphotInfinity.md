@@ -20,3 +20,12 @@ a camera with 250mm telephoto lens focused at infinity:
 ... however those strongly vignetted images are magnified about 3X  
 relative to oculars (image by iPhone):
 ![ocular scale](AfocalEPIscale.jpg)  
+
+# Other  
+Other Optiphot infinity configurations
+- Infinity objectives thru trino "F" head to an infinity-focused [tube lens](../tube)  
+  Infinity-based Eclipse heads [reportedly fit Optiphot dovetails](https://lavinia.as.arizona.edu/~mtuell/scopes/Eclipse.php).  
+- Optiphot 100/150/200 were infinity scopes with otherwise seemingly incompatible infinity objectives,
+  presumably NOT being CFI60.  
+- [UM-2 measurescope takes Optiphot style nosepieces](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43442)  
+
