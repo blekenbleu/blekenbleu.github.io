@@ -1,3 +1,9 @@
+*[back](../)*
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf
+" target="_blank" >
+<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>  
+
 ## Nikon CFI BE Plan Achromat 4x/0.10 WD 25
 eBay item number: 203878804396  
 Condition: New
@@ -33,3 +39,8 @@ with excellent optical corrections and very flat (Plan) optical performance. (20
 
 [FAQ: How can I hook a microscope objective to my camera?](https://www.photomacrography.net/forum/viewtopic.php?f=29&t=12147&p=138270&hilit=be+plan+4x#p138270)  
 [CFI BE 4X, remove black hood for more even coverage](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=18182)  
+
+### 10 June 2022 received intact, carefully packed in a box partially crushed by UPS  
+
+Screwed to front of EF-S 55-250mm, presumably getting 1.1x - 5x zoom.  
+Field of view is about 12mm at 55mm (with vignetting from 55-200) and 5mm at 250.  

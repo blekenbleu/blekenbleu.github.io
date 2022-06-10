@@ -1,7 +1,7 @@
  *[back](photo)*
 ## Infinity-focused Optiphot EPI  
 Nikon Optiphot EPI objectives were designed for 210mm tube length.  
-Only "F" trinolar head focused objective rays 210mm;  
+Only ["F" trinolar head](F_trinoc) focused objective rays 210mm;  
 more common "T" heads have a pseudo-infinity space 
 around their trinocular prism:
 ![Nikon T head schematic](http://www.photomacrography.net/forum/userpix/3229_Nikon_lightpath_1.jpg)  
@@ -23,7 +23,7 @@ relative to oculars (image by iPhone):
 
 # Other  
 Other Optiphot infinity configurations
-- Infinity objectives thru trino "F" head to an infinity-focused [tube lens](../tube)  
+- Infinity objectives thru [trinoc "F" head](F_trinoc) to an infinity-focused [tube lens](../tube)  
   Infinity-based Eclipse heads [reportedly fit Optiphot dovetails](https://lavinia.as.arizona.edu/~mtuell/scopes/Eclipse.php).  
 - Optiphot 100/150/200 were infinity scopes with otherwise seemingly incompatible infinity objectives,
   presumably NOT being CFI60.  
