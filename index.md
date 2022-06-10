@@ -54,22 +54,24 @@
   [Jekyll Talk! forum](https://talk.jekyllrb.com/)  
   [Jekyll github](https://github.com/jekyll) and [github-metadata](https://github.com/jekyll/github-metadata/issues)  
 
-### [COVID-19 plots](covid)
+### Audio  
+#### &nbsp; [Thorens TD 160 MK II](ThorensTD126MKII/README.md) with SME Series III
+#### &nbsp; [Audio-Technica AT-LP140XP](AT-LP140XP/index.htm) microphonics
 ### [Blu-Ray movies on Windows PC](WinBluRay)  
 ### [Boot Windows 10 from NVMe on PCIe PCs without NVMe BIOS](NVMe)  
+### [COVID-19 plots](covid)
+### [FreshTomato and Linksys EA6500v2](FreshTomato)
+### GitHub's [Default welcome page - Markup tutorial](Welcome)
+#### &nbsp; [Git-Cola installed from MacPorts](GitColaMacPorts)
+#### &nbsp; macOS local [gitolite](MacGit) server
+### [Line 6 JTV-89F guitar](JTV89F/Variax)
+### [Microscopes and photomicography](microscope/index.html)  
+#### &nbsp; [American Optical](microscope/index.html#AO) / [Reichert EPIStar](microscope/index.html#EPIStar)
+#### &nbsp; [Nikon Optiphot 66](microscope/Nikon)
+#### &nbsp; [cameras](Canon)
 ### [PC misguided buying - January 2022](PC)  
 #### &nbsp; [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)  
 ### [Vim and X-Mouse](VimTXmouse)
-### [Installing Git-Cola from MacPorts](GitColaMacPorts)
-### macOS local [gitolite](MacGit) server
-### [FreshTomato and Linksys EA6500v2](FreshTomato)
-### [Line 6 JTV-89F guitar](JTV89F/Variax)
-### [Thorens TD 160 MK II](ThorensTD126MKII/README.md) with SME Series III
-### [Audio-Technica AT-LP140XP](AT-LP140XP/index.htm) microphonics
-### [Microscopes and photomicrography](microscope/index.html)
-#### &nbsp; [American Optical](microscope/index.html#AO) / [Reichert EPIStar](microscope/index.html#EPIStar)
-#### &nbsp; [Nikon Optiphot 66](microscope/Nikon)
-### GitHub's [Default welcome page - Markup tutorial](Welcome)
 
 [GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io)
 for this markdown
