@@ -39,8 +39,9 @@ diffuser is evidently missing...
 Condenser carrier and rack are intact and working, 
 but neither coarse nor fine stage focus knobs work.  
 
-Bizarrly, power connecton from 12V bulb to base uses 110VAC plug and receptical,  
-although they seemingly match those on page 10 of [the Optiphot instruction manual](https://cmrf.research.uiowa.edu/sites/cmrf.research.uiowa.edu/files/nikon-optiphot-manual_0.pdf).  
+Bizarrly, power connecton from 12V bulb to base uses 110VAC plug and receptacal:  
+![Optiphot 12VDC](Optiphot_12VDC.jpg)  
+...although they seemingly match those on page 10 of [the Optiphot instruction manual](https://cmrf.research.uiowa.edu/sites/cmrf.research.uiowa.edu/files/nikon-optiphot-manual_0.pdf).  
 
 Condenser carrier and rack are seemingly identical to those on the diaphot Optiphot 66,  
 except that, unlike the 66, a stop prevents it running off the pinion.  
