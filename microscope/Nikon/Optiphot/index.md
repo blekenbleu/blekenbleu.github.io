@@ -54,3 +54,26 @@ if they were tight in that floating ring and not anchored in the U...??
 Condenser and substage assemblies mount on a dovetail that, also unlike on the 66.  
 is removable from the (broken) coarse focus rack.  
 ![substage assembly](focus.jpg)  
+
+### Focus
+Optiphot-1 fine focus differs from -66  
+- -66 has a single 26:6 planetary gear is driven from its (fragile plastic) small fine focus gear (13:3), 
+- -1 has 15:6 plastic planetary driven from the fine focus, driving a plastic idler that drives its 20:6 (25:3).  
+
+![-1 left; -66 right](FineFocus.jpg)  
+    *-1 fine focus on the left;  -66 fine focus is to the right, with its fine focus shaft*  
+
+Those last (metal) gears' 6 cog sticks thru a large brass spacer/bushing plate to drive a first coarse focus coaxial sun gear,
+which smaller cog drives the coarse focus planetary gear, which small cog drive the coaxial focus pinion sun gear.
+
+The -1 focus evidently had been already fiddled, because
+its large brass spacer was only loosely threaded onto its coarse focus tube 
+and its first coarse focus sun gear was missing.
+
+The -66 coarse focus tube has a retaining nut on the end without gears;
+don't yet know about the -1; its large brass spacer/bushing plate is still tightly threaded on its coarse focus tube.
+
+Both focus blocks are the same width, so presumably matching fine focus shaft lengths.   
+
+### Condenser
+Bought a [Zeiss 0.9 flip-top condenser](../ZeissCondenser);  got [some advice](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=5&t=15701).  
