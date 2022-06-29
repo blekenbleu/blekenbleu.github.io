@@ -24,7 +24,13 @@ When viewing a three-dimensional scene, perhaps focusing on a near object,
 photons scattered from more distant objects may also land on the same photosensors.
 Some non-image-forming light can be blocked by an iris diaphragm, as in this diagram:  
 ![light field microscope diagram](https://www.researchgate.net/profile/Lois-Mignard-Debise/publication/324525451/figure/fig21/AS:615507233353755@1523759768932/Sketch-of-our-light-field-microscope.png)  
-*ignore that `Microlens Array`. That `Relay part` is afocal photography, where `Field Lens` is the eyepiece or ocular.*  
+*ignore that `Microlens Array`. That <font color=red>Relay part</font> is afocal photography, where `Field Lens` is the eyepiece or ocular.*  
+
+## [Kohler illumination: lamp, field diaphragm and condenser alignment](https://en.wikipedia.org/wiki/K%C3%B6hler_illumination)  
+Any number of websites will waste space pointing out how important it is,  
+then provide miserable, incomplete and wrong instructions.  
+Fortunately, [Wikipedia](https://en.wikipedia.org/wiki/K%C3%B6hler_illumination) does all right:  
+![Wikipedia Kohler](https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kohler_Illumination_en.svg/660px-Kohler_Illumination_en.svg.png)  
 
 ### simple lens formulae:
 - `1/f = 1/do + 1/di`	{1} `di` *becomes* `f` *for infinite* `do`   
