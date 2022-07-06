@@ -65,9 +65,9 @@
 #### &nbsp; [Git-Cola installed from MacPorts](GitColaMacPorts)
 #### &nbsp; macOS local [gitolite](MacGit) server
 ### [Line 6 JTV-89F guitar](JTV89F/Variax)
-### [Microscopes and photomicography](microscope/index.html)  
+## [Microscopes and photomicography](microscope/index.html)  
 #### &nbsp; [American Optical Series 10](microscope/index.html#AO) / [Series 120](microscope/AO) / [Reichert EPIStar](microscope/index.html#EPIStar)
-#### &nbsp; [Nikon Optiphot 66](microscope/Nikon)
+#### &nbsp; Nikon [Optiphot 66](microscope/Nikon) / [Optiphot 1](microscope/Nikon/Optiphot)
 #### &nbsp; [cameras](Canon)
 ### [PC misguided buying - January 2022](PC)  
 #### &nbsp; [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)  

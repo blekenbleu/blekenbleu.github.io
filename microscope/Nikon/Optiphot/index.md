@@ -3,7 +3,7 @@
 " target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>  
-## Nikon Labophot Microscope
+## Nikon Optiphot Microscope
 
 [Optiphot Brochure](http://earth2geologists.net/Microscopes/documents/Nikon_Optiphot_Labophot_Pol_brochure.pdf)  
 [Instructions](https://cmrf.research.uiowa.edu/sites/cmrf.research.uiowa.edu/files/nikon-optiphot-manual_0.pdf)  
@@ -82,3 +82,5 @@ Both focus blocks are the same width, so presumably matching fine focus shaft le
 
 ### Condenser
 Bought a [Zeiss 0.9 flip-top condenser](../ZeissCondenser);  got [some advice](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=5&t=15701).  
+Bought a Nikon swing-out condenser; not enough working distance for 3mm epi plate over the stage.  
+[ELWD condenser](../ELWDcondenser/index.html) arguably has too much working distance.  
