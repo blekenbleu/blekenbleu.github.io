@@ -32,19 +32,19 @@ See photos for exact item, condition, and details on model available.
 
 ## Received 9 June 2022  
 Despite being advertised as a Labophot,
-the frame has its Nikon Optiphot plate.
-Both plastic base pads are fine.
+the frame has its Nikon Optiphot plate.  
+Both plastic base pads are fine. 
 Those tend to be problematic on Optiphot 2...  
 
 The lamphouse was thankfully intact, having been removed as requested.  
-Bulb lights; filament shows clearly in the field lens;  
-diffuser is evidently missing...   
+Bulb lights; filament shows clearly in the field lens;  diffuser is missing...  
+A cheap substitute was [ordered from Amazon](https://www.amazon.com/dp/B0041V9IX4).
 ![optical path](OpticalPath.jpg)  
 
 Condenser carrier and rack are intact and working, 
 but neither coarse nor fine stage focus knobs work.  
 
-Bizarrly, power connecton from 12V bulb to base uses 110VAC plug and receptacal:  
+Bizarrly, power connecton from 12V bulb to base uses 110VAC plug and receptical:  
 ![Optiphot 12VDC](Optiphot_12VDC.jpg)  
 ...although they seemingly match those on page 10 of [the Optiphot instruction manual](https://cmrf.research.uiowa.edu/sites/cmrf.research.uiowa.edu/files/nikon-optiphot-manual_0.pdf).  
 
