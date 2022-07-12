@@ -27,3 +27,32 @@ Nikon 221403 Labophot Microscope Parts Only (S1084)
 ## Received 
 
 ### Condenser
+
+## LED conversion
+Common (grounded) emitter bipolar transistors are approximately constant current sources.  
+Labophot and Optiphot use transistors to modulate halogen lamp power  
+and variable resistors between base and collector for control.  
+Labophot potentiometers are about 1K Ohms, connected between collector and base,  
+with halogen lamp between collector and nominal +7 VDC,  
+to accommodate incandescent lamp behavior:
+* As filament heats, resistance increases.  
+* This lowers voltage drop from collector to emitter  
+  and also current thru resistor to base, reducing power to lamps.  
+![ Labophot halogen illumination circuit characterization](plot.png)  
+Current was measured using a CA-60 AC/DC clamp.  
+
+LEDs behave differently:  
+* Selected LED should be bright enough with 1A that 1K is minimum resistance wanted from supply to base;  
+  need to determine a minimum current for useful brightness to establish wanted potentiometer range.
+* Above some voltage threshold, current increases with temperature.  
+* this effectively decreased resistance increases transistor collector-emitter voltage  
+  and current thru collector-base resistance, provoking current runaway.  
+* For the transistor to behave as a more nearly constant current source,  
+  variable resistance should move to between base and voltage supply for LED and transistor collector,  
+  instead of between base and collector.  
+* That voltage source droops slightly with increased current, providing some stabilizing negative feedback.  
+  Adding a resistor between transistor emitter and ground would increase negative feedback but waste power.  
+* A resistor between base and ground would also increase negative feedback,  
+  as base-to-emitter voltage increases with current.  
+* A resistor in series with forward-biased diode (a nearly constant voltage drop) from base to ground  
+  would provide stronger current regulation.  
