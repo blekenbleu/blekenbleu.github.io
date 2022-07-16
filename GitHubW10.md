@@ -930,7 +930,7 @@ Configuration file: D:/Git/blekenbleu.github.io/_config.yml
   * Instead, link **SmartGit** or **GitHub Desktop**'s mingw64/bin to `/usr/bin/local`, e.g.:  
   `$ ln -s $GPATH/mingw64/bin /usr/local/`
 * jekyll build `Error: invalid byte sequence in UTF-8`  
-  Workaround: find offending characters to be editted out:    
+  Workaround: find offending characters to be edited out:    
   `$ grep -axv '.*' badfile.md | less`
 * In Ruby Bash window, Ctrl+C to `bundle exec jekyll serve` does NOT stop port 4000 service  
   It does allows window reuse for other purposes...
@@ -2766,4 +2766,29 @@ $ grep -i nokogiri Gemfile*
 Gemfile.lock:      nokogiri (>= 1.13.6, < 2.0)
 Gemfile.lock:      nokogiri (>= 1.13.5)
 Gemfile.lock:    nokogiri (1.13.6-x64-mingw32)
- 
+```
+## 15 July: 2 months ago Upgrade nokogiri to version 1.13.6 or later; now 1.13.7  
+```
+$ g  
+$ cd blekenbleu.github.io/  
+$ gem update --system  
+$ bundle update  
+...  
+...  
+Bundle updated!  
+Post-install message from html-pipeline:  
+-------------------------------------------------  
+Thank you for installing html-pipeline!  
+You must bundle Filter gem dependencies.  
+See html-pipeline README.md for more details.  
+<https://github.com/jch/html-pipeline#dependencies>  
+-------------------------------------------------  
+```
+
+Actually, the problem on GitHub is:  
+```  
+ Conversion error: Jekyll::Converters::Markdown encountered an error while converting 'microscope/Nikon/Labophot/index.md':  
+                    invalid byte sequence in UTF-8  
+``` 
+find offending characters to be edited out:  
+  `$ grep -axv '.*' badfile.md | less`   
