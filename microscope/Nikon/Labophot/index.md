@@ -10,7 +10,7 @@
 - [Instruction manual](https://www.manualslib.com/manual/937966/Nikon-Labophot.html) - manualslib.com
 - [Labophot @ lavinia.as.arizona.edu](https://lavinia.as.arizona.edu/~mtuell/)  
 - [Repair Manual @ lavinia.as.arizona.edu](https://lavinia.as.arizona.edu/~mtuell/pdf/L0180%20OPTIPHOT%20LABOPHOT%20BODY.pdf)  
-- [ © Brooke Clarke 2014 ](https://www.prc68.com/I/Labophot.html)  
+- [ Brooke Clarke 2014 ](https://www.prc68.com/I/Labophot.html)  
 
 eBay item number: [155061301918](https://www.ebay.com/itm/155061301918)
 Condition: For parts or not working  
@@ -33,11 +33,11 @@ Common (grounded) emitter bipolar transistors are approximately constant current
 Labophot and Optiphot use transistors to modulate halogen lamp power  
 and variable resistors between base and collector for control.  
 Labophot potentiometers are about 1K Ohms, connected between collector and base,  
-with halogen lamp between collector and nominal +7 VDC,  
-to accommodate incandescent lamp behavior:
+with halogen lamp between collector and nominal +7 VDC,  
+to accommodate incandescent lamp behavior:
 * As filament heats, resistance increases.  
-* This lowers voltage drop from collector to emitter  
-  and also current thru resistor to base, reducing power to lamps.  
+* This lowers voltage drop from collector to emitter  
+  and also current thru resistor to base, reducing power to lamps.  
 ![ Labophot halogen illumination circuit characterization](plot.png)  
 Current was measured using a CA-60 AC/DC clamp.  
 
@@ -49,8 +49,8 @@ LEDs behave differently:
   and current thru collector-base resistance, provoking current runaway.  
 * For the transistor to behave as a more nearly constant current source,  
   variable resistance should move to between base and voltage supply for LED and transistor collector,  
-  instead of between base and collector.  
-* That voltage source droops slightly with increased current, providing some stabilizing negative feedback.  
+  instead of between base and collector.  
+* That voltage source droops slightly with increased current, providing some stabilizing negative feedback.  
   Adding a resistor between transistor emitter and ground would increase negative feedback but waste power.  
 * A resistor between base and ground would also increase negative feedback,  
   as base-to-emitter voltage increases with current.  
