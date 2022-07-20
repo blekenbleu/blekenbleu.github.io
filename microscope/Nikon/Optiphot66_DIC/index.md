@@ -55,7 +55,7 @@ Condition: New
 Brand:	OLYMPUS  
 Package included:1 pair  
 
-![](s-2600.jpg)  
-![](s-2601.jpg)  
+![](s-2600.png)  
+![](s-2601.png)  
 # [YuYan-microscope](https://www.ebay.com/str/yuyanmicroscope?_trksid=p2047675.m145687.l149267)  
 Delivery:  Estimated between Fri, Aug 12 and Mon, Aug 22 to 29909  
