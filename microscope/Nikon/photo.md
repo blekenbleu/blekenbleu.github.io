@@ -19,9 +19,13 @@ for parfocal Canon EF DSLR is about 58mm:
 *Canon EF DSLR flange-to-sensor distance is 44mm*  
 
 Canon's RF camera bodies have 20mm flange-to-sensor distance.  With its chimney removed,  
-Nikon's [F trinocular head](F_trinoc) has about 76mm flange-to-flange distance.  
+Nikon's [F trinocular head](Trinoc) has about 76mm flange-to-flange distance.  
 Canon mirrorless bodies should be able to achieve parfocality
-with Nikon 210mm objectives and [F trinocular heads](F_trinoc)...  
+with Nikon 210mm objectives and [F trinocular heads](Trinoc)...  
+
+Otherwise, with unmodified [type T or UW trinocular heads](Trinoc#nikon-type-t-trinocular-microscope-head)
+or type F with chimney,  
+a [CF PL relay lens](CFPL2.5X) is wanted to refocus objective image planes at camera sensors.  
 
 A (sprayed black) PVC reducer from 2 inch o.d. to 1.5 inch i.d.  
 has 42mm o.d., which precisely fits Nikon's trinocular chimneys,  

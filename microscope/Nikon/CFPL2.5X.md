@@ -1,5 +1,9 @@
  *[back](photo)*
-## Optiphot EPI: CF PL 2.5X projection to Canon EF sensor
+## Optiphot EPI: CF PL 2.5X projection to Canon EF sensor  
+Since Nikon CF objectives are nominally free of chromatic aberrations,  
+these CF photo relay lenses are candidates for use in other microscopes 
+which employ eyepieces without corrections.  
+
 Using a [male M42-T2 coupling ring](https://www.amazon.com/dp/B0813MTZ2P)
 and [M42-EOS AF confirm adapter](https://www.amazon.com/dp/B09KRVWR4B) with a bellows,  
 determined additional spacing wanted for Canon EF sensor parfocality:  
