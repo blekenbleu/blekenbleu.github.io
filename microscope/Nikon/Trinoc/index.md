@@ -56,13 +56,23 @@ Height:	37 mm
 | ----------- | ------------ |
 | ![](T3.jpg) | ![](T4.jpg)  |  
 
+### [type F flare](https://www.photomacrography.net/forum/viewtopic.php?p=263114#p263114)  
+
 ## Nikon Type T Trinocular Microscope Head  
-bundled with Optiphot-66...  
+![type T with bellows](../bellows.jpg)  
+*bundled with Optiphot-66*   
+
 Unlike the type F, type T (and type UW) have nearly the reverse of a tube lens  
 at their bottom flange, creating [an approximate infinity space around beam splitter](../OptiphotInfinity)  
-for oculars and photo tube.  The removeable photo tube chimney has an approximate tube lens  
-at its bottom to convert back from that beam splitter infinity space to focus at a plane for a photo relay lens.  
+for oculars and photo tube.  Its removeable photo tube chimney has an approximate tube lens  
+at its bottom to convert back from that beam splitter space to focus at a plane for a photo lens.  
 With that chimney removed, focusing a camera lens towards that nearly reversed tube lens yields images  
 of a strongly cropped field, indicating that space is not really infinity.  
 Chimney construction does not allow for camera sensor placement at that focal plane.  
-There have been several 
+Several methods have been described for preempting that photo lens:
+- [for teaching/discussion head](https://www.photomacrography.net/forum/viewtopic.php?p=240867#240867)  
+- [chop off chimney insert just above 50mm thread](https://www.photomacrography.net/forum/viewtopic.php?p=263145#p263145)  
+- [insert e.g Zeiss Triotar 1:4 f=13,5 cm ("slim"; M42 thread)](https://www.photomacrography.net/forum/viewtopic.php?p=263168#p263168)  
+- [replace chimney insert with Pentacon microscope adapter](https://www.photomacrography.net/forum/viewtopic.php?p=263187#p263187)  
+- [replace chimney insert with many filter rings](https://www.photomacrography.net/forum/viewtopic.php?p=206784#p206784)  
+- [3D-printed chimney insert replacement with surplus shed 125mm doublet](https://www.photomacrography.net/forum/viewtopic.php?p=264784#p264784)  

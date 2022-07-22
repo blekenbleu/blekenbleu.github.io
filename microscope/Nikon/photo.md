@@ -10,17 +10,17 @@ semi-automated image capture involved complex optics:
 ... with prisms for finder and exposure:  
 ![CF PL + UFX-DX](CF-PL.jpg)  
 
-... so trinocular chimneys mount projection lenses for 210mm tube length  
+... so [trinocular](Trinoc) chimneys mount projection lenses for 210mm tube length  
 and clamp proprietary Microflex units, which are obsoleted by digital cameras.  
 
-With (trincular) head removed, vertical illuminator flange-to-camera body flange distance  
+With ([trincular](Trinoc)) head removed, vertical illuminator flange-to-camera body flange distance  
 for parfocal Canon EF DSLR is about 58mm:  
 ![headless Optiphot 66 to Canon 6D](headless58mm.jpg)  
 *Canon EF DSLR flange-to-sensor distance is 44mm*  
 
 Canon's RF camera bodies have 20mm flange-to-sensor distance.  With its chimney removed,  
 Nikon's [F trinocular head](Trinoc) has about 76mm flange-to-flange distance.  
-Canon mirrorless bodies should be able to achieve parfocality
+(Canon) mirrorless bodies achieve parfocality
 with Nikon 210mm objectives and [F trinocular heads](Trinoc)...  
 
 Otherwise, with unmodified [type T or UW trinocular heads](Trinoc#nikon-type-t-trinocular-microscope-head)

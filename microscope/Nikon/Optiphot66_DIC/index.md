@@ -59,3 +59,6 @@ Package included:1 pair
 ![](s-2601.png)  
 # [YuYan-microscope](https://www.ebay.com/str/yuyanmicroscope?_trksid=p2047675.m145687.l149267)  
 Delivery:  Estimated between Fri, Aug 12 and Mon, Aug 22 to 29909  
+
+---------------------------------
+### [Scarodactyl's Epi DIC woes](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=28&t=9092)  
