@@ -30,8 +30,10 @@ Optiphot frames come in 4 flavors:
   IC inspection frames MAY have stronger gears and stages with more space to examine solid objects.  
 * Optiphot-200 and -300, which (like 150) uses infinity objectives, but on frames more similar to Eclipse  
 
-#### [Optiphot](Optiphot)  
-#### [Labophot](Labophot)  
+#### [Optiphot 1](Optiphot)  
+#### [Labophot 1](Labophot)  
+#### [Optiphot-66 DIC](Optiphot66_DIC)  
+#### [trinocular heads](Trinoc)  
 #### [Optiphot photography](photo)  
 #### [Optiphot 66 illumination](BaseIllum/index.html)
 * [Optiphot 66 diascopic conversion](diascopic)   

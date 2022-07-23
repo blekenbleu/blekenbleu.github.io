@@ -46,19 +46,10 @@ No software, power cords, or other accessories are included unless stated above.
 | ![](s-1605.jpg) | ![](s-1606.jpg) |  
 
 ## Ordered 20 July 2022  
-The same vendor (outback6) from whom I got a Type F trinocular head,  
-so I am optimistic that EPI DIC may work...  
------------------------------------------------------------  
-30mm WF 10X / 23 eyepieces were ordered for the UW head  
-eBay item number: [144013733860](https://www.ebay.com/itm/144013733860)   
-Condition: New   
-Brand:	OLYMPUS  
-Package included:1 pair  
 
-![](s-2600.png)  
-![](s-2601.png)  
-# [YuYan-microscope](https://www.ebay.com/str/yuyanmicroscope?_trksid=p2047675.m145687.l149267)  
-Delivery:  Estimated between Fri, Aug 12 and Mon, Aug 22 to 29909  
+The same vendor (outback6) from whom I got a [Type F trinocular head](../Trinoc#nikon-type-f-trinocular-microscope-head);  
+I want to be optimistic that EPI DIC objectives include prisms, but am pessimistic about polarizing filters...  
+[30mm WF 10X / 23 eyepieces](../../oculars/index.htm#wf30mm) are ordered for the UW head  
 
 ---------------------------------  
 ### [DIC Principles and Applications](https://www.microscopyu.com/pdfs/Lasslett_Micro_and_Analysis_20-S9-2006.pdf)  
