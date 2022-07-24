@@ -79,6 +79,7 @@ and the 3rd is a Senarmont type set-up with dedicated prisms for each objective.
 ### [Scarodactyl's Diatoms in epi DIC](https://www.photomacrography.net/forum/viewtopic.php?t=43832)  
 
 ### [JH's EPI DIC with mirror](http://www.photomacrography.net/forum/viewtopic.php?t=31351)  
+-   [First surface mirror](../../FSmirror)  
 
 ### [Differential Interference Contrast (DIC) Microscopy and other methods of producing contrast](https://www.canadiannaturephotographer.com/diffential_interference_microscopy.html)  
 
