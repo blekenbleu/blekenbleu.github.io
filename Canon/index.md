@@ -11,6 +11,8 @@ A 6D taught that low light and wide angle were uncompelling (to me).
 APS-C turns out to be a sweet spot for photomicography;  
 90D and M6 II resolution and focus bracketing are nearly ideal.  
 
+[Canon RS60-E3 shutter release](../microscope/RS60E3.htm)  
+
 ### Canon acronyms
 - EOS = ElectoOptical System  
 - EF = Electro-Focus (although some EF lenses are manual focus)  
