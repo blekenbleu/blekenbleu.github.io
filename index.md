@@ -59,6 +59,7 @@
 #### &nbsp; [Audio-Technica AT-LP140XP](AT-LP140XP/index.htm) microphonics
 ### [Blu-Ray movies on Windows PC](WinBluRay)  
 ### [Boot Windows 10 from NVMe on PCIe PCs without NVMe BIOS](NVMe)  
+### [Chromebook](Chromebook)
 ### [COVID-19 plots](covid)
 ### [FreshTomato and Linksys EA6500v2](FreshTomato)
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)

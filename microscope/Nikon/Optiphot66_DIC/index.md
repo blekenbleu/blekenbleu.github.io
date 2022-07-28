@@ -131,3 +131,26 @@ F: DIC nosepiece with Plan Fluor 10x/0.3, Plan Fluor 40x/0.75 and PF/PA 100 oil 
 G: Turret condenser with DIC prism 0.5-1.0 and 1.0-1.4  
 H: DIC polarizer with adapter.  
 ![Optizoom](OptiZoom.jpg)  
+
+---
+
+ *received 28 July 2022*  
+Unexpectedly included [Leica 10x/21B Widefield Adjustable Eyepieces](https://spwindustrial.com/leica-10x-21b-microscope-eyepiece-10445111-pair-for-mz-or-dm/) [10445111](https://krebsmicro.com/pdf/Z16_Z8_4114754.pdf)  
+- probably the same as [Wild 445111](https://www.photomacrography.net/forum/viewtopic.php?t=40880)  
+
+UW head eye tubes are 36mm o.d.; about 3mm larger than 30mm clamp compression groove...  
+Leica eyepiece is about 42mm, well over 30mm clamp capacity.  
+Some M42 extension tubes (with diaphragm control pins) have 35mm i.d.;  
+could likely be turned to 36mm i.d.,  
+then use a 40mm long 2" extension tube with m42-M48 adapter.  
+
+---
+
+# M42 to 30mm to 23.2mm Microscope Adapter Camera Eyepiece Tube  
+ *item number: [224158403124](https://www.ebay.com/itm/224158403124)*  
+The Top male thread is M42*0.75  
+The outer diameter of the tube is 30mm  
+the inner diameter is 23.2mm to accept biological Microscope tube  
+and the end female thread to accpet C-mount.  
+full metal-----Aluminum alloy  
+![](M42-30mm.jpg) &nbsp; ![](M43-23.2mm.jpg)  

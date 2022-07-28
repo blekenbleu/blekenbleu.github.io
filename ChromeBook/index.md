@@ -29,3 +29,24 @@ Weight:  Starting at 4.4 pounds
 Warranty:  It is covered by manufacturer's Warranty Repair Service Service until June, 2023.  
 
 ![](maxmart.png)  &nbsp; [Lenovo Authorized seller](https://www.ebay.com/usr/themaxmart)  
+
+---
+
+ *received 28 July*
+My solitary C340 arrived today in a sealed Lenovo box.
+Somewhat evocative of my now-ancient MacBook Pro;
+less tapered and a darker gray (no illuminated apple logo)...
+It fired up a few seconds after plugging in its USB-C charger.
+It needed a (~5 minute) update.
+It tried and failed to sync settings without first asking for my passphrase...
+
+Ordered a [USB-C dock with DisplayPort](https://www.amazon.com/gp/product/B076TRGGM6)  
+[**Connect your Chromebook to a monitor**](https://support.google.com/chromebook/answer/1060909)  
+[**Multiple Chromebook monitors by USB-C**](https://www.androidheadlines.com/2020/09/chromebook-multiple-displays-single-usb-c-port.html)  
+[**Lenovo Chromebook community**](https://forums.lenovo.com/t5/Lenovo-Chromebooks/bd-p/lc01_en)  
+[**Lenovo IdeaPad C340-15 hardware manual**](https://download.lenovo.com/consumer/mobiles_pub/flex_15iwl_hmm_201902.pdf)  
+[**VLC Media Player on Chromebook plays FLAC**](https://chromeready.com/2683/how-to-install-vlc-media-player-on-chromebook)  
+{**Chromebook external NTFS hard drives**](https://www.cnet.com/tech/computing/how-to-use-an-external-drive-with-a-chromebook/)  
+- [File types and external devices that work on Chromebooks](https://support.google.com/chromebook/answer/183093)
+
+

@@ -76,3 +76,13 @@ Several methods have been described for preempting that photo lens:
 - [replace chimney insert with Pentacon microscope adapter](https://www.photomacrography.net/forum/viewtopic.php?p=263187#p263187)  
 - [replace chimney insert with many filter rings](https://www.photomacrography.net/forum/viewtopic.php?p=206784#p206784)  
 - [3D-printed chimney insert replacement with surplus shed 125mm doublet](https://www.photomacrography.net/forum/viewtopic.php?p=264784#p264784)  
+
+---
+
+## Type UW
+Received 28 July with [DIC Optiphot-66](../Optiphot66_DIC)  
+UW head eye tubes are 36mm o.d.; about 3mm larger than 30mm clamp compression groove...  
+Leica eyepiece is about 42mm, well over 30mm clamp capacity.  
+Some M42 extension tubes (with diaphragm control pins) have 35mm i.d.;  
+could likely be turned to 36mm i.d.,  
+then use a 40mm long 2" extension tube with m42-M48 adapter.   
