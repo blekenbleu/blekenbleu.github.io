@@ -46,7 +46,9 @@ Ordered a [USB-C dock with DisplayPort](https://www.amazon.com/gp/product/B076TR
 [**Lenovo Chromebook community**](https://forums.lenovo.com/t5/Lenovo-Chromebooks/bd-p/lc01_en)  
 [**Lenovo IdeaPad C340-15 hardware manual**](https://download.lenovo.com/consumer/mobiles_pub/flex_15iwl_hmm_201902.pdf)  
 [**VLC Media Player on Chromebook plays FLAC**](https://chromeready.com/2683/how-to-install-vlc-media-player-on-chromebook)  
-{**Chromebook external NTFS hard drives**](https://www.cnet.com/tech/computing/how-to-use-an-external-drive-with-a-chromebook/)  
-- [File types and external devices that work on Chromebooks](https://support.google.com/chromebook/answer/183093)
-
+[**Chromebook external NTFS hard drives**](https://www.cnet.com/tech/computing/how-to-use-an-external-drive-with-a-chromebook/)  
+- [File types and external devices that work on Chromebooks](https://support.google.com/chromebook/answer/183093)  
+[Stylus for C340-15 Touch-Screen Chromebook](https://www.amazon.com/dp/B085FDR67C)  
+ - Stylus to draw on it needs to be brought separately.  
+ - [**7 Best Chromebooks for Artists in 2022**](https://proactivecreative.com/7-best-chromebooks-for-artists-in-2020)  
 
