@@ -15,6 +15,8 @@ The lower diagram, which is nominally about more modern microscopes,
 is arguably also more accurate for tradition "finite" microscopes,  
 if `Objective+Infinity space+Tube lens` are considered together as a nontrivial classic "finite" objective.  
 
+#### [Abramowitz &amp; Davidson "Optical Microscopy"](https://micro.magnet.fsu.edu/primer/pdfs/microscopy.pdf)  
+#### [Douglas B. Murphy "FUNDAMENTALS OF LIGHT MICROSCOPY AND ELECTRONIC IMAGING"](https://www.biology.uoc.gr/courses/BIOL493/documents/book.pdf)  
 #### [Another (pr68.com) attempt at basics for Nikon BD](http://www.prc68.com/I/MicroPhotography.html)  
 
 #### Contrast and non-image-forming light.  

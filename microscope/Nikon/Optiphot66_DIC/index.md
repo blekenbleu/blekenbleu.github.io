@@ -51,12 +51,13 @@ The same vendor (outback6) from whom I got a [Type F trinocular head](../Trinoc#
 I want to be optimistic that EPI DIC objectives include prisms, but am pessimistic about polarizing filters...  
 [30mm WF 10X / 23 eyepieces](../../oculars/index.htm#wf30mm) are ordered for the UW head  
 
----------------------------------  
-### [DIC Principles and Applications](https://www.microscopyu.com/pdfs/Lasslett_Micro_and_Analysis_20-S9-2006.pdf)  
-
-### [Nikon's microscopyu.com DIC articles](https://www.microscopyu.com/techniques/dic)  
+---
 
 ### [Wikipedia DIC microscopy](https://en.wikipedia.org/wiki/Differential_interference_contrast_microscopy)  
+
+## [Nikon's microscopyu.com DIC articles](https://www.microscopyu.com/techniques/dic)  
+### [DIC Principles and Applications](https://www.microscopyu.com/pdfs/Lasslett_Micro_and_Analysis_20-S9-2006.pdf)  
+### [DIC Component Alignment (Java)](https://www.microscopyu.com/tutorials/dic-microscope-component-alignment)  
 
 ### [NIH: DIC shear modulation by LCD](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3695724)  
 
@@ -90,6 +91,8 @@ and the 3rd is a Senarmont type set-up with dedicated prisms for each objective.
 ### [DIC with non-DIC CF plan Nikon objectives?](https://www.photomacrography.net/forum/viewtopic.php?p=232998)  
 The manufacturer has to design the DIC prism in a way that it matches the position of the exit pupil of the objective  
 (which is usually inside the objective, so the DIC prism has to be of the Nomarski type)  
+
+### [First steps in exploring (Zeiss) epi DIC](http://www.microscopy-uk.org.uk/mag/artjul13/dw-epiDIC.html)  
 
 ### [Epi-DIC for gemstone surface examination](https://blogs.zeiss.com/microscopy/en/gemology-microscopy/)  
 
