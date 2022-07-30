@@ -4,6 +4,17 @@
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a> 
 
+### [Viewing and Projection Eyepieces demonstration](https://www.microscopyu.com/tutorials/eyepiece)  
+Common camera adaptations from [Ichthyophthirius](https://www.photomacrography.net/forum/viewtopic.php?p=272374#p272374):  
+![](https://www.mikroskopie-forum.de/pictures004/149894_43766975.jpg)  
+I: Visual lightpath (visual eyepiece and human eye)  
+II: Afocal (eyepiece and camera lens)  
+III: Refocussing (not recommended)  
+IV: Eyepiece projection (lifting eyepiece while maintaining the intermediate image location O')  
+V: Projective  
+VI: [Macro lens, instead of photo relay lens, focused at O'](https://www.photomacrography.net/forum/viewtopic.php?p=272402#p272402)  
+VII: Direct projection (image sensor at O')  
+
 ## Nikon Type F Trinocular Microscope Head  
 eBay item number: 392906516398  
 Condition: For parts or not working
@@ -100,10 +111,18 @@ Some M42 extension tubes (with diaphragm control pins) have 35mm i.d.;
 could likely be turned to 36mm i.d.,  
 then use a 40mm long 2" extension tube with m42-M48 adapter.  
 The trinocular chimney is missing its "tube lens" for the nominal infinity space created for binocular prisms.  
-Brooke Clarke describes his UW as having [a slightly larger entrance optical diameter (18mm) compared to the stock trinocular head (16mm)](https://www.prc68.com/I/Labophot.html#Ultra_Wide_UW_Trinocular),  
+Brooke Clarke describes his UW as having  
+[a slightly larger entrance optical diameter (18mm) compared to the stock trinocular head (16mm)](https://www.prc68.com/I/Labophot.html#Ultra_Wide_UW_Trinocular),  
 which I confirmed by measurement, but also an ISO 38mm camera port; his is a *different* type UW version:  
 ![](https://www.prc68.com/I/Images/NikonUWhead06b.jpg)  
 ... mine has a threaded chimney seemingly identical to that for type T.  
+### Type T or UW "direct" projection  
+[Ichthyophthirius described a "direct" projection conversion for this UW type](https://www.photomacrography.net/forum/viewtopic.php?p=206784),  
+with a 100mm focal length achromat sandwiched between 32-42mm rings:
+![](http://www.photomacrography.net/forum/userpix/3229_Adapter_1.jpg)  
+
+[Scarodactyl used a 125mm surplus shed doublet and 3-D printed chimney](https://www.photomacrography.net/forum/viewtopic.php?p=264566#p264566)  
+![](https://i.imgur.com/XPueu9S.png)  
 
 A 32mm diameter, 7mm thick cemented doublet achromat with 135mm fl was [ordered from Surplus Shed](https://www.surplusshed.com/pages/item/B1058.htm)  
 ![](https://www.surplusshed.com/Uploads/B1058_11498286175.jpg)  
@@ -125,6 +144,6 @@ AliExpress:
 - [42mm fl 126mm](https://www.aliexpress.com/item/3256802176120474.html)
 
 
-### Achromat double assymetry
+### Achromat doublet assymetry
 This [ray diagram](http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/aber2.html) demonstrates that convex side should face parallel rays:
 ![](http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/imggo/achromat.gif)  
