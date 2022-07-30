@@ -77,12 +77,54 @@ Several methods have been described for preempting that photo lens:
 - [replace chimney insert with many filter rings](https://www.photomacrography.net/forum/viewtopic.php?p=206784#p206784)  
 - [3D-printed chimney insert replacement with surplus shed 125mm doublet](https://www.photomacrography.net/forum/viewtopic.php?p=264784#p264784)  
 
+### Diopter vs focal length: divide into 1000mm, e.g. diopter = 2 for 500mm  
+Lens at the bottom of UW chimney photo port was missing...
+UW and T chimney dimensions match.  
+Lens at the bottom of T photo port is about 82mm focal length ~ 12 diopter.  
+82mm is also roughly the distance from bottom lens to photo lens mount in the trinoc chimney.  
+
+The chimney has an internal aperture stop at its 50mm thread.  
+Lip above 50mm thread to chimney bottom  
+(with 44mm female thread) is 49mm.  
+Sadly, vertical illuminator extension for Optiphot-66 is 95mm long;  
+it has useful diameter and threads...  
+
 ---
 
 ## Type UW
 Received 28 July with [DIC Optiphot-66](../Optiphot66_DIC)  
+![](typeUW.jpg)  
 UW head eye tubes are 36mm o.d.; about 3mm larger than 30mm clamp compression groove...  
 Leica eyepiece is about 42mm, well over 30mm clamp capacity.  
 Some M42 extension tubes (with diaphragm control pins) have 35mm i.d.;  
 could likely be turned to 36mm i.d.,  
-then use a 40mm long 2" extension tube with m42-M48 adapter.   
+then use a 40mm long 2" extension tube with m42-M48 adapter.  
+The trinocular chimney is missing its "tube lens" for the nominal infinity space created for binocular prisms.  
+Brooke Clarke describes his UW as having [a slightly larger entrance optical diameter (18mm) compared to the stock trinocular head (16mm)](https://www.prc68.com/I/Labophot.html#Ultra_Wide_UW_Trinocular),  
+which I confirmed by measurement, but also an ISO 38mm camera port; his is a *different* type UW version:  
+![](https://www.prc68.com/I/Images/NikonUWhead06b.jpg)  
+... mine has a threaded chimney seemingly identical to that for type T.  
+
+A 32mm diameter, 7mm thick cemented doublet achromat with 135mm fl was [ordered from Surplus Shed](https://www.surplusshed.com/pages/item/B1058.htm)  
+![](https://www.surplusshed.com/Uploads/B1058_11498286175.jpg)  
+Surplus Shed also lists a [mounted achromat 35mm diameter by 125mm focal length](https://www.surplusshed.com/pages/item/L14523.html),  
+and its advertised threaded 44mm diameter mount might fit Nikon's chimney bottom thread,  
+but 13mm beyond the chimney bottom would not work.  Alternatively:
+- [37.3 MM DIA 150MM FL coated; thickness 11.7/9.3mm center/edge](https://www.surplusshed.com/pages/item/%20L13517.html)  
+Then there are also rectangular doublets which might work, depending on field diameter:
+- [37.3mm diameter by 28.7mm wide by 11.5mm thick, 105mm focal length. Coated](https://www.surplusshed.com/pages/item/L1601.html)  
+- [32 MM X 24 MM CTD 95 MM FL](https://www.surplusshed.com/pages/item/L10789.html)  
+- [32MM X 24MM CTD 80MM FL](https://www.surplusshed.com/pages/item/L10762.html)  
+AliExpress:
+- [30mm fl 75, 40mm fl 100](https://www.aliexpress.com/item/3256804135863586.html)  
+- [30mm fl 120/130](https://www.aliexpress.com/item/3256804165355888.html)  
+- [34mm dia, 106/120/135mm fl](https://www.aliexpress.com/item/3256801207779520.html)  
+- [34mm fl 86, 40mm fl 124, 42mm fl 141](https://www.aliexpress.com/item/3256803933011888.html)  - [also](https://www.aliexpress.com/item/3256804119258293.html), [and](https://www.aliexpress.com/item/3256804246336535.html)  
+- [cemented meniscus 36mm fl 166mm](https://www.aliexpress.com/item/3256804229571686.html)  
+- [41mm 156mm fl](https://www.aliexpress.com/item/3256802088308707.html) - [also](https://www.aliexpress.com/item/3256804229323894.html)  
+- [42mm fl 126mm](https://www.aliexpress.com/item/3256802176120474.html)
+
+
+### Achromat double assymetry
+This [ray diagram](http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/aber2.html) demonstrates that convex side should face parallel rays:
+![](http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/imggo/achromat.gif)  
