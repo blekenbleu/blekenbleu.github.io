@@ -45,7 +45,7 @@ haptic tranducers drive into structures with <a href="https://en.wikipedia.org/w
 </ul>
 Haptics here will be only those controlled by <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Bass-Shakers---Audio-Output-Configuration">SimHub ShakeIt Bass Shakers Audio Output</a>,<br>
 ... which only work for properly configured <a href="WindowsAudio.htm">Windows Audio</a>.
-<p>Before proceeding, haptics and Windows audio can be problematic, even <i>without unreliable electrical connections</i>.<br>
+<p>Before proceeding, haptics and Windows audio can be problematic,<br> even <i>without unreliable electrical connections</i>.<br>
 To that end, both a multimeter and <a href="https://www.ebay.com/itm/362924077798">DeoxIT connector treatments and fader lube</a> are wanted,<br>
 along with <a href="https://www.amazon.com/gp/product/B01HFTYINS">blunt needle applicators</a> to precisely apply DeoxITs without disassembly.
 </p>
@@ -54,7 +54,7 @@ Here, inexpensive contact microphone elements will proxy for accelerometers in h
 <img width=650 src="contact.jpg"><br clear=all>
 Tips:<ol compact>
 <li><i>before buttoning up wiring, verify microphone cable end-to-end continuity</i>. (ask why)
-<li>Piezos are capacitive, with high source impedance,
+<li>Piezos are capacitive, with high source impedance,<br>
 so a better match for so-called instrument inputs,<br>
 for which AudioBox has impedance of 500,000 Ohms, compared to 1200 Ohms for balanced microphones.<br>
 However, high impedance instrument inputs are single-ended and more liable to noise.<br>
@@ -67,14 +67,15 @@ Adding mass to piezo sandwich backside, e.g. a steel hex nut by epoxy, also impr
 <br>
 Relationship of electrical signals x(t) and y(t) is traditionally evaluated using an <a href="https://www.keysight.com/main/editorial.jspx?cc=US&lc=eng&ckey=2838609">x/y oscilloscope</a>,<br>
 which is here implemented by a Windows PC, software and sound card.<br>
-While a (US$30) <a href="https://www.amazon.com/dp/B000KW2YEI">Behringer UCA202</a> should suffice,
+While a (US$30) <a href="https://www.amazon.com/dp/B000KW2YEI">Behringer UCA202</a> should suffice,<br>
 an obsolete <a href="https://www.presonus.com/products/audiobox-usb">PreSonus AudioBox USB</a> is repurposed here.<br>
 As with many other audio products, the PreSonus is plug-and-play on macOS,<br> but according to PreSonus on Windows requires
 <a href="https://support.presonus.com/hc/en-us/articles/210044673-How-do-I-uninstall-and-reinstall-my-AudioBox-drivers-in-Windows-8-or-Windows-10-">precisely sequenced proprietary driver installation</a>.<br>
 In the actual event, after downloading and installing PreSonus' latest AudioBox USB software,<br>
 Windows 10 installed Microsoft drivers for it...<br>
 One AudioBox limitation is that  its outputs cannot be <i>fully</i> isolated from inputs;<br>
-attempting to drive haptic amplifier from its output while using its inputs to amplify piezo signals will encounter feedback.<br>
+driving an amplifier for tactile transducers from its output<br>
+while using its inputs to amplify piezo signals provokes feedback.<br>
 Consequently, some other audio interface must be employed for driving haptics.<br>
 <br>
 The first measurement candidate was a <a href="https://www.daytonaudio.com/product/1180/daex32ep-4-thruster-32mm-exciter-40w-4-ohm">Dayton DAEX32EP-4 exciter</a>.<br>

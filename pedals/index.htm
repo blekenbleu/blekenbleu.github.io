@@ -702,6 +702,16 @@ If you encounter any problem concerning your license, do not hesitate to contact
 Sincerly,
 Nicolas, SimHub
 </pre>
+<li><b>isolation:</b><br>
+ &nbsp; When tactile transducers are NOT directly stimulating a sim racer,<br>
+ &nbsp; then energy is unavoidably wasted shaking whatever that transducer is attached to.<br>
+ &nbsp; So much as possible, that attached mass should be minimized.<br>
+ &nbsp; That will typically require isolating shaken masses from others,<br>
+ &nbsp; typically using underdamped springs, which may be simple elastomer bushings<br>
+ &nbsp; or more elaborate coil spring and elastomer damper assemblies, e.g.:<br>
+ &nbsp; <a href="https://simtag.shop/gb/accueil/482-racebass-isolators.html"><img src="racebass-isolators.jpg"></a><br clear=all>
+ &nbsp; ... but in instances where isolated mass (e.g. seat) must also resist forces,<br>
+ &nbsp; then some suspension will be wanted to resist those forces while isolating tactile energy.
 </ul>
 <h4><a name="Simshakeseat">SimHub for ShakeSeat: G-force modulated 4 corner tire slip</a></h4>
 Background and disclaimers<br>
@@ -709,10 +719,11 @@ My sim driving experience is only with Assetto Corsa, an office chair and wheel 
 I have no experience with the
 <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">full SRS ShakeKit</a>,
 which may offer a superior experience.<br>
-Without a harness to keep one's back contacting them, back transducers in
-<a href="https://www.simracingstudio.com/product-page/srs-shakekit-plus-includes-srs-license-for-bass-shaker">ShakeKit Plus</a> seem of arguable benefit.<br>
+Without a harness to keep one's back contacting them,<br>
+back transducers in <a href="https://www.simracingstudio.com/product-page/srs-shakekit-plus-includes-srs-license-for-bass-shaker">ShakeKit Plus</a> seem of arguable benefit.<br>
 <br>
-Already using SimHub, having unused motherboard 7.1 sound and obsolete Denon surround receiver,<br>
+Already using SimHub, having unused motherboard 7.1 sound<br>
+and obsolete Denon surround receiver,<br>
  a ShakeSeat pad was ordered because:<br>
 * <a href="https://www.youtube.com/watch?v=mlJfIFhdk1c&t=306s">Sim Racing Garage review</a><br>
 * Dayton TT25-16 pucks were, at the time, in short supply elsewhere<br>
@@ -739,7 +750,7 @@ Unambiguously directional haptic cues seemingly involve substantially direct sti
 body parts, e.g. left and right thighs, lumbars and/or sit bones.<br>
 <img src="SRS_EVA.jpg"><br clear=all>
 Sensations to be simulated here:<br>
-squeal for small slippage, transitioning to moaning with more slippage,
+squeal for small slippage, transitioning to moaning with more slippage,<br>
 then shuddering near breakaway,<br>
 with much less feeling from lightly loaded tires
 (rear when braking, inside when cornering).<br>
@@ -804,7 +815,8 @@ return 50 + (50 * Gyb4);  // range 0-100
 // track cars are expected to fully unload neither nor rear wheels
 </code></pre>
 These two CUSTOM EFFECTS could be combined,<br>
-except that G-force proxy properties are also used by a Custom serial device for <a href="#SimHarness">2DOF harness tensioning</a>.<br>
+except that G-force proxy properties are also used by<br>
+a Custom serial device for <a href="#SimHarness">2DOF harness tensioning</a>.<br>
 The complete SimHub profile is <a href="GmodulatedWheelSlip.siprofile.txt">available here</a><br>
 After awhile, SimHub can accumulate too many profiles; <a href="shakeit.htm">here are mine</a>.<br>
 
