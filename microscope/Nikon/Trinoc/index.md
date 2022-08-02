@@ -1,19 +1,18 @@
 *[back](../)*
-<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf
-" target="_blank" >
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a> 
 
 ### [Viewing and Projection Eyepieces demonstration](https://www.microscopyu.com/tutorials/eyepiece)  
 Common camera adaptations from [Ichthyophthirius](https://www.photomacrography.net/forum/viewtopic.php?p=272374#p272374):  
 ![](https://www.mikroskopie-forum.de/pictures004/149894_43766975.jpg)  
-I: Visual lightpath (visual eyepiece and human eye)  
-II: Afocal (eyepiece and camera lens)  
+I: Visual lightpath (objective - ocular - human eye)  
+II: Afocal (ocular - camera lens)  
 III: Refocussing (not recommended)  
 IV: Eyepiece projection (lifting eyepiece while maintaining the intermediate image location O')  
 V: Projective  
 VI: [Macro lens, instead of photo relay lens, focused at O'](https://www.photomacrography.net/forum/viewtopic.php?p=272402#p272402)  
-VII: Direct projection (image sensor at O')  
+VII: [Direct projection](#type-t-or-uw-direct-projection) (image sensor at O')  
 
 ## Nikon Type F Trinocular Microscope Head  
 eBay item number: 392906516398  
@@ -32,29 +31,32 @@ I do not have the knowledge or equipment to fully test this unit,
 so it is sold As-Is.  
 
 Approximate unpacked dimensions: 9" x 5" x 7"  
-
-| ![](F1.jpg) | ![](F2.jpg)  |
-| ----------- | ------------ |
-| ![](F3.jpg) | ![](F4.jpg)  |
+<table><tr><td>
+ <img width=99% src=F1.jpg> </td><td> <img width=99% src=F2.jpg>
+</td></tr><tr><td>
+ <img width=99% src=F3.jpg> </td><td> <img width=99% src=F4.jpg>
+</td></tr></table>
   
 With the relay lens chimney removed,  
 a "standard" (ISO 38mm) photo tube is available:  
 ![F trinocular with 38mm photo tube](trinoc38mm.jpg)  
 ... as suggested by [Scarodactyl](https://www.photomacrography.net/forum/viewtopic.php?p=282897#p282897).  
 Its thread is actually [T2 (0.75mm thread pitch)](https://en.wikipedia.org/wiki/T-mount)   
-rather than [M42 lens mount (1 mm thread pitch)](https://en.wikipedia.org/wiki/M42_lens_mount)  
+not [M42 lens mount (1 mm thread pitch)](https://en.wikipedia.org/wiki/M42_lens_mount)  
 
-Since there are no optics in Type F head between its bottom flange and the ISO photo port,  
-camera sensor is a "direct" shot from objectives (ignoring vertical illuminator beam splitter).  
+Since there are no optics in Type F head between its bottom flange  
+and the ISO photo port,   camera sensor is a "direct" shot  
+from objectives (ignoring vertical illuminator beam splitter).  
 With [Nikon CF objectives](https://krebsmicro.com/Nikon_CF.pdf), unlike most earlier microscope objectives,  
 no additional optics are required to correct chromatic aberrations.  
 
-Coincidentally, AO tube lens provide equivalent corrections for their infinity objectives,  
-suggesting that no additional optics should be necessary for digital imaging without chromatic aberrations.  
+Coincidentally, AO 10-120 tube lens provide equivalent corrections  
+for their infinity objectives, suggesting that no additional optics  
+may be necessary for digital imaging without chromatic aberrations.  
 Since designated AO photo relay optics are either rare or unavailable,  
 direct focus to camera sensors seems worth attempting.  
 
-## received 20 May 2022: M42 to 38mm Telescope Ring Adapter  
+### received 20 May 2022: M42 to 38mm Telescope Ring Adapter  
 eBay item number: [274696367794](https://www.ebay.com/itm/274696367794)  
 Condition:  New  
 Model:	AD-M42-38  
@@ -63,9 +65,11 @@ Top Mounting Diameter:	M42 (42x0.75 mm)
 Bottom Outer Diameter:	38 mm or 42 mm  
 Height:	37 mm  
 
-| ![](T1.jpg) | ![](T2.jpg)  |
-| ----------- | ------------ |
-| ![](T3.jpg) | ![](T4.jpg)  |  
+<table><tr><td>
+ <img width=99% src=T1.jpg> </td><td> <img width=99% src=T2.jpg>
+</td></tr><tr><td>
+ <img width=99% src=T3.jpg> </td><td> <img width=99% src=T4.jpg>
+</td></tr></table>
 
 ### [type F flare](https://www.photomacrography.net/forum/viewtopic.php?p=263114#p263114)  
 
@@ -106,14 +110,15 @@ it has useful diameter and threads...
 Received 28 July with [DIC Optiphot-66](../Optiphot66_DIC)  
 ![](typeUW.jpg)  
 UW head eye tubes are 36mm o.d.; about 3mm larger than 30mm clamp compression groove...  
-Leica eyepiece is about 42mm, well over 30mm clamp capacity.  
+Leica eyepiece shield is about 42mm o.d., well over 30mm clamp capacity.  
 Some M42 extension tubes (with diaphragm control pins) have 35mm i.d.;  
 could likely be turned to 36mm i.d.,  
 then use a 40mm long 2" extension tube with m42-M48 adapter.  
 The trinocular chimney is missing its "tube lens" for the nominal infinity space created for binocular prisms.  
 Brooke Clarke describes his UW as having  
 [a slightly larger entrance optical diameter (18mm) compared to the stock trinocular head (16mm)](https://www.prc68.com/I/Labophot.html#Ultra_Wide_UW_Trinocular),  
-which I confirmed by measurement, but also an ISO 38mm camera port; his is a *different* type UW version:  
+which I confirmed by measurement, but also an ISO 38mm camera port;  
+either his is a *different* type UW version or has an **M50x0.75 to ISO 38mm adapter**:  
 ![](https://www.prc68.com/I/Images/NikonUWhead06b.jpg)  
 ... mine has a threaded chimney seemingly identical to that for type T.  
 ### Type T or UW "direct" projection  
