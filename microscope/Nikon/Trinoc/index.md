@@ -147,3 +147,12 @@ AliExpress:
 ### Achromat doublet assymetry
 This [ray diagram](http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/aber2.html) demonstrates that convex side should face parallel rays:
 ![](http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/imggo/achromat.gif)  
+
+ *Surplus Shed 135mm achromat doublet was delivered 1 Aug 2022*  
+  ![](SurplusShed135fl.jpg)  
+
+ *Tiffen 44M6 adapter was delivered 2 Aug 2022*
+- Tiffen adapter male 44mm thread cannot reach Nikon photo chimney bottom thread,  
+  but Series VI filter thread reaches and engages:  
+  ![](Tiffen44M6.jpg)  
+
