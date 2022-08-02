@@ -131,14 +131,17 @@ with a 100mm focal length achromat sandwiched between 32-42mm rings:
 
 A 32mm diameter, 7mm thick cemented doublet achromat with 135mm fl was [ordered from Surplus Shed](https://www.surplusshed.com/pages/item/B1058.htm)  
 ![](https://www.surplusshed.com/Uploads/B1058_11498286175.jpg)  
-Surplus Shed also lists a [mounted achromat 35mm diameter by 125mm focal length](https://www.surplusshed.com/pages/item/L14523.html),  
+Surplus Shed also lists a [35mm diameter 125mm fl mounted achromat](https://www.surplusshed.com/pages/item/L14523.html),  
 and its advertised threaded 44mm diameter mount might fit Nikon's chimney bottom thread,  
 but 13mm beyond the chimney bottom would not work.  Alternatively:
 - [37.3 MM DIA 150MM FL coated; thickness 11.7/9.3mm center/edge](https://www.surplusshed.com/pages/item/%20L13517.html)  
-Then there are also rectangular doublets which might work, depending on field diameter:
+
+Surplus Shed also has rectangular doublets which might work,  
+depending on field diameter:
 - [37.3mm diameter by 28.7mm wide by 11.5mm thick, 105mm focal length. Coated](https://www.surplusshed.com/pages/item/L1601.html)  
 - [32 MM X 24 MM CTD 95 MM FL](https://www.surplusshed.com/pages/item/L10789.html)  
 - [32MM X 24MM CTD 80MM FL](https://www.surplusshed.com/pages/item/L10762.html)  
+
 AliExpress:
 - [30mm fl 75, 40mm fl 100](https://www.aliexpress.com/item/3256804135863586.html)  
 - [30mm fl 120/130](https://www.aliexpress.com/item/3256804165355888.html)  
