@@ -164,3 +164,32 @@ This [ray diagram](http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/aber2.html)
   but Series VI filter thread reaches and engages:  
   ![](Tiffen44M6.jpg)  
 
+## "direct" projection experiments
+Surplus Shed 135fl lens was temporarily hot-glued to an M42-25mm adapter;  
+Another direct projection tube candidate uses 2+ and 4+ 37mm closeup lenses:  
+![](Canon6DextensionCloseup2x4.jpg)  
+
+The closeup tube extends 55mm down from the UW photo port lip  
+and 67mm from the UW photo port lip to Canon 6D flange.  
+![](UW6Dcloseup42tubes.jpg)  
+
+The Surplus Shed tube extends 85mm from Canon 7D II flange to 135mm lens:  
+![](Canon7DIIextensionSS135mmfl.jpg)  
+...with 55mm below the UW photo port lip  
+![](UW7DII135SS42tubes.jpg)   
+
+Keeping in mind that Canon 6D has a 35mm sensor while 7D is APS-C,  
+both configurations capture a larger FoV than do WF10X/23 oculars.  
+Here is the Canon 6D with closeup lens image;  
+vignette is by field stop and not visible in oculars:
+![](closeup2x4DIC5x6Da.jpg)  
+
+Here is the Canon 7D II with 135mm fl doublet lens image:
+![](SS135DIC5x7DII.jpg)  
+
+Images are from BD Plan DIC 5x 210/0 objective with DIC prism inserted.  
+Here is crop of closeup lens image:  
+![](closeup2x4DIC5x6DaCrop.jpg)  
+
+.. and here is the corresponding 135mm doublet crop:  
+![](SS135DIC5x7DIIcrop.jpg)  
