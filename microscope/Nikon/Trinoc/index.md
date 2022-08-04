@@ -200,10 +200,12 @@ Here is crop of closeup lens image:
 ![](M48-M42.jpg)  
 [HERCULES M48 Male to M42 Female Thread Adapter Extension 5mm - from AliExpress](https://www.aliexpress.com/item/3256802502212562.html)
 
-Spacer from 2-inch to 36mm eyetube o.d. was tediously hacked from 16mm delrin using hole saws.  
-Delrin melted and stuck to saw teeth, required cleaning between cuts of less than 1/16-inch.  
+Spacer from 2-inch to 36mm eyetube o.d. was tediously hole-sawed  
+from 16mm delrin, which melted and stuck to saw teeth,  
+requiring cleaning between cuts of less than 1/16-inch.  
 ![](holesaw.jpg)  
 
-[2-inch Telescope Extension Tube](https://www.amazon.com/dp/B083TW6RW1) single thumbscrew is 2 too few and uncomfortably small.  
+[2-inch Telescope Extension Tube](https://www.amazon.com/dp/B083TW6RW1)  
+Single thumbscrew is 2 too few and uncomfortably small.  
 ![](ClampSpacer.jpg)  
 
