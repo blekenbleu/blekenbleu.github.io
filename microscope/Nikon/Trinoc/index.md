@@ -118,8 +118,10 @@ The trinocular chimney is missing its "tube lens" for the nominal infinity space
 Brooke Clarke describes his UW as having  
 [a slightly larger entrance optical diameter (18mm) compared to the stock trinocular head (16mm)](https://www.prc68.com/I/Labophot.html#Ultra_Wide_UW_Trinocular),  
 which I confirmed by measurement, but also an ISO 38mm camera port;  
-either his is a *different* type UW version or has an **M50x0.75 to ISO 38mm adapter**:  
+his type UW version has an **M50x0.75 to ISO 38mm adapter**:  
 ![](https://www.prc68.com/I/Images/NikonUWhead06b.jpg)  
+There appears to be one available at [deal corner](https://www.dealcorner.com/Nikon-Accessories):  
+![](https://www.dealcorner.com/Nikon-Accessories/PhotoPortOptics.jpg)  
 ... mine has a threaded chimney seemingly identical to that for type T.  
 ### Type T or UW "direct" projection  
 [Ichthyophthirius described a "direct" projection conversion for this UW type](https://www.photomacrography.net/forum/viewtopic.php?p=206784),  
@@ -194,6 +196,24 @@ Here is crop of closeup lens image:
 .. and here is the corresponding 135mm doublet crop:  
 ![](SS135DIC5x7DIIcrop.jpg)  
 
+ *10 Aug*   
+Based on [Sure Squintsalot](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=9&t=11881) 's input, I tried direct projection to M6 mkII sensor from UW bottom lens:  
+![](UWdirectM6II.jpg)  
+Focus required lifting objectives enough that should in theory degrade resolution,  
+but more disasterously above 40X and 0.65 n.a..  
+
+While the M6 II skyhook was in place, an M42 extension tube + helicoid was improvised for it,  
+with a mount for the Surplus Shed 135mm achromat doublet improvised from a pair of rubber o-rings  
+and 42-43mm, 43-37mm and 37-30mm filter adapter rings:
+![Surplus Shed mount](SS42mm.jpg)  
+.. leaving the lens recessed about 6mm (thickness of 37-30mm step-down):
+![](SS115mmM6II.jpg)  
+.. for a net distance of about 115mm from M6 flange to 135mm lens front.  
+As with the 7D, 5X field is magnified and cropped slightly relative to oculars:  
+![](SS5xM6II.jpg)  
+.. with some visible chromatic aberration from BD 40x objective:  
+![](SS40xM6II.jpg)  
+
 ---
 
 ### UW afocal clamp
@@ -209,3 +229,5 @@ requiring cleaning between cuts of less than 1/16-inch.
 Single thumbscrew is 2 too few and uncomfortably small.  
 ![](ClampSpacer.jpg)  
 
+ *10 Aug*  
+Amazon thumbs screws arrived; thread matches and more comfortable than stock SVBONY...   
