@@ -214,6 +214,13 @@ As with the 7D, 5X field is magnified and cropped slightly relative to oculars:
 .. with some visible chromatic aberration from BD 40x objective:  
 ![](SS40xM6II.jpg)  
 
+ *12 Aug*  
+### Trinocular "T" photo tube lens on 42mm extension tubes and helicoid  
+![](Tphoto82mmM6II.jpg)  
+82mm from photo tube lens flange to Canon M6 II body flange yields images  
+parfocal to WF10X/23 oculars in UW head with matching field of view.  
+![](UW5xTphotoM6II.jpg)  
+
 ---
 
 ### UW afocal clamp
