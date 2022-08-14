@@ -40,6 +40,7 @@ Approximate unpacked dimensions: 9" x 5" x 7"
 With the relay lens chimney removed,  
 a "standard" (ISO 38mm) photo tube is available:  
 ![F trinocular with 38mm photo tube](trinoc38mm.jpg)  
+![F trinocular with Canon M6 mkII](TrinocF_M6II.jpg)  
 ... as suggested by [Scarodactyl](https://www.photomacrography.net/forum/viewtopic.php?p=282897#p282897).  
 Its thread is actually [T2 (0.75mm thread pitch)](https://en.wikipedia.org/wiki/T-mount)   
 not [M42 lens mount (1 mm thread pitch)](https://en.wikipedia.org/wiki/M42_lens_mount)  
