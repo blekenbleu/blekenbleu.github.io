@@ -1,5 +1,6 @@
 13 Dec 2021  
 ## Signal Processing
+  - [dimg - visual difference utility](ImageProcessing/dimg.html)
   - [Special Error Diffusion](ImageProcessing/sped.html)
   - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 

@@ -1,0 +1,55 @@
+<head>
+<style>
+body {
+   width:960px;
+   margin-left:60px;
+}
+</style>
+<title>dimg - visual image difference utility</title></head>
+<body bgcolor=#CCCCCC>
+<font size=+2>
+<h2>dimg: visual image difference utility</h2>
+<p>
+<em>Generate an image showing differences betweeen 2 images</em>
+</p>
+<h3>What</h3>
+<p>
+Usefully display differences between similar image pairs:
+<table><tr><td>
+<img src="ball.png" width=446 height=438>
+</td><td>
+<img src="ballsp4a.png" width=446 height=438>
+</td></tr><tr>
+<font size=-1><td>
+<i>ball.png</i><br> &nbsp</td><td><i>ballsp4a.png</i><br> &nbsp
+</td></tr><tr><td>
+magick composite <i>ball.png ballsp4a.png</i><br>
+ -compose difference <i>diff.png</i>
+</td><td>
+magick <i>ball.png ballsp4a.png</i> -compose Mathematics<br>
+ -define compose:args='0,1,-1,.5' -composite <i>dimg.png</a>
+</td></font></tr><tr><td>
+<img src="diff.png" width=446 height=438>
+</td><td>
+<img src="dimg.png" width=446 height=438>
+</td></tr><tr><td>
+<i>diff.png</i> </td><td> <i>dimg.png</i></td></tr></table>
+</p><p>
+Several image utilities, including
+<a href="https://imagemagick.org">ImageMagick</a>,
+offer an image difference generation option,
+for which smaller differences are nearer black<br>
+ and all differences are absolute: <i>red-green == green-red</i>.<br>
+However, displayed differences are more visible near middle gray.<br>
+ImageMagick also has a <a href="https://imagemagick.org/Usage/compose/#special">
+User Defined Mathematical Compose Method</a> that supports this more apparant visual differencing.
+<br>
+Differences would ideally be calculated in a more nearly perceptual color space,
+e.g. <a href="https://en.wikipedia.org/wiki/CIELAB_color_space">CIELab</a>.
+</p>
+</font>
+<p>
+<br>
+- &nbsp 16 Aug 2022
+</p>
+</body></html>
