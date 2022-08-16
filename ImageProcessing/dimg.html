@@ -7,14 +7,15 @@ body {
 </style>
 <title>dimg - visual image difference utility</title></head>
 <body bgcolor=#CCCCCC>
+<a href="../"><i>back</i></a><br>
 <font size=+2>
 <h2>dimg: visual image difference utility</h2>
 <p>
-<em>Generate an image showing differences betweeen 2 images</em>
+<em>visualizing differences betweeen images</em>
 </p>
-<h3>What</h3>
+<h4>What</h4>
 <p>
-Usefully display differences between similar image pairs:
+<i>Usefully</i> display differences between similar image pairs:
 <table><tr><td>
 <img src="ball.png" width=446 height=438>
 </td><td>
@@ -37,9 +38,9 @@ magick <i>ball.png ballsp4a.png</i> -compose Mathematics<br>
 </p><p>
 Several image utilities, including
 <a href="https://imagemagick.org">ImageMagick</a>,
-offer an image difference generation option,
+offer an <a href="https://imagemagick.org/Usage/compare/#difference">image difference</a> generation option,
 for which smaller differences are nearer black<br>
- and all differences are absolute: <i>red-green == green-red</i>.<br>
+ and all differences are absolute, e.g.: <i>red-green == green-red</i>.<br>
 However, displayed differences are more visible near middle gray.<br>
 ImageMagick also has a <a href="https://imagemagick.org/Usage/compose/#special">
 User Defined Mathematical Compose Method</a> that supports this more apparant visual differencing.
