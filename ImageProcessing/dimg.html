@@ -8,7 +8,7 @@ body {
 <title>dimg - visual image difference utility</title></head>
 <body bgcolor=#CCCCCC>
 <a href="../"><i>back</i></a><br>
-<font size=+2>
+<font size=+1>
 <h2>dimg: visual image difference utility</h2>
 <p>
 <em>visualizing differences betweeen images</em>
@@ -38,12 +38,12 @@ magick <i>ball.png ballsp4a.png</i> -compose Mathematics<br>
 </p><p>
 Several image utilities, including
 <a href="https://imagemagick.org">ImageMagick</a>,
-offer an <a href="https://imagemagick.org/Usage/compare/#difference">image difference</a> generation option,
-for which smaller differences are nearer black<br>
- and all differences are absolute, e.g.: <i>red-green == green-red</i>.<br>
-However, displayed differences are more visible near middle gray.<br>
-ImageMagick also has a <a href="https://imagemagick.org/Usage/compose/#special">
-User Defined Mathematical Compose Method</a> that supports this more apparant visual differencing.
+offer an <a href="https://imagemagick.org/Usage/compare/#difference">image difference</a> generation option,<br>
+with smaller difference nearer black (e.g. <font size=-1><i>diff.png</i></font>)<br>
+ and all differences absolute, e.g.: <i>red-green == green-red</i>.<br>
+However, displayed differences are more visible near middle gray (e.g. <font size=-1><i>dimg.png</i></font>).<br>
+ImageMagick's <a href="https://imagemagick.org/Usage/compose/#special">
+User Defined Mathematical Compose Method</a> supports this more useful alternative.
 <br>
 Differences would ideally be calculated in a more nearly perceptual color space,
 e.g. <a href="https://en.wikipedia.org/wiki/CIELAB_color_space">CIELab</a>.
@@ -51,6 +51,6 @@ e.g. <a href="https://en.wikipedia.org/wiki/CIELAB_color_space">CIELab</a>.
 </font>
 <p>
 <br>
-- &nbsp 16 Aug 2022
+- &nbsp 17 Aug 2022
 </p>
 </body></html>
