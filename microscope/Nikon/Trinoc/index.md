@@ -9,7 +9,7 @@
 - [UW](#type-uw)  
 - [T / UW "direct" projection](#type-t-or-uw-direct-projection)  
 - [UW afocal clamp](#uw-afocal-clamp)  
-- [*image comparisons](../../objectives/Hugin.htm)  
+- [**image comparisons**](../../objectives/Hugin.htm)  
 
 
 ### [Viewing and Projection Eyepieces demonstration](https://www.microscopyu.com/tutorials/eyepiece)  

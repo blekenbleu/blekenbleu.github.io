@@ -1,6 +1,7 @@
 13 Dec 2021  
 ## Signal Processing
   - [dimg - visual difference utility](ImageProcessing/dimg.html)
+  - [Hugin image alignment](microscope/objectives/Hugin.htm)  
   - [Special Error Diffusion](ImageProcessing/sped.html)
   - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 
