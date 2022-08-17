@@ -1,7 +1,16 @@
 *[back](../)*
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
-</a> 
+</a>  
+
+### Trinocular heads
+- [F](#nikon-type-f-trinocular-microscope-head)  
+- [T](#nikon-type-t-trinocular-microscope-head)  
+- [UW](#type-uw)  
+- [T / UW "direct" projection](#type-t-or-uw-direct-projection)  
+- [UW afocal clamp](#uw-afocal-clamp)  
+- [*image comparisons](../../objectives/Hugin.htm)  
+
 
 ### [Viewing and Projection Eyepieces demonstration](https://www.microscopyu.com/tutorials/eyepiece)  
 Common camera adaptations from [Ichthyophthirius](https://www.photomacrography.net/forum/viewtopic.php?p=272374#p272374):  
