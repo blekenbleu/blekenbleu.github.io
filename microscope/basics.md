@@ -17,6 +17,7 @@ if `Objective+Infinity space+Tube lens` are considered together as a nontrivial 
 
 #### [Abramowitz &amp; Davidson "Optical Microscopy"](https://micro.magnet.fsu.edu/primer/pdfs/microscopy.pdf)  
 #### [Douglas B. Murphy "FUNDAMENTALS OF LIGHT MICROSCOPY AND ELECTRONIC IMAGING"](https://www.biology.uoc.gr/courses/BIOL493/documents/book.pdf)  
+#### [Yang &amp; Gross "Systematic design of microscope objectives"](https://www.degruyter.com/document/doi/10.1515/aot-2019-0002/html?lang=en)  
 #### [Another (pr68.com) attempt at basics for Nikon BD](http://www.prc68.com/I/MicroPhotography.html)  
 
 #### Contrast and non-image-forming light.  
