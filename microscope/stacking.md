@@ -5,7 +5,7 @@ Some images, including highly magnified, want more depth of focus.
 Other than by retaking with smaller aperture  
 (which is liable to increasing noise, motion blur and/or diffraction),  
 combining sharper parts of multiple images of a scene   
-captured at overlapping focus distance increments  
+captured at overlapping focal distance increments  
 is called *focus stacking* and involves two parts:
 * capturing those images (AKA focus bracketing)
 * combining them
@@ -16,8 +16,8 @@ by which cameras can change their focus.
 
 An alternative for focus bracketing is by mechanically incrementing  
 distance from camera and lens to scene object[s].   
-Macro rails do this, as can microscope focus knobs.    
-[WeMacro](https://www.wemacro.com) offers automation for both  
+Macro rails do this, as can microscope stage focus knobs.    
+[WeMacro](https://www.wemacro.com) offers automation for both
 a focus [dial](https://www.wemacro.com/?product=micromate-bracket-only):  
 ![MicroMate bracket](https://www.wemacro.com/wp-content/uploads/2017/06/mm-working-1.jpg)  
 ... and [rack](https://www.wemacro.com/?product=wemacro-rail):  
@@ -65,7 +65,9 @@ Moving GIFs with perspective shift(?!)
   - [ExifTool by Phil Harvey](https://www.exiftool.org) [on SourceForge](https://www.exiftool.org)  
     [Everything You Ever Wanted to Know about ExifTool](https://adamtheautomator.com/exiftool)  
     [ExifToolGUI for Windows v5.xx](https://exiftool.org/gui/)  
-- [Focus Stacking with Hugin and Enfuse](https://www.youtube.com/watch?v=FMKABaISlXg) - YouTube - **hugin now incorporates enfuse**  
+
+## [Focus Stacking with Hugin and Enfuse](https://www.youtube.com/watch?v=FMKABaISlXg) - YouTube - **Hugin now with enfuse**  
+  - [**already using Hugin for image alignment to difference**](objectives/Hugin.html).  
   - [Using Hugin for focus stacking](https://macrocam.blogspot.com/2013/09/using-hugin-for-focus-stacking.html)  
   - [Focus stacking from the command line](https://estar.photography/tag/focus-stacking-hugin) - *[discussion](https://groups.google.com/g/hugin-ptx/c/dZ2kL4hjbnE?pli=1)*
 - [Focus Stacking Macro Photos with Enfuse](https://patdavid.net/2013/01/focus-stacking-macro-photos-enfuse)  
