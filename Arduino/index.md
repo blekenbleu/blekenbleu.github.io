@@ -123,19 +123,26 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
      If so, then perhaps that sketch is not correctly opening a Serial connection.  
      Otherwise, it may be trying to use inappropriate pins  
      or a wrong board definition  
+   - If ANY simple sketch downloads and still is recognized by Arduino,  
+     then you very likely use the correct board definition.  
    - Does the blink sketch actually blink the LED as expected?  
-     Something similar happened to me when compiling and loading a sketch  
-     with not quite the correct board selected.  
+     If not, something similar happened to me when compiling and loading a sketch  
+     with an incorrect board selected.  
      To check whether the correct board is selected, build and load an example sketch  
      *specific to the selected board*:  
      `File -> Examples -> (examples for selected board type)`:  
      ![](examples.png)  
-   - If that sketch works for you, then your other sketches may use pin[s]  
+   - If ANY sketch works for you, then your other sketches may use pin[s]  
      that Arduino expects to use for communication and control.  
      It is important to locate, if possible, an diagram showing  
      how pins on **your** module are assigned for Arduino.  
+   - Another possiblity is that your sketch enables pins in some way  
+     that causes the STM32 processor to lock up or be too busy to respond to Arduino.  
+     Debugging that might require moving suspect pin initializations from setup()
+     to some separate routine that gets called  
+     only after the sketch receives input from e.g. Serial Monitor.  
    - Another trick for Arduino to work with downloaded sketches:  
-     *those sketches MUST correctly open communications as Arduino expects,*  
+     *those sketches SHOULD correctly open communications as Arduino expects,*  
      even if sketch function does not otherwise need it.  
      For Blue Pill, that amounts to having, in setup(), something like:  
 ```
