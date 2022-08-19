@@ -154,7 +154,7 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
   Serial.write("This sketch has connected. ");
 ```
    - Genuine original Blue Pill modules are basically no longer available,  
-     and you probably have some similar *but incompatible* clone.  
+     and you probably have some similar *but incompatible* **clone board**.  
      There may be a *different board profile* for your clone...  
 
 ### Installing STM32duino support
@@ -173,8 +173,10 @@ no need to install Arduino-specific driver[s]...
 4) Quit and restart Arduino; then  
    from **`Tools` > `Board:` > `STM32 Boards`**, select [`Generic STM32F1 series`].  
    From **`Tools` > `Board Part Number:`**, select [`BluePill F103C8`].  
+   - see note above, in last bullet under **Troubleshooting**, about clone boards.  
+
    From **`Tools` > `Upload method:`**, select [`HID Bootloader 2.1`] or newer.  
-   ![Tools mmenu](tools.gif)  
+   ![Tools mmenu](Tools.gif)  
 
    **Be sure** to check Tools settings before Sketch upload; Arduino seemingly likes to change them,  
    then Blue Pill will not be a recognized device after uploads.  
