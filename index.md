@@ -63,7 +63,7 @@
 ### [Boot Windows 10 from NVMe on PCIe PCs without NVMe BIOS](NVMe)  
 ### [Chromebook](ChromeBook)
 ### [COVID-19 plots](covid)
-### [FreshTomato and Linksys EA6500v2](FreshTomato)
+### [FreshTomato and Linksys EA6500v2](FreshTomato.htm)
 ### GitHub's [Default welcome page - Markup tutorial](Welcome)
 #### &nbsp; [Git-Cola installed from MacPorts](GitColaMacPorts)
 #### &nbsp; macOS local [gitolite](MacGit) server
