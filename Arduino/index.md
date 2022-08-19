@@ -108,7 +108,7 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
 8) To flash HID Bootloader to a Blue Pill, in STM32 ST-LINK Utility:  
    `File` > `Open File...` > `hid_generic_pc13.bin`  
    `Target` > `Erase Chip`  
-   `Target` > `Program...` > **`Start address`** `0x8000000` **`File path`** `D:\packages\STM32\hid_generic_pc13.bin`
+   `Target` > `Program...` > **`Start address`** `0x8000000` **`File path`** `D:\packages\STM32\hid_generic_pc13.bin`  
    ![Download](Download.gif)  
    click **`Start`** (*that should complete quickly*)  
    (*Blue Pill red LED on for power, green LED flickers quickly*)  
@@ -118,8 +118,9 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
    **Note** A bad Arduino sketch download can leave a Blue Pill unable to be recognized by Windows,  
    and reflashing the HID Bootloader without wiping the bad sketch by `erase chip` may not recover it.  
 
-   **Troubleshooting**  
-   - Does a downloaded sketch otherwise appear to work? (e.g. blinking LED)  
+#### Troubleshooting  
+   - Does a downloaded sketch otherwise appear to work (e.g. blinking LED),  
+     but not respond to Arduino?  
      If so, then perhaps that sketch is not correctly opening a Serial connection.  
      Otherwise, it may be trying to use inappropriate pins  
      or a wrong board definition  
