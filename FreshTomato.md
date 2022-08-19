@@ -6,10 +6,9 @@ FreshTomato, Linksys EA6500v2 and the Internet
 
 ### Background
 
-<details>
-<summary>click for routers vs gateways</summary>
-
-<br>
+<dd>
+<dt><b>routers vs gateways</b>
+<dd>
 Often bundled by cable TV or other <a href="https://en.wikipedia.org/wiki/Internet_service_provider">ISP</a>,
 <br>commodity boxes called <em>routers</em> are 
 <a href="https://www.techwalla.com/articles/difference-between-gateway-router">
@@ -41,12 +40,9 @@ This allows assigning your network-attached printer a name, such as `printer`,<b
 </ul></ul>
 <br>
 
-</details>
+<dt><br>Tomato vs dd-wrt vs OpenWrt</b>
 
-<details>
-<summary>click for Tomato vs dd-wrt vs OpenWrt</summary>
-
-<br>
+<dd>
 These are <a href="https://bluegadgettooth.com/dd-wrt-vs-tomato-vs-openwrt/">IMO
 most</a> significant <a href="https://en.wikipedia.org/wiki/Comparison_of_router_software_projects">embedded Linux distributions for routers</a>,
 <br>all derived from Linksys WRT54G firmware.
@@ -79,12 +75,9 @@ most</a> significant <a href="https://en.wikipedia.org/wiki/Comparison_of_router
 </ul>
 <br>
 
-</details>
+<dt><b>FreshTomato-ARM <code>AIO</code> vs <code>VPN</code> builds; Entware </b>
 
-<details>
-<summary>click for FreshTomato-ARM <code>AIO</code> vs <code>VPN</code> builds; Entware </summary>
-
-<br>
+<dd>
 Shibby Tomato K26ARM builds include EA6500-6900<br>
 <em> (K26ARM7 applied only to R8000 and Asus RT-AC3200)</em><br>
 <br>
@@ -121,12 +114,9 @@ AIO has additional options:<br>
 <a href="https://repology.org/metapackages/?inrepo=entware&newest=1">Repology Metapackages in Entware</a></h4>
 <br>
 
-</details>
+<dt><b>Sagemcom F@st 5260 vs Linksys EA6500v2 vs EA6700 </b>
 
-<details>
-<summary>click for Sagemcom F@st 5260 vs Linksys EA6500v2 vs EA6700 </summary>
-
-<br>
+<dd>
 <ul compact>
 <li>Bundled by Spectrum, who control <a href="https://wikidevi.com/wiki/Sagemcom_F@ST_5250">F@st 5260</a> firmware,
 <br> which does <em>not</em> support <a href="https://medium.com/linode-cube/want-faster-easier-to-manage-dns-use-dnsmasq-a02517234d5f">Dnsmasq</a>.  USB is 2.0.
@@ -147,7 +137,7 @@ NETGEAR's <a href="https://www.google.com/search?q=EA6900+vs+R7000&pcmp=f">more 
 <a href="https://www.linksysinfo.org/index.php?threads/fork-freshtomato-arm.74117/page-13#post-300517">identical firmware</a>.
 </ul>
 
-</details>
+</dl>
 
 <br>
 
@@ -200,10 +190,9 @@ and
 
 EA6500 eventually reboots itself
 
-<details>
-<summary>click to understand steps 3-8</summary>
+<dd>
+<h3>understanding steps 3-8</h3>
 
-<br>
 <h4>custom CFE</h4>
 FreshTomato (and dd-wrt) expect to be able to use 64KB NVRAM,<br>
 which is NOT supported by stock Linksys CFE.<br>
@@ -218,9 +207,6 @@ so we first install a mini-dd-wrt that<ul compact>
 After that custom CFE is customized and installed using mini-dd-wrt,<br>
 that CFE's HTTP bootloader will be used to install FreshTomato 2018.4
 
-</details>
-
-<br>
 
 ### Step 3
 #### On the router,
@@ -289,10 +275,10 @@ that CFE's HTTP bootloader will be used to install FreshTomato 2018.4
 # exit
 ```
 
-<details>
-<summary>click for NVRAM discussion</summary>
+<dd>
+<dt><b>NVRAM discussion</b>
 
-<br>
+<dd>
 Firmware is easily crashed by bad NVRAM data.<br>
 Until now, Linksys CFE reserved only 32KB for NVRAM.<br>
 Now, custom CFE and new firmware expect 64KB for NVRAM,<br>
@@ -303,7 +289,7 @@ Consequently, take every opportunity to clear NVRAM<br>
 until tweaking FreshTomato settings,<br>
 which will be after the *second* time booting into FreshTomato.<br>
 
-</details>
+</dl>
 
 <br>
 
@@ -330,10 +316,10 @@ while depressing the red reset button for 10-15 sec.
 #### Tweak and deploy FreshTomato
 - First, `reboot router`  
 
-<details>
-<summary>click for <code>Wireless Ethernet Bridge</code> configuration</summary>
+<dd>
+<dt><b><code>Wireless Ethernet Bridge</code> configuration</b>
 
-<br>
+<dd>
 Tomato routers offer
 <a href="https://learntomato.com/category/wireless-bridge/">various wireless bridge modes</a>, such as:<br>
 Wireless Client Bridge, Wireless Ethernet Bridge, and<br>
@@ -386,7 +372,7 @@ Ethernet Bridge on AdvancedTomato</a></h4>
 
 <h4>i<a href="https://wiki.dd-wrt.com/wiki/index.php/Repeating_Mode_Comparisons">DD-WRT's unhelpful table</a></h4>
 
-</details>
+</dl>
 <br>
 
 ### Usage Documentation
