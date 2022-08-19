@@ -8,6 +8,7 @@ FreshTomato, Linksys EA6500v2 and the Internet
 
 <details>
 <summary>click for routers vs gateways</summary>
+
 <br>
 Often bundled by cable TV or other <a href="https://en.wikipedia.org/wiki/Internet_service_provider">ISP</a>,
 <br>commodity boxes called <em>routers</em> are 
@@ -44,6 +45,7 @@ This allows assigning your network-attached printer a name, such as `printer`,<b
 
 <details>
 <summary>click for Tomato vs dd-wrt vs OpenWrt</summary>
+
 <br>
 These are <a href="https://bluegadgettooth.com/dd-wrt-vs-tomato-vs-openwrt/">IMO
 most</a> significant <a href="https://en.wikipedia.org/wiki/Comparison_of_router_software_projects">embedded Linux distributions for routers</a>,
@@ -81,6 +83,7 @@ most</a> significant <a href="https://en.wikipedia.org/wiki/Comparison_of_router
 
 <details>
 <summary>click for FreshTomato-ARM <code>AIO</code> vs <code>VPN</code> builds; Entware </summary>
+
 <br>
 Shibby Tomato K26ARM builds include EA6500-6900<br>
 <em> (K26ARM7 applied only to R8000 and Asus RT-AC3200)</em><br>
@@ -122,6 +125,7 @@ AIO has additional options:<br>
 
 <details>
 <summary>click for Sagemcom F@st 5260 vs Linksys EA6500v2 vs EA6700 </summary>
+
 <br>
 <ul compact>
 <li>Bundled by Spectrum, who control <a href="https://wikidevi.com/wiki/Sagemcom_F@ST_5250">F@st 5260</a> firmware,
@@ -198,6 +202,7 @@ EA6500 eventually reboots itself
 
 <details>
 <summary>click to understand steps 3-8</summary>
+
 <br>
 <h4>custom CFE</h4>
 FreshTomato (and dd-wrt) expect to be able to use 64KB NVRAM,<br>
@@ -286,6 +291,7 @@ that CFE's HTTP bootloader will be used to install FreshTomato 2018.4
 
 <details>
 <summary>click for NVRAM discussion</summary>
+
 <br>
 Firmware is easily crashed by bad NVRAM data.<br>
 Until now, Linksys CFE reserved only 32KB for NVRAM.<br>
@@ -326,6 +332,7 @@ while depressing the red reset button for 10-15 sec.
 
 <details>
 <summary>click for <code>Wireless Ethernet Bridge</code> configuration</summary>
+
 <br>
 Tomato routers offer
 <a href="https://learntomato.com/category/wireless-bridge/">various wireless bridge modes</a>, such as:<br>
