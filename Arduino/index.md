@@ -2,7 +2,7 @@
 ---
 Arduino for Blue Pill
 ---
-*updated 20 Jun 2021*
+*updated 19 Aug 2022*
 
 #### Background
 Arduino originally employed microcontrollers lacking USB support.  
@@ -38,7 +38,7 @@ There are at least 4 ways to flash STM32 chips:
    `Boot0 HIGH`  
    `Boot1 LOW`  
   ... then resetting MCU
-4) DFU (device firmware update) using DfuSe utility, e.g. for [Black Pills](black)   
+4) DFU (device firmware update) using DfuSe utility, e.g. for [Black Pills](black)  
     using the [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
     but USB is [**NOT** supported by Blue Pill's ROM bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html)  
 
@@ -56,7 +56,7 @@ Many STM32 Arduino projects use [Roger Clark's core](https://github.com/rogercla
 but Arduino now has an ST Microelectronics-supported [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
 for which there is an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
 as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).  
-That video installs the Blue Pill HID bootloader via USB COM dongle,   
+That video installs the Blue Pill HID bootloader via USB COM dongle,  
 but we will here use an [ST-LINK V2 clone](https://www.ebay.com/itm/183320329257).  
 My clone ST-Link happens to have the *correct pinout* printed on its cover;  
 **Verify ST-LINK clone pin artwork** by sliding that cover partly open (along the USB plug):
@@ -118,6 +118,37 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
    **Note** A bad Arduino sketch download can leave a Blue Pill unable to be recognized by Windows,  
    and reflashing the HID Bootloader without wiping the bad sketch by `erase chip` may not recover it.  
 
+   **Troubleshooting**  
+   - Does a downloaded sketch otherwise appear to work? (e.g. blinking LED)  
+     If so, then perhaps that sketch is not correctly opening a Serial connection.  
+     Otherwise, it may be trying to use inappropriate pins  
+     or a wrong board definition  
+   - Does the blink sketch actually blink the LED as expected?  
+     Something similar happened to me when compiling and loading a sketch  
+     with not quite the correct board selected.  
+     To check whether the correct board is selected, build and load an example sketch  
+     *specific to the selected board*:  
+     `File -> Examples -> (examples for selected board type)`:  
+     ![](examples.png)  
+   - If that sketch works for you, then your other sketches may use pin[s]  
+     that Arduino expects to use for communication and control.  
+     It is important to locate, if possible, an diagram showing  
+     how pins on **your** module are assigned for Arduino.  
+   - Another trick for Arduino to work with downloaded sketches:  
+     *those sketches MUST correctly open communications as Arduino expects,*  
+     even if sketch function does not otherwise need it.  
+     For Blue Pill, that amounts to having, in setup(), something like:  
+```
+  // Initialize serial and wait for port to be opened:
+  Serial.begin(115200);
+  while (!Serial)
+    delay(1);               // wait for native USB serial port to connect
+  Serial.write("This sketch has connected. ");
+```
+   - Genuine original Blue Pill modules are basically no longer available,  
+     and you probably have some similar *but incompatible* clone.  
+     There may be a *different board profile* for your clone...  
+
 ### Installing STM32duino support
 Since SimHub already includes an *older version* of Arduino,  
 install the portable (ZIP file) version for STM32;  
@@ -137,13 +168,13 @@ no need to install Arduino-specific driver[s]...
    From **`Tools` > `Upload method:`**, select [`HID Bootloader 2.1`] or newer.  
    ![Tools mmenu](tools.gif)  
 
-   **Be sure** to check Tools settings before Sketch upload; Arduino seemingly likes to change them,   
+   **Be sure** to check Tools settings before Sketch upload; Arduino seemingly likes to change them,  
    then Blue Pill will not be a recognized device after uploads.  
    Check in Windows' `Device Manager` under `Ports (COM & LPT)` for `USB Serial Device (COM*n*)`,  
-   where in my case `n = 3,5 or 10`.    
+   where in my case `n = 3,5 or 10`.  
    **`Port:`** `COM[5]` is unavailable until a sketch is loaded, e.g.
 [`Blue_Servo`](https://github.com/blekenbleu/blekenbleu.github.io/blob/master/Arduino/Blue_Servo):
-![Blue_Blink sketch](Blue_Blink.gif)   
+![Blue_Blink sketch](Blue_Blink.gif)  
 
 Here is a Blue Pill pinout reference:
 ![Generic STM32F103 board pinout](https://www.electronicshub.org/wp-content/uploads/2020/02/STM32F103C8T6-Blue-Pill-Pin-Layout.gif)  
@@ -178,7 +209,7 @@ reserving values 0-1 to set strap offsets based on **immediately next** values.
 
 Green LED blink codes feedback when processing servo values,  
 with 50% duty cycle for idle operation.  
-Perhaps better to use that LED to signal when servo values are max..?   
+Perhaps better to use that LED to signal when servo values are max..?  
 Blink timing by `delay()` impacts serial bandwidth, so use `millis()`.
 
 For serial servo control, with or *even without* **SimHub Custom serial device**,  
@@ -197,7 +228,7 @@ Corresponding [SimHub Custom serial hacking is described here](SimHubCustomSeria
 
 ### Blue Pill servo firmware generations
 As described above, **first generation** use the least signficant of 7 bits  
-to select servos for left or right harness tensioning..   
+to select servos for left or right harness tensioning..  
 A **second generation** allocates 3 msb for PWM pin selection,  
 with 0x70 reserved for special commands e.g. 0x7F for servo LUT loading,  
 leaving 4 lsb to index into a 16-entry LUT of PWM values.  
