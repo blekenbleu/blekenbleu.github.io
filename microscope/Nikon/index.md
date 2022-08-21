@@ -14,14 +14,18 @@ instead using AO/Reichert microscopes until concluding that:
 * larger than RMS objectives are wanted for bright darkfield epi  
 * fewer old optics in paths to camera sensors help contrast and sharpness.  
 
-... which suggests Nikon's [210mm CF Plan BD objectives](https://krebsmicro.com/mplan.pdf),  
+Interest in [Nikon 210mm objectives](https://krebsmicro.com/mplan.pdf) was motivated by  
+- macro photographers using CF M Plan objectives
+- relatively low cost and wide availability of Nikon microscopes with BD Plan objectives and vertical illuminators  
+
 which have [M26x0.75 threads](https://www.coinimaging.com/nikon_bd5.html);
 comparable [Mitutoyo objectives](https://www.closeuphotography.com/mitutoyo-10x-m-plan-apo) have [M26x0.706 threads](https://photomacrography.net/forum/viewtopic.php?f=25&t=12404) (36TPI, same as RMS).  
 *Beware of incompatible M26x1 (robot lens) and M26x0.5 (Roedenstock schneider enlarger Lens shutter) threads...*   
 While Nikon's newer infinity objectives are more highly rated,  
-they are also more expensive, since still current technology.  
+they are also significantly more expensive, since still current technology,  
+and inappropriate as macro lenses.  
 Obvious frames for 210 BD objectives are Nikon's Optiphots,
-which are better quality than contemporary Labophots.
+which are better quality and more capable than contemporary Labophots.
 Optiphot frames come in 4 flavors:
 * IC inspection ([-66](https://lavinia.as.arizona.edu/~mtuell/pdf/Nikon-Optiphot-66-Manual.pdf), -77, [-88](https://www.microscopyu.com/museum/optiphot-88-ic-inspection-microscope) and 150), of which 150 uses infinity optics  
 * Optiphot-2, which are fairly famous for [fragile white plastic gears](https://www.microscopesolutions.com/product-page/nikon-labophot-2-optiphot-2-te200-300-fine-focus)  
@@ -31,7 +35,7 @@ Optiphot frames come in 4 flavors:
 * Optiphot-200 and -300, which (like 150) uses infinity objectives, but on frames more similar to Eclipse  
 
 #### [Labophot 1](Labophot/)  
-#### [Metaphot](Metaphot/index.html)  
+#### [Metaphot](Metaphot/index.html), first of CF 210mm tube length microscopes  
 #### [Optiphot 1](Optiphot/)  
 #### [Optiphot-66 DIC](Optiphot66_DIC/)  
 #### [trinocular heads](Trinoc/)  

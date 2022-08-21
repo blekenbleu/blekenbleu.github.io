@@ -9,9 +9,10 @@ truly generic photo relay camera adapters *could* work well.
 ![Image Solutions and Optexcom Camera Adapters](http://www.prc68.com/I/Images/RelayInb.jpg)  
 which are no longer available from cited vendors Image Solutions and Optexcom.    
 A relay lens acquired 20 or so years ago looks similar to that Optexcom adapter:  
-![](generic20yr.jpg)  
+![](Images/generic20yr.jpg)  
 Its best focus is about 5cm from C-mount thread to camera sensor,
-but that parfocal image is poor and distorted, perhaps because its bottom lens does no descend far enough into photo (or eye) tube for intermediate focal plane.  
+but that parfocal image is poor and distorted, perhaps because
+its bottom lens does no descend far enough into photo (or eye) tube for intermediate focal plane.  
 The Image Solutions adapter looks similar to currently-available [AmScope CA-CAN-SLR-III](https://www.amazon.com/dp/B009OY7YG6).  
 ![AmScope CA-CAN-SLR-III](https://m.media-amazon.com/images/I/61ZtB9YrKkL._AC_SL1500_.jpg)  
 Its Amazon price is higher than that for a used [CF PL2.5X](CFPL2.5X),  

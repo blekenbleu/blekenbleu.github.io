@@ -2,7 +2,7 @@
 ## Optiphot 66 diascopic conversion  
 
 [The base](DIA-EPI_base/) arrived 1 June 2022 with broken condenser carrier centering screw:  
-![broken](broken.jpg)  
+![broken](Images/broken.jpg)  
 Seller has been contacted..  
 AO condenser dovetail is too large for Optiphot fork.  
 
@@ -62,14 +62,14 @@ from lamp connections and red from the bridge rectifier.
 #### Intensity control:  
  Brown from power transistor base to potentiometer.  
 
-![base wiring](chassis.jpg)  
+![base wiring](Images/chassis.jpg)  
 This 6V system seeming could be easily converted to LED;  
 a common-emitter transistor is more nearly constant current than constant voltage...  
 
 ### base mechanical
 The section of broken centering screw remaining in the condenser carrier was short,  
 about 3mm or so.  After careful setup, that remaining segment was drilled out,  leaving threads intact.  
-![illumination thru condenser carrier](field.jpg)  
+![illumination thru condenser carrier](Images/field.jpg)  
 A centering screw and field lens were still needed.  
 
 ### Optiphot 1  
@@ -98,4 +98,4 @@ and that neck was mechanically centered on the diascopic base.
 One of 4 screws securing the Optiphot-66 stage to its substage  
 was definitely non-standard, but was reused rather than further mess  
 with corresponding threads in the stage.  
-![Optiphot-66 w/diascopic base](diascopic-66.jpg)  
+![Optiphot-66 w/diascopic base](Images/diascopic-66.jpg)  

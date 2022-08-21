@@ -7,18 +7,18 @@ more common "T" heads have a pseudo-[infinity space around their trinocular pris
 Nikon's chimney for CF PL has an M50 x 0.75 external thread and positive lens.  
 Removing that chimney allows the infinite image to continue;   
 a camera with 250mm telephoto lens focused at infinity:
-![Canon 90D+250mm](Optiphot_Infinity.jpg)  
+![Canon 90D+250mm](Images/Optiphot_Infinity.jpg)  
 
 ... captured these images:  
-![stainless millimeter rule](mmRule.jpg)   
+![stainless millimeter rule](Images/mmRule.jpg)   
 *stainless millimeter rule*  
 
-![calibration slide](EPIscale.jpg)  
+![calibration slide](Images/EPIscale.jpg)  
 *same target as below*  
 
 ... however those strongly vignetted images are magnified about 3X  
 relative to oculars (image by iPhone):
-![ocular scale](AfocalEPIscale.jpg)  
+![ocular scale](Images/AfocalEPIscale.jpg)  
 
 # Other  
 Other Optiphot infinity configurations
