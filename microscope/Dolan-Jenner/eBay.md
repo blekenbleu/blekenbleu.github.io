@@ -1,6 +1,5 @@
 *[back](../)*
-<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf
-" target="_blank" >
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>  
 ## Dolan-Jenner Fiber-Lite Model 180

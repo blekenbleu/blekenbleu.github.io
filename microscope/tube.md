@@ -15,7 +15,7 @@ which are largely unaffected by changes in distance between them and
 a so-called tube lens, which converts those parallel rays back to finite,  
 which oculars in turn change back to nearly parallel rays for observers' eyes.  
 
-This use of a second lens to obtain a virtual image from parallel rays
+Using another lens to obtain virtual images from parallel rays
 is called [afocal](https://en.wikipedia.org/wiki/Afocal_system),  
 and that term is also used for [Afocal photography](https://en.wikipedia.org/wiki/Afocal_photography),  
 where rays from oculars to observers' eyes are nominally parallel,  

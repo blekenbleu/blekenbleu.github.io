@@ -42,14 +42,14 @@ No software, power cords, or other accessories are included unless stated above.
 
 | ![](s-1601.jpg) | ![](s-1602.jpg)  |
 | -------------- | -------------- |
-| ![](s-1603.jpg) | ![](2-1604.jpg)   |
+| ![](s-1603.jpg) | ![](s-1604.jpg)   |
 | ![](s-1605.jpg) | ![](s-1606.jpg) |  
 
 ## Ordered 20 July 2022  
 
-The same vendor (outback6) from whom I got a [Type F trinocular head](../Trinoc#nikon-type-f-trinocular-microscope-head);  
+The same vendor (outback6) from whom I got a [Type F trinocular head](../Trinoc/#nikon-type-f-trinocular-microscope-head);  
 I want to be optimistic that EPI DIC objectives include prisms, but am pessimistic about polarizing filters...  
-[30mm WF 10X / 23 eyepieces](../../oculars/index.htm#wf30mm) are ordered for the UW head  
+[30mm WF 10X / 23 eyepieces](../../oculars/index.htm#WF30mm) are ordered for the UW head  
 
 ---
 
@@ -72,7 +72,7 @@ The outer diameter of the tube is 30mm
 the inner diameter is 23.2mm to accept biological Microscope tube  
 and the end female thread to accpet C-mount.  
 full metal-----Aluminum alloy  
-![](M42-30mm.jpg) &nbsp; ![](M43-23.2mm.jpg)  
+![](M42-30mm.jpg) &nbsp; ![](M42-23.2mm.jpg)  
 
 ---
 
@@ -103,7 +103,7 @@ and the 3rd is a Senarmont type set-up with dedicated prisms for each objective.
 ### [Scarodactyl's Diatoms in epi DIC](https://www.photomacrography.net/forum/viewtopic.php?t=43832)  
 
 ### [JH's EPI DIC with mirror](http://www.photomacrography.net/forum/viewtopic.php?t=31351)  
--   [First surface mirror](../../FSmirror)  
+-   [First surface mirror](../../FSmirror/)  
 
 ### [Differential Interference Contrast (DIC) Microscopy and other methods of producing contrast](https://www.canadiannaturephotographer.com/diffential_interference_microscopy.html)  
 
@@ -117,7 +117,7 @@ The manufacturer has to design the DIC prism in a way that it matches the positi
 
 ### [First steps in exploring (Zeiss) epi DIC](http://www.microscopy-uk.org.uk/mag/artjul13/dw-epiDIC.html)  
 
-### [Epi-DIC for gemstone surface examination](https://blogs.zeiss.com/microscopy/en/gemology-microscopy/)  
+### [Epi-DIC for gemstone surface examination](https://www.zeiss.com/microscopy/en/resources/insights-hub/raw-materials/gemology-microscopy.html)  
 
 ### [NicoVB:  table salt and DIC](https://www.photomacrography.net/forum/viewtopic.php?p=200022)  
 "let salt soak in water and let the water evaporate.  

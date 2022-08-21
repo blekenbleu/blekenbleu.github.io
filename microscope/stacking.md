@@ -36,7 +36,7 @@ Free solutions includes [Canon's DPP 4](https://www.canon-europe.com/support/con
 which works only for their lenses and cameras with focus bracketing support,  
 CombineZP, which does not support 16-bit images,  
 Picolay, ImageJ, [TuFuse](https://tawbaware.com/tufusepro_help/tufusepro_help.htm),  
-[Chasys Draw IES](https://www.jpchacha.com/chasysdraw) supports CR2/3 and [Focus Stacking](https://www.jpchacha.com/chasysdraw/help.php?file=artist_process_stack_focus.htm),  
+[Chasys Draw IES](https://www.jpchacha.com/chasysdraw/) supports CR2/3 and [Focus Stacking](https://www.jpchacha.com/chasysdraw/help.php?file=artist_process_stack_focus.htm),  
 which seemingly does not involve alignment, which is used when stacking for [image averaging](https://www.jpchacha.com/chasysdraw/help.php?file=artist_tutorials_stacking.htm).  
 
 ### [5 Open Source Focus Stacking Software(+ 2 Paid Options)](https://chasingheartbeats.com/open-source-focus-stacking-software/)
@@ -51,7 +51,7 @@ Moving GIFs with perspective shift(?!)
 
 
 ### ImageJ
-- [Extended Depth of Field](http://bigwww.epfl.ch/demo/edf)  
+- [Extended Depth of Field](http://bigwww.epfl.ch/demo/edf/)  
 - [Stack Focuser](https://imagej.nih.gov/ij/plugins/stack-focuser.html)  
 - [Fiji/ImageJ](https://fiji.sc)  
   [Discussions thread](https://www.dpreview.com/forums/post/50059191)  
@@ -63,12 +63,12 @@ Moving GIFs with perspective shift(?!)
 - [simpler tutorial](https://snapshot.canon-asia.com/in/article/eng/focus-stacking-a-pro-technique-made-simpler-with-focus-bracketing)  
 - hack EXIF to fake other lenses support?
   - [ExifTool by Phil Harvey](https://www.exiftool.org) [on SourceForge](https://www.exiftool.org)  
-    [Everything You Ever Wanted to Know about ExifTool](https://adamtheautomator.com/exiftool)  
+    [Everything You Ever Wanted to Know about ExifTool](https://adamtheautomator.com/exiftool/)  
     [ExifToolGUI for Windows v5.xx](https://exiftool.org/gui/)  
 
 ## [Focus Stacking with Hugin and Enfuse](https://www.youtube.com/watch?v=FMKABaISlXg) - YouTube - **Hugin now with enfuse**  
   - [**already using Hugin for image alignment to difference**](objectives/Hugin.html).  
   - [Using Hugin for focus stacking](https://macrocam.blogspot.com/2013/09/using-hugin-for-focus-stacking.html)  
-  - [Focus stacking from the command line](https://estar.photography/tag/focus-stacking-hugin) - *[discussion](https://groups.google.com/g/hugin-ptx/c/dZ2kL4hjbnE?pli=1)*
-- [Focus Stacking Macro Photos with Enfuse](https://patdavid.net/2013/01/focus-stacking-macro-photos-enfuse)  
+  - [Focus stacking from the command line](https://estar.photography/tag/focus-stacking-hugin/) - *[discussion](https://groups.google.com/g/hugin-ptx/c/dZ2kL4hjbnE?pli=1)*
+- [Focus Stacking Macro Photos with Enfuse](https://patdavid.net/2013/01/focus-stacking-macro-photos-enfuse/)  
 - [Enfuse can also be used to build extended DOF images, by blending a focus stack](https://wiki.panotools.org/Enfuse)  

@@ -22,7 +22,7 @@ relative to oculars (image by iPhone):
 
 # Other  
 Other Optiphot infinity configurations
-- Infinity objectives thru [trinoc "F" head](F_trinoc) to an infinity-focused [tube lens](../tube)  
+- Infinity objectives thru [trinoc "F" head](Trinoc/#nikon-type-f-trinocular-microscope-head) to an infinity-focused [tube lens](../tube)  
   Infinity-based Eclipse heads [reportedly fit Optiphot dovetails](https://lavinia.as.arizona.edu/~mtuell/scopes/Eclipse.php).  
 - Optiphot 100/150/200 were infinity scopes with otherwise seemingly incompatible infinity objectives,
   presumably NOT being CFI60.  

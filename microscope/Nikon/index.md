@@ -16,7 +16,7 @@ instead using AO/Reichert microscopes until concluding that:
 
 ... which suggests Nikon's [210mm CF Plan BD objectives](https://krebsmicro.com/mplan.pdf),  
 which have [M26x0.75 threads](https://www.coinimaging.com/nikon_bd5.html);
-comparable [Mitutoyo objectives](https://www.closeuphotography.com/mitutoyo-10x-m-plan-apo) have [M26x0.706 threads](https://photomacrography.net/forum/viewtopic.php?f=25&t=12404&sid=288e49e2b20a0c6cb445637a13f255cc) (36TPI, same as RMS).  
+comparable [Mitutoyo objectives](https://www.closeuphotography.com/mitutoyo-10x-m-plan-apo) have [M26x0.706 threads](https://photomacrography.net/forum/viewtopic.php?f=25&t=12404) (36TPI, same as RMS).  
 *Beware of incompatible M26x1 (robot lens) and M26x0.5 (Roedenstock schneider enlarger Lens shutter) threads...*   
 While Nikon's newer infinity objectives are more highly rated,  
 they are also more expensive, since still current technology.  
@@ -30,17 +30,17 @@ Optiphot frames come in 4 flavors:
   IC inspection frames MAY have stronger gears and stages with more space to examine solid objects.  
 * Optiphot-200 and -300, which (like 150) uses infinity objectives, but on frames more similar to Eclipse  
 
-#### [Labophot 1](Labophot)  
+#### [Labophot 1](Labophot/)  
 #### [Metaphot](Metaphot/index.html)  
-#### [Optiphot 1](Optiphot)  
-#### [Optiphot-66 DIC](Optiphot66_DIC)  
-#### [trinocular heads](Trinoc)  
+#### [Optiphot 1](Optiphot/)  
+#### [Optiphot-66 DIC](Optiphot66_DIC/)  
+#### [trinocular heads](Trinoc/)  
 #### [Optiphot photography](photo)  
 #### [Optiphot 66 illumination](BaseIllum/index.html)
 * [Optiphot 66 diascopic conversion](diascopic)   
 * [Universal Vertical Illuminator](VertIllum/index.html)  
 
-#### [ELWD Phase Contrast](PhaseContrast) as [Dark Field Turret](CondenserTurret)  
+#### [ELWD Phase Contrast](PhaseContrast/index.html) as [Dark Field Turret](CondenserTurret)  
 #### [Optiphot-66 curiosities](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43374)  
 #### [Episcopic MTF targets](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=44878)  
 #### [Nikon Optiphot Series Microscopes - lavinia.as.arizona.edu](https://lavinia.as.arizona.edu/~mtuell/scopes/Optiphot.php)  
@@ -52,5 +52,5 @@ Optiphot frames come in 4 flavors:
 #### [Phase Contrast-2 ELWD 0.3 turret](PhaseContrast/index.html)  
 #### [ELWD 0.3 Condenser](ELWDcondenser/index.html)  
 #### [Swing-Out 0.9 Condenser](SwingOut/index.html)  
-#### [CFI BE Plan Achromat 4x](CFI4x)  
-#### [Novoflex EOS-RETRO Reverse Lens Adapter](retro) 
+#### [CFI BE Plan Achromat 4x](CFI4x/)  
+#### [Novoflex EOS-RETRO Reverse Lens Adapter](../retro/) 

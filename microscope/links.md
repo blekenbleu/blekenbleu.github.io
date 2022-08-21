@@ -14,7 +14,7 @@ Sadly, he shares names with a seemingly more popular athlete,
 so Google searches work better with:  Andy Murray springtails  
 
 Here is a provocative web page:  
-[Top 10 Best Macro Photographers in the World](https://www.topteny.com/top-10-best-macro-photographers-in-the-world)  
+[Top 10 Best Macro Photographers in the World](https://www.topteny.com/top-10-best-macro-photographers-in-the-world/)  
 
 I have lately been watching (too much) Allan Walls video  
 <https://www.allanwallsphotography.com/blog/sixsteps>  

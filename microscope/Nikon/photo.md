@@ -10,7 +10,7 @@ semi-automated image capture involved complex optics:
 ... with prisms for finder and exposure:  
 ![CF PL + UFX-DX](CF-PL.jpg)  
 
-... so [trinocular](Trinoc) chimneys mount projection lenses for 210mm tube length  
+... so [trinocular](Trinoc/) chimneys mount projection lenses for 210mm tube length  
 and clamp proprietary Microflex units, which are obsoleted by digital cameras.  
 
 With ([trincular](Trinoc)) head removed, vertical illuminator flange-to-camera body flange distance  

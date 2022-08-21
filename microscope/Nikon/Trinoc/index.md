@@ -117,7 +117,7 @@ it has useful diameter and threads...
 ---
 
 ## Type UW
-Received 28 July with [DIC Optiphot-66](../Optiphot66_DIC)  
+Received 28 July with [DIC Optiphot-66](../Optiphot66_DIC/)  
 ![](typeUW.jpg)  
 UW head eye tubes are 36mm o.d.; about 3mm larger than 30mm clamp compression groove...  
 Leica eyepiece shield is about 42mm o.d., well over 30mm clamp capacity.  
@@ -133,7 +133,7 @@ his type UW version has an **M50x0.75 to ISO 38mm adapter**:
 There appears to be one available at [deal corner](https://www.dealcorner.com/Nikon-Accessories):  
 ![](https://www.dealcorner.com/Nikon-Accessories/PhotoPortOptics.jpg)  
 ... mine has a threaded chimney seemingly identical to that for type T.  
-### Type T or UW "direct" projection  
+### Type T or UW direct projection  
 [Ichthyophthirius described a "direct" projection conversion for this UW type](https://www.photomacrography.net/forum/viewtopic.php?p=206784),  
 with a 100mm focal length achromat sandwiched between 32-42mm rings:
 ![](http://www.photomacrography.net/forum/userpix/3229_Adapter_1.jpg)  
@@ -141,7 +141,7 @@ with a 100mm focal length achromat sandwiched between 32-42mm rings:
 [Scarodactyl used a 125mm surplus shed doublet and 3-D printed chimney](https://www.photomacrography.net/forum/viewtopic.php?p=264566#p264566)  
 ![](https://i.imgur.com/XPueu9S.png)  
 
-A 32mm diameter, 7mm thick cemented doublet achromat with 135mm fl was [ordered from Surplus Shed](https://www.surplusshed.com/pages/item/B1058.htm)  
+A 32mm diameter, 7mm thick cemented doublet achromat with 135mm fl was [ordered from Surplus Shed](https://www.surplusshed.com/pages/item/L14677.html)  
 ![](https://www.surplusshed.com/Uploads/B1058_11498286175.jpg)  
 Surplus Shed also lists a [35mm diameter 125mm fl mounted achromat](https://www.surplusshed.com/pages/item/L14523.html),  
 and its advertised threaded 44mm diameter mount might fit Nikon's chimney bottom thread,  
