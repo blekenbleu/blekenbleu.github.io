@@ -84,7 +84,7 @@ Height:	37 mm
 ### [type F flare](https://www.photomacrography.net/forum/viewtopic.php?p=263114#p263114)  
 
 ## Nikon Type T Trinocular Microscope Head  
-![type T with bellows](../bellows.jpg)  
+![type T with bellows](../Images/bellows.jpg)  
 *bundled with Optiphot-66*   
 
 Unlike the type F, type T (and type UW) have nearly the reverse of a tube lens  
