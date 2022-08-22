@@ -1,8 +1,10 @@
 *[back](../)*  
+
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>  
-## Nikon BD 210mm  
+
+## Nikon 210mm tube length
 While my first microscopes were [American Optical Series 10s](https://user.xmission.com/~psneeley/Personal/Microscope.htm)  
 (because cheap and plentiful here),  
 they were also interesting because AO pioneered infinity correction.  
@@ -37,7 +39,7 @@ Optiphot frames come in 4 flavors:
 #### [Labophot 1](Labophot/)  
 #### [Metaphot](Metaphot/index.html), first of CF 210mm tube length microscopes  
 #### [Optiphot 1](Optiphot/)  
-#### [Optiphot-66 DIC](Optiphot66_DIC/)  
+#### [Optiphot-66 DIC](Optiphot66_DIC/index.htm)  
 #### [trinocular heads](Trinoc/)  
 #### [Optiphot photography](photo)  
 #### [Optiphot 66 illumination](BaseIllum/index.html)

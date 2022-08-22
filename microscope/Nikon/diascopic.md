@@ -1,7 +1,8 @@
 *[back](./)*
 ## Optiphot 66 diascopic conversion  
 
-[The base](DIA-EPI_base/) arrived 1 June 2022 with broken condenser carrier centering screw:  
+[The base](DIA-EPI_base/index.htm) arrived 1 June 2022
+with broken condenser carrier centering screw:  
 ![broken](Images/broken.jpg)  
 Seller has been contacted..  
 AO condenser dovetail is too large for Optiphot fork.  
