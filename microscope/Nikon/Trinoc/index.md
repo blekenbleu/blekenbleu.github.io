@@ -45,7 +45,10 @@ Approximate unpacked dimensions: 9" x 5" x 7"
 </td></tr><tr><td>
  <img width=99% src=F3.jpg> </td><td> <img width=99% src=F4.jpg>
 </td></tr></table>
-  
+
+---
+ *received 21 May 2022*  
+
 With the relay lens chimney removed,  
 a "standard" (ISO 38mm) photo tube is available:  
 ![F trinocular with 38mm photo tube](trinoc38mm.jpg)  
@@ -219,6 +222,8 @@ and 42-43mm, 43-37mm and 37-30mm filter adapter rings:
 .. leaving the lens recessed about 6mm (thickness of 37-30mm step-down):
 ![](SS115mmM6II.jpg)  
 .. for a net distance of about 115mm from M6 flange to 135mm lens front.  
+While knurling o.d. on most M42 extension tubes is too large to pass 50mm thread in Trinocular T or UW chimneys,
+some [old aftermarket automatic extension tubes for Pentax, etc](../../Pentax_tubes) will fit.
 As with the 7D, 5X field is magnified and cropped slightly relative to oculars:  
 ![](SS5xM6II.jpg)  
 .. with some visible chromatic aberration from BD 40x objective:  
