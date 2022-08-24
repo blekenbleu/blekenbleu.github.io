@@ -7,9 +7,9 @@ alt="Auction Sniper" title="Auction Sniper">
 ![](https://www.knema.com/wp-content/uploads/2018/01/SunLike_03.jpg)  
 ### [CRI vs CQS](https://www.nist.gov/publications/rationale-color-quality-scale)  
 #### [microbehunter.com thread](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=28&t=15783#p124315)  
-### [Pinspot RGBW 10W LED](../pinspot/index.htm)  
-### [40mm RGB LED halo ring](../index.html#HALO)  
-#### [USB gooseneck](../index.html#LEITZ)  
+### [Pinspot RGBW 10W LED](../pinspot/)  
+### [40mm RGB LED halo ring](../#HALO)  
+#### [USB gooseneck](../#LEITZ)  
 ## [**Labophot illumination conversion**](../Nikon/Labophot/#led-conversion)  
 Nearly the same for nearly identical Optiphot 66 base, but Optiphot 1 (and Metaphot) are 12V 50W instead of 6V 20W.  
 ### [Kaidomain Cree XHP50.3 5000K CRI90 on 20mm DTO Copper MCPCB](http://kaidomain.com/Cree-XHP50_3-HI-Neutral-White-5000K-CRI90-SMD-5050-LED?search=high%20cri)  

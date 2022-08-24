@@ -33,7 +33,7 @@ Some non-image-forming light can be blocked by an iris diaphragm, as in this dia
 Any number of websites will waste space pointing out how important it is,  
 then provide miserable, incomplete and wrong instructions.  
 Fortunately, [Wikipedia](https://en.wikipedia.org/wiki/K%C3%B6hler_illumination) does all right;  
-*[Here are my Kohler experiences](AO/index.htm#Kohler)*.  
+*[Here are my Kohler experiences](AO/Kohler)*.  
 
 ### simple lens formulae:
 - `1/f = 1/do + 1/di`	{1} `di` *becomes* `f` *for infinite* `do`   

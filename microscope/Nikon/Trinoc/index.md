@@ -120,7 +120,7 @@ it has useful diameter and threads...
 ---
 
 ## Type UW
-Received 28 July with [DIC Optiphot-66](../Optiphot66_DIC/index.htm)  
+Received 28 July with [DIC Optiphot-66](../Optiphot66_DIC/)  
 ![](typeUW.jpg)  
 UW head eye tubes are 36mm o.d.; about 3mm larger than 30mm clamp compression groove...  
 Leica eyepiece shield is about 42mm o.d., well over 30mm clamp capacity.  

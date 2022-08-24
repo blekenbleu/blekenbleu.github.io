@@ -2,7 +2,7 @@
 ## Optiphot 66 Phase Contrast-2 ELED 0.3 hack
 
 The intent was to repurpose this ELWD condenser as a darkfield turret.  
-[The turret](PhaseContrast/) arrived before the [lens](ELWDcondenser/index.html).  
+[The turret](PhaseContrast/) arrived before the [lens](ELWDcondenser/).  
 Had I more carefully read that it was [for inverted Diaphots
 only](https://lavinia.as.arizona.edu/~mtuell/scopes/condenser_list.php),  
 I would have been better prepared for disappointment.  
