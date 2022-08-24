@@ -80,6 +80,10 @@
 [GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io)
 for this markdown  
 
+<div>
+
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>
+
+</div>
