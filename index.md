@@ -5,13 +5,13 @@
   - [Special Error Diffusion](ImageProcessing/sped.html)
   - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 
-## [Sim driving](pedals/index.htm)
-- [ Samsung Odyssey+ for Assetto Corsa ](pedals/index.htm#hmd) Windows Mixed Reality and SteamVR
-- [TH8A](pedals/index.htm#TH8A) Thrustmaster shifter mods
-- Logitech [G29 pedal mods](pedals/index.htm#pedals)
+## [Sim driving](pedals/)
+- [ Samsung Odyssey+ for Assetto Corsa ](pedals/#hmd) Windows Mixed Reality and SteamVR
+- [TH8A](pedals/#TH8A) Thrustmaster shifter mods
+- Logitech [G29 pedal mods](pedals/#pedals)
   - [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
   - [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
-  - **actually ended up keeping pedals [analog](pedals/index.htm#pedals)** plugged into [SimXperience AccuForce controller](pedals/index.htm#analog)  
+  - **actually ended up keeping pedals [analog](pedals/#pedals)** plugged into [SimXperience AccuForce controller](pedals/#analog)  
 - USB-attached harness tensioning servos
   - [STM32 Blue Pill for custom USB Arduino devices](Arduino/)
     - ESP8266 **WeMos D1 UNO R1** or similar [background](Arduino/ESPDuino) can only be COM devices  
@@ -21,7 +21,7 @@
 - USB-attached [PWM PC fans](Arduino/SimHubPWMfans)
 - ESP8266 / ESP32 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
 
-## [ESP32-S2](ESP32/index.htm) for composite USB devices
+## [ESP32-S2](ESP32/) for composite USB devices
 ### [Wireless MIDI](MIDI), including Android Wireless MIDI app
 #### [Node.js WebSocket MIDI server](MIDI/midisrv)
 
@@ -58,7 +58,7 @@
 
 ### Audio  
 #### &nbsp; [Thorens TD 160 MK II](ThorensTD126MKII/README.md) with SME Series III
-#### &nbsp; [Audio-Technica AT-LP140XP](AT-LP140XP/index.htm) microphonics
+#### &nbsp; [Audio-Technica AT-LP140XP](AT-LP140XP/) microphonics
 ### [Blu-Ray movies on Windows PC](WinBluRay)  
 ### [Boot Windows 10 from NVMe on PCIe PCs without NVMe BIOS](NVMe)  
 ### [Chromebook](ChromeBook)
@@ -68,8 +68,8 @@
 #### &nbsp; [Git-Cola installed from MacPorts](GitColaMacPorts)
 #### &nbsp; macOS local [gitolite](MacGit) server
 ### [Line 6 JTV-89F guitar](JTV89F/Variax)
-## [Microscopes and photomicography](microscope/index.html)  
-#### &nbsp; [American Optical Series 10](microscope/index.html#AO) / [Series 120](microscope/AO) / [Reichert EPIStar](microscope/index.html#EPIStar)
+## [Microscopes and photomicography](microscope/)  
+#### &nbsp; [American Optical Series 10](microscope/#AO) / [Series 120](microscope/AO) / [Reichert EPIStar](microscope/#EPIStar)
 #### &nbsp; Nikon [Optiphot 66](microscope/Nikon) / [Optiphot 1](microscope/Nikon/Optiphot)
 #### &nbsp; [cameras](Canon)
 ### [PC misguided buying - January 2022](PC)  
