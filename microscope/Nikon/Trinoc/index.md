@@ -253,3 +253,9 @@ Single thumbscrew is 2 too few and uncomfortably small.
 
  *10 Aug*  
 Amazon thumbs screws arrived; thread matches and more comfortable than stock SVBONY...   
+
+## Type Tc Trinocular Microscope Head  
+ *received 23 Aug 2022 with [Metaphot](../Metaphot/)*
+![Type Tc trinocular](Tc.jpg)  
+Photo tube mounts to the head by 3 screws;  
+52-30mm step-down and 42-52mm step-up were ordered for a direct adapter.  
