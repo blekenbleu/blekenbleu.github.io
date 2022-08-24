@@ -64,7 +64,7 @@ from lamp connections and red from the bridge rectifier.
  Brown from power transistor base to potentiometer.  
 
 ![base wiring](Images/chassis.jpg)  
-This 6V system seeming could be easily converted to LED;  
+This 6V system seeming could be easily [converted to LED](Labophot/#led-conversion);  
 a common-emitter transistor is more nearly constant current than constant voltage...  
 
 ### base mechanical

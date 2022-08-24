@@ -24,7 +24,9 @@ Nikon 221403 Labophot Microscope Parts Only (S1084)
 | --------------- | --------------- |
 | ![](s-1602.jpg) | ![](s-1601.jpg) |
 
-## Received 
+---
+
+  *Received 11 July 2022
 
 ### Condenser
 
@@ -38,7 +40,7 @@ to accommodate incandescent lamp behavior:
 * As filament heats, resistance increases.  
 * This lowers voltage drop from collector to emitter  
   and also current thru resistor to base, reducing power to lamps.  
-![ Labophot halogen illumination circuit characterization](plot.png)  
+![Labophot halogen illumination circuit characterization](plot.png)  
 Current was measured using a CA-60 AC/DC clamp.  
 
 LEDs behave differently:  
@@ -56,3 +58,19 @@ LEDs behave differently:
   as base-to-emitter voltage increases with current.  
 * A resistor in series with forward-biased diode (a nearly constant voltage drop) from base to ground  
   would provide stronger current regulation.  
+
+```
+# Labophot halogen measurements 12 July 2022
+# dial  Vcc     yellow  brown   current
+1       7.6     6.94    .64     1
+1.5     7.51    6.9     .64     1
+2       7.5     6.6     .65     1.14    # very dim
+2.5     7.36    6       .68     1.35
+3       7.25    5.3     .70     1.64
+3.5     7.19    5       .71     1.76
+4       7.12    4.6     .73     1.94
+4.5     7.06    4       .74     2.16
+5       6.95    3.2     .78     2.4
+5.5     6.8     2       .81     2.7
+6       6.6     0.9     .85     3.08 
+```
