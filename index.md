@@ -1,4 +1,4 @@
-13 Dec 2021  
+24 Aug 2022  
 ## Signal Processing
   - [dimg - visual difference utility](ImageProcessing/dimg.html)
   - [Hugin image alignment](microscope/objectives/Hugin.htm)  
@@ -78,4 +78,8 @@
 ### [W3C Link Checker](https://validator.w3.org/checklink)  
 
 [GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io)
-for this markdown
+for this markdown  
+
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
