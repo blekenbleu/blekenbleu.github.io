@@ -74,7 +74,7 @@ about 3mm or so.  After careful setup, that remaining segment was drilled out,  
 A centering screw and field lens were still needed.  
 
 ### Optiphot 1  
-What was [listed as a Labophot](Optiphot/) is actually an [Optiphot 1](Optiphot#received-9-june-2022).  
+What was [listed as a Labophot](Optiphot/) is actually an [Optiphot 1](Optiphot/#received-9-june-2022).  
 In addition to the Kohler illumination and both condenser centering screws,  
 it has a more powerful lamp house and what appears to be a stage that rotates about 270 degrees as well as translates.  
 Its illumination cannot be adapted to the -66, but is altogether a better, more capable frame..  

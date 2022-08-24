@@ -5,7 +5,7 @@ Since Nikon CF objectives are nominally free of chromatic aberrations,
 these CF photo relay lenses are candidates for use in other microscopes 
 which employ eyepieces without corrections.  
 Nikon made [several revisions to CF PL](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=6268#p56369) optics.  
-[@Scarodactyl](https://www.microbehunter.com/microscopy-forum/memberlist.php?mode=viewprofile&u=1031&sid=6c128b9c0266c267df2aa3b40676edfa)
+[@Scarodactyl](https://www.microbehunter.com/microscopy-forum/memberlist.php?mode=viewprofile&u=1031)
 compares several CF PL and afocal configurations in
 [these EPI images](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=10883).  
 

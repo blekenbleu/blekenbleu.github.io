@@ -67,7 +67,7 @@ Moving GIFs with perspective shift(?!)
     [ExifToolGUI for Windows v5.xx](https://exiftool.org/gui/)  
 
 ## [Focus Stacking with Hugin and Enfuse](https://www.youtube.com/watch?v=FMKABaISlXg) - YouTube - **Hugin now with enfuse**  
-  - [**already using Hugin for image alignment to difference**](objectives/Hugin.html).  
+  - [**already using Hugin for image alignment to difference**](objectives/Hugin.htm).  
   - [Using Hugin for focus stacking](https://macrocam.blogspot.com/2013/09/using-hugin-for-focus-stacking.html)  
   - [Focus stacking from the command line](https://estar.photography/tag/focus-stacking-hugin/) - *[discussion](https://groups.google.com/g/hugin-ptx/c/dZ2kL4hjbnE?pli=1)*
 - [Focus Stacking Macro Photos with Enfuse](https://patdavid.net/2013/01/focus-stacking-macro-photos-enfuse/)  
