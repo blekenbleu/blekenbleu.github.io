@@ -91,3 +91,9 @@ mostly meant for epi DIC but good without too.
 ### [Gerd: bright field EPI DIC DVD/CD](http://www.photomacrography.net/forum/viewtopic.php?t=12104)  
 ![Pit density on CD and DVD](http://www.photomacrography.net/forum/userpix/69_cdvsdvd_1.jpg)  
 
+### [Esslinger + Gross: DIC vs PlasDIC; partially coherent illumination](https://onlinelibrary.wiley.com/doi/abs/10.1111/jmi.12248)  
+![shown with infinity objective](https://onlinelibrary.wiley.com/cms/asset/741d118a-a7ef-4cf0-8526-a067d0d3152c/jmi12248-fig-0001-m.jpg)  
+
+### Quarter wave plate before analyzer or after polarizer  
+![before analyzer](B4analyzer.jpg) 
+![after polarizer](DIC-light-path-1.png)  
