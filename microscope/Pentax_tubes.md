@@ -15,3 +15,8 @@ Condition: &nbsp;Used
 Vintage automatic extension tube 3-ring set for Asahi Pentax, Praktica,  
 Ediza, Mamiya Sekor, Yashica TL, Ricoh, Argus, Regula, Chinonflex, etc.  
 In great shape with box.
+
+---
+
+*received 26 Aug 2022*  
+These M42 extension tubes have unusually small knurling and fit in Nikon UW trinocular port.  
