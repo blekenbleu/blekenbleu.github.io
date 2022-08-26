@@ -19,9 +19,27 @@ If you pull out one of the eye pieces and look down the tube,
 you should see a white circle with a black stripe in the middle if DIC is properly aligned.  
 ![DIC objective back focal plane](https://www.microscopyu.com/assets/thumbnails/dic-alignment.jpg)  
 
-### [Nikon DIC expert abednego1995: 3 generations of Optiphot DIC](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=6593#p58881)  
+### [abednego1995: 3 generations of Optiphot DIC](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=6593#p58881)  
 The 1st and 2nd are with single translating Nomarski prism above the objectives,  
 and the 3rd is a Senarmont type set-up with dedicated prisms for each objective.  
+
+### [rogeliomoreno's diascopic DIC considerations](https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=126130#p126130)  
+1. The objective's prism and the condenser's prism must match.  
+   I did try to use Nikon objective's prisms (made for the N2 condenser's prism) with M condenser's prism and they did not work.  
+2. Condenser prims are made to be mounted at precise distance from the condenser's lens, close to focal point.  
+3. Prisms have to be oriented 45 degrees from polarizer direction  
+   (Polarizer is typically oriented left-right and the analyzer back-front of the microscope)  
+   First, find how objective's prism is oriented: removed the both prisms from the light train  
+   and put the polarizer and analyzer crossed (when the light that you see through the eyepieces is darkest),   
+   now put the objective's prism in the light train and remove one of the eyepieces and check for the black line:  
+   -  it should be oriented / or \ (at 45 degrees,  
+   -  *note*: not all prims show the black line when put between crossed polarizers  
+      (the Nikon N1, N2 family of DIC prisms do not show that line, but mostly do).  
+  Second, orient the condenser prism (the black line) in the same direction (/ or \) as the objective's prism,  
+  remove the objective prism from the light train and insert the condenser prism,  
+  turn that prism until its black line is in the same direction as that the objective's.  
+
+[Olympus diascopic DIC Configuration and Alignment](https://www.olympus-lifescience.com/en/microscope-resource/primer/techniques/dic/dicconfiguration/)  
 
 ### [Nikon EPI DIC prisms repurposed](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=13950)  
 
