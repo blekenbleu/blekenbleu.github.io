@@ -45,3 +45,4 @@ M42x0.75 thread and 30mm o.d. are as advertised,
 but i.d. is far too loose for 23.2mm oculars:  
 ![](M42-C-mount-32-23.2mm.jpg)  
 ... corrected by shimming i.d. with bits of HVAC pressure-sensitive aluminum tape.  
+[MicrobeHunter.com: M42 - 30mm - 23.2mm eye tube adapter warning.](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=16026)  

@@ -40,23 +40,29 @@ Optiphot frames come in 4 flavors:
 #### [Metaphot](Metaphot/), first of CF 210mm tube length microscopes  
 #### [Optiphot 1](Optiphot/)  
 #### [Optiphot-66 DIC](Optiphot66_DIC/)  
-#### [trinocular heads](Trinoc/)  
 #### [Optiphot photography](photo)  
 #### [Optiphot 66 illumination](BaseIllum/)
 * [Optiphot 66 diascopic conversion](diascopic)   
+* [Sliders](Sliders)  
 * [Universal Vertical Illuminator](VertIllum/)  
 
-#### [ELWD Phase Contrast](PhaseContrast/) as [Dark Field Turret](CondenserTurret)  
-#### [Optiphot-66 curiosities](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43374)  
+#### Condensers  
+- [ELWD 0.3 Condenser](ELWDcondenser/)  
+- [Swing out](SwingOut/)  
+
 #### [Episcopic MTF targets](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=44878)  
+#### [Objectives](../objectives/)  
+#### [trinocular heads](Trinoc/)  
+
+#### [Phase Contrast-2 ELWD 0.3 turret](PhaseContrast/) as [Dark Field Turret](CondenserTurret)  
+#### [Novoflex EOS-RETRO Reverse Lens Adapter](../retro/)  
+
+---
+
+#### [Optiphot-66 curiosities](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43374)  
 #### [Nikon Optiphot Series Microscopes - lavinia.as.arizona.edu](https://lavinia.as.arizona.edu/~mtuell/scopes/Optiphot.php)  
 #### [Optiphot-66/77/88 | Nikon Multiphot system - prc68.com](https://www.prc68.com/I/Multiphot.html#Optiphot)  
 #### Nikon Optiphot 66 Questions - Sure Squintsalot  
 * [Part 1: polarizing](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15495)  
 * [Part 2: fine focus, hacked diascopic base](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=15566)  
 
-#### [Phase Contrast-2 ELWD 0.3 turret](PhaseContrast/)  
-#### [ELWD 0.3 Condenser](ELWDcondenser/)  
-#### [Swing-Out 0.9 Condenser](SwingOut/)  
-#### [CFI BE Plan Achromat 4x](CFI4x/)  
-#### [Novoflex EOS-RETRO Reverse Lens Adapter](../retro/) 

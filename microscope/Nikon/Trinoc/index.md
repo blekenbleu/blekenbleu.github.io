@@ -252,7 +252,8 @@ Single thumbscrew is 2 too few and uncomfortably small.
 ![](ClampSpacer.jpg)  
 
  *10 Aug*  
-Amazon thumbs screws arrived; thread matches and more comfortable than stock SVBONY...   
+Amazon thumbs screws arrived; thread matches and more comfortable than stock SVBONY...  
+[photomacrography.net: Eye tube clamp for Nikon Optiphot/Labophot UW head afocal imaging](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=45183)  
 
 ## Type Tc Trinocular Microscope Head  
  *received 23 Aug 2022 with [Metaphot](../Metaphot/)*
