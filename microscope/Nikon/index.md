@@ -43,6 +43,7 @@ Optiphot frames come in 4 flavors:
 #### [Optiphot photography](photo)  
 #### [Optiphot 66 illumination](BaseIllum/)
 * [Optiphot 66 diascopic conversion](diascopic)   
+* [Stages and crossed roller bearing rails](stage/)  
 * [Sliders](Sliders)  
 * [Universal Vertical Illuminator](VertIllum/)  
 
