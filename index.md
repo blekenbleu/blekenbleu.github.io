@@ -25,6 +25,11 @@
 ### [Wireless MIDI](MIDI), including Android Wireless MIDI app
 #### [Node.js WebSocket MIDI server](MIDI/midisrv)
 
+## [Microscopes and photomicography](microscope/)  
+### &nbsp; American Optical [Series 10](microscope/#AO) / [Series 120](microscope/AO) / [Reichert EPIStar](microscope/#EPIStar)
+### &nbsp; Nikon [Optiphot 66](microscope/Nikon) / [Optiphot 1](microscope/Nikon/Optiphot)
+### &nbsp; [cameras](Canon)
+
 ## [ab]using Microsoft Visual Studio Community 2017
 * [shared installation](VSC2017)
 
@@ -68,10 +73,6 @@
 #### &nbsp; [Git-Cola installed from MacPorts](GitColaMacPorts)
 #### &nbsp; macOS local [gitolite](MacGit) server
 ### [Line 6 JTV-89F guitar](JTV89F/Variax)
-## [Microscopes and photomicography](microscope/)  
-#### &nbsp; [American Optical Series 10](microscope/#AO) / [Series 120](microscope/AO) / [Reichert EPIStar](microscope/#EPIStar)
-#### &nbsp; Nikon [Optiphot 66](microscope/Nikon) / [Optiphot 1](microscope/Nikon/Optiphot)
-#### &nbsp; [cameras](Canon)
 ### [PC misguided buying - January 2022](PC)  
 #### &nbsp; [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)  
 ### [Vim and X-Mouse](VimTXmouse)
