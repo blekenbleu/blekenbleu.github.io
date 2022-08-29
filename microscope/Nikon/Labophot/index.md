@@ -1,9 +1,10 @@
 *[back](../)*
-<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf
-" target="_blank" >
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>  
 ## Nikon Labophot Microscope
+Introduced around the same time as the Optiphot (1979), the Labophot is lower cost and less flexible.  
+Many of them seem to have been configured for phase contrast.  
 
 - [Brochure](http://earth2geologists.net/Microscopes/documents/Nikon_Optiphot_Labophot_Pol_brochure.pdf)  
 - [Instruction manual](https://neurophysics.ucsd.edu/Manuals/Nikon/Nikon%20Biological%20Microscope%20Labophot%20Y-R%20Stand%20Instructions.pdf) - Bell Labs  

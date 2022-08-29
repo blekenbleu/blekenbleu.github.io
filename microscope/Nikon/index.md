@@ -17,7 +17,7 @@ instead using AO/Reichert microscopes until concluding that:
 * fewer old optics in paths to camera sensors help contrast and sharpness.  
 
 Interest in [Nikon 210mm objectives](https://krebsmicro.com/mplan.pdf) was motivated by  
-- macro photographers using CF M Plan objectives
+- macro photographers using <a href="Metaphot/#CF"><b>CF</b></a> M Plan objectives
 - relatively low cost and wide availability of Nikon microscopes with BD Plan objectives and vertical illuminators  
 
 which have [M26x0.75 threads](https://www.coinimaging.com/nikon_bd5.html);
