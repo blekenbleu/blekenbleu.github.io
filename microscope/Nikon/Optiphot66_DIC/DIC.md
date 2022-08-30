@@ -97,3 +97,56 @@ mostly meant for epi DIC but good without too.
 ### Quarter wave plate before analyzer or after polarizer  
 ![before analyzer](B4analyzer.jpg) 
 ![after polarizer](DIC-light-path-1.png)  
+
+### [EPI DIC](https://www.microscopyu.com/techniques/dic/reflected-light-dic-microscopy)  
+![EPI DIC](EPI_DIC.jpg)  
+
+## For Optiphot vertical illuminator rotating polarizing slider:
+My EPI rotating polarizing slider is missing the ND / wave plate insert:
+### Nikon Optiphot ND Filter Slider for Rotating Polarizer Universal Epi Illuminator  
+eBay item &nbsp; [325064013162](https://www.ebay.com/itm/325064013162)  
+![ND / lambda](NDslide0.jpg)  
+![ND / lambda](NDslide1.jpg)  
+Excellent condition  
+
+## For Metaphot sliders:  
+### 2 Microscope 20mm Linear Polarizing Filters High Quality Specs & BONUS Included  
+eBay item &nbsp; [275280951982](https://www.ebay.com/itm/275280951982) 
+![](https://i.ebayimg.com/images/g/5u4AAOSwYW5iYVXl/s-l1600.jpg) 
+![](https://i.ebayimg.com/images/g/Jg4AAOSw62xhuIop/s-l1600.jpg)  
+(2) Microscope Linear Polarizing Filters High Quality Specs and Bonus Included  
+
+See specifications included. Made in USA by a top optical manufacturer.  
+Fully Laminated - 0.8mm thick. Rigid - will not bend.  
+Its thickness provides rigidity for self-standing applications.  
+
+Note: Since many of our buyers after making an order and receiving our polarizing filters  
+begin farming to find microscope slides with polarizing capability we did the following:  
+We included in this set a polarizing crystal microscope slider.  
+This bonus is represented by an Acetaminophen, Orange G, Safranin O or Potassium Ferricyanide microscope slide. (ONE Slide)  
+Since we depend by our supplier capabilities unfortunately we don't know which crystal will be included in the set.  
+
+
+### 20mm - 140nm Quarter Wave Microscope Lambda Plate plus BONUS slide - See SPECS  
+eBay item &nbsp; [275419900377](https://www.ebay.com/itm/275419900377) 
+![](https://i.ebayimg.com/images/g/3vkAAOSwxzlizsbC/s-l1600.jpg) 
+![](https://i.ebayimg.com/images/g/aHgAAOSwK9pizsaw/s-l1600.jpg)  
+Microscope Quarter Wave Compensator Plate Multi Layers - Polarizing Applications.  
+0.5mm thick (active layer 0.08mm)  140nm +/- 10nm Retardance Value.
+
+We attached a detailed specification page showing all features, components  
+and fabrication technology. Please see second attached picture.
+
+We included in this sale as a bonus - a crystal polarizing microscope slide  
+with a birefringent chemical available at the time of sale.  
+In this way you can check the quality of our product right after receiving it.
+
+Note: In our store we have listed two types of Lambda retaining plates:  
+Group one: Laminated and Group two: Glass Mounted.  
+Even same type of item - Quarter Lambda, for example interferometric has same value as Glass mounted quarter Lambda plates,  
+visual some differences are noticed due to the technology used.  
+Laminated plates are manufactured via hot lamination and at the line of contact between active layer  
+and neutral protection layer there is a micrometric melted layer combining the last two.  
+Visual this brings a color surplus in laminated lenses.  
+In group two (full Lambda retaining plates) the effect is reversed but less noticeable.  
+(For laser applications and special scientific research glass mounted retaining plates are usually the chosen choice.)
