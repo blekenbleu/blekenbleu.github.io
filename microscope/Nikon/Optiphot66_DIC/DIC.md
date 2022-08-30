@@ -62,6 +62,8 @@ The manufacturer has to design the DIC prism in a way that it matches the positi
 
 ### [First steps in exploring (Zeiss) epi DIC](http://www.microscopy-uk.org.uk/mag/artjul13/dw-epiDIC.html)  
 
+### [A Demonstration of the Use of Quarter & Whole Wave Plates to Alter the Colouration of Polarized Light Photomicrographs](http://www.microscopy-uk.org.uk/mag/artjan05/bjcomp.html)  
+
 ### [Epi-DIC for gemstone surface examination](https://www.zeiss.com/microscopy/en/resources/insights-hub/raw-materials/gemology-microscopy.html)  
 
 ### [NicoVB:  table salt and DIC](https://www.photomacrography.net/forum/viewtopic.php?p=200022)  
@@ -98,11 +100,11 @@ mostly meant for epi DIC but good without too.
 ![before analyzer](B4analyzer.jpg) 
 ![after polarizer](DIC-light-path-1.png)  
 
-### [EPI DIC](https://www.microscopyu.com/techniques/dic/reflected-light-dic-microscopy)  
+## [EPI DIC](https://www.microscopyu.com/techniques/dic/reflected-light-dic-microscopy)  
 ![EPI DIC](EPI_DIC.jpg)  
 
-## For Optiphot vertical illuminator rotating polarizing slider:
-My EPI rotating polarizing slider is missing the ND / wave plate insert:
+## For Optiphot vertical illuminator rotating polarizing slider:  
+My EPI rotating polarizing slider is missing the ND / wave plate insert:  
 ### Nikon Optiphot ND Filter Slider for Rotating Polarizer Universal Epi Illuminator  
 eBay item &nbsp; [325064013162](https://www.ebay.com/itm/325064013162)  
 ![ND / lambda](NDslide0.jpg)  
@@ -110,6 +112,12 @@ eBay item &nbsp; [325064013162](https://www.ebay.com/itm/325064013162)
 Excellent condition  
 
 ## For Metaphot sliders:  
+### Nikon Rotatable Analyzer Polarizer Slider EPI Illuminator Microscope 20mm  
+eBay item: &nbsp;265160069244  
+![](rotatable_slider.jpg)  
+*Ordered 30 Nov 2021 for Optiphot vertical illuminator, but fits Metaphot head*,  
+*need 20mm filters*  
+
 ### 2 Microscope 20mm Linear Polarizing Filters High Quality Specs & BONUS Included  
 eBay item &nbsp; [275280951982](https://www.ebay.com/itm/275280951982) 
 ![](https://i.ebayimg.com/images/g/5u4AAOSwYW5iYVXl/s-l1600.jpg) 
