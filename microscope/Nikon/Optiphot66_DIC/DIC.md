@@ -21,7 +21,7 @@ you should see a white circle with a black stripe in the middle if DIC is proper
 
 ### [abednego1995: 3 generations of Optiphot DIC](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=6593#p58881)  
 The 1st and 2nd are with single translating Nomarski prism above the objectives,  
-and the 3rd is a Senarmont type set-up with dedicated prisms for each objective.  
+and the 3rd is a [Senarmont type set-up](https://www.manualslib.com/manual/1725578/Nikon-Optiphot-Pol.html?page=19) with dedicated prisms for each objective.  
 
 ### [rogeliomoreno's diascopic DIC considerations](https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=126130#p126130)  
 1. The objective's prism and the condenser's prism must match.  
@@ -110,6 +110,10 @@ eBay item &nbsp; [325064013162](https://www.ebay.com/itm/325064013162)
 ![ND / lambda](NDslide0.jpg)  
 ![ND / lambda](NDslide1.jpg)  
 Excellent condition  
+
+## [diascopic Optiphot analyser and wave plate](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=24&t=13133)  
+![](https://www.microbehunter.com/microscopy-forum/download/file.php?id=24485)  
+*quartz wedge appears to be from Leica, DIC condenser and nosepiece from Biophot*  
 
 ## For Metaphot sliders:  
 ### Nikon Rotatable Analyzer Polarizer Slider EPI Illuminator Microscope 20mm  
