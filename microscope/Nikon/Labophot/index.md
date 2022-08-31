@@ -3,7 +3,7 @@
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>  
 ## Nikon Labophot Microscope
-Introduced around the same time as the Optiphot (1979), the Labophot is lower cost and less flexible.  
+Introduced around the same time as the Optiphot (1978), the Labophot is lower cost and less flexible.  
 Many of them seem to have been configured for phase contrast.  
 
 - [Brochure](http://earth2geologists.net/Microscopes/documents/Nikon_Optiphot_Labophot_Pol_brochure.pdf)  

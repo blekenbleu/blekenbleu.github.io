@@ -5,7 +5,7 @@
 *[back](../)*
 ## Nikon Optiphot Microscope
 
-The Optiphot was introduced around 1979, inheriting some features from 1976 Metaphot and Biophot,  
+The Optiphot was introduced around 1978, inheriting some features from 1976 Metaphot and Biophot,  
 with the same [CF](../Metaphot/#CF) optics but more options and some cost reductions, including lower illumination power.
 - [Optiphot Brochure](http://earth2geologists.net/Microscopes/documents/Nikon_Optiphot_Labophot_Pol_brochure.pdf)  
 - [Instruction manual](https://cmrf.research.uiowa.edu/sites/cmrf.research.uiowa.edu/files/nikon-optiphot-manual_0.pdf)  
