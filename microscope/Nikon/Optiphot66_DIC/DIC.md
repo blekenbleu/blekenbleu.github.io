@@ -25,6 +25,7 @@ mostly meant for epi DIC but good without too.
 
 ### [PeteM: DIC options compared](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9734)  
 Nikon Eclipse favored for De Senarmont system and long WD  
+**[De Senarmont Bias Retardation in DIC Microscopy](Bias Retardation in DIC Microscopy)  
 
 ### [hkv: DIC setup](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=4040#p36805)  
 If you pull out one of the eye pieces and look down the tube,  
