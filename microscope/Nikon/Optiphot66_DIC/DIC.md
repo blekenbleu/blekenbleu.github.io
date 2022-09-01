@@ -13,6 +13,7 @@
 *See also*: &nbsp;[Polarized macro and micro photography](../../polarize/) e.g. for compensators and retardation plates.
 
 ## [EPI DIC](https://www.microscopyu.com/techniques/dic/reflected-light-dic-microscopy)  
+Optiphot EPI DIC is strictly brightfield; DIC sliders block coaxial illumination.  
 ![EPI DIC](EPI_DIC.jpg)
 
 ### [Scarodactyl:  Reflected Light - Optiphot Series](https://www.photomacrography.net/forum/viewtopic.php?p=272448)  
