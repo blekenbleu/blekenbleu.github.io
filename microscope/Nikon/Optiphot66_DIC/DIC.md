@@ -26,6 +26,7 @@ mostly meant for epi DIC but good without too.
 ### [PeteM: DIC options compared](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9734)  
 Nikon Eclipse favored for De Senarmont system and long WD  
 **[De Senarmont Bias Retardation in DIC Microscopy](Bias Retardation in DIC Microscopy)  
+wants 1/4 wavelength retardation plate fixed while polarizer can rotate +/- 45 degrees.  
 
 ### [hkv: DIC setup](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=4040#p36805)  
 If you pull out one of the eye pieces and look down the tube,  
@@ -95,6 +96,14 @@ So when we have a Nomarski prism, it's the front interference plane of the objec
 that must coincide with the objective rear focal plane - not the prism itself.  
 The upper wedge must be thinner than the lower wedge in a Nomarski prism,  
 but most drawings just have a straight line connecting the corners. Small but important difference.
+
+### [Nikon upper DIC prism for 160 TL is integrated with objective nosepiece](http://www.photomacrography.net/forum/viewtopic.php?f=30&t=23935)  
+
+### [Nikon EPI DIC prisms in transmitted DIC Phase Contrast condenser](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=13950)  
+
+### [DIC interference fringe altered by tilting prisms](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9032)  
+
+### [DIC prism interference band location by measuring objective's rear focal plane using a laser pointer][https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=8594#p74473]   
 
 ### [Gerd: bright field EPI DIC DVD/CD](http://www.photomacrography.net/forum/viewtopic.php?t=12104)  
 ![Pit density on CD and DVD](http://www.photomacrography.net/forum/userpix/69_cdvsdvd_1.jpg)  
