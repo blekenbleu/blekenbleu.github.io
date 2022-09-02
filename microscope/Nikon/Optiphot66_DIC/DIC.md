@@ -22,6 +22,7 @@ The best option has a rotatable polarizer
 with a separate quarter wave plate slider,  
 mostly meant for epi DIC but good without too.  
 
+### [de Senarmont DIC Nicroscope Configuration](https://www.microscopyu.com/techniques/dic/de-sénarmont-dic-microscope-configuration)  
 ### [DIC Component Alignment (Java)](https://www.microscopyu.com/tutorials/dic-microscope-component-alignment)  
 
 ### [PeteM: DIC options compared](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9734)  
