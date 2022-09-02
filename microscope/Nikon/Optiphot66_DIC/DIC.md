@@ -18,42 +18,48 @@ Optiphot EPI DIC is strictly brightfield; DIC sliders block coaxial illumination
 
 ### [Scarodactyl:  Reflected Light - Optiphot Series](https://www.photomacrography.net/forum/viewtopic.php?p=272448)  
 What you need to look out for is the polarizer and analyzer.  
-The best option has a rotatable polarizer with a separate quarter wave plate slider,  
+The best option has a rotatable polarizer  
+with a separate quarter wave plate slider,  
 mostly meant for epi DIC but good without too.  
 
 ### [DIC Component Alignment (Java)](https://www.microscopyu.com/tutorials/dic-microscope-component-alignment)  
 
 ### [PeteM: DIC options compared](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9734)  
 Nikon Eclipse favored for De Senarmont system and long WD  
-**[De Senarmont Bias Retardation in DIC Microscopy](Bias Retardation in DIC Microscopy)  
-wants 1/4 wavelength retardation plate fixed while polarizer can rotate +/- 45 degrees.  
+[De Senarmont Bias Retardation in DIC Microscopy](Bias Retardation in DIC Microscopy)  
+wants 1/4 wavelength retardation plate fixed  
+while polarizer can rotate +/- 45 degrees.  
 
 ### [hkv: DIC setup](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=4040#p36805)  
-If you pull out one of the eye pieces and look down the tube,  
-you should see a white circle with a black stripe in the middle if DIC is properly aligned.  
+Look down an eye tube without eyepiece,  
+you should see a white circle with a black stripe in the middle  
+if DIC is properly aligned.  
 ![DIC objective back focal plane](https://www.microscopyu.com/assets/thumbnails/dic-alignment.jpg)  
 
 ### [abednego1995: 3 generations of Optiphot DIC](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=6593#p58881)  
-The 1st and 2nd are with single translating Nomarski prism above the objectives,  
-and the 3rd is a [Senarmont type set-up](https://www.manualslib.com/manual/1725578/Nikon-Optiphot-Pol.html?page=19) with dedicated prisms for each objective.  
+1st and 2nd use a single translating Nomarski prism above objectives; 
+3rd [Senarmont type](https://www.manualslib.com/manual/1725578/Nikon-Optiphot-Pol.html?page=19) has dedicated prisms per objective.  
 
 ### [rogeliomoreno's diascopic DIC considerations](https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=126130#p126130)  
 1. The objective's prism and the condenser's prism must match.  
    I did try to use Nikon objective's prisms (made for the N2 condenser's prism) with M condenser's prism and they did not work.  
 2. Condenser prims are made to be mounted at precise distance from the condenser's lens, close to focal point.  
 3. Prisms have to be oriented 45 degrees from polarizer direction  
-   (Polarizer is typically oriented left-right and the analyzer back-front of the microscope)  
-   First, find how objective's prism is oriented: removed the both prisms from the light train  
-   and put the polarizer and analyzer crossed (when the light that you see through the eyepieces is darkest),   
-   now put the objective's prism in the light train and remove one of the eyepieces and check for the black line:  
-   -  it should be oriented / or \ (at 45 degrees,  
+   (Polarizer is typically oriented left-right and analyzer back-front)  
+   First, find objective prism's orientation:  
+   remove both prisms from the light train,  
+   and cross the polarizer and analyzer  
+   (light through eyepieces is darkest),   
+   now put the objective's prism in the light train,  
+   remove an eyepieces and check for the black line:  
+   -  it should be oriented at 45 degrees,  
    -  *note*: not all prisms show the black line when put between crossed polarizers  
       (the Nikon N1, N2 family of DIC prisms do not show that line, but mostly do).  
-  Second, orient the condenser prism (the black line) in the same direction (/ or \) as the objective's prism,  
-  remove the objective prism from the light train and insert the condenser prism,  
-  turn that prism until its black line is in the same direction as that the objective's.  
-
-[Olympus diascopic DIC Configuration and Alignment](https://www.olympus-lifescience.com/en/microscope-resource/primer/techniques/dic/dicconfiguration/)  
+  Second, orient the condenser prism (the black line) in the same direction  
+  (/ or \) as the objective's prism,  
+  remove the objective prism from the light train  
+  and insert the condenser prism,  
+  turn that prism until its black line aligns with the objective's.  
 
 ### [Nikon EPI DIC prisms repurposed](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=13950)  
 
@@ -77,6 +83,8 @@ The manufacturer has to design the DIC prism in a way that it matches the positi
 ### [First steps in exploring (Zeiss) epi DIC](http://www.microscopy-uk.org.uk/mag/artjul13/dw-epiDIC.html)  
 
 ### [Epi-DIC for gemstone surface examination](https://www.zeiss.com/microscopy/en/resources/insights-hub/raw-materials/gemology-microscopy.html)  
+
+### [Olympus diascopic DIC Configuration and Alignment](https://www.olympus-lifescience.com/en/microscope-resource/primer/techniques/dic/dicconfiguration/)  
 
 ### [NicoVB:  table salt and DIC](https://www.photomacrography.net/forum/viewtopic.php?p=200022)  
 "let salt soak in water and let the water evaporate.  
@@ -103,7 +111,7 @@ but most drawings just have a straight line connecting the corners. Small but im
 
 ### [DIC interference fringe altered by tilting prisms](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9032)  
 
-### [DIC prism interference band location by measuring objective's rear focal plane using a laser pointer][https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=8594#p74473]   
+### [DIC prism interference band location by measuring objective's rear focal plane using a laser pointer](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=8594#p74473)   
 
 ### [Gerd: bright field EPI DIC DVD/CD](http://www.photomacrography.net/forum/viewtopic.php?t=12104)  
 ![Pit density on CD and DVD](http://www.photomacrography.net/forum/userpix/69_cdvsdvd_1.jpg)  
