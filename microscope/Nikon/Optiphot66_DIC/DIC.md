@@ -27,7 +27,7 @@ mostly meant for epi DIC but good without too.
 
 ### [PeteM: DIC options compared](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9734)  
 Nikon Eclipse favored for De Senarmont system and long WD  
-[De Senarmont Bias Retardation in DIC Microscopy](Bias Retardation in DIC Microscopy)  
+[De Senarmont Bias Retardation in DIC Microscopy](https://www.microscopyu.com/techniques/dic/de-s%C3%A9narmont-bias-retardation-in-dic-microscopy)  
 wants 1/4 wavelength retardation plate fixed  
 while polarizer can rotate +/- 45 degrees.  
 
@@ -78,7 +78,7 @@ if DIC is properly aligned.
 ### [S. R. Sanderson:  Simple, adjustable beam splitting element for differential interferometers based on photoelastic birefringence of a prismatic bar](https://authors.library.caltech.edu/6948/1/SANrsi05.pdf)  
 
 ### [DIC with non-DIC CF plan Nikon objectives?](https://www.photomacrography.net/forum/viewtopic.php?p=232998)  
-A DIC prism matches an objective's rear focal plane
+A DIC prism matches an objective's rear focal plane  
 (which is usually inside the objective,  
 so the DIC prism must be of the Nomarski type)  
 
