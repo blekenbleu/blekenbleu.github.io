@@ -37,7 +37,7 @@ if DIC is properly aligned.
 ![DIC objective back focal plane](https://www.microscopyu.com/assets/thumbnails/dic-alignment.jpg)  
 
 ### [abednego1995: 3 generations of Optiphot DIC](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=6593#p58881)  
-1st and 2nd use a single translating Nomarski prism above objectives; 
+1st and 2nd use a single translating Nomarski prism above objectives;  
 3rd [Senarmont type](https://www.manualslib.com/manual/1725578/Nikon-Optiphot-Pol.html?page=19) has dedicated prisms per objective.  
 
 ### [rogeliomoreno's diascopic DIC considerations](https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=126130#p126130)  
@@ -56,7 +56,7 @@ if DIC is properly aligned.
    -  *note*: not all prisms show the black line when put between crossed polarizers  
       (the Nikon N1, N2 family of DIC prisms do not show that line, but mostly do).  
   Second, orient the condenser prism (the black line) in the same direction  
-  (/ or \) as the objective's prism,  
+  (/ or \\) as the objective's prism,  
   remove the objective prism from the light train  
   and insert the condenser prism,  
   turn that prism until its black line aligns with the objective's.  
@@ -77,14 +77,13 @@ if DIC is properly aligned.
 ### [S. R. Sanderson:  Simple, adjustable beam splitting element for differential interferometers based on photoelastic birefringence of a prismatic bar](https://authors.library.caltech.edu/6948/1/SANrsi05.pdf)  
 
 ### [DIC with non-DIC CF plan Nikon objectives?](https://www.photomacrography.net/forum/viewtopic.php?p=232998)  
-The manufacturer has to design the DIC prism in a way that it matches the position of the exit pupil of the objective  
-(which is usually inside the objective, so the DIC prism has to be of the Nomarski type)  
+A DIC prism matches an objective's rear focal plane
+(which is usually inside the objective,  
+so the DIC prism must be of the Nomarski type)  
 
 ### [First steps in exploring (Zeiss) epi DIC](http://www.microscopy-uk.org.uk/mag/artjul13/dw-epiDIC.html)  
 
 ### [Epi-DIC for gemstone surface examination](https://www.zeiss.com/microscopy/en/resources/insights-hub/raw-materials/gemology-microscopy.html)  
-
-### [Olympus diascopic DIC Configuration and Alignment](https://www.olympus-lifescience.com/en/microscope-resource/primer/techniques/dic/dicconfiguration/)  
 
 ### [NicoVB:  table salt and DIC](https://www.photomacrography.net/forum/viewtopic.php?p=200022)  
 "let salt soak in water and let the water evaporate.  
@@ -100,23 +99,26 @@ Then mixed with alcohol."
  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; *Wollaston 
  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; 
  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; Nomarski*  
-So when we have a Nomarski prism, it's the front interference plane of the objective-side prism  
-that must coincide with the objective rear focal plane - not the prism itself.  
+The front interference plane of an objective-side Nomarski prism  
+must coincide with the objective's rear focal plane.  
 The upper wedge must be thinner than the lower wedge in a Nomarski prism,  
-but most drawings just have a straight line connecting the corners. Small but important difference.
-
-### [Nikon upper DIC prism for 160 TL is integrated with objective nosepiece](http://www.photomacrography.net/forum/viewtopic.php?f=30&t=23935)  
-
-### [Nikon EPI DIC prisms in transmitted DIC Phase Contrast condenser](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=13950)  
-
-### [DIC interference fringe altered by tilting prisms](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9032)  
+but most drawings just have a straight line connecting the corners.  
+Small but important difference.
 
 ### [DIC prism interference band location by measuring objective's rear focal plane using a laser pointer](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=8594#p74473)   
+
+### [DIC interference fringe altered by tilting prisms](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9032)  
 
 ### [Gerd: bright field EPI DIC DVD/CD](http://www.photomacrography.net/forum/viewtopic.php?t=12104)  
 ![Pit density on CD and DVD](http://www.photomacrography.net/forum/userpix/69_cdvsdvd_1.jpg)  
 
 ### [Esslinger + Gross: DIC vs PlasDIC; partially coherent illumination](https://onlinelibrary.wiley.com/doi/abs/10.1111/jmi.12248)  
 ![shown with infinity objective](https://onlinelibrary.wiley.com/cms/asset/741d118a-a7ef-4cf0-8526-a067d0d3152c/jmi12248-fig-0001-m.jpg)  
+
+### [Nikon upper DIC prism for 160 TL is integrated with objective nosepiece](http://www.photomacrography.net/forum/viewtopic.php?f=30&t=23935)  
+
+### [Nikon EPI DIC prisms in transmitted DIC Phase Contrast condenser](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=13950)  
+
+### [Olympus diascopic DIC Configuration and Alignment](https://www.olympus-lifescience.com/en/microscope-resource/primer/techniques/dic/dicconfiguration/)  
 
 ### [NIH: DIC shear modulation by LCD](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3695724)  
