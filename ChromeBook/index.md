@@ -3,6 +3,7 @@
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0"
 alt="Auction Sniper" title="Auction Sniper">
 </a>  
+
 ## Lenovo Chromebook C340 2-in-1 15.6" FHD IPS Touch i3-8130U 4GB RAM 32GB eMMC
 ![](s-1600.jpg)  
 item number: &nbsp; [304527111077](https://www.ebay.com/itm/304527111077)  
@@ -76,3 +77,8 @@ A satisfactory *for me* Windows PC replacement wants:
   - [How to use GitHub in Chrome OS (via Termux)](https://www.youtube.com/watch?v=KXLQcX3HbWw) <- video
 - GVim (text editor)
   - [GVim for Chromebook](https://www.bestchromebookapps.com/gvim-for-chromebook) 
+
+### [coding on a Chromebook: VSCode.dev](https://www.aboutchromebooks.com/news/a-new-option-to-code-on-a-chromebook-vscode-dev/)  
+[How to install and use VS Code on a Chromebook](https://chromeready.com/5207/install-vscode-on-chromebook/)  
+
+### [The github.dev web-based editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor)  
