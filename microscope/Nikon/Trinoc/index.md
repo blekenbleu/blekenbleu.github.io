@@ -258,5 +258,10 @@ Amazon thumbs screws arrived; thread matches and more comfortable than stock SVB
 ## Type Tc Trinocular Microscope Head  
  *received 23 Aug 2022 with [Metaphot](../Metaphot/)*
 ![Type Tc trinocular](Tc.jpg)  
-Photo tube mounts to the head by 3 screws;  
+Photo tube mounts to the head by 3 screws; removal should allow direct projection.  
 52-30mm step-down and 42-52mm step-up were ordered for a direct adapter.  
+After using chimney screws to center the photo tube in 52-30mm step-down ring:  
+![Type Tc photo tube](centered.jpg)  
+... its mounting holes were scribed and 1/8-inch holes drilled in that step-down ring:  
+![Type Tc step-down](TcRing.jpg)  
+... awaiting 42-52mm step-up ring to complete T2 adapter.  
