@@ -1,6 +1,7 @@
  *[back](./)*
 ## microscope optics basics - finite vs infinity-corrected objectives  
-To prime your thinking about lenses and ray diagrams, review [this explanation by Bill Otto](https://www.quora.com/Where-would-the-image-go-on-this-ray-diagram-of-a-telescope-What-about-the-axis-of-symmetry-Im-extremely-confused/answer/Bill-Otto-5).  
+To prime your thinking about lenses and ray diagrams, review
+[this explanation by Bill Otto](https://www.quora.com/Where-would-the-image-go-on-this-ray-diagram-of-a-telescope-What-about-the-axis-of-symmetry-Im-extremely-confused/answer/Bill-Otto-5).  
 ![Finite-conjugate microscope system with standardised tube length and infinite-conjugate microscope system with standardised tube lens](https://www.researchgate.net/publication/333091817/figure/fig4/AS:769795272220674@1560544903396/Finite-conjugate-microscope-system-with-standardised-tube-length-and-infinite-conjugate.png)  
 *Finite-conjugate microscope system vs. infinite-conjugate microscope system with tube lens.*  
 from:  [Systematic design of microscope objectives](https://www.researchgate.net/publication/333091817_Systematic_design_of_microscope_objectives_Part_I_System_review_and_analysis)  
@@ -84,3 +85,13 @@ Nikon Optiphot BD objectives expect 210mm tube length.
 
 ### [Canon EF sensor-to-flange depth: 44mm](https://briansmith.com/flange-focal-distance-guide/)  
 Add to extension tubes when testing lens focal lengths  
+
+### [compensate vs correct](https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=107377#p107377)  
+-   correction == positive correction in a downstream optic for upstream optic deficiency.  
+-   compensation == inverse correction in a downstream optic to cancel upstream optic over correction.  
+
+For chromatic aberrations, correcting optics display blue interior CA and yellow exterior CA.  
+These CAs are reversed in compensating optics.  
+
+### [Condenser achro, aplanatic, Abbe, finite vs infinity](https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=107377#p107377)
+
