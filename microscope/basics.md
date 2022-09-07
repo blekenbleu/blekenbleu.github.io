@@ -13,8 +13,10 @@ The upper diagram is supposed to represent a traditional (RMS == Royal Microscop
 "tube length" is approximately the objective's focal length for its specified magnification,  
 if that objective was a simple convex lens.  
 The lower diagram, which is nominally about more modern microscopes,   
-is arguably also more accurate for tradition "finite" microscopes,  
-if `Objective+Infinity space+Tube lens` are considered together as a nontrivial classic "finite" objective.  
+is arguably also more accurate for some "finite" microscopes,  
+if `Objective` + `Infinity space` + `Tube lens` are considered together as a compensated "finite" objective.  
+While infinity objectives can be used with a tube lens of any focal length,  
+specified magnification depends on that focal length.  
 
 #### [Abramowitz &amp; Davidson "Optical Microscopy"](https://micro.magnet.fsu.edu/primer/pdfs/microscopy.pdf)  
 #### [Douglas B. Murphy "FUNDAMENTALS OF LIGHT MICROSCOPY AND ELECTRONIC IMAGING"](https://www.biology.uoc.gr/courses/BIOL493/documents/book.pdf)  
@@ -24,8 +26,8 @@ if `Objective+Infinity space+Tube lens` are considered together as a nontrivial 
 #### Contrast and non-image-forming light.  
 While lenses can and do allow images to be focused on your retina,  
 they do not prevent other photons from also stimulating sensors.  
-When viewing a three-dimensional scene, perhaps focusing on a near object, 
-photons scattered from more distant objects may also land on the same photosensors.
+When viewing a three-dimensional scene, perhaps focusing on a near object,   
+photons scattered from more distant objects may also land on the same photosensors.  
 Some non-image-forming light can be blocked by an iris diaphragm, as in this diagram:  
 ![light field microscope diagram](https://www.researchgate.net/profile/Lois-Mignard-Debise/publication/324525451/figure/fig21/AS:615507233353755@1523759768932/Sketch-of-our-light-field-microscope.png)  
 *ignore that `Microlens Array`. That <font color=red>Relay part</font> is afocal photography, where `Field Lens` is the eyepiece or ocular.*  
