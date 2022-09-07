@@ -8,7 +8,7 @@ which actually included the correct slider
 
 ---
 
-#### Nikon Rotatable Analyzer Polarizer Slider EPI Illuminator Microscope 20mm  
+#### Nikon Rotatable Analyzer [Polarizer](../polarize) Slider EPI Illuminator Microscope 20mm  
 ![eBay](Images/rotatable.jpg)  
 eBay item: &nbsp;265160069244  
 Actually fits [Metaphot](../Metaphot/) head  
