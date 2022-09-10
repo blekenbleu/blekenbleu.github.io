@@ -74,11 +74,15 @@ Nikon Optiphot BD objectives expect 210mm tube length.
 - DoF (mm) = `0.00055/(N.A.**2)`  
 
 ### [Zerene landscape focus tables](https://zerenesystems.com/cms/stacker/docs/tables/landscapes)  
-### [*effective* aperture](https://www.photomacrography.net/forum/viewtopic.php?f=29&t=44327)  
+### [*effective* aperture](https://www.photomacrography.net/forum/viewtopic.php?f=29&t=44327) (working aperture)  
 - Coupled lenses, stopped in the front, with the rear lens focused at infinity: `m * lens aperture`  
 - Single lens, focused by extension: `(m+1) * lens aperture`  
 - Teleconverter factor x inserted between camera and all other optics: `x * lens aperture`  
 - Microscope objectives used as designed: `m / (2 * N.A.)`  
+- [equivalent aperture](https://www.photomacrography.net/forum/viewtopic.php?p=77039#p77039)
+   e.g. "How does a 4X NA 0.1 objective compare to an f/whatever macro lens?"  
+   `F=1/(2*NA)` is not a bad approximation.  
+   A better approximation would be `F=1/(2*NA) * M/(M+1)`, where `M` is rated magnification.
 
 ### ["pupil ratio"](https://www.photomacrography.net/forum/viewtopic.php?f=29&t=8895) compensates effective aperture for adding extension
 ### [1:4 to 8:1 magnification FAQ](https://www.photomacrography.net/forum/viewtopic.php?f=29&t=24891)
