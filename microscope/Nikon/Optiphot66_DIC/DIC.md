@@ -123,3 +123,6 @@ Small but important difference.
 ### [Olympus diascopic DIC Configuration and Alignment](https://www.olympus-lifescience.com/en/microscope-resource/primer/techniques/dic/dicconfiguration/)  
 
 ### [NIH: DIC shear modulation by LCD](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3695724)  
+
+### [DIC by Savart plates](https://www.photomacrography.net/forum/viewtopic.php?t=193) used on Nikon S  
+   - [Differential interference contrast microscopy using Savart plates](https://iopscience.iop.org/article/10.1088/2040-8986/aa5d62)  
