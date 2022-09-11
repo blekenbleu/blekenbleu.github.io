@@ -267,6 +267,6 @@ After using chimney screws to center the photo tube in 52-30mm step-down ring:
 ... awaiting 42-52mm step-up ring to complete T2 adapter.  
 
 *6 Sept - 42-52mm step-up ring arrived*  
-M6 mkII needs > 10mm additional spacing between step-up ring and EOS-M M42 adapter;  
+M6 mkII needs > 10mm additional spacing;  
 currently using a pair of 52mm camera filters;  
 will order an M42 10-15mm helicoid after late Sept trip.  
