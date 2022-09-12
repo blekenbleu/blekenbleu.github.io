@@ -102,3 +102,4 @@ These CAs are reversed in compensating optics.
 ### [Condenser achro, aplanatic, Abbe, finite vs infinity](https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=107377#p107377)
 #### [Tweaking Abbe condensers](http://www.microscopy-uk.org.uk/mag/artapr08/pj-optimal.html)  
 Abbe flaws begin to bother above NA 0.6-7; elevate the Abbe to optimize filling the objective's back lens.  
+#### Diopter vs focal length:  divide into 1000mm, e.g. diopter = 2 for 500mm  
