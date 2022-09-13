@@ -1,0 +1,145 @@
+<html>
+<head>
+<style>
+body {
+   width:960px;
+   margin-left:60px;
+}
+</style>
+<title>Microscope Basics</title>
+</head>
+<body>
+<font size=-1><i><a href="../">back</a></i></font>
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<br>
+<h2>Microscope Basics</h2>
+<li><a href="http://www.prc68.com/I/MicroPhotography.html">Another (pr68.com) attempt at basics for Nikon BD</a>
+<li><a href="#SA">Aberrations - spherical, chromatic</a>
+<li><a href="#NA">Aperture - effective/working, equivalent, pupil ration, vs numerical (N.A.)</a>
+<li><a href="#EF">Canon EF DSLR sensor-to-flange depth</a>
+<li><a href="#COND">Condensers</a>
+<li><a href="#CONTRAST">Contrast and non-image-forming light: &nbsp;Kohler</a>
+<li><a href="#DoF">Depth-of-Focus scaling</a>
+<li><a href="#DIOP">Diopter vs focal length</a>
+<li><a href="#LENS">Lens formulae</a>
+<li><a href=#RMS>Magnification: &nbsp;Classic compound microscope</a>
+<li><a href="#OBJ">Objectives: &nbsp;finite vs infinity-corrected</a>
+<li><a href="#Z">Zerene focus stacking</a>
+<li><a href="#FAQ">1:4 to 8:1 magnification FAQ</a>
+
+<a name="OBJ"><h3>finite vs infinity-corrected objectives</h3></a>
+To prime your thinking about lenses and ray diagrams, review
+<a href="https://www.quora.com/Where-would-the-image-go-on-this-ray-diagram-of-a-telescope-What-about-the-axis-of-symmetry-Im-extremely-confused/answer/Bill-Otto-5">this explanation by Bill Otto</a>.<br>
+<br>
+<img alt="Finite-conjugate microscope system with standardised tube length and infinite-conjugate microscope system with standardised tube lens" src="https://www.researchgate.net/publication/333091817/figure/fig4/AS:769795272220674@1560544903396/Finite-conjugate-microscope-system-with-standardised-tube-length-and-infinite-conjugate.png"><br clear=all>
+<i>Finite-conjugate microscope system vs. infinite-conjugate microscope system with tube lens.</i><br>
+from:  &nbsp;<a href="https://www.researchgate.net/publication/333091817_Systematic_design_of_microscope_objectives_Part_I_System_review_and_analysis">Systematic design of microscope objectives</a><br>
+The vertical dotted line where rays cross at right end of tube length is called the objective's <i>rear conjugate</i>.<br>
+To the extent that it is, a finite objective's correction is designed for that tube length,<br>
+keeping in mind than many objectives also depend on both slide cover glass and eyepiece for correction.<br>
+<h4>More explanation</h4>
+The upper diagram is supposed to represent a traditional (RMS == Royal Microscope Society) microscope.<br>
+"tube length" is approximately the objective's focal length for its specified magnification,<br>
+if that objective was a simple convex lens.<br>
+The lower diagram, which is nominally about more modern microscopes,<br>
+is arguably also more accurate for some "finite" microscopes,<br>
+if <code>Objective</code> + <code>Infinity space</code> + <code>Tube lens</code> are considered together as a compensated "finite" objective.<br>
+While infinity objectives can be used with a tube lens of any focal length,<br>
+specified magnification depends on that focal length.<br>
+
+<h4><a href="https://micro.magnet.fsu.edu/primer/pdfs/microscopy.pdf">Abramowitz &amp; Davidson "Optical Microscopy"</a></h4>
+<h4><a href="https://www.biology.uoc.gr/courses/BIOL493/documents/book.pdf">Douglas B. Murphy "FUNDAMENTALS OF LIGHT MICROSCOPY AND ELECTRONIC IMAGING"</a></h4>
+<h4><a href="https://www.degruyter.com/document/doi/10.1515/aot-2019-0002/html?lang=en">Yang &amp; Gross "Systematic design of microscope objectives"</a></h4>
+
+<a name="CONTRAST"><h3>Contrast and non-image-forming light.</h3></a>
+While lenses can and do allow images to be focused on your retina,<br>
+they do not prevent other photons from also stimulating sensors.<br>
+When viewing a three-dimensional scene, perhaps focusing on a near object,<br>
+photons scattered from more distant objects may also land on the same photosensors.<br>
+Some non-image-forming light can be blocked by an iris diaphragm, as in this diagram:<br>
+<img alt="light field microscope diagram" src="https://www.researchgate.net/profile/Lois-Mignard-Debise/publication/324525451/figure/fig21/AS:615507233353755@1523759768932/Sketch-of-our-light-field-microscope.png"><br clear=all>
+<i>Ignore that <font color=blue>Microlens Array</font>. <font color=red>Relay part</font> is afocal photography, where <b>Field Lens</b> is the eyepiece or ocular.</i><br>
+
+<h3><a href="https://en.wikipedia.org/wiki/K%C3%B6hler_illumination">Kohler illumination: &nbsp;lamp, field diaphragm and condenser alignment</a></h3>
+Any number of websites will waste space pointing out how important it is,<br>
+then provide miserable, incomplete and wrong instructions.<br>
+Fortunately, <a href="https://en.wikipedia.org/wiki/K%C3%B6hler_illumination">Wikipedia</a> does all right; &nbsp
+<a href="AO/#Kohler"><i>here are my Kohler experiences</i></a>.<br>
+
+<a name="LENS"><h3>Lens formulae</h3></a>
+<b>simple</b>
+<li><code>1/f = 1/do + 1/di</code> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {1} <code>di</code> <i>becomes</i> <code>f</code> <i>for infinite</i> <code>do</code> 
+<li><code>m = di/do</code> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {2} <i>zero magnification for lens focused @ infinity</i>
+<br>
+<b>focused at 2 distances</b><br>
+<li><code>f = (d2 - d1)/(m2 - m1)</code>; {3} <i>alternatively:</i>
+<li><code>d2 = d1 + f*(m2 - m1)</code>
+<li><code>m2 = m1 + (d2 - d1)/f</code>  &nbsp;<i>change magnification by changing focus distance</i>
+
+<a name=RMS><h3>Classic (RMS) compound microscope magnification: &nbsp;<code>m = (L/fo)*(D/fe)</code>, where:</h3></a>
+<li><code>m</code> = magnification
+<li><code>L</code> = tube length (160mm)
+<li><code>D</code> = normal vision relaxed distance (250mm)
+<li><code>f</code> = focal length
+<li><code>fo</code> = objective focal length
+<li><code>fe</code> = eyepiece focal length
+<li><code>di</code> = lens to image distance
+<li><code>do</code> = lens to object distance
+<br>
+For 160mm tube length, a 10x objective has 16mm focal length<br>
+and a 10x eyepiece has 25mm focal length.<br>
+For infinity scopes, substitute "tube lens focal length" for "tube length".<br>
+Olympus infinity objectives expect 180mm tube lens focal length;<br>
+Nikon Optiphot BD objectives expect 210mm tube length.<br>
+
+<a name="SA"><h3>Aberrations</h3></a>
+Spherical lens surfaces are relatively easy to make, but not ideal.<br>
+Combining different lenses of different materials can minimize spherical lens aberrations.<br>
+<a href="https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=107377#p107377"><b>compensate vs correct</b></a>
+<li>correction == positive correction in a downstream optic for upstream optic deficiency.
+<li>compensation == inverse correction in a downstream optic to cancel upstream optic over correction.
+<a name="CA"><li><b>chromatic aberrations</b><br></a>
+ &nbsp; &nbsp; Correcting optics display blue interior CA and yellow exterior CA; &nbsp;reversed in compensating optics.
+
+<a name="NA"><h3><a href="https://www.photomacrography.net/forum/viewtopic.php?f=29&t=44327"><i>effective</i> aperture</a> (working aperture)</h3></a>
+<li>Coupled lenses, stopped in the front, with the rear lens focused at infinity: &nbsp;<code>m * lens aperture</code>
+<li>Single lens, focused by extension: &nbsp;<code>(m+1) * lens aperture</code>
+<li>Teleconverter factor x inserted between camera and all other optics: &nbsp;<code>x * lens aperture</code>
+<li>Microscope objectives used as designed: &nbsp;<code>m / (2 * N.A.)</code>
+<li><a href="https://www.photomacrography.net/forum/viewtopic.php?p=77039#p77039"><b>equivalent aperture</b></a>
+   e.g. "How does a 4X N.A. 0.1 objective compare to an f/whatever macro lens?"<br>
+ &nbsp; &nbsp;  <code>F=1/(2*N.A.)</code> &nbsp;is not a bad approximation.<br>
+ &nbsp; &nbsp;  A better approximation would be <code>F=1/(2*N.A.) * M/(M+1)</code>, where <code>M</code> is rated magnification.
+
+<h3>"<a href="https://www.photomacrography.net/forum/viewtopic.php?f=29&t=8895">pupil ratio</a>"
+ compensates effective aperture for adding extension</h3>
+<h3>aperture vs N.A. : &nbsp;<code>N.A. = 1/(2 * f/#)</code></h3><table border=2><tr>
+<td> f/# </td><td>  1.2  </td><td>  1.4 </td><td>  1.8 </td><td>  2  </td><td>  2.8  </td><td>   4  </td><td>  5.6  </td><td>   8   </td><td>  11  </td><td>   16   </td></tr><tr>
+<td> N.A.</td><td> .4167 </td><td> .357 </td><td> .417 </td><td> .25 </td><td> .1786 </td><td> .125 </td><td> .0893 </td><td> .0625 </td><td> .045 </td><td> .03125 </td></tr></table>
+
+<a name="EF"><h3>Canon EF sensor-to-flange depth: &nbsp;<a href="https://briansmith.com/flange-focal-distance-guide/">44mm</a></h3></a>
+Add to extension tubes when testing lens focal lengths<br>
+
+<a name="COND"><h3><a href="https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=107377#p107377">Condensers</a>: &nbsp;achro, aplanatic, Abbe; &nbsp;finite vs infinity</h3></a>
+<a name="ABBE"><b><a href="http://www.microscopy-uk.org.uk/mag/artapr08/pj-optimal.html">Tweaking Abbe condensers</a></b></a><br>
+Abbe flaws begin to bother above N.A. 0.6-7; elevate an Abbe to optimize filling the objective's back lens.<br>
+
+<a name="DoF"><h3><a href="https://www.photomacrography.net/forum/viewtopic.php?f=8&t=19755">Depth-of-Focus scaling</a></h3></a>
+<code>DoF2 = DoF1 * (f/#2/f/#1) * (m1/m2)**2</code>
+
+<a name="DIOP"><h4>Diopter vs focal length:  &nbsp;divide into 1000mm, e.g. <code>diopter = 2 for 500mm fl</code></h4></a>
+
+<a name="Z"><h3><a href="https://zerenesystems.com/cms/stacker/docs/tables/macromicrodof">Zerene macro step size tables</a>: &nbsp;magnification vs frame width, magnification vs aperture</h3></a>
+<li>magnification <code>m = sensor width / frame width</code>
+<li>DoF (mm) = <code>0.0022*(((m+1)*f/#)/m)**2</code>
+<li>DoF (mm) = <code>0.00055/(N.A.**2)</code>
+
+<h3><a href="https://zerenesystems.com/cms/stacker/docs/tables/landscapes">Zerene landscape focus tables</a></h3>
+
+<a name="FAQ"><h3><a href="https://www.photomacrography.net/forum/viewtopic.php?f=29&t=24891">1:4 to 8:1 magnification FAQ</a></h3></a>
+<img src="http://www.photomacrography.net/forum/userpix/671_Getting_closer_1_table_3__1.png">
+
+<p> &nbsp <br> &nbsp <br> </p> <p> &nbsp <br> &nbsp <br> </p> <p> &nbsp <br> &nbsp <br> </p> <p> &nbsp <br> &nbsp <br> </p> <p> &nbsp <br> &nbsp <br> </p><hr>
+</body></html>
