@@ -33,9 +33,9 @@ See photos for exact item, condition, and details on model available.
 | ![](lit_meter.jpg) | ![](unlit_meter.jpg) |  
 
 ## Received 9 June 2022  
-Despite being advertised as a Labophot,  
-tt is an Optiphot, with Nikon Optiphot plate on its arm.  
-Plastic base pads are fine. 
+Despite being advertised as a Labophot,
+it is an Optiphot, as embossed on its "Nikon Optiphot" arm plate.  
+Plastic base pads are fine.&nbsp; 
 Those tend to be problematic on Optiphot 2...  
 
 The lamphouse was thankfully intact, having been removed as requested.  

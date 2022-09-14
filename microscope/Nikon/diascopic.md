@@ -1,5 +1,5 @@
 *[back](./)*
-## Optiphot 66 diascopic conversion  
+## Optiphot 66 diascopic conversions  
 
 [The base](DIA-EPI_base/) arrived 1 June 2022
 with broken condenser carrier centering screw:  
@@ -9,20 +9,20 @@ AO condenser dovetail is too large for Optiphot fork.
 
 Optiphot-66 diascopic base is essentially that of a Labophot,  
 lacking Kohler lamp filament alignment provisions;  
-lamp diffuser is buried in the base,  
-and the lamp holder lacks alignment provisions.  
+illumination diffuser is buried in the base,  
+and bulb location in the lamp house is not adjustable.  
 
-Diascopic wiring in the base was hacked;  
-originally probably provided 6V out side receptacle based on adjacent switch.  
 AC power is/was switched by potentiometer on the front.  
-Instead, someone converted side switch to switch AC on/off,  
-disconnected side receptacle, ran AC cord from another 6V transformer  
+Diascopic wiring in the base was hacked,  
+originally providing 6V out 2-prong side receptacle based on adjacent switch.  
+Someone converted that side switch to instead turn AC on/off,  
+disconnected the side receptacle, ran AC cord from another 6V transformer  
 thru a hole drilled in the other side rear of the base,  
 hacked into the neutral AC line for the base transformer  
 and added a 4 pole double throw center off switch  
-to select either th base or external transformer,  
-running green wire roung and unfused AC hot from the right side rear  
-to the left side added 4PDT switch and tranformer power cord.  
+to select either the base or external transformer,  
+running green wire ground and unfused AC hot from the right side rear  
+to that left side added 4PDT switch and tranformer power cord.  
 
 Fine focus shaft was broken off at one end.
 Loosening coarse focus flanges from their threaded tubing is problematic;
@@ -30,13 +30,13 @@ thread locker is wanted to set slip clutch resistance.
 Removing a condenser focus rack from its substage bracket
 seemingly requires a special wrench to loosen a pinion bearing retainer.
   
-6V wiring to 20W base lamp also appears to have been hacked...  
+6V wiring to 20W base lamp was also hacked...  
 
 Cutout for 6V receptacle is approx 25x11.6mm;  perhaps for a small panel meter...  
 
 ## Restored base wiring  
 
-An Optiphot-66 would originally have had wiring from its
+An Optiphot-66 originally had wiring from its
 **DIA EPI** switch  
 to adjacent receptacle for powering a (6V, 20W) EPI illuminator,  
 which is useless without compatible cable connectors and illuminator.  
@@ -65,7 +65,7 @@ from lamp connections and red from the bridge rectifier.
 
 ![base wiring](Images/chassis.jpg)  
 This 6V system seeming could be easily [converted to LED](Labophot/#led-conversion);  
-a common-emitter transistor is more nearly constant current than constant voltage...  
+a common-emitter transistor can be nearly constant current than constant voltage...  
 
 ### base mechanical
 The section of broken centering screw remaining in the condenser carrier was short,  
@@ -76,8 +76,9 @@ A centering screw and field lens were still needed.
 ### Optiphot 1  
 What was [listed as a Labophot](Optiphot/) is actually an [Optiphot 1](Optiphot/#received-9-june-2022).  
 In addition to the Kohler illumination and both condenser centering screws,  
-it has a more powerful lamp house and what appears to be a stage that rotates about 270 degrees as well as translates.  
-Its illumination cannot be adapted to the -66, but is altogether a better, more capable frame..  
+it has a more powerful (50W) lamp house and a stage that rotates (about 270 degrees) as well as translates.  
+Swapping vertical illuminator's 12V bulb to 6V (LED) would enable powering by -66 6V supply;  
+Optiphot 1, after fine focus repair, will be a more capable frame, except for stage size..  
 
 ## 6 July: discopic transplant  
 The 1 June diascopic base has been mostly disassembled for several weeks;  
@@ -100,3 +101,17 @@ One of 4 screws securing the Optiphot-66 stage to its substage
 was definitely non-standard, but was reused rather than further mess  
 with corresponding threads in the stage.  
 ![Optiphot-66 w/diascopic base](Images/diascopic-66.jpg)  
+
+## 14 Sept 2022: arm transplant 
+Given that [the 1 June purchase](DIA-EPI_base/) was basically a bust,
+and the main things wrong with [20 July DIC Optiphot 66](Optiphot66_DIC/) were:  
+- missing stage  
+- failed fine focus  
+
+... then swapping good arm from the original (March 2021) Optiphot 66  
+onto unmolested DIC Optiphot 66 base consolidates best parts.  
+- 4 screws and field lens bezel to remove base optics and electronics from casting;  
+- 4 screws and long coiled focus spring to remove base casting from arm.  
+
+DIC Optiphot 66 EPI base power receptical has 4 prongs, compatible with (50W) vertical illuminators,  
+instead of 2 prongs of 1 June base.  
