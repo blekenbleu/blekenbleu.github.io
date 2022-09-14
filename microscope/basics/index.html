@@ -5,6 +5,9 @@ body {
    width:960px;
    margin-left:60px;
 }
+h2, h3, h4, h5 {
+   margin-bottom:0.5px;
+}
 </style>
 <title>Microscope Basics</title>
 </head>
@@ -17,7 +20,7 @@ body {
 <h2>Microscope Basics</h2>
 <li><a href="http://www.prc68.com/I/MicroPhotography.html">Another (pr68.com) attempt at basics for Nikon BD</a>
 <li><a href="#SA">Aberrations - spherical, chromatic</a>
-<li><a href="#NA">Aperture - effective/working, equivalent, pupil ration, vs numerical (N.A.)</a>
+<li><a href="#NA">Aperture</a> - effective/working, equivalent, pupil ratio, vs numerical (N.A.)
 <li><a href="#EF">Canon EF DSLR sensor-to-flange depth</a>
 <li><a href="#COND">Condensers</a>
 <li><a href="#CONTRAST">Contrast and non-image-forming light: &nbsp;Kohler</a>
@@ -73,12 +76,13 @@ Fortunately, <a href="https://en.wikipedia.org/wiki/K%C3%B6hler_illumination">Wi
 <li><code>1/f = 1/do + 1/di</code> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {1} <code>di</code> <i>becomes</i> <code>f</code> <i>for infinite</i> <code>do</code> 
 <li><code>m = di/do</code> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {2} <i>zero magnification for lens focused @ infinity</i>
 <br>
-<b>focused at 2 distances</b><br>
+<b>Magnification change by focus distance</b><br>
 <li><code>f = (d2 - d1)/(m2 - m1)</code>; {3} <i>alternatively:</i>
 <li><code>d2 = d1 + f*(m2 - m1)</code>
-<li><code>m2 = m1 + (d2 - d1)/f</code>  &nbsp;<i>change magnification by changing focus distance</i>
-
-<a name=RMS><h3>Classic (RMS) compound microscope magnification: &nbsp;<code>m = (L/fo)*(D/fe)</code>, where:</h3></a>
+<li><code>m2 = m1 + (d2 - d1)/f</code><br>
+<a name=RMS><b>Magnification for classic (RMS) compound microscope</b><br>
+<li><code>m = (L/fo)*(D/fe)</code>,<br>
+...<i>where</i>:</a>
 <li><code>m</code> = magnification
 <li><code>L</code> = tube length (160mm)
 <li><code>D</code> = normal vision relaxed distance (250mm)
@@ -95,23 +99,25 @@ Olympus infinity objectives expect 180mm tube lens focal length;<br>
 Nikon Optiphot BD objectives expect 210mm tube length.<br>
 
 <a name="SA"><h3>Aberrations</h3></a>
-Spherical lens surfaces are relatively easy to make, but not ideal.<br>
-Combining different lenses of different materials can minimize spherical lens aberrations.<br>
-<a href="https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=107377#p107377"><b>compensate vs correct</b></a>
+<li>Spherical lens surfaces are relatively easy to produce, but not ideal.
+<li>Combining different <a href="https://en.wikipedia.org/wiki/Dispersion_(optics)">dispersions</a> and
+<a href="https://en.wikipedia.org/wiki/Refractive_index">refractive indices</a> can <a href="https://en.wikipedia.org/wiki/Doublet_(lens)">reduce lens aberrations</a>.<br>
+<a href="https://www.microbehunter.com/microscopy-forum/viewtopic.php?p=107377#p107377"><b>Compensate vs correct</b></a>
 <li>correction == positive correction in a downstream optic for upstream optic deficiency.
 <li>compensation == inverse correction in a downstream optic to cancel upstream optic over correction.
-<a name="CA"><li><b>chromatic aberrations</b><br></a>
- &nbsp; &nbsp; Correcting optics display blue interior CA and yellow exterior CA; &nbsp;reversed in compensating optics.
+<a name="CA"><b>Chromatic Aberrations</b> (CA)<br></a>
+<li>Correcting optics display blue interior CA and yellow exterior CA; &nbsp;reversed in compensating optics.
 
-<a name="NA"><h3><a href="https://www.photomacrography.net/forum/viewtopic.php?f=29&t=44327"><i>effective</i> aperture</a> (working aperture)</h3></a>
+<h3>Aperture</h3>
+<a name="NA"><a href="https://www.photomacrography.net/forum/viewtopic.php?f=29&t=44327"><b>effective</b></a> (working aperture)</a>
 <li>Coupled lenses, stopped in the front, with the rear lens focused at infinity: &nbsp;<code>m * lens aperture</code>
 <li>Single lens, focused by extension: &nbsp;<code>(m+1) * lens aperture</code>
 <li>Teleconverter factor x inserted between camera and all other optics: &nbsp;<code>x * lens aperture</code>
-<li>Microscope objectives used as designed: &nbsp;<code>m / (2 * N.A.)</code>
-<li><a href="https://www.photomacrography.net/forum/viewtopic.php?p=77039#p77039"><b>equivalent aperture</b></a>
+<li>Microscope objectives used as designed: &nbsp;<code>m / (2 * N.A.)</code><br>
+<a href="https://www.photomacrography.net/forum/viewtopic.php?p=77039#p77039"><b>equivalent</b></a>
    e.g. "How does a 4X N.A. 0.1 objective compare to an f/whatever macro lens?"<br>
- &nbsp; &nbsp;  <code>F=1/(2*N.A.)</code> &nbsp;is not a bad approximation.<br>
- &nbsp; &nbsp;  A better approximation would be <code>F=1/(2*N.A.) * M/(M+1)</code>, where <code>M</code> is rated magnification.
+<li><code>f=1/(2*N.A.)</code> &nbsp;is not a bad approximation.<br>
+<li>A better approximation would be <code>f=1/(2*N.A.) * M/(M+1)</code>, where <code>M</code> is rated magnification.
 
 <h3>"<a href="https://www.photomacrography.net/forum/viewtopic.php?f=29&t=8895">pupil ratio</a>"
  compensates effective aperture for adding extension</h3>
