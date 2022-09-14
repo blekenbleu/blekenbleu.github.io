@@ -102,11 +102,15 @@ was definitely non-standard, but was reused rather than further mess
 with corresponding threads in the stage.  
 ![Optiphot-66 w/diascopic base](Images/diascopic-66.jpg)  
 
+<a name="arm">
+
 ## 14 Sept 2022: arm transplant 
 Given that [the 1 June purchase](DIA-EPI_base/) was basically a bust,
 and the main things wrong with [20 July DIC Optiphot 66](Optiphot66_DIC/) were:  
 - missing stage  
 - failed fine focus  
+
+</a>
 
 ... then swapping good arm from the original (March 2021) Optiphot 66  
 onto unmolested DIC Optiphot 66 base consolidates best parts.  
