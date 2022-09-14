@@ -113,5 +113,5 @@ onto unmolested DIC Optiphot 66 base consolidates best parts.
 - 4 screws and field lens bezel to remove base optics and electronics from casting;  
 - 4 screws and long coiled focus spring to remove base casting from arm.  
 
-DIC Optiphot 66 EPI base power receptical has 4 prongs, compatible with (50W) vertical illuminators,  
-instead of 2 prongs of 1 June base.  
+DIC Optiphot 66 base EPI power receptical has 4 prongs, compatible with (50W) vertical illuminators,  
+instead of 2 prongs on 1 June base.  
