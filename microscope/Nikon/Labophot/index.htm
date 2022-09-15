@@ -60,15 +60,15 @@ Currents were measured using a CA-60 AC/DC clamp.<br>
 </ul>
 <br>
 LEDs behave differently:<ul compact>
-<li> For the (2N3716) transistor to behave as a more nearly constant current source,<br>
-  replace variable resistor with potentiometer between Vcc and ground<br>
-  with wiper to base, increasing negative feedback,<br>
+<li> For the (2N3716) transistor to work as a nearly constant current source,<br>
+  reconfigure variable resistor as a voltage divider between +/-Vcc<br>
+  with wiper to base, causing negative feedback<br>
   as base-to-emitter voltage increases with current.
 <li> Selected LED should be bright enough with 1A<br> that 0.65V is maximum base Voltage;<br>
-   10K above 1K potentiometer should work;
+   680 Ohms above 1K potentiometer should sufficiently limit current;<br>
   need to determine minimum base drive for useful brightness.<br>
   to establish resistance between 1K potentiometer and ground.
-<li>LED will drop nearly constant (6)V; transistor will dissapte < 1W.   
+<li>LED will drop nearly constant 6V; transistor will dissipate < 1W.   
 <li> Above some voltage threshold, current increases with temperature.
 <li> this effectively decreases resistance<br>
   increasing transistor collector-emitter voltage and current<br>
@@ -93,7 +93,17 @@ OFF                             10      0       0
 5.5     6.8     2       .81     2870    47      4.5
 6       6.6     0.9     .85     3170    69      5.5   
 </pre></ul>
-<a href="https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=5166">Francisco did an LED replacement</a> similar to my intent:
-<img align=top src="http://thumbs.subefotos.com/dbca8f258b5b10b61623afa86c5cf1e7o.jpg">
+<table><tr><td width=70%>
+<a href="https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=5166">Francisco made an LED replacement</a> similar to my intent:<br>
+<br>
+To power a 5W LED instead of 20W halogen,<br>
+replace 1K variable resistor between 2N3716 collector and base,<br>
+which supplies a minimum of 1mA forward bias,<br>
+rewiring the potentiometer as a voltage divider with:
+<li>680 Ohms in series between CW and +Vcc (about 8VDC),
+<li>wiper to base, and
+<li>CCW to -Vcc</td><td>
+<img align=right src="http://thumbs.subefotos.com/dbca8f258b5b10b61623afa86c5cf1e7o.jpg"></td></tr></table>
+
 </body>
 </html>
