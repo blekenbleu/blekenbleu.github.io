@@ -7,9 +7,10 @@
 
 The Optiphot was introduced around 1978, inheriting some features from 1976 Metaphot and Biophot,  
 with the same [CF](../Metaphot/#CF) optics but more options and some cost reductions, including lower illumination power.
-- [Optiphot Brochure](http://earth2geologists.net/Microscopes/documents/Nikon_Optiphot_Labophot_Pol_brochure.pdf)  
 - [Instruction manual](https://cmrf.research.uiowa.edu/sites/cmrf.research.uiowa.edu/files/nikon-optiphot-manual_0.pdf)  
 - [Optiphot @ lavinia.as.arizona.edu](https://lavinia.as.arizona.edu/~mtuell/scopes/Optiphot.php)  
+- [Optiphot Pol Brochure](http://earth2geologists.net/Microscopes/documents/Nikon_Optiphot_Labophot_Pol_brochure.pdf)  
+- [Optiphot Pol manual](https://www.manualslib.com/products/Nikon-Optiphot-Pol-10768455.html)  
 
 eBay item number: 294867880389  
 Condition: Used  
