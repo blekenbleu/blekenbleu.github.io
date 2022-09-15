@@ -37,6 +37,8 @@ Optiphot frames come in 4 flavors:
 * Optiphot-200 and -300, which (like 150) uses infinity objectives, but on frames more similar to Eclipse  
 
 #### [Labophot 1](Labophot/)  
+-  [LED conversion](Labophot/#LED)  
+
 #### [Metaphot](Metaphot/), first of CF 210mm tube length microscopes  
 #### [Optiphot 1](Optiphot/)  
 #### [Optiphot-66 DIC](Optiphot66_DIC/)  
