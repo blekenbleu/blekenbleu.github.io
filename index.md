@@ -27,8 +27,8 @@
 
 ## [Microscopes and photomicography](microscope/)  
 ### &nbsp; American Optical [Series 10](microscope/#AO) / [Series 120](microscope/AO) / [Reichert EPIStar](microscope/#EPIStar)
-### &nbsp; Nikon [Optiphot 66](microscope/Nikon) / [Optiphot 1](microscope/Nikon/Optiphot)
-### &nbsp; [cameras](Canon)
+### &nbsp; Nikon [Optiphot 66](microscope/Nikon) / [Optiphot 1](microscope/Nikon/Optiphot) [Metaphot](microscope/Nikon/Metaphot)
+## [Cameras &amp; lenses (Canon)](Canon)
 
 ## [ab]using Microsoft Visual Studio Community 2017
 * [shared installation](VSC2017)
