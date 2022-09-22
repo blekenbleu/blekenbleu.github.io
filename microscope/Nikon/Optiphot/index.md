@@ -91,3 +91,15 @@ so presumably matching fine focus shaft lengths.
 Bought a [Zeiss 0.9 flip-top condenser](../../ZeissCondenser);  got [some advice](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=5&t=15701).  
 Bought a Nikon swing-out condenser; not enough working distance for 3mm epi plate over the stage.  
 [ELWD condenser](../ELWDcondenser/) arguably has too much working distance.  
+
+### Nosepiece turret  
+[abednego1995](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=5&t=16273) explained difference from infinite semiconductor inspection Optiphot 100 series turret;  
+
+eBay itme:&nbsp; [173262463509](https://www.ebay.com/itm/173262463509)  
+Condition:&nbsp; Used  
+![](nosepiece0.jpg) &nbsp; ![](nosepiece1.jpg)  
+
+A Nikon 5 space microscope turret that fits Microphot, Labophot and Optiphot for sure.  
+It may fit other models.  
+The turret is in excellent condition.  
+
