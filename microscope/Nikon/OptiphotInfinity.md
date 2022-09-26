@@ -1,12 +1,14 @@
  *[back](photo)*
 ## (almost) Infinity-focused Optiphot trinocular heads  
-Nikon Optiphot M Plan (EPI) objectives were designed for 210mm tube length.  
+Nikon Optiphot (CF) M Plan & EPI objectives have 210mm tube length.  
 Only ["F" trinolar head](Trinoc/#F) focus objective rays at 210mm;  
-more common "T" heads have a pseudo-[infinity space around their trinocular prism](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=28&t=9092&start=60#p93275):
+"T" and "UW" heads have a pseudo-[infinity space around prisms](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=28&t=9092&start=60#p93275):
 ![Nikon T head schematic](http://www.photomacrography.net/forum/userpix/3229_Nikon_lightpath_1.jpg)  
-Nikon's chimney for CF PL has an M50 x 0.75 external thread and positive lens.  
-Removing that chimney allows the infinite image to continue;   
-a camera with 250mm telephoto lens focused at infinity:
+Nikon's CF PL chimney has an M50x0.75 external thread and positive lens.  
+Removing that chimney allows the infinite image to continue...  
+
+A camera with (250mm) telephoto lens focused at infinity,  
+[as discussed on photomacrography.net](https://www.photomacrography.net/forum/viewtopic.php?t=9438):  
 ![Canon 90D+250mm](Images/Optiphot_Infinity.jpg)  
 
 ... captured these images:  
@@ -19,11 +21,13 @@ a camera with 250mm telephoto lens focused at infinity:
 ... however those strongly vignetted images are magnified about 3X  
 relative to oculars (image by iPhone):
 ![ocular scale](Images/AfocalEPIscale.jpg)  
+This issue is addressed as [T / UW "direct" projection](Trinoc/#T-UW)   
+and arguably better using [a Zeiss Triotar](../../Canon/#vintage-carl-zeiss-jena-triotar-chrome-lens-14-f135-cm).  
 
 # Other  
 Other Optiphot infinity configurations
 - Infinity objectives thru [trinoc "F" head](Trinoc/#F) to an infinity-focused [tube lens](../tube)  
-  Infinity-based Eclipse heads [reportedly fit Optiphot](https://lavinia.as.arizona.edu/~mtuell/scopes/Eclipse.php) via Optiphot 100 vertical illuminator.  
+  Eclipse infinity heads [reportedly fit Optiphot](https://lavinia.as.arizona.edu/~mtuell/scopes/Eclipse.php) via Optiphot 100 vertical illuminator.  
 - Optiphot 100/150/200 were infinity scopes with otherwise seemingly incompatible infinity objectives,
   presumably NOT being CFI60.  
 - [UM-2 measurescope takes Optiphot style nosepieces](https://www.photomacrography.net/forum/viewtopic.php?f=25&t=43442)  
