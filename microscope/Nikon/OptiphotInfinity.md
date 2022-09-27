@@ -6,6 +6,8 @@ Only ["F" trinolar head](Trinoc/#F) focus objective rays at 210mm;
 ![Nikon T head schematic](http://www.photomacrography.net/forum/userpix/3229_Nikon_lightpath_1.jpg)  
 Nikon's CF PL chimney has an M50x0.75 external thread and positive lens.  
 Removing that chimney allows the infinite image to continue...  
+Alternatively, removing that negative lens would focus infinity objectives,  
+but with [a bit under a 0.5x magnification](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=12&t=16289)  
 
 A camera with (250mm) telephoto lens focused at infinity,  
 [as discussed on photomacrography.net](https://www.photomacrography.net/forum/viewtopic.php?t=9438):  
@@ -21,7 +23,7 @@ A camera with (250mm) telephoto lens focused at infinity,
 ... however those strongly vignetted images are magnified about 3X  
 relative to oculars (image by iPhone):
 ![ocular scale](Images/AfocalEPIscale.jpg)  
-This issue is addressed as [T / UW "direct" projection](Trinoc/#T-UW)   
+This issue is addressed as [T / UW "direct" projection](Trinoc/#T-UW)
 and arguably better using [a Zeiss Triotar](../../Canon/#vintage-carl-zeiss-jena-triotar-chrome-lens-14-f135-cm).  
 
 # Other  
