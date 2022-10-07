@@ -1,0 +1,10 @@
+set xrange [0.25:1.0]
+set yrange [0.8:300]
+set logscale y
+set title 'approximate perceptible aberrations for 140mm TL objectives'
+set ylabel "allowable tube length error (mm)"
+set xlabel 'numeric aperture'
+set xtics 0.05
+set grid xtics mytics
+plot .89253125 / (x**4) t 'immersion'
+replot 5.77200625 / (x**4) t 'dry'
