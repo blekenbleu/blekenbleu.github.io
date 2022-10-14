@@ -5,16 +5,14 @@
 </head>
 <body>
 <h3>Wi-Fi MIDI</h3>
+
 <dl>
-<dt><font color=red><a href="../ESP32/midi.htm">ESP32-S2 USB MIDI</a> does not composite well with other devices (CDC, HID gamepad)</font>
-<dd>Instead, send MIDI over Wi-Fi, preferably by WebSocket
-<dd><i>See also</i>:
+<dt><i>See also</i>:
 <a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/post-3446448">Race Department wireless MIDI thread</a>
-<dd> &nbsp
+<dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, Android Wireless Mixer controls,<br>
+   MIDIShift, MidiView, iPad Midi Controller Pro, and Open Stage Control
 
-<dt><b>Wireless MIDI flavors</b><ul>
-
-<li><details><summary><b>Background</b>: servers, clients, senders, receivers, control surfaces, sequencers, editors, recorders, instruments</summary>
+<dt><details><summary><b>About MIDI</b>: servers, clients, senders, receivers, control surfaces, sequencers, editors, recorders, instruments</summary>
 Historically, MIDI was a variation on asynchronous serial communication,<br>
 using the same UART <a href="https://en.wikipedia.org/wiki/MIDI#Technical_specifications">technology</a> as in serial printers, terminals and modems,<br>
 but with idiosynchratic 31.5kbps data rate, 5-pin (ground + 2 in + 2 out) DIN connectors and 5 Volt signals,<br>
@@ -31,7 +29,7 @@ Since web browsers can play music, JavaScript to behave as client instruments is
 At any rate, code for Websocket MIDI control surface servers is relatively rare.<br>
 <br></details>
 
-<li><details><summary><a href="https://users.cs.cf.ac.uk/Dave.Marshall/Multimedia/node158.html"><b>MIDI 1.0 messages</b></a> <i>mostly</i> include 3 bytes, one for status and 2 for data.</summary><ul>
+<dt><details><summary><a href="https://users.cs.cf.ac.uk/Dave.Marshall/Multimedia/node158.html"><b>MIDI 1.0 messages</b></a> <i>mostly</i> include 3 bytes, one for status and 2 for data.</summary><ul>
 <li>Data bytes are constrained to have msb=0, so only 7 bits for information.<br>
 <li>The status byte has most-significant bit = 1, 4 least significant bits for addressing 16 channels,<br>
 leaving 3 bits for message types, 7 of which (8x - Ex) are for channel messages:<table>
@@ -68,6 +66,10 @@ many second byte values support 127 third byte values and appropriate for slider
 Hex 00-13 for MSB and 20-33 for corresponding LSB.<br>
 First data byte values 70-83, 85-95 are for LSB-only second data bytes
 <br></details>
+
+<dt><font color=red><a href="../ESP32/midi.htm">ESP32-S2 USB MIDI</a> does not composite well with other devices (CDC, HID gamepad)</font>
+<dd>Instead, send MIDI over Wi-Fi, preferably by WebSocket
+<dt><b>Wireless MIDI flavors</b><ul>
 
 <li><a href="#DSMI">DSMI</a> - old <a href="DS_MIDI_WiFi">protocol for Nintendo DS</a>
 
