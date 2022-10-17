@@ -126,3 +126,16 @@ Small but important difference.
 
 ### [DIC by Savart plates](https://www.photomacrography.net/forum/viewtopic.php?t=193) used on Nikon S  
    - [Differential interference contrast microscopy using Savart plates](https://iopscience.iop.org/article/10.1088/2040-8986/aa5d62)  
+
+## [DIY DIC](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=28&t=7601) includes:
+
+### [Differential interference contrast microscopy with adjustable plastic Sanderson prisms](https://opg.optica.org/ao/abstract.cfm?uri=ao-59-11-3404)  
+   - [Saul's Onion example](https://www.photomacrography.net/forum/viewtopic.php?p=269570)  
+   - [applied optics PDF](https://www.quekett.org/wp-content/uploads/2021/01/Rathi-DIC-plastic-Sanderson-prisms.pdf)  
+
+### [varable amplitude contrast (VAC)](https://www.microbehunter.com/forum/specimens-samples-and-slides/arthur-stranges-variable-amplitude-contrast-method-vac-2/)
+   - ["Arthur Strange's Variable Amplitude Contrast Method - VAC 2"](https://web.archive.org/web/20180815214625/http://myweb.tiscali.co.uk/postalmicsoc/vac_contrast.html?showpage=true)  
+   - [YouTube: 200X VAC Imaging(Variable Amplitude contrast) ](https://www.youtube.com/watch?v=dnERKFgVnq0)
+
+### [Balsam Post Colour Supplements](https://web.archive.org/web/20180816004526/http://myweb.tiscali.co.uk/postalmicsoc/colsupplmenu.html?showpage=true)  
+   - [Cumulative Index](https://www.rogershore.net/PMS/files/BP-index-to-136.pdf)  
