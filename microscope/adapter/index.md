@@ -3,6 +3,7 @@
 " target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>  
+# Camera adapters  
 ## Vintage Astro\Micro-Photography Camera Adapter Accessory by Monolux
 Condition: Used  
 Ended:May 23, 2022, 9:53AM  
@@ -46,3 +47,11 @@ but i.d. is far too loose for 23.2mm oculars:
 ![](M42-C-mount-32-23.2mm.jpg)  
 ... corrected by shimming i.d. with bits of HVAC pressure-sensitive aluminum tape.  
 [MicrobeHunter.com: M42 - 30mm - 23.2mm eye tube adapter warning.](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=14&t=16026)  
+
+---
+
+### [Celestron NexYZ 3 axis Universal Smartphone Adapter](https://www.celestron.com/products/nexyz-3-axis-universal-smartphone-adapter)  
+![](https://cdn.shopify.com/s/files/1/1935/4371/products/81055_NexYZ_3-Axis_Universal_Smartphone_Adapter_01_570x380@3x.jpg)  
+-  rack and pinion XYZ adjustments
+- spring-loaded smartphone clamp
+- spring-loaded and thumbscrew-secured eyepiece clamp with 2 bushings
