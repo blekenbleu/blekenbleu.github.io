@@ -168,12 +168,12 @@ no need to install Arduino-specific driver[s]...
    [https://github.com/stm32duino/BoardManagerFiles/raw/master/package_stmicroelectronics_index.json](https://github.com/stm32duino/BoardManagerFiles/raw/master/package_stmicroelectronics_index.json)  
 3) Go to **`Tools` > `Board` > `Boards Manager`**, enter search for **`STM32`**:  
    ![Boards Manager STM32 search](https://www.sgbotic.com/images/companies/1/learn/F103_Arduino/board_manager_install.png?1596271243306)  
-   *18 Aug 2022*: Latest version is `2.3.0`; @bosirovec reported [a missing `2.3.0` folder, now fixed](https://github.com/stm32duino/Arduino_Core_STM32/issues/1806).  
+   *18 Aug 2022*: Latest version is `2.3.0`; [@bosirovec](https://github.com/bosirovec/Custom-Dashboard-STM32-BluePill-SimHub) reported [a missing `2.3.0` folder, now fixed](https://github.com/stm32duino/Arduino_Core_STM32/issues/1806).  
    click **`STM32 Cores`**, then **`Install`**  (*takes quite awhile*)  
 4) Quit and restart Arduino; then  
    from **`Tools` > `Board:` > `STM32 Boards`**, select [`Generic STM32F1 series`].  
    From **`Tools` > `Board Part Number:`**, select [`BluePill F103C8`].  
-   - see note above, in last bullet under **Troubleshooting**, about clone boards.  
+   > see note above, in last bullet under **Troubleshooting**, about clone boards.  
 
    From **`Tools` > `Upload method:`**, select [`HID Bootloader 2.1`] or newer.  
    ![Tools mmenu](Tools.gif)  
@@ -192,6 +192,8 @@ Here is a Blue Pill pinout reference:
 - 5V tolerant CAN BUS pins `PB8,9` **work for me**.
 - In addition to seven 5V tolerant PWM pins, up to 7 more can be available by level-shifting:  
   ![Blue pill w/level-shifting module](BlueLevel.jpg)  
+
+#### To drive automobile dash instruments by Blue Pill from SimHub, [go here](https://github.com/bosirovec/Custom-Dashboard-STM32-BluePill-SimHub)
 
 A simple next step adds servos to the blink loop sketch.  
 [This servo cycling sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under GitHub revision control,  
