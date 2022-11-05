@@ -16,13 +16,13 @@
 Optiphot EPI DIC is strictly brightfield; DIC sliders block coaxial illumination.  
 ![EPI DIC](EPI_DIC.jpg)
 
-### [Scarodactyl:  Reflected Light - Optiphot Series](https://www.photomacrography.net/forum/viewtopic.php?p=272448)  
+### [Scarodactyl:  Reflected Light - Optiphot Series](https://www.photomacrography.net/forum/viewtopic.php?p=272448#p272448)  
 What you need to look out for is the polarizer and analyzer.  
 The best option has a rotatable polarizer  
 with a separate quarter wave plate slider,  
 mostly meant for epi DIC but good without too.  
 
-### [de Senarmont DIC Nicroscope Configuration](https://www.microscopyu.com/techniques/dic/de-sénarmont-dic-microscope-configuration)  
+### [de Senarmont DIC Microscope Configuration](https://www.microscopyu.com/techniques/dic/de-sénarmont-dic-microscope-configuration)  
 ### [DIC Component Alignment (Java)](https://www.microscopyu.com/tutorials/dic-microscope-component-alignment)  
 
 ### [PeteM: DIC options compared](https://www.microbehunter.com/microscopy-forum/viewtopic.php?t=9734)  
