@@ -37,6 +37,7 @@ dl {
 <li><a href="#DoF">Depth-of-Focus scaling</a>
 <li><a href="#DIOP">Diopter vs focal length</a>
 <li><a href="#TL">Finite tube length error impact on aberrations</a>
+<li><a href="#INF">Infinity microscope vignetting</a>
 <li><a href="#KOHLER">Kohler illumination</a>
 <li><a href="#LENS">Lens formulae</a>
 <li><a href="#RMS">Magnification: &nbsp;Classic compound microscope</a>
@@ -60,6 +61,7 @@ from:  &nbsp;<a href="https://www.researchgate.net/publication/333091817_Systema
 The vertical dotted line where rays cross at right end of tube length is called the objective's <i>rear conjugate</i>.<br>
 To the extent that it is, a finite objective's correction is designed for that tube length,<br>
 keeping in mind than many objectives also depend on both slide cover glass and eyepiece for correction.<br>
+
 <h4>More explanation</h4>
 The upper diagram is supposed to represent a traditional (RMS == Royal Microscope Society) microscope.<br>
 "tube length" is approximately the objective's focal length for its specified magnification,<br>
@@ -70,10 +72,17 @@ if <code>Objective</code> + <code>Infinity space</code> + <code>Tube lens</code>
 While infinity objectives can be used with a tube lens of any focal length,<br>
 specified magnification depends on that focal length.<br>
 
+<a name="INF"><h4>Infinity microscope vignetting</h4></a>
+Rays from an infinity objective are only parallel when from a single point;<br>
+with increasing distance between objective and field lens,<br>
+a larger field lens is needed to avoid vignetting:<br>
+<img src="infinity_objective.jpg"><br clear=all>
+An objective's back focal plane is where <i>parallel</i> rays entering that objective focus.<br>
 <br>
+
 <a name="CONTRAST"><h3>Contrast and non-image-forming light.</h3></a>
-While lenses can and do allow images to be focused on your retina,<br>
-they do not prevent other photons from also stimulating sensors.<br>
+While lenses focus images on your retina or other sensor,<br>
+they do not prevent <i>other</i> photons from also stimulating sensors.<br>
 When viewing a three-dimensional scene, perhaps focusing on a near object,<br>
 photons scattered from more distant objects may also land on the same photosensors.<br>
 Some non-image-forming light can be blocked by an iris diaphragm, as in this diagram:<br>
