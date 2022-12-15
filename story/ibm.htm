@@ -131,6 +131,7 @@ I also discovered:
 * it took about 6 weeks to become productive in new (to me) technology
 * after about 6 months, I would be forgetting less useful things at about the same rate as learning more useful refinements.
 
+<b>PA</b>
 The product assurance technician for code entry in my department used a <a href="https://vintagecomputer.ca/ibm-3277-terminal/">3277</a>,
 and I quickly negotiated access to it.
 Field engineering experience meant that I became their designated world trade ship test delegate.
@@ -194,6 +195,121 @@ A new lab manager arrived from IBM Raleigh, and quickly transferred a couple of 
 For no obvious reason (perhaps because we both were NASCAR fans?), he took a liking to me,
 and we all went with his wife (an IBM secretary) in his large RV to nearby NASCAR races,
 where I stayed busy repairing various broken RV accessories.</a>
+
+<b>Printers</b>
+Unlike computer systems, IBM updated industry-specific terminal infrequently,
+Some serial printer missions had also been moved to Charlotte,
+and they were more impacted by lack of experienced mechanical engineers;
+development and testing of transferred printer programs were struggling.
+After all, little college instruction was specific to printing,
+while electronics knowledge is generally applicable, and recent grads
+could be more familiar with evolving tech than would veterans.
+I considered printers uninteresting and had only rarely consulted on electronics issues.
+
+Charlotte management responded by contracting from other printer manufactures
+designs which could be adapted to work with IBM's industry-specific LAN attachments.
+Having LAN expertise and with printer mechanics were already developed,
+I was assigned to work on a series of these boxes.
+Since they used IBM-designed LAN adapters, few interesting problems arose,
+so mostly dealing boring issues (EMC, fragile covers) and statistical significant failure rates.
+One distraction was moving from downtown Charlotte to <a href="https://www.google.com/maps/place/IBM/@35.3100075,-80.7723555,2215m/data=!3m1!1e3!4m5!3m4!1s0x88541c527999ae81:0xfe228857dacdf688!8m2!3d35.3397411!4d-80.7666356">the then-new campus, where I now recognize nothing</a>,
+except the road names.
+
+<b>perspective</b>
+My only promotions occurred in Charlotte, but that decade was also most <i>domestically complicated</i>.
+Many memories have been suppressed.  Some of these events may be out of order.
+FWIW, a few IBM Charlotte employees were good friends;  the 1980s were not <i>all</i> bad..
+
+<a name=LSI><b>LSI Institute</b></a>
+I had not known Bruce well when he contacted me about <a href="https://m.facebook.com/people/LSI-Institute/100066899734476">IBM's program for spending a year in Vermont, getting a master's degree</a>.
+Site management seemed more concerned about selecting a candidate that would do well, rather than benefit the most.
+Being single and offered full salary plus expenses, I accepted,
+installed an alarm system in my house, giving the receiver and a key to my neighbor
+and headed out.  It was, to me, almost a dream vacation.
+I took my bicycle, tennis racket, skis, and bought an electric guitar.
+My apartment was within walking distance of classes.
+We had some flexibility in class scheduling, and I arranged to be done by noon most days.
+Although Lake Champlain was still partially frozen when we arrived in May,
+I often bicycled there afternoons that summer, stopping some days for a mimosa <a href="https://www.google.com/maps/place/Burlington,+VT/@44.4760856,-73.2156368,1962m/data=!3m1!1e3!4m5!3m4!1s0x4cca7a55b69b55e5:0xc35fe519720e498e!8m2!3d44.4758825!4d-73.212072">in town</a>.
+Despite whacking tennis balls against a plywood wall most mornings,
+I never got good enough that anyone wanted to play with me.
+To build ankle strength for ski season, I went to yoga classes.
+Most IBMers joined study groups, but I had always studied alone.
+After more than a month, I realized that engineering math was using
+a newer edition of the same textbook I'd used 15 years prior.
+Having purchased an <a href="https://en.wikipedia.org/wiki/IBM_Personal_Computer_XT">IBM PC/XT</a> and modem, I avoided contending for time on the university's
+constrained computer terminal inventory, and dial-in access was never a problem.
+In fact, I was able to complete homework for the (x86) microprocessor course using <a href="https://en.wikipedia.org/wiki/IBM_PC_DOS#PC_DOS_1.x">the DOS debugger</a>.
+For a statistics course, I build a statistics package for each chapter using <a href="https://www.researchgate.net/publication/234806082_An_APL_system_for_the_IBM_personal_computer">IBM's APL for PC</a>.
+
+For one class, we were developing a language and compiler for designing digital logic chips.
+When I joined IBM, they were still designing digital logic using schematic capture,
+with engineers sitting at massively expensive graphics workstations,
+dragging and dropping symbols for e.g. AND and OR gates, then connecting them with lines.
+One key difference from software programming is that hardware can synchronously
+perform many logical operations in parallel, which traditional programming language compilers do not support.
+In fact, when I experimented with <a href="https://systemc.org">System C</a> in 2010, efficient parallelism support was still poor.
+The class was tasked to implement a hardware compiler for a parallelized version of Pascal.
+While many other students teamed to code a compiler using <a href="https://www.facebook.com/StanfordPascal/posts/ibms-pascalvs-compiler-is-sort-of-inspiration-for-me-since-i-worked-with-this-co/992499944466980/">VS/Pascal</a>,
+I made progress more quickly coding in PC/APL,
+which also ran quicker, thanks to its optimized handling of arrays.
+
+The dean called me in before graduation to ask about going to IBM Research,
+being the only LSI student to receive all A's (including one credit hour for skiing),
+but I admitted having promised IBM Charlotte's site manager to return there.
+
+<a name=6><b>IPDS</b></a>
+Reading online now, some evidently think that Token Ring and <a href="https://afpcinc.org/wp-content/uploads/2016/12/IPDS-Reference-11.pdf">IPDS</a> were good things,
+rather than symptoms of a profligate bureaucracy.  Whatever, when I returned from Vermont,
+Charlotte had inherited a 3812 laser printer from Boulder, which had an optional backpack for IPDS,
+which was also perpetrated by Boulder.  Whether the specification was written before implementation remains unclear,
+but the documented protocol was highly problematic, specifically for error recovery.
+IPDS can be looked at as an overreaction to PostScript.  It jams together mostly unrelated command sets for
+text, images, graphics, barcodes and so-called self-defining fields.  Whether that hash makes sense
+for printers directly attached to computers is arguable, but was fundamentally doomed for remote printers
+with constrained local resources and substantial communication latency.  There is no limit to
+page complexity, and IPDS (unlike PostScript) supposes "intelligence" at the host, with the
+printer liable to running out of resources for caching printable (or not) "objects" liable to be sent
+in no particular order, so that a serial printer may run out of memory caching items that may be
+printed near the bottom of a page before receiving first objects to be printed.  While IPDS
+allows printers to report such resource conditions (thus requiring complex bidirectional communication),
+it did not allow for hosts to acknowledge reporting of such errors.
+Consequently, a printer cannot know when/whether commands subsequent to an error are relevant.
+After finally getting access to Boulders IPDS host driver code (written in PS/Pascal),
+I discovered, buried deep in their code, that for such conditions it sent device reset to channel-attached IPDS printers,
+which is neither specified in the IPDS specification, possible nor useful for remote printers.
+I asked the 4224 development manager whether we should not first test and debug the specification
+before developing, testing and debugging the printer.
+He declined, perhaps already aware that he would not be around for the gruesome denouement.
+
+Also FWIW, I was appalled at how much of that Pascal/VS IPDS driver code was about moving data
+in and out of System/370 storage segments; code specific to IPDS function seemed incidental.
+I did not bother pursuing whether that is/was a Pascal/VS or programmer limitation;
+by that time, we were too deeply engaged in the battle of Friday development releases.
+Far behind schedule, we were expected to test over weekends,
+unless/until show-stopper bugs were encountered.
+By no coincidence, we were usually able to report such bugs before 5PM Friday,
+leaving developers to work over weekends.
+
+<b>Proprinter</b>
+I had nearly nothing to do with the Proprinter, but stumbled over this video:
+<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/spDYSKl3kmo"></iframe>
+It is, so far as I know, accurate, but avoids discussion of the disaster that was IBM's automated assembly plant.
+Its robots were so unreliable that they were replaced by humans.
+The plant was so poorly designed that it could not accommodate evolutionary printer designs.
+Lexington had designed robotic assembly stations claimed to be programmable for any product that fit.
+Sadly, while Proprinters fit, those robots could not snap and slide together those parts.
+
+My minimal involvement was this:  the proprinter was one of the first IBM Charlotte products to use CMOS chips.
+CMOS stands for Complementary Metal Oxide Silicon, where MOS is also called IGFET for Insulated Gate Field Effect Transistor.
+That gate is insulated from the rest of the transistor and liable to static build-up,
+which would could discharge thru the oxide insulation, destroying the transistor.
+This is "solved" in CMOS integrated circuits by using diodes to conduct away voltages more negative than ground or
+more positive than the power supply (5 Volts).  Proprinter development engineers' issue was that plugging one of
+their prototypes into a PC would provoke random errors unless the Proprinter was kept powered one.
+Being unaware of CMOS protection diodes (clearly documented in chip specs), they failed to appreciate that
+protection diodes to 5 Volts, which would be reverse-biased when powered on, are active-low signals to PCs when power is 0.
+I was friends with one of their young engineers, and advised him about the diodes and workaround (resistors in series with the gates).
 </pre>
 <li>watch this space
 <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp
