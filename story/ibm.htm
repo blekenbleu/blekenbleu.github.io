@@ -85,16 +85,42 @@ At that time, lots of IBM employees' time was spent coding numbers from candy st
 Obtaining on-line access to their <a href="https://www.ibm.com/ibm/history/exhibits/storage/storage_3850.html">mass storage system</a> from a <a href="https://en.wikipedia.org/wiki/IBM_5120">5120</a> bypassed that.
 
 This left me with spare free time.  Folks show up with other APL projects:
-*  rewriting the waterfall burden distribution program from time-share basic
-   Slogging thru the Basic source, it became evident that,
+*  rewriting their waterfall burden distribution program from <a href="https://en.wikipedia.org/wiki/Service_Bureau_Corporation">SBC Basic</a>
+   Slogging thru that source, it became evident that,
    instead of understanding and correcting existing code,
    "maintainers" had been adding replacement routines, leaving dead code behind.
-   I forget how many pages of Basic, but the APL replacement was less than a page.
+   I forget how many pages of Basic source, but its APL replacement was less than a page.
 *  writing stock option software with which IBM would gamble free cash over weekends.
 *  writing human resources management code, working with an executive secretary,
-   made interesting because I was not allowed to see the data.
-*  writing a general purpose cost justification proposal generator
+   made somewhat interesting because I was not allowed to see the data.
+*  writing a generic cost justification proposal generator
    Basically, machine learning random buzzword generation.
+
+<a name=V><b>VTL</b></a>
+IBM Endicott was big on technical vitality, perhaps motivated by experienced engineers feeling threatened by technology changes.
+My senior year at Clarkson was the first with lab projects NOT involving vacuum tubes.
+By the 1970s, not only was it over 60% of the computer market,
+IBM was also practically a vertical monopoly, making most of its own components,
+with very few suppliers sharing any profits.
+Covers were a relatively trivial fraction of product costs, but one of the most debated in meetings.
+Issues were typically resolved so late that cover vendors could charge a premium for expedited tooling...
+
+Vertical integration enabled top-down design, with IBM components specific to intended products.
+IBM specifications were not only classified, but also unnecessarily difficult to digest,
+written by folks enamored of the concept that if one cannot dazzle, one can at least baffle.
+Meanwhile GE and TI published plentiful and clear documentation for TTL (Transistor-Transistor Logic),
+which IBM referred to as VTL (Vendor Technology Logic).  Unlike military contractors, who would
+misuse approved components rather than bother getting more appropriate components approved,
+younger IBM engineers working on peripheral products that I would be assuring were seduced by VTL.
+These products were not considered major profit centers, but were instead "drag"
+that enabled IBM marketing to offer business customers completely integrated solutions.
+
+I took one internal IBM course on microcoding.  The basic concepts:
+CPU logic is much faster than memory, potentially wasting many processing cycles while waiting for data.
+Embedded microcode could implement multiple simple instructions cheaper than equivalent hardware for complex instructions.
+The final course challenge was implementing microcode for some sequence of machine instructions in a minimum number of cycles.
+I beat their record using a technique eventually called <a href="https://en.wikipedia.org/wiki/Speculative_execution">speculative execution</a>.
+Still resisting being ground to a nub writing System 370 microcode, I did not pursue it.
 
 The eventual <a href="https://people.computing.clemson.edu/~mark/fs.html">implosion of FS</a> left me without an official assignment.
 A product assurance opening in the Glendale development lab was available,
