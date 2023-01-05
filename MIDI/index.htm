@@ -1,17 +1,13 @@
 <html>
 <head>
 <style> body { margin-left: 80px; } h4 {margin-bottom:0} ul {margin-top:0} </style>
-<title>Wi-Fi MIDI</title>
+<title>MIDI</title>
 </head>
 <body>
-<h3>Wi-Fi MIDI</h3>
+<h3>MIDI</h3>
 
 <dl>
-<dt><i>See also</i>:
-<a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/post-3446448">Race Department wireless MIDI thread</a>
-<dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, Android Wireless Mixer controls,<br>
-   MIDIShift, MidiView, iPad Midi Controller Pro, and Open Stage Control
-
+<dt><a href="#plugin">SimHub MIDI plugin</a>
 <dt><details><summary><b>About MIDI</b>: servers, clients, senders, receivers, control surfaces, sequencers, editors, recorders, instruments</summary>
 Historically, MIDI was a variation on asynchronous serial communication,<br>
 using the same UART <a href="https://en.wikipedia.org/wiki/MIDI#Technical_specifications">technology</a> as in serial printers, terminals and modems,<br>
@@ -410,5 +406,59 @@ first MIDI.sendNoteOn()</pre></details>
 <li><a href="midisrv">NodeJS MIDI websocket server</a>, for debugging the above MIDI websocket client<br>
    and perhaps capturing traffic from a mnet MIDIHub client
 </ul>
+
+<a name="plugin"><h3>SimHub MIDI Plugin</h3></a>
+<b><i>See also</i></b>:
+<a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/post-3446448">Race Department wireless MIDI thread</a>
+<dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, Android Wireless Mixer controls,<br>
+   MIDIShift, MidiView, iPad Midi Controller Pro, and Open Stage Control<br>
+<dt>SimHub plugins can add so-called <i>properties</i> which can be read in e.g. ShakeIt plugin.<br>
+<dd>Similarly, plugins can read properties that are e.g. set in ShakeIt plugin.<br>
+e.g. (<a href="https://github.com/andreasdahl1987/DahlDesignProperties">Dahl Design Properties</a>
+<a href="https://dahl-design.gitbook.io/properties/introduction/install#additional-setup">reads and sets properties</a> in
+<a href="https://github.com/andreasdahl1987/DahlDesignProperties/blob/6c61e69e93ac3ddd97e9ba49972797ab8ddc66d2/iRacing/iRacing.cs#L1220">iRacing.cs</a>).
+<pre>
+...
+namespace DahlDesign.Plugin.iRacing
+{
+  public class Data : SectionBase
+  {
+    public override void Init(PluginManager pluginManager)
+    {
+...
+      InitializeLists();
+
+      #region SimHub Properties  
+...
+      Base.AddProp("SlipLF", 0);
+      Base.AddProp("SlipRF", 0);
+      Base.AddProp("SlipLR", 0);
+      Base.AddProp("SlipRR", 0);
+...
+      #endregion
+    }
+
+    public override void DataUpdate()
+    {
+...
+      double slipLF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontLeft"));  //Wheel slip
+      double slipRF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontRight"));  //Wheel slip
+      double slipLR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearLeft"));  //Wheel slip
+      double slipRR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearRight"));  //Wheel slip
+...
+
+      Base.SetProp("SlipLF", slipLF);
+      Base.SetProp("SlipRF", slipRF);
+      Base.SetProp("SlipLR", slipLR);
+      Base.SetProp("SlipRR", slipRR);
+    }
+  }
+}
+</pre>
+At least in theory, by appropriately glueing something like this to MIDI code,<br>
+MIDI sliders can be used to set SimHub property values,
+while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
+
+</dl>
 </body>
 </html>

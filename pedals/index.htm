@@ -43,7 +43,8 @@ th, td {
 <li><a href="#analog">Logitech pedals to AccuForce analog inputs</a>
 <li><a href="#shakeseat">ShakeSeat</a> <a href="#pad">padding</a>
 <li><a href="#ShakeIt">SimHub ShakeIt</a>
-<li><a href="#Simshakeseat">SimHub for ShakeSeat</a>
+<li><a href="#Simshakeseat">SimHub ShakeIt for ShakeSeat</a>
+<li><a href="../MIDI/#plugin">SimHub MIDI plugin</a>
 <li><a href="#SimHarness">SimHub for 2DOF Harness</a>
 <li><a href="#HOTAS">Hand-On Throttle-And-Stick in SteamVR</a>
 <li><a href="#hmd">Samsung Odyssey+ HMD</a><ul compact>
@@ -634,17 +635,18 @@ After fiddling with Sim Commander 4 SimVibe<br>
 SimHub <a href="#ShakeIt">ShakeIt</a> is a better choice for me..<br>
 </details>
 <a name=ShakeIt>
-<h5>SimHub <a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">ShakeIt</a></h5></a>
+<h4><a href="https://www.simhubdash.com/download-2/">SimHub</a> ShakeIt</h4></a>
 (confusingly, one less K than <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">SRS product</a>) is/was free software,<br>
-since integrated into <a href="https://www.simhubdash.com/">SimHub</a>,<br>
+since integrated into <a href="https://www.simhubdash.com/">SimHub</a>, and somewhat
 comparable to <a href="https://www.simracingstudio.com/download">SRS' licensed app</a>.<br>
+Based on game telemetry, SimHUb ShakeIt generates audio signals<br> which are amplified to power tactile pucks, exciters and shakers.<br>
 A SimHub license enables more support..<br>
-SimHub used to be distributed and supported from RaceDepartment, but no more..<br>
-Downloaded SimHub from <a href="http://www.simhubdash.com">http://www.simhubdash.com/</a><br>
-based on https://www.youtube.com/watch?v=fwqbx-cA5TE<br>
+SimHub ShakeIt used to be <a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">distributed and supported from RaceDepartment</a>, but no more..<br>
+Downloaded SimHub from <a href="http://www.simhubdash.com">http://www.simhubdash.com/</a>
+and installed per <a href="https://www.youtube.com/watch?v=fwqbx-cA5TE">2Old4Forza's video</a>.<br>
 ShakeIt GitHub: &nbsp <a href="https://github.com/SHWotever/SimHub">https://github.com/SHWotever/SimHub</a><br>
 <br>
-Support appears to have gravitated to <a href="https://discord.com/channels/299259397060689920/686133283708207260">discord</a>... &nbsp &nbsp <a href="https://discord.gg/nBBMuX7">Invitation</a><br>
+Support is most active on <a href="https://discord.com/channels/299259397060689920/686133283708207260">discord</a>... &nbsp &nbsp <a href="https://discord.gg/nBBMuX7">Invitation</a><br>
 <br>
 <code>SimHubWPF.exe</code> is neither Steam nor Assetto Corsa app;<br>
 it needs launching separately and optionally starts with Windows..<br>
@@ -672,6 +674,8 @@ SimHub appears to save settings automagically..<br>
 <font size=-1><b>Tactile Immersion - General Discussion - Hardware & Software</b></font></a><br>
 Every effect has various controls to manipulate the output: amplitude, frequency, etc.<br>
 Both amplitude and frequency can be changed based on the incoming telemetry.<br>
+Sadly, amplitude cannot be changed independently of frequency, e.g. wheel load vs slip.<br>
+This motivates a <a href="../MIDI/#plugin">SimHub MIDI plugin</a> to send MIDI based on e.g. wheel load to change amplitude of SimHub-generated wheel slip tactile effect.<br>
 Effects can be configured as mono, divided front-rear, left-right, or 4-corners.<br>
 <img width=640 src="https://www.racedepartment.com/attachments/1593030117522-png.383988/"><br clear=all>
 <ul compact>
