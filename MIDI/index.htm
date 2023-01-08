@@ -9,19 +9,20 @@
 <dl>
 <dt><a href="#plugin">SimHub MIDI plugin</a>
 <dt><details><summary><b>About MIDI</b>: servers, clients, senders, receivers, control surfaces, sequencers, editors, recorders, instruments</summary>
-Historically, MIDI was a variation on asynchronous serial communication,<br>
+Historically, <a href="https://www.midi.org/">MIDI (Musical Instrument Digital Interface)</a> was a variation on asynchronous serial communication,<br>
 using the same UART <a href="https://en.wikipedia.org/wiki/MIDI#Technical_specifications">technology</a> as in serial printers, terminals and modems,<br>
 but with idiosynchratic 31.5kbps data rate, 5-pin (ground + 2 in + 2 out) DIN connectors and 5 Volt signals,<br>
- instead of D-subminiature 25 or 9-pin connectors with +/-12 Volt signals
-for <a href="https://en.wikipedia.org/wiki/RS-232">RS-232</a>.<br><br>
+ instead of <a href="https://en.wikipedia.org/wiki/RS-232">RS-232</a>'s D-subminiature 25 or 9-pin connectors with +/-12 Volt signals.<br>
+<br>
 More crucially, while RS-232 is essentially point-to-point between data terminals and carriers,<br>
-MIDI was daisy-chained, with signals passed among devices with could both initiate and receive packets.<br>
-Consequently, MIDI packets include addressing for 16 channels, to selectively send and receive packets along the shared bus.<br><br>
+MIDI can daisy-chain, with signals passed among devices that can both initiate and receive packets.<br>
+Consequently, MIDI packets include addressing for 16 channels, to selectively send and receive packets along a shared bus.<br>
+<br>
 While all MIDI devices may send and receive messages, instruments are typically receivers,<br>
 while control surfaces and sequencers are typically senders.<br>
 Once IP networking is involved, server and client roles get involved.<br>
 Either senders or receivers can be either servers or clients.<br>
-Since web browsers can play music, JavaScript to behave as client instruments is relatively popular.
+Since web browsers can play music, JavaScript to behave as client instruments is relatively popular.<br>
 At any rate, code for Websocket MIDI control surface servers is relatively rare.<br>
 <br></details>
 
@@ -407,12 +408,22 @@ first MIDI.sendNoteOn()</pre></details>
    and perhaps capturing traffic from a mnet MIDIHub client
 </ul>
 
-<a name="plugin"><h3>SimHub MIDI Plugin</h3></a>
-<b><i>See also</i></b>:
+<a name="plugin"><h3>SimHub MIDI Plugin</h3></a><ul compact>
+<li>SimHub optionally responds to MIDI buttons, <i><b>but not sliders</b></i>; enabling them seems undocumented<ul compact>
+<li>in <code>Settings</code>, enable <code>Midi Controllers Input</code><br><img width=40% src="settings.jpg">
+<li>then, in <code>controls</code><img align=middle src="controls.gif">, press <code>New mapping</code><img align=middle src="New.gif">,
+    press a MIDI key:<br><img src="Mapping.jpg">
+<li>Pressed MIDI event keys also become available properties (search <code>PluginManager</code>) without going thru <code>controls</code><img align=middle src="controls.gif"> ...
+</ul>
+<li><a href="https://www.racedepartment.com/downloads/simmidi.27118/">SimMidi</a> includes a SimHub plugin for controlling MIDI encoder LEDs by udp telemetry from SimHub.<br>
+    That download also includes Juan P Bello's <a href="https://www.racedepartment.com/downloads/simmidi.27118/"><code>MIDI_commands.pdf</code></a>.
+</ul>
+<dl>
+<dt><b><i>See also</i></b>:
 <a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/post-3446448">Race Department wireless MIDI thread</a>
 <dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, Android Wireless Mixer controls,<br>
-   MIDIShift, MidiView, iPad Midi Controller Pro, and Open Stage Control<br>
-<dt>SimHub plugins can add so-called <i>properties</i> which can be read in e.g. ShakeIt plugin.<br>
+   MIDIShift, MidiView, iPad Midi Controller Pro, and Open Stage Control
+<dt><br>SimHub plugins can add so-called <i>properties</i> which can be read in e.g. ShakeIt plugin.<br>
 <dd>Similarly, plugins can read properties that are e.g. set in ShakeIt plugin.<br>
 e.g. (<a href="https://github.com/andreasdahl1987/DahlDesignProperties">Dahl Design Properties</a>
 <a href="https://dahl-design.gitbook.io/properties/introduction/install#additional-setup">reads and sets properties</a> in
