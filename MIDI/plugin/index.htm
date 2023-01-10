@@ -1,0 +1,109 @@
+<html>
+<head>
+<style> body { margin-left: 80px; } h4 {margin-bottom:0} ul {margin-top:0} </style>
+<title>GIThub MIDI plugin</title>
+</head>
+<body>
+<h3>MIDI</h3>
+
+<dl>
+<h3>SimHub MIDI Plugin</h3><ul compact>
+<li>SimHub optionally responds to MIDI buttons, <i><b>but not sliders</b></i>; enabling them seems undocumented<ul compact>
+<li>in <code>Settings</code>, enable <code>Midi Controllers Input</code><br><img width=40% src="settings.jpg">
+<li>then, in <code>controls</code><img align=middle src="controls.gif">, press <code>New mapping</code><img align=middle src="New.gif">,
+    press a MIDI key:<br><img src="Mapping.jpg">
+<li>Pressed MIDI event keys also become available properties (search <code>PluginManager</code>) without going thru <code>controls</code><img align=middle src="controls.gif"> ...
+</ul>
+<li><a href="https://www.racedepartment.com/downloads/simmidi.27118/">SimMidi</a> includes a SimHub plugin for controlling MIDI encoder LEDs by udp telemetry from SimHub.<br>
+    That download also includes Juan P Bello's <a href="https://www.hobbytronics.co.uk/datasheets/9_MIDI_code.pdf"><code>MIDI_commands.pdf</code></a>.
+</ul>
+<dl>
+<dt><b><i>See also</i></b>:
+<a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/post-3446448">Race Department wireless MIDI thread</a>
+<dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, Android Wireless Mixer controls,<br>
+   MIDIShift, MidiView, iPad Midi Controller Pro, and Open Stage Control
+<dt><br>SimHub plugins can add so-called <i>properties</i> which can be read in e.g. ShakeIt plugin.<br>
+<dd>Similarly, plugins can read properties that are e.g. set in ShakeIt plugin.<br>
+e.g. (<a href="https://github.com/andreasdahl1987/DahlDesignProperties">Dahl Design Properties</a>
+<a href="https://dahl-design.gitbook.io/properties/introduction/install#additional-setup">reads and sets properties</a> in
+<a href="https://github.com/andreasdahl1987/DahlDesignProperties/blob/6c61e69e93ac3ddd97e9ba49972797ab8ddc66d2/iRacing/iRacing.cs#L1220">iRacing.cs</a>).
+<pre>
+...
+namespace DahlDesign.Plugin.iRacing
+{
+  public class Data : SectionBase
+  {
+    public override void Init(PluginManager pluginManager)
+    {
+...
+      InitializeLists();
+
+      #region SimHub Properties  
+...
+      Base.AddProp("SlipLF", 0);
+      Base.AddProp("SlipRF", 0);
+      Base.AddProp("SlipLR", 0);
+      Base.AddProp("SlipRR", 0);
+...
+      #endregion
+    }
+
+    public override void DataUpdate()
+    {
+...
+      double slipLF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontLeft"));  //Wheel slip
+      double slipRF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontRight"));  //Wheel slip
+      double slipLR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearLeft"));  //Wheel slip
+      double slipRR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearRight"));  //Wheel slip
+...
+
+      Base.SetProp("SlipLF", slipLF);
+      Base.SetProp("SlipRF", slipRF);
+      Base.SetProp("SlipLR", slipLR);
+      Base.SetProp("SlipRR", slipRR);
+    }
+  }
+}
+</pre>
+At least in theory, by appropriately glueing something like this to MIDI code,<br>
+MIDI sliders can be used to set SimHub property values,
+while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
+
+</dl>
+<h3>candidate MIDI libraries</h3>
+<a href="https://techgaun.github.io/active-forks/">Search active GitHub forks</a>
+<dl>
+<dt><a href="https://github.com/naudio/NAudio"><b>NAudio</b></a>
+<dd>includes Full MIDI event model, demo applications, <a href="https://github.com/naudio/NAudio/blob/master/Docs/MidiInAndOut.md">documentation</a>,
+    <a href="https://github.com/naudio/NAudio/network/dependents">used by <b>many</a>, including SimHub</b>
+
+<dt><a href="https://github.com/melanchall/drywetmidi"><b>DryWetMIDI</b></a>
+<dd><a href="https://melanchall.github.io/drywetmidi">Documentation</a>, <a href="https://www.codeproject.com/Articles/melanchall#Article">Code Project Articles</a>
+    used by <b>SimHub</b>, <a href="https://github.com/melanchall/drywetmidi/network/dependents">many others</a>;
+    <a href="https://melanchall.github.io/drywetmidi/articles/dev/Project-health.html"><b>maintained</b></a>
+
+<dt><br><a href="https://github.com/ho0ber/NK2Tray"><b>NK2Tray</b></a>
+<dd>Uses NAudio, has Wiki, supports nanoKONTROL
+
+<dt><a href="https://github.com/obiwanjacobi/midi.net"><b>MIDI.NET</b></a>
+<dd>docs, <a href="https://discord.gg/A8xe9YC">Discord Server</a>, <a href="https://www.facebook.com/midi4net">FaceBook</a>,
+    <a href="https://github.com/obiwanjacobi/midi.net/network/dependents">used by 5</a>,
+    including <a href="https://github.com/MidiRecorder/MidiRecorder">MIDI Recorder</a>
+
+<dt><a href="https://github.com/codewitch-honey-crisis/MidiSlicer"><b>MidiSlicer</b></a>
+<dd>wrapper over Microsoft Windows' MIDI API, <a href="https://www.codeproject.com/Articles/5272315/Midi-A-Windows-MIDI-Library-in-Csharp">CodeProject article</a>
+
+<dt><a href="https://github.com/Modrigue/MidiSlicer"><b>Midi Editor</b></a>
+<dd>based on MidiSlicer
+
+<dt><a href="https://github.com/atsushieno/managed-midi"><b>managed-midi</b></a>
+<dd>cross-platform, many forks, used in at least 4 projects
+
+<dt><a href="https://github.com/tebjan/Sanford.Multimedia.Midi"><b>Leslie Sanford C# MIDI toolkit</b></a>
+<dd><a href="https://www.codeproject.com/Articles/6228/C-MIDI-Toolkit">CodeProject C# MIDI Toolkit</a>,
+    <a href="https://www.codeproject.com/Articles/Leslie-Sanford#Article">Leslie Sanford Code Project articles</a>,
+    <a href="https://gamedev.stackexchange.com/questions/149223/how-to-import-the-sanford-midi-library">importing the Sanford MIDI library</a>,
+    <a href="https://forum.unity.com/threads/implementing-c-midi-toolkit.128731/">Implementing C# MIDI Toolkit</a>
+</dl>
+</body>
+</html>
