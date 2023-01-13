@@ -69,6 +69,16 @@ At least in theory, by appropriately glueing something like this to MIDI code,<b
 MIDI sliders can be used to set SimHub property values,
 while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
 
+<dt><br>C# plugin source and discussions
+<dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a> and <a href="PluginSharing.htm">related Discord discussion</a>.
+
+<dt><br>C# expressions
+<dd>SimHub property values can be set using C# custom expressions.
+ These preceded ncalc, JavaScript, plugin sdk, etc and is kept for backward compatibility.
+  As of 7.04.8b4, these are evaluated a first time when loaded.
+  To avoid user interface coding, consider using a C# custom expression to customize MIDI input and output device name property strings.
+<br>
+<br><i><b>Question</b></i>:&nbsp are these expressions evaluated at 60Hz or only when referenced?
 </dl>
 <h3>candidate MIDI libraries</h3>
 <a href="https://techgaun.github.io/active-forks/">Search active GitHub forks</a>

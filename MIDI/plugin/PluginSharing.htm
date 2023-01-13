@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>SimHub Discord plugin discussion</title>
+</head>
+<body>
+<pre>Wotever 12/28/2017
+To share a plugin, you must first rename it into the project settings,
+and also rename the plugin class name
+after you will just have to give the plugin dll
+and enable it into the settings.
+Plugins are the ultimate extensibility point :D, everything in simhub is based on it.
+PluginDemo.cs
+https://discord.com/channels/299259397060689920/306850703299575809/396037829886738432
+
+7.4.17b1 - SDK now demonstrate how to use AttachDelegate instead of AddProperty/SetPropertyValue
+
+Wotever 10/16/2021 8:47 AM
+Attach property is a third property declaration way :D, there are three ways :
+- SetPropertyValue : The simplest but the slowest, set the value at each update loop
+- Attachproperty : it allows to add a "wrapper" for a property,
+  which can be set at each game loop (it was an convoluted variation of the previous one,
+  skipping SetPropertyValue costs, but keeping the disavantages of requiring computations for each loop.
+  I keep this one in use internally for stuffs I need to compute for each loop anyway
+  (about 40 properties in grand total I would say)
+- AttachDelegate : zero costs if it's not in use
+
+Attachproperty looks like:
+public AttachedProperty<int> RGBIntensity = new AttachedProperty<int>();
+public void Init(PluginManager pluginManager)
+{
+    RGBIntensity.Value = initialvalue;
+    pluginManager.AttachProperty("RGBIntensity", typeof(SerialDashPlugin), properties.RGBIntensity);
+}
+
+void anotherfunc(){
+      // This update has no particular CPU costs except computing "newvalue"
+       RGBIntensity.Value = newvalue;
+}
+
+AttachProperty requires computing a result at each loop;
+AttachDelegate is 100% on demand:
+// Declare a property available in the property list,
+// this gets evaluated "on demand" (when shown or used in formulas)
+// '=>' is C# syntax for lambda experssion, in this case without input parameters
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-operator
+this.AttachDelegate("CurrentDateTime", () => DateTime.Now);
+
+
+GarySwallow 09/16/2019 3:38 PM
+Advanced Custom Plugin Demo</pre>
+Open the <a href="https://cdn.discordapp.com/attachments/306850703299575809/623241262493073410/AdvancedCustom.PluginSdkDemo.zip">AdvancedCustomUser.PluginSdkDemo.sln project file</a>.
+</body>
+</html>
