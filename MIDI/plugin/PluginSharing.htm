@@ -51,7 +51,7 @@ Advanced Custom Plugin Demo</pre>
 Open the <a href="https://cdn.discordapp.com/attachments/306850703299575809/623241262493073410/AdvancedCustom.PluginSdkDemo.zip">AdvancedCustomUser.PluginSdkDemo.sln project file</a>.<br>
 <br>
 <a name=HowTo><h3>SimHub SDK How-To</h3></a>
-SimHub SDK is in C#;&nbsp  <a href="https://www.w3schools.com/cs/">W3 C# Tutorial</a> describes its elements well;<br>
+SimHub SDK is in C#;&nbsp  <a href="https://www.w3schools.com/cs/">W3 C# Tutorial</a> describes C# elements well;<br>
 content until C# Methods is classic C.<br>
 <a href="https://www.tutorialspoint.com/csharp/">tutorialspoint Basic Syntax</a> page lists C# Keywords;<br>
 Program Structures page introduces Visual Studio<br>
@@ -77,6 +77,57 @@ I clicked on a .csproj file, which launched Visual Studio<br>
 "When you create properties they are available inside the Properties list.<br>
  Then to access them you need to create the xaml page in Visual Studio<br>
  for your plugin" - <a href="https://discord.com/channels/299259397060689920/306850703299575809/1038925004965941269">Discord</a><br>
-<img width=640 src="https://media.discordapp.net/attachments/306850703299575809/1038925004865273927/image.png">
+<img width=640 src="https://media.discordapp.net/attachments/306850703299575809/1038925004865273927/image.png"><br clear=all>
+<dl>
+<dt><br>SimHub plugins can add so-called <i>properties</i> which can be read in other plugins e.g. ShakeIt.<br>
+<dd>Similarly, plugins can read properties that are e.g. set in ShakeIt plugin.<br>
+e.g. (<a href="https://github.com/andreasdahl1987/DahlDesignProperties">Dahl Design Properties</a>
+<a href="https://dahl-design.gitbook.io/properties/introduction/install#additional-setup">reads and sets properties</a> in
+<a href="https://github.com/andreasdahl1987/DahlDesignProperties/blob/6c61e69e93ac3ddd97e9ba49972797ab8ddc66d2/iRacing/iRacing.cs#L1220">iRacing.cs</a>).
+<pre>
+...
+namespace DahlDesign.Plugin.iRacing
+{
+  public class Data : SectionBase
+  {
+    public override void Init(PluginManager pluginManager)
+    {
+...
+      InitializeLists();
+
+      #region SimHub Properties
+...
+      Base.AddProp("SlipLF", 0);
+      Base.AddProp("SlipRF", 0);
+      Base.AddProp("SlipLR", 0);
+      Base.AddProp("SlipRR", 0);
+...
+      #endregion
+    }
+
+    public override void DataUpdate()
+    {
+...
+      double slipLF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontLeft"));  //Wheel slip
+      double slipRF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontRight"));  //Wheel slip
+      double slipLR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearLeft"));  //Wheel slip
+      double slipRR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearRight"));  //Wheel slip
+...
+
+      Base.SetProp("SlipLF", slipLF);
+      Base.SetProp("SlipRF", slipRF);
+      Base.SetProp("SlipLR", slipLR);
+      Base.SetProp("SlipRR", slipRR);
+    }
+  }
+}
+</pre>
+At least in theory, by appropriately glueing something like this to MIDI code,<br>
+MIDI sliders can be used to set SimHub property values,
+while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
+
+<dt><br>C# plugin source and discussions
+<dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a> and <a href="PluginSharing.htm">related Discord discussion</a>. 
+</dl>
 </body>
 </html>

@@ -1,15 +1,27 @@
 <html>
 <head>
 <style> body { margin-left: 80px; } h4 {margin-bottom:0} ul {margin-top:0} </style>
-<title>GIThub MIDI plugin</title>
+<title>MIDI SimHub plugins</title>
 </head>
 <body>
+<a href="../"><i>back</i></a>
 <h3>MIDI</h3>
 
 <dl>
-<h3>SimHub MIDI Plugin</h3><ul compact>
+<h3>SimHub MIDI Plugins</h3>
+SimHub is largely a collection of so-called plugins, e.g. one for each supported game,
+then others for SimHub-provided Options enabled under Settings<img align=middle src="setting.jpg">.<br>
+User-provided plugins can be enabled via Additional Plugins<img align=middle src="plugins.jpg">.<br>
+Plugins can interact via Properties, Actions and Events, where Actions (e.g. button presses) may launch Events.<br>
+Properties can contain numeric or string variables. Instead of requiring code to check for changing values e.g. 60 times per second,<br>
+one could presumably provoke an Event to launch code in an Action to evaluate changed Properties.<br>
+SimHub plugins are packaged as .dll files and installed installed by dragging into the SimHub folder containing SimHubWPF.exe and numerous other .dll files.<br>
+SimHub presumably identifies plugins from other .dll files by including this line:&nbsp <code>using SimHub.Plugins;</code>&nbsp in their source.
+<br>
+
+<ul compact>
 <li><a href="PluginSharing.htm#HowTo">SimHub SDK How-To</a>
-<li>SimHub optionally responds to MIDI buttons, <i><b>but not sliders</b></i>; enabling them seems undocumented<ul compact>
+<li>SimHub can optionally respond to MIDI buttons, <i><b>but not sliders</b></i>; enabling them seems undocumented:<ul compact>
 <li>in <code>Settings</code>, enable <code>Midi Controllers Input</code><br><img width=40% src="settings.jpg">
 <li>then, in <code>controls</code><img align=middle src="controls.gif">, press <code>New mapping</code><img align=middle src="New.gif">,
     press a MIDI key:<br><img src="Mapping.jpg">
@@ -23,59 +35,10 @@
 <a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/post-3446448">Race Department wireless MIDI thread</a>
 <dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, Android Wireless Mixer controls,<br>
    MIDIShift, MidiView, iPad Midi Controller Pro, and Open Stage Control
-<dt><br>SimHub plugins can add so-called <i>properties</i> which can be read in e.g. ShakeIt plugin.<br>
-<dd>Similarly, plugins can read properties that are e.g. set in ShakeIt plugin.<br>
-e.g. (<a href="https://github.com/andreasdahl1987/DahlDesignProperties">Dahl Design Properties</a>
-<a href="https://dahl-design.gitbook.io/properties/introduction/install#additional-setup">reads and sets properties</a> in
-<a href="https://github.com/andreasdahl1987/DahlDesignProperties/blob/6c61e69e93ac3ddd97e9ba49972797ab8ddc66d2/iRacing/iRacing.cs#L1220">iRacing.cs</a>).
-<pre>
-...
-namespace DahlDesign.Plugin.iRacing
-{
-  public class Data : SectionBase
-  {
-    public override void Init(PluginManager pluginManager)
-    {
-...
-      InitializeLists();
-
-      #region SimHub Properties  
-...
-      Base.AddProp("SlipLF", 0);
-      Base.AddProp("SlipRF", 0);
-      Base.AddProp("SlipLR", 0);
-      Base.AddProp("SlipRR", 0);
-...
-      #endregion
-    }
-
-    public override void DataUpdate()
-    {
-...
-      double slipLF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontLeft"));  //Wheel slip
-      double slipRF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontRight"));  //Wheel slip
-      double slipLR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearLeft"));  //Wheel slip
-      double slipRR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearRight"));  //Wheel slip
-...
-
-      Base.SetProp("SlipLF", slipLF);
-      Base.SetProp("SlipRF", slipRF);
-      Base.SetProp("SlipLR", slipLR);
-      Base.SetProp("SlipRR", slipRR);
-    }
-  }
-}
-</pre>
-At least in theory, by appropriately glueing something like this to MIDI code,<br>
-MIDI sliders can be used to set SimHub property values,
-while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
-
-<dt><br>C# plugin source and discussions
-<dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a> and <a href="PluginSharing.htm">related Discord discussion</a>.
 
 <dt><br>C# expressions
-<dd>SimHub property values can be set using C# custom expressions.
- These preceded ncalc, JavaScript, plugin sdk, etc and is kept for backward compatibility.
+<dd>SimHub property values can also be set using C# custom expressions.
+ SimHub support for these C# expressions preceded ncalc, JavaScript, plugin sdk, etc and is kept for backward compatibility.
   As of 7.04.8b4, these are evaluated a first time when loaded.
   To avoid user interface coding, consider using a C# custom expression to customize MIDI input and output device name property strings.
 <br>
