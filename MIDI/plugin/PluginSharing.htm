@@ -129,5 +129,40 @@ while SimHub property values can be used to set MIDI values for e.g. VST level t
 <dt><br>C# plugin source and discussions
 <dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a> and <a href="PluginSharing.htm">related Discord discussion</a>. 
 </dl>
+<hr>
+<a name=ChatGPT><h3>OpenAI ChatGPT code for SImHub plugin using DryWetMIDI</h3></a>
+<pre>
+// Here is an example of how you might use the DryWetMIDI library
+// in a SimHub plugin to send MIDI messages:
+
+using SimHub;
+using DryWetMIDI.Devices;
+using DryWetMIDI.Interaction;
+
+namespace MySimHubPlugin
+{
+    public class MySimHubPlugin : Plugin
+    {
+        private OutputDevice _midiOut;
+
+        public override void Start()
+        {
+            // Connect to the first available MIDI output device
+            _midiOut = OutputDevice.GetByName("My MIDI Device");
+        }
+
+        public override void Update()
+        {
+            // Send a MIDI message to turn on a note
+            _midiOut.Send(new NoteOn(Channel.Channel1, 60, 100));
+        }
+    }
+}
+/* This plugin connects to the first MIDI output device that is available
+ ; and sends a MIDI "note on" message to it on each frame.
+ ; The message will turn on a note with a pitch of 60 (middle C)
+ ; and a velocity of 100 on channel 1.
+ */
+</pre>
 </body>
 </html>
