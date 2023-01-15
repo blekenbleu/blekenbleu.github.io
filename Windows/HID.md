@@ -4,6 +4,7 @@ HID game controllers
 ---
 
 [mi-360 fork](https://github.com/blekenbleu/mi-360) - practice for hacking [ViGEm.NET](https://github.com/ViGEm/ViGEm.NET) into [VJoySerialFeeder](https://github.com/Cleric-K/vJoySerialFeeder)  
+[vigem-example-dotnet](https://github.com/kmcnaught/vigem-example-dotnet) - Using ViGem.NET SDK to control a (virtual) XBox controller from C#  
 
 #### Background
 Wanted: [D1 UNO](../Arduino/ESPDuino) as [HID game controller](../pedals/ESP8266).  
