@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>How-To for Visual Studio for SimHub plugin</title>
+</head>
+<body>
+<a href="HowTo.htm#HowTo"><i>back</i></a><br>
+<h3>Visual Studio for SimHub plugin: How-To</h3>
+SimHub and its plugin SDK are in C#;&nbsp  <a href="https://www.w3schools.com/cs/">W3 C# Tutorial</a> describes C# elements well;<br>
+content until C# Methods is classic C.<br>
+<a href="https://www.tutorialspoint.com/csharp/">tutorialspoint Basic Syntax</a> page lists C# Keywords;<br>
+Program Structures page introduces Visual Studio<br>
+sadly employing concepts out of order or simply unexplained.<br>
+<br>
+Using SDK requires login to <a href="https://learn.microsoft.com/en-us/shows/intro-to-visual-studio/?wt.mc_id=educationalvside-c9-niner">Visual Studio</a>
+using Microsoft account<br>
+<a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/visual-studio-ide?view=vs-2019">Getting started</a><br>
+<br>
+<a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/?view=vs-2022">Getting started VS 2022</a><br>
+<br>
+Visual Studio 2019 does not update to 2022;&nbsp  VS 2022 installs in parallel.<br>
+<a href="https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022">VS 2022 Installation instructions</a><br>
+<br>
+I clicked on a .csproj file, which launched Visual Studio<br>
+<li> should really click on .sln file, but perhaps not important..?<br>
+ &nbsp &nbsp .csproj file was listed in lower right Properties window<br>
+<li> clicked on wrench icon, launching an Application window,<br>
+ &nbsp &nbsp which showed .NET framework 4.7.2<br>
+ &nbsp &nbsp <b>-</b> SimHub wants at least 4.8, per Wotever 8.2.0 release 12/16/2022<br>
+ &nbsp &nbsp &nbsp Change framework setting in Visual Studio<br>
+<br>
+<pre>
+A simple SimHub plugin
+https://github.com/search?q=simhub+plugin
+https://github.com/viper4gh/SimHub-Plugin-CalcLngWheelSlip
+Has (for VS):
+Properties/, *.cs project.class.sln,csproj, SettingsControl.xaml, xaml.cs
+(for git): .gitattributes, .gitignore
+Also: README.md, docs/
+Cloned by GitHub Desktop to SimHub/PluginSdk/
+launched with VS 2019,
+with Viper.PluginCalcLngWheelSlip highlighted under Solution Explorer,
+click wrench icon under Properties to launch main properties.
+Under Debug, added * Start external program: [\path\to\SimHubWPF.exe  ]
+.. a relative path (..\..\SimHubWPF.exe) was rejected.
+That provokes creation of Viper.PluginCalcLngWheelSlip.csproj.user
+.. which was ignored by .gitignore entry '*.user'
+$ git add -f Viper.PluginCalcLngWheelSlip.csproj.user
+
+Build failed, in part complaining about .NET Target framework not 4.8
+- downloaded and installed, then under Properties wrench Application,
+changed Target framework to .NET Framework 4.8
+.. which modified Viper.PluginCalcLngWheelSlip.csproj
+
+Forked in GitHub Desktop, which pushed it to
+https://github.com/blekenbleu/SimHub-Plugin-CalcLngWheelSlip
+which I renamed on GitHub website under settings
+https://github.com/blekenbleu/CalcLngWheelSlip
+
+Project then built with warning:
+>E:\my\Sim\SimHub\SimHub\PluginSdk\CalcLngWheelSlip\PluginCalcLngWheelSlip.cs(13,6,13,22): warning CS0612: 'PluginDescritionAttribute' is obsolete
+
+Wotever has deprecated PluginDescritionAttribute, so I deleted it...
+
+Prompted for IntelliCode; opted in
+https://learn.microsoft.com/en-us/visualstudio/intellicode/custom-models#autotraining-models-for-your-codebase
+
+At this point, GitHub Desktop expects push to https://github.com/blekenbleu/SimHub-Plugin-CalcLngWheelSlip
+... but automagically accommodated repository name change.
+commented out '*.user' in .gitignore to push Viper.PluginCalcLngWheelSlip.csproj.user
+
+The Viper.PluginCalcLngWheelSlip plugin not only built,
+it installed and was detected by SimHub and seems to work,
+but not in iRacing or ACC...
+SimHub.Logging: [2023-01-16 16:34:32,492] INFO - Initialising Viper.PluginCalcLngWheelSlip.ViperDataPlugin plugin
+Exception thrown: 'System.IO.FileNotFoundException' in mscorlib.dll</pre>
+
+<h5>Used <a href="https://medium.com/c-sharp-progarmming/safely-rename-a-project-folder-visual-studio-f3c6bd4d0bd6">this</a>
+for renaming DataPluginDemo:</h5>
+
+Optional Step: Rename NamespacesShould emphasize that requires loading a .cs file..<pre> got this warning: 
+<img src="ManagedResources.png">
+Everything turned to crap.  VS rejects MIDI-io namespace;
+MIDIio is OK...Some brute force Vim, then try renaming per above instructions.
+One gotcha: rename the whatever before right-clicking for rename
+https://github.com/MahApps/MahApps.Metro/issues/4046
+Fiddling with resources provoked license complaints from (Arduino) Visual Micro, so uninstalled it.
+Despite warning, manually changed Properties/AssemblyInfo.cs,
+replacing blekenbleu.PluginSdkDemo with blekenbleu.MIDIio
+
+Using MIDIio for both namespace and class is evidently bad
+</pre>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>SimHub Discord plugin discussion</title>
+<title>SimHub plugin How-To and Discord discussions</title>
 </head>
 <body>
 <pre>Wotever 12/28/2017
@@ -48,31 +48,21 @@ this.AttachDelegate("CurrentDateTime", () => DateTime.Now);
 
 GarySwallow 09/16/2019 3:38 PM
 Advanced Custom Plugin Demo</pre>
-Open the <a href="https://cdn.discordapp.com/attachments/306850703299575809/623241262493073410/AdvancedCustom.PluginSdkDemo.zip">AdvancedCustomUser.PluginSdkDemo.sln project file</a>.<br>
+Open the <a href="https://cdn.discordapp.com/attachments/306850703299575809/623241262493073410/AdvancedCustom.PluginSdkDemo.zip"><code>AdvancedCustomUser.PluginSdkDemo.sln</code> project file</a>.<br>
 <br>
 <a name=HowTo><h3>SimHub SDK How-To</h3></a>
-SimHub SDK is in C#;&nbsp  <a href="https://www.w3schools.com/cs/">W3 C# Tutorial</a> describes C# elements well;<br>
-content until C# Methods is classic C.<br>
-<a href="https://www.tutorialspoint.com/csharp/">tutorialspoint Basic Syntax</a> page lists C# Keywords;<br>
-Program Structures page introduces Visual Studio<br>
-Sadly, employs concepts out of order or simply unexplained.<br>
-<br>
-Using SDK requires login to <a href="https://learn.microsoft.com/en-us/shows/intro-to-visual-studio/?wt.mc_id=educationalvside-c9-niner">Visual Studio</a>
-using Microsoft account<br>
-<a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/visual-studio-ide?view=vs-2019">Getting started</a><br>
-<br>
-<a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/?view=vs-2022">Getting started VS 2022</a><br>
-<br>
-Visual Studio 2019 does not update to 2022;&nbsp  VS 2022 installs in parallel.<br>
-<a href="https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022">VS 2022 Installation instructions</a><br>
-<br>
-I clicked on a .csproj file, which launched Visual Studio<br>
-<li> should really click on .sln file, but perhaps not important..?<br>
- &nbsp &nbsp .csproj file was listed in lower right Properties window<br>
-<li> clicked on wrench icon, launching an Application window,<br>
- &nbsp &nbsp which showed .NET framework 4.7.2<br>
- &nbsp &nbsp <b>-</b> SimHub wants at least 4.8, per Wotever 8.2.0 release 12/16/2022<br>
- &nbsp &nbsp &nbsp Change framework setting in Visual Studio<br>
+Plugins can interact via Properties, Actions and Events, where Actions (e.g. button presses) may launch Events.<br>
+Properties can contain numeric or string variables.<br>
+Instead of requiring code to check for changing values e.g. 60 times per second,<br>
+one could presumably provoke an Event to launch code in an Action to evaluate changed Properties.<br>
+Packaged as .dll files, SimHub plugins are installed by dragging into<br>
+the SimHub folder containing SimHubWPF.exe and numerous other .dll files.<br>
+SimHub presumably identifies plugins from other .dll files by including this line in their source:<br>
+&nbsp <code>using SimHub.Plugins;</code><br>
+<br>   
+SimHub and its plugin SDK are in C#.<br>
+My struggles with C# and Visual Studion are addressed in <a href="VisualStudio.htm"><b>this C# Visual Studio How-To</b></a>.<br>
+ &nbsp &nbsp <b>-</b> SimHub wants .NET framework 4.8, per Wotever 8.2.0 release 12/16/2022<br>
 <br>
 "When you create properties they are available inside the Properties list.<br>
  Then to access them you need to create the xaml page in Visual Studio<br>
@@ -163,6 +153,42 @@ namespace MySimHubPlugin
  ; The message will turn on a note with a pitch of 60 (middle C)
  ; and a velocity of 100 on channel 1.
  */
+</pre>
+<hr>
+<h5>15 Jan 2023 plugin experiment</h5>
+<pre>
+- rename User.PluginSdkDemo to blekenbleu.PluginSdkDemo
+- update SimHub from 7.4.23 to 8.2.0, which restored/updated
+  > User.PluginSdkDemo
+  > User.LedEditorEffect
+- User.PluginSdkDemo files:
+   DataPluginDemo.cs, DataPluginDemoSettings.cs unchanged
+   in User.PluginSdkDemo.csproj
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>            became <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+- as with v 7.4.23, all replays work, except AC
+
+ StreamDeck SimHub Plugin
+https://www.reddit.com/r/simracing/comments/ru20od/streamdeck_simhub_plugin/
+
+Visual Studio project folder rename
+https://medium.com/c-sharp-progarmming/safely-rename-a-project-folder-visual-studio-f3c6bd4d0bd6
+
+Rename a code symbol refactoring
+https://learn.microsoft.com/en-us/visualstudio/ide/reference/rename?view=vs-2019
+https://learn.microsoft.com/en-us/visualstudio/ide/class-designer/refactoring-classes-and-types?view=vs-2019
+https://blog.ndepend.com/top-10-visual-studio-refactoring-tips/
+</pre>
+<h5>17 Jan push to GitHub; Debug output:</h5>
+<code>Resource not found; ResourceKey='MahApps.Metro.Styles.FlatButtonFocusVisualStyle'</code><br>
+<a href="https://stackoverflow.com/questions/63188212/wpf-mahapps-metro-resources-not-found">
+change 'Styles/Accents/' to 'Styles/Themes/' in <code>Properties/DesignTimeResources.xaml</code></a><br>
+<b>This actually seems to have worked.</b>
+<pre>
+"It could be that you don't have an App,
+ if so then you must add the resources to every Window of your extension.
+ Another trick is to use the DynamicResource instead StaticResource,
+  because the resources will maybe are loaded later"
+https://github.com/MahApps/MahApps.Metro/issues/4046
 </pre>
 </body>
 </html>
