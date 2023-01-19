@@ -40,7 +40,7 @@ Cloned by GitHub Desktop to SimHub/PluginSdk/
 launched with VS 2019,
 with Viper.PluginCalcLngWheelSlip highlighted under Solution Explorer,
 click wrench icon under Properties to launch main properties.
-Under Debug, added * Start external program: [\path\to\SimHubWPF.exe  ]
+Under Debug, added * Start external program: [\path\to\SimHubWPF.exe  ]
 .. a relative path (..\..\SimHubWPF.exe) was rejected.
 That provokes creation of Viper.PluginCalcLngWheelSlip.csproj.user
 .. which was ignored by .gitignore entry '*.user'
@@ -79,15 +79,24 @@ for renaming DataPluginDemo:</h5>
 
 Optional Step: Rename NamespacesShould emphasize that requires loading a .cs file..<pre> got this warning: 
 <img src="ManagedResources.png">
-Everything turned to crap.  VS rejects MIDI-io namespace;
+Everything turned to crap.&nbsp VS rejects MIDI-io namespace;
 MIDIio is OK...Some brute force Vim, then try renaming per above instructions.
 One gotcha: rename the whatever before right-clicking for rename
 https://github.com/MahApps/MahApps.Metro/issues/4046
 Fiddling with resources provoked license complaints from (Arduino) Visual Micro, so uninstalled it.
-Despite warning, manually changed Properties/AssemblyInfo.cs,
-replacing blekenbleu.PluginSdkDemo with blekenbleu.MIDIio
+Despite warning, manually changed Properties/AssemblyInfo.cs,
+replacing blekenbleu.PluginSdkDemo with blekenbleu.MIDIio
 
-Using MIDIio for both namespace and class is evidently bad
+Hyphen in namespace is rejected;  probably also in class names.
+Using MIDIio for both namespace and class is evidently bad, useless error message.
+Folder name project is not problematic, e.g. using MIDIio for folder and main class names.
+The only place that namespace (unique from class name) is referenced without specific [Nn]amespace label are:
+SettingsControl.xaml:?<UserControl x:Class="""
+Properties/Resources.Designer.cs: global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("", typeof(Resources).Assembly);
 </pre>
+
+<h5>User interface (ick) tutorials</h5>
+<li>Microsoft <a href="https://learn.microsoft.com/en-us/visualstudio/ide/create-csharp-winform-visual-studio?toc=%2Fvisualstudio%2Fget-started%2Fcsharp%2Ftoc.json&bc=%2Fvisualstudio%2Fget-started%2Fcsharp%2Fbreadcrumb%2Ftoc.json&view=vs-2019">Create a Windows Forms app in Visual Studio with C#</a>
+<li>Net-informations.com <a href="http://csharp.net-informations.com/gui/gui_tutorial.htm">C# Graphical User Interface Tutorial</a>
 </body>
 </html>

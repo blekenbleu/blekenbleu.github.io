@@ -59,14 +59,25 @@ Packaged as .dll files, SimHub plugins are installed by dragging into<br>
 the SimHub folder containing SimHubWPF.exe and numerous other .dll files.<br>
 SimHub presumably identifies plugins from other .dll files by including this line in their source:<br>
 &nbsp <code>using SimHub.Plugins;</code><br>
-<br>   
+<br>
+
 SimHub and its plugin SDK are in C#.<br>
 My struggles with C# and Visual Studion are addressed in <a href="VisualStudio.htm"><b>this C# Visual Studio How-To</b></a>.<br>
  &nbsp &nbsp <b>-</b> SimHub wants .NET framework 4.8, per Wotever 8.2.0 release 12/16/2022<br>
 <br>
-"When you create properties they are available inside the Properties list.<br>
- Then to access them you need to create the xaml page in Visual Studio<br>
- for your plugin" - <a href="https://discord.com/channels/299259397060689920/306850703299575809/1038925004965941269">Discord</a><br>
+<h5>First tip: start with a working example plugin</h5>
+Conventions for plugin C# may differ appreciably from generic .NET C# apps:
+<li>Not an App;&nbsp DLL launched from within SimHub
+<li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp relative path to SimHub classes and dll build destination
+<li>Sadly, at least Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug;&nbsp must be absolute.
+<li>Obvious starting place:&nbsp <code>SimHub/PluginSdk/User.PluginSdkDemo/</code>
+<li>Also simple, already a GitHub project:&nbsp
+ <a href="https://github.com/viper4gh/SimHub-Plugin-CalcLngWheelSlip"><code>SimHub/PluginSdk/CalcLngWheelSlip</code></a><br>
+<br>
+
+"When you create properties they are available inside the Properties list.<br> &nbsp
+ Then to access them you need to create the xaml page in Visual Studio for your plugin" -
+ <a href="https://discord.com/channels/299259397060689920/306850703299575809/1038925004965941269">Discord</a><br>
 <img width=640 src="https://media.discordapp.net/attachments/306850703299575809/1038925004865273927/image.png"><br clear=all>
 <dl>
 <dt><br>SimHub plugins can add so-called <i>properties</i> which can be read in other plugins e.g. ShakeIt.<br>
@@ -182,13 +193,14 @@ https://blog.ndepend.com/top-10-visual-studio-refactoring-tips/
 <code>Resource not found; ResourceKey='MahApps.Metro.Styles.FlatButtonFocusVisualStyle'</code><br>
 <a href="https://stackoverflow.com/questions/63188212/wpf-mahapps-metro-resources-not-found">
 change 'Styles/Accents/' to 'Styles/Themes/' in <code>Properties/DesignTimeResources.xaml</code></a><br>
-<b>This actually seems to have worked.</b>
-<pre>
-"It could be that you don't have an App,
- if so then you must add the resources to every Window of your extension.
- Another trick is to use the DynamicResource instead StaticResource,
-  because the resources will maybe are loaded later"
-https://github.com/MahApps/MahApps.Metro/issues/4046
-</pre>
+<b>This actually seems to have worked.</b><br>
+<br>
+"It could be that you don't have an App,<br>&nbsp
+ if so then you must add the resources to every Window of your extension.<br>&nbsp
+ Another trick is to use the DynamicResource instead StaticResource,<br>&nbsp
+  because the resources will maybe are loaded later"<br>&nbsp
+<a href="https://github.com/MahApps/MahApps.Metro/issues/4046">
+https://github.com/MahApps/MahApps.Metro/issues/4046</a>
+
 </body>
 </html>
