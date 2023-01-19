@@ -65,7 +65,7 @@ SimHub and its plugin SDK are in C#.<br>
 My struggles with C# and Visual Studion are addressed in <a href="VisualStudio.htm"><b>this C# Visual Studio How-To</b></a>.<br>
  &nbsp &nbsp <b>-</b> SimHub wants .NET framework 4.8, per Wotever 8.2.0 release 12/16/2022<br>
 <br>
-<h5>First tip: start with a working example plugin</h5>
+<h4>First tip: start with a working example plugin</h4>
 Conventions for plugin C# may differ appreciably from generic .NET C# apps:
 <li>Not an App;&nbsp DLL launched from within SimHub
 <li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp relative path to SimHub classes and dll build destination
@@ -127,11 +127,12 @@ At least in theory, by appropriately glueing something like this to MIDI code,<b
 MIDI sliders can be used to set SimHub property values,
 while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
 
+<dt><br><b>Second tip:&nbsp Initializing properties</b>
 <dt><br>Plugins can access <a href="./#CCEx">Custom Expression</a> properties during Init {}.
 <dd>SimHub evaluates those custom expressions before [re]launching plugins after game changes.
 
 <dt><br>Global properties can also be created using NCalc;
-<dd>examples are available in <code>\SimHub\NCalcScripts\examples.ini</code>
+<dd>examples are available in e.g. <a href="https://github.com/blekenbleu/blekenbleu.MIDIio/blob/main/MIDIio.ini"><code>\SimHub\NCalcScripts\examples.ini</code></a>
 
 <dt><br>C# plugin source and discussions
 <dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a>.
