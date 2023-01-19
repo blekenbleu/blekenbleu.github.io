@@ -127,6 +127,12 @@ At least in theory, by appropriately glueing something like this to MIDI code,<b
 MIDI sliders can be used to set SimHub property values,
 while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
 
+<dt><br>Plugins can access <a href="./#CCEx">Custom Expression</a> properties during Init {}.
+<dd>SimHub evaluates those custom expressions before [re]launching plugins after game changes.
+
+<dt><br>Global properties can also be created using NCalc;
+<dd>examples are available in <code>\SimHub\NCalcScripts\examples.ini</code>
+
 <dt><br>C# plugin source and discussions
 <dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a>.
 </dl>

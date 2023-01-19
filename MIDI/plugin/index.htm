@@ -37,14 +37,33 @@ motivating <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">this <b>MID
 <dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, Android Wireless Mixer controls,<br>
    MIDIShift, MidiView, iPad Midi Controller Pro, and Open Stage Control
 
-<dt><br><b>C# expressions</b>
+<a name=CCEx><dt><br><b>C# Custom Expressions</b></a>
 <dd>SimHub property values can also be set using C# custom expressions.<br>
- SimHub support for these C# expressions preceded ncalc, JavaScript, plugin sdk, etc<br> and is kept for backward compatibility.<br>
-  As of 7.04.8b4, these are evaluated a first time when loaded.<br>
-  To avoid user interface coding, consider using a C# custom expression<br>
-  for setting MIDI input and output device name property strings.
-<br>
-<br><i><b>Question</b></i>:&nbsp are these expressions evaluated at 60Hz or only when referenced?
+  Access them by <b> * * * Additional plugins</b> -> <b>More...</b><br>
+  SimHub support for these C# expressions preceded ncalc, JavaScript, plugin sdk, etc<br> and is kept for backward compatibility.<br>
+  SimHub stores them in <code>PluginsData/*/DataCorePlugin/CustomExpressions</code><br>
+  Those to be used in all games are stored in <code>PluginsData/Common/DataCorePlugin/CustomExpressions</code><br>
+  As of 7.04.8b4, these are evaluated a first time when games are loaded, before plugins are loaded.<br>
+  To avoid user interface coding, use C# custom expressions<br>
+  to set MIDI input and output device name property strings.
+<dt><br>C# Custom Expressions <a href="https://discord.com/channels/299259397060689920/306850703299575809/703991353683476500">special trick for a static</a>:
+<dd><pre>
+init(value);    
+return KKDash;
+    
+}  
+static int KKDash = 0;
+
+class KKDAsh{}
+static void init(global::SimHub.Plugins.PluginManager pluginManager){
+    
+        pluginManager.AddAction("KartKraft_Dash_toggle", typeof(KKDAsh), (a, b) =>
+        {
+            KKDash = (KKDash + 1) % 3;
+        });
+</pre>    
+<dt><br><i><b>Question</b></i>:&nbsp are these expressions evaluated at 60Hz or (more likely) only when referenced?<br>
+<dd>Any properties set or referenced only in a plugin <code>Init{}</code> section are presumably minimal overhead.
 </dl>
 <h3>candidate MIDI libraries</h3>
 <a href="https://techgaun.github.io/active-forks/">Search active GitHub forks</a>
