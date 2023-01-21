@@ -128,14 +128,32 @@ MIDI sliders can be used to set SimHub property values,
 while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
 
 <dt><br><b>Second tip:&nbsp Initializing properties</b>
-<dt><br>Plugins can access <a href="./#CCEx">Custom Expression</a> properties during Init {}.
-<dd>SimHub evaluates those custom expressions before [re]launching plugins after game changes.
+<dt><br>Global properties are easily created using <a href="https://github.com/SHWotever/SimHub/wiki/NCalc-scripting"><b>NCalc</b></a>;
+<dd>
+I <i><b>hate</b></i> writing user interface code, so will configure my plugins by editing a matching NCalc script.<br>
+NCalc examples are available in <code>\SimHub\NCalcScripts\examples.ini</code>;<br>
+edit a copy of <a href="https://github.com/blekenbleu/blekenbleu.MIDIio/blob/main/MIDIio.ini"><code>MIDIio.ini</code></a> in that folder.<br>
 
-<dt><br>Global properties can also be created using NCalc;
-<dd>examples are available in e.g. <a href="https://github.com/blekenbleu/blekenbleu.MIDIio/blob/main/MIDIio.ini"><code>\SimHub\NCalcScripts\examples.ini</code></a>
+<dt><br>Plugins can also access <a href="./#CCEx">Custom Expression</a> properties during Init {}.
+<dd>SimHub evaluates those custom expressions before [re]launching plugins e.g. after game changes.
+
+<dt><br><b>Third tip:&nbsp Editing source while debugging</b>
+<dd>Visual Studio will throw up all sorts of confusing warnings and error messages<br>
+which are <i>not actual problems</i>, other than source changes' impacts on that current debugging session.<br>
+Regardless, I find it easier to make some plugin source code changes while SimHub runs.<br>
+Running SimHub standalone, rather than launched via Visual Studio <code>Debug</code> avoids that.
+
+<dt><br><b>Tip #4:&nbsp <code>grep</code> is your friend</b>
+<dd>Searching for the Visual Studio way to e.g. convert code from WPF to console mostly yields recommendations to <i>start over</i>.<br>
+Instead, grepping for names used in WPF content will show where/how they are referenced e.g. in the <code>.csproj</code> file.<br>
+Rather than sort where in the Visual Studio user interface such stuff is controlled,<br>
+I mostly directly edit project files using my editor of choice <i>while Visual Studio is not running</i>.
+
+
 
 <dt><br>C# plugin source and discussions
-<dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a>.
+<dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a>.<br>
+It appears to include a trick for Initializing a list of properties that differ only by a number.
 </dl>
 <hr>
 <a name=ChatGPT><h3>OpenAI ChatGPT code for SImHub plugin using DryWetMIDI</h3></a>
