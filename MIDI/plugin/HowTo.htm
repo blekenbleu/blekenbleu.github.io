@@ -4,9 +4,9 @@
 </head>
 <body>
 <pre>Wotever 12/28/2017
-To share a plugin, you must first rename it into the project settings,
-and also rename the plugin class name
-after you will just have to give the plugin dll
+To share a plugin, you must first rename it in project settings,
+and also rename the plugin class
+after which you will just have to give the plugin dll
 and enable it into the settings.
 Plugins are the ultimate extensibility point :D, everything in simhub is based on it.
 PluginDemo.cs
@@ -51,24 +51,24 @@ Advanced Custom Plugin Demo</pre>
 Open the <a href="https://cdn.discordapp.com/attachments/306850703299575809/623241262493073410/AdvancedCustom.PluginSdkDemo.zip"><code>AdvancedCustomUser.PluginSdkDemo.sln</code> project file</a>.<br>
 <br>
 <a name=HowTo><h3>SimHub SDK How-To</h3></a>
-Plugins can interact via Properties, Actions and Events, where Actions (e.g. button presses) may launch Events.<br>
+Plugins can interact via Properties, Actions and Events, where Events (e.g. button presses) may launch Actions.<br>
 Properties can contain numeric or string variables.<br>
 Instead of requiring code to check for changing values e.g. 60 times per second,<br>
-one could presumably provoke an Event to launch code in an Action to evaluate changed Properties.<br>
-Packaged as .dll files, SimHub plugins are installed by dragging into<br>
-the SimHub folder containing SimHubWPF.exe and numerous other .dll files.<br>
-SimHub presumably identifies plugins from other .dll files by including this line in their source:<br>
+one could presumably provoke an Event to launch code in an Action to evaluate or change Properties.<br>
+Packaged as <code>.dll</code> files, SimHub plugins are installed by dragging into<br>
+the SimHub folder containing SimHubWPF.exe and numerous other <code>.dll</code> files.<br>
+SimHub presumably identifies plugins from other <code>.dll</code> files by including this line in their source:<br>
 &nbsp <code>using SimHub.Plugins;</code><br>
 <br>
 
-SimHub and its plugin SDK are in C#.<br>
+SimHub and its plugin SDK are written in C#.<br>
 My struggles with C# and Visual Studion are addressed in <a href="VisualStudio.htm"><b>this C# Visual Studio How-To</b></a>.<br>
  &nbsp &nbsp <b>-</b> SimHub wants .NET framework 4.8, per Wotever 8.2.0 release 12/16/2022<br>
 <br>
 <h4>First tip: start with a working example plugin</h4>
 Conventions for plugin C# may differ appreciably from generic .NET C# apps:
 <li>Not an App;&nbsp DLL launched from within SimHub
-<li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp relative path to SimHub classes and dll build destination
+<li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp relative path to SimHub classes and <code>.dll</code> build destination
 <li>Sadly, at least Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug;&nbsp must be absolute.
 <li>Obvious starting place:&nbsp <code>SimHub/PluginSdk/User.PluginSdkDemo/</code>
 <li>Also simple, already a GitHub project:&nbsp

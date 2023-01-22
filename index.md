@@ -22,7 +22,8 @@
 - ESP8266 / ESP32 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
 
 ## [ESP32-S2](ESP32/) for composite USB devices
-### [Wireless MIDI](MIDI), including Android Wireless MIDI app
+
+## MIDI: [wireless](MIDI/), including Android app - [SimHub plugin](MIDI/plugin/)
 #### [Node.js WebSocket MIDI server](MIDI/midisrv)
 
 ## [Microscopes and photomicography](microscope/)  
