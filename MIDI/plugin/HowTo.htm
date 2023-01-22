@@ -249,7 +249,23 @@ However, <code>MIDIioSettings.cs</code> was under git version control, but VS di
 Perhaps because I had not previously fiddled with VS Git settings...?<br>
 Consequently, <code>git mv</code> was done manually from a shell.<br>
 After selecting the local repository from its drop-down, committing the class change from within VS was recognized by GitHub Desktop.<br>
-Melanchall provides example C# source for <a href="https://melanchall.github.io/drywetmidi/articles/devices/Input-device.html">Input</a>
-and <a href="https://melanchall.github.io/drywetmidi/articles/devices/Output-device.html">Output</a> devices.<br>
+<br>
+<b>Hacked <a href="https://github.com/blekenbleu/blekenbleu.MIDIio/blob/main/MIDIdrywet.cs">the MIDI equivalent of "Hello World"</a></b> from
+<a href="https://www.codeproject.com/Articles/melanchall#Article">Melanchall</a>'s
+example C# source for <a href="https://melanchall.github.io/drywetmidi/articles/devices/Input-device.html">Input</a>
+and (eventually) <a href="https://melanchall.github.io/drywetmidi/articles/devices/Output-device.html">Output</a> devices.<br>
+Then, glued this <code>MIDIdrywet</code> class into <code>MIDIio.cs</code>...<br>
+Added an exception handler for no MIDI input device matching the provided name.<br>
+List device names as known to <code>Melanchall.DryWetMidi.Devices</code>...<pre>
+	INFO	Event received from 'nanoKONTROL2': Control Change [0] (16, 72)
+	INFO	ControlNumber = '16'; ControlValue = '72
+	INFO	Event received from 'nanoKONTROL2': Control Change [0] (16, 73)
+	INFO	ControlNumber = '16'; ControlValue = '73
+	INFO	Event received from 'nanoKONTROL2': Control Change [0] (16, 74)
+	INFO	ControlNumber = '16'; ControlValue = '74
+	INFO	Event received from 'nanoKONTROL2': Control Change [0] (16, 75)
+	INFO	ControlNumber = '16'; ControlValue = '75
+</pre>
+Need to save and restore Sliders and Knobs in Settings.
 </body>
 </html>
