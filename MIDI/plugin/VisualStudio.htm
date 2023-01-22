@@ -1,5 +1,10 @@
 <html>
 <head>
+<style>
+h1, h2, h3, h4, h5 {
+  margin-bottom:0.5px;
+}
+</style>
 <title>How-To for Visual Studio for SimHub plugin</title>
 </head>
 <body>
@@ -13,9 +18,8 @@ sadly employing concepts out of order or simply unexplained.<br>
 <br>
 Using SDK requires login to <a href="https://learn.microsoft.com/en-us/shows/intro-to-visual-studio/?wt.mc_id=educationalvside-c9-niner">Visual Studio</a>
 using Microsoft account<br>
-<a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/visual-studio-ide?view=vs-2019">Getting started</a><br>
-<br>
-<a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/?view=vs-2022">Getting started VS 2022</a><br>
+<a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/visual-studio-ide?view=vs-2019">Getting started (2019)</a> &nbsp
+<a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/?view=vs-2022">2022</a><br>
 <br>
 Visual Studio 2019 does not update to 2022;&nbsp  VS 2022 installs in parallel.<br>
 <a href="https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022">VS 2022 Installation instructions</a><br>
@@ -44,33 +48,33 @@ Under Debug, added * Start external program: [\path\to\SimHubWPF.exe  ]
 .. a relative path (..\..\SimHubWPF.exe) was rejected.
 That provokes creation of Viper.PluginCalcLngWheelSlip.csproj.user
 .. which was ignored by .gitignore entry '*.user'
-$ git add -f Viper.PluginCalcLngWheelSlip.csproj.user
+$ git add -f Viper.PluginCalcLngWheelSlip.csproj.user</pre>
 
-Build failed, in part complaining about .NET Target framework not 4.8
-- downloaded and installed, then under Properties wrench Application,
-changed Target framework to .NET Framework 4.8
-.. which modified Viper.PluginCalcLngWheelSlip.csproj
-
-Forked in GitHub Desktop, which pushed it to
+Build failed, in part complaining about .NET Target framework not 4.8<br>
+- downloaded and installed, then under Properties wrench Application,<br>
+changed Target framework to .NET Framework 4.8<br>
+.. which modified Viper.PluginCalcLngWheelSlip.csproj<br>
+<br>
+Forked in GitHub Desktop, which pushed it to<br>
 https://github.com/blekenbleu/SimHub-Plugin-CalcLngWheelSlip
-which I renamed on GitHub website under settings
-https://github.com/blekenbleu/CalcLngWheelSlip
+which I renamed on GitHub website under settings<br>
+https://github.com/blekenbleu/CalcLngWheelSlip<br>
+<br>
+Project then built with warning:<br><code>
+>E:\my\Sim\SimHub\SimHub\PluginSdk\CalcLngWheelSlip\PluginCalcLngWheelSlip.cs(13,6,13,22): warning CS0612: 'PluginDescritionAttribute' is obsolete</code><br>
+<br>
+Wotever deprecated <code>PluginDescritionAttribute</code>, so I deleted it...<br>
+<br>
+Prompted for 
+<a href="https://learn.microsoft.com/en-us/visualstudio/intellicode/custom-models#autotraining-models-for-your-codebase">IntelliCode</a>; opted in.<br>
 
-Project then built with warning:
->E:\my\Sim\SimHub\SimHub\PluginSdk\CalcLngWheelSlip\PluginCalcLngWheelSlip.cs(13,6,13,22): warning CS0612: 'PluginDescritionAttribute' is obsolete
-
-Wotever has deprecated PluginDescritionAttribute, so I deleted it...
-
-Prompted for IntelliCode; opted in
-https://learn.microsoft.com/en-us/visualstudio/intellicode/custom-models#autotraining-models-for-your-codebase
-
-At this point, GitHub Desktop expects push to https://github.com/blekenbleu/SimHub-Plugin-CalcLngWheelSlip
-... but automagically accommodated repository name change.
-commented out '*.user' in .gitignore to push Viper.PluginCalcLngWheelSlip.csproj.user
-
-The Viper.PluginCalcLngWheelSlip plugin not only built,
-it installed and was detected by SimHub and seems to work,
-but not in iRacing or ACC...
+At this point, GitHub Desktop expects push to https://github.com/blekenbleu/SimHub-Plugin-CalcLngWheelSlip<br>
+... but automagically accommodated repository name change.<br>
+commented out '*.user' in <code>.gitignore</code> to push <code>Viper.PluginCalcLngWheelSlip.csproj.user</code><br>
+<br>
+The <code>Viper.PluginCalcLngWheelSlip</code> plugin not only built,<br>
+it installed and was detected by SimHub and seems to work,<br>
+but not in iRacing or ACC...<pre>
 SimHub.Logging: [2023-01-16 16:34:32,492] INFO - Initialising Viper.PluginCalcLngWheelSlip.ViperDataPlugin plugin
 Exception thrown: 'System.IO.FileNotFoundException' in mscorlib.dll</pre>
 
@@ -88,8 +92,8 @@ Despite warning, manually changed Properties/AssemblyInfo.cs,<br>
 replacing blekenbleu.PluginSdkDemo with blekenbleu.MIDIio<br>
 <br>
 Hyphen in namespace is rejected;  probably also in class names.<br>
-Using MIDIio for both namespace and class is evidently <i><b>very bad</b></i>, halting with useless error message.<br>
-Folder name project is not problematic, e.g. using MIDIio for folder and main class names.<br>
+Using <code>MIDIio</code> for both namespace and class is evidently <i><b>very bad</b></i>, halting VS with a useless error message.<br>
+Folder name is not problematic, e.g. using <code>MIDIio</code> for folder and main class names.<br>
 The only place that namespace (unique from class name) is referenced without specific [Nn]amespace label are:<br>
 <pre>SettingsControl.xaml:?&lt;UserControl x:Class="""
 Properties/Resources.Designer.cs: global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("", typeof(Resources).Assembly);
@@ -99,8 +103,8 @@ Properties/Resources.Designer.cs: global::System.Resources.ResourceManager temp 
 <li>Microsoft <a href="https://learn.microsoft.com/en-us/visualstudio/ide/create-csharp-winform-visual-studio?toc=%2Fvisualstudio%2Fget-started%2Fcsharp%2Ftoc.json&bc=%2Fvisualstudio%2Fget-started%2Fcsharp%2Fbreadcrumb%2Ftoc.json&view=vs-2019">Create a Windows Forms app in Visual Studio with C#</a>
 <li>Net-informations.com <a href="http://csharp.net-informations.com/gui/gui_tutorial.htm">C# Graphical User Interface Tutorial</a>
 
-<a name=SDK><h4><a href="https://www.partech.nl/en/publications/2020/11/converting-c-sharp-projects-to-the-new-sdk-format#">Converting old csproj to SDK</a></h4></a>
-This is wanted for removing unused references.<br>
+<a name=SDK><h3><a href="https://www.partech.nl/en/publications/2020/11/converting-c-sharp-projects-to-the-new-sdk-format#">Converting old csproj to SDK</a></h3></a>
+SDK projects are wanted for unused reference removal support.<br>
 <code>&gt;dotnet tool install --global Project2015To2017.Migrate2019.Tool</code><br>
 You can invoke the tool using the following command: dotnet-migrate-2019<br>
 Tool 'project2015to2017.migrate2019.tool' (version '4.1.3') was successfully installed.<br>
@@ -110,10 +114,13 @@ Tool 'project2015to2017.migrate2019.tool' (version '4.1.3') was successfully ins
 <br>
 Since the <code>dotnet migrate-2019 wizard</code> was run on the <code>.csproj</code> file but not the <code>.sln</code>,<br>
 Visual Studio was launched by clicking the  <code>.csproj</code> file, and unused references were removed, but <code>.sln</code> <i>was not updated</i>.<br>
-As a test, the <code>.sln</code> was disappeared by moving to another directory, and Visual Studio seemed fine with that.<br>
+As a test, that <code>.sln</code> was disappeared by moving to another directory, and Visual Studio seemed fine with no <code>.sln</code> file.<br>
 However, moving the <code>.sln</code> file back while it was running excited Visual Studio enough to update it.<br>
 <br>
 Because SDK version defaults to <code>OutDir ..\..\net48\</code>,<br>
-added to <code>.csproj</code> file:&nbsp <code>&lt;OutDir&gt;..\..\&lt;/OutDir&gt;</code><br>
+added to <code>.csproj</code> file:&nbsp <code>&lt;OutDir&gt;..\..\&lt;/OutDir&gt;</code>
+<h4>Get in the habit of checking <code>.csproj</code> file with a text editor</h4>
+IMO, changing settings in the Visual Studio US is harder than editing them in the <code>.csproj</code> file.<br>
+I found and fixed several obvious inconsistencies e.g. in paths that way.
 </body>
 </html>

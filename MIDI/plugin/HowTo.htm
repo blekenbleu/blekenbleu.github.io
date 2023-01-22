@@ -1,5 +1,10 @@
 <html>
 <head>
+<style>
+h1, h2, h3, h4, h5 {
+  margin-bottom:0.5px;
+}
+</style>
 <title>SimHub plugin How-To and Discord discussions</title>
 </head>
 <body>
@@ -128,7 +133,7 @@ MIDI sliders can be used to set SimHub property values,<br>
 while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
 
 <dt><br><b>Second tip:&nbsp Initializing properties</b>
-<dt><br>Global properties are easily created using <a href="https://github.com/SHWotever/SimHub/wiki/NCalc-scripting"><b>NCalc</b></a>;
+<br>Global properties are easily created using <a href="https://github.com/SHWotever/SimHub/wiki/NCalc-scripting"><b>NCalc</b></a>;
 <dd>
 I <i><b>hate</b></i> writing user interface code, so will configure my plugins by editing a matching NCalc script.<br>
 NCalc examples are available in <code>\SimHub\NCalcScripts\examples.ini</code>;<br>
@@ -151,7 +156,8 @@ I mostly directly edit project files using my editor of choice <i>while Visual S
 
 <dt><br><b>Tip #5:&nbsp remove unused stuff</b>
 <dd>Visual Studio noted that <code>using System.Windows.Media;</code> was no longer used and prompted its removal<br>
-Visual Studio can also remove unused Solution Explorer <code>Dependencies > Assemblies</code> entries, but only in <a href="VisualStudio.htm#SDK">SDK projects</a>,<br>
+Visual Studio can also remove unused Solution Explorer <code>Dependencies > Assemblies</code> entries,
+ but only in <a href="VisualStudio.htm#SDK"><b>SDK projects</b></a>,<br>
 which SimHub plugins by default are not.
 
 
