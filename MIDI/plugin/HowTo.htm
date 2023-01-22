@@ -237,5 +237,19 @@ change 'Styles/Accents/' to 'Styles/Themes/' in <code>Properties/DesignTimeResou
 <a href="https://github.com/MahApps/MahApps.Metro/issues/4046">
 https://github.com/MahApps/MahApps.Metro/issues/4046</a>
 
+<h5>20-21 Jan: eliminating unused resources</h5>
+<a href="VisualStudio.htm#SDK">SDK project conversion</a> enabled removing unused library references,<br>
+but the conversion tool failed to convert &lt;OutputPath&gt to &lt;OutDir&gt in <code>.csproj</code> file,<br>
+and VS user interface no longer offers changing Debug program in <b>Properties</b>,<br>
+although setting in <code>.csproj</code> file is still honored.
+
+<h5>22 Jan: renaming MIDIioSettings class to MIDIdrywet</h5>
+Using VS to rename then <code>MIDIioSettings</code> class also provoked it to rename the containing <code>MIDIioSettings.cs</code> to <code>MIDIdrywet.cs</code>.<br>
+However, <code>MIDIioSettings.cs</code> was under git version control, but VS did not execute a git renaming.<br>
+Perhaps because I had not previously fiddled with VS Git settings...?<br>
+Consequently, <code>git mv</code> was done manually from a shell.<br>
+After selecting the local repository from its drop-down, committing the class change from within VS was recognized by GitHub Desktop.<br>
+Melanchall provides example C# source for <a href="https://melanchall.github.io/drywetmidi/articles/devices/Input-device.html">Input</a>
+and <a href="https://melanchall.github.io/drywetmidi/articles/devices/Output-device.html">Output</a> devices.<br>
 </body>
 </html>
