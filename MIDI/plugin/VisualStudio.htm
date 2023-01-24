@@ -110,7 +110,7 @@ You can invoke the tool using the following command: dotnet-migrate-2019<br>
 Tool 'project2015to2017.migrate2019.tool' (version '4.1.3') was successfully installed.<br>
 <br>
 <code>&gt;dotnet migrate-2019 wizard E:\my\Sim\SimHub\SimHub\PluginSdk\blekenbleu.MIDIio\blekenbleu.MIDIio.csproj</code><br>
-(<a href="sdk.txt">transcript</a>)<br>
+(<a href="sdk.txt.htm">transcript</a>)<br>
 <br>
 Since the <code>dotnet migrate-2019 wizard</code> was run on the <code>.csproj</code> file but not the <code>.sln</code>,<br>
 Visual Studio was launched by clicking the  <code>.csproj</code> file, and unused references were removed, but <code>.sln</code> <i>was not updated</i>.<br>
@@ -120,11 +120,16 @@ However, moving the <code>.sln</code> file back while it was running excited Vis
 Because SDK version defaults to <code>OutDir ..\..\net48\</code>,<br>
 added to <code>.csproj</code> file:&nbsp <code>&lt;OutDir&gt;..\..\&lt;/OutDir&gt;</code>
 <h4>Get in the habit of checking <code>.csproj</code> file with a text editor</h4>
-IMO, changing settings in the Visual Studio US is harder than editing them in the <code>.csproj</code> file.<br>
+IMO, changing settings in the Visual Studio UI is harder than editing them in the <code>.csproj</code> file.<br>
 I found and fixed several obvious inconsistencies e.g. in paths that way.
 
 <a name=SDK><h3><a href="https://learn.microsoft.com/en-us/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019#assemblies-tab">Adding
 <code>Melanchall.DryWetMidi</code> Assemblies dependency</h3></a>
 VS volunteered <code>Naudio</code> but accepted <code>Melanchall.DryWetMidi.dll</code>.<br>
+<br>
+Vertical green bars in left margin: recently saved changes (yellow before saving).<br>
+
+<h4>Avoid upsetting VS by copying one object <code>.cs</code> to a <code>.txt</code>.</h4>
+<li>Edit the <code>.txt</code> into a new class, <i>then</i> rename to <code>.cs</code>.
 </body>
 </html>

@@ -50,6 +50,8 @@ AttachDelegate is 100% on demand:
 // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-operator
 this.AttachDelegate("CurrentDateTime", () => DateTime.Now);
 
+Andreas Dahl 02/22/2022 9:58 AM
+AddProperty() in the Init scope, and do all data collection, computation and SetPropertyValue() in the DataUpdate scope
 
 GarySwallow 09/16/2019 3:38 PM
 Advanced Custom Plugin Demo</pre>
@@ -267,5 +269,24 @@ List device names as known to <code>Melanchall.DryWetMidi.Devices</code>...<pre>
 	INFO	ControlNumber = '16'; ControlValue = '75
 </pre>
 Need to save and restore Sliders and Knobs in Settings.
+
+<h5>23 Jan: Sliders and Knobs saved/restored in Settings</h5>
+Sadly, SimHub crashes if/when MIDIio and SimHub Midi Controller plugins are both enabled.<br>
+Pretending to be surprised, but adding MIDI key events and properties to MDIDio is probably easier than coexistence,<br>
+which might require reentrance changes in <code>Melanchall.DryWetMidi</code> and sharing a MIDI device.<br>
+<br>
+Finding available Events was unobvious to me.
+<li>Clicking <b>New mapping</b> from <b>Controls</b> wants only immediate inputs, which may be unobvious to generate.
+<li>Clicking <b>New mapping</b> from <b>Events</b> shows available predefined events and actions;<br>
+ &nbsp &nbsp &nbsp automagically creating events for non-slider ControlChanges may be easier...<br>
+<li>Events can probably only be launched from MIDIio class, unless <code>this</code> gets passed...
+
+<h5>24 Jan: Active button Control Change (CC) Settings bitmap for properties and events saved/restored</h5> 
+Plugin properties seemingly <i>must</i> be set without indexing variables.<br>
+
+<h5>24 Jan: <a href="https://melanchall.github.io/drywetmidi/articles/devices/Output-device.html">DryWetMIDI output MIDI device</a></h5>
+Basically the same tactic as reading:&nbsp <code>try</code> opening the property name, then <code>catch</code> exception by logging known devices.<br>
+<b><i>Trick</i></b>:&nbsp to avoid upsetting VS, copy e.g. <code>MIDIdrywet.cs</code> to a <code>.txt</code> file, edit to change class name, etc. then rename.<br>
+<li><code>OUTdrywet.cs</code> was created this way...
 </body>
 </html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>dotnet migrate-2019 wizard transcript</title>
+</head>
+<body><pre>
+E:\my\Sim\SimHub\SimHub\PluginSdk>dotnet tool install --global Project2015To2017.Migrate2019.Tool
+You can invoke the tool using the following command: dotnet-migrate-2019
+Tool 'project2015to2017.migrate2019.tool' (version '4.1.3') was successfully installed.
+
+E:\my\Sim\SimHub\SimHub\PluginSdk>dotnet migrate-2019 wizard blekenbleu.MIDIio
+[13:09:47 WRN] Directory blekenbleu.MIDIio contains 2 matching files, specify which project or solution file to use.
+[13:09:47 INF] File: E:\my\Sim\SimHub\SimHub\PluginSdk\blekenbleu.MIDIio\blekenbleu.MIDIio.csproj
+[13:09:47 INF] File: E:\my\Sim\SimHub\SimHub\PluginSdk\blekenbleu.MIDIio\blekenbleu.MIDIio.sln
+[13:09:47 INF] No projects have been found to match your criteria.
+
+E:\my\Sim\SimHub\SimHub\PluginSdk>dotnet migrate-2019 wizard E:\my\Sim\SimHub\SimHub\PluginSdk\blekenbleu.MIDIio\blekenbleu.MIDIio.csproj
+[13:10:37 WRN] Could not read assembly information, no such file found
+Would you like to create backups? (Y/n) Yes
+[13:10:44 INF] Converting blekenbleu.MIDIio...
+[13:10:44 INF] Backing up to E:\my\Sim\SimHub\SimHub\PluginSdk\blekenbleu.MIDIio\Backup
+[13:10:44 INF] Project blekenbleu.MIDIio has been converted
+[13:10:44 INF] Modernization can be progressed a little further, but it might lead to unexpected behavioral changes.
+Would you like to modernize projects? (Y/n) Yes
+Would you like to create backups? (Y/n) Yes
+[13:10:54 INF] Modernizing blekenbleu.MIDIio...
+[13:10:54 INF] Backing up to E:\my\Sim\SimHub\SimHub\PluginSdk\blekenbleu.MIDIio\Backup1
+[13:10:54 INF] Project blekenbleu.MIDIio has been modernized
+[13:10:54 INF] W021:
+blekenbleu.MIDIio.csproj:54: A better way to reference 'System.Data.DataSetExtensions' assembly is using respective 'System.Data.DataSetExtensions' NuGet package.
+It will simplify porting to other runtimes and enable possible .NET SDK tooling improvements.
+[13:10:54 INF] W021:
+blekenbleu.MIDIio.csproj:55: A better way to reference 'Microsoft.CSharp' assembly is using respective 'Microsoft.CSharp' NuGet package.
+It will simplify porting to other runtimes and enable possible .NET SDK tooling improvements.
+[13:10:54 INF] W021:
+blekenbleu.MIDIio.csproj:56: A better way to reference 'System.Net.Http' assembly is using respective 'System.Net.Http' NuGet package.
+It will simplify porting to other runtimes and enable possible .NET SDK tooling improvements.
+[13:10:54 INF] W030:
+blekenbleu.MIDIio.csproj:8: Consider migrating to 'portable' debug type, cross-platform alternative to legacy Windows PDBs.
+[13:10:54 INF] W030:
+blekenbleu.MIDIio.csproj:12: Consider migrating to 'portable' debug type, cross-platform alternative to legacy Windows PDBs.
+
+E:\my\Sim\SimHub\SimHub\PluginSdk>
+
+---=----
+Rebuild started...
+1>------ Rebuild All started: Project: blekenbleu.MIDIio, Configuration: Debug Any CPU ------
+Restored E:\my\Sim\SimHub\SimHub\PluginSdk\blekenbleu.MIDIio\blekenbleu.MIDIio.csproj (in 1 ms).
+1>F:\VScommunity\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2202,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "MahApps.Metro". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors.
+1>blekenbleu.MIDIio -> E:\my\Sim\SimHub\SimHub\net48\blekenbleu.MIDIio.dll
+1>Done building project "blekenbleu.MIDIio.csproj".
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========
+</pre>
+</body>
+</html>
