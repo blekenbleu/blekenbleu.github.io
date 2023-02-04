@@ -2,11 +2,14 @@
 ---
 Windows HID game controllers and SimHub
 ---
-Given:&nbsp;  a [documented](../MIDI/plugin/) and working [SimHub plugin that receives and sends MIDI](https://github.com/blekenbleu/blekenbleu.MIDIio),  
-a [working sender app](https://github.com/blekenbleu/vJoySDK) for **vJoy**, which [installs easily on Windows 10](../pedals/vJoy/),  
+Given:&nbsp;  a [documented](../MIDI/plugin/) and working [SimHub plugin that receives
+ and sends MIDI](https://github.com/blekenbleu/blekenbleu.MIDIio),  
+a [working sender app](https://github.com/blekenbleu/vJoySDK) for **vJoy**,
+ which [installs easily on Windows 10](../pedals/vJoy/),  
 then adding parts of that sender app to the MIDIio plugin becomes a *fairly* obvious to-do.  
 
-Before diving into the [vJoy sender app single (*but 828 line*) C# source file](https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/Program.cs),  
+Before diving into the [vJoy sender app single (*but 828 line*) C# source
+ file](https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/Program.cs),  
 I somewhat familiarized myself with its API by revising [the vJoy C# wrapper SDK document,
  converted to Markdown.](https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/docs/README.md).  
 Next step should be branching MIDIio before copying over that source file and pair of DLLs.  
@@ -39,8 +42,6 @@ e.g. when SimHub restarts plugins during game changes.
  support may be only for <b>Xbox One</b> and <b>PS/4</b> Game Controllers and mainly via <b>UWP</b>.  
 </ol>
 </details>  
-
-
 
 
 <details>
