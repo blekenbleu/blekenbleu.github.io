@@ -13,18 +13,38 @@ body {
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper"></a><br clear=all>
 
-<h3>Windows 10 vJoy v2.2.1.1 install:&nbsp not scary (not previously installed)</h3>
+<h3>Windows 10 vJoy v2.2.1.1, then v2.1.6.2 installation:&nbsp not scary (not previously installed)</h3>
 The latest version with signed driver:
 <a href="https://github.com/njz3/vJoy/releases/tag/v2.2.1.1">
 <code>https://github.com/njz3/vJoy/releases/tag/v2.2.1.1</code></a>  9.5MB<br>
 <br>
 <a href="https://sourceforge.net/projects/vjoystick/"><b>vJoy from SourceForge</b></a> is v2.1.9.1 and 11MB<br>
-<br>
-2.2.1.1 includes applications AKA Components:<br>
+<p>
+<b>SimHub</b> includes 32-bit DLLs for vJoy v2.1.6<br>
+Replacing those with v2.2.1.1 DLLs throws this Exception:<br>
+<b>Managed Debugging Assistant 'PIinvokeStackImbalance'</b>:<br>
+'A call to PInvoke function 'vJoyInterfaceWrap!<br>
+<img src="PInvoke.png"><br clear=all></p>
+
+<p>SimHub was presumably built with vJoy v2.1.6 DLLs, which report:
+<pre> INFOVersion of Driver (221) does NOT match DLL Version (216)
+ INFOAcquired: vJoy device number 1.</pre>
+.. then the 2.2.1.1 driver does not respond to `joystick.SetAxis()` nor `joystick.SetBtn()`,<br>
+presumably because of incompatibity between <code>v2.1.6</code> structures sent by SimHub-compatible DLLs<br>
+and those expected by vJoy driver <code>v2.2.1.1</code>.&nbsp
+Sadly, <a href="https://github.com/njz3/vJoy/releases">njz3/vJoy</a> has only v2.2.0.0 and v2.2.1.1</p>
+<p>To uninstall <i>just</i> the <code>v2.2.1.1</code> <b><i>driver</i></b>, without uninstalling <code>Program Files\vJoy</code>,<br>
+Fire up Windows <b>Device Manager</b> and check Properties - Driver for vJoy, then [Uninstall Device]<br>
+To test <a href="https://sourceforge.net/projects/vjoystick/files/Beta%202.x/2.1.6.20-030216/">v2.1.6 Build 20</a>,
+at that point, I renamed <code>Program Files\vJoy</code> to <code>Program Files\vJoy_2.2.1.1</code>.<br>
+<a href="https://sourceforge.net/projects/vjoystick/files/Beta%202.x/2.1.6.20-030216/">Setup.exe for Version 2.1.6 Build 20</a> installed successfully... &nbsp
+... but also disappeared <code>Program Files\vJoy_2.2.1.1\</code>..??
+
+</p><p>vJoy driver installation includes applications AKA Components:<br>
 <img src="Components.png"><br clear=all><br>
 No choice for installation location:&nbsp <code>C:\Program Files\vJoy\</code><br>
 <img src="vJOK.png"><br clear=all><br>
-For some reason, includes another 611KB <code>vJoyInsall.exe</code> ..?<br>
+For some reason, includes another 611KB <code>vJoyInstall.exe</code> ..?<br>
 Apps are in <code>C:\Program Files\vJoy\x64\</code><br>
 Linked them into SimHub folder<br>
 vJoyList shows 1 installed;<br>
@@ -46,7 +66,7 @@ Setting <code>16</code> Buttons showed up in vJoy Monitor, so all good.<br>
 No consensus about names assigned to axes and which directions are min and max:<br>
 <img src="Feeder.png"><br clear=all><br>
 
-Keep in mind that <code>joy.cpl</code> cannot dynamically display <code>vJoyFeeder.exe</code> changes;&nbsp only one Windows window has focus.
+Note that <code>joy.cpl</code> can <i>dynamically</i> display <code>vJoyFeeder.exe</code> changes <i>only<i> when Windows gives it focus.
 
 <h3><a href="https://github.com/shauleiz/vJoy/issues/57"><b>Windows 11 grief</b>:&nbsp vJoyInit.reg</a></h3>
 <a href="https://github.com/njz3/vJoy/issues/4">https://github.com/njz3/vJoy/issues/4</a><br>
