@@ -1,4 +1,4 @@
-24 Aug 2022  
+5 Feb 2023  
 ## Signal Processing
   - [dimg - visual difference utility](ImageProcessing/dimg.html)
   - [Hugin image alignment](microscope/objectives/Hugin.htm)  
@@ -7,43 +7,20 @@
 
 ### Audio  
  &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README.md) with SME Series III  
- &nbsp; [**Audio-Technica AT-LP140XP**](AT-LP140XP/) microphonics  
+ &nbsp; [**Audio-Technica AT-LP140XP**](AT-LP140XP/) microphonics
 #### [ &nbsp; Blu-Ray movies on Windows PC](WinBluRay)  
-#### [ &nbsp; Line 6 JTV-89F guitar](JTV89F/Variax)
-
+#### [ &nbsp; Line 6 JTV-89F guitar](JTV89F/Variax)  
+  
 ### [Cameras &amp; lenses (Canon)](Canon/)
 
 ### [Chromebook](ChromeBook/)
 
 ### MIDI: [wireless](MIDI/), *including Android app* - [**SimHub plugin**](MIDI/plugin/)
- &nbsp; [**Node.js WebSocket MIDI server**](MIDI/midisrv)
+ &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
 
 ## [Microscopes and photomicography](microscope/)  
  &nbsp; **American Optical** [Series 10](microscope/#AO) / [Series 120](microscope/AO/) / [Reichert EPIStar](microscope/#EPIStar)  
  &nbsp; **Nikon** [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) [Metaphot](microscope/Nikon/Metaphot/)  
-
-## [Sim driving](pedals/)
-- [ Samsung Odyssey+ for Assetto Corsa ](pedals/#hmd) Windows Mixed Reality and SteamVR
-- [TH8A](pedals/#TH8A) Thrustmaster shifter mods
-- Logitech [G29 pedal mods](pedals/#pedals)
-  - [STM32](pedals/STM32) - programmable USB can be configured as [HID gamepad](Windows/HID)
-  - [ESP8266](pedals/ESP8266) - CH340 USB appears *only* as COM port to Windows
-  - **actually ended up keeping pedals [analog](pedals/#pedals)** plugged into [SimXperience AccuForce controller](pedals/#analog)  
-- USB-attached harness tensioning servos
-  - [STM32 Blue Pill for custom USB Arduino devices](Arduino/)
-    - ESP8266 **WeMos D1 UNO R1** or similar [background](Arduino/ESPDuino) can only be COM devices  
-    - COM ports are good for driving outputs from SimHub, but games e.g. Assetto Corsa expect HID I/O
-      - SimHub *directly* supports *real* Arduinos, but any COM by **Custom Serial devices**
-- USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
-- ESP8266 / ESP32 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
-- [ESP32-S2](ESP32/) for composite USB devices
-- [STM32 Black Pill for custom USB Arduino devices](Arduino/black)
-- **vJoy**
-  - [Windows HID](Windows/HID)
-  - [Windows 10 vJoy installation](pedals/vJoy)
-     - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
-     - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360.md)
-     - [Serial-Lab](Windows/SerialLab)
 
 ### Microsoft
 - Visual Studio Community 2017 *abuse*:&nbsp [shared installation](VSC2017)
@@ -52,6 +29,32 @@
 - Routers: [FreshTomato and Linksys EA6500v2](FreshTomato.htm)
 - [Vim and X-Mouse](VimTXmouse)
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](NVMe/)  
+
+## [Sim driving](pedals/)
+- [ Samsung Odyssey+ for Assetto Corsa ](pedals/#hmd) - [SteamVR](https://steamcommunity.com/app/250820)
+ and [WMR](https://learn.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)  
+- [TH8A](pedals/#TH8A) Thrustmaster shifter mods
+- Logitech [G29 pedal mods](pedals/#pedals)
+  - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID)
+  - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
+  - **[analog](pedals/#pedals) pedals** plugged into [SimXperience AccuForce controller](pedals/#analog)  
+- USB-attached harness tensioning servos
+  - [STM32 Blue Pill for custom USB Arduino devices](Arduino/)
+    - ESP8266 **WeMos D1 UNO R1** or similar [(*background*)](Arduino/ESPDuino) are COM devices  
+    - COM ports are good for outputs from SimHub, but sim games expect HID DirectInput
+      - SimHub *directly* supports *real* Arduinos, but *any* COM by **Custom Serial devices**  
+        Some ESP32 / STM32 modules may be programmed to appear as Arduinos to SimHub
+- USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
+- ESP8266 / ESP32 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
+- [ESP32-S2](ESP32/) for composite USB devices
+- [STM32 Black Pill for custom USB Arduino devices](Arduino/black)
+- **vJoy**
+  - [added to SimHub MIDIio plugin](MIDI/plugin)
+  - [Windows HID](Windows/HID)
+  - [Windows 10 vJoy installation](pedals/vJoy)
+     - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
+     - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360.md)
+     - [Serial-Lab](Windows/SerialLab)
 
 ### [COVID-19 plots](covid)
 

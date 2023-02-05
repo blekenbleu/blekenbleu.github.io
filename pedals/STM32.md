@@ -92,6 +92,6 @@ BMP bootloader can be installed by ST-Link..
 
 17 Feb 2021
 
-# [Black Pill](https://www.ebay.com/itm/383727848677)
-## 512KB Flash 128KB RAM STM32F411CEU6 module
+## [Black Pill](https://www.ebay.com/sch/i.html?_nkw=stm32+black+pill)
+ &nbsp;  **512KB Flash 128KB RAM STM32F411CEU6 module**
 

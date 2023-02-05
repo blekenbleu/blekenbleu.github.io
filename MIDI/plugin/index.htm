@@ -1,32 +1,42 @@
 <html>
 <head>
-<style> body { margin-left: 80px; } h4 {margin-bottom:0} ul {margin-top:0} </style>
+<style>
+body {
+   width:740px;
+   margin-left:60px;
+} 
+h4 {margin-bottom:0} ul {margin-top:0}
+</style>
 <title>MIDI SimHub plugins</title>
 </head>
 <body>
+<font size=-1>
 <a href="../../"><i>back</i></a><br>
 <a href="../"><i>about MIDI</i></a><br>
-
+</font>
 <a name=ChatGPT><h4><a href="HowTo.htm#ChatGPT">OpenAI ChatGPT code for SImHub plugin using DryWetMIDI</a></h4></a>
 
 <dl>
 <h3>SimHub MIDI Plugins</h3>
-SimHub is largely a collection of so-called plugins (.dll files), e.g. one for each supported game,<br>
-then others for SimHub-provided Options enabled under Settings<img align=middle src="setting.jpg">.<br>
-User-provided plugins can be enabled via <b>Additional Plugins</b><img align=middle src="plugins.jpg">.<br>
-SimHub currently has provisions for neither reading MIDI sliders nor emulating any MIDI controls,<br>
-motivating <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">this <b>MIDIio</b> plugin development attempt.</a><br>
-<br>
+SimHub is largely a collection of so-called plugins (.dll files),<br>
+e.g. each supported game and others for Options enabled under Settings <img align=middle src="setting.jpg">.<br>
+User-provided plugins can be enabled via <b>Additional Plugins</b> <img align=middle src="plugins.jpg">.<br>
+SimHub supports neither reading MIDI sliders nor emulating any MIDI controls, motivating:<br>
+<br><div align=center> 
+<i>this</i> <a href="https://github.com/blekenbleu/blekenbleu.MIDIio"><font color=green size=+1)<b>MIDIio</b> plugin</font></a>.
+</div>
+<hr>
 <ul compact>
-<li><a href="HowTo.htm#HowTo"><b>SimHub SDK How-To</b></a> and <a href="VisualStudio.htm"><b>C# Visual Studio How-To</b></a>
-<li>While SimHub has a plugin for responding to MIDI buttons, enabling them seems undocumented:<ul compact>
+<li><a href="HowTo.htm#HowTo"><b>SimHub SDK How-To</b></a> &nbsp <a href="VisualStudio.htm"><b>C# Visual Studio How-To</b></a>
+    &nbsp <a href="https://github.com/blekenbleu/vJoySDK/tree/main/FeederDemoCS/docs"><b>vJoy C# SDK README</b></a>
+<li>While SimHub has a plugin for responding to MIDI buttons,<br> enabling them seems elsewhere undocumented:<ul compact>
 <li>in <code>Settings</code>, enable <code>Midi Controllers Input</code><br><img width=40% src="settings.jpg">
 <li>then, in <code>controls</code><img align=middle src="controls.gif">, press <code>New mapping</code><img align=middle src="New.gif">,
     press a MIDI key:<br><img src="Mapping.jpg">
 <li>Pressed MIDI event keys also become available properties<br>
     (search <code>PluginManager</code>) without going thru <code>controls</code><img align=middle src="controls.gif"> ...
 </ul>
-<li><a href="https://www.racedepartment.com/downloads/simmidi.27118/">SimMidi</a> includes a SimHub plugin for controlling MIDI encoder LEDs by udp telemetry from SimHub.<br>
+<li><a href="https://www.racedepartment.com/downloads/simmidi.27118/">SimMidi</a>'s SimHub plugin controls MIDI encoder LEDs by udp telemetry from SimHub.<br>
     That download also includes Juan P Bello's <a href="https://www.hobbytronics.co.uk/datasheets/9_MIDI_code.pdf"><code>MIDI_commands.pdf</code></a>.
 <li>May also want SimHub to emulate a joystick without involving Arduino;<br>
     <a href="https://github.com/kmcnaught/vigem-example-dotnet">vigem-example-dotnet</a> implements simple programmatic control of <a href="https://github.com/ViGEm/ViGEm.NET">ViGem.NET</a>,<br>
@@ -35,8 +45,8 @@ motivating <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">this <b>MID
 <dl>
 <dt><b><i>See also</i></b>:
 <a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/#post-3446448">Race Department wireless MIDI thread</a>
-<dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, Android Wireless Mixer controls,<br>
-   MIDIShift, MidiView, iPad Midi Controller Pro, and Open Stage Control
+<dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, MidiView,<br>
+   Android Wireless Mixer controls, MIDIShift, iPad Midi Controller Pro, etc.
 
 <a name=CCEx><dt><br><b>C# Custom Expressions</b></a>
 <dd>SimHub property values can also be set using C# custom expressions.<br>
@@ -44,8 +54,8 @@ motivating <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">this <b>MID
   SimHub support for these C# expressions preceded ncalc, JavaScript, plugin sdk, etc<br> and is kept for backward compatibility.<br>
   SimHub stores them in <code>PluginsData/*/DataCorePlugin/CustomExpressions</code><br>
   Those to be used in all games are stored in <code>PluginsData/Common/DataCorePlugin/CustomExpressions</code><br>
-  As of 7.04.8b4, these are evaluated a first time when games are loaded, before plugins are loaded.<br>
-  To avoid user interface coding, use C# custom expressions<br>
+  As of 7.04.8b4, these are evaluated a first time when games are loaded,<br> before plugins are loaded.&nbsp
+  To avoid user interface coding,<br> use C# custom expressions
   to set MIDI input and output device name property strings.
 <dt><br>C# Custom Expressions <a href="https://discord.com/channels/299259397060689920/306850703299575809/703991353683476500">special trick for a static</a>:
 <dd><pre>
@@ -64,7 +74,7 @@ static void init(global::SimHub.Plugins.PluginManager pluginManager){
         });
 </pre>    
 <dt><br><i><b>Question</b></i>:&nbsp are these expressions evaluated at 60Hz or (more likely) only when referenced?<br>
-<dd>Any properties set or referenced only in a plugin <code>Init{}</code> section are presumably minimal overhead.
+<dd>Properties set or referenced only in a plugin <code>Init{}</code> section are minimal overhead.
 </dl>
 <h3>candidate MIDI libraries</h3>
 <a href="https://techgaun.github.io/active-forks/">Search active GitHub forks</a>
@@ -72,11 +82,11 @@ static void init(global::SimHub.Plugins.PluginManager pluginManager){
 
 <dt><a href="https://github.com/melanchall/drywetmidi"><b>DryWetMIDI</b></a>
 <dd><a href="https://melanchall.github.io/drywetmidi/">Documentation</a>, <a href="https://www.codeproject.com/Articles/melanchall#Article">Code Project Articles</a>
-    used by SimHub, <b><a href="https://github.com/blekenbleu/blekenbleu.MIDIio">ME</a></b>, and <a href="https://github.com/melanchall/drywetmidi/network/dependents">many others</a>;&nbsp
+    used by SimHub, <b><a href="https://github.com/blekenbleu/blekenbleu.MIDIio">me</a></b>, and <a href="https://github.com/melanchall/drywetmidi/network/dependents">many others</a>;&nbsp
     <a href="https://melanchall.github.io/drywetmidi/articles/dev/Project-health.html"><b>maintained</b></a>
 
 <dt><a href="https://github.com/naudio/NAudio"><b>NAudio</b></a>
-<dd>Includes Full MIDI event model, demo applications, <a href="https://github.com/naudio/NAudio/blob/master/Docs/MidiInAndOut.md">documentation</a>,
+<dd>Includes MIDI event model, demo apps, <a href="https://github.com/naudio/NAudio/blob/master/Docs/MidiInAndOut.md">documentation</a>,
     <a href="https://github.com/naudio/NAudio/network/dependents">used by <b>many</a>, including SimHub</b>
 
 <dt><br><a href="https://github.com/ho0ber/NK2Tray"><b>NK2Tray</b></a>
