@@ -3,7 +3,7 @@
 Jekyll for GitHub Pages on WSL Ubuntu
 ---
 I gave up on [Fedora support](https://www.redhat.com/en/blog/monumental-day-open-source-and-red-hat) of
-[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10),  
+[Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install),  
 based on other IBM acquisitions (e.g. [Wunderground monetization](https://github.com/n0bel/PiClock/issues/103))
 
 Jekyll on Windows without **WSL** involved multiple MINGW64 folders.  
@@ -19,10 +19,6 @@ On one hand,
 - runs more slowly than **MINGW64** implementations
 - has some bugs that take awhile to resolve,  
   even after discovering solutions
-
-#### Cygwin
-- Jekyll [has worked](http://nathanielstory.com/2013/12/28/jekyll-on-windows-with-cygwin.html),
-- another possibly doomed [Red Hat product](https://news.ycombinator.com/item?id=18321884)  
 
 ### [SmartGit](https://www.syntevo.com/)
 - versions for Windows, macOS and Linux,
@@ -99,7 +95,7 @@ alias serve="${RUBY}/msys64/home/bleke/bin/serve"
 for **Git Bash** AKA `"C:\Program Files (x86)\SmartGit\git\git-bash.exe"`  
 ![snapshot of Git Bash shortcut properties](GitBash.gif "shortcut properties")  
 ### However, *if you insist*,
-- then go [here](https://www.microsoft.com/en-us/search?q=ubuntu) to install WSL
+- then go [here](https://www.microsoft.com/en-us/search/explore?q=ubuntu) to install WSL
 
 #### Background:
 **WSL** AKA **Ubuntu from Microsoft Store**, along with [**VcXsrv**](https://github.com/Microsoft/WSL/issues/2855#issuecomment-358861903),  
@@ -140,7 +136,7 @@ Codename:       xenial
 ### Ruby installation
 **before starting**,
 prioritizing IPv4  over IPv6 will probably reduce grief:
-- [disable ipv6 or prefer ipv4](https://www.reddit.com/r/bashonubuntuonwindows/comments/7u1le5/disable_ipv6_or_prefer_ipv4_first/dtlnmzu)
+- [disable ipv6 or prefer ipv4](https://www.reddit.com/r/bashonubuntuonwindows/comments/7u1le5/comment/dtlnmzu/)
 in `/etc/gai.config`
 ```
 # un-comment this line
@@ -150,7 +146,7 @@ precedence ::ffff:0:0/96 100
 <details>
 <summary>click here for <em>more</em> WSL update details</summary>
 
-On July 9, 2018, [Ask Ubuntu recommended](https://blogs.msdn.microsoft.com/commandline/2018/07/09/upgrading-ubuntu/)  
+[Ask Ubuntu recommended](https://devblogs.microsoft.com/commandline/upgrading-ubuntu/)
 `$ sudo do-release-upgrade`
 
 That takes awhile to complete..  

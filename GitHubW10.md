@@ -714,7 +714,7 @@ FWIW, **GitHub Desktop** installs many command-line biinaries in
 .. but does not by default use them.
 
 Also FWIW, **GitHub Desktop** has a menu item for opening an external editor,  
-but seemingly only [Atom](https://atom.io/) actually works on Windows..
+but seemingly only [Atom](https://github.blog/2022-06-08-sunsetting-atom/) actually works on Windows..
 
 </details>
 
