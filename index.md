@@ -5,25 +5,25 @@
   - [Special Error Diffusion](ImageProcessing/sped.html)
   - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
 
-### Audio  
+## Audio  
  &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README.md) with SME Series III  
  &nbsp; [**Audio-Technica AT-LP140XP**](AT-LP140XP/) microphonics
-#### [ &nbsp; Blu-Ray movies on Windows PC](WinBluRay)  
-#### [ &nbsp; Line 6 JTV-89F guitar](JTV89F/Variax)  
+ &nbsp; [Blu-Ray movies on Windows PC](WinBluRay)  
+ &nbsp; [Line 6 JTV-89F guitar](JTV89F/Variax)  
   
 ### [Cameras &amp; lenses (Canon)](Canon/)
 
 ### [Chromebook](ChromeBook/)
 
-### MIDI: [wireless](MIDI/), *including Android app* - [**SimHub plugin**](MIDI/plugin/)
+## MIDI: [wireless](MIDI/), *including Android app* - [**SimHub plugin**](MIDI/plugin/)
  &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
 
 ## [Microscopes and photomicography](microscope/)  
  &nbsp; **American Optical** [Series 10](microscope/#AO) / [Series 120](microscope/AO/) / [Reichert EPIStar](microscope/#EPIStar)  
  &nbsp; **Nikon** [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) [Metaphot](microscope/Nikon/Metaphot/)  
 
-### Microsoft
-- Visual Studio Community 2017 *abuse*:&nbsp [shared installation](VSC2017)
+## Microsoft
+- Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
 - [PC misguided buying - January 2022](PC)  
   - [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)  
 - Routers: [FreshTomato and Linksys EA6500v2](FreshTomato.htm)
@@ -40,14 +40,16 @@
   - **[analog](pedals/#pedals) pedals** plugged into [SimXperience AccuForce controller](pedals/#analog)  
 - USB-attached harness tensioning servos
   - [STM32 Blue Pill for custom USB Arduino devices](Arduino/)
-    - ESP8266 **WeMos D1 UNO R1** or similar [(*background*)](Arduino/ESPDuino) are COM devices  
-    - COM ports are good for outputs from SimHub, but sim games expect HID DirectInput
-      - SimHub *directly* supports *real* Arduinos, but *any* COM by **Custom Serial devices**  
-        Some ESP32 / STM32 modules may be programmed to appear as Arduinos to SimHub
+    - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
+    - COM ports work from SimHub, but sim games expect HID DirectInput
+      - SimHub *directly* supports *real* Arduinos,  
+        but *any* COM by **Custom Serial devices**  
+        Some ESP32 / STM32 may be programmed to appear as Arduinos
 - USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
-- ESP8266 / ESP32 / STM32 Arduino IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html) or [**Visual Micro**](https://www.visualmicro.com/)
-- [ESP32-S2](ESP32/) for composite USB devices
+- ESP32 / STM32 IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
+  or [**Visual Micro**](https://www.visualmicro.com/)
 - [STM32 Black Pill for custom USB Arduino devices](Arduino/black)
+- [ESP32-S2-3](ESP32/) for **composite USB devices**
 - **vJoy**
   - [added to SimHub MIDIio plugin](MIDI/plugin)
   - [Windows HID](Windows/HID)
@@ -69,19 +71,20 @@
  &nbsp; **macOS local [gitolite](MacGit) server**
 
 *Notes:*
-1. Far easier to *instead* install [Chrome extension **Markdown Viewer**](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en)
-2. Unlike html pages, markdown pages (files ending with `.md`) get URLs *without* `.md`  
+1. Far easier to *instead* install [Chrome extension **Markdown
+   Viewer**](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en)
+2. Unlike html pages, markdown pages (`.md` files) get URLs *without* `.md`  
 3. If no [`index.md`](/), then Jekyll uses `README.md` for landing page  
    **Workaround**:&nbsp;  Create `index.md`, which Jekyll will use instead  
-4. Jekyll expects UTF-8 character encoding and fails badly if/when a BOM (Byte Order Mark) is encountered  
+4. Jekyll expects UTF-8 character encoding, fails for BOM (Byte Order Mark)
    This was especially problematic with Jekyll style gem files on WSL...  
    **Workaround** (using `vim`):  
 ```
    :set nobomb
    :wq
 ```
-5. **IPv6** tends to be problematic, requiring Windows reboots  
-   Suggested procedures [for disabling IPv6](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
+5. **IPv6** tends to be problematic, requiring Windows reboots:&nbsp;  
+   [Disabling IPv6](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
 6. Helpful URLs:  
   [GitHub Pages Documentation](https://docs.github.com/en/pages)  
   [Jekyll Resources](https://jekyllrb.com/resources/)  
