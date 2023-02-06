@@ -46,8 +46,11 @@
         but *any* COM by **Custom Serial devices**  
         Some ESP32 / STM32 may be programmed to appear as Arduinos
 - USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
-- ESP32 / STM32 IDE Alternatives: [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
-  or [**Visual Micro**](https://www.visualmicro.com/)
+- **ESP32 / STM32 IDE Alternatives to Arduino**
+  - [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
+    or [**Visual Micro**](https://www.visualmicro.com/)
+  - [**Espressif IDF VS Code Extension with Arduino ESP32 component](https://marketplace.visualstudio.com/items?itemName=espressif.esp-idf-extension)
+  - [**Arduino Extension Pack**](https://github.com/mpty-ltd/vscode-pack-arduino) for Arduino < 2.0
 - [STM32 Black Pill for custom USB Arduino devices](Arduino/black)
 - [ESP32-S2-3](ESP32/) for **composite USB devices**
 - **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
