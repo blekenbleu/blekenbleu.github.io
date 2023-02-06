@@ -1,4 +1,4 @@
-5 Feb 2023  
+6 Feb 2023  
 ## Signal Processing
   - [dimg - visual difference utility](ImageProcessing/dimg.html)
   - [Hugin image alignment](microscope/objectives/Hugin.htm)  
@@ -7,7 +7,7 @@
 
 ## Audio  
  &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README.md) with SME Series III  
- &nbsp; [**Audio-Technica AT-LP140XP**](AT-LP140XP/) microphonics
+ &nbsp; [**Audio-Technica AT-LP140XP**](AT-LP140XP/) microphonics  
  &nbsp; [Blu-Ray movies on Windows PC](WinBluRay)  
  &nbsp; [Line 6 JTV-89F guitar](JTV89F/Variax)  
   
@@ -50,7 +50,7 @@
   or [**Visual Micro**](https://www.visualmicro.com/)
 - [STM32 Black Pill for custom USB Arduino devices](Arduino/black)
 - [ESP32-S2-3](ESP32/) for **composite USB devices**
-- **vJoy**
+- **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
   - [added to SimHub MIDIio plugin](MIDI/plugin)
   - [Windows HID](Windows/HID)
   - [Windows 10 vJoy installation](pedals/vJoy)
