@@ -1,0 +1,48 @@
+<html><head>
+<style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
+<title>MSYS2 and I</title></head>
+<body>
+<font size=-1>
+<a href="../GitHubPages"><i>back to GitHubPages</i></a><br>
+</font> 
+<font size=+1>
+<br>
+<i>19 Feb 2023</i><br>
+<h4>MSYS2 and I</h4>
+<p>I stumbled into MSYS2 from <a href="https://pages.github.com/">GitHub Pages</a>, which wants e.g. <code>jekyll</code>, <code>nokogiri</code>, <code>kramdown</code>,  <br>
+which in turn want <a href=https://rubyinstaller.org/downloads/>Ruby</a>, which bundles MINGW64 and MSYS2.<br>
+A long time Cygwin and more recent WSL user,<br>
+MSYS2 immediately impressed with its responsive bash shell<br>
+and pleasant integration of Posix and Windows executibles.  <br>
+Fighting <code>pacman</code> in Ruby's <code>msys64/</code> folder quickly led to a separate <a href="https://www.msys2.org/">MSYS2 installation</a>,<br>
+with Ruby's <code>bin/</code> folder early in its $PATH for <code>jekyll</code>.<br>
+Over time, using Ruby's icon and shortcut redirected to the separate MSYS2 installation,  <br>
+I eventually <i>forgot</i> that <i>my</i> MSYS2 was NOT Ruby's...   </p>
+
+
+<h4>Unplanned obsolescence</h4>
+Fighting Visual Studio's obnoxious C# editor, I wanted to use <a href="https://en.wikipedia.org/wiki/Indent_%28Unix%29"><code>indent</code></a>,
+but <code>pacman</code> was substantially broken.<br>
+At this point, I rediscovered that my MSYS2 <code>pacman</code> was NOT Ruby's, which remains thoroughly broken...<br>
+The MSYS2 <code>pacman</code> default keyserver was hacked several years ago;&nbsp
+instead of merely fixing that website, it was abandoned.<br>
+Trying to use a new keyserver with that old  <code>pacman</code> worked only for MSYS2 packages,
+where e.g. <a href="https://www.mingw-w64.org/"><code>MINGW64</code></a> packages are wanted.<br>
+After wasting hours failing to fix it, a new MSYS2 installation was accomplished in minutes:<br>
+<pre>R:\TEMP>certUtil -hashfile msys2-x86_64-20230127.exe SHA256
+SHA256 hash of msys2-x86_64-20230127.exe:
+d05c0618027299e9a0834de968596c41bd2012ed8b2534b114a3b9d3fca56809
+CertUtil: -hashfile command completed successfully.</pre>
+then my old MSYS2 installation's <code>home/</code> folder was moved into it.<br>
+While I much prefer MSYS2 Bash for command line, Windows Explorer is used for much file and folder manipulation.<br>
+<code>GVIM</code> launched from Bash uses a profile weirdly different from that launched from Explorer...?<br>
+
+Attempting to compare <code>pacman -Q</code> results between installations was doomed.&nbsp These packages were added:<ul compact>
+<li><code>mingw-w64-x86_64-indent</code>
+<li><code>mingw-w64-x86_64-diffutils</code>
+</ul>
+
+Here are potentially useful contents from my <a href="bash_profile.txt">.bash_profile</a>,<br>
+which includes alias to invoke <a href="align.bat">align.bat</a> and <a href="imgdiff.bat">imgdiff.bat</a> DOS-style .bat files from within bash.
+
+</body></html>

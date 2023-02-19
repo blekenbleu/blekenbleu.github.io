@@ -1,0 +1,94 @@
+PATH="/usr/bin:/bin:/mingw64/bin:/c/Windows/System32:/c/Windows:/usr/bin/core_perl:/c/Users/bleke/bin:/c/Windows/System32/OpenSSH"
+# Set PATH so it includes user's private bin if it exists
+if [ -d "${HOME}/bin" ] ; then
+  PATH="${HOME}/bin:${PATH}"
+fi
+
+# Set PATH to include Ruby bin/ if it exists
+if [ -d "/d/Ruby27-x64/bin" ] ; then
+  PATH="/d/Ruby27-x64/bin:${PATH}"
+# 10/26/2018 possibly required by pacman
+  export DEV=/d
+fi
+
+ME="/c/Users/bleke"
+MY="/e/my"
+
+# for compatibility with GitHub Desktop, use its `git` binary
+GHDP="${ME}/AppData/Local/GitHubDesktop"
+# Version number changes frequently:
+GV="app-3.1.6"
+export GIT="${GHDP}/${GV}/resources/app/git/mingw64/bin"
+# if `where git` reports another, then delete or rename it
+
+# share Python with Visual Studio
+PYpath="/f/VS/Shared/Python37_64"
+PYscr="${ME}/AppData/Roaming/Python/Python37/Scripts"
+PY="${PYpath}:${PYpath}/Scripts:${PYscr}"
+
+PATH="${PATH}:${GIT}:${PY}"
+
+if [ -d "${ME}/AppData/Local/Microsoft/WindowsApps" ] ; then
+  PATH="${PATH}:${ME}/AppData/Local/Microsoft/WindowsApps"
+fi
+
+if [ -d "${MY}/gnuplot/bin" ] ; then
+  PATH="${PATH}:${MY}/gnuplot/bin"
+fi
+
+if [ -d "/d/NodeJS" ] ; then
+  PATH="${PATH}:/d/NodeJS:/d/NodeJS/prefix"
+fi
+
+# share Java JRE with Android dev
+if [ -d "${MY}/Android/jre/bin" ] ; then
+  PATH="${PATH}:${MY}/Android/jre/bin"
+fi
+
+if [ -d "${MY}/Hugin/bin" ] ; then
+  PATH="${PATH}:${MY}/Hugin/bin"
+fi
+
+if [ -d "${MY}/7-Zip" ] ; then
+  PATH="${PATH}:${MY}/7-Zip"
+fi
+
+if [ -d "${MY}/GitHub_gh" ] ; then
+  PATH="${PATH}:${MY}/GitHub_gh"
+fi
+
+if [ -d "${MY}/Vim/vim81" ] ; then
+  PATH="${PATH}:${MY}/Vim/vim81"
+fi
+
+# special environment for https://blekenbleu.github.io/covid/
+alias c19="cd ${MY}/GitHubDesktop/blekenbleu.github.io/covid && source usfact.sh"
+
+alias docs="cd /c/Users/bleke/Documents"
+alias g="cd ${MY}/GitHubDesktop"
+alias m="cd ${MY}/GitHubDesktop/blekenbleu.github.io/microscope"
+alias M="cd /c/Users/bleke/Documents/Arduino/midi_examples"
+alias p="cd ${MY}/GitHubDesktop/blekenbleu.github.io/MIDI/plugin"
+alias s="cd ${MY}/Sim/SimHub/SimHub/PluginSdk"
+
+# local jekyll
+alias serve="${HOME}/bin/serve"
+alias unserve="taskkill //IM ruby.exe //F"
+# GitHub Pages markdown
+alias utf8="find . -name '*.md' -exec grep --color='auto' -P -n '[^\x00-\x7F]' {} \;"
+
+# cleaning up after vim
+alias rmv="rm *~ .[._a-Z]*~"
+
+# Hugin to align an image stack
+alias align="/c/users/bleke/bin/align.bat"
+# use ImageMagik to difference images
+alias dimg="/c/users/bleke/bin/imgdiff.bat"
+
+# Windows command compatibility
+alias path="echo $PATH"
+export JAVA_HOME=${MY}/Android/jre
+export RAMDISK='/r/TEMP'
+
+# buggy
+#export GIFSICLE='${MY}/gifsicle-1.92/gifsicle.exe -b -O2'

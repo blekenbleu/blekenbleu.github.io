@@ -23,6 +23,7 @@
  &nbsp; **Nikon** [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) [Metaphot](microscope/Nikon/Metaphot/)  
 
 ## Microsoft
+- [MSYS2](MSYS2/)
 - Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
 - [PC misguided buying - January 2022](PC)  
   - [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)  
