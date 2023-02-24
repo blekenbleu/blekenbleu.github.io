@@ -26,6 +26,18 @@ sharing a ground connection with noisy power to motors, etc.
 Servo tensioner design motivation was from **@RacingMat**, [as documented here](https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/).  
 Some ongoing servo harness tensioning discussions occur in [SimHub Discord](https://discord.com/channels/299259397060689920/843488620546490378).
 
+### Update
+- *23 Feb 2023 by [@Wschuck](https://discord.com/channels/299259397060689920/1075603500609839246/1077844957274062888)*:  
+"I have transformed the stuyo profile to use with shakeit motors values  
+I now can use the acceleration deceleration and lat g forces and it works very good"  
+[SimHub ShakeIt profile](https://github.com/blekenbleu/SimHub-profiles/blob/main/Seatbelt_tensioner.siprofile)  
+[SimHub Custom Serial profile, modified from @Stuyo, to use that ShakeIt profile](https://github.com/blekenbleu/SimHub-profiles/blob/main/seatbelt_profile_with_shakeit.shsds)
+
+One drawback of *directly* using SimHub telemetry properties in a Custom Serial profile is that  
+those telemetry values vary **a lot**, depending on game, car, track and driving style.  
+SimHub ShakeIt has an option to automatically recalibrate values  
+and also provides a user interface for tweaking them.
+
 ### Opinion:&nbsp; sim racing harness
 [Cheap 4 point belts](https://www.ebay.com/sch/i.html?_nkw=racing%20seat%20belt&_udhi=25) can work great.  
 Those who claim otherwise probably have lap belts too loose;&nbsp; **lap belts should be as tight as possible**.  
@@ -35,3 +47,7 @@ Harnesses with smooth webbing are liable to loosen too easily.
 Tighter shoulder straps increase servo current, leading to overheating and failures.  
 Wide bed casters work fine as pulleys for 2-inch shoulder straps:  
 ![racedepartment](https://www.racedepartment.com/attachments/bedcasters-jpg.437943/)  
+
+### Alternative:&nbsp; recommended for more than 2 servos, [blek2char](../blek2char)
+
+Other alternatives:&nbsp; [SimHub Custom serial profile atlas](../shsds.htm)

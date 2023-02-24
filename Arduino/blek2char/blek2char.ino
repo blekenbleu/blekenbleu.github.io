@@ -5,8 +5,23 @@
  ; https://blekenbleu.github.io/Arduino/blek2char/blek2char.shsds
  */
 
-#define LED PC13      // LED pin
+
+/* Uncomment one microprocessor */
+//#define BLUEPILL 1
 //#define BLACKPILL 1
+#define UNO 1 // Arduino Uno, Nano
+//#define LEONARDO 1 // Arduino Leonardo, Micro
+//#define PROMICRO 1 // Sparkfun ProMicro
+//#define MEGA 1 // Arduino Mega 2560
+
+#ifdef BLUEPILL
+/* Blue Pill: seven 5V tolerant pins until PB1, then 3.3V excluding PS15
+ ;                  ________T4________  ______T1______  ________T3________  ________T2________
+ ;                  CH4  CH3  CH2  CH1  CH3   CH2  CH1  CH4  CH3  CH2  CH1  CH4  CH3  CH2  CH1 */
+const byte pin[] = {PB9, PB8, PB7, PB6, PA10, PA9, PA8, PB1, PB0, PA7, PA6, PA3, PA2, PA1};//PA15};
+const char *msg = "Blue Pill: connected.  ";
+#define LED PC13    // LED pin
+#endif // BLUEPILL
 
 #ifdef BLACKPILL
 /* Black Pill
@@ -17,17 +32,42 @@
  ;                  ________T4________  ______T1______  ________T3________  ________T2________
  ;                  CH4  CH3  CH2  CH1  CH3   CH2  CH1  CH4  CH3  CH2  CH1  CH4  CH3  CH2  CH1 */
 const byte pin[] = {PB9, PB8, PB7, PB6, PA10, PA9, PA8, PB1, PB0, PA7, PA6, PA3, PA2, PA1, PA15};
-const char *msg = "Black Pill 2char PWM: connected.  ";
+const char *msg = "Black Pill: connected.  ";
+#define LED PC13    // LED pin
+#endif // BLACKPILL
 
-#else
+#ifdef UNO
+/* Arduino Uno/Nano: six 5V tolerant pins
+                     D3   D5   D6   D9  D10  D11 */
+const byte pin[] = {PD3, PD5, PD6, PB1, PB2, PB3};
+const char *msg = "Arduino Uno/Nano: connected.  ";
+#define LED PB5    // LED pin
+#endif // UNO
 
-/* Blue Pill: seven 5V tolerant pins until PB1, then 3.3V excluding PS15
- ;                  ________T4________  ______T1______  ________T3________  ________T2________
- ;                  CH4  CH3  CH2  CH1  CH3   CH2  CH1  CH4  CH3  CH2  CH1  CH4  CH3  CH2  CH1 */
-const byte pin[] = {PB9, PB8, PB7, PB6, PA10, PA9, PA8, PB1, PB0, PA7, PA6, PA3, PA2, PA1};//PA15};
-const char *msg = "blek2char Blue Pill: connected.  ";
+#ifdef LEONARDO
+/* Arduino Leonardo/Micro: seven 5V tolerant pins
+                     D3   D5   D6   D9  D10  D11  D13 */
+const byte pin[] = {PD0, PC6, PD7, PB5, PB6, PB7, PC7};
+const char *msg = "Arduino Leonardo/Micro: connected.  ";
+#define LED PC7    // LED pin
+#endif // LEONARDO
 
-#endif                // BLACKPILL
+#ifdef PROMICRO
+/* Sparkfun ProMicro: five 5V tolerant pins on 16MHz board
+                     D3   D5   D6   D9  D10 */
+const byte pin[] = {PD0, PC6, PD7, PB5, PB6};
+const char *msg = "Arduino ProMicro: connected.  ";
+#define LED PD5    // TX_LED pin
+#endif // PROMICRO
+
+#ifdef MEGA
+/* Arduino Mega 2560: fifteen 5V tolerant pins on 16MHz board
+                     D0   D1   D2   D3   D4   D5   D6   D7   D8   D9  D10  D11  D12  D13  D44  D45  D46 */
+const byte pin[] = {PE0, PE1, PE4, PE5, PG5, PE3, PH3, PH4, PH5, PH6, PB4, PB5, PB6, PB7, PL5, PL4, PL3};
+const char *msg = "Arduino Mega 2560: connected.  ";
+#define LED PB7    // TX_LED pin
+#endif // MEGA
+
 
 const byte num_pwm = sizeof(pin);
 byte tmin[num_pwm], tmax[num_pwm], *LUT=NULL;   // e.g. per-channel offsets, tmax
