@@ -1,8 +1,19 @@
 #include <Servo.h>
 // set left/right servos based on even/odd ASCII values
-// https://blekenbleu.github.io/Arduino/
-
+// https://blekenbleu.github.io/Arduino/Blue_ASCII_Servo
+// 28 Feb 2020: Blue Pill or Arduino Nano
+// Uncomment one microprocessor
+//#define UNO 1 // Arduino Uno, Nano 
+#define BLUEPILL 1
+#ifdef BLUEPILL
+#define LEFT PB8
+#define RIGHT PB9
 #define LED PC13		// Blue Pill green LED
+#else
+#define LED 17			// Nano LED
+#define LEFT 9
+#define RIGHT 10
+#endif
 Servo left, right;
 unsigned long then, timeout=0;
 int next = HIGH;
@@ -14,8 +25,8 @@ void setup() {			// setup() code runs once
   // initialize as an output digital pin connected to green LED
   pinMode(LED, OUTPUT);
   digitalWrite(LED, HIGH);	// turn off LED by floating pin HIGH
-  left.attach(PB8);		// Blue Pill 5V tolerant PWM pins
-  right.attach(PB9);
+  left.attach(LEFT);		// Blue Pill 5V tolerant PWM pins
+  right.attach(RIGHT);
   left.write(ladd);		// initial servo positions
   right.write(radd);
 

@@ -1,14 +1,14 @@
 ## about Blue ASCII Servo
-*16 Feb 2023*
+*23 Feb 2023:*&nbsp;  `#define UNO` *added to [Blue_ASCII_Servo.ino](Blue_ASCII_Servo.ino)*
 
 [Stuyo's sim belt servo tensioner](https://diy-sim.com/guides/how-tos/servo-belt-tensioner-diy) is based on this Arduino sketch.  
 
-It requires a *compatible* SimHub Custom Serial profile,  
-e.g. from [SimHub Custom serial profile atlas](https://blekenbleu.github.io/Arduino/shsds.htm),  
+It requires a *compatible* SimHub Custom Serial profile (see [**Update**](#update) below),  
+or e.g. from [SimHub Custom serial profile atlas](https://blekenbleu.github.io/Arduino/shsds.htm),  
 as discussed in [SimHub Custom serial device for Blue Pill](https://blekenbleu.github.io/Arduino/SimHubCustomSerial).  
 
 The name comes from:
-- **Blue** for [Blue Pill](https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html), a cheap STM32 module, *sadly seldom available*.  
+- **Blue** for [Blue Pill](https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html), a cheap STM32 module, *sadly now seldom available*.  
   Many still advertised are *near clones* and may not work with the original Arduino Blue Pill board profile.
 - **ASCII** for 7-bit characters, which is a SimHub Custom Serial limitation.  
 - **Servo** for the [Arduino servo library](https://docs.arduino.cc/tutorials/generic/basic-servo-control)  
