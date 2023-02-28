@@ -1,10 +1,16 @@
 
 ---
-Arduino for Blue Pill
+Arduino for STM32 Black 'n Blue Pills, ESP32-S[2,3]
 ---
-*updated 19 Aug 2022*
+*updated 28 Feb 2023*
 
 #### Background
+This is for use with [SimHub's Custom Serial devices plugin](https://github.com/SHWotever/SimHub/wiki/Custom-serial-devices).  
+While highly useful, that plugin IMO has 2 key limitations:
+- SimHub plugin Javascript is relatively inefficient, hard to debug and maintain.
+- Plugin can log but not process received serial port messages from e.g. from Arduino.  
+([Fake8](https://github.com/blekenbleu/Fake8/) is proposed to address those limitations.)
+
 Arduino originally employed microcontrollers lacking USB support.  
 Their workaround involved boards with USB-to-TTL converter chips,  
 usually configured as USB COM devices for serial IO,  
