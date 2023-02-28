@@ -16,3 +16,6 @@ Edit near the top of [blek2char.ino](blek2char.ino) to select the appropriate ta
 //#define PROMICRO 1 // Sparkfun ProMicro
 //#define MEGA 1 // Arduino Mega 2560 
 ```
+
+![](page1.gif)  
+![](page2.gif)  
