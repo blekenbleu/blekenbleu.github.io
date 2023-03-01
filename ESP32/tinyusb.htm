@@ -40,7 +40,7 @@ This appears to be Expressif's "official" USB library implementation
 <li>CDC: 1 IN/OUT pair for data + 1 IN endpoint for control
 <li>HID: 1 IN/OUT pair
 </ul>
-<li>MIDI was broken by <a href="https://github.com/chegewara/EspTinyUSB/blob/master/src/device/midi/midiusb.cpp"><code>midiusb.cpp:#define EPNUM_MIDI 0x05</code></a>; <b>fix by changing</b> to <code>0x40</code>
+<li>MIDI was broken by <a href="https://github.com/chegewara/EspTinyUSB/blob/master/src/device/midi/midiusb.cpp"><code>midiusb.cpp:#define EPNUM_MIDI 0x05</code></a>; <b>fix by changing</b> to <code>0x04</code>
 <li>current assignments:<pre>grep -R EPNUM_ libraries | grep 0x | grep define
 libraries/ESP32TinyUSB/src/device/cdc/cdcusb.cpp:#define EPNUM_CDC   0x02
 libraries/ESP32TinyUSB/src/device/hid/hidcomposite.cpp:#define EPNUM_HID 0x03
