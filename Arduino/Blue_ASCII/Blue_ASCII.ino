@@ -22,7 +22,7 @@ void setup() {			// setup() code runs once
   Serial.begin(9600);
   while (!Serial)
     delay(1);			// wait for native USB serial port to connect
-  Serial.println("Blue_ASCII: connected");
+  Serial.println("Blue_ASCII hex echo: connected");
 }
 
 // loop() is not REALLY a loop;
