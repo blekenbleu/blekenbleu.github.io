@@ -44,25 +44,31 @@
     - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
     - COM ports work from SimHub, but sim games expect HID DirectInput
       - SimHub *directly* supports *real* Arduinos,  
-        but *any* COM by **Custom Serial devices**  
+        but *any* COM may be driven by **SimHub Custom Serial devices**  
         Some ESP32 / STM32 may be programmed to appear as Arduinos
 - USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
-- **ESP32 / STM32 IDE Alternatives to Arduino**
-  - [Platformio](https://blog.squix.org/2016/01/esp8266-arduino-ide-alternative.html)
-    or [**Visual Micro**](https://www.visualmicro.com/)
-  - [**Espressif IDF VS Code Extension with Arduino ESP32 component](https://marketplace.visualstudio.com/items?itemName=espressif.esp-idf-extension)
-  - [**Arduino Extension Pack**](https://github.com/mpty-ltd/vscode-pack-arduino) for Arduino < 2.0
-- [**STM32 Black Pill** for more capable custom USB Arduino devices](Arduino/black)
-- [**ESP32-S[2-3]**](ESP32/) for **composite USB** and wireless Arduino devices
-- **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
-  - [added to SimHub MIDIio plugin](MIDI/plugin)
-  - [Windows HID](Windows/HID)
+
+- **Alternatives to Arduino IDE**
+  - [There are *many*](https://www.survivingwithandroid.com/10-arduino-ide-alternative-to-start-programming/)
+  - [**Visual Micro**](https://www.visualmicro.com/) works in Visual Studio (which I use e.g. for SimHub plugins) and supports debugging
+    - in [VisualStudio **Marketplace**](https://marketplace.visualstudio.com/items?itemName=VisualMicro.ArduinoIDEforVisualStudio)  
+    - [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
+    - I discount Visual Studio **Code** options;&nbsp; it is *a confusingly named editor*, and I prefer GVim
+  - [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/0.31/)
+    - interesting, because [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
+- [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black)
+- [**ESP32-S[2-3]**](ESP32/) for **composite USB** and wireless Arduino devices  
+
+### **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
+  - [added to SimHub **MIDIio plugin**](MIDI/plugin)
+  - [Windows Joystick HID](Windows/HID) shared with SimHub
   - [Windows 10 vJoy installation](pedals/vJoy)
      - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
      - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360.md)
-     - [Serial-Lab](Windows/SerialLab)
 
-### [COVID-19 plots](covid)
+---
+
+#### [COVID-19 plots](covid)
 
 ---
 
