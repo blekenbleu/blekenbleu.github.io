@@ -2,7 +2,21 @@
 ---
 Blue Pill PWM fans for SimHub
 ---
-*updated 22 Jun 2021*  
+*updated 7 Mar 2023*  
+
+<table style="border-spacing:20px; border:1px solid white;">
+<tr><th>Name</th><th>Size</th><th>Date Modified</th></tr>
+<tr><td><a href="PWMfans.shsds">PWMfans.shsds</a></td><td>
+ 3.3 kB
+</td><td>
+9/30/21, 8:09:14 PM
+</td><td></tr><tr><td>
+<a href="SimHubPWMfans.ino">SimHubPWMfans.ino</a>
+</td><td>
+1.8 kB
+</td><td>
+9/30/21, 7:51:17 PM</td></tr></table>  
+
 ![12V 4-wire fan to Blue Pill](BluePillPWMfan.jpg)  
 **Warning!** 7000 RPM 280CFM fans run full speed without PWM connected  
 and must be anchored!  

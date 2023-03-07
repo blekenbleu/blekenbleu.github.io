@@ -32,21 +32,22 @@ There are at least 4 ways to flash STM32 chips:
 1) SWD via ST-LINK  
    **This will be used to load an HID bootloader to Blue Pills** 
 2) (Arduino) USB bootloader[s] <- there have been several:  
-   * [STM32duino Bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html) AKA bootloader 2.0 AKA **HID bootloader**  
-     **Arduino uses this to download Blue Pill sketches using ST Microelectronics-supported libraries**
+   * [STM32duino Bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html)
+     AKA bootloader 2.0 AKA **HID bootloader**  
+     **Arduino uses this to download Blue Pill sketches using [ST Microelectronics-supported libraries](https://github.com/stm32duino)**
    * the rest are IMO obsolete:
      - [Maple-derivative bootloaders](https://github.com/jonatanolofsson/maple-bootloader)  
      - Maple boards had USB reset hardware to force re-enumeration  
      - [Roger Clark's 8k bootloader](https://github.com/rogerclarkmelbourne/STM32duino-bootloader)  
-       Be aware that some of Roger Clark core code is also called Stm32duino..
+       Be aware that some of Roger Clark core code is *also* called Stm32duino..
      - Not sure which core (libmaple or stm32duino) [this bootloader supports, but is 4k](https://github.com/davidgfnet/stm32-dfu-bootloader)  
-3) STM serial bootloader  
+3) STM serial bootloader - **not recommended**   
    Blue Pill micro has only a serial bootloader  
    [Load firmware via USART1 by jumpering](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html#Boot0_and_Boot1_pin_settings):  
    `Boot0 HIGH`  
    `Boot1 LOW`  
   ... then resetting MCU
-4) DFU (device firmware update) using DfuSe utility, e.g. for [Black Pills](black)  
+4) DFU (device firmware update) using DfuSe utility, e.g. **for [Black Pills](black)**  
     using the [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
     but USB is [**NOT** supported by Blue Pill's ROM bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html)  
 
@@ -61,7 +62,7 @@ Blue Pill boot jumpers *are unchanged* when flashing by ST-LINK or HID bootloade
 
 #### STM32duino
 Many STM32 Arduino projects use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader AKA Maple,  
-but Arduino now has an ST Microelectronics-supported [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
+but Arduino now has an **ST Microelectronics-supported** [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
 for which there is an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
 as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).  
 That video installs the Blue Pill HID bootloader via USB COM dongle,  
@@ -209,7 +210,7 @@ with a shortcut to that sketch folder in the Arduino "work" folder.
 Both of these ploys work; the sketch runs..  
 **This sketch can be used to verify servo wiring to a Blue Pill** *without* serial control. 
 
-### Serial servos e.g. for SimHub harness tensioning
+### USB Serial servos e.g. for SimHub harness tensioning
 Here is the [Arduino reference for Serial communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)  
 In STM32duino, **`Serial`** device is USB virtual COM port,  
 using `PA11+12`, and **`Serial1`** is UART `PA9+10`,  
@@ -221,7 +222,18 @@ Toggling LED off before and on or blinking after provides connection feedback.
 The first Arduino sketch I found that combined `Serial` and `<Servo.h>` is  
 [Matt Williamson's serial_servo_rx.ino](https://github.com/mattwilliamson/Arduino-RC-Receiver/blob/master/serial_servo_rx_ino/serial_servo_rx.ino)  
 
-Single-character control [avoids serial string blocking and overflows](https://www.forward.com.au/pfod/ArduinoProgramming/Serial_IO/index.html).  
+### USB Serial protocols
+In theory, USB communication should be quite robust,  
+using shielded balanced pairs for signals and USB device transceivers powered by their host.  
+In practice, most USB devices have one side of tranceiver signal pairs tied to their power ground,  
+so unbalanced and liable to EMC and [ground bounce](https://en.wikipedia.org/wiki/Ground_bounce) issues.  
+USB device communication is in units of 8-bit bytes,  
+but [SimHub Custom Serial devices](https://github.com/SHWotever/SimHub/wiki/Custom-serial-devices) are constrained to use only 7 bits of each byte.  
+While each single USB bytes may be relatively robust to electrical interference,  
+longer messages become increasingly vulnerable to failure.  
+Consequently, keeping messages short and providing for recovery (or at least resynchronization) are concerns.  
+
+**First generation** single-character control [avoids serial string blocking and overflows](https://www.forward.com.au/pfod/ArduinoProgramming/Serial_IO/index.html).  
 Useful rotation range for my harness' servos is less than 127 degrees;  
 direct odd rotation values 3-127 to the right harness strap  
 and even rotation values 2-126 to the left,  
@@ -233,32 +245,39 @@ Perhaps better to use that LED to signal when servo values are max..?
 Blink timing by `delay()` impacts serial bandwidth, so use `millis()`.
 
 For serial servo control, with or *even without* **SimHub Custom serial device**,  
-**[this sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo)** accepts e.g. ASCII characters from Arduino `Tools` > `Serial Monitor`.  
+this **[Blue ASCII Servo](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo)** sketch accepts e.g. ASCII characters from Arduino `Tools` > `Serial Monitor`.  
 to move left or right servo based on least-significant bit.  
-**See [above](#stm32duino) for Blue Pill flash programming information.**  
+**See [STM32duino (above)](#stm32duino) for Blue Pill flash programming information.**  
 Characters `> 127` do not arrive intact from SimHub JavaScript,  
 but useful strap servo range is `< 127`, with offsets applied to received values.  
 Testing suggests that, running on STM32 Blue Pill,  
-this sketch handles 60Hz updates of 4 characters,  
-where 2 should suffice and servos respond less quickly.  
+this sketch handles 60Hz updates of 4 characters, where 2 should suffice.  
 By changing from Blue Pill-specific PWM pin and LED assignments,  
 this sketch should work for other Arduino-supported modules with PWM-capable pins.
 
 Corresponding [SimHub Custom serial hacking is described here](SimHubCustomSerial).
 
-### Blue Pill servo firmware generations
-As described above, **first generation** use the least signficant of 7 bits  
-to select servos for left or right harness tensioning..  
-A **second generation** allocates 3 msb for PWM pin selection,  
+### Blue Pill firmware generations
+- As described above, **first generation** use the least signficant bit of each USB byte  
+to e.g. select left or right harness tensioning servo..  
+- Since serial communication between SimHub and USB devices is inherently asynchronous,  
+  some mechanism is wanted for sorting *multi-byte message* starts and/or ends.  
+- A **second generation** allocates 3 msb for PWM pin selection,  
 with 0x70 reserved for special commands e.g. 0x7F for servo LUT loading,  
 leaving 4 lsb to index into a 16-entry LUT of PWM values.  
-A **third generation** pairs ASCII characters (14 bits),  
-of which the most significant bit in each character  
-identifies it as first (1) or second (0) of a pair.  
-The next bit in the first character is most significant of 7 data bits,  
+This intends to cram so much control as possible into single 7-bit characters.  
+- A **third generation** *pairs* 7-bit ASCII characters (14 bits),  
+where the most significant bit in each 7-bit character  
+identifies it as first (1) or second (0) character of a pair, leaving 6 bits for commands and data.  
+The next bit in the first character is most significant of 7 *channel data value* bits,  
 while the 5 lsb index a channel, which may e.g. be a PWM pin.  
-The largest channel value is reserved for special commands.  
-The 6 lsb of second characters is 6 lsb of channel data values.
+The largest 5-bit channel index is reserved for special commands.  
+Available 6 lsb of second characters are 6 lsb of *channel data values*.
+- **Fourth generation** protocol uses 8 bits:  
+  A [`Fake8.shsds` SimHub Custom Serial device plugin profile](https://github.com/blekenbleu/SimHub-profiles/) communicates with another SimHub [**Fake8** plugin](https://github.com/blekenbleu/Fake8)  
+  that converts Custom Serial device 7-bit data to [8-bit sequences](https://github.com/blekenbleu/Arduino-Blue-Pill/blob/main/8-bit.md)
+  for e.g. [**Arduino PWM sketches**](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/PWM_FullConfiguration).  
+  SimHub plugins are implicitly synchronized by SimHub's (60Hz) refresh rate,  
+  simplifying serial communication between them.
 
-[**PWM fan code is described here**](SimHubfans)  
-[**PWM fan sketch is here**](SimHubPWMfans)  
+[**PWM fan**](SimHubPWMfans)  

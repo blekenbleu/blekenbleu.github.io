@@ -15,7 +15,7 @@
 
 ### [Chromebook](ChromeBook/)
 
-## MIDI: [wireless](MIDI/), *including Android app* - [**SimHub plugin**](MIDI/plugin/)
+## [MIDI](MIDI/) wireless, *including Android app* - [**SimHub plugin**](MIDI/plugin/)
  &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
 
 ## [Microscopes and photomicography](microscope/)  
@@ -39,8 +39,8 @@
   - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID)
   - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
   - **[analog](pedals/#pedals) pedals** plugged into [SimXperience AccuForce controller](pedals/#analog)  
-- USB-attached harness tensioning servos
-  - [STM32 Blue Pill for custom USB Arduino devices](Arduino/)
+### [Arduino custom USB STM32 Blue Pill sketches](Arduino/)
+- e.g. for harness tensioning servos
     - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
     - COM ports work from SimHub, but sim games expect HID DirectInput
       - SimHub *directly* supports *real* Arduinos,  
@@ -52,8 +52,8 @@
     or [**Visual Micro**](https://www.visualmicro.com/)
   - [**Espressif IDF VS Code Extension with Arduino ESP32 component](https://marketplace.visualstudio.com/items?itemName=espressif.esp-idf-extension)
   - [**Arduino Extension Pack**](https://github.com/mpty-ltd/vscode-pack-arduino) for Arduino < 2.0
-- [STM32 Black Pill for custom USB Arduino devices](Arduino/black)
-- [ESP32-S2-3](ESP32/) for **composite USB devices**
+- [**STM32 Black Pill** for more capable custom USB Arduino devices](Arduino/black)
+- [**ESP32-S[2-3]**](ESP32/) for **composite USB** and wireless Arduino devices
 - **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
   - [added to SimHub MIDIio plugin](MIDI/plugin)
   - [Windows HID](Windows/HID)
