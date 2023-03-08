@@ -45,4 +45,24 @@ Attempting to compare <code>pacman -Q</code> results between installations was d
 Here are potentially useful contents from my <a href="bash_profile.txt">.bash_profile</a>,<br>
 which includes alias to invoke <a href="align.bat">align.bat</a> and <a href="imgdiff.bat">imgdiff.bat</a> DOS-style .bat files from within bash.
 
+<h4>Open MinGW64 shell from Windows Explorer</h4>
+Integrating Bash shell usage with Windows wants easily opening a shell in any folder:<br>
+<img width=50% src="Open.png"><br clear=all>
+<br>
+This capability is implemented via Windows registry;  <a href="bash.reg"><code>bash.reg</code></a> can do that,<br>
+provided that the path to <code>msys2_shell.cmd</code> matches your installation:
+<pre>Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\bash]
+@="Open bash window here"
+"NoWorkingDirectory"=""
+"NeverDefault"=""
+"Icon"="D:\msys64\mingw64.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\bash\command]
+@="D:\msys64\msys2_shell.cmd -mingw64 -where \"%V\""</pre>
+If (as happened to me) Windows complains about not a default application, then code directly in <code>RegEdit</code>:<br>
+<img width=80% src="RegEdit.png"><br clear=all>
+<br>
+<h4><a href="newMSYS2.txt">currently installed MSYS2 packages</a></h4>
 </body></html>
