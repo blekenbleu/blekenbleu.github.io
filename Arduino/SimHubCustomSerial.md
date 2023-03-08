@@ -5,7 +5,7 @@ SimHub Custom serial device for Blue Pill
 *updated 30 Jan 2021*
 
 #### [Background](https://blekenbleu.github.io/Arduino/SimHubCustomSerial.html)
-An [STM32duino sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo) was thrown together  
+An [STM32duino sketch](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_ASCII_Servo) was thrown together  
 that moves either of a pair of servos,  
 depending on least significant bit,  
 for byte values (masked with 0x7F) received by USB COM port,

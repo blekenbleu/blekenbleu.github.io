@@ -192,7 +192,7 @@ no need to install Arduino-specific driver[s]...
    Check in Windows' `Device Manager` under `Ports (COM & LPT)` for `USB Serial Device (COM*n*)`,  
    where in my case `n = 3,5 or 10`.  
    **`Port:`** `COM[5]` is unavailable until a sketch is loaded, e.g.
-[`Blue_Servo`](https://github.com/blekenbleu/blekenbleu.github.io/blob/master/Arduino/Blue_Servo):
+[`Blue_Servo`](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_Servo):
 ![Blue_Blink sketch](Blue_Blink.gif)  
 
 Here is a Blue Pill pinout reference:
@@ -205,7 +205,7 @@ Here is a Blue Pill pinout reference:
 #### To drive automobile dash instruments by Blue Pill from SimHub, [go here](https://github.com/bosirovec/Custom-Dashboard-STM32-BluePill-SimHub)
 
 A simple next step adds servos to the blink loop sketch.  
-[This servo cycling sketch](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_Servo) is under GitHub revision control,  
+[This servo cycling sketch](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_Servo) is under GitHub revision control,  
 with a shortcut to that sketch folder in the Arduino "work" folder.  
 Both of these ploys work; the sketch runs..  
 **This sketch can be used to verify servo wiring to a Blue Pill** *without* serial control. 
@@ -245,7 +245,7 @@ Perhaps better to use that LED to signal when servo values are max..?
 Blink timing by `delay()` impacts serial bandwidth, so use `millis()`.
 
 For serial servo control, with or *even without* **SimHub Custom serial device**,  
-this **[Blue ASCII Servo](https://github.com/blekenbleu/blekenbleu.github.io/tree/master/Arduino/Blue_ASCII_Servo)** sketch accepts e.g. ASCII characters from Arduino `Tools` > `Serial Monitor`.  
+this **[Blue ASCII Servo](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_ASCII_Servo)** sketch accepts e.g. ASCII characters from Arduino `Tools` > `Serial Monitor`.  
 to move left or right servo based on least-significant bit.  
 **See [STM32duino (above)](#stm32duino) for Blue Pill flash programming information.**  
 Characters `> 127` do not arrive intact from SimHub JavaScript,  
@@ -280,4 +280,4 @@ Available 6 lsb of second characters are 6 lsb of *channel data values*.
   SimHub plugins are implicitly synchronized by SimHub's (60Hz) refresh rate,  
   simplifying serial communication between them.
 
-[**PWM fan**](SimHubPWMfans)  
+[**PWM fan**](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/SimHubPWMfans)  
