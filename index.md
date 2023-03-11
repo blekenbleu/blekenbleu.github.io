@@ -50,7 +50,8 @@
 
 - **Alternatives to Arduino IDE**
   - [There are *many*](https://www.survivingwithandroid.com/10-arduino-ide-alternative-to-start-programming/)
-  - [**Visual Micro**](https://www.visualmicro.com/) works in Visual Studio (which I use e.g. for SimHub plugins) and supports debugging
+  - [**Visual Micro**](https://www.visualmicro.com/) supports debugging in Visual Studio  
+    (which I use e.g. for [**SimHub plugins**](SimHub/))
     - in [VisualStudio **Marketplace**](https://marketplace.visualstudio.com/items?itemName=VisualMicro.ArduinoIDEforVisualStudio)  
     - [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
     - I discount Visual Studio **Code** options;&nbsp; it is *a confusingly named editor*, and I prefer GVim
