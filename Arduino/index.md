@@ -30,26 +30,28 @@ While STM32F103C officially has 64K flash,
 
 There are at least 4 ways to flash STM32 chips:  
 1) SWD via ST-LINK  
-   **This will be used to load an HID bootloader to Blue Pills** 
+   **Use this to install an HID bootloader on Blue Pills**  
+   Unlike Black Pills, new Blue Pills lack a USB bootloader. 
 2) (Arduino) USB bootloader[s] <- there have been several:  
    * [STM32duino Bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html)
      AKA bootloader 2.0 AKA **HID bootloader**  
-     **Arduino uses this to download Blue Pill sketches using [ST Microelectronics-supported libraries](https://github.com/stm32duino)**
+     **Arduino uses this to download Blue Pill sketches using [ST Microelectronics-supported libraries](https://github.com/stm32duino)**  
+     Installing a USB bootloader in Blue Pill flash takes away storage available for Arduino sketches.
    * the rest are IMO obsolete:
      - [Maple-derivative bootloaders](https://github.com/jonatanolofsson/maple-bootloader)  
      - Maple boards had USB reset hardware to force re-enumeration  
      - [Roger Clark's 8k bootloader](https://github.com/rogerclarkmelbourne/STM32duino-bootloader)  
        Be aware that some of Roger Clark core code is *also* called Stm32duino..
      - Not sure which core (libmaple or stm32duino) [this bootloader supports, but is 4k](https://github.com/davidgfnet/stm32-dfu-bootloader)  
-3) STM serial bootloader - **not recommended**   
-   Blue Pill micro has only a serial bootloader  
-   [Load firmware via USART1 by jumpering](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html#Boot0_and_Boot1_pin_settings):  
+3) STM serial bootloader - **not recommended for frequent reprogramming**   
+   Blue Pills have only a serial bootloader in ROM;&nbsp; a USB bootloader gets installed in flash memory.  
+   [Load firmware via USART1 by first jumpering](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html#Boot0_and_Boot1_pin_settings):  
    `Boot0 HIGH`  
    `Boot1 LOW`  
   ... then resetting MCU
 4) DFU (device firmware update) using DfuSe utility, e.g. **for [Black Pills](black)**  
-    using the [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
-    but USB is [**NOT** supported by Blue Pill's ROM bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html)  
+    using its [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
+    but, *again* USB is [**NOT** supported by Blue Pill's ROM bootloader](https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Bootloader.html).  
 
 STM32duino expects a USB HID bootloader,  
 which gets launched by Blue Pill's ROM bootloader,  
@@ -58,7 +60,7 @@ then that USB HID bootloader installs sketches above it in flash.
 A clone ST-LINK V2 costs no more than a USB COM dongle,  
 connects to dedicated Blue Pill pins and supports debug.  
 Clone USB COM dongles *may not* support 3.3V to Blue Pill serial boot pins..  
-Blue Pill boot jumpers *are unchanged* when flashing by ST-LINK or HID bootloader.  
+Blue Pill boot jumpers *need not be changed* when flashing by ST-LINK or HID bootloader.  
 
 #### STM32duino
 Many STM32 Arduino projects use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader AKA Maple,  
@@ -91,8 +93,7 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
    bundled with [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html),  
    which utility was *also* wanted for updating clone ST-LINK firmware.  
  - *Also* use [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html) to install HID bootloader.
- - These instructions apply *specifically* for 64-bit Windows, ST-LINK clone,  
-   HID-bootloader, Blue Pill and STM core.  
+#### These instructions apply *specifically* for 64-bit Windows, ST-LINK clone,  HID-bootloader, Blue Pill and STM core.  
 
 1) Download and install [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html)  
    in my case, to `D:\packages\STM32\`
@@ -142,29 +143,30 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
      *specific to the selected board*:  
      `File -> Examples -> (examples for selected board type)`:  
      ![](examples.png)  
-   - If ANY sketch works for you, then your other sketches may use pin[s]  
-     that Arduino expects to use for communication and control.  
+   - If ANY sketch works for you, then problematic sketches may use pin[s]  
+     that Arduino  (or the board) expects to use for communication and control.  
      It is important to locate, if possible, an diagram showing  
-     how pins on **your** module are assigned for Arduino.  
+     how the board support package assigns pins on **your specific module** for Arduino.  
    - Another possiblity is that your sketch enables pins in some way  
      that causes the STM32 processor to lock up or be too busy to respond to Arduino.  
-     Debugging that might require moving suspect pin initializations from setup()
-     to some separate routine that gets called  
-     only after the sketch receives input from e.g. Serial Monitor.  
+     Debugging that might require  
+	 moving suspect pin initializations from setup() to some separate routine  
+	 that gets called only after the sketch receives input from e.g. Serial Monitor.  
    - Another trick for Arduino to work with downloaded sketches:  
      *those sketches SHOULD correctly open communications as Arduino expects,*  
      even if sketch function does not otherwise need it.  
+     **Making this initial message unique confirms which sketch is loaded.**  
      For Blue Pill, that amounts to having, in setup(), something like:  
 ```
   // Initialize serial and wait for port to be opened:
   Serial.begin(115200);
   while (!Serial)
     delay(1);               // wait for native USB serial port to connect
-  Serial.write("This sketch has connected. ");
-```
-   - Genuine original Blue Pill modules are basically no longer available,  
-     and you probably have some similar *but incompatible* **clone board**.  
-     There may be a *different board profile* for your clone...  
+  Serial.write("Blue Pill HEX_echo sketch has connected. ");
+```  
+   - Genuine original STM Blue Pill modules are basically no longer available,  
+     and you probably have some similar *but perhaps incompatible* **clone board**.  
+     That clone may need a *different board profile*...  
 
 ### Installing STM32duino support
 Since SimHub already includes an *older version* of Arduino,  
