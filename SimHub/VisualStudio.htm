@@ -4,6 +4,10 @@
 h1, h2, h3, h4, h5 {
   margin-bottom:0.5px;
 }
+body {
+   width:960px;
+   margin-left:60px;
+}
 </style>
 <title>How-To for Visual Studio for SimHub plugin</title>
 </head>
@@ -21,8 +25,10 @@ using Microsoft account<br>
 <a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/visual-studio-ide?view=vs-2019">Getting started (2019)</a> &nbsp
 <a href="https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/?view=vs-2022">2022</a><br>
 <br>
-Visual Studio 2019 does not update to 2022;&nbsp  VS 2022 installs in parallel.<br>
-<a href="https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022">VS 2022 Installation instructions</a><br>
+Visual Studio 2019 does not update to 2022;&nbsp  VS 2022 would install in parallel.<br>
+<font size=-1>
+(<a href="https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022"><i>VS 2022 Installation instructions</i></a>)<br>
+</font>
 <br>
 I clicked on a .csproj file, which launched Visual Studio<br>
 <li> should really click on .sln file, but perhaps not important..?<br>
@@ -82,7 +88,7 @@ Exception thrown: 'System.IO.FileNotFoundException' in mscorlib.dll</pre>
 for renaming DataPluginDemo:</h5>
 
 Optional Step: Rename Namespaces should emphasize that requires loading a .cs file... got this warning:<br>
-<img src="ManagedResources.png"><br clear=all>
+<div align=center><img src="ManagedResources.png"></div><br clear=all>
 Everything turned to crap.&nbsp VS rejects MIDI-io namespace;<br>
 MIDIio is OK...Some brute force Vim, then try renaming per above instructions.<br>
 One gotcha: rename the whatever before right-clicking for rename<br>
@@ -96,7 +102,8 @@ Using <code>MIDIio</code> for both namespace and class is evidently <i><b>very b
 Folder name is not problematic, e.g. using <code>MIDIio</code> for folder and main class names.<br>
 The only place that namespace (unique from class name) is referenced without specific [Nn]amespace label are:<br>
 <pre>SettingsControl.xaml:?&lt;UserControl x:Class="""
-Properties/Resources.Designer.cs: global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("", typeof(Resources).Assembly);
+Properties/Resources.Designer.cs: global::System.Resources.ResourceManager
+ temp = new global::System.Resources.ResourceManager("", typeof(Resources).Assembly);
 </pre>
 
 <h4>User interface (ick) tutorials</h4>
@@ -106,7 +113,7 @@ Properties/Resources.Designer.cs: global::System.Resources.ResourceManager temp 
 <a name=SDK><h3><a href="https://www.partech.nl/en/publications/2020/11/converting-c-sharp-projects-to-the-new-sdk-format#">Converting old csproj to SDK</a></h3></a>
 SDK projects are wanted for unused reference removal support.<br>
 <code>&gt;dotnet tool install --global Project2015To2017.Migrate2019.Tool</code><br>
-You can invoke the tool using the following command: dotnet-migrate-2019<br>
+You can invoke the tool using the following command: <code>dotnet-migrate-2019</code><br>
 Tool 'project2015to2017.migrate2019.tool' (version '4.1.3') was successfully installed.<br>
 <br>
 <code>&gt;dotnet migrate-2019 wizard E:\my\Sim\SimHub\SimHub\PluginSdk\blekenbleu.MIDIio\blekenbleu.MIDIio.csproj</code><br>
@@ -120,7 +127,7 @@ However, moving the <code>.sln</code> file back while it was running excited Vis
 Because SDK version defaults to <code>OutDir ..\..\net48\</code>,<br>
 added to <code>.csproj</code> file:&nbsp <code>&lt;OutDir&gt;..\..\&lt;/OutDir&gt;</code>
 <h4>Get in the habit of checking <code>.csproj</code> file with a text editor</h4>
-IMO, changing settings in the Visual Studio UI is harder than editing them in the <code>.csproj</code> file.<br>
+IMO, finding settings to change in the Visual Studio UI is harder than editing them in the <code>.csproj</code> file.<br>
 I found and fixed several obvious inconsistencies e.g. in paths that way.
 
 <a name=SDK><h3><a href="https://learn.microsoft.com/en-us/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019#assemblies-tab">Adding

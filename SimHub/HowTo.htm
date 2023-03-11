@@ -8,6 +8,7 @@ h1, h2, h3, h4, h5 {
 <title>SimHub plugin How-To and Discord discussions</title>
 </head>
 <body>
+<h2>SimHub plugin How-To and Discord discussions</h2>
 <pre>Wotever 12/28/2017
 To share a plugin, you must first rename it in project settings,
 and also rename the plugin class
@@ -74,21 +75,19 @@ My struggles with C# and Visual Studion are addressed in <a href="VisualStudio.h
 <br>
 <h4>First tip: start with a working example plugin</h4>
 Conventions for plugin C# may differ appreciably from generic .NET C# apps:
-<li>Not an App;&nbsp DLL launched from within SimHub
+<li>Not an App;&nbsp a DLL launched by SimHub
 <li>Best created in a <code>SimHub/PluginSdk/</code> folder;&nbsp relative path to SimHub classes and <code>.dll</code> build destination
-<li>Sadly, at least Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug;&nbsp must be absolute.
+<li>Sadly, Visual Studio 2019 rejects <i>relative</i> path to <code>SimHubWPF.exe</code> for Debug <code>&lt;StartProgram&gt;</code>;&nbsp path must be absolute.
 <li>Obvious starting place:&nbsp <code>SimHub/PluginSdk/User.PluginSdkDemo/</code>
 <li>Also simple, already a GitHub project:&nbsp
  <a href="https://github.com/viper4gh/SimHub-Plugin-CalcLngWheelSlip"><code>SimHub/PluginSdk/CalcLngWheelSlip</code></a><br>
 <br>
 
-"When you create properties they are available inside the Properties list.<br> &nbsp
- Then to access them you need to create the xaml page in Visual Studio for your plugin" -
- <a href="https://discord.com/channels/299259397060689920/306850703299575809/1038925004965941269">Discord</a><br>
+Properties are listed inside <b>Available Properties</b>.<br> &nbsp
 <img width=640 src="https://media.discordapp.net/attachments/306850703299575809/1038925004865273927/image.png"><br clear=all>
 <dl>
-<dt><br>SimHub plugins can add so-called <i>properties</i> which can be read in other plugins e.g. ShakeIt.<br>
-<dd>Similarly, plugins can read properties that are e.g. set in ShakeIt plugin.<br>
+<dt><br>SimHub plugins can add more <i>properties</i>, which can be read in other plugins e.g. ShakeIt.<br>
+<dd>Similarly, plugins can read properties that are e.g. set in the ShakeIt plugin.<br>
 e.g. (<a href="https://github.com/andreasdahl1987/DahlDesignProperties">Dahl Design Properties</a>
 <a href="https://dahl-design.gitbook.io/properties/introduction/install#additional-setup">reads and sets properties</a> in
 <a href="https://github.com/andreasdahl1987/DahlDesignProperties/blob/6c61e69e93ac3ddd97e9ba49972797ab8ddc66d2/iRacing/iRacing.cs#L1220">iRacing.cs</a>).
@@ -113,13 +112,13 @@ namespace DahlDesign.Plugin.iRacing
       #endregion
     }
 
-    public override void DataUpdate()
+    public override void DataUpdate(PluginManager pluginManager, ref GameData data)
     {
 ...
-      double slipLF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontLeft"));  //Wheel slip
-      double slipRF = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontRight"));  //Wheel slip
-      double slipLR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearLeft"));  //Wheel slip
-      double slipRR = Convert.ToDouble(Base.GetProp("ShakeITMotorsV3Plugin.Export.WheelSlip.RearRight"));  //Wheel slip
+      double slipLF = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontLeft"));  //Wheel slip
+      double slipRF = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.FrontRight"));  //Wheel slip
+      double slipLR = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.RearLeft"));  //Wheel slip
+      double slipRR = Convert.ToDouble(pluginManager.GetPropertyValue("ShakeITMotorsV3Plugin.Export.WheelSlip.RearRight"));  //Wheel slip
 ...
 
       Base.SetProp("SlipLF", slipLF);
@@ -130,14 +129,14 @@ namespace DahlDesign.Plugin.iRacing
   }
 }
 </pre>
-At least in theory, by appropriately glueing something like this to MIDI code,<br>
+By appropriately gluing something like this to MIDI code,<br>
 MIDI sliders can be used to set SimHub property values,<br>
 while SimHub property values can be used to set MIDI values for e.g. VST level trimmers
 
 <dt><br><b>Second tip:&nbsp Initializing properties</b>
 <br>Global properties are easily created using <a href="https://github.com/SHWotever/SimHub/wiki/NCalc-scripting"><b>NCalc</b></a>;
 <dd>
-I <i><b>hate</b></i> writing user interface code, so will configure my plugins by editing a matching NCalc script.<br>
+<i><b>Hating</b></i> user interface code, I configure my plugins by editing a matching NCalc script.<br>
 NCalc examples are available in <code>\SimHub\NCalcScripts\examples.ini</code>;<br>
 edit a copy of <a href="https://github.com/blekenbleu/blekenbleu.MIDIio/blob/main/MIDIio.ini"><code>MIDIio.ini</code></a> in that folder.<br>
 
@@ -162,6 +161,13 @@ Visual Studio can also remove unused Solution Explorer <code>Dependencies > Asse
  but only in <a href="VisualStudio.htm#SDK"><b>SDK projects</b></a>,<br>
 which SimHub plugins by default are not.
 
+<dt><br><b>Tip #6:&nbsp debug strings as properties</b>
+<dd>writing to SimHub's log works, but messages can be missed in the deluge.<br>
+Instead, repurpose a delegate property, e.g. <code>string PluginMsg;</code>:<pre>
+PluginMsg = $"CustomSerial.Write({Traffic[1]})";
+CustomSerial.Write(Traffic[1]);
+PluginMsg += " sent";</pre>
+If "sent" is not seen in the PluginMsg property, then the plugin hung or failed in <code>CustomSerial.Write(Traffic[1]);</code>
 
 <dt><br>C# plugin source and discussions
 <dd>Here is <a href="PluginDemo.cs">an older and smaller PluginDemo.cs</a>.<br>
@@ -288,5 +294,71 @@ Plugin properties seemingly <i>must</i> be set without indexing variables.<br>
 Basically the same tactic as reading:&nbsp <code>try</code> opening the property name, then <code>catch</code> exception by logging known devices.<br>
 <b><i>Trick</i></b>:&nbsp to avoid upsetting VS, copy e.g. <code>MIDIdrywet.cs</code> to a <code>.txt</code> file, edit to change class name, etc. then rename.<br>
 <li><code>OUTdrywet.cs</code> was created this way...
+
+<h5>11 Mar 2023: <a href="https://github.com/blekenbleu/Fake8">Serial Ports</a></h5>
+Any number of issues, largely thanks to:<ul compact>
+<li>terrible examples;&nbsp <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.ports.serialport">best of a poor lot</a>:<pre>
+public class PortChat
+{
+    static bool _continue;
+    static SerialPort _serialPort;
+</pre>
+Note: use of <code>static</code> for both <code>SerialPort</code> and <code>bool</code>:<br>
+- <code>SerialPort</code> will use a delegate
+- delegate works with <code>static</code>
+<pre>
+public static void Read()
+{
+    while (_continue)
+    {
+        try
+        {
+            string message = _serialPort.ReadLine();
+            Console.WriteLine(message);
+        }
+        catch (TimeoutException) { }
+    }
+}</pre>
+... where <code>Read()</code> runs in another thread, and could not access <code>_continue</code> if not <code>static</code>.<br>
+This example launches <code>Read()</code> by <code>Thread readThread = new Thread(Read);</code><br>
+... but can instead by launched by <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.ports.serialdatareceivedeventhandler">SerialDataReceivedEventHandler Delegate</a>:
+<pre>
+    public delegate void SerialDataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e);
+
+    mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+    mySerialPort.Open();
+}
+
+private static void DataReceivedHandler(
+                        object sender,
+                        SerialDataReceivedEventArgs e)
+{
+    SerialPort sp = (SerialPort)sender;
+    string indata = sp.ReadExisting();
+    Console.WriteLine("Data Received:");
+    Console.Write(indata);
+}
+</pre>
+Notes:<ul compact>
+<li>that <i>lame</i> <code>DataReceivedHandler()</code> example does nothing interesting with received data,<br>
+e.g. returning it to the writing thread for processing.
+<li>It requires a new thread for each receive event.&nbsp Instead, it <i>could</i>:<pre>
+private static void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e) 
+{
+    SerialPort sp = (SerialPort)sender;
+    while(_continue)                         // set false before PortChat instance thread exits
+        PCrcv(PC(), sp.ReadExisting());      // pass current instance to main thread static method() delegate
+}
+
+private delegate void PChatDel(PortChat Instance, string text);
+readonly PChatDel PCrcv = PortChatreceiver; 
+
+private PortChat PC() { return this; }      // callback for current PortChat class instance
+</pre>
+<code>PortChatreceiver()</code> fails for asynchronous threads, unless e.g.
+<a href="https://www.albahari.com/threading/part5.aspx#_Concurrent_Collections">queues are implemented</a>,<br>
+but for plugin applications, SimHub coordinates property value updates among plugins,<br>
+and serial messages received can always be only in response to messages sent, with fixed known unique terminating bytes.
+</ul>
 </body>
 </html>

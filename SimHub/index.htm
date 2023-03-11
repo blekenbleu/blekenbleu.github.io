@@ -1,0 +1,80 @@
+<html>
+<head>
+<style>
+body {
+   width:740px;
+   margin-left:60px;
+} 
+h4 {margin-bottom:0} ul {margin-top:0}
+</style>
+<title>SimHub plugins</title>
+</head>
+<body>
+
+<dl>
+<h3>SimHub Plugins</h3>
+SimHub is largely a collection of so-called plugins (.dll files), e.g. for supported <b>Games</b>,<br>
+then other SimHub and user-provided <b>Plugins</b> enabled in <img align=middle src="../MIDI/plugin/setting.jpg"> <b>Settings</b>.<br>
+<br>
+<ul compact>
+<li><a href="HowTo.htm#HowTo"><b>SimHub SDK How-To</b></a> &nbsp <a href="VisualStudio.htm"><b>C# Visual Studio How-To</b></a>
+    &nbsp <a href="https://github.com/blekenbleu/vJoySDK/tree/main/FeederDemoCS/docs"><b>vJoy C# SDK README</b></a><br> &nbsp <br>
+<li><a href="https://github.com/kmcnaught/vigem-example-dotnet">vigem-example-dotnet</a> implements simple programmatic control of <a href="https://github.com/ViGEm/ViGEm.NET">ViGem.NET</a>,<br>
+    which implements a <a href="../../Windows/HID">virtual XBox controller</a>.<br>
+</ul>
+After <code>Init()</code> initialization, each plugin appears to run in its own <a href="https://learn.microsoft.com/en-us/dotnet/standard/threading/using-threads-and-threading">thread</a>.<br>
+A hang in one plugin minimally impacts function in others.&nbsp
+On launch, plugin method<br>
+(<code>public void DataUpdate(PluginManager pluginManager, ref GameData data)</code>)<br> should run in well under 1/60 second,
+making any updated properties available to others<br> and the plugin method available for its <i>next</i> dispatch.<br>
+SimHub appears robust against relaunching a still-busy plugin's <code>DataUpdate()</code> thread.<br>
+Frequent launching preempts plugins needing to implement dynamic <a href="https://medium.com/@trapdoorlabs/dynamically-invoking-c-methods-a4cd1e846676"><code>Invoking methods</code></a><br>
+and simplifies synchronization.
+
+<dl>
+<dt><b>static</b>
+<dd>Class methods and data that are available without a class instance are
+<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members">static</a>.<br>
+A <code>static class</code> cannot be instantiantiated (i.e., no <code>new</code>).<br>
+They are important e.g. for communication among threads.
+
+<dt><br><a href="https://learn.microsoft.com/en-US/dotnet/csharp/programming-guide/delegates/"><b>Delegates</b></a> can pass methods as arguments to other methods,
+AKA callback functions.
+<dd>Event handlers are nothing more than methods invoked through delegates<br>
+that are either <i>static</i> or <i>instance</i> methods with matching return type,<br>
+but I have yet to recognize a delegate <i>instance</i> method... making <i>static</i>s crucial.<br>
+Unlike C++ function pointers, C# delegates encapsulate method <i>and object instance</i>.<br>
+Sadly, delegates are often coded in <a href="https://learn.microsoft.com/en-US/dotnet/csharp/language-reference/operators/lambda-expressions">lambda expressions</a>,<br>
+ which syntax are IMO impossible to read.&nbsp Also IMO, many absurdly complex C# examples can be blamed on programmers' being confounded by syntax,<br>
+resulting in more-or-less blind copy/pasting code from <i>other</i> working fragments.
+
+<a name=CCEx><dt><br><b>SimHub C# Custom Expressions</b></a>
+<dd>SimHub property values can also be set using C# custom expressions.<br>
+  Enable <b>C# expressions</b> via <img align=middle src="../MIDI/plugin/plugins.jpg"><b>Additional plugins</b> &nbsp <b>More...</b>.<br>
+  SimHub support for these C# expressions preceded NCalc, JavaScript, plugin SDK, etc<br> and is kept for backward compatibility.<br>
+  SimHub stores them in <code>PluginsData/*/DataCorePlugin/CustomExpressions</code><br>
+  Those to be used in <i>all</i> games are stored in <code>PluginsData/Common/DataCorePlugin/CustomExpressions</code><br>
+  As of 7.04.8b4, these are evaluated when games are loaded,<br> before other plugins are loaded.
+<dt><br>SimHub C# Custom Expressions <a href="https://discord.com/channels/299259397060689920/306850703299575809/703991353683476500">special trick for a static</a>:
+<dd><pre>
+init(value);    
+return KKDash;
+    
+}  
+static int KKDash = 0;
+
+class KKDAsh{}
+static void init(global::SimHub.Plugins.PluginManager pluginManager){
+    
+        pluginManager.AddAction("KartKraft_Dash_toggle", typeof(KKDAsh), (a, b) =>
+        {
+            KKDash = (KKDash + 1) % 3;
+        });
+</pre>    
+<dt><br><i><b>Question</b></i>:&nbsp are these expressions evaluated
+ at 60Hz or (more likely) only when referenced?<br>
+<dd>Properties set or referenced only in a plugin
+ <code>Init{}</code> section are minimal overhead.
+</dl>
+</body>
+</html>
