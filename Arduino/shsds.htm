@@ -12,37 +12,37 @@ Earliest versions of harness tensioner profiles used e.g. <a href="delta_v.js.tx
 but SimHub made available proprietary acceleration properties for Assetto Corsa by late April 2021, as used in <a href="SimHubG.js.txt">SimHubG.js</a>.<br>
 Otherwise, despite significant code reorganization, logic is mostly similar between these two JavaScript messages.
 <dl>
-<dt><a href=https://github.com/blekenbleu/SimHub-Profiles/tension.shsds.txt><b>tension.shsds</b></a> &nbsp Feb 17  2021 3 messages
+<dt><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/tension.shsds.txt><b>tension.shsds</b></a> &nbsp Feb 17  2021 3 messages
 <dd>first (unused): &nbsp <code>format([OrientationYaw],0)+'\t'+format([SpeedMph],0)+'\t'+format([GlobalAccelerationG],0)+'\r\n'</code><br>
 second: &nbsp <a href="messages/offsets.js">offsets.js</a>, a subset of <a href="messages/new_range.js">new_range.js</a>,<br>
 <a href="messages/tension.js">tension.js</a> replaces single <code>tc</code> with separate ones for <code>delta_s</code> and <code>delta_y</code>,<br>
  &nbsp adds <code>Settings.tmax</code>, adds more gnuplot columns and otherwise reorders <a href="delta_v.js.txt">delta_v.js</a> code.
 <br> &nbsp <br>
 <a name=running>
-<dt><a href=https://github.com/blekenbleu/SimHub-Profiles/running.shsds><b>running.shsds</b></a> &nbsp Feb 23  2021
+<dt><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/running.shsds><b>running.shsds</b></a> &nbsp Feb 23  2021
 <dd>3 messages: &nbsp first same as <a href="messages/new_range.js">new_range.js</a>,<br>
 second same as <a href="delta_v.js.txt">delta_v.js</a> (unused),<br>
 <a href="messages/runtens.js">runtens.js</a> uses <code>ShakeITBSV3Plugin.Export.proxy_G</code> to update 6-bit tensions, otherwise<br>
 comparable to <a href="messages/Upset.js">Upset.js</a>, <a href="delta_v.js.txt">delta_v.js</a>, <a href="SimHubG.js.txt">SimHubG.js</a>
 includes commented-out gnuplot code
 <br> &nbsp <br>
-<dt><a href=https://github.com/blekenbleu/SimHub-Profiles/proxy_G.shsds.txt><b>proxy_G.shsds</b></a> &nbsp Apr 25  2021
+<dt><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds.txt><b>proxy_G.shsds</b></a> &nbsp Apr 25  2021
 <dd>proxy_G has 2 messages;  <a href="messages/new_range.js">one for settings</a>
 and a tensioner message that is functionally identical to <a href="SimHubG.js.txt">SimHubG.js</a>.<br>
-duplicated in <a href="https://github.com/blekenbleu/SimHub-Profiles">SimHub-Profiles</a>
+duplicated in <a href="https://github.com/blekenbleu/SimHub-Profiles/">SimHub-Profiles</a>
 <br> &nbsp <br>
-<dt><a href=https://github.com/blekenbleu/SimHub-Profiles/Noticeable.shsds.txt><b>Noticeable.shsds</b></a> &nbsp Jun 14  2021
+<dt><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/Noticeable.shsds.txt><b>Noticeable.shsds</b></a> &nbsp Jun 14  2021
 <dd>Currently used; 4-bit LUT replaced 6-bit servo tension values; duplicated in <a href="https://github.com/blekenbleu/SimHub-Profiles">SimHub-Profiles</a><br>
 3 messages: &nbsp <a href="messages/NotLUT.js">NotLUT.js</a> resamples 20 just noticeable steps to 4-bit LUT,<br>
 same <a href="messages/special.js">special.js</a> as elsewhere,<br>
 same tension update message as <a href="messages/new_tens.js">new_tens.js</a>
 <br> &nbsp <br>
-<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/JustNoticeable.shsds">JustNoticeable.shsds</a> &nbsp Jun 14  2021
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/JustNoticeable.shsds">JustNoticeable.shsds</a> &nbsp Jun 14  2021
 <dd>3 messages:  <a href="messages/NotLUT.js">NotLUT.js</a> resamples just-noticeable steps to 4-bit LUT,<br>
 <a href="messages/special.js">special.js</a> updates special command value<br>
 <a href="messages/Justens.js">Justens.js</a> updates 4-bit tension indices
 <br> &nbsp <br>
-<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/Devices3messages6.shsds">Devices3messages6.shsds</a> &nbsp Jun 14  2021
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Devices3messages6.shsds">Devices3messages6.shsds</a> &nbsp Jun 14  2021
 <dd>6 messages: &nbsp <a href="messages/DevLUT.js">DevLUT.js</a> resamples just-noticeable steps to 4-bit LUT,<br>
  &nbsp <a href="messages/DevLUT.js">DevLUT.js</a> differs from <a href="messages/NotLUT.js">NotLUT.js</a> only in most slack control indices.<br>
 same as <a href="messages/JNDtest.js">JNDtest.js</a> (disabled),<br>
@@ -51,11 +51,11 @@ same as <a href="messages/JNDrange.js">JNDrange.js</a> (disabled),<br>
 same as <a href="messages/special.js">special.js</a>,<br>
 <a href="messages/Devtens.js">Devtens.js</a> is comparable to <a href="messages/Justens.js">Justens.js</a> and <a href="messages/new_tens.js">new_tens.js</a>
 <br> &nbsp <br>
-<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/UpdatedProxyG.shsds">UpdatedProxyG.shsds</a> &nbsp May 22  2021
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/UpdatedProxyG.shsds">UpdatedProxyG.shsds</a> &nbsp May 22  2021
 <dd>2 messages: &nbsp first same as <a href="messages/JNDrange.js">JNDrange.js</a>,<br>
 <a href="messages/Upset.js">Upset.js</a> updates 6-bit tensions still using <code>GameRawData.Physics.AccG</code><br>
 <br> &nbsp <br>
-<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/JND_LUT.shsds">JND_LUT.shsds</a> &nbsp May 21 2021
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/JND_LUT.shsds">JND_LUT.shsds</a> &nbsp May 21 2021
 <dd>3 messages: &nbsp <a href="messages/JNDLUT.js">JNDLUT.js</a> resamples and updates 4-bit LUT &nbsp (disabled),<br>
 <a href="messages/JNDtest.js">JNDtest.js</a> tests differences based on yaw and decel gain setting changes &nbsp (disabled),<br>
 <a href="messages/JNDrange.js">JNDrange.js</a> sets and test offsets and tmax<br>
@@ -65,19 +65,19 @@ JNDLUT.js is nearly the same as NotLUT.js, except<ul compact>
 <li>JNDLUT.js returns step.toString() without tension control indices, while<br>
 NotLUT.js appends least or most tense indices to step[], then returns String.fromCharCode.apply(null,step)
 </ul>
-<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/BeltTensionner1705.shsds">BeltTensionner1705.shsds</a> &nbsp May 17  2021
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/BeltTensionner1705.shsds">BeltTensionner1705.shsds</a> &nbsp May 17  2021
 <dd> 3 messages: Wotever's updated tensioner serial device
 <br> &nbsp <br>
-<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/BeltTensionner1605.shsds">BeltTensionner1605.shsds</a> &nbsp May 16  2021
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/BeltTensionner1605.shsds">BeltTensionner1605.shsds</a> &nbsp May 16  2021
 <dd> 3 messages: Wotever's first tensioner serial device
 <br> &nbsp <br>
-<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/new_serial.shsds">new_serial.shsds</a> &nbsp Apr 24  2021
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/new_serial.shsds">new_serial.shsds</a> &nbsp Apr 24  2021
 <dd>2 messages: &nbsp <a href="messages/new_range.js">new_range.js</a> sets and tests tension offsets,<br>
 <a href="messages/new_tens.js">new_tens.js</a> sends 4-bit LUT indices based on <code>AccelerationSurge</code> and <code>AccelerationSurge</code>
 if not <code>Settings.TestOffsets</code><br>
 <i>where did LUT get downloaded??</i>
 <br> &nbsp <br>
-<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/compare.shsds">compare.shsds</a> &nbsp Apr 21  2021
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/compare.shsds">compare.shsds</a> &nbsp Apr 21  2021
 <dd>1 message <a href="messages/compare.js">compares accelerations from speed and yaw to SimHub raw physics properties for AC</a>.<br>
 Values were written to an Arduino sketch which echo'ed message back to log for gnuplot, e.g.<br>
 <img width=800 src="raw_accel.gif">
