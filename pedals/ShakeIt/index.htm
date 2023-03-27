@@ -63,7 +63,7 @@ one front wheel could have 100% load.
 <a name=UOS><dt><b><a href="AbsUnderOversteer.js">under, oversteer</b></a></a>
 <dd>uses <code>proxyS</code> and <code>AbsAcc</code>, but neglects to recover sign to sort acceleration from deceleration
 <br> &nbsp <br>
-<a name=mix><dt><b><a href="mixLoadedSlipUnderOverSteer.js">mix slips and oversteer</b></a></a>
+<a name=mix><dt><b><a href="mixLoadedSlipUnderOversteer.js">mix slips and oversteer</b></a></a>
 <dd>mixes <code>proxyS</code>, <code>UnderOversteer</code> and <code>LoadedSlip</code>
 <br> &nbsp <br>
 <a name=joy><dt><b><a href="joystick.js">joystick</b></a></a>
@@ -99,16 +99,16 @@ Whether observed violations are plotting artifacts<br>
 Some telemetry which can be helpful for generating driving aid effects
 has not been available from some games.<br>
 Profile proliferation was driven by ad hoc experiments for improving that telemetry.<dl>
-<dt><b>proxyG</b>
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxyG.js.txt"><b>proxyG</b></a>
 <dd>lateral acceleration can be derived from changes in yaw.<br>
 This proxy is liable to jitter distortion if time between yaws samples varies.<br>
 After accounting for jitter, various derivations of <b>proxyG</b> are acceptably comparable.
-<dt><b>proxyL</b>
+<dt><b><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxyL.js.txt">proxyL</a></b>
 <dd>Wheel loads can be roughly estimated from accelerations if otherwise unavailable.<br>
 Here are simultaneous plots, first from Assetto Corsa <code>GameRawData.Physics.WheelLoad0[1-4]</code>:<br>
 <img src="../ACload.gif"><br clear=all><br>... then a proxy for loads estimated from accelerations:<br>
 <img src="../Gload.gif"><br clear=all>
-<dt><b>proxyS</b>
+<dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxyS.js.txt"><b>proxyS</b></a>
 <dd>Wheel slips can be calculated from vehicle and wheel speeds, if available.<br>
 iRacing wheel slip is reportedly estimated from relative changes between engine and vehicle speeds,<br>
 so relevant for driven wheels.
