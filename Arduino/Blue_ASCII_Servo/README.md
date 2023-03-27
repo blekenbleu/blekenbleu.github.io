@@ -1,5 +1,5 @@
 ## about Blue ASCII Servo
-*23 Feb 2023:*&nbsp;  `#define UNO` *added to [Blue_ASCII_Servo.ino](Blue_ASCII_Servo.ino)*
+*23 Feb 2023:*&nbsp;  `#define UNO` *added to [**Blue_ASCII_Servo.ino**](Blue_ASCII_Servo.ino)*
 
 [Stuyo's sim belt servo tensioner](https://diy-sim.com/guides/how-tos/servo-belt-tensioner-diy) is based on this Arduino sketch.  
 
@@ -23,15 +23,15 @@ but most adapters (e.g. Blue Pill) do NOT fully isolate their USB transceiver,
 sharing a ground connection with noisy power to motors, etc.  
 
 [Here is description for Blue Pill, troubleshooting and protocol evolution](https://blekenbleu.github.io/Arduino/).  
-Servo tensioner design motivation was from **@RacingMat**, [as documented here](https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/).  
+Servo tensioner from **@RacingMat**, [as documented here](https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/).  
 Some ongoing servo harness tensioning discussions occur in [SimHub Discord](https://discord.com/channels/299259397060689920/843488620546490378).
 
 ### Update
 - *23 Feb 2023 by [@Wschuck](https://discord.com/channels/299259397060689920/1075603500609839246/1077844957274062888)*:  
 "I have transformed the stuyo profile to use with shakeit motors values  
 I now can use the acceleration deceleration and lat g forces and it works very good"  
-[SimHub ShakeIt profile](https://github.com/blekenbleu/SimHub-profiles/blob/main/Seatbelt_tensioner.siprofile)  
-[SimHub Custom Serial profile, modified from @Stuyo, to use that ShakeIt profile](https://github.com/blekenbleu/SimHub-profiles/blob/main/seatbelt_profile_with_shakeit.shsds)
+[SimHub ShakeIt profile](https://github.com/blekenbleu/SimHub-Profiles/blob/main/Seatbelt_tensioner.siprofile)  
+[SimHub Custom Serial profile, modified from @Stuyo, to use that ShakeIt profile](https://github.com/blekenbleu/SimHub-Profiles/blob/main/seatbelt_profile_with_shakeit.shsds)
 
 One drawback of *directly* using SimHub telemetry properties in a Custom Serial profile is that  
 those telemetry values vary **a lot**, depending on game, car, track and driving style.  

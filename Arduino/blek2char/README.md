@@ -16,6 +16,9 @@ Edit near the top of [blek2char.ino](blek2char.ino) to select the appropriate ta
 //#define PROMICRO 1 // Sparkfun ProMicro
 //#define MEGA 1 // Arduino Mega 2560 
 ```
+- [blek2char.shsds](https://github.com/blekenbleu/SimHub-Profiles/blob/main/blek2char.shsds)
+- [blek2char.siprofile](https://github.com/blekenbleu/SimHub-Profiles/blob/main/blek2char.siprofile)
+- [new2char.shsds](https://github.com/blekenbleu/SimHub-Profiles/blob/main/new2char.shsds)
 
-![](page1.gif)  
-![](page2.gif)  
+![](Page1.gif)  
+![](Page2.gif)  

@@ -9,4 +9,9 @@ This most-significant-bit on first character ploy is used by [MIDI](https://blek
 
 This evolved to [blek2char](../blek2char/)
 
-![](blek2char.gif)
+![](blek2char.gif)  
+
+- [black2char.shsds](https://github.com/blekenbleu/SimHub-Profiles/blob/main/black2char.shsds)  
+- [blek2char211005.shsds](https://github.com/blekenbleu/SimHub-Profiles/blob/main/blek2char211005.shsds)  
+- [blek2char211006.shsds](https://github.com/blekenbleu/SimHub-Profiles/blob/main/blek2char211006.shsds)  
+- [proto2char.shsds](https://github.com/blekenbleu/SimHub-Profiles/blob/main/proto2char.shsds)  

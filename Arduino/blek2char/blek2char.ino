@@ -2,7 +2,7 @@
 /* blek2char 2 ASCII character commands = 2 x 7 - 1 sync bit per character = 12 available bits: 5 address + 7 data
  ; of 32 possible channels, 0x7F reserved reset and 0x5E for special commands leaves 30 for servos and other PWM pins
  ; compatible with e.g. this SimHub Custom serial profile:
- ; https://blekenbleu.github.io/Arduino/blek2char/blek2char.shsds
+ ; https://github.com/blekenbleu/SimHub-Profiles/blob/main/blek2char.shsds
  */
 
 

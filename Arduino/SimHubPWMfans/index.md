@@ -6,7 +6,7 @@ Blue Pill PWM fans for SimHub
 
 <table style="border-spacing:20px; border:1px solid white;">
 <tr><th>Name</th><th>Size</th><th>Date Modified</th></tr>
-<tr><td><a href="PWMfans.shsds">PWMfans.shsds</a></td><td>
+<tr><td><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/PWMfans2char.shsds">PWMfans2char.shsds</a></td><td>
  3.3 kB
 </td><td>
 9/30/21, 8:09:14 PM
@@ -32,7 +32,7 @@ Unlike (`50Hz`) hobby servos, 4-wire PC fans want `25kHz` PWM...
 One bit is allocated to selecting left vs right fan.  
 A SimHub ShakeIt Bass Shakers **SPEED WITH CURVING** effect will generate `SpeedCurv` properites:  
 ![ShakeIt effect](SpeedCurv.png)  
-A fan speeds profile will be hacked from a SimHub [Custom serial device for harness tensioning](shsds.htm#running):
+A fan speeds profile will be hacked from a SimHub [Custom serial device for harness tensioning](../shsds.htm#running):
 -  while a single Blue Pill can easily support both hobby servos and PWM fans,  
    appreciable physical separation make separate Blue Pills less hassle.  
 -  SimHub Custom serial plugin supports multiple devices at different COM IDs.  

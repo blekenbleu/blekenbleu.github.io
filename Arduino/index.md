@@ -276,7 +276,7 @@ while the 5 lsb index a channel, which may e.g. be a PWM pin.
 The largest 5-bit channel index is reserved for special commands.  
 Available 6 lsb of second characters are 6 lsb of *channel data values*.
 - **Fourth generation** protocol uses 8 bits:  
-  A [`Fake8.shsds` SimHub Custom Serial device plugin profile](https://github.com/blekenbleu/SimHub-profiles/) communicates with another SimHub [**Fake8** plugin](https://github.com/blekenbleu/Fake8)  
+  A [`Fake8.shsds` SimHub Custom Serial device plugin profile](https://github.com/blekenbleu/SimHub-Profiles/) communicates with another SimHub [**Fake8** plugin](https://github.com/blekenbleu/Fake8)  
   that converts Custom Serial device 7-bit data to [8-bit sequences](https://github.com/blekenbleu/Arduino-Blue-Pill/blob/main/8-bit.md)
   for e.g. [**Arduino PWM sketches**](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/PWM_FullConfiguration).  
   SimHub plugins are implicitly synchronized by SimHub's (60Hz) refresh rate,  

@@ -2,7 +2,7 @@
 /* Two ASCII character commands = 2 x 7 - 1 sync bit per character = 12 available bits: 5 address + 7 data
  ; of 32 possible channels, 1 reserved for special commands leaves 15 for PWM and 15 for offsets
  ; compatible with e.g. this SimHub Custom serial profile:
- ; https://blekenbleu.github.io/Arduino/Blue2charServo/proto2char.shsds
+ ; https://github.com/blekenbleu/SimHub-Profiles/blob/main/proto2char.shsds
  */
 
 #define LED PC13      // LED pin
