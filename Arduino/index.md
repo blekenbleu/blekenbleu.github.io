@@ -2,16 +2,17 @@
 ---
 Arduino for STM32 Black 'n Blue Pills, ESP32-S[2,3]
 ---
-*updated 6 Mar 2023*  
+*updated 27 Mar 2023*  
 
 [related libraries and examples](https://github.com/blekenbleu/Arduino-Blue-Pill)  
+[related SimHub Custom Serial profiles](https://github.com/blekenbleu/SimHub-Profiles)  
 
 #### Background
 This is for use with [SimHub's Custom Serial devices plugin](https://github.com/SHWotever/SimHub/wiki/Custom-serial-devices).  
 While highly useful, that plugin IMO has 2 key limitations:
-- SimHub plugin Javascript is relatively inefficient, hard to debug and maintain.
-- Plugin can log but not process received serial port messages from e.g. from Arduino.  
-([Fake8](https://github.com/blekenbleu/Fake8/) is proposed to address those limitations.)
+- SimHub Javascript is relatively inefficient, hard to debug and maintain.
+- Plugin logs but cannot process received serial messages from e.g. Arduino.  
+([Fake8](https://github.com/blekenbleu/Fake8/) addresses those limitations.)
 
 Arduino originally employed microcontrollers lacking USB support.  
 Their workaround involved boards with USB-to-TTL converter chips,  
@@ -22,9 +23,9 @@ While not an official Arduino platform,
 [WeMos D1 UNO R1](ESPDuino) is a supported ESP8266 board,  
 communicating via CH340 USB-serial chip.
  
-While many STM32 chips' ROM bootloaders support (DFU) USB directly,  
-Blue Pill's `FC103C8` chip lacks USB bootloader support in ROM.  
-While STM32F103C officially has 64K flash,
+Many STM32 chips' ROM bootloaders support (DFU) USB directly,  
+but Blue Pill's chip lacks ROM USB bootloader support.  
+STM32F103C chips officially have 64K flash, but
 [many have 128K](https://stm32duinoforum.com/forum/viewtopic_f_28_t_4361.html).  
 
 
