@@ -67,6 +67,8 @@
      - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
      - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360.md)
 
+### [cable modem downgrade](Spectrum.htm)
+
 ---
 
 #### [COVID-19 plots](covid)
