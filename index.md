@@ -8,6 +8,7 @@
 ## Audio  
  &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README.md) with SME Series III  
  &nbsp; [**Audio-Technica AT-LP140XP**](AT-LP140XP/) microphonics  
+ &nbsp; [**Technics SL-7** direct drive linear tracking turntable](SL-7/)  
  &nbsp; [Blu-Ray movies on Windows PC](WinBluRay)  
  &nbsp; [Line 6 JTV-89F guitar](JTV89F/Variax)  
   
