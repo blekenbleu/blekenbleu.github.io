@@ -1,0 +1,69 @@
+<head>
+<style>
+body {
+   width:960px;
+   margin-left:60px;
+}
+</style>
+<title>Harry Niquist was not wrong, but is misunderstood</title></head>
+<body bgcolor=#D0D0D0>
+<a href="../"><i>back</i></a><br>
+<i>13 Apr 2023</i><br>
+<font size=+1>
+<h2>Harry Niquist was not wrong <i>but is</i> misunderstood</h2>
+<h3>What</h4>
+<a href="https://web.archive.org/web/20060706192816/http://www.loe.ee.upatras.gr/Comes/Notes/Nyquist.pdf"><i>His 1928 paper</i></a>
+<dl>
+<dt><i>Synopsis</i>
+<dd>The most obvious method for determining the distortion of telegraph signals is to <b>calculate the transients</b> of the telegraph system.&nbsp
+This method has been treated by various writers, and
+solutions are available for telegraph lines with simple terminal conditions.&nbsp It is well known that the extension of the same methods to
+more complicated terminal conditions, which represent the usual
+terminal apparatus, <b>leads to great difficulties</b>.&nbsp
+The present paper attacks the same problem from the alternative standpoint of the <b>steady-state characteristics</b> of the system.&nbsp
+This method has the advantage over the method of transients that
+the complication of the circuit which results from the use of terminal apparatus does not complicate the calculations materially.&nbsp
+This method of treatment necessitates expressing the criteria of distortionless transmission in terms of the steady-state characteristics.&nbsp
+Accordingly, a considerable portion of the paper describes and illustrates a method for making this translation.&nbsp
+A discussion is given of the minimum frequency range required
+for transmission at a given speed of signaling.&nbsp In the case of carrier
+telegraphy, this discussion includes a comparison of single-sideband and double-sideband transmission.&nbsp A number of incidental
+topics is also discussed.
+
+<dt><br>Telegraphy distinguished from
+other forms of electrical communication
+<dd>1) The time is divided into approximately equal units
+which will be called time units.<br>
+2) There is a finite number of conditions, and each time
+unit is characterized by a single one of these conditions.
+<dt><br><a href="https://en.wikipedia.org/wiki/Nyquist_rate">Nyquist rate</a>
+<dd>a value (in units of samples per second or Hertz, Hz) equal to twice the highest frequency (bandwidth) of a given function or signal.
+</dl>
+<h4>Harry's sampling rate applies only to a continuous signal with a finite number of states</h4>
+<h3>Consider audio</h3>
+<dl>
+<dt>Consider music without transients
+<dd>I would find that intensely boring, and will not address it.
+<dt>Consider music with only a few allowed amplitude values.
+<dd>I find that intensely unpleasant, and will not address it.
+<dt>Consider sine waves
+<dd><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sine_and_Cosine.svg/600px-Sine_and_Cosine.svg.png">
+<dd>Sample that red plot at exactly twice per period, e.g. -&#960;, 0 and &#960;.&nbsp (result = 0).<br>
+This effect is precisely analogous to the problem of resolving black and white line pairs, where each pair comprises a cycle.
+Depending on the phase at which samples occur, the result may be featureless gray.<br>
+In order to ensure that <i>all</i> line pairs are reliably detected requires sampling <i>at least 3 samples per cycle</i>,
+with no confidence in actual amplitudes of original stimuli.<br>
+Again, these trivial examples address signals neither continuously varying nor aperiodic.<br>
+One <i>known</i> about human perception of music signals:&nbsp it is <a href="https://en.wikipedia.org/wiki/Bandlimiting">band-limited</a>, meaning that amplitudes neither change faster than some maximum rate,
+nor do they change slower than some minimum rate.  Another known about music perception is that amplitudes cannot be distinguished with greater than 16-bit resolution.
+</dl><b>math time</b><br>
+<code>d/dt Asin(kt) = Akcos(kt)</code><br>
+<p>
+For the sake of argument, suppose that audio amplitudes may be sampled without loss of fidelity at a rate ten times its (20kHz) upper limit, so approximately 200kHz.
+The above equation suggests that capturing <i>changes</i> in signal (AKA <a href="https://en.wikipedia.org/wiki/Delta-sigma_modulation">sigma-delta</a> or DSD) wants capturing with 31-bit resolution or perhaps 1-bit resolution at 20,000 times 200kHz or 4 GHz.<br>
+Since current technology makes either of those alternatives economically unattractive, shortcuts and misinformation (advertising technobabble) are employed.<br>
+In fact, human hearing <i>cannot resolve</i> 16 bits of amplitude <i>at 20kHz</i>.</p><p>
+An experiment could capture highly demanding (but interesting) audio at the highest possible sampling and amplitude resolution,
+then resampling that original at lower sampling and amplitude resolutions, playing back <i>differences between those signals</i> and discovering audibility thresholds.
+Practically, when such experiments are conducted e.g. for MP3, differences are most audible at musical transients, when Harry's steady-state condition least applies.
+</body></html>
