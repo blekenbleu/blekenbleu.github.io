@@ -5,6 +5,7 @@
   - [Special Error Diffusion](ImageProcessing/sped.html)
   - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
   - [Harry Niquist was not wrong but is misunderstood](ImageProcessing/Nyquist.html)
+  - [dither:&nbsp; noise is not always bad](ImageProcessing/dither.html)
 
 ## Audio  
  &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README.md) with SME Series III  

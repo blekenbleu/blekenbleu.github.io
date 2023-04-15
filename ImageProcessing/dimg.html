@@ -49,8 +49,15 @@ Differences would ideally be calculated in a more nearly perceptual color space,
 e.g. <a href="https://en.wikipedia.org/wiki/CIELAB_color_space">CIELab</a>.
 </p>
 </font>
+<i>dimg.bat:</i>
+<pre>
+@echo off
+: generate a difference image (third argument) from (first 2 argument) images
+echo magick %1 %2 -compose Mathematics -define compose:args="0,-1,1,.5" -composite %3
+magick %1 %2 -compose Mathematics -define compose:args="0,-1,1,.5" -composite %3
+</pre>
 <p>
 <br>
-- &nbsp 17 Aug 2022
+- &nbsp 15 Apr 2023
 </p>
 </body></html>

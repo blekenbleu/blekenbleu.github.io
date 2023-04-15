@@ -1,0 +1,68 @@
+<head>
+<style>
+body {
+   width:960px;
+   margin-left:60px;
+}
+</style>
+<title>dither, noise;&nbsp nothing new</title></head>
+<body bgcolor=#FFEEDD>
+<a href="../"><i>back</i></a><br>
+<font size=+1>
+<h2>dither, noise;&nbsp nothing new</h2>
+<p>
+<em>noise is not always bad</em>
+</p>
+<h4>Nothing here is original</h4>
+<p>
+<i>Not to make a point, but merely illuminate a perspective</i>
+<dl>
+<dt><a href="https://education.siggraph.org/static/HyperGraph/aliasing/alias5.htm">Stochastic Sampling in Anti-Aliasing</a>
+<dd>"spurious low frequencies are replaced by random noise<br> which is easier for our visual system to ignore"
+<br>Generally and demonstably untrue; &nbsp a broadband noise will likely contain energy that aliases with content of interest, provoking coarser low frequency <a href="https://www.imaging.org/common/uploaded%20files/pdfs/Papers/2001/PICS-0-251/4602.pdf">Stochastic Moiré</a>.
+<dt>Dither for <i>other than</i> quantization (thresholding) artifact mitigation
+<dd>Dithering to mitigate quantization artifacts is <a href="https://en.wikipedia.org/wiki/Dither">generally accepted and understood</a>.
+<br>Seemingly less appreciated (and forgotton) are
+<br> benefits of dither <a href="https://en.wikipedia.org/wiki/Tape_bias">for improved linearization</a> and image quality.<br>
+During WWII, British Airborne Interception Radar operators noted improved signals
+<br>in the presence of vibrations, e.g. during flights.<br>Many radars deliberately employ dithering.<br>Similar benefits are obtained in optical image capture by increased illumination diffusion,
+<br> with an opposite extreme example being <a href="https://www.rp-photonics.com/laser_speckle.html">laser speckle</a>.
+<dt>bad noise
+<dd><b>Practically,</b>
+masking noise interferes with signals,<br> which are understood to be information encoded with some recognizable pattern.
+<br><b>Aesthetically</b>, noise distracts from enjoyment of art.&nbsp  Whether noise can impact enjoyment without also having compromised artistic signals is not addressed here.
+<dt>Non-masking noise
+<dd>displaced: in frequency band, time or space
+<dt>Synapses and nervous impulses.
+<dd>The human brain is informed by impulses, transmitted among <a href="https://en.wikipedia.org/wiki/Synapse">synapses</a>.
+<br>To a first approximation, intensities correlate to impulse rates AKA time densities.
+<br>Arguably, this dependence on time rate of synapse impulses<br> prevents us from time-traveling (or at least from sensing it).
+<dt>Human hearing is based on fluid motion detection by <a href="https://en.wikipedia.org/wiki/Stereocilia_(inner_ear)">stereocilia of the inner ear</a>.
+<dd>To a first approximation, these behave like tuning forks,
+<br> with different stereocilia responsible for hearing different frequencies.
+<dt><a href="https://www.sfu.ca/sonic-studio-webdav/cmns/Handbook5/handbook/Threshold_of_Hearing.html">If the ear were any more sensitive it would detect the random movements of air molecules.</a>
+<dd>Presumably, detecting molecular movements provides no net survival benefit,<br> but why do we not hear them?
+<li>The brain soon learns to discount them.
+<li>Synaptic impulses from molecular movements are masked by other randomness.
+<li>Perhaps over areas of <a href="https://en.wikipedia.org/wiki/Eardrum">ear drums</a>, random molecular vibrations average out, with tympanic membranes acting as low-pass filters with cutoff below audibility (no appreciable stereocilia sensitivities below about 20Hz, where their signals
+may already be masked by other synapsic impulses provoked by body movements).
+<li>perhaps there is lash/hysteresis/lost motion in connections between inner and outer ear.<br>
+In which case, as with magnetic tape bias, some non-masking noise may improve audibility of frequencies other than those to which human hearing is most sensitive:<br>
+<img src="https://www.eetimes.com/wp-content/uploads/media-1063878-datacomp-fig162.jpg"><br clear=all>
+<i>also showing <a href="https://www.eetimes.com/audio-coding-an-introduction-to-data-compression-part-1/">spectral masking (raised threshold of audibility)</a> by 1kHz tone</i>;
+<br>masking is also <b>temporal</b>:<br>
+<img src="https://www.eetimes.com/wp-content/uploads/media-1063882-datacomp-fig163.jpg"><br clear=all>.
+<dt>Can ultrasonic dither increase audibility?
+<dd>This paper addresses <a href="file:///R:/TEMP/PsychoacousticallyOptimalNoiseShaping-JAES1992.pdf">noise-shaping to optimally mask CD audio quantization artifacts</a>,
+<br>which is not the same as whether human hearing is improved
+<br> in environments with nominally non-masking noise, e.g. by mild wind in:
+<li>fields of grass
+<li>forests
+<dt>If real, such effects might help explain preferences for DSD over PCM.
+</dl>
+</font>
+<p>
+<br>
+- &nbsp 15 Apr 2023
+</p>
+</body></html>
