@@ -1,5 +1,6 @@
 6 Feb 2023  
 ## Signal Processing
+  - [DeltaWave vs Wave Corrector](ImageProcessing/DeltaWave_WaveCorrector.html)
   - [dimg - visual difference utility](ImageProcessing/dimg.html)
   - [Hugin image alignment](microscope/objectives/Hugin.htm)  
   - [Special Error Diffusion](ImageProcessing/sped.html)
