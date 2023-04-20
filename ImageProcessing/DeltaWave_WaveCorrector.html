@@ -13,6 +13,10 @@ body {
 <li><a href="https://www.audiosciencereview.com/forum/index.php?threads/fun-with-vinyl-measurements.20278/post-671593">Python wow &amp flutter script</a>
 <li><a href="http://teribil-audio.com/2012/06/software-based-wow-and-flutter-analysis/">SOFTWARE BASED WOW AND FLUTTER ANALYSIS</a>
 <li><a href="https://www.roomeqwizard.com/">REW</a>
+<li><a href="https://www.audiosciencereview.com/forum/index.php?threads/howto-sox-audio-tool-as-a-signal-generator.4242/">SoX</a>
+<li><a href="https://audio.rightmark.org/">RightMark Audio Analyzer (RMAA)</a>
+&nbsp <a href="https://www.audiosciencereview.com/forum/index.php?threads/rmaa-tests-welcome-to-add-others.16332/#post-529094">tests</a>
+<li><a href="https://audioxpress.com/article/practical-test-measurement-sound-cards-for-data-acquisition-in-audio-measurements-part-3">Practical audio test and measurement software | audio xpress</a>
 </li>
 <font size=+1>
 <h2>DeltaWave vs Wave Corrector</h2>
@@ -32,8 +36,19 @@ Wave Corrector was run with default settings, except threshold reduced from 3 to
 It incorrectly identified several quiet interludes in the song as track breaks;&nbsp; those were corrected.<br>
 About 27 seconds of mistracking were recorded at the song start and deleted in the deticked copy.<br>
 DeltaWave was unable to match tracks until setting <code>Trim Front:  25 sec</code>;<br>
-remaining trash presumably threw off difference metrics and may have provoked this popup:
-<img src="simple.gif"><br clear=all>
+remaining trash presumably threw off difference metrics.
+<h4>Speed up trim trials</h4>
+<div align=center><img src="https://www.audiosciencereview.com/forum/index.php?attachments/1681861988695-png.280125"></div>
+Double-clicking th <code>End</code> option allows specifying seconds to <code>Show</code>.&nbsp (30 works for 96kHz):<br>
+<div align=center><img src="https://www.audiosciencereview.com/forum/index.php?attachments/1681861956573-png.280124/"><br clear=all></div>
+Once Trim front value is found by trial and error, viewing overlaid waveforms,<br> then double-click <code>Take</code> back to <code>End [ 0]</code>.<br>
+<div align=center><img src="simple.gif"><br clear=all></div>
+<font size=-1><i>Explanation</i>:<blockquote>Ah, the problem is that there are more than one points where large portions of the two files can align really well.<br>
+DeltaWave can't tell where the alignment points are and guesses that it's a periodic waveform<br>
+ (one that has at least a few repeating sections, such as a sinewave, for example).<br>
+DW has a different algorithm for dealing with such files, so it offers you to do so.<br>
+You don't have to agree to treat it as a simple waveform, but you will be warned.
+</blockquote></font>
 Here are unalighed waveforms:<br>
 <img src="Raw.gif" width=95%><br clear=all>
 .. then aligned spectra:<br>
