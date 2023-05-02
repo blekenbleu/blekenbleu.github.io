@@ -93,8 +93,9 @@ and may require additional research, trial and error for other CLOVER versions.
   - from *EFI* > *CLOVER* > *drivers* > *off*, copy *NvmExpressDxe-64.efi*  
     ![copy](copy.gif)  
      to both:  
-    *EFI* > *CLOVER* > *drivers* > *UEFI*
-    *EFI* > *CLOVER* > *drivers* > *BIOS*
+    `EFI > CLOVER > drivers > UEFI`  
+	*and*  
+    `EFI > CLOVER > drivers > BIOS`  
     ![UEFI](UEFI.gif)  
 * For the PC to boot from CLOVER USB flash,  
   not only must USB drives have first boot priority,  
