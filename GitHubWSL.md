@@ -93,7 +93,7 @@ alias serve="${RUBY}/msys64/home/bleke/bin/serve"
 ###
 ###
 for **Git Bash** AKA `"C:\Program Files (x86)\SmartGit\git\git-bash.exe"`  
-![snapshot of Git Bash shortcut properties](GitBash.gif "shortcut properties")  
+![snapshot of Git Bash shortcut properties](images/GitBash.gif "shortcut properties")  
 ### However, *if you insist*,
 - then go [here](https://www.microsoft.com/en-us/search/explore?q=ubuntu) to install WSL
 

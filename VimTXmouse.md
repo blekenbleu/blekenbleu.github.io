@@ -51,7 +51,7 @@ it also simulates left-button for any GUI elements over which the pointer hovers
 ### X mouse and Windows
 **Gvim 8.1 installation**
 
-![snapshot of Vim installation settings](Vim.gif "installation settings")
+![snapshot of Vim installation settings](images/Vim.gif "installation settings")
 
 `~/_vimrc`
 ```

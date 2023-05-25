@@ -48,7 +48,7 @@ $ du -s /bin /usr
 #### Ruby Bash
 Ruby MINGW64 installation includes `D:\msys64\msys2_shell.cmd`  
 for which I made a shortcut named **Ruby Bash**,  
-![snapshot of Ruby Bash shortcut properties](RubyBash.gif "shortcut properties")  
+![snapshot of Ruby Bash shortcut properties](images/RubyBash.gif "shortcut properties")  
 which launches a useful MSYS2 terminal.  
 
 **Git Bash** set `$HOME = /c/Users/bleke` and extended Windows' huge $PATH, while  

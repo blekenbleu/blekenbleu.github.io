@@ -32,7 +32,10 @@
 - Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
 - [PC misguided buying - January 2022](PC)  
   - [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)  
-- Routers: [FreshTomato and Linksys EA6500v2](FreshTomato.htm)
+- **Routers, modems and SAN**:  
+  - [Buffalo LinkStation 210](network/LinkStation.htm)  
+  - [Sagemcom F@st 5260, FreshTomato and Linksys EA6500v2](network/FreshTomato.htm)  
+  - [Spectrum modem and router regressions](network/Spectrum.htm)  
 - [Vim and X-Mouse](VimTXmouse)
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](NVMe/)  
 
@@ -101,8 +104,8 @@
    :set nobomb
    :wq
 ```
-5. **IPv6** tends to be problematic, requiring Windows reboots:&nbsp;  
-   [Disabling IPv6](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
+5. **IPv6** tends to be problematic, requiring Windows reboots:&nbsp;
+   [Disabling IPv6 on Windows 10](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
 6. Helpful URLs:  
   [GitHub Pages Documentation](https://docs.github.com/en/pages)  
   [Jekyll Resources](https://jekyllrb.com/resources/)  
