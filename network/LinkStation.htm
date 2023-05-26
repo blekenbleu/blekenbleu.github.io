@@ -6,56 +6,74 @@ body {
    margin-left:60px;
 }
 </style>
-<title>Hitron EN2251 Cable Modem downgrade</title>
+<title>NAS:&nbsp Buffalo LinkStation 210</title>
 </head>
 
 <body>
-<font size=-1><i><a href="./">back</a></i></font>
+<font size=-1><i><a href="../">back</a></i></font>
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>
-<br> 
-<br> 
-Spectrum notified us of a free Internet speed increase to 500Mbps
-(from 300), requiring a new cable modem.<br>
-Delivered promptly, the <a href="https://us.hitrontech.com/products/service-providers/en2251-cable-modem/">Hitron EN2251</a> is unexpectedly bulkier
-than its nominally slower predecessor.<br>
-<li>DOCSIS 3.1 2x2 multi-carrier OFDM
-<li>DOCSIS 3.0 32x8 channel bonding
-<li>Fixed 5-85 MHz upstream
-<li>Built-in MoCA immunity filter
-<li>2.5 Gbps LAN port<br>
-The predecessor Arris TM1602 was DOCSIS 3.0 16x4.<br>
-Its status could be checked at <a href="http://192.168.100.1">192.168.100.1</a><br>
-That was handy for verifying when Spectrum cable service failed.<br>
-Unlike that modem, the EN2251 lacks HTTP admin/status...<br>
-<br>
-Speeds are not measured at a direct cat 6 ethernet connection to the router,<br>
-instead via MoCA (multimedia over cable),<br>
-with a <a href="https://mans.io/files/fullviewer/2195904">goC0ax WF-803M MoCA 2.5Gbps modem</a>
- signalling back over the same coax<br> feeding Spectrum's
-cable modem to a MoCA splitter at the cable entrance box<br>
-and then back into the house over coax to the far end of the house<br>
-for another WF-803M feeding my i7-8700K Windows 10 PC by ethernet.<br>
-<br>
-<table><tr><td>
-<i><b>With the Arris TM1602:</b></i>
-</td><td>
-<i><b>With the Hitron EN2251:</b></i>
-</td></tr><tr><td>
-<img width=100% src="images/HTML5.B4.jpg">
-</td><td>
-<img width=100% src="images/HTML5.new.jpg">
-</td></tr><tr><td>
-<a href="https://www.speedtest.net/">
-<img width=100% src="images/Speedtest.B4.jpg"></a>
-</td><td>
-<img width=100% src="images/Speedtest.New.jpg">
-</td></tr></table>
-Instead of providing a return label,
-Spectrum wants the modem brought to a UPS store.<br>
-On 4 sites tested, the new modem shows improvement on only <a href="https://openspeedtest.com/"><b>HTML5</b></a>,<br>
-which also yields most variable results when run repeatedly...<br>
-<br>
-Overall, a waste of time, particularly since the more useful Arris TM1602 must be trundled to UPS for return to Spectrum.
+<h3>NAS:&nbsp Buffalo LinkStation 210
+</h3>
+<embed width=100% src=https://www.buffalotech.com/images/about_buffalo/LS210D_Datasheet_English.pdf><br clear=all><br>
+Plugged to home theater Actiontec WCB3000N, LinkStation 210
+was found at <code>192.168.1.11</code>, responds to pings,<br>
+but <a href="https://apps.apple.com/us/app/fing-network-scanner/id430921107">iPhone fing</a> found no open ports...?<br>
+<br><i>25 May 2023</i><br>
+Network-attached storage is not a tricky concept, but <i>major</i> BS accompanies it.<br>
+Contrary to braying about various <a href="https://en.wikipedia.org/wiki/RAID">RAID strategies</a>,<br>
+most frequent failures IME are proprietary firmware and obscure filesystem formats.<br>
+<b>This relative reliability disparity should be increasingly true with Solid State Drives in SANs.</b><br>
+Ideally, NAS would support <a href="https://www.tomshardware.com/reviews/ssd-file-system-ntfs,3166-11.html">exFAT drives</a>
+<a href="https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance">DLNA</a> and <a href="https://en.wikipedia.org/wiki/Server_Message_Block">SMB</a>.&nbsp
+Those are supported by Linux, Windows and MacOS.<br>  Supporting more simply complicates demonstrably fragile NAS firmware.&nbsp
+If/when NAS devices fail,<br> <a href="https://en.wikipedia.org/wiki/ExFAT">exFAT</a> drives could be extricated and externally attached to PCs by USB adapters.<br>
+<i>Meanwhile</i>...<br><br>
+<a href="https://buffalotech.com/support/downloads/linkstation-200-series">NAS Navigator 2</a> discovered it:<br>
+<img src=Emergency.png><br clear=all>
+Floundered around, not finding any explanation for Emergency Mode
+until a brief pop-up mention firmware update.<br>
+<a href=update.html>Firmware update documentation</a> was aware of "EM Mode";<br>
+those instructions include, without explaining how to detect time out:<ul compact>
+<li>Do not turn the unit or the hub off until the update is finished.
+<li>The update will take several minutes. If it times out after 10 minutes or more, reboot the LinkStation and try again.
+<br>Note: If your LinkStation is in EM mode, reboot it and try again.</ul>
+Fortunately, firmware did update, eventually, without timing out:<br><img src=LS210D15D.png><br clear=all>
+<br>Verify workgroup name:<br>
+<img src=WORKGROUP.png><br clear=all>
+After far more flailing around, this worked:
+<pre>C:\Users\bleke>net use \\192.168.1.11
+The password or user name is invalid for \\192.168.1.11.
+
+Enter the user name for '192.168.1.11': bleke
+Enter the password for 192.168.1.11:
+The command completed successfully.
+
+
+C:\Users\bleke>net view \\192.168.1.11
+Shared resources at \\192.168.1.11
+
+LinkStation
+
+Share name  Type  Used as  Comment
+
+-------------------------------------------------------------------------------
+i9100       Disk           Inspiron 9100
+iMac        Disk
+info        Disk           LinkStation Utilities
+MacBook     Disk
+NewGate     Disk           Full Disk Backup
+share       Disk           LinkStation folder
+XPS13       Disk
+The command completed successfully.
+
+Start the "Function Discovery Provider Host" and "Function Discovery Resource Publication" services,
+ and then set them to Automatic (Delayed Start).
+When you open Explorer Network, enable network discovery when you're prompted.</pre>
+Used this to configure services:<br>
+<iframe width="960" height="480" src="https://www.youtube.com/embed/iyNp2BIdCng"></iframe><br>
+... <i>and <b>finally:</b></i><br>
+<img src=Network.png>
+
 </body></html>
