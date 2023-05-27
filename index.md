@@ -36,6 +36,7 @@
   - [Buffalo LinkStation 210](network/LinkStation.htm)  
   - [Sagemcom F@st 5260, FreshTomato and Linksys EA6500v2](network/FreshTomato.htm)  
   - [Spectrum modem and router regressions](network/Spectrum.htm)  
+  - [Synology DiskStation DS920+](network/DS920.htm)  
 - [Vim and X-Mouse](VimTXmouse)
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](NVMe/)  
 
