@@ -20,17 +20,17 @@ QNAP, Asustor, TerraMaster, WD, and their products get higher ratings than Synol
 but some of those articles then suggest replacing their proprietary NAS OS with e.g. FreeNAS or TrueNAS.<br>
 Perhaps those may be nearly turn-key, but my Linux distro experience does not encourage that expectation.
 
+<h4>NAS OS:&nbsp Synology DSM 7.2</h4>
+<a href="DSM.htm">Hints, tricks, installation</a> &nbsp <a href="https://finds.synology.com/">https://finds.synology.com/</a>
 <h4>NAS:&nbsp Synology 4 Bay NAS DiskStation DS920+
 </h4>
-<img srcDS920a.jpg><br clear=all>
+<img src=DS920plus.png><br clear=all>
 <a href="https://www.synology.com/en-uk/company/news/article/DS920plus"><i>Press release</i></a>&nbsp -
   &nbsp <b>Data Sheet (specifications):</b><br>
 
 <embed width=100% height=40% src=https://global.synologydownload.com/download/Document/Hardware/DataSheet/DiskStation/20-year/DS920+/enu/Synology_DS920_Plus_Data_Sheet_enu.pdf><br clear=all><br>
 <a href="https://global.download.synology.com/download/Document/Hardware/HIG/DiskStation/20-year/DS920+/enu/Syno_HIG_DS920_Plus_enu.pdf"><b>Hardware Installation Guide</b></a> (23 pages) &nbsp - 
-&nbsp <a href="https://global.download.synology.com/download/Document/Software/UserGuide/Os/DSM/7.0/enu/Syno_UsersGuide_NAServer_7.0_enu.pdf"><b>User Guide</b></a> &nbsp -
 &nbsp <a href="https://kb.synology.com/en-uk/DSM/help/DSM/MainMenu/get_started?version=7">Knowledge Center</a> &nbsp -
-&nbsp <a href="https://www.synology.com/en-us/dsm/7.2/software_spec">DSM 7.2 specifications</a> &nbsp -
 &nbsp <a href="https://www.synology.com/en-us/support/download/DS920+?version=7.1#system"><b>Download Center</b></a><br><br>
 <iframe width="960" height="480" src="https://www.youtube.com/embed/PrVAehzT8Yk"></iframe><br><br>
 
@@ -53,11 +53,7 @@ AC adapter and drive lock keys are missing.&nbsp No other accessories are includ
 <img width=95% src=DS920e.jpg></td><td>
 <img width=95% src=DS920d.jpg></td></tr></table><hr><br>
 
-<h4><a href="https://www.howtogeek.com/318018/how-to-set-up-and-get-started-with-your-synology-nas/">How-To Geek:&nbsp Getting Started with Synology NAS</a></h4>
-<h4><a href="https://www.windowscentral.com/things-you-should-do-first-your-new-synology-nas">Windows Central:&nbsp 5 things to do first on Synology NAS</a></h4>
 <h4><a href="https://www.pcmag.com/reviews/synology-diskstation-ds920-plus">PC mag review</a>:&nbsp  "I let the verification process run overnight"</h4>
-<h4><a href="https://www.wundertech.net/synology-nas-initial-setup-ultimate-guide/">WunderTech:&nbsp Synology NAS Setup & Configuration Guide!</a></h4>
-<h4><a href="https://kb.synology.com/en-us/DSM/tutorial/Quick_Start_External_Access">Synology NAS External Access Quick Start Guide</a></h4>
 <h4><a href="https://github.com/007revad/Synology_M2_volume?ref=academy.pointtosource.com">GitHub:&nbsp script for NVMe Volume on Synology 920+</a></h4>
 <h4><a href="https://academy.pointtosource.com/synology/synology-ds920-nvme-m2-ssd-volume/">SSD volume on a Synology 920+ using NVMe slots</a></h4>
 <h4><a href="https://www.synoforum.com/">SynoForum.com unofficial Synology NAS owners forum</a>&nbsp -&nbsp <a href="https://www.synoforum.com/resources/syno-101.137/">Tutorials</a></h4>
@@ -69,13 +65,6 @@ AC adapter and drive lock keys are missing.&nbsp No other accessories are includ
  <li>if one is smaller, that size is the only amount used from each drive by RAID 5
  <li>SHR protection size is lesser of 2 largest drives.
 <h4><a href="https://www.synoforum.com/threads/how-to-eject-external-usb-drive.7168/">eject USB drive</a></h4>
-<h4><a href="https://kb.synology.com/en-us/DSM/tutorial/What_can_I_do_if_my_Synology_NAS_does_not_show_up_in_Network_in_Windows_File_Explorer">Discover Synology NAS shares in Windows Explorer</a></h4>
-
-<b><a href="https://www.amazon.com/dp/B01FWAZEIU">APC BE600M1 600VA UPS with USB for NAS shutdown</a></b><br>
-<a href="https://www.amazon.com/APC-Battery-Protector-Back-UPS-BE600M1/product-reviews/B01FWAZEIU/ref=cm_cr_arp_d_viewopt_kywd?ie=UTF8&reviewerType=all_reviews&pageNumber=1&filterByKeyword=synology">Amazon customer reviews - 4 critical</a> &nbsp
-<a href="https://duckduckgo.com/?q=apc+%22BE600M1%22+synology+ds920%2B&atb=v314-1&t=chromentp&ia=web">other BE600M1 Synology DS920+ users</a><br>
-<a href="https://download.schneider-electric.com/files?p_enDocType=User+guide&p_File_Name=BU+UM+990-5679+MN01+EN.pdf">APC BE600M1 User Manual</a> &nbsp
-<a href="https://www.dell.com/en-us/shop/apc-back-ups-600va-ups-battery-backup-be600m1/apd/A9199455/power-cooling-data-center-infrastructure">Dell:&nbsp APC BE600M1 details</a><br><br>
 
 <a href="https://superuser.com/questions/620473/how-can-i-verify-the-health-of-hard-disks-using-a-synology-nas"><b>Synology NAS hard drive health</b></a><br>
 There are really no other tests other then S.M.A.R.T.,<br>
@@ -84,6 +73,7 @@ The Storage Manager will show the SMART status of each disk.<br>
 Log into the web interface and go to <code>Main Menu &gt Storage Manager &gt HDD Management</code>.<br>
 <img src="https://i.stack.imgur.com/63o0c.png"><br clear=all>
 Test Scheduler Option on this screen can also schedule a more in-depth SMART test.<br><br>
+<h3><a href="https://www.youtube.com/watch?v=Yth3rzlbFJo">WunderTech:&nbsp Monitoring NAS Hard Drives for Bad Sectors</a></h3>
 
 <iframe width=100% height="480" src="https://www.youtube.com/embed/Hpl8jIMWTZc"></iframe><br><br>
 <hr>
@@ -95,15 +85,6 @@ DS920+ was not listed, but 100W,<br> which is its
  rating.</td><td align=right>
 
 <img width=95% align=right src=A90C-120008330.jpg></td></tr></table><br>
-<h3><a href="https://www.windowscentral.com/how-back-windows-10-synology-nas">back up Windows 10 to a Synology NAS</a>
-<h3>Home NAS backups</h3>
-<li>ransomware encryption cannot wipe <b>snapshots</b> for non-admin SMB share users;&nbsp requires BTRFS
-<li><a href="https://kb.synology.com/en-us/DSM/tutorial/How_to_back_up_your_Synology_NAS#x_anchor_id10">Compare backup solutions</a>
-<H3>2-factor admin sign-in <a href="https://www.synology.com/en-us/dsm/feature/authentication">using smartphone</a></h3>
-<iframe width=100% height="480" src="https://www.youtube.com/embed/mStoaZjJhJE"></iframe><br><br>
-<h3><a href="https://www.wundertech.net/synology-nas-initial-setup-ultimate-guide/">WunderTech:&nbsp Synology NAS Setup & Configuration Guide!</a></h3>
-<h3><a href="https://www.youtube.com/watch?v=HltiHbPqYJQ">WunderTech:&nbsp 3 important Synology NAS settings to check!</a></h3>
-<h3><a href="https://www.youtube.com/watch?v=Yth3rzlbFJo">WunderTech:&nbsp Monitoring NAS Hard Drives for Bad Sectors</a></h3>
 <hr>
 <i>30 May 2023</i><br>
 <h3>CyberPower CP750LCD W/New Batteries</h3>
@@ -119,6 +100,7 @@ Tested - CyberPower | CP750LCD | Intelligent LCD 750VA/420W Desktop UPS W/New Ba
 Condition for each will resemble the photo.<br>
 Will be professionally packaged for shipment. <br>
 <embed width=100% height=40% src=https://dl4jz3rbrsfum.cloudfront.net/documents/CyberPower_UM_CP750LCD.pdf><br clear=all><br>
+<a href="https://www.amazon.com/CyberPower-CP750LCD-Intelligent-Outlets-Compact/product-reviews/B0083TXNAE/">Amazon customer reviews</a>
 
 <h3>Synology NAS Drive Bay Key</h3>
 Condition:&nbsp <b>New</b><br>
