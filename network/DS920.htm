@@ -27,7 +27,7 @@ but some of those articles then suggest replacing their proprietary NAS OS with 
 Perhaps those may be nearly turn-key, but my Linux distro experience does not encourage that expectation.
 
 <h4>NAS OS:&nbsp Synology DSM 7.2</h4>
-See:&nbsp <a href="DSM.htm">Hints, tricks, installation</a> &nbsp <a href="https://finds.synology.com/">https://finds.synology.com/</a>
+See:&nbsp <a href="DSM.htm">Hints, tricks, DSM installation</a> &nbsp <a href="https://finds.synology.com/">https://finds.synology.com/</a>
 <h4>NAS:&nbsp Synology 4 Bay NAS DiskStation DS920+
 </h4>
 <img src=DS920plus.png><br clear=all>
@@ -41,10 +41,8 @@ See:&nbsp <a href="DSM.htm">Hints, tricks, installation</a> &nbsp <a href="https
   &nbsp <b>Data Sheet (specifications):</b><br>
 
 <embed width=100% height=40% src=https://global.synologydownload.com/download/Document/Hardware/DataSheet/DiskStation/20-year/DS920+/enu/Synology_DS920_Plus_Data_Sheet_enu.pdf><br clear=all><br>
-<a href="https://global.download.synology.com/download/Document/Hardware/HIG/DiskStation/20-year/DS920+/enu/Syno_HIG_DS920_Plus_enu.pdf"><b>Hardware Installation Guide</b></a> (23 pages) &nbsp - 
 &nbsp <a href="https://kb.synology.com/en-uk/DSM/help/DSM/MainMenu/get_started?version=7">Knowledge Center</a> &nbsp -
 &nbsp <a href="https://www.synology.com/en-us/support/download/DS920+?version=7.1#system"><b>Download Center</b></a><br><br>
-<iframe width="960" height="480" src="https://www.youtube.com/embed/PrVAehzT8Yk"></iframe><br><br>
 
 <hr>Condition:&nbsp <b>Used</b><br>
 Item:&nbsp <a href="https://www.ebay.com/itm/195787012100">195787012100</a><br><br>
@@ -64,6 +62,13 @@ AC adapter and drive lock keys are missing.&nbsp No other accessories are includ
 <img width=95% src=DS920c.jpg></td></tr><tr><td>
 <img width=95% src=DS920e.jpg></td><td>
 <img width=95% src=DS920d.jpg></td></tr></table><hr><br>
+4 days after order, vendor <a href="https://www.ebay.com/str/cascadeassets">cascade-assets</a> shipped by
+ <a href="https://www.fedex.com/fedextrack/?trknbr=624308131369&trkqual=12025~624308131369~FDEG">Fedex</a>.
+
+<h3>Hardware configuration considerations</h3>
+<i>See <a href="grim.htm">Grim Reality</a> for actual installation log.</i> &nbsp - &nbsp
+<a href="https://global.download.synology.com/download/Document/Hardware/HIG/DiskStation/20-year/DS920+/enu/Syno_HIG_DS920_Plus_enu.pdf"><b>Hardware Installation Guide</b></a> (23 pages)
+<br><iframe width="960" height="480" src="https://www.youtube.com/embed/PrVAehzT8Yk"></iframe><br>
 
 <h4><a href="https://www.pcmag.com/reviews/synology-diskstation-ds920-plus">PC mag review</a>:&nbsp  "I let the verification process run overnight"</h4>
 <a href="https://lukebrowning.com/news/running-a-memory-test-on-my-synology-ds920/">Running a Synology DS920+ memory test</a><br>
@@ -79,7 +84,17 @@ AC adapter and drive lock keys are missing.&nbsp No other accessories are includ
 <h4><a href="https://github.com/007revad/Synology_M2_volume?ref=academy.pointtosource.com">GitHub:&nbsp script for NVMe Volume on Synology 920+</a></h4>
 <h4><a href="https://academy.pointtosource.com/synology/synology-ds920-nvme-m2-ssd-volume/">SSD volume on a Synology 920+ using NVMe slots</a></h4>
 <h4><a href="https://www.synoforum.com/">SynoForum.com unofficial Synology NAS owners forum</a>&nbsp -&nbsp <a href="https://www.synoforum.com/resources/syno-101.137/">Tutorials</a></h4>
-<h4><a href="https://www.synology.com/en-us/compatibility?search_by=products&model=DS920%2B">Synology DS920+ compatibility list</a></h4>
+<h4><a href="https://www.synology.com/en-us/compatibility?search_by=products&model=DS920%2B">Synology DS920+ compatibility lists</a></h4>
+
+<h4>Some link aggregation requires a managed switch, ideally with 2.5G port(s)</h4>
+<li>e.g. <a href="https://www.zyxel.com/global/en/products/switch/12-port-web-managed-multi-gigabit-switch-with-2-port-2-5g-and-2-port-10g-sfp-xgs1210-12">Zyxel XGS1210-12</a>,
+    $179 at <a href="https://www.amazon.com/dp/B084MH9P8Q">Amazon</a> &nbsp - &nbsp <a href="https://download.zyxel.com/XGS1210-12/user_guide/XGS1210-12_V1.00_Ed3.pdf">User's Guide</a>
+<li>DSM <a href="https://kb.synology.com/en-global/DSM/help/DSM/AdminCenter/connection_network_linkaggr?version=7">Adaptive Load Balancing</a> works with dumb switches;&nbsp
+    a simple <a href="https://www.ebay.com/itm/265696219403">5-port switch with 2.5G uplink</a> could exploit 2.5G MoCA bridges.
+
+<h3>Hard drive reliability:&nbsp 1.54% annualized failure rate, per <a href="https://www.backblaze.com/b2/hard-drive-test-data.html">Backblaze</a></h3>
+For 4 drives, that translates to 22% likelihood at least one will fail within 4 years;<br>
+this encourages sacrificing one for protection, AKA RAID 5 or Synology SHR 1.
 <h4><a href="https://www.wundertech.net/synology-raid-calculator-shr-vs-raid/">Synology RAID Calculator: SHR vs. RAID</a></h4>
  SHR compares somewhat to RAID 5:
  <li>if all drives are the same size, one gets used for protection
@@ -122,7 +137,16 @@ Tested - CyberPower | CP750LCD | Intelligent LCD 750VA/420W Desktop UPS W/New Ba
 Condition for each will resemble the photo.<br>
 Will be professionally packaged for shipment. <br>
 <embed width=100% height=40% src=https://dl4jz3rbrsfum.cloudfront.net/documents/CyberPower_UM_CP750LCD.pdf><br clear=all><br>
-<a href="https://www.amazon.com/CyberPower-CP750LCD-Intelligent-Outlets-Compact/product-reviews/B0083TXNAE/">Amazon customer reviews</a>
+<a href="https://www.amazon.com/CyberPower-CP750LCD-Intelligent-Outlets-Compact/product-reviews/B0083TXNAE/">Amazon customer reviews</a><br><br>
+
+<i>2 Jun 2023</i>:<br>
+Received wrapped in heavy plastic bag inside form-fitting foam.
+Battery initially reported 100% capacity, but quickly dropped to 73% when unplugged with 23 Watt load (Nikon microscope illuminator).
+Alarm is neither loud nor constant;&nbsp unlikely to be heard from another room...<br>
+After allowing it to fully recharge, battery cap immediately dropped to 61% after unplugging with the same load.<br><br>
+
+Sadly, outlets are oriented wrong for my router, modem and MoCA bridge wall warts, complicating connections:<br>
+<img width=100% src=CyberWarts.jpg>
 
 <h3>Synology NAS Drive Bay Key</h3>
 Condition:&nbsp <b>New</b><br>
