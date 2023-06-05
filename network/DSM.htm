@@ -63,10 +63,15 @@ ul {
 <hr>
 <h4><a href="https://kb.synology.com/en-us/DSM/tutorial/What_can_I_do_if_my_Synology_NAS_does_not_show_up_in_Network_in_Windows_File_Explorer">Discover Synology NAS shares in Windows Explorer</a></h4>
 <h3><a href="https://www.windowscentral.com/how-back-windows-10-synology-nas">back up Windows 10 to a Synology NAS</a></h3>
-<h3>Home NAS backups</h3>
-<li><a href="https://kb.synology.com/en-us/DSM/tutorial/How_to_back_up_your_Synology_NAS#x_anchor_id10">Compare backup solutions</a>
-<li>ransomware encryption cannot wipe <b>snapshots</b> for non-admin SMB share users;&nbsp requires BTRFS
-<iframe width=100% height="480" src="https://www.youtube.com/embed/mStoaZjJhJE"></iframe><br>
+<h3>Home NAS backups</h3><dl>
+<dt><a href="https://kb.synology.com/en-us/DSM/tutorial/How_to_back_up_your_Synology_NAS#x_anchor_id10">Compare backup solutions</a>
+<dd>Cloud backups - spread over relatively small free accounts?
+<li><a href="https://kb.synology.com/en-us/DSM/help/CloudSync/cloudsync?version=7#!/friends">Cloud Sync</a> can create multiple connections all with different user credentials, but not duplicate connections with the same user credential.&nbsp <b>No incremental update</b>
+<li>Back up Cloud Sync and restore it to a previous version via <a href="https://kb.synology.com/en-us/DSM/tutorial/How_to_back_up_your_data_to_cloud_services_with_Hyper_Backup">Hyper Backup</a>
+
+<dt><br>Ransomware encryption cannot wipe <b>snapshots</b> for non-admin SMB share users;&nbsp requires BTRFS
+<dd><iframe width=90% height="480" src="https://www.youtube.com/embed/mStoaZjJhJE"></iframe></dl>
+
 <h3><a href="https://www.youtube.com/watch?v=Yth3rzlbFJo">WunderTech:&nbsp Monitoring NAS Hard Drives for Bad Sectors</a></h3>
 <h3><a href="https://blog.synology.com/how-data-scrubbing-protects-against-data-corruption">Data scrubbing and "bit rot"</a></h3>
 Data scrubbing on BTRFS volumes first runs file system data scrubbing for data accuracy,<br>
