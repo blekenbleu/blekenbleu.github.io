@@ -9,6 +9,7 @@ Removing that chimney allows the infinite image to continue...
 Alternatively, removing that negative lens would focus infinity objectives,  
 but with [a bit under a 0.5x magnification](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=12&t=16289)  
 
+### 200mm zoom telephoto
 A camera with (250mm) telephoto lens focused at infinity,  
 [as discussed on photomacrography.net](https://www.photomacrography.net/forum/viewtopic.php?t=9438):  
 ![Canon 90D+250mm](Images/Optiphot_Infinity.jpg)  
