@@ -39,6 +39,7 @@
   - [Synology DiskStation DS920+](network/DS920.htm)  
 - [Vim and X-Mouse](VimTXmouse)
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](NVMe/)  
+- Storage shortage:&nbsp;  [Dell Inspiron 13 7000 2-in-1 Windows 10 NVMe SSD](NVMe/Inspiron13.htm)  
 
 ## [Sim driving](pedals/)
 - [ Samsung Odyssey+ for Assetto Corsa ](pedals/#hmd) - [SteamVR](https://steamcommunity.com/app/250820)
