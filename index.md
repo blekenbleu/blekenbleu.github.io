@@ -7,6 +7,7 @@
   - [Neighborhood Mask Dithered Interpolation](ImageProcessing/NMDI.html)
   - [Harry Niquist was not wrong but is misunderstood](ImageProcessing/Nyquist.html)
   - [dither:&nbsp; noise is not always bad](ImageProcessing/dither.html)
+  - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](ImageProcessing/TinyML.htm)  
 
 ## Audio  
  &nbsp; [**Audio-Technica AT-LP140XP**](AT-LP140XP/) microphonics  
