@@ -5,7 +5,7 @@ Install Git_Cola using MacPorts
 
 #### Background
 **GitKraken** takes awhile to load  
- and seems to focussed on most recent commit  
+ and seems to focused on most recent commit  
  instead of current changes..  
 
 **SmartGit** is scary for poor/missing documentation,  
