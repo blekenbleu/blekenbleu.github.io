@@ -8,8 +8,9 @@ body {
 h2, h3, h4, h5, h6 {
    margin-bottom:0; 
 }
-ul {
+ul,dl {
    margin-top:0;
+   margin-bottom:0;
 }
 </style>
 <title>Dell Inspiron 13 7373 2-in-1 Windows 10 Storage shortage</title>
@@ -76,8 +77,8 @@ A <a href="https://pureinfotech.com/clone-windows-10-hard-drive-ssd-macrium-refl
 <h4>9 Jun 2023:&nbsp 1TB NVMe delivered</h4>
 A fair amount of dust and cat hair in and around the fan:<br>
 <img width=80% src=inside.jpg>
-<h5>Macrium Reflect</h5>
-<i>10 Jun 2023</i><br><br>
+<h3>Macrium Reflect</h3>
+<i>10 Jun 2023</i> <b>doomed attempt</b><br><br>
 
 Free installation proceeded as advertised, involving multiple email confirmations.<br>
 <b>Clone</b> procedure has evolved since 
@@ -88,6 +89,37 @@ Free installation proceeded as advertised, involving multiple email confirmation
 <li><b>THEN</b>, select <code>Next</code>:<br>
 <img width=95% src=Next.png>
 <li>Actual copying proceeds quickly, but data verification took nearly an hour for 190GB.
+<li>Windows would not fully boot from cloned SSD.&nbsp possible reasons:<dl>
+<dt><br>Win10 Dell laptops encrypted with Bitlocker</b>
+<dd>According to <a href="https://forum.macrium.com/66715/I-want-to-clone-2TB-Bitlocker-drive-into-a-1TB-Bitlocker-or-not-drive">this discussion</a>,<br>
+    <i>an image backup made while source is in an unlocked state will work just like an unencrypted drive</i>.
+<dt><b>The original Dell SSD Windows 10 was configured for "Fast Startup"</b>
+<dd>Files required for booting were not necessarily fully written and closed.
+<dt><b>Cloning a drive while Windows is running from it is problematic</b>
+<dd>It has worked for others, using Macrium Reflect...
+</dl>
+
+<i>11 Jun 2023</i><br>
+<h4>Another Macrium Reflect attempt</h4>
+This time, with:<ul>
+<li>still cloning hard drive on which Windows in running
+<li>Windows <b>Fast Startup</b> disabled
+<li>Macrium Reflect <code>Rapid delta clone</code> unchecked.
+<img width=80% src=Options.png><br clear=all><br>
+<li>Time to clone was appreciably less.<br>
+<img width=80% src=Cloned.png>
 </ul>
 
+<h4><i>Nearly</i> identical results</h4>
+<ul compact>
+<li>spinning circle of dots, indicating Windows attempting to boot..
+<li>eventually restarts
+<li>enters Dell SUPPORT diagnostics
+<li>Repair attempt failures reported;&nbsp restarts 
+<li>Another option after repair "failure":&nbsp <code>Exit and continue to Windows 10</code>
+<img width=80% src="https://1.bp.blogspot.com/-s25_4YJSY3U/X5e_f1AGw7I/AAAAAAAAFBU/g2V1xM8eGVYIkYygikATGCSoqkDYBqULwCPcBGAsYHg/s4032/20201027_111030.jpg">
+<li>... &nbsp <i>worked!!?!</i><br>
+<img width=80% src=Free.png>
+<li>WinDirStats shows approximately the same usage for that 174/940GB:<br>
+<img width=80% src=Usage_1TB.png>
 </body></html>
