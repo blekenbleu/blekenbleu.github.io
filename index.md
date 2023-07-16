@@ -32,8 +32,9 @@
 ## Microsoft
 - [MSYS2](MSYS2/)
 - Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
-- [PC misguided buying - January 2022](PC)  
+- [PC misguided buying - January 2022](Windows/PC)  
   - [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)  
+  - [Alienware Aurora R7 crashing and overheating](Windows/R7.htm)  
 - **Routers, modems and SAN**:  
   - [Buffalo LinkStation 210](network/LinkStation.htm)  
   - [Sagemcom F@st 5260, FreshTomato and Linksys EA6500v2](network/FreshTomato.htm)  
