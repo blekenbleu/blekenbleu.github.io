@@ -6,8 +6,8 @@ body {
    width:960px;
    margin-left:60px;
 }
-h2, h3, h4, h5, h6 {
-   margin-bottom:1;
+h4, h5, h6 {
+   margin-bottom:0;
 }
 ul {
    margin-top:0;
@@ -25,17 +25,110 @@ ul {
 <h2>Alienware Aurora R7 crashing and overheating</h2>
 To celebrate its 5th anniversary, the Aurora R7 began crashing,
 presumably from CPU overheating.<br>
-GPU-Z CPU Temperature fluctuates abruptly, suggesting liquid cooler failure:<br>
-<img src=GPU-Z.gif><br clear=all>
-Alienware thermal monitor app showed pump running:<br>
-<div align=center><img src=SENSORS.jpg></div>
-<br>
-Graphics card dust was thoroughly removed by 100+psi compressed air;<br>
-GPU thermal paste was not too dry, but got replaced.<br>
+This Alienware PC has proprietary case, motherboard, power supply
+and puny liquid cooling;&nbsp access is also poor.
+<a href="https://crystalmark.info/en/software/crystaldiskinfo/">CrystalDiskInfo</a>
+running in notification area monitors hard drive health;
+something comparable is wanted for cooling.<br>
+
+<h3>Disassembly, cleaning, disconnecting and reassembling</h3>
+Unlike its case design, R7 service manual is not terrible but far underplays
+top cover removal difficulty, but which is absolutely required
+for access to absurdly tiny but clogged CPU cooling radiator.<br>
+
+<h4>GPU</h4>According to
+<a href="https://www.youtube.com/watch?v=5STAvOxhF7U">this video</a>,
+GTX 1080Ti graphics card shroud removal risks destroying screws,<br>
+but Garrett Wade bit removed screws with no issues.<br>
+Graphics card dust was thoroughly removed by 100+psi compressed air before disassembly;<br>
+GPU thermal paste was not too dry:<br>
 <img width=100% src=GTX1080Ti.jpg><br clear=all><br>
 
-GPU-Z and Alienware Thermal Controls seemingly monitor different CPU and fan sensors:<br>
-<div align=right><img src=both.jpg></div>
+While disconnecting and reconnecting most motherboard connectors,
+notably excepting the CPU itself,<br>
+the main motherboard power connector felt like it may not have been
+fully seated,<br>
+amd one DRAM SIMM may not have been fully engaged at its upper end.<br>
+Power supply connectors are color coded and well-labeled.<br>
+<br>
+According to
+<a href="https://www.tomshardware.com/how-to/how-to-check-cpu-temp-temperature">Tom's
+ Review</a>:<br>
+"Most thermal paste's performance seriously degrades after about three years."<br>
+.. Thermal Grizzly Hydronaut is now on order.
+<h3>Thermal Paste</h3>
+Replaced thermal paste on both GPU and CPU;
+supplied spatula is too stiff and should have a bent handle.<br>
+Laid R7 on its right side to remove 4 top screws holding radiator
+so that it could move toward the motherboard and tilt to minimize strain on coolant hoses
+as pump was unscrewed and tipped toward the case front for access to clean dried paste from it and the CPU.<br>
+A rubber band around power cables constrained the pump in a convenient position.<br><br>
 
+Less than half a sheet of paper towel, in a few torn pieces, was used with alcohol to remove dried paste.<br>
+One cotton swab sufficed to wipe paste traces from around CPU edges.<br>
+Original paste almost completely covered the CPU surface with negligible spillover.
+
+<h3>After reassembly</h3>
+BIOS, but not diagnostics, were available by F2 during boot.<br>
+<a href="https://www.dell.com/support/kbdoc/en-us/000181163/how-to-enter-the-built-in-diagnostics-32-bit-diagnostics-supportassist-epsa-epsa-and-psa">
+F12 launched another menu with diagnostic option</a>,
+but disconnected cover LED connectors preempted that.<br>
+
+After restoring LED connections to silly covers, F12 diagnostics passed for CPU and other hardware in a few minutes, then launched 3.5hr memory test.<br>
+
+Preboot diagnostics reported no errors; rebooted Windows<br>
+Not found:<br>
+<a href="https://www.makeuseof.com/ways-to-boot-into-the-windows-recovery-environment/">
+Settings &gt Update and Security &gt Recovery &gt troubleshoot</a><br><br>
+
+<a href="https://www.dell.com/support/kbdoc/en-us/000178439/how-to-remove-and-reinstall-the-alienware-command-center">
+How to Remove and Reinstall the Alienware Command Center</a><br>
+Manually updated BIOS from Dell support,
+then let Dell download SupportAssist,<br>
+ which failed to install even after restart...<br>
+Downloaded all available updates to Download\Dell\<br>
+then moved to Download\Dell\installed\ after success;<br>
+installed in listed order, except Command Center after Intel graphics
+ and before serial, to monitor temperatures...<br>
+Despite having Startup Mode set to Windows Startup,<br>
+Command Center would not start after reboots until launched by shortcut..<br>
+-&gt changed setting to Manual
+
+Alienware thermal monitor app showed pump running:<br>
+<div align=center><img src=SENSORS.jpg></div>
+
+GPU-Z CPU Temperature fluctuates abruptly, suggesting liquid cooler failure:<br>
+<img src=GPU-Z.gif><br clear=all><br>
+
+Corsair H60 was reportedly a bolt-in replacement, but no longer available.<br>
+3 users report using
+<a href="https://www.amazon.com/dp/B07CNXHYJ2">
+EVGA CL11 CLC 120mm AIO ($65)</a>
+ on R6,12 with Alienware fan.<br>
+==> ordered<br>
+One test for low AIO coolant is different line temperatures.<br>
+However, checking  that is practically impossible with PSU blocking access.<br>
+After powering down and opening, lines were not so different;<br>
+with pump not running, hot water equalizes.
+
+<h3>Liquid cooler replacement</h3>
+Original R7 and EVGA replacement AIOs are both asetek 120mm;&nbsp
+radiators seem identical:<ul compact>
+<li> EVGA hoses are longer;&nbsp rotated new pump 90cw to allow more hose curl
+<li> EVGA pump plug is 3-pin, but 4th A7 pin was jumpered to ground
+  which might have blown motherboard PWM driver to that pin..?
+<li> EVGA pump hose connectors are vertical to motherboard, while A7 are parallel,
+  causing EVGA hoses to be pressed down appreciably by R7 power supply.&nbsp
+ <a href="https://www.amazon.com/dp/B0986TNM7V">Replacement A7 AIO is $165</a>
+<li> Paste on EVGA cold plate was dry and stiff;&nbsp unlikely to spread well under pressure.<br>Replaced by fresh paste.
+<li> new fan was thinner 3-wire;&nbsp re-used R7 thicker 4-wire
+<li> identical pump mounting;&nbsp  re-used R7 attachment ring and thumb screws
+</ul>
+<h4>Temperatures unaffected by AIO replacement</h4>
+Either neither or both are bad.<br>
+GPU-Z and Alienware Thermal Controls<br>
+seemingly monitor different CPU and fan sensors:<br>
+<div align=right><img src=both.jpg></div>
+<h4>Next:&nbsp open and refill R7 AIO pump</h4>
 </body>
 </html>
