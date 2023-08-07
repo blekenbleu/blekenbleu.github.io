@@ -29,20 +29,23 @@
  &nbsp; **American Optical** [Series 10](microscope/#AO) / [Series 120](microscope/AO/) / [Reichert EPIStar](microscope/#EPIStar)  
  &nbsp; **Nikon** [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) [Metaphot](microscope/Nikon/Metaphot/)  
 
-## Microsoft
+## [Windows](Windows/)
+- [Alienware Aurora R7 crashing and overheating](Windows/R7.htm)  
+- [**Antec Phantom VR build** &nbsp; i5-13600, Galax RTX 4090](Windows/PhantomVR.htm)  
+- [HID game controllers and SimHub](Windows/HID)  &nbsp; [Serial-Lab](Windows/SerialLab)
 - [MSYS2](MSYS2/)
-- Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
 - [PC misguided buying - January 2022](Windows/PC)  
-  - [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)  
-  - [Alienware Aurora R7 crashing and overheating](Windows/R7.htm)  
+  - [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)
+  - [H670 ATX motherboards](Windows/H670ATX) *cannot underVolt*
 - **Routers, modems and SAN**:  
   - [Buffalo LinkStation 210](network/LinkStation.htm)  
   - [Sagemcom F@st 5260, FreshTomato and Linksys EA6500v2](network/FreshTomato.htm)  
   - [Spectrum modem and router regressions](network/Spectrum.htm)  
-  - [Synology DiskStation DS920+](network/DS920.htm)  
-- [Vim and X-Mouse](VimTXmouse)
-- [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](NVMe/)  
+  - [**Synology DiskStation DS920+**](network/DS920.htm)  
 - Storage shortage:&nbsp;  [Dell Inspiron 13 7000 2-in-1 Windows 10 NVMe SSD](NVMe/Inspiron13.htm)  
+- [Vim and X-Mouse](VimTXmouse)
+- Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
+- [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](NVMe/)  
 
 ## [Sim driving](pedals/)
 - [ Samsung Odyssey+ for Assetto Corsa ](pedals/#hmd) - [SteamVR](https://steamcommunity.com/app/250820)
@@ -51,7 +54,7 @@
 - Logitech [G29 pedal mods](pedals/#pedals)
   - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID)
   - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
-  - **[analog](pedals/#pedals) pedals** plugged into [SimXperience AccuForce controller](pedals/#analog)  
+  - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
 ### [Arduino custom USB STM32 Blue Pill sketches](Arduino/)
 - e.g. for harness tensioning servos
     - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
@@ -59,7 +62,7 @@
       - SimHub *directly* supports *real* Arduinos,  
         but *any* COM may be driven by **SimHub Custom Serial devices**  
         Some ESP32 / STM32 may be programmed to appear as Arduinos
-- USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
+- SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
 
 - **Alternatives to Arduino IDE**
   - [There are *many*](https://www.survivingwithandroid.com/10-arduino-ide-alternative-to-start-programming/)
@@ -80,7 +83,6 @@
      - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
      - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360.md)
 
-### [cable modem downgrade](Spectrum.htm)
 
 ---
 
