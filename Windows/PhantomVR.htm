@@ -30,7 +30,15 @@ ul {
 <dt><a href="https://www.amazon.com/dp/B09FDXJV3M"><b>ID-COOLING SE-226-XT 68.2 CFM CPU Cooler</b></a>
 <dd>No LEDs;&nbsp 250W TDP should handle 13600K
 <dt><a href="https://www.amazon.com/dp/B0BHC3VHHG"><b>MSI PRO Z790-A WIFI ATX LGA 1700 DDR5 Motherboard</b></a>
-<dd>7.1 analog audio out, Z790 supports 13 gen Intel underVolt without BIOS update, faster DDR5 than PRO Z790-P
+<dd>7.1 analog audio out, Z790 supports 13 gen Intel <a href=#UV>underVolt</a> without BIOS update, faster DDR5 than PRO Z790-P<br>
+<img src=Z790-A_IO.png>
+<li><a href="https://us.msi.com/Motherboard/PRO-Z790-A-WIFI">MSI PRO Z790-A WIFI DDR5 home page</a>
+<li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf">BIOS manual</a>
+  &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a>
+<li><b>BIOS update</b>:&nbsp <a href="https://storage-asset.msi.com/files/pdf/How_to_flash_the_BIOS.pdf">PDF</a> &nbsp <a href="https://youtu.be/sKMub20CUNI">YouTube</a>
+<li><a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
+<li><a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">Overclock DDR5</a>
+
 <dt><a href="https://www.amazon.com/dp/B0C4NKHXK7"><b>TEAMGROUP T-Create Expert 32 GB (2 x 16 GB) DDR5-6000 CL30 Memory</b></a>
 <dd>Fairly fast, no LEDs, reportedly better heat sinks than G.Skill
 <dt><a href="https://www.amazon.com/dp/B0B7CMZ3QH"><b>Western Digital Black SN850X 2 TB M.2-2280 PCIe 4.0 X4 NVME</b></a>
@@ -52,7 +60,12 @@ ul {
 <dt><a href="https://www.amazon.com/gp/product/B08KGWTDHK">AUEAR, 50 Pack Case Fan Soft Silicone retainers</a>
 <dd>reduce fan vibrations conducted to case sheet metal
 </dl>
-<pre>Undervolting B760 seemingly always impacts performance, hence Z790
+<hr>
+<pre><a href=#UV>Undervolting</a> B760 or <a href="H670ATX">H670</a> seemingly always impacts performance, hence Z790
+<a href="https://docs.google.com/spreadsheets/d/14-CZ8-a4-UBMN5-0x_QYOrvLk4EfI4Kn2jmIG70CAss">motherboard tier list</a>
+ChooseMyPC is obsolete
+<a href="https://www.pcworld.com/article/415429/7-things-i-learned-once-i-built-my-first-pc.html">7 things I learned once I built my first PC</a>
+<a href="https://kitchentablecomputers.com/assemble.php">Assembling your New Computer</a>
 
 Gigabyte motherboards lack 7.1 surround analog audio outputs.
 Asus recently own-goaled by AM5 motherboard overheating BIOS issues,
@@ -87,19 +100,46 @@ no RGB, lacks Gen 5 NVMe
 <a href="https://www.racedepartment.com/threads/is-vr-dead.164863/page-179#post-3649470">Reverb G2 with 12600k/3080ti gets 90fps in ACC with OpenXR fixed foviated rendering and 2800x2800 supersampling...</a>
 <a href="https://mbucchia.github.io/OpenXR-Toolkit/">OpenXR-Toolkit</a>
 
-<a href="https://www.techpowerup.com/forums/threads/13600k-undervolt-with-b660.304661/page-4">Intel disabling undervolt for B series motherboards</a>
-<a href="https://www.intel.com/content/www/us/en/download/17881/intel-extreme-tuning-utility-intel-xtu.html">Intel&#174; Extreme Tuning Utility (XTU)</a>
-<a href="https://www.reddit.com/r/hardware/comments/ympxw8/intel_i513600k_undervolting_my_results_on_power/">Intel i5-13600K Undervolting</a>
 <hr>
 Bootable PC diagnostic ISOs
 * Sergei Strelec's WinPE
 * <a href="https://www.majorgeeks.com/content/page/5_bootable_isos_to_boot_and_repair_your_computer_for_free.html">Ultimate Boot CD (UBCD)</a>
 
-<a href="https://docs.google.com/spreadsheets/d/14-CZ8-a4-UBMN5-0x_QYOrvLk4EfI4Kn2jmIG70CAss">motherboard tier list</a>
 
-ChooseMyPC is obsolete
-<a href="https://www.pcworld.com/article/415429/7-things-i-learned-once-i-built-my-first-pc.html">7 things I learned once I built my first PC</a>
-<a href="https://kitchentablecomputers.com/assemble.php">Assembling your New Computer</a>
-
+<a name=UV><b>UnderVolt</b></a>
+<a href="https://www.techpowerup.com/forums/threads/13600k-undervolt-with-b660.304661/page-4">Intel disabling underVolt for B series motherboards</a>
+<a href="https://www.intel.com/content/www/us/en/download/17881/intel-extreme-tuning-utility-intel-xtu.html">Intel&#174; Extreme Tuning Utility (XTU)</a>
+<a href="https://www.reddit.com/r/hardware/comments/ympxw8/intel_i513600k_undervolting_my_results_on_power/">Intel i5-13600K Undervolting</a> - reddit
+<a href="https://benchmate.org/>BenchMate PC Benchmark Validation Software</a>
+<a href="https://www.reddit.com/r/intel/comments/ro020k/how_to_undervolt_12700k/"> v/f curves Offset Mode vs Adaptive Mode</a>
+<a href="https://www.youtube.com/watch?v=30X9zotQrf8">MSI CPU Game Boost, cooler tuning vs smart fan curve</a>
+</pre>
+<h3>Fan control</h3>
+According to MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42), BIOS can sort DC (3-wire) vs PWM (4-wire) fans.
+<li><a href="https://www.youtube.com/watch?v=uDPKVKBMQU8">Fan control</a> JayzTwoCents  <a href="https://github.com/rem0o/fancontrol.releases">GitHub</a>
+<li><a href="https://www.youtube.com/watch?v=qu2CjqXDuVE">MSI Dragon Center</a>
+<h3>Airflow</h3>
+<img width=100% src=dp502-airflow.png>
+<dl>
+<dt><b>power supply</b>
+<dd>Separately from other case airflow, its fan draws air in thru Antec bottom case filter, exhausting out back.<br>
+<img src="PSU-airflow-bottom-mounted.jpg">
+<dt><b>3 front input Arctic fans</b>
+<dd>exhausting into Antec case front filter
+<dt><b>1 rear case exhaust Antec fan</b>
+<dd>mounted backwards, as received..
+<dt><b>2 top exhaust Arctic fans</b>
+<dd>mounted behind 5.25-inch optical drive
+<dt><b>1 chamber Antec fan</b>
+<dd>mounted above PSU chamber, drawing air from lower front input, exhausting to GPU
+<dt><b>1 PWM ID-Cooling fan</b>
+<dd>exhausting into heat sink fin stack
+<dt><b>case fan arrows</b>
+<dd>molded into fans, blade rotation and airflow directions
+<li>most case fans have label on hub:&nbsp input side
+<li>unlabeled motor location spider is typically on the exhaust side
+<li>Both Antec fans have label on (exhaust) motor location spider;
+<li>one Antec fan has blades reversed...
+</dl>
 </body>
 </html>
