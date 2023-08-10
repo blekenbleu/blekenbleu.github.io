@@ -22,6 +22,18 @@ ul {
 <a href="./"<i>back</i></a>
 
 <h2>Antec Phantom DP502 VR PC</h2>
+<h4>Contents</h4><dl>
+<dt><a href="#PARTS">Parts</a>
+<dd><a href="#ALT">Alternatives</a>
+<dt><a href="#TODO">Implementation</a>
+<dd><a href=#FAN>Fan control</a>
+<dd><a href=#AIR>Airflow</a>
+<dd><a href=#DDR5>Tuned DDR5-6000</a>
+<dd><a href=#XMP>13600K MSI game boost OC + XMP vs default</a>
+<dt><a href=#RCV>Parts received</a>
+<dd><a href=DP502build.htm>Build</a>
+</dl>
+<a name=PARTS><h3>Parts</h3></a>
 <i>ordered 5 Aug 2023</i>:&nbsp
 <a href="https://pcpartpicker.com/list/3qb7YN">PCPARTPICKER list</a><br>
 
@@ -53,7 +65,7 @@ ul {
 <dd>PCIE 5, ATX 3.0, compact, 10-year limited warranty, <b><i>12vhpwr cable</i></b>
     &nbsp <a href="https://download.msi.com/archive/mnu_exe/psu/MEGAi1000P_Ai1300P.pdf">User Guide</a>
     &nbsp <a href="http://download.msi.com/archive/mnu_exe/mb/MSICENTER.pdf">MSI CENTER User Guide</a>
-    <br><img width=90% src=Ai1000P.jpg>
+    <br><div align=center><img width=50% src=Ai1000P.jpg></div>
 <dt><a href="https://www.amazon.com/gp/product/B09YRMQT1F">GRAUGEAR USB 3.2 Gen 2 USB-C bracket and cable</a>
 <dd>Motherboard has USB 3.2 for front panel USB-C, which DP502 lacks
 <dt><a href="https://www.amazon.com/gp/product/B00015Y0FK">StarTech.com 4 Port USB A bracket and cables</a>
@@ -65,7 +77,7 @@ ul {
 <dd>reduce fan vibrations conducted to case sheet metal
 </dl>
 <hr>
-<h4>Alternatives rejected</h4>
+<a name=ALT><h4>Alternatives rejected</h4></a>
 <pre><a href=#UV>Undervolting</a> B760 or <a href="H670ATX">H670</a> seemingly always impacts performance, hence Z790
 <a href="https://docs.google.com/spreadsheets/d/14-CZ8-a4-UBMN5-0x_QYOrvLk4EfI4Kn2jmIG70CAss">motherboard tier list</a>
 ChooseMyPC is obsolete
@@ -136,7 +148,7 @@ Z690-A flash BIOS updates are reportedly fussy about USB thumb drives...
 <a href="https://www.youtube.com/watch?v=1zYjoLbrDF4">Force Resizable Bar on</a> TroubleChute video using <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases">Nvidia Profile Inspector</a>
 <a href="https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/">Hardware accelerated GPU scheduling</a> was not a winner, in my testing...
 </pre>
-<h3>Fan control</h3>
+<a name=FAN><h3>Fan control</h3></a>
 According to MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42), BIOS can sort DC (3-wire) vs PWM (4-wire) fans.
 <ul compact>
 <li><a href="https://www.youtube.com/watch?v=hZW0hBumShw">Adjust Gaming PC Fans For Silent Mode and Gaming Mode</a> - <b>MSI motherboard</b>
@@ -145,7 +157,7 @@ According to MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-
 <li><a href="https://www.youtube.com/watch?v=qu2CjqXDuVE">MSI Dragon Center</a>
 <li>setting <a href="https://www.youtube.com/watch?v=GvyQXkFUe3E&t=354s">BIOS OC CPU Cooler Tuning to Water Cooler</a> enables higher boost without overwhelming good air coolers.
 </ul>
-<h3>Airflow</h3>
+<a name=AIR><h3>Airflow</h3></a>
 <img width=100% src=dp502-airflow.png>
 <dl>
 <dt><b>power supply</b>
@@ -168,11 +180,11 @@ According to MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-
 <li>Both Antec fans have label on (exhaust) motor location spider;
 <li>one Antec fan has blades reversed...
 </dl>
-<h4><a href="https://www.youtube.com/watch?v=RTmbYak_8gE">Tuned DDR5-6000</a> may be nearly as fast as untuned DDR5-7200</h4>
+<a name=DDR5><h4><a href="https://www.youtube.com/watch?v=RTmbYak_8gE">Tuned DDR5-6000</a> may be nearly as fast as untuned DDR5-7200</h4></a>
 <img width=100% src=TunedDDR5-6000.jpg>
-<h4><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></h4>
+<a name=XMP><h4><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></h4></a>
 <div align=center><img width=100% src=GameBoost.jpg><br clear=all><i>orange=1080P; &nbsp blue=1440P</i></div>
-<h4>Parts received 9 Aug 2023</h4>
+<a name=RCV><h4>Parts received 9 Aug 2023</h4></a>
 <img width=100% src=USPS.jpg><ul compact>
 <li>wrong CPU (i5-13400) - reordered
 <li>bad used PRO Z790-A motherboard - ordered <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI">MSI MAG Z790 Tomahawk WiFi DDR5</a> (23% off, only $10 more)<br>
