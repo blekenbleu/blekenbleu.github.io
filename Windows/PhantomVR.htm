@@ -30,15 +30,13 @@ ul {
 <dt><a href="https://www.amazon.com/dp/B09FDXJV3M"><b>ID-COOLING SE-226-XT 68.2 CFM CPU Cooler</b></a>
 <dd>No LEDs;&nbsp 250W TDP should handle 13600K
 <dt><a href="https://www.amazon.com/dp/B0BHC3VHHG"><b>MSI PRO Z790-A WIFI ATX LGA 1700 DDR5 Motherboard</b></a>
-<dd>7.1 analog audio out, Z790 supports 13 gen Intel <a href=#UV>underVolt</a> without BIOS update, faster DDR5 than PRO Z790-P<br>
-<img src=Z790-A_IO.png>
-<li><a href="https://us.msi.com/Motherboard/PRO-Z790-A-WIFI">MSI PRO Z790-A WIFI DDR5 home page</a>
+<dd>7.1 analog audio out, Z790 supports 13 gen Intel <a href=#UV>underVolt</a> without BIOS update, faster DDR5 than PRO Z790-P<ul compact>
 <li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf">BIOS manual</a>
   &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a>
 <li><b>BIOS update</b>:&nbsp <a href="https://storage-asset.msi.com/files/pdf/How_to_flash_the_BIOS.pdf">PDF</a> &nbsp <a href="https://youtu.be/sKMub20CUNI">YouTube</a>
 <li><a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
 <li><a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">Overclock DDR5</a>
-
+</ul>
 <dt><a href="https://www.amazon.com/dp/B0C4NKHXK7"><b>TEAMGROUP T-Create Expert 32 GB</b> (2 x 16 GB) DDR5-6000 CL30 Memory</a>
     &nbsp <a href="https://www.teamgroupinc.com/en/catalog/act.php?act=2&index_id=277"><b>Specifications</b></a>
 <dd><a href="https://pangoly.com/en/product/teamgroup-t-create-expert-overclocking-10l-32gb-2-x-16gb-ddr5-6000mhz-white">Fairly fast</a>:&nbsp CL30-36-36-76 1.35V;&nbsp no LEDs, reportedly better heat sinks than G.Skill<br>
@@ -47,11 +45,13 @@ ul {
 <dd><a href="https://www.pcmag.com/reviews/wd-black-sn850x">Quite fast</a>;&nbsp better firmware reputation than Samsung
 <dt><a href="https://www.amazon.com/gp/product/B0BWNFZJNZ"><b>Galax GeForce RTX 4090 SG (1-Click OC)</b></a>
 <dd>relatively low price, <a href="https://www.youtube.com/watch?v=Qa4A12gQTHw">decent reviews</a>, <b><i>4 fans</i></b><br>
-     <img width=90% src=GalaxSG.jpg>
+     <img width=90% src=GalaxSG.jpg><br clear=all>
+     <a href="https://us.download.nvidia.com/Windows/536.99/536.99-nvidia-control-panel-quick-start-guide.pdf">NVIDIA Control Panel Quick Start Guide</a>
 <dt><a href="https://www.amazon.com/dp/B08PT8849G"><b>Antec Dark Phantom DP502 Flux ATX</b></a>
 <dd>White, large enough, decent cooling, ODD slot;&nbsp <i>should have waited;&nbsp price dropped</i>
 <dt><a href="https://www.amazon.com/dp/B0B433KXLJ"><b>MSI MEG Ai1000P 1000W 80+ Platinum</b></a>
-<dd>PCIE 5, ATX 3.0, compact, 10-year limited warranty, <b><i>12vhpwr cable</i></b><br>
+<dd>PCIE 5, ATX 3.0, compact, 10-year limited warranty, <b><i>12vhpwr cable</i></b>
+    &nbsp <a href="https://download.msi.com/archive/mnu_exe/psu/MEGAi1000P_Ai1300P.pdf">User Guide</a><br>
 <img width=90% src=Ai1000P.jpg>
 <dt><a href="https://www.amazon.com/gp/product/B09YRMQT1F">GRAUGEAR USB 3.2 Gen 2 USB-C bracket and cable</a>
 <dd>Motherboard has USB 3.2 for front panel USB-C, which DP502 lacks
@@ -131,13 +131,16 @@ Z690-A flash BIOS updates are reportedly fussy about USB thumb drives...
 <a href="https://benchmate.org/>BenchMate PC Benchmark Validation Software</a>
 <a href="https://www.reddit.com/r/intel/comments/ro020k/how_to_undervolt_12700k/"> v/f curves Offset Mode vs Adaptive Mode</a>
 <a href="https://www.youtube.com/watch?v=30X9zotQrf8">MSI CPU Game Boost, cooler tuning vs smart fan curve</a>
+<a href="https://www.youtube.com/watch?v=BpUfUNksii8">Resizable Bar improves 1% lows</a> - TheSpyHood video
+<a href="https://www.youtube.com/watch?v=1zYjoLbrDF4">Force Resizable Bar on</a> TroubleChute video using <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases">Nvidia Profile Inspector</a>
+<a href="https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/">Hardware accelerated GPU scheduling</a> was not a winner, in my testing...
 </pre>
 <h3>Fan control</h3>
 According to MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42), BIOS can sort DC (3-wire) vs PWM (4-wire) fans.
 <ul compact>
 <li><a href="https://www.youtube.com/watch?v=hZW0hBumShw">Adjust Gaming PC Fans For Silent Mode and Gaming Mode</a> - <b>MSI motherboard</b>
 <li><a href="https://www.youtube.com/watch?v=uDPKVKBMQU8"><b>Fan Control</b></a> JayzTwoCents  <a href="https://github.com/rem0o/fancontrol.releases">GitHub</a> &nbsp
-    <b>HowTo:&nbsp <a href="https://www.digitaltrends.com/computing/how-to-use-fan-control/">digitaltrends</a>
+    <b>HowTo</b>:&nbsp <a href="https://www.digitaltrends.com/computing/how-to-use-fan-control/">digitaltrends</a>
 <li><a href="https://www.youtube.com/watch?v=qu2CjqXDuVE">MSI Dragon Center</a>
 <li>setting <a href="https://www.youtube.com/watch?v=GvyQXkFUe3E&t=354s">BIOS OC CPU Cooler Tuning to Water Cooler</a> enables higher boost without overwhelming good air coolers.
 </ul>
@@ -168,5 +171,12 @@ According to MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-
 <img width=100% src=TunedDDR5-6000.jpg>
 <h4><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></h4>
 <div align=center><img width=100% src=GameBoost.jpg><br clear=all><i>orange=1080P; &nbsp blue=1440P</i></div>
+<h4>Parts received 9 Aug 2023</h4>
+<img width=100% src=USPS.jpg><ul compact>
+<li>wrong CPU (i5-13400) - reordered
+<li>bad used PRO Z790-A motherboard - ordered <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI">MSI MAG Z790 Tomahawk WiFi DDR5</a> (23% off, only $10 more)<br>
+<a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">MAG Z790 TOMAHAWK WIFI User Guide</a>
+ &nbsp <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI/support#driver">Drivers</a></ul>
+<img width=100% src="https://m.media-amazon.com/images/I/91MvF4TFtSL._AC_SL1500_.jpg">
 </body>
 </html>
