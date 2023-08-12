@@ -24,12 +24,13 @@ ul {
 <h2>Antec Phantom DP502 VR PC</h2>
 <h4>Contents</h4><dl>
 <dt><a href="#PARTS">Parts</a>
+<dd><a href=#AIR>Airflow</a>
 <dd><a href="#ALT">Alternatives</a>
 <dt><a href="#TODO">Implementation</a>
-<dd><a href=#FAN>Fan control</a>
-<dd><a href=#AIR>Airflow</a>
-<dd><a href=#DDR5>Tuned DDR5-6000</a>
+<dd><a href=#UV>underVolt</a>
 <dd><a href=#MSIC>MSI Center</a>
+<dd><a href=#FAN>Fan control</a>
+<dd><a href=#DDR5>Tuned DDR5-6000</a>
 <dd><a href=#XMP>13600K MSI game boost OC + XMP vs default</a>
 <dt><a href=#RCV>Parts received</a>
 <dd><a href=DP502build.htm>Build</a>
@@ -95,6 +96,30 @@ ul {
 <dt><div><iframe width="640" height="480" src="https://www.youtube.com/embed/Y3aZFsK8uaU"></iframe></div>
 </dl>
 
+<a name=AIR><h3>Airflow</h3></a>
+<img width=100% src=image/dp502-airflow.png>
+<dl>
+<dt><b>power supply</b>
+<dd>Separately from other case airflow, its fan draws air in thru Antec bottom case filter, exhausting out back.<br>
+<img src="image/PSU-airflow-bottom-mounted.jpg">
+<dt><b>3 front input Arctic fans</b>
+<dd>exhausting into Antec case front filter
+<dt><b>2 top exhaust Arctic fans</b>
+<dd>mounted behind 5.25-inch optical drive
+<dt><b>1 rear case exhaust Antec fan</b>
+<dd>mounted backwards, as received..
+<dt><b>1 chamber Antec fan</b>
+<dd>mounted above PSU chamber, drawing air from lower front input, exhausting to GPU
+<dt><b>1 PWM ID-Cooling fan</b>
+<dd>exhausting into heat sink fin stack
+<dt><b>case fan arrows</b>
+<dd>molded into fans, blade rotation and airflow directions
+<li>most case fans have label on hub:&nbsp input side
+<li>unlabeled motor location spider is typically on the exhaust side
+<li>Both Antec fans have label on (exhaust) motor location spider;
+<li>one Antec fan has blades reversed...
+</dl>
+
 <hr>
 <a name=ALT><h4>Alternatives rejected</h4></a>
 <pre><a href=#UV>Undervolting</a> B760 or <a href="H670ATX">H670</a> seemingly always impacts performance,
@@ -133,15 +158,9 @@ With an air-cooled RTX 4090 installed in PCIe slot nearest CPU, only the bottom 
 and some report Intel LAN driver support issues with Windows 10...
 but <a href="https://www.msi.com/Motherboard/PRO-Z790-A-WIFI/support#driver">Win 11 requires TPM enabled in BIOS</a>..?
 
-While Windows 10 Intel Network Drivers are missing there,
-MPG Z790 Edge shares Windows 11 drivers
- and has the <a href="https://download.msi.com/dvr_exe/mb/Intel_Network_inf_wt.zip">Windows 10 Intel Network Drivers</a>
-
-Curiously, WiFi and BlueTooth drivers are the same for Windows 10 and 11;
-Network drivers differ...
-
 Newer Windows 10 installation media may include the necessary drivers.
-Z690-A flash BIOS updates are reportedly fussy about USB thumb drives...</pre>
+MSI Z690 flash BIOS updates are reportedly fussy about USB thumb drives...
+</pre>
 <a href="https://www.youtube.com/watch?v=RYYoCXh2gtw">Guide: What to do AFTER building your computer</a> - JayzTwoCents video<br>
 <a href="https://www.youtube.com/watch?v=AkNEvIWp2fM">How to <b>stress test</b> a new PC and the software involved!</a> - JayzTwoCents video<br>
 Test in Intel XTU<br>
@@ -162,8 +181,9 @@ Test in Intel XTU<br>
 
 
 <a href="https://ocbase.com/purchase"><b>OCCT</b> Stability testing, benchmark, monitoring and sysinfo</a>
+</pre>
 
-<a name=UV><b>UnderVolt</b></a>
+<a name=UV><h4>UnderVolt</h4></a><pre>
 <a href="https://www.youtube.com/watch?v=4jjopjkJzxA"><b>MSI underVolt</b></a> - RJayzTwoCents
 <a href="https://www.techpowerup.com/forums/threads/13600k-undervolt-with-b660.304661/page-4">Intel disabling underVolt for B series motherboards</a>
 <a href="https://www.intel.com/content/www/us/en/download/17881/intel-extreme-tuning-utility-intel-xtu.html">Intel&#174; Extreme Tuning Utility (XTU)</a>
@@ -172,6 +192,7 @@ Test in Intel XTU<br>
 <a href="https://www.reddit.com/r/hardware/comments/ympxw8/intel_i513600k_undervolting_my_results_on_power/">Intel i5-13600K Undervolting</a> - reddit
 <a href="https://benchmate.org/>BenchMate PC Benchmark Validation Software</a>
 <a href="https://www.reddit.com/r/intel/comments/ro020k/how_to_undervolt_12700k/"> v/f curves Offset Mode vs Adaptive Mode</a>
+
 <a href="https://www.youtube.com/watch?v=BpUfUNksii8">Resizable Bar improves 1% lows</a> - TheSpyHood video
 <a href="https://www.youtube.com/watch?v=1zYjoLbrDF4">Force Resizable Bar on</a> TroubleChute video using <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases">Nvidia Profile Inspector</a>
 <a href="https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/">Hardware accelerated GPU scheduling</a> was not a winner, in my testing...
@@ -197,29 +218,7 @@ According to MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-
     <b>HowTo</b>:&nbsp <a href="https://www.digitaltrends.com/computing/how-to-use-fan-control/">digitaltrends</a>
 <li>setting <a href="https://www.youtube.com/watch?v=GvyQXkFUe3E&t=354s">BIOS OC CPU Cooler Tuning to Water Cooler</a> enables higher boost without overwhelming good air coolers.
 </ul>
-<a name=AIR><h3>Airflow</h3></a>
-<img width=100% src=image/dp502-airflow.png>
-<dl>
-<dt><b>power supply</b>
-<dd>Separately from other case airflow, its fan draws air in thru Antec bottom case filter, exhausting out back.<br>
-<img src="image/PSU-airflow-bottom-mounted.jpg">
-<dt><b>3 front input Arctic fans</b>
-<dd>exhausting into Antec case front filter
-<dt><b>2 top exhaust Arctic fans</b>
-<dd>mounted behind 5.25-inch optical drive
-<dt><b>1 rear case exhaust Antec fan</b>
-<dd>mounted backwards, as received..
-<dt><b>1 chamber Antec fan</b>
-<dd>mounted above PSU chamber, drawing air from lower front input, exhausting to GPU
-<dt><b>1 PWM ID-Cooling fan</b>
-<dd>exhausting into heat sink fin stack
-<dt><b>case fan arrows</b>
-<dd>molded into fans, blade rotation and airflow directions
-<li>most case fans have label on hub:&nbsp input side
-<li>unlabeled motor location spider is typically on the exhaust side
-<li>Both Antec fans have label on (exhaust) motor location spider;
-<li>one Antec fan has blades reversed...
-</dl>
+
 <a name=DDR5><h4><a href="https://www.youtube.com/watch?v=RTmbYak_8gE">Tuned DDR5-6000</a> may be nearly as fast as untuned DDR5-7200</h4></a>
 <img width=100% src=image/TunedDDR5-6000.jpg>
 <a name=XMP><h4><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></h4></a>
