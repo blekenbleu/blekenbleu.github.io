@@ -116,11 +116,33 @@ and IO bracket laterally aligns the motherboard.
 <hr>
 <dl>
 <dt><b>Power</b>:&nbsp 6 cables<br>
-<img src=image/Ai1000P.gif><ul compact>
+<img src=image/Ai1000P.gif><br clear=all>
+Plug cables into power supply before installing it in chassis:<br>
+<img src=image/power.jpg>
+<ul compact>
 <li>*G.I. to USB
 <li>12vhpwr cable for RTX 4090
-<li>24-pin ATX, 2x CPU to 8-pin +12V motherboard:<img align=top src=image/ATX_pwr.gif>
+<li>24-pin ATX, 2x CPU to 8-pin +12V motherboard:<br>
+<table><tr><td>
+Plugging the MSI ATX power connector into the MSI motherboard<br>
+was pathologically difficult.&nbsp Cables plug nicely into Ai100P;<br>
+MSI obviously never tested them with their motherboards.<br>
+<br>
+Without bracing behind its connector,<br>
+C-clamp force would likely have damaged the board.<br>
+<br>
+Plug power cables to motherboard
+<i>before</i> installing it in chassis.
+</td><td><img src=image/ATX_pwr.gif></td></tr></table>
+<img src=image/pathological.jpg>
+
 <li>SATA to Optical drive, Fan controller<br><img src=image/PWM-LED.jpg></ul>
+<dd>11 unused power cables:<ul compact>
+<li>mini USB to type A - will replace mini USB to JUSB1 after testing
+<li>6x PCI-E
+<li>2x SATA
+<li>Molex
+<li>12VHPWR to 2x PCI-E</ul>
 
 <dt><hr><img src=image/MB.gif>
 
@@ -136,12 +158,15 @@ and IO bracket laterally aligns the motherboard.
 <dd>Front Panel:
 <br><img src=image/FrontPanel.gif>
 <dd>JARGB_V2_3:&nbsp front cover LEDs
+<dd>JAUD1:&nbsp front panel audio
 <dd>JUSB1,2:&nbsp USB2 bracket
 <dd>JUSB3:&nbsp USB3 front panel
 <dd>JUSB4:&nbsp USB-C bracket
 </dl>
+<img src=image/cabled.jpg><br clear=all>
+<i>Complete except for GPU, chamber fan, USB brackets - to be installed after initial testing</i>
 
-<h4>Go to <a href="PhantomVR.htm#TODO"><font size=+1>After Assembly</font></a> for BIOS and software</h4>
+<h4>Go to <a href="PhantomVR.htm#TODO"><font size=+1>After Assembly</font></a> for BIOS and test software</h4>
 
 <a name=GPU><h4>Galax RTX 4090</h4></a>
  &nbsp Use <a href="https://www.nvidia.com/download/driverresults.aspx/147971/en-us/">Nvidia Studio Driver</a>
