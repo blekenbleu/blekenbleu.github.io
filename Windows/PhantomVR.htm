@@ -26,7 +26,7 @@ ul {
 <dt><a href="#PARTS">Parts</a>
 <dd><a href=#AIR>Airflow</a>
 <dd><a href="#ALT">Alternatives</a>
-<dt><a href="#TODO">Implementation</a>
+<dt><a href="#TODO">After Assembly</a>
 <dd><a href=#UV>underVolt</a>
 <dd><a href=#MSIC>MSI Center</a>
 <dd><a href=#FAN>Fan control</a>
@@ -44,24 +44,33 @@ ul {
 
 <dt><br><a href="https://www.amazon.com/dp/B09FDXJV3M"><b>ID-COOLING SE-226-XT 68.2 CFM CPU Cooler</b></a>
 <dd>No LEDs;&nbsp 250W TDP should handle 13600K;&nbsp tested well:<table><tr><td>
-<img width=100% src=BaseTemp.jpg></td><td>
-<img width=100% src=BaseNoise.jpg></td></tr><tr><td>
-<img width=100% src=MaxTemp.jpg></td><td>
-<img width=100% src=MaxNoise.jpg></td></tr></table>
+<img width=100% src=image/BaseTemp.jpg></td><td>
+<img width=100% src=image/BaseNoise.jpg></td></tr><tr><td>
+<img width=100% src=image/MaxTemp.jpg></td><td>
+<img width=100% src=image/MaxNoise.jpg></td></tr></table>
 
 <dt><br><a href="https://www.amazon.com/dp/B0BHC3VHHG"><b>MSI PRO Z790-A WIFI ATX LGA 1700 DDR5 Motherboard</b></a>
-<dd>7.1 analog audio out, Z790 supports <a href=#UV>underVolt</a> without BIOS update, faster DDR5 than Z690 or PRO Z790-P<ul compact>
-<li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf">BIOS manual</a>
-  &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a>
-<li><b>BIOS update</b>:&nbsp <a href="https://storage-asset.msi.com/files/pdf/How_to_flash_the_BIOS.pdf">PDF</a> &nbsp <a href="https://youtu.be/sKMub20CUNI">YouTube</a>
-<li><a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
-<li><a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">Overclock DDR5</a>
-</ul>
+<dd>7.1 analog audio out, Z790 supports <a href=#UV>underVolt</a> without BIOS update, faster DDR5 than Z690 or PRO Z790-P
 
-<dt><a href="https://www.amazon.com/dp/B0C4NKHXK7"><b>TEAMGROUP T-Create Expert 32 GB</b> (2 x 16 GB) DDR5-6000 CL30 Memory</a>
+<dt><br><a href="https://www.amazon.com/dp/B0C4NKHXK7"><b>TEAMGROUP T-Create Expert 32 GB</b> (2 x 16 GB) DDR5-6000 CL30 Dual Rank Memory</a>
     &nbsp <a href="https://www.teamgroupinc.com/en/catalog/act.php?act=2&index_id=277"><b>Specifications</b></a>
 <dd><a href="https://pangoly.com/en/product/teamgroup-t-create-expert-overclocking-10l-32gb-2-x-16gb-ddr5-6000mhz-white">Fairly fast</a>:&nbsp CL30-36-36-76 1.35V;&nbsp no LEDs, reportedly better heat sinks than G.Skill<br>
-<a href="https://forum-en.msi.com/index.php?threads/ram-explained-why-two-modules-are-better-than-four-single-vs-dual-rank-stability-testing.363139/">Why two modules are better than four / single vs. dual-rank / stability testing</a>
+Z790 Tomahawk motherboard has 6600+ MHz rating for a pair of these (1DPC 2R)<br>
+<a href="https://forum-en.msi.com/index.php?threads/ram-explained-why-two-modules-are-better-than-four-single-vs-dual-rank-stability-testing.363139/">Why two modules are better than four / single vs. dual-rank / stability testing</a><br>
+<a href="https://www.amazon.com/gp/customer-reviews/R1T2WTU3FMB94Y/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B0C4NKHXK7"><b>7000 M/Ts Dual Rank</b></a>
+<pre>"At first you expect the headspreader on these to be too small, but they are very effective.
+ Teamgroup actually used quality thermal pads that are well placed plus good coverage on the PMIC.
+
+ I don't know what type of die these chips are, but they clock great!
+ I'm able to do 7000 m/Ts at 1.4vdimm bumped up from XMP(6400 34-44-44-88 at 1.35v).
+ I won't go into my other voltage settings, but please keep in mind that you may need to
+ do a bit of tuning across several different voltages depending on your CPU's memory controller and motherboard.
+
+ I've also tested 8000 m/Ts single rank sticks from Gskill, and I find
+ 6400 dual rank to be very close in performance despite the speed difference.
+ Less than 1% difference in one game. I'd rather have more capacity than 8000m/Ts at the moment.
+
+ If 64gb or dual rank is important to you, then look no further. I find these the best 32gb modules as of March 2023."</pre>
 
 <dt><br><a href="https://www.amazon.com/dp/B0B7CMZ3QH"><b>Western Digital Black SN850X 2 TB M.2-2280 PCIe 4.0 X4 NVME</b></a>
 <dd><a href="https://www.pcmag.com/reviews/wd-black-sn850x">Quite fast</a>;&nbsp better firmware reputation than Samsung
@@ -153,7 +162,20 @@ With an air-cooled RTX 4090 installed in PCIe slot nearest CPU, only the bottom 
 <a href="https://forums.flightsimulator.com/t/7800x3d-poor-vr-performance-compared-to-13600k/598774">7800X3D &lt 13600K in MSFS 2020 VR</a>
 <hr>
 
-<a name="TODO"><h2>Implementation</h2></a>
+<a name="TODO"><h2>After <a href="DP502build.htm">Assembly</a></h2></a>
+<ul compact>
+<li>Press DEL key during Power-On Self Test (POST) for BIOS <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">Tomahawk User Guide</a> pg 54.
+<li>Press F11 during Power-On Self Test (POST) for Boot menu.
+<li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf">BIOS manual</a>
+  &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a>
+<li><b>BIOS update</b>:&nbsp <a href="https://storage-asset.msi.com/files/pdf/How_to_flash_the_BIOS.pdf">PDF</a> &nbsp <a href="https://youtu.be/sKMub20CUNI">YouTube</a>
+<li><a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
+<li><a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">Overclock DDR5</a>
+</ul>
+
+<a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI/support#driver">LAN drivers</a> may not be in M$ Windows 10 install media:
+<div align=center><iframe width="640" height="480" src="https://www.youtube.com/embed/EuFZDMjfBlE"></iframe></div>
+
 <pre>Z790-A is reportedly fussy about older NVMe drives
 and some report Intel LAN driver support issues with Windows 10...
 but <a href="https://www.msi.com/Motherboard/PRO-Z790-A-WIFI/support#driver">Win 11 requires TPM enabled in BIOS</a>..?
@@ -223,6 +245,9 @@ According to MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-
 <img width=100% src=image/TunedDDR5-6000.jpg>
 <a name=XMP><h4><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></h4></a>
 <div align=center><img width=100% src=image/GameBoost.jpg><br clear=all><i>orange=1080P; &nbsp blue=1440P</i></div>
+
+<h4><a href="https://www.sordum.org/7952/dns-jumper-v2-2/">DNS Jumper</a></h4>
+
 <a name=RCV><h4>Parts received 9 Aug 2023</h4></a>
 <img width=100% src=image/USPS.jpg><ul compact>
 <li>wrong CPU (i5-13400) - reordered
@@ -231,6 +256,8 @@ FWIW, unlike many PC components, MSI motherboard product boxes are <i>not</i> se
 <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">MAG Z790 TOMAHAWK WIFI User Guide</a>
  &nbsp <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI/support#driver">Drivers</a><br>
  <div align=center><img width=90% src="https://m.media-amazon.com/images/I/91MvF4TFtSL._AC_SL1500_.jpg" style="transform:rotate(90deg);"></div>
+<li><i>Z790 Tomahawk received 11 Aug</i>
+<li><i>i5 13600K received 12 Aug</i>
 </ul>
 </body>
 </html>
