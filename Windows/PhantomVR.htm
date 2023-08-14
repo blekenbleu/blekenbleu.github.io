@@ -164,11 +164,36 @@ With an air-cooled RTX 4090 installed in PCIe slot nearest CPU, only the bottom 
 
 <a name="TODO"><h2>After <a href="DP502build.htm">Assembly</a></h2></a>
 <ul compact>
-<li>Press DEL key during Power-On Self Test (POST) for BIOS <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">Tomahawk User Guide</a> pg 54.
-<li>Press F11 during Power-On Self Test (POST) for Boot menu.
+<li><b>Press DEL key during Power-On Self Test (POST) for BIOS</b> <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">Tomahawk User Guide</a> pg 54.<br>
+Initial boot took awhile, presumably feeling up fans and sorting hardware.<br>
+Motherboard debug LEDs iterated, but too quickly for me to decode.<br>
+CPU fan defaulted to Auto and around 790rpm;&nbsp  I switched it to PWM.<br>
+Back fan defaulted to DC and around 950 rpm;&nbsp I switched it to smart
+based on CPU temp<br>
+0% @34C, 8% @46C, 90% @70C  936rpm @ 39C<br>
+Antec fan controller defaulted to DC and nearly 1800rpm;&nbsp  I switched
+it to PWM and smart..<br>
+<i>around 15% still reports 1090rpm and louder than wanted...</i><br>
+Changed boot priority:&nbsp USB key, hard disk, CD/DVD, USB HD,...<br>
+EZ Storage reports only SATA... Advanced SETTINGS shows M2_1 WD_BLACK SN850<br>
+Clicking CPU under GAME BOOST started fans ramping up...unclicked!<br>
+3.5GHz CPU freq<br>
+Hardware Monitor in Advanced looks like EZ<br>
 <li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf">BIOS manual</a>
-  &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a>
-<li><b>BIOS update</b>:&nbsp <a href="https://storage-asset.msi.com/files/pdf/How_to_flash_the_BIOS.pdf">PDF</a> &nbsp <a href="https://youtu.be/sKMub20CUNI">YouTube</a>
+  &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a><br>
+<br>
+<li><b>booted i<a href="https://www.memtest86.com/technical.htm">MemTest86</a> from a USB key</b><br>
+4/4 with 0 errors; CPU cooler not warm; motherboard extrusion presumably over system chip much warmer than others (e.g.VRM).<br>
+That warmer extrusion will be under GPU, fins on it would be good, but could not be tall...<br><br>
+
+<li><b>Rebooted BIOS, set XMP, restarted MemTest86</b><br>
+ &nbsp  ...then rebooted BIOS to give hard drive priority for Windows 10 install<br>
+ first boot should skip uninitialized M.2 NVMe and boot Windows 10 installation media USB key,<br>
+ subsequent boots will be from M.2 NVMe initialized by Windows 10 install;&nbsp will eventually update to Win 11 and register.
+<li>Press F11 during Power-On Self Test (POST) for Boot menu.<br><br>
+
+<li><b>Boot Windows Installation media USB key</b> without networking
+<li>BIOS update:&nbsp <a href="https://storage-asset.msi.com/files/pdf/How_to_flash_the_BIOS.pdf">PDF</a> &nbsp <a href="https://youtu.be/sKMub20CUNI">YouTube</a>
 <li><a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
 <li><a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">Overclock DDR5</a>
 </ul>
@@ -186,7 +211,7 @@ MSI Z690 flash BIOS updates are reportedly fussy about USB thumb drives...
 <a href="https://www.youtube.com/watch?v=RYYoCXh2gtw">Guide: What to do AFTER building your computer</a> - JayzTwoCents video<br>
 <a href="https://www.youtube.com/watch?v=AkNEvIWp2fM">How to <b>stress test</b> a new PC and the software involved!</a> - JayzTwoCents video<br>
 Test in Intel XTU<br>
-<a href="https://www.youtube.com/watch?v=vbiVbiBGjqg">Z790 Tomahawk DDR5 not posting</a> no fix 
+<a href="https://www.youtube.com/watch?v=vbiVbiBGjqg">Z790 Tomahawk DDR5 not posting</a> - no fix 
 <li><a href="https://www.maxon.net/en/downloads/cinebench-r23-downloads">Cinebench R32</a> multi core 10 minutes
 <li><a href="https://benchmark.unigine.com/heaven">Unigine Heaven Benchmark</a>
 <li><a href="https://www.memtest86.com/">memtestx86</a>
