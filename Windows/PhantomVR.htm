@@ -51,7 +51,7 @@ ul {
 <img width=100% src=image/MaxNoise.jpg></td></tr></table>
 
 <dt><br><a href="https://www.amazon.com/dp/B0BHC3VHHG"><b>MSI PRO Z790-A WIFI ATX LGA 1700 DDR5 Motherboard</b></a>
-<dd>7.1 analog audio out, Z790 supports <a href=#UV>underVolt</a> without BIOS update, faster DDR5 than Z690 or PRO Z790-P
+<dd>7.1 analog audio out, Z790 supports <a href=#UV>underVolt</a> and 13600K without BIOS update, faster DDR5 than Z690 or PRO Z790-P
 
 <dt><br><a href="https://www.amazon.com/dp/B0C4NKHXK7"><b>TEAMGROUP T-Create Expert 32 GB</b> (2 x 16 GB) DDR5-6000 CL30 Dual Rank Memory</a>
     &nbsp <a href="https://www.teamgroupinc.com/en/catalog/act.php?act=2&index_id=277"><b>Specifications</b></a>
@@ -138,7 +138,7 @@ ChooseMyPC is obsolete
 
 Gigabyte motherboards lack 7.1 surround analog audio outputs.
 Asus' Z790-P and nominally premium ROG Strix also both lack 7.1 analog outputs.
-Asus recently own-goaled by AM5 motherboard overheating BIOS issues,
+Asus recently own-goaled by AM5 motherboard overheating issues,
 so MSI.
 
 Don't need Wi-Fi, but may use BlueTooth
@@ -184,20 +184,21 @@ Hardware Monitor in Advanced looks like EZ<br>
   &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a><br>
 <br>
 <li><b>booted <a href="https://www.memtest86.com/technical.htm">MemTest86</a> from a USB key</b><br>
-4/4 with 0 errors; CPU cooler not warm; motherboard extrusion presumably over system chip much warmer than others (e.g.VRM).<br>
+4/4 with 0 errors; CPU cooler not warm;<br> motherboard extrusion presumably over system chip much warmer than others (e.g.VRM).<br>
 That warmer extrusion will be under GPU, fins on it would be good, but could not be tall...<br><br>
 
-<li><b>Rebooted BIOS, set XMP, restarted MemTest86</b><br>
+<li><b>Rebooted to BIOS, set XMP, restarted MemTest86</b><br>
  &nbsp  ...then rebooted BIOS to give hard drive priority for Windows 10 install<br>
  first boot should skip uninitialized M.2 NVMe and boot Windows 10 installation media USB key,<br>
  subsequently booting from M.2 initialized by Windows 10 install;&nbsp <i>eventually</i> updating to Win 11
 <li>Press F11 during Power-On Self Test (POST) for Boot menu.<br><br>
-<li><a href="https://www.youtube.com/watch?v=sKMub20CUNI"><b>MSI BIOS update</b> (video)</a>
- (<a href="https://storage-asset.msi.com/files/pdf/How_to_flash_the_BIOS.pdf">PDF</a>)
- from <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI/support#bios">MSI MAG Z790 TOMAHAWK WIFI DDR5 website</a><br>
- <code>AMI BIOS &nbsp 7D91vH7 &nbsp 2023-07-13 &nbsp 9.74 MB</code><br><br>
- Current BIOS is <code>E7D91IMS.H50</code>;&nbsp M-FLASH declined to see <code>7D91vH7</code> on 4GB FAT32 USB key:
-<pre>
+<li><b>BIOS update HowTo</b><ol>
+<li>download update from <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI/support#bios">MSI MAG Z790 TOMAHAWK WIFI DDR5 website</a><br>
+   Instructional <a href="https://www.youtube.com/watch?v=sKMub20CUNI"><b>video</b></a>
+   and <a href="https://storage-asset.msi.com/files/pdf/How_to_flash_the_BIOS.pdf"><b>PDF</b></a>
+<li>copy e.g.  <code>E7D91IMS.H50</code> to a USB flash key<br>
+   &nbsp &nbsp M-FLASH declined to see <code>7D91vH7</code> on 4GB FAT32 USB key:
+<table bgcolor=#DEDEDE><tr><td><pre>
  Volume in drive G is MSI BIOS
  Volume Serial Number is 11AE-0CE9
 
@@ -205,23 +206,42 @@ That warmer extrusion will be under GPU, fins on it would be good, but could not
 
 07/10/2023  05:32 PM        33,554,432 E7D91IMS.H70
                1 File(s)     33,554,432 bytes
-               0 Dir(s)   3,999,678,464 bytes free</pre>
+               0 Dir(s)   3,999,678,464 bytes free</pre></td></tr></table>
+ &nbsp ... but updated with that same <code>E7D91IMS.H70</code> on another USB key formatted for AOMEI BackUpper...
+MSI Z690 flash BIOS updates are fussy about USB thumb drives!
+<li>Reset BIOS options to default: <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">clear CMOS</a>(page 22)
+ <i>before</i> M-FLASH<br> or if/when PC fails to boot after M-FLASH.<br>
+A prompt to remove USB key after BIOS update would be nice, before rebooting...<br>
+I yanked out the USB key, to avoid booting AOMEI BackUpper.</ol><br>
 
-<li><b>Boot Windows Installation media USB key</b> without networking<br><br>
-
-<li><a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
-<li><a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">Overclock DDR5</a>
-</ul>
-
-<a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI/support#driver">LAN drivers</a> may not be in M$ Windows 10 install media:
+<li><b>Boot Windows 10 Installation media USB key</b> without networking<br>
+  Setting a local user account is easier on Windows 10 than 11...<br>
+  Windows 10 needed ethernet driver from USB key included with the motherboard:<br>
 <div align=center><iframe width="640" height="480" src="https://www.youtube.com/embed/EuFZDMjfBlE"></iframe></div>
 
-<pre>Z790-A is reportedly fussy about older NVMe drives
-and some report Intel LAN driver support issues with Windows 10...
-but <a href="https://www.msi.com/Motherboard/PRO-Z790-A-WIFI/support#driver">Win 11 requires TPM enabled in BIOS</a>..?
+<li>MSI should automatically update drivers with first Windows Update,<br>
+ otherwise <a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
+<a name=MSIC><li><a href="https://www.msi.com/Landing/MSI-Center"><b>MSI Center</b></a></a> &nbsp
+replaced Dragon Center, supports e.g. MSI motherboards and Ai1000P.<br>
+Roughly MSI's alternative to Dell's prebuilt support software.<br>
+Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
+<a href="https://www.youtube.com/watch?v=70PrYJmDktw">kilObit video</a> &nbsp
+<a href="https://www.youtube.com/watch?v=sNSqBKGlH-A&t=481s">MSI Center fan control</a> - Mike's unboxing
+ &nbsp <a href="https://www.youtube.com/watch?v=rRcVRhw-D04">GPU Fan Tool</a> - MSI HOW-TO<br>
+<a href="https://www.youtube.com/watch?v=30X9zotQrf8"><b>MSI CPU Game Boost</b></a> - video &nbsp cooler tuning vs smart fan curve</a><br><br>
 
-Newer Windows 10 installation media may include the necessary drivers.
-MSI Z690 flash BIOS updates are reportedly fussy about USB thumb drives...
+<li><a href="compare.htm">Initial comparison</a><br><br>
+  
+<li>Win 11 requires TPM enabled in BIOS<br>
+<code>SETTINGS -> Security -> Trusted Computing -> TPM Device Selection -> [fTPM 2.0]</code> for software TPM<br>
+<img width=90% src="https://storage-asset.msi.com/global/picture/news/2021/mb/enable-tpm-20210706-2.jpg"><br clear=all>
+M$:&nbsp <a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/tpm/initialize-and-configure-ownership-of-the-tpm">Troubleshoot TPM</a> &nbsp TiredHamster <a href="https://www.youtube.com/watch?v=bihze7Srrtg">video</a>
+   &nbsp wintips.org:&nbsp <a href="https://www.wintips.org/how-to-clear-tpm-in-windows-10-11/">How to Clear TPM in Windows 10/11 and why to do it</a>
+</ul>
+
+
+<pre>
+
 </pre>
 <a href="https://www.youtube.com/watch?v=RYYoCXh2gtw">Guide: What to do AFTER building your computer</a> - JayzTwoCents video<br>
 <a href="https://www.youtube.com/watch?v=AkNEvIWp2fM">How to <b>stress test</b> a new PC and the software involved!</a> - JayzTwoCents video<br>
@@ -258,20 +278,12 @@ Test in Intel XTU<br>
 <a href="https://www.youtube.com/watch?v=BpUfUNksii8">Resizable Bar improves 1% lows</a> - TheSpyHood video
 <a href="https://www.youtube.com/watch?v=1zYjoLbrDF4">Force Resizable Bar on</a> TroubleChute video using <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases">Nvidia Profile Inspector</a>
 <a href="https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/">Hardware accelerated GPU scheduling</a> was not a winner, in my testing...
+<a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">Overclock DDR5</a>
 </pre>
 
-<a name=MSIC><h3><a href="https://www.msi.com/Landing/MSI-Center">MSI Center</a></h3></a>
-Replaced Dragon Center, highly promoted for MSI laptops, but also supports e.g. MSI motherboards and Ai1000P.<br>
-This is arguably MSI's alternative to Dell's prebuilt support software.<br>
-Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
-<a href="https://www.youtube.com/watch?v=70PrYJmDktw">kilObit video</a> &nbsp
-<a href="https://www.youtube.com/watch?v=sNSqBKGlH-A&t=481s">MSI Center fan control</a> - Mike's unboxing
- &nbsp <a href="https://www.youtube.com/watch?v=rRcVRhw-D04">GPU Fan Tool</a> - MSI HOW-TO<br>
-<a href="https://www.youtube.com/watch?v=30X9zotQrf8"><b>MSI CPU Game Boost</b></a> - video &nbsp cooler tuning vs smart fan curve</a>
-  
 
 <a name=FAN><h3>Fan control</h3></a>
-According to MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42), BIOS can sort DC (3-wire) vs PWM (4-wire) fans.
+Per MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42), BIOS can sort DC (3-wire) vs PWM (4-wire) fans.
 <ul compact>
 <li><a href="https://www.youtube.com/watch?v=sNSqBKGlH-A">Fan control using MSI center</a> - <b>Mike's unboxing</b> video
 <li><a href="https://www.youtube.com/watch?v=hZW0hBumShw">Adjust Gaming PC Fans For Silent Mode and Gaming Mode</a> - <b>MSI motherboard</b>
