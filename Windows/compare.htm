@@ -16,19 +16,20 @@ ul {
 <meta charset="utf-8">
 <meta name="google" value="notranslate">
 
-<title>Antec DP502 VR PC vs Aurora R7</title>
+<title>Antec DP502 VR PC vs Aurora R7 YouTube thermals</title>
 </head>
 <body>
 <a href="PhantomVR.htm"<i>back</i></a>
 
-<h2>Antec DP502 VR PC vs Aurora R7</h2>
+<h2>Antec DP502 VR PC vs Aurora R7 YouTube thermals</h2>
 <i>started 16 Aug 2023</i>:&nbsp
 <dl>
 <dt><b>Contents</b>
-<dd><a href=#YT>YouTube</a>
-<dd><a href=#SW>Initial software</a>
+<dd><a href=#YT>YouTube thermals comparison</a>
+<dd><a href=#W11>Windows 11 installation</a>
+<dd><a href=#SW>Windows 11 Initial software</a>
 </dl>
-<a name=YT><h3>YouTube</h3></a>
+<a name=YT><h3>YouTube thermals</h3></a>
 Playing YouTube videos imposes appreciable loads on the R7 i7-8700K;<br>
 perhaps exacerbated by unknown misconfiguration or bugs.<br>
 Fluctuations in these R7 <a href="https://www.hwinfo.com/">HWiNFO64</a> graphs (left) mostly result from toggling videos between play and pause:<br>
@@ -40,6 +41,21 @@ Fluctuations in these R7 <a href="https://www.hwinfo.com/">HWiNFO64</a> graphs (
 <dd>R7 CPU package temp swings nearly match core max;&nbsp Antec CPU temp swings << core max
 <dd>Antec needs heavier loads to exercise thermals
 </dl>
+
+<a name=W11><h4>Win 11 installed</h4></a>
+<i>Windows 11 decided that it could install on Antec with neither BIOS change nor agreement by me</i>.<br>
+
+<details><summary>HWiNFO64 during download and installation:</summary>
+<img width=40% src=image/W11install.png>
+</details>
+
+<details><summary>enabling TPM in BIOS</summary>
+<code>SETTINGS -> Security -> Trusted Computing -> TPM Device Selection -> [fTPM 2.0]</code> for software TPM<br>
+<img width=90% src="https://storage-asset.msi.com/global/picture/news/2021/mb/enable-tpm-20210706-2.jpg"><br clear=all>
+M$:&nbsp <a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/tpm/initialize-and-configure-ownership-of-the-tpm">Troubleshoot TPM</a> &nbsp TiredHamster <a href="https://www.youtube.com/watch?v=bihze7Srrtg">video</a>
+   &nbsp wintips.org:&nbsp <a href="https://www.wintips.org/how-to-clear-tpm-in-windows-10-11/">How to Clear TPM in Windows 10/11 and why to do it</a>
+</details>
+
 <a name=SW><h4>Antec initial Windows software links:</h4></a>
 <a href="http://www.ultraramdisk.com/?mid=en_home&l=en">Ultra RAMDisk</a> &nbsp <img align=top width=50% src="image/UltraRAMDISK.png"><br>
 <a href="https://www.irfanview.com/">IrfanView</a><br>
@@ -51,9 +67,6 @@ Fluctuations in these R7 <a href="https://www.hwinfo.com/">HWiNFO64</a> graphs (
 <a href="https://www.nirsoft.net/utils/usb_devices_view.html">USBDeview</a> lists and manipulates registered USB <i>devices</i><br>
 <a href="https://www.uwe-sieber.de/usbtreeview_e.html">UsbTreeView</a><br> current controller-hub-device connections and details:<br>
 <img width=100% src=image/USBtreeView.png>
-<h4>Windows 11 installation</h4>
-HWiNFO64 during download and installation:<br>
-<img width=40% src=image/W11install.png><br clear=all><br>
 <a href="https://github.com/ChrisTitusTech/winutil">Chris Titus winutil</a><br>
 <a href="https://winaero.com/">Winaero Tweaker</a><br>
 <a href="https://superuser.com/questions/1107480/how-do-i-kill-the-lockscreen-after-the-windows-10-anniversary-update">boot directly to login screen</a>
@@ -61,5 +74,6 @@ HWiNFO64 during download and installation:<br>
 
  [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
  "NoLockScreen"=dword:00000001</pre>
+<br><a href="PhantomVR.htm#TEST"><i>on to testing and tuning</i></a>
 </body>
 </html>
