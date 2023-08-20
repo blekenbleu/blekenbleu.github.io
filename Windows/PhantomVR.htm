@@ -293,14 +293,35 @@ Per MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf
 </ul>
 </details>
 
+reboot into BIOS:&nbsp <code>shutdown /r /fw /f /t 0</code><br>
+
 <a name=OC><h4>Overclock</h4></a>
 <details><summary>click for details</summary>
-<a href="https://www.youtube.com/watch?v=RTmbYak_8gE">Tuned DDR5-6000</a> may be nearly as fast as untuned DDR5-7200<br>
+<h5>DDR5</h5>
+<i>Try this first</i>:&nbsp
+<a href="https://www.msi.com/blog/memory-force">MSI Memory Force & Memory Try It!</a> &nbsp
 <a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">MSI Overclock DDR5</a><br>
-<a href="https://www.msi.com/blog/memory-force">MSI (DDR4) Memory Force & Memory Try It!</a><br>
-<a href="https://www.youtube.com/watch?v=kE_vmGCq_E8">i5-13600K @ 5.5GHz</a> MSI BIOS P-Core Ratio 5.5, XMP 1, Override Mode CPU Core Voltage 1.2
+<br>
+<a href="https://www.youtube.com/watch?v=RTmbYak_8gE">Tuned DDR5-6000</a> may be nearly as fast as untuned DDR5-7200<br>
+DDR5-6000 CL30 tuned timings in the video from Hardware Unboxed are suspect;<br> many are identical to those shown for tuned DDR5-7200;&nbsp Hynex A die:<br>
 <img width=100% src=image/TunedDDR5-6000.jpg>
+<a href="https://www.youtube.com/watch?v=lZEHqB9P6b0">Buildzoid DDR5-7200 CL34 overclock of 6000 CL36 with i5-13600K</a> &nbsp 53.6ns latency<br>
+<i>Hynex A die faster than M die; these are M die</i>; &nbsp E-cores turned off for stress testing<br>
+CPU IMC : DRAM Clock [1/2:1 (Gear 2)]  memory frequency 7200 G2<br> &nbsp (72x100.00x1.00)  (54 x 1.33 may be more stable in some hardware)<br>
+CPU SA Voltage 1.200 [Override Mode] CPU VDDq and VDD2 to 1.400;<br>
+DRAM Voltage and DRAM VDDQ Voltage to 1.450<br>
+essential:  RING PLL SFR Voltage 1.020,  SA PLL SFR Voltage 1.020, MC PLL SFR Voltage 0.990, probably CPU PLL SFR Voltage 1.020<br>
+Start tweaking Voltages when cruncher VST crashes really quickly (15 seconds).<br>
+<b>Memory timings</b>:&nbsp Command Rate [2N], tCL 34 tRCD 44 tRCDW 16 tRP 44 tRAS 28 (= Intel minimum) tRFC2 333<br>
+subtimings tRCFCPB 222 tREFI 50000 tRRD 4 tRRD_L 8 tFAW 16 tCWL 24 tCKE 4<br>
+turn around timings tRDRDSG 14 tRDRDDG 8 tWRWRSG 12 tWRWRDG 8 tRDWRSG 20 tRDWRDG 20 TWRRDSG 64 tWRRDDG 48<br>
+Advanced Timing tWRPRE 48 tRDPRE 8 tXP 4 tPRPDEN 2 tRDPDEN 4 tWRPDEN 4<br>
+Late command training [Disabled], Round Trip Latency [Enabled] Latency Timing Setting [Dynamic Mode]<br> &nbsp (13 Gen latency training is stable, 12th Gen not)<br>
+<br>
+
+<h5>i5-13600K</h5>
 <a name=XMP><h4><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></h4></a>
+<a href="https://www.youtube.com/watch?v=kE_vmGCq_E8">i5-13600K @ 5.5GHz</a> MSI BIOS P-Core Ratio 5.5, XMP 1, Override Mode CPU Core Voltage 1.2
 <div align=center><img width=100% src=image/GameBoost.jpg><br clear=all><i>orange=1080P; &nbsp blue=1440P</i></div>
 </details>
 
