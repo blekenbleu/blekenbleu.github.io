@@ -19,16 +19,20 @@ ul {
 <title>Antec DP502 VR PC tuning</title>
 </head>
 <body>
+<a href="compare.htm#W11"><i>back</i></a><br><br>
+
 <h2>Antec DP502 VR PC tuning</h2>
 <i>started 22 Aug 2023</i>:&nbsp
 <dl>
 <dt><b>Contents</b>
 <dd><a href=#XTU>Intel Extreme Tuning Utility (Intel XTU)</a>
+<dd><a href=#Mfan>MSI Center User Scenario Customize Fan</a>
+<dd><a href=#MtryIT>MSI TryIt DDR5 tuning</a>
 </dl>
-<a href=#XTU><h3>Intel Extreme Tuning Utility (Intel XTU)</h3></a>
+<h3>Intel Extreme Tuning Utility (Intel XTU)</h3>
 <details><summary>click for details</summary>
 <ul compact>
-<li>Intel seems best positioned to understand overclocking their CPUs...
+<a name=XTU><li>Intel seems best positioned to understand overclocking their CPUs...</a>
 <li>Easy tweaks in Windows without semi-permanent boot changes
 <li>Sadly, some controls seem doomed, e.g. non-Default Core Voltage with Adaptive
 <li>Stress applies higher Voltages than Benchmark and Tunings
@@ -41,6 +45,30 @@ Core Max, CPU Package, MOS and (DDR5) SPD Hub Temperatures increase during stess
 <li>XTU Memory Stress test provoked CPU thermal throttling with -95mV offset when CPU stress did not...
 </ul>
 </details>
-Covers raised MOS (45-48) and DDR5 Temperatures (41-44) about 3C during XTU stress testing.
+Covers raised MOS (45-48) and DDR5 Temperatures (41-44) about 3C during XTU stress testing.<br>
+
+<b>MSI Center User Scenario Customize Fan</b>
+<details><summary>click for details</summary>
+<ul compact>
+<a name=Mfan><li>Arctic case fans poorly match Antec controller<br></a>
+<img src=image/SmartFan6.png><br clear=all>
+Very low PWM % to get quiet operation at low load...
+<li>Arctic case fans then need to be driven by CPU temp to exhaust warm air
+<li>Arctic fans overwhelm Antec rear exhaust fan under high load.
+<li><a href="https://www.youtube.com/watch?v=WBoLyC0tSDQ&t=804s">Scythe Kaze Flex 120mm PWM</a>
+ ordered to replace stock Antec exhaust;&nbsp quieter and more powerful
+<li>CPU fan seems fine...
+<li>Antec rear exhaust fan is noisy;&nbsp idle speed reduced to be tolerable
+<li>Driving Antec chamber fan from GPU is possible by neither MSI BIOS nor Center
+</ul>
+</details>
+
+<b>MSI TryIt DDR5 tuning</b>
+<details><summary>click for details</summary>
+<ul compact>
+<a name=MtryIT><li>6666 CL32 immediately failed <a href="https://www.memtest86.com/">MemTest86</a>,
+ then required Clear CMOSi, losing all fan settings...<br></a>
+<img src=image/TryIt6666.png>
+<ul compact>
 </body>
 </html>
