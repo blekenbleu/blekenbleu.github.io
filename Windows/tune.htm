@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+   width:960px;
+   margin-left:60px;
+}
+h3, h4, h5, h6 {
+   margin-bottom:0;
+}
+ul {
+   margin-top:0;
+}
+</style> 
+<meta charset="utf-8">
+<meta name="google" value="notranslate">
+
+<title>Antec DP502 VR PC tuning</title>
+</head>
+<body>
+<h2>Antec DP502 VR PC tuning</h2>
+<i>started 22 Aug 2023</i>:&nbsp
+<dl>
+<dt><b>Contents</b>
+<dd><a href=#XTU>Intel Extreme Tuning Utility (Intel XTU)</a>
+</dl>
+<a href=#XTU><h3>Intel Extreme Tuning Utility (Intel XTU)</h3></a>
+<details><summary>click for details</summary>
+<ul compact>
+<li>Intel seems best positioned to understand overclocking their CPUs...
+<li>Easy tweaks in Windows without semi-permanent boot changes
+<li>Sadly, some controls seem doomed, e.g. non-Default Core Voltage with Adaptive
+<li>Stress applies higher Voltages than Benchmark and Tunings
+<li>Profiles can be saved but not loaded???<br>
+Highlighting e.g. <code>Default</code> in <b>Profiles</b>,
+then <b>Show Values</b> makes them <i>Proposed</i>, then <b>Apply</b> to make <i>Active</i>.
+<li>Default stress open covers MOS peaked at 46.5C before 5 minutes; CPU thermally throttled with ~1.37V core<br>
+Core Max, CPU Package, MOS and (DDR5) SPD Hub Temperatures increase during stess test
+<li>5387mHz 1255mV -0.095 Core Offset Voltage passed stress;@nbsp  -0.10V failed...
+<li>XTU Memory Stress test provoked CPU thermal throttling with -95mV offset when CPU stress did not...
+</ul>
+</details>
+Covers raised MOS (45-48) and DDR5 Temperatures (41-44) about 3C during XTU stress testing.
+</body>
+</html>
