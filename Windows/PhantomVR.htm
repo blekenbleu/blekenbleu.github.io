@@ -28,15 +28,16 @@ ul, dl {
 <dd><a href=#AIR>Airflow</a>
 <dd><a href="#ALT">Alternatives</a>
 <dt><a href="#TODO">After Assembly</a>
+<dd><a href=#FAN>BIOS fan settings</a>
 <dd><a href=#BIOS>BIOS update HowTo</a>
 <dd><a href=#W10>Windows 10</a>
-<dd><a href=#MSIC>MSI Center</a>
 <dd><a href=compare.htm>Comparing YouTube thermals with Aurora R7</a>
 <dd><a href=compare.htm#W11>Windows 11 installation, initial software</a>
 <dd><a href=tune.htm>Tuning</a>
-<dt><a href="#TEST">Testing references</a>
+<dt><a href="#REF">References</a>
+<dd><a href=#MSIC>MSI Center</a>
 <dd><a href=#UV>underVolt</a>
-<dt><a href=#FAN>Fan control</a>
+<dt><a href=#FANC>Fan control</a>
 <dt><a href=#OC>Overclock</a>
 <dd><a href=#XMP>13600K MSI game boost OC + XMP vs default</a>
 <dt><a href=#RCV>Parts received</a>
@@ -183,19 +184,21 @@ With an air-cooled RTX 4090 installed in PCIe slot nearest CPU, only the bottom 
 <details><summary>click for details</summary>
 <ul compact>
 <li><b>Press DEL key during Power-On Self Test (POST) for BIOS</b> <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">Tomahawk User Guide</a> pg 54.<br>
-Initial boot took awhile, presumably feeling up fans and sorting hardware.<br>
+Initial boot took awhile, presumably feeling up fans, DDR5, CPU and other hardware.<br>
 Motherboard debug LEDs iterated, but too quickly for me to decode.<br>
+<a name=FAN><b>BIOS FAN settings</b> in Hardware Monitor<br></a>
 CPU fan defaulted to Auto and around 790rpm;&nbsp  I switched it to PWM.<br>
-Back fan defaulted to DC and around 950 rpm;&nbsp I switched it to smart
+Back fan (<code>SYS_FAN1</code>) defaulted to DC and ~ 950 rpm, switched to smart
 based on CPU temp<br>
 0% @34C, 8% @46C, 90% @70C  936rpm @ 39C<br>
-Antec fan controller defaulted to DC and nearly 1800rpm;&nbsp  I switched
-it to PWM and smart..<br>
+Antec fan controller  (<code>SYS_FAN6</code>) defaulted to DC and ~ 1800rpm, switched to PWM and smart based on System..<br>
 <i>around 15% still reports 1090rpm and louder than wanted...</i><br>
+Antec DC chamber fan (<code>SYS_FAN4</code>) switched to smart based on PCH
 Changed boot priority:&nbsp USB key, hard disk, CD/DVD, USB HD,...<br>
 EZ Storage reports only SATA... Advanced SETTINGS shows M2_1 WD_BLACK SN850<br>
 Clicking CPU under GAME BOOST started fans ramping up...unclicked!<br>
 3.5GHz CPU freq<br>
+<img src=image/MSIfanBIOS1.jpg><br clear=all>
 Hardware Monitor in Advanced looks like EZ<br>
 <li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf">BIOS manual</a>
   &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a><br>
@@ -252,7 +255,7 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
 
 <li><a href="compare.htm"><b>YouTube thermals comparison with R7</b></a> and Windows 11 installation<br>
   
-<a name=TEST><h4>Testing</h4></a>
+<a name=REF><h4>References</h4></a>
 <details><summary>click for details</summary>
 <ul compact>
 <li><a href="https://www.memtest86.com/">memtestx86</a>
@@ -283,7 +286,7 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
 </pre>
 </details>
 
-<a name=FAN><h3>Fan control</h3></a>
+<a name=FANC><h3>Fan control</h3></a>
 <details><summary>click for details</summary>
 Per MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42), BIOS can sort DC (3-wire) vs PWM (4-wire) fans.
 <ul compact>
