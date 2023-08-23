@@ -9,7 +9,7 @@ body {
 H2, h3, h4, h5, h6 {
    margin-bottom:0;
 }
-ul, dl {
+h3, ul, dl {
    margin-top:0;
 }
 </style> 
@@ -22,11 +22,13 @@ ul, dl {
 <a href="./"<i>back</i></a>
 
 <h2>Antec Phantom DP502 VR PC</h2>
-<img width=100% src=image/Antec.jpg>
+ <div align=center>
+<img width=80% src=image/Antec.jpg></div>
 <h4>Contents</h4><dl>
 <dt><a href="#PARTS">Parts</a>
 <dd><a href=#AIR>Airflow</a>
 <dd><a href="#ALT">Alternatives</a>
+<dt><a href="DP502build.htm">Assembly</a>
 <dt><a href="#TODO">After Assembly</a>
 <dd><a href=#FAN>BIOS fan settings</a>
 <dd><a href=#BIOS>BIOS update HowTo</a>
@@ -36,14 +38,15 @@ ul, dl {
 <dd><a href=tune.htm>Tuning</a>
 <dt><a href="#REF">References</a>
 <dd><a href=#MSIC>MSI Center</a>
+<dd><a href=#XTU>Intel XTU</a>
 <dd><a href=#UV>underVolt</a>
-<dt><a href=#FANC>Fan control</a>
-<dt><a href=#OC>Overclock</a>
-<dd><a href=#XMP>13600K MSI game boost OC + XMP vs default</a>
+<dd><a href=#FANC>Fan control</a>
+<dd><a href=#OC>Overclock</a>
+     &nbsp  &nbsp <a href=#XMP>13600K MSI game boost OC + XMP vs default</a> video
 <dt><a href=#RCV>Parts received</a>
 <dd><a href=#MAG>MSI MAG Z790 TOMAHAWK WIFI DDR5</a>
-<dt><a href=DP502build.htm>Build</a>
 </dl>
+<hr>
 <a name=PARTS><h3>Parts</h3></a>
 <i>ordered 5 Aug 2023</i>:&nbsp
 <a href="https://pcpartpicker.com/list/3qb7YN">PCPARTPICKER list</a><br>
@@ -117,11 +120,11 @@ Z790 Tomahawk motherboard has 6600+ MHz rating for a pair of these (1DPC 2R)<br>
  &nbsp <a href="https://www.youtube.com/watch?v=Yszt8CNf-rI&t=988s">high power thermals:<br>
 <img src=image/thermals.jpg><br clear=all>
 <dt><div><iframe width="640" height="480" src="https://www.youtube.com/embed/Y3aZFsK8uaU"></iframe></div>
-</dl></details>
+</dl></details><br>
 
-<a name=AIR><h3>Airflow</h3></a>
+<h3>Airflow</h3>
 <details><summary>click for details</summary>
-<img width=100% src=image/dp502-airflow.png>
+<a name=AIR><img width=100% src=image/dp502-airflow.png></a>
 <dl>
 <dt><b>power supply</b>
 <dd>Separately from other case airflow, its fan draws air in thru Antec bottom case filter, exhausting out back.<br>
@@ -145,47 +148,55 @@ Z790 Tomahawk motherboard has 6600+ MHz rating for a pair of these (1DPC 2R)<br>
 </dl>
 </details>
 
-<a name=ALT><h4>Alternatives rejected</h4></a>
+<h4>Alternatives</h4>
 <details><summary>click for details</summary>
-<pre><a href=#UV>Undervolting</a> B760 or <a href="H670ATX">H670</a> seemingly always impacts performance,
-hence Z790 <a href="https://docs.google.com/spreadsheets/d/14-CZ8-a4-UBMN5-0x_QYOrvLk4EfI4Kn2jmIG70CAss">motherboard tier list</a>
-ChooseMyPC is obsolete
 
-Gigabyte motherboards lack 7.1 surround analog audio outputs.
-Asus' Z790-P and nominally premium ROG Strix also both lack 7.1 analog outputs.
-Asus recently own-goaled by AM5 motherboard overheating issues,
+<a name=ALT><h5>Alternative power supply</h4></a>
+<a href="https://www.youtube.com/watch?v=XSXR7djLcgo&t=287s">Frame Chasers</a> recommends a shorter<br>
+<a href="https://www.newegg.com/super-flower-leadex-v-platinum-pro-sf-1000f14tp-1000w/p/1HU-024C-00038"><b>Super Flower Leadex V Platinum PRO 1000W ATX 80 PLUS PLATINUM Certified Power Supply</b></a>
+<ul compact><li><a href=#UV>Undervolting</a> B760 or <a href="H670ATX">H670</a> seemingly always impacts performance,
+hence Z790 <a href="https://docs.google.com/spreadsheets/d/14-CZ8-a4-UBMN5-0x_QYOrvLk4EfI4Kn2jmIG70CAss">motherboard tier list</a>
+
+<li>ChooseMyPC is obsolete
+
+<li>Gigabyte motherboards lack 7.1 surround analog audio outputs.
+<li>Asus' Z790-P and nominally premium ROG Strix also both lack 7.1 analog outputs.<br>
+Asus recently own-goaled by AM5 motherboard overheating issues,<br>
 so MSI.
 
-Don't need Wi-Fi, but may use BlueTooth
-Z790-P has more back USB ports, but slower max DDR5 clock
-Z790-P also has many more Internet reviews.
+<li>Don't need Wi-Fi, but may use BlueTooth<br>
+<li>Z790-P has more back USB ports, but slower max DDR5 clock
+<li>Z790-P also has many more Internet reviews.
 
-<b>Alternative motherboards:</b>
+<li><b>Alternative motherboards:</b><br>
 ASUS PRIME Z790-A WIFI:  "AI cooling", Thunderbolt USB,
- Gen 5 PCI graphics slot, but no Gen 5 NVMe.
+ Gen 5 PCI graphics slot, but no Gen 5 NVMe.<br><br>
 
-MSI MAG Z790 Tomahawk WiFi:  good VRM and onboard cooling, no RGB, lacks Gen 5 NVMe
+MSI MAG Z790 Tomahawk WiFi:  good VRM and onboard cooling, no RGB, lacks Gen 5 NVMe<br><br>
 
-In theory a 2-slot DDR5 motherboard should clock faster,
+<li>In theory a 2-slot DDR5 motherboard should clock faster,
 but only Asus ROG Maximus offers 2 DDR5 slots in ATX.<br>
-Only $1100 Asus ROG Maximus, $490 EVGA Classified, $600 GIGABYTE Z790 AORUS TACHYON,
+Only $1100 Asus ROG Maximus, $490 EVGA Classified, $600 GIGABYTE Z790 AORUS TACHYON,<br>
 <a href="https://www.newegg.com/p/1JW-001M-00H15">$330</a> <b>MSI Z790 <a href="https://www.msi.com/Motherboard/Z790-GAMING-WIFI">GAMING WIFI</a></b> D5, <a href="https://www.amazon.com/dp/B0BPSSHVQ5">$310 MAXSUN iCraft Z790 WiFi</a> and <a href="https://www.newegg.com/p/N82E16813206006">NZXT</a>
-Z790 ATX motherboards offer <b>both 7.1 analog audio and bottom 2 PCIe slots clearing air-cooled RTX 4090</b>...
+Z790 ATX motherboards offer <b>both 7.1 analog audio and bottom 2 PCIe slots clearing air-cooled RTX 4090</b>...<br>
 MSI Z790 GAMING WIFI motherboard IO shield has HDMI, but not displayport.
-</pre>
+</ul>
 Somewhat out of date, but good comparison of Z690 vs Z790 and various vendors<br>
 <div align=center><iframe width="640" height="480" src="https://www.youtube.com/embed/JEViM1s4UMY"></iframe></div>
-With an air-cooled RTX 4090 installed in PCIe slot nearest CPU, only the bottom 2 or 3 other possible ATX card slots will be uncovered.
+An air-cooled RTX 4090 installed in PCIe slot near CPU leaves only bottom 2-3 possible ATX card slots uncovered.<br><br>
 
 <a href="https://forums.flightsimulator.com/t/7800x3d-poor-vr-performance-compared-to-13600k/598774">7800X3D &lt 13600K in MSFS 2020 VR</a>
 </details>
 
-<a name="TODO"><h2>After <a href="DP502build.htm">Assembly</a></h2></a>
+<a href="DP502build.htm"><h2>Assembly</h2></a>
+<h3>After</h3>
 <details><summary>click for details</summary>
+<a name="TODO"><i>after assembly</i>, <b>boot to BIOS</b></a>
 <ul compact>
 <li><b>Press DEL key during Power-On Self Test (POST) for BIOS</b> <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">Tomahawk User Guide</a> pg 54.<br>
 Initial boot took awhile, presumably feeling up fans, DDR5, CPU and other hardware.<br>
-Motherboard debug LEDs iterated, but too quickly for me to decode.<br>
+Motherboard debug LEDs iterated, but too quickly for me to decode.<br><br>
+
 <a name=FAN><b>BIOS FAN settings</b> in Hardware Monitor<br></a>
 CPU fan defaulted to Auto and around 790rpm;&nbsp  I switched it to PWM.<br>
 Back fan (<code>SYS_FAN1</code>) defaulted to DC and ~ 950 rpm, switched to smart
@@ -199,8 +210,10 @@ EZ Storage reports only SATA... Advanced SETTINGS shows M2_1 WD_BLACK SN850<br>
 Clicking CPU under GAME BOOST started fans ramping up...unclicked!<br>
 3.5GHz CPU freq<br>
 <img src=image/MSIfanBIOS1.jpg><br clear=all>
-Hardware Monitor in Advanced looks like EZ<br>
-<li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf">BIOS manual</a>
+<a href="https://forum-en.msi.com/index.php?threads/are-really-all-bios-settings-save-in-oc-profile-save-save-to-usb-flash-drive-file.375418/">Reportedly</a>, all BIOS settings will be saved in (F9)
+and restored from (F8) so-called Overclocking Profiles.<br>
+Hardware Monitor in Advanced appears the same as in EZ.<br>
+<li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf"><b>BIOS manual</b></a>
   &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a><br>
 <br>
 <li><b>booted <a href="https://www.memtest86.com/technical.htm">MemTest86</a> from a USB key</b><br>
@@ -238,10 +251,19 @@ I yanked out the USB key, to avoid booting AOMEI BackUpper.</ol>
 <a name=W10><li><b>Boot Windows 10 Installation media USB key</b> without networking<br></a>
   Setting a local user account is easier on Windows 10 than 11...<br>
   Windows 10 needed ethernet driver from USB key included with the motherboard:<br>
-<div align=center><iframe width="640" height="480" src="https://www.youtube.com/embed/EuFZDMjfBlE"></iframe></div>
+<div align=center><iframe width="400" height="300" src="https://www.youtube.com/embed/EuFZDMjfBlE"></iframe></div>
 
 <li>MSI automatically updated drivers with first Windows Update,<br>
  otherwise <a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
+</details>
+
+<li><a href="compare.htm"><b>YouTube thermals comparison with R7</b></a> and <a href="compare.htm#W11">Windows 11 installation</a>
+<li>Then on to <a href="tune.htm"><b>tuning</b></a><br><br>
+  
+<a name=REF><h3>References</h3></a>
+<details><summary>click for details</summary>
+<ul compact>
+<li><a href="https://www.memtest86.com/">memtestx86</a>
 <a name=MSIC><li><a href="https://www.msi.com/Landing/MSI-Center"><b>MSI Center</b></a></a>
 replaced Dragon Center, supports e.g. MSI motherboards and Ai1000P.<br>
 Roughly MSI's alternative to Dell's prebuilt support software.<br>
@@ -250,18 +272,25 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
 <a href="https://www.youtube.com/watch?v=sNSqBKGlH-A&t=481s">MSI Center fan control</a> - Mike's unboxing
  &nbsp <a href="https://www.youtube.com/watch?v=rRcVRhw-D04">GPU Fan Tool</a> - MSI HOW-TO<br>
 <a href="https://www.youtube.com/watch?v=30X9zotQrf8"><b>MSI CPU Game Boost</b></a> - video &nbsp cooler tuning vs smart fan curve</a><br><br>
-<a href="https://www.youtube.com/watch?v=RYYoCXh2gtw">Guide: What to do AFTER building your computer</a> - JayzTwoCents video<br>
-</details>
 
-<li><a href="compare.htm"><b>YouTube thermals comparison with R7</b></a> and Windows 11 installation<br>
-  
-<a name=REF><h4>References</h4></a>
-<details><summary>click for details</summary>
-<ul compact>
-<li><a href="https://www.memtest86.com/">memtestx86</a>
-<li>Download <a href="https://www.intel.com/content/www/us/en/support/articles/000005567/processors.html">Intel&#174; Processor Diagnostic Tool</a> "burn test" <a href="https://www.intel.com/content/www/us/en/support/articles/000005567/processors.html">Documentation</a>
-<li>Download <a href="https://www.intel.com/content/www/us/en/download/17881/intel-extreme-tuning-utility-intel-xtu.html"><b>Intel XTU</b></a> &nbsp <a href="https://downloadmirror.intel.com/29183/XTU-7.12.0.29-ReleaseNotes.pdf">Release Notes</a>
-<li>Download <a href="https://www.maxon.net/en/downloads/cinebench-r23-downloads">Cinebench R32</a> multi core 10 minutes - Jayz and Panjno both use
+<a href="https://www.youtube.com/watch?v=RYYoCXh2gtw">Guide: What to do AFTER building your computer</a> - JayzTwoCents video<br>
+<li><a href="https://www.intel.com/content/www/us/en/support/articles/000005567/processors.html">Intel&#174; Processor Diagnostic Tool</a>
+ "burn test" <a href="https://www.intel.com/content/www/us/en/support/articles/000005567/processors.html">Documentation</a>
+
+<a name=MSIC><li><a href="https://www.msi.com/Landing/MSI-Center"><b>MSI Center</b></a></a>
+replaced Dragon Center, supports e.g. MSI motherboards and Ai1000P.<br>
+Roughly MSI's alternative to Dell's prebuilt support software.<br>
+Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
+<a href="https://www.youtube.com/watch?v=70PrYJmDktw">kilObit video</a> &nbsp
+<a href="https://www.youtube.com/watch?v=sNSqBKGlH-A&t=481s">MSI Center fan control</a> - Mike's unboxing
+ &nbsp <a href="https://www.youtube.com/watch?v=rRcVRhw-D04">GPU Fan Tool</a> - MSI HOW-TO<br>
+<a href="https://www.youtube.com/watch?v=30X9zotQrf8"><b>MSI CPU Game Boost</b></a> - video &nbsp cooler tuning vs smart fan curve</a><br>
+<a href="https://www.youtube.com/watch?v=RYYoCXh2gtw">Guide: What to do AFTER building your computer</a> - JayzTwoCents video<br><br>
+
+<li><a href="https://www.maxon.net/en/downloads/cinebench-r23-downloads">Cinebench R32</a> multi core 10 minutes - Jayz and Panjno both use
+<a name=XTU>
+<li><a href="https://www.intel.com/content/www/us/en/download/17881/intel-extreme-tuning-utility-intel-xtu.html"><b>Intel XTU</b></a></a>
+ &nbsp <a href="https://downloadmirror.intel.com/29183/XTU-7.12.0.29-ReleaseNotes.pdf">Release Notes</a>
 <dl>
 <dt>XTU support
 <dd><a href="https://www.intel.com/content/www/us/en/support/articles/000006636/processors/processor-utilities-and-programs.html">Product Features and Requirements</a>
@@ -276,8 +305,10 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
 <img width=100% src=image/benchmarks.jpg>
 <li><a href="https://benchmate.org/>BenchMate PC Benchmark Validation Software</a>
 <li><a href="https://www.youtube.com/watch?v=BpUfUNksii8">Resizable Bar improves 1% lows</a> - TheSpyHood video
-<li><a href="https://www.youtube.com/watch?v=1zYjoLbrDF4">Force Resizable Bar on</a> TroubleChute video using <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases">Nvidia Profile Inspector</a>
-<li><a href="https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/">Hardware accelerated GPU scheduling</a> was not a winner, in my R7 testing...
+<li><a href="https://www.youtube.com/watch?v=1zYjoLbrDF4">Force Resizable Bar on</a> TroubleChute video
+    using <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases">Nvidia Profile Inspector</a>
+<li><a href="https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/">Hardware
+    accelerated GPU scheduling</a> was not a winner, in my R7 testing...
 </ul>
 <a name=UV><h4>UnderVolt</h4></a>
 <pre>
@@ -286,7 +317,7 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
 </pre>
 </details>
 
-<a name=FANC><h3>Fan control</h3></a>
+<a name=FANC><h4>Fan control</h4></a>
 <details><summary>click for details</summary>
 Per MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42), BIOS can sort DC (3-wire) vs PWM (4-wire) fans.
 <ul compact>
@@ -297,13 +328,13 @@ Per MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf
     <b>HowTo</b>:&nbsp <a href="https://www.digitaltrends.com/computing/how-to-use-fan-control/">digitaltrends</a>
 <li>setting <a href="https://www.youtube.com/watch?v=GvyQXkFUe3E&t=354s">BIOS OC CPU Cooler Tuning to Water Cooler</a> enables higher boost without overwhelming good air coolers.
 </ul>
-</details>
+</details><br>
 
 reboot into BIOS:&nbsp <code>shutdown /r /fw /f /t 0</code><br>
 
-<a name=OC><h4>Overclock</h4></a>
+<h4>Overclock</h4>
 <details><summary>click for details</summary>
-<h5>DDR5</h5>
+<a name=OC><h5>DDR5</h5></a>
 <i>Try this first</i>:&nbsp
 <a href="https://www.msi.com/blog/memory-force">MSI Memory Force & Memory Try It!</a> &nbsp
 <a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">MSI Overclock DDR5</a><br>
@@ -326,32 +357,32 @@ Late command training [Disabled], Round Trip Latency [Enabled] Latency Timing Se
 <br>
 
 <h5>i5-13600K</h5>
-<a name=XMP><h4><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></h4></a>
+<a name=XMP><b><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></b></a><br>
 <a href="https://www.youtube.com/watch?v=kE_vmGCq_E8">i5-13600K @ 5.5GHz</a> MSI BIOS P-Core Ratio 5.5, XMP 1, Override Mode CPU Core Voltage 1.2
 <div align=center><img width=100% src=image/GameBoost.jpg><br clear=all><i>orange=1080P; &nbsp blue=1440P</i></div>
-</details>
+</details><br>
 
-<pre>
-<a href="https://www.sordum.org/7952/dns-jumper-v2-2/">DNS Jumper</a>
-<a href="https://www.racedepartment.com/threads/is-vr-dead.164863/page-179#post-3649470">Reverb G2 with 12600k/3080ti gets 90fps in ACC with OpenXR fixed foviated rendering and 2800x2800 supersampling...</a>
-<a href="https://mbucchia.github.io/OpenXR-Toolkit/">OpenXR-Toolkit</a>
+<a href="https://www.sordum.org/7952/dns-jumper-v2-2/">DNS Jumper</a><br>
+Reverb G2 + 12600k/3080ti:&nbsp
+<a href="https://www.racedepartment.com/threads/is-vr-dead.164863/page-179#post-3649470">
+90fps in ACC with OpenXR fixed foviated rendering 2800x2800 supersampling...</a><br>
+<a href="https://mbucchia.github.io/OpenXR-Toolkit/">OpenXR-Toolkit</a><br><br>
 
-<b>Bootable PC diagnostic ISOs</b>
-* Sergei Strelec's WinPE
-* <a href="https://www.majorgeeks.com/content/page/5_bootable_isos_to_boot_and_repair_your_computer_for_free.html">Ultimate Boot CD (UBCD)</a>
-</pre>
+<b>Bootable PC diagnostic ISOs</b><br>
+* Sergei Strelec's WinPE<br>
+* <a href="https://www.majorgeeks.com/content/page/5_bootable_isos_to_boot_and_repair_your_computer_for_free.html">Ultimate Boot CD (UBCD)</a><br>
 
 <a name=RCV><h4>Parts received 9 Aug 2023</h4></a>
 <details><summary>click for details</summary>
 <img width=100% src=image/USPS.jpg><ul compact>
 <li>wrong CPU (i5-13400) - reordered
-<li><b>bad</b> <i>used</i> PRO Z790-A motherboard - ordered <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI">MSI MAG Z790 Tomahawk WiFi DDR5</a> (23% off, only $10 more)<br>
+<li><b>bad</b> <i>used</i> PRO Z790-A motherboard - ordered <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI"><b>MSI MAG Z790 Tomahawk WiFi DDR5</b></a> (23% off, only $10 more)<br>
 FWIW, unlike many PC components, MSI motherboard product boxes are <i>not</i> sealed;<br> their antistatic bags have a short sticky tape strip "seal".<br>
 <li><i>Z790 Tomahawk received 11 Aug</i>
 <li><i>i5 13600K received 12 Aug</i>
 <li><i>second Western Digital Black SN850X 2 TB M.2-2280 PCIe 4.0 X4 NVMe ordered 19 Aug, received 21 Aug</i>
-</details>
-<a name=MAG>MSI MAG Z790 TOMAHAWK WIFI DDR5 <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">User Guide</a></a>
+</details><br>
+<a name=MAG><b>MSI MAG Z790 TOMAHAWK WIFI DDR5</b> <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">User Guide</a></a>
  &nbsp <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI/support#driver">Drivers</a><br>
  <div align=center><img width=100% src="image/TOMAHAWK.jpg"></div>
  <div align=center><img width=100% src="image/Tomahawk_IO.jpg"></div>
