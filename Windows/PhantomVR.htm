@@ -36,10 +36,11 @@ ul, dl {
 <dd><a href=tune.htm>Tuning</a>
 <dt><a href="#REF">References</a>
 <dd><a href=#MSIC>MSI Center</a>
+<dd><a href=#XTU>Intel XTU</a>
 <dd><a href=#UV>underVolt</a>
-<dt><a href=#FANC>Fan control</a>
-<dt><a href=#OC>Overclock</a>
-<dd><a href=#XMP>13600K MSI game boost OC + XMP vs default</a>
+<dd><a href=#FANC>Fan control</a>
+<dd><a href=#OC>Overclock</a>
+     &nbsp  &nbsp <a href=#XMP>13600K MSI game boost OC + XMP vs default</a> video
 <dt><a href=#RCV>Parts received</a>
 <dd><a href=#MAG>MSI MAG Z790 TOMAHAWK WIFI DDR5</a>
 <dt><a href=DP502build.htm>Build</a>
@@ -185,7 +186,8 @@ With an air-cooled RTX 4090 installed in PCIe slot nearest CPU, only the bottom 
 <ul compact>
 <li><b>Press DEL key during Power-On Self Test (POST) for BIOS</b> <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">Tomahawk User Guide</a> pg 54.<br>
 Initial boot took awhile, presumably feeling up fans, DDR5, CPU and other hardware.<br>
-Motherboard debug LEDs iterated, but too quickly for me to decode.<br>
+Motherboard debug LEDs iterated, but too quickly for me to decode.<br><br>
+
 <a name=FAN><b>BIOS FAN settings</b> in Hardware Monitor<br></a>
 CPU fan defaulted to Auto and around 790rpm;&nbsp  I switched it to PWM.<br>
 Back fan (<code>SYS_FAN1</code>) defaulted to DC and ~ 950 rpm, switched to smart
@@ -199,8 +201,10 @@ EZ Storage reports only SATA... Advanced SETTINGS shows M2_1 WD_BLACK SN850<br>
 Clicking CPU under GAME BOOST started fans ramping up...unclicked!<br>
 3.5GHz CPU freq<br>
 <img src=image/MSIfanBIOS1.jpg><br clear=all>
-Hardware Monitor in Advanced looks like EZ<br>
-<li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf">BIOS manual</a>
+<a href="https://forum-en.msi.com/index.php?threads/are-really-all-bios-settings-save-in-oc-profile-save-save-to-usb-flash-drive-file.375418/">Reportedly</a>, all BIOS settings will be saved in (F9)
+and restored from (F8) so-called Overclocking Profiles.<br>
+Hardware Monitor in Advanced appears the same as in EZ.<br>
+<li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf"><b>BIOS manual</b></a>
   &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a><br>
 <br>
 <li><b>booted <a href="https://www.memtest86.com/technical.htm">MemTest86</a> from a USB key</b><br>
@@ -238,10 +242,19 @@ I yanked out the USB key, to avoid booting AOMEI BackUpper.</ol>
 <a name=W10><li><b>Boot Windows 10 Installation media USB key</b> without networking<br></a>
   Setting a local user account is easier on Windows 10 than 11...<br>
   Windows 10 needed ethernet driver from USB key included with the motherboard:<br>
-<div align=center><iframe width="640" height="480" src="https://www.youtube.com/embed/EuFZDMjfBlE"></iframe></div>
+<div align=center><iframe width="400" height="300" src="https://www.youtube.com/embed/EuFZDMjfBlE"></iframe></div>
 
 <li>MSI automatically updated drivers with first Windows Update,<br>
  otherwise <a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
+</details>
+
+<li><a href="compare.htm"><b>YouTube thermals comparison with R7</b></a> and Windows 11 installation
+<li>On to <a href="tune.htm"><b>tuning</b></a><br>
+  
+<a name=REF><h3>References</h3></a>
+<details><summary>click for details</summary>
+<ul compact>
+<li><a href="https://www.memtest86.com/">memtestx86</a>
 <a name=MSIC><li><a href="https://www.msi.com/Landing/MSI-Center"><b>MSI Center</b></a></a>
 replaced Dragon Center, supports e.g. MSI motherboards and Ai1000P.<br>
 Roughly MSI's alternative to Dell's prebuilt support software.<br>
@@ -250,18 +263,25 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
 <a href="https://www.youtube.com/watch?v=sNSqBKGlH-A&t=481s">MSI Center fan control</a> - Mike's unboxing
  &nbsp <a href="https://www.youtube.com/watch?v=rRcVRhw-D04">GPU Fan Tool</a> - MSI HOW-TO<br>
 <a href="https://www.youtube.com/watch?v=30X9zotQrf8"><b>MSI CPU Game Boost</b></a> - video &nbsp cooler tuning vs smart fan curve</a><br><br>
-<a href="https://www.youtube.com/watch?v=RYYoCXh2gtw">Guide: What to do AFTER building your computer</a> - JayzTwoCents video<br>
-</details>
 
-<li><a href="compare.htm"><b>YouTube thermals comparison with R7</b></a> and Windows 11 installation<br>
-  
-<a name=REF><h4>References</h4></a>
-<details><summary>click for details</summary>
-<ul compact>
-<li><a href="https://www.memtest86.com/">memtestx86</a>
-<li>Download <a href="https://www.intel.com/content/www/us/en/support/articles/000005567/processors.html">Intel&#174; Processor Diagnostic Tool</a> "burn test" <a href="https://www.intel.com/content/www/us/en/support/articles/000005567/processors.html">Documentation</a>
-<li>Download <a href="https://www.intel.com/content/www/us/en/download/17881/intel-extreme-tuning-utility-intel-xtu.html"><b>Intel XTU</b></a> &nbsp <a href="https://downloadmirror.intel.com/29183/XTU-7.12.0.29-ReleaseNotes.pdf">Release Notes</a>
-<li>Download <a href="https://www.maxon.net/en/downloads/cinebench-r23-downloads">Cinebench R32</a> multi core 10 minutes - Jayz and Panjno both use
+<a href="https://www.youtube.com/watch?v=RYYoCXh2gtw">Guide: What to do AFTER building your computer</a> - JayzTwoCents video<br>
+<li><a href="https://www.intel.com/content/www/us/en/support/articles/000005567/processors.html">Intel&#174; Processor Diagnostic Tool</a>
+ "burn test" <a href="https://www.intel.com/content/www/us/en/support/articles/000005567/processors.html">Documentation</a>
+
+<a name=MSIC><li><a href="https://www.msi.com/Landing/MSI-Center"><b>MSI Center</b></a></a>
+replaced Dragon Center, supports e.g. MSI motherboards and Ai1000P.<br>
+Roughly MSI's alternative to Dell's prebuilt support software.<br>
+Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
+<a href="https://www.youtube.com/watch?v=70PrYJmDktw">kilObit video</a> &nbsp
+<a href="https://www.youtube.com/watch?v=sNSqBKGlH-A&t=481s">MSI Center fan control</a> - Mike's unboxing
+ &nbsp <a href="https://www.youtube.com/watch?v=rRcVRhw-D04">GPU Fan Tool</a> - MSI HOW-TO<br>
+<a href="https://www.youtube.com/watch?v=30X9zotQrf8"><b>MSI CPU Game Boost</b></a> - video &nbsp cooler tuning vs smart fan curve</a><br>
+<a href="https://www.youtube.com/watch?v=RYYoCXh2gtw">Guide: What to do AFTER building your computer</a> - JayzTwoCents video<br><br>
+
+<li><a href="https://www.maxon.net/en/downloads/cinebench-r23-downloads">Cinebench R32</a> multi core 10 minutes - Jayz and Panjno both use
+<a name=XTU>
+<li><a href="https://www.intel.com/content/www/us/en/download/17881/intel-extreme-tuning-utility-intel-xtu.html"><b>Intel XTU</b></a></a>
+ &nbsp <a href="https://downloadmirror.intel.com/29183/XTU-7.12.0.29-ReleaseNotes.pdf">Release Notes</a>
 <dl>
 <dt>XTU support
 <dd><a href="https://www.intel.com/content/www/us/en/support/articles/000006636/processors/processor-utilities-and-programs.html">Product Features and Requirements</a>
@@ -276,8 +296,10 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
 <img width=100% src=image/benchmarks.jpg>
 <li><a href="https://benchmate.org/>BenchMate PC Benchmark Validation Software</a>
 <li><a href="https://www.youtube.com/watch?v=BpUfUNksii8">Resizable Bar improves 1% lows</a> - TheSpyHood video
-<li><a href="https://www.youtube.com/watch?v=1zYjoLbrDF4">Force Resizable Bar on</a> TroubleChute video using <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases">Nvidia Profile Inspector</a>
-<li><a href="https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/">Hardware accelerated GPU scheduling</a> was not a winner, in my R7 testing...
+<li><a href="https://www.youtube.com/watch?v=1zYjoLbrDF4">Force Resizable Bar on</a> TroubleChute video
+    using <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases">Nvidia Profile Inspector</a>
+<li><a href="https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/">Hardware
+    accelerated GPU scheduling</a> was not a winner, in my R7 testing...
 </ul>
 <a name=UV><h4>UnderVolt</h4></a>
 <pre>
@@ -286,7 +308,7 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
 </pre>
 </details>
 
-<a name=FANC><h3>Fan control</h3></a>
+<a name=FANC><h4>Fan control</h4></a>
 <details><summary>click for details</summary>
 Per MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42), BIOS can sort DC (3-wire) vs PWM (4-wire) fans.
 <ul compact>
@@ -301,9 +323,9 @@ Per MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf
 
 reboot into BIOS:&nbsp <code>shutdown /r /fw /f /t 0</code><br>
 
-<a name=OC><h4>Overclock</h4></a>
+<h4>Overclock</h4>
 <details><summary>click for details</summary>
-<h5>DDR5</h5>
+<a name=OC><h5>DDR5</h5></a>
 <i>Try this first</i>:&nbsp
 <a href="https://www.msi.com/blog/memory-force">MSI Memory Force & Memory Try It!</a> &nbsp
 <a href="https://www.msi.com/blog/overclock-your-ddr5-with-memory-try-it">MSI Overclock DDR5</a><br>
@@ -326,7 +348,7 @@ Late command training [Disabled], Round Trip Latency [Enabled] Latency Timing Se
 <br>
 
 <h5>i5-13600K</h5>
-<a name=XMP><h4><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></h4></a>
+<a name=XMP><b><a href="https://www.youtube.com/watch?v=aZDaEn1Ku_Y&t=300s">13600K MSI game boost OC + XMP vs default</a></b></a><br>
 <a href="https://www.youtube.com/watch?v=kE_vmGCq_E8">i5-13600K @ 5.5GHz</a> MSI BIOS P-Core Ratio 5.5, XMP 1, Override Mode CPU Core Voltage 1.2
 <div align=center><img width=100% src=image/GameBoost.jpg><br clear=all><i>orange=1080P; &nbsp blue=1440P</i></div>
 </details>
