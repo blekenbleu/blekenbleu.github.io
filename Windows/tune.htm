@@ -55,14 +55,14 @@ Covers raised MOS (45-48) and DDR5 Temperatures (41-44) about 3C during XTU stre
 <ul compact>
 <a name=Mfan><li>Arctic case fans poorly match Antec controller<br></a>
 Features > User Scenario > (Fan on) > Customize (clover)
-<img src=image/SmartFan6.png><br clear=all>
-Fan6 very low PWM % to get quiet operation at low load...<br><br>
-<img width=600 src=image/SysFan1.png><br clear=all>
-Smart Fan1<br><br>
-<img width=600 src=image/SysFan5.png><br clear=all>
-Smart Fan5<br><br>
-<img width=600 src=image/CPUFan.png><br clear=all>
+<img width=80% src=image/CPUFan.png><br clear=all>
 CPU Fan<br><br>
+<img width=80% src=image/SysFan1.png><br clear=all>
+Smart Fan1<br><br>
+<img width=80% src=image/SysFan5.png><br clear=all>
+Smart Fan5<br><br>
+<img width=80% src=image/SmartFan6.png><br clear=all>
+Fan6 very low PWM % to get quiet operation at low load...<br><br>
 <li>Arctic case fans then need to be driven by CPU temp to exhaust warm air
 <li>Arctic fans overwhelm Antec rear exhaust fan under high load.
 <li><a href="https://www.youtube.com/watch?v=WBoLyC0tSDQ&t=804s">Scythe Kaze Flex 120mm PWM</a>
@@ -70,6 +70,14 @@ CPU Fan<br><br>
 <li>CPU fan seems fine...
 <li>Antec rear exhaust fan is noisy;&nbsp idle speed reduced to be tolerable
 <li>Driving Antec chamber fan from GPU is possible by neither MSI BIOS nor Center
+<li><i>24 Aug 2023</i>:&nbsp KazeFlex 120 PWM fan received, replacing rear Antec fan<br>
+ &nbsp &nbsp reconfigured SYSFan1 to PWM in BIOS;<br>
+ &nbsp &nbsp dialed new SYSFan1,5,6 curves in MSI Center User Scenario for reduced idle noise
+ &nbsp &nbsp <img width=80% src=image/Aug24fan1.png><br clear=all><i>Fan1</i><br><br>
+&nbsp <img width=80% src=image/Aug24fan5.png><br clear=all><i>Fan5</i><br><br>
+&nbsp <img width=80% src=image/Aug24fan6.png><br clear=all><i>Fan6</i><br><br>
+ &nbsp &nbsp Reran XTU benchmark with glass cover removed, then installed, then reran Heaven benchmark:<br>
+ &nbsp &nbsp <img width=80% src=image/CPUbenchHeaven.png>
 </ul>
 </details>
 
