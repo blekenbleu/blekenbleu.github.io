@@ -10,6 +10,27 @@
   - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](ImageProcessing/TinyML.htm)  
   - [LED color rendering meta-analaysis](ColorRendering/)  
 
+### [Arduino custom USB STM32 Blue Pill sketches](Arduino/)
+- e.g. for harness tensioning servos
+    - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
+    - COM ports work from SimHub, but sim games expect HID DirectInput
+      - SimHub *directly* supports *real* Arduinos,  
+        but *any* COM may be driven by **SimHub Custom Serial devices**  
+        Some ESP32 / STM32 may be programmed to appear as Arduinos
+- SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
+
+  - **Arduino IDE Alternatives**
+    - [There are *many*](https://www.survivingwithandroid.com/10-arduino-ide-alternative-to-start-programming/)
+    - [**Visual Micro**](https://www.visualmicro.com/) supports debugging in Visual Studio  
+      (which I use e.g. for [**SimHub plugins**](SimHub/))
+      - in [VisualStudio **Marketplace**](https://marketplace.visualstudio.com/items?itemName=VisualMicro.ArduinoIDEforVisualStudio)  
+      - [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
+      - I discount Visual Studio **Code** options;&nbsp; it is *a confusingly named editor*, and I prefer GVim
+    - [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/0.31/)
+      - interesting, because [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
+  - [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black)
+  - [**ESP32-S[2-3]**](ESP32/) for **composite USB** and wireless Arduino devices  
+
 ## Audio  
  &nbsp; [**Audio-Technica AT-LP140XP**](AT-LP140XP/) microphonics  
  &nbsp; [**Altec Model 19**](altec/)  
@@ -22,12 +43,30 @@
 
 ### [Chromebook](ChromeBook/)
 
-## [MIDI](MIDI/) wireless, *including Android app* - [**SimHub plugin**](MIDI/plugin/)
- &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
-
 ## [Microscopes and photomicography](microscope/)  
  &nbsp; **American Optical** [Series 10](microscope/#AO) / [Series 120](microscope/AO/) / [Reichert EPIStar](microscope/#EPIStar)  
  &nbsp; **Nikon** [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) [Metaphot](microscope/Nikon/Metaphot/)  
+
+## [MIDI](MIDI/) wireless, *including Android app* - [**SimHub plugin**](MIDI/plugin/)
+ &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
+
+## [Sim driving](pedals/)
+- [ Samsung Odyssey+ for Assetto Corsa ](pedals/#hmd) - [SteamVR](https://steamcommunity.com/app/250820)
+ and [WMR](https://learn.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)  
+- [TH8A](pedals/#TH8A) Thrustmaster shifter mods
+- Logitech [G29 pedal mods](pedals/#pedals)
+  - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID)
+  - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
+  - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
+
+### [Virtual Reality (VR) and Windows Mixed Reality (WMR)](VR)  
+
+### **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
+  - [added to SimHub **MIDIio plugin**](MIDI/plugin)
+  - [Windows Joystick HID](Windows/HID) shared with SimHub
+  - [Windows 10 vJoy installation](pedals/vJoy)
+     - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
+     - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360.md)
 
 ## [Windows](Windows/)
 - [Alienware Aurora R7 crashing and overheating](Windows/R7.htm)  
@@ -46,42 +85,6 @@
 - [Vim and X-Mouse](VimTXmouse)
 - Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](NVMe/)  
-
-## [Sim driving](pedals/)
-- [ Samsung Odyssey+ for Assetto Corsa ](pedals/#hmd) - [SteamVR](https://steamcommunity.com/app/250820)
- and [WMR](https://learn.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)  
-- [TH8A](pedals/#TH8A) Thrustmaster shifter mods
-- Logitech [G29 pedal mods](pedals/#pedals)
-  - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID)
-  - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
-  - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
-### [Arduino custom USB STM32 Blue Pill sketches](Arduino/)
-- e.g. for harness tensioning servos
-    - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
-    - COM ports work from SimHub, but sim games expect HID DirectInput
-      - SimHub *directly* supports *real* Arduinos,  
-        but *any* COM may be driven by **SimHub Custom Serial devices**  
-        Some ESP32 / STM32 may be programmed to appear as Arduinos
-- SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
-
-- **Alternatives to Arduino IDE**
-  - [There are *many*](https://www.survivingwithandroid.com/10-arduino-ide-alternative-to-start-programming/)
-  - [**Visual Micro**](https://www.visualmicro.com/) supports debugging in Visual Studio  
-    (which I use e.g. for [**SimHub plugins**](SimHub/))
-    - in [VisualStudio **Marketplace**](https://marketplace.visualstudio.com/items?itemName=VisualMicro.ArduinoIDEforVisualStudio)  
-    - [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
-    - I discount Visual Studio **Code** options;&nbsp; it is *a confusingly named editor*, and I prefer GVim
-  - [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/0.31/)
-    - interesting, because [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
-- [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black)
-- [**ESP32-S[2-3]**](ESP32/) for **composite USB** and wireless Arduino devices  
-
-### **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
-  - [added to SimHub **MIDIio plugin**](MIDI/plugin)
-  - [Windows Joystick HID](Windows/HID) shared with SimHub
-  - [Windows 10 vJoy installation](pedals/vJoy)
-     - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
-     - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360.md)
 
 
 ---
