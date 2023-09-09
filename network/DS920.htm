@@ -101,11 +101,15 @@ AC adapter and drive lock keys are missing.&nbsp No other accessories are includ
 For 4 drives, that translates to 22% likelihood at least one will fail within 4 years;<br>
 this encourages sacrificing one for protection, AKA RAID 5 or Synology SHR 1.
 <h4><a href="https://www.wundertech.net/synology-raid-calculator-shr-vs-raid/">Synology RAID Calculator: SHR vs. RAID</a></h4>
- SHR compares somewhat to RAID 5:
+ SHR compares somewhat to RAID 5:<ul compact>
  <li>if all drives are the same size, one gets used for protection
  <li>if one is larger, the amount by which it is larger than the smallest (RAID 5) or next largest (SHR) gets wasted
  <li>if one is smaller, that size is the only amount used from each drive by RAID 5
  <li>SHR protection size is lesser of 2 largest drives.
+ <li>A visual aid to SHR stripe redundancy:<br>
+     <img src="https://kb.synology.com/_images/tutorials/whats_Synology_Hybrid_RAID/0.jpg">
+</ul>
+
 <h4><a href="https://www.synoforum.com/threads/how-to-eject-external-usb-drive.7168/">eject USB drive</a></h4>
 
 <a href="https://superuser.com/questions/620473/how-can-i-verify-the-health-of-hard-disks-using-a-synology-nas"><b>Synology NAS hard drive health</b></a><br>
