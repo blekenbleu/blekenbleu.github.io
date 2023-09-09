@@ -23,11 +23,14 @@ GEM
     ethon (0.16.0)
       ffi (>= 1.15.0)
     eventmachine (1.2.7)
+    eventmachine (1.2.7-x64-mingw32)
     execjs (2.8.1)
     faraday (2.7.6)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
+    faraday-retry (2.2.0)
+      faraday (~> 2.0)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
@@ -257,6 +260,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  faraday-retry (~> 2.2)
   github-pages
   wdm (>= 0.1.0)
   webrick (~> 1.8)
