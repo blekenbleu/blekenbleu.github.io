@@ -1,7 +1,6 @@
-
 ---
-Install Git_Cola using MacPorts
 ---
+## Install Git_Cola using MacPorts
 
 #### Background
 **GitKraken** takes awhile to load  

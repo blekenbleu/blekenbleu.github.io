@@ -1,8 +1,8 @@
+---
+---
+*updated 30 Jun 2021*  
 
----
-Arduino for Black Pill
----
-*updated 30 Jun 2021*
+### Arduino for Black Pill
 
 #### Background
 Arduino originally employed microcontrollers lacking USB support.  

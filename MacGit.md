@@ -1,7 +1,6 @@
-
 ---
-Mac git server
 ---
+## Mac git server
 Apple dropped support for its git server [after Xcode 8](https://forums.developer.apple.com/thread/87617)  
 Best replacement is probably [gitolite](http://gitolite.com/gitolite/overview.html):
 - more secure than needed, but less fat than alternatives

@@ -1,7 +1,6 @@
-
 ---
-Virtual Reality and Windows Mixed Reality
 ---
+## Virtual Reality and Windows Mixed Reality
 
 ### Links
 **AirCar** [Guides](https://steamcommunity.com/app/1073390/guides/) &nbsp; [controller bindings](https://steamcommunity.com/sharedfiles/filedetails/?id=1830980067)  

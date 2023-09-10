@@ -1,8 +1,7 @@
-
 ---
-R&D, Vim, X-Mouse and Logitech Anywhere MX
 ---
-25 Feb 2019  
+*25 Feb 2019*  
+## R&D, Vim, X-Mouse and Logitech Anywhere MX
 
 ### My R&D process (roughly)
 ```

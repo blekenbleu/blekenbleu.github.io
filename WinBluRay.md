@@ -1,7 +1,6 @@
-
 ---
-Play Blu-Ray on Windows (or NOT)
 ---
+## Play Blu-Ray on Windows (or NOT)
 
 #### Commerical Blu-Ray movies have [AACS DRM features](https://en.wikipedia.org/wiki/Blu-ray#Advanced_Access_Content_System).  
 Blu-Ray support is not included in Windows.  

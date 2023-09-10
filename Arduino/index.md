@@ -1,9 +1,9 @@
+---
+---
 [*back*](../#arduino-custom-usb-stm32-blue-pill-sketches)  
 
----
-Arduino for STM32 Black 'n Blue Pills, ESP32-S[2,3]
----
 *updated 8 Sep 2023*  
+## Arduino for STM32 Black 'n Blue Pills, ESP32-S[2,3]
 
 [other content](content.md)
 

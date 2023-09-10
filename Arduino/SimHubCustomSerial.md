@@ -1,8 +1,7 @@
-
 ---
-SimHub Custom serial device for Blue Pill
 ---
 *updated 27 Mar 2023*
+## SimHub Custom serial device for Blue Pill
 
 #### [Background](https://blekenbleu.github.io/Arduino/SimHubCustomSerial.html)
 An [STM32duino sketch](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_ASCII_Servo) was thrown together  

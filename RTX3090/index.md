@@ -1,8 +1,7 @@
-
 ---
-RTX 3090 for Assetto Corsa VR
 ---
 *updated 15 Feb 2021*
+## RTX 3090 for Assetto Corsa VR
 
 #### Background
 [Assetto Corsa Ultimate Edition](https://store.steampowered.com/bundle/6998/Assetto_Corsa_Ultimate_Edition/) can be had for $7.93
