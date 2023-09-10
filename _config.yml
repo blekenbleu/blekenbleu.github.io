@@ -2,9 +2,9 @@ theme: jekyll-theme-tactile
 # theme: jekyll-theme-primer
 repository: blekenbleu/blekenbleu.github.io
 github: [metadata]
-title: blekenbleu documentation
 markdown: CommonMarkGhPages
 #markdown: kramdown
 # required for Kramdown to support <details>
 kramdown:
   parse_block_html: true
+url: 'https://blekenbleu.github.io/'

@@ -1,4 +1,9 @@
-23 Jun 2023  
+---
+layout: page
+title: blekenbleu documentation
+---
+*10 Sep 2023*  
+
 ## Signal Processing
   - [DeltaWave vs Wave Corrector](ImageProcessing/DeltaWave_WaveCorrector.html)
   - [dimg - visual difference utility](ImageProcessing/dimg.html)
@@ -37,7 +42,7 @@
  &nbsp; [Blu-Ray movies on Windows PC](WinBluRay)  
  &nbsp; [Line 6 JTV-89F guitar](JTV89F/Variax)  
  &nbsp; [**Technics SL-7** direct drive linear tracking turntable](SL-7/)  
- &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README.md) with SME Series III  
+ &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README) with SME Series III  
   
 ### [Cameras &amp; lenses (Canon)](Canon/)
 
@@ -66,7 +71,7 @@
   - [Windows Joystick HID](Windows/HID) shared with SimHub
   - [Windows 10 vJoy installation](pedals/vJoy)
      - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
-     - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360.md)
+     - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360)
 
 ## [Windows](Windows/)
 - [Alienware Aurora R7 crashing and overheating](Windows/R7.htm)  

@@ -1,8 +1,8 @@
-
 ---
-Jekyl on macOS High Sierra
+layout: page
 ---
 
+### Jekyl on macOS High Sierra
 POSIX at heart, macOS serves my LAN for SCP, HTTP and [git](MacGit).  
 
 **Mojave** (macOS 10.14) does not support my MacBook, and new macOS releases typically break [MacPorts](https://www.macports.org/) for up to 6 months.   

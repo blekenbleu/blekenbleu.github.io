@@ -1,11 +1,12 @@
-
 ---
-WeMos D1 UNO R1 ESP8266 Arduino UNO-R3 Clone
+layout: page
 ---
+## WeMos D1 UNO R1 ESP8266 Arduino UNO-R3 Clone
 
 ```
 http://www.mpja.com/Arduino-UNO-Clone-with-WiFi/productinfo/35097+MP/
 http://www.mpja.com/download/35097mpdata.pdf
+```
 
 The above MPJA data sheet claims "Arduino UNO-R3 clone board"
 .. where Arduino UNO-R3 added SDA & SCL pins, 5v IOref pin (next to reset)

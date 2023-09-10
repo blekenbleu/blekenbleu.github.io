@@ -1,25 +1,25 @@
-
 ---
-Jekyll on Windows 8.1
+layout: page
 ---
-24 October 2018
+*10 Sep 2023* &nbsp; **Jekyll on Windows (8.1)**
 
-# [GitHub Pages](https://pages.github.com/) - too good to be true (really)
+## [GitHub Pages](https://pages.github.com/) - too good to be true (really)
 
-  Following [seemingly current **GitHub** documentation](https://jekyllrb.com/docs/installation/windows/)
+  Following *24 October 2018* [**Jekyll on Windows** documentation](https://jekyllrb.com/docs/installation/windows/)
  was for me doomed,
-  provoking many false moves that needed undoing.
+  provoking many false moves that needed undoing.  
+Current version seems OK, so far as it goes (not nearly far enough)...   
 
-*Warning:*  I *think* **this** sequence is more nearly correct,
+*Warning:*  **this** sequence may be more nearly correct,
 but is untested..
 
 Debugging **Jekyll** page generation failures wants
 a local PC copy of **GitHub** repository source
 that eventually becomes **GitHub** Pages,  
 and `jekyll new` insists on creating that **GitHub** Pages repository directory;
-it may be simpler to configure using **Jekyll** on a local PC *first*.
+it *may* be simpler to configure using **Jekyll** on a local PC *first*.
 
-Note: **Jekyll** is *NOT* separately installed; it gets installed using **Ruby**.   
+Note: **Jekyll** *CANNOT* be separately installed; it must be installed using **Ruby**.   
 Configuring `'github-pages'` in Gemfile enables **GitHub Pages** builds using `bundle exec jekyll build`  
 and previewing pages locally using `bundle exec jekyll serve`.
 
