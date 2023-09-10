@@ -1,5 +1,4 @@
 ---
-layout: page
 ---
 # Thorens TD 126 MK II (1976-77) with SME Series III B Oct 23, 1982 Charlotte NC
   [Thorens optionally supplied Series III](http://www.vinylengine.com/turntable_forum/viewtopic.php?t=81040)  

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: blekenbleu documentation
 ---
 *10 Sep 2023*  

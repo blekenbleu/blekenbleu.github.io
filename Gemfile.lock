@@ -262,6 +262,7 @@ PLATFORMS
 DEPENDENCIES
   faraday-retry (~> 2.2)
   github-pages
+  jekyll-commonmark-ghpages
   wdm (>= 0.1.0)
   webrick (~> 1.8)
 

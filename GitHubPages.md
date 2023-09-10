@@ -1,5 +1,4 @@
 ---
-layout: page
 ---
 *10 Sep 2023* &nbsp; **Jekyll on Windows (8.1)**
 

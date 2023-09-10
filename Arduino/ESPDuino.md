@@ -1,5 +1,4 @@
 ---
-layout: page
 ---
 ## WeMos D1 UNO R1 ESP8266 Arduino UNO-R3 Clone
 
