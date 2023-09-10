@@ -1,5 +1,8 @@
-  *[back](index.html)*
+---
+---
 ### Tube lens  
+  *[back](index.html)*
+
 Microscopes orignally used finite optics;  
 simple lenses which focus parallel (infinite) rays to a point  
 may be repurposed for converging rays on either side, becoming finite.  

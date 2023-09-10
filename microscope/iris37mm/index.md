@@ -1,8 +1,10 @@
+---
+---
+### New IRIS DIAPHRAGM Aperture blade with M42 x1mm thread casing  
 [*back*](../)
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>  
-## New IRIS DIAPHRAGM Aperture blade with M42 x1mm thread casing  
 ![](https://i.ebayimg.com/images/g/ku8AAOSwyQtVi5-b/s-l1600.jpg)  
 
 item number: [324294448250](https://www.ebay.com/itm/324294448250)  

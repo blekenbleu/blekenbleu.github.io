@@ -1,10 +1,12 @@
-  *[back](./)*
+---
+---
+### Focusing Helicoids
+*[back](./)*
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf"
  target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0"
  alt="Auction Sniper" title="Auction Sniper">
 </a> 
-### Focusing Helicoids
 *brass threaded insert preferred*  
 - [**M42 10-15.5mm**](https://www.ebay.com/itm/353811207647) $19.99 + 1.50  
   ![](https://i.ebayimg.com/images/g/ZEIAAOSwRlJfIPLt/s-l1600.jpg)  

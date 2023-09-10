@@ -1,5 +1,7 @@
+---
+---
+### Optiphot EPI: CF PL 2.5X projection to Canon EF sensor  
  *[back](photo)*
-## Optiphot EPI: CF PL 2.5X projection to Canon EF sensor  
 ![CF PL photo lens and type T chimney](Trinoc/NikonTchimney.jpg)  
 Since Nikon CF objectives are nominally free of chromatic aberrations,  
 these CF photo relay lenses are candidates for use in other microscopes 

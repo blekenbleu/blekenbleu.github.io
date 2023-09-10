@@ -1,5 +1,8 @@
-13 Dec 2021
-## Node.js WebSocket MIDI server
+---
+---
+### Node.js WebSocket MIDI server
+*13 Dec 2021*
+
 #### Background
 - [ESP32-S2 supports composite USB](ESP32/midi.htm), but not reliably including MIDI
 - [MIDI over Wi-Fi is a "thing"](MIDI/index.htm) (but mostly Apple MIDI via UDP)

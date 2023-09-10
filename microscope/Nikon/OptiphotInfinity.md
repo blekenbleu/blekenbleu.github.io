@@ -1,5 +1,7 @@
+---
+---
+### (almost) Infinity-focused Optiphot trinocular heads  
  *[back](photo)*
-## (almost) Infinity-focused Optiphot trinocular heads  
 Nikon Optiphot (CF) M Plan & EPI objectives have 210mm tube length.  
 Only ["F" trinolar head](Trinoc/#F) focus objective rays at 210mm;  
 "T" and "UW" heads have a pseudo-[infinity space around prisms](https://www.microbehunter.com/microscopy-forum/viewtopic.php?f=28&t=9092&start=60#p93275):

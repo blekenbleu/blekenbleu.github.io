@@ -1,5 +1,7 @@
+---
+---
+### Optiphot photography  
 *[back](./)*
-## Optiphot photography  
 Released when photography meant film,
 semi-automated image capture involved complex optics:  
 ![UFX-DX attachment](Images/UFX-DX.jpg)  

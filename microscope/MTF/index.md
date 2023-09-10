@@ -1,9 +1,11 @@
+---
+---
+### [Episcopic MTF targets](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=44878)
 [*back*](../)
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>  
 
-## [Episcopic MTF targets](https://www.photomacrography.net/forum/viewtopic.php?f=8&t=44878)
 ### MTF Targets for Lens/Camera Test Various Pitches Birefringent Resolution
 eBay item number: 384631220753  
 Condition: Used   

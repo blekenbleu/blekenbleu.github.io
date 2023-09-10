@@ -1,5 +1,8 @@
+---
+---
+### generic approx 2x photo relay lenses
  *[back](photo)*
-## generic approx 2x photo relay lenses
+
 These typically have 23.2mm tube to fit microscopes and C-mount thread at their opposite end.  
 Similar 0.5x photo relays are used with a [C-mount USB camera cube](https://www.amazon.com/dp/B016ODYIEK):  
 ![Amazon 5mp USB](https://m.media-amazon.com/images/I/61fbzAzzXyL._AC_SL1000_.jpg)  
