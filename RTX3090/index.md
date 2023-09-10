@@ -1,7 +1,7 @@
 ---
 ---
-*updated 15 Feb 2021*
 ## RTX 3090 for Assetto Corsa VR
+*updated 10 Sep 2023*
 
 #### Background
 [Assetto Corsa Ultimate Edition](https://store.steampowered.com/bundle/6998/Assetto_Corsa_Ultimate_Edition/) can be had for $7.93
@@ -11,6 +11,7 @@ My two-generation-old Alienware Aurora 7 with GTX 1080Ti has a power supply rate
 but lacks both space and cooling capacity.  
 Alienware motherboard is proprietary; moving components to a better case could be problematic.
 
+## [RTX 4090 acquired instead](../Windows/PhantomVR.htm#RTX4090)  
 Rationales for RTX 3090 over 3080 are
 * 3090 are somewhat easier to find and less overpriced.
 * RTX 3080 RAM is IMO scant e.g. for high resolution VR.  The anticipated 3080TI may solve that..

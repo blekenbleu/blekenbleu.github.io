@@ -1,7 +1,7 @@
 ---
 ---
-*updated 21 Feb 2022*
 ## NVMe for 2013 - 2017 Windows PCs
+*updated 21 Feb 2022*
 
 #### Background
 Hard drive data rate is a key performance limitation in PCs originally delivered with [Windows 8](https://en.wikipedia.org/wiki/Windows_8).  
@@ -12,8 +12,8 @@ noticeably better performance is possible using SSD with [NVMe](https://en.wikip
 which offers both higher I/O data rate and lower processing overhead.
 
 However, NVMe wants 4 lanes of PCIe, which was available on most motherboards
-only by a single card slot nominally provided for a discrete graphics card.
-Further, BIOS support for booting from NVMe was generally unavailable before 2017.
+only by a single card slot nominally provided for a discrete graphics card.  
+Further, BIOS support for booting from NVMe was generally unavailable before 2017.  
 Meanwhile, many PCIe motherboards have single-channel PCIe card slots
 appropriate for M.2 SATA adapters.
 

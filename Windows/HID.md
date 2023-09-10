@@ -1,6 +1,7 @@
 ---
 ---
-## Windows HID game controllers and SimHub
+### Windows HID game controllers and SimHub
+
 Given:&nbsp;  a [documented](../MIDI/plugin/) and working [SimHub plugin that receives
  and sends MIDI](https://github.com/blekenbleu/blekenbleu.MIDIio),  
 a [working sender app](https://github.com/blekenbleu/vJoySDK) for **vJoy**,

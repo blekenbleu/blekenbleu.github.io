@@ -1,7 +1,8 @@
 ---
 ---
-*21 January 2022*
 ## Tower PC misguided buying rant[s]
+*21 January 2022*
+
 ### Background
 
 <details>

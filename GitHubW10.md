@@ -1,7 +1,7 @@
 ---
 ---
-*4 November 2018*  
 ## Jekyll on Windows 10
+*4 November 2018*  
 
 This was written *after* first Windows 10 installation,  
 which followed Windows 8.1 installation.  

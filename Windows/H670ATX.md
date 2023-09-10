@@ -1,5 +1,8 @@
-5 April 2022  
+---
+---
 ## H670 ATX motherboards
+*5 April 2022*
+  
 - Intel 12th generation Alder Lake processors require LGA1700 CPU sockets  
 - H670 chipset offer nearly the same I/O capabilities as premium Z690  
 - This impacts USB 3.2 5/10/20G and NVMe Gen4 support.  
