@@ -9,3 +9,5 @@ markdown: CommonMarkGhPages
 kramdown:
   parse_block_html: true
 url: 'https://blekenbleu.github.io/'
+plugins:
+  - jekyll-sitemap

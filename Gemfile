@@ -9,3 +9,5 @@ gem "faraday-retry", "~> 2.2"
 group :jekyll_plugins do
   gem 'jekyll-commonmark-ghpages'
 end
+
+gem 'jekyll-sitemap'

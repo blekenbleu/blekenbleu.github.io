@@ -126,6 +126,7 @@
   [Jekyll Resources](https://jekyllrb.com/resources/)  
   [Jekyll Talk! forum](https://talk.jekyllrb.com/)  
   [Jekyll github](https://github.com/jekyll) and [github-metadata](https://github.com/jekyll/github-metadata/issues)  
+7. [Site Map](SiteMap.htm)  
 
 **GitHub's [Default welcome page - Markup tutorial](Welcome)**  
 **[W3C Link Checker](https://validator.w3.org/checklink)**  
