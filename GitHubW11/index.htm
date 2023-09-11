@@ -1,52 +1,73 @@
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.8.0 --> 
 <title>GitHub Desktop and Jekyll 2023</title>
-<!-- for text wrap around images:  https://www.homeandlearn.co.uk/WD/wds4p6.html -->
-<style>
-body {
-  width:960px;
-  margin: 60px;
-}
-th {
-  text-align: left;
-}
-table {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-</style>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="GitHub Desktop and Jekyll 2023" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jekyll on Windows for GitHub Pages preview in 2023" />
+<meta property="og:description" content="Jekyll on Windows for GitHub Pages preview in 2023" />
+<link rel="canonical" href="https://blekenbleu.github.io//GitHubW11/" />
+<meta property="og:url" content="https://blekenbleu.github.io//GitHubW11/" />
+<meta property="og:site_name" content="blekenbleu.github.io" />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Jekyll on Windows for GitHub Pages preview in 2023","headline":"GitHub Desktop and Jekyll 2023","url":"https://blekenbleu.github.io//GitHubW11/"}</script>
+<!-- End Jekyll SEO tag -->
+   
 </head>
 <body>
+<div id="container">
+<div class="inner">
+
+<header>
+<h2>GitHub Desktop and Jekyll 2023</h2>
+</header>
+
+<section id="main_content">
+
 <font size=-1><a href="../"><i>back</i></a></font>
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>
 <br>
 
-<h2>GitHub Desktop and Jekyll on Windows 11</h2>
-Differences in Jekyll experiences on different Windows versions is mostly about Ruby and Jekyll evolution.<br>
+<h2>Jekyll on Windows 11 for GitHub Pages preview</h2>
+Differences in Jekyll experiences on different Windows versions<br>
+ is mostly about Ruby and Jekyll evolution.<br>
 Ruby installation has become more trouble-free, without hangs and need for retries.<br>
-Jekyll, on the other hand, seems IMO to have regressed:<br>
+Jekyll for Windows, on the other hand, seems IMO to have regressed:<br>
 <li>&lt;details&gt; seemingly are no longer supported in markdown
-<li>markdown defaults to blog-specific format
+<li><code>jekyll new</code> markdown defaults to blog-specific format
 <li>ignores markdown files lacking front matter starting on the first line<br><br>
 
-This last issue is a distinct difference between Windows Jekyll and whatever GitHub uses to process markdown.<br>
-Fortunately, empty front matter suffices, and a ### heading immediately following overrides the default title.<br>
-My pages include over 60 markdown files that needed editting for this issue;
+This last issue differs between Jekyll on Windows and GitHub's markdown docker.<br>
+Fortunately, empty front matter suffices to enable markdown processing,<br>
+and a ### heading immediately following overrides the default title.<p>
+My GitHub Pages include over 60 markdown files needing editting for this issue;
 <li>starting over, I would completely avoid markdown for GitHub Pages;
-<li>trivial changes typically require over 5 minutes for GitHub to process.<br>
-
+<li>trivial changes typically require over 5 minutes for GitHub to process.
+</p>
 <h3>Ruby updates</h3>
-Gems can be updated, but Ruby itself as installed by <a href="https://rubyinstaller.org/downloads/">RubyInstaller</a> cannot be updated, only replaced.<br>
-While Ruby is here used <i>only</i> for Jekyll, its bundled MSYS2 installation gets used a lot, with numerous packages added.<br>
-Before replacing Ruby, run MSYS2 package manager to document its current package list:<br>
-<li>`pacman -Q > /d/oldMSYS2.txt`<br>
-.. then compare with a list from new MSYS2 to determine what packages had been added.<br>
-Of course, any MSYS2 home/user folder customizations should also be ported.<br>
+While Ruby gems can be updated, Ruby itself as installed by <a href="https://rubyinstaller.org/downloads/">RubyInstaller</a> cannot.<br>
+Ruby is used <i>only</i> for Jekyll, but its bundled <a href="https://www.msys2.org/">MSYS2</a> gets used extensively,<br>
+with numerous packages added.&nbsp Before replacing Ruby,<br>
+ run MSYS2 package manager to document its current package list:<br>
+<li><code>pacman -Q > /d/oldMSYS2.txt</code><br>
+.. then compare with new MSYS2 for determining packages to add.<br>
+Of course, any MSYS2 <code>home/user</code> folder customizations should also be ported.<br>
+</section>
 
+</div>
+</div> 
 </body></html>
