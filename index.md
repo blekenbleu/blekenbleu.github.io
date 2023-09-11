@@ -58,7 +58,7 @@
  and [WMR](https://learn.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)  
 - [TH8A](pedals/#TH8A) Thrustmaster shifter mods
 - Logitech [G29 pedal mods](pedals/#pedals)
-  - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID)
+  - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID/)
   - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
   - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
 
@@ -66,7 +66,7 @@
 
 ### **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
   - [added to SimHub **MIDIio plugin**](MIDI/plugin)
-  - [Windows Joystick HID](Windows/HID) shared with SimHub
+  - [Windows Joystick HID](Windows/HID/) shared with SimHub
   - [Windows 10 vJoy installation](pedals/vJoy)
      - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
      - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360)
@@ -74,7 +74,7 @@
 ## [Windows](Windows/)
 - [Alienware Aurora R7 crashing and overheating](Windows/R7.htm)  
 - [**Antec Phantom VR build** &nbsp; i5-13600, Galax RTX 4090](Windows/PhantomVR.htm)  
-- [HID game controllers and SimHub](Windows/HID)  &nbsp; [Serial-Lab](Windows/SerialLab)
+- [HID game controllers and SimHub](Windows/HID/)  &nbsp; [Serial-Lab](Windows/SerialLab)
 - [MSYS2](MSYS2/)
 - [PC misguided buying - January 2022](Windows/PC)  
   - [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)

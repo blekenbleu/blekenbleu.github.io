@@ -1,29 +1,25 @@
----
----
-### Windows HID game controllers and SimHub
-
-Given:&nbsp;  a [documented](../MIDI/plugin/) and working [SimHub plugin that receives
- and sends MIDI](https://github.com/blekenbleu/blekenbleu.MIDIio),  
-a [working sender app](https://github.com/blekenbleu/vJoySDK) for **vJoy**,
- which [installs easily on Windows 10](../pedals/vJoy/),  
-then adding parts of that sender app to the MIDIio plugin becomes a *fairly* obvious to-do.  
-
-Before diving into the [vJoy sender app single (*but 828 line*) C# source
- file](https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/Program.cs),  
-I somewhat familiarized myself with its API by revising [the vJoy C# wrapper SDK document,
- converted to Markdown.](https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/docs/README.md).  
-Next step should be branching MIDIio before copying over that source file and pair of DLLs.  
-
-
-### Background
-Wanted (as well as MIDI): game controller output from SimHub, *which it implements via Arduino*  
-DirectInput and XInput issues aside, vJoy keeps virtual game devices visible with no app running,  
-which avoids having Assetto Corsa or other games getting confused by its devices disappearing and reappearing,  
-e.g. when SimHub restarts plugins during game changes.  
-
-* SimHub output to vJoy is wanted for 2-paddle clutch
-* MIDI output is wanted to modulate ShakeIt effect volume for clutch and loaded wheel slips
-* ... while, at the same time, *continuing to control* speed wind fans and (direct drive) harness tensioning  
+<h3 id="windows-hid-game-controllers-and-simhub">Windows HID game controllers and SimHub</h3>
+<p>Given:   a <a href="../MIDI/plugin/">documented</a> and working <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">SimHub plugin that receives
+and sends MIDI</a>,<br />
+a <a href="https://github.com/blekenbleu/vJoySDK">working sender app</a> for <strong>vJoy</strong>,
+which <a href="../pedals/vJoy/">installs easily on Windows 10</a>,<br />
+then adding parts of that sender app to the MIDIio plugin becomes a <em>fairly</em> obvious to-do.</p>
+<p>Before diving into the <a href="https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/Program.cs">vJoy sender app single (<em>but 828 line</em>) C# source
+file</a>,<br />
+I somewhat familiarized myself with its API by revising
+ <a href="https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/docs/README.md">the vJoy C# wrapper SDK document,
+converted to Markdown.</a>.<br />
+Next step should be branching MIDIio before copying over that source file and pair of DLLs.</p>
+<h3 id="background">Background</h3>
+<p>Wanted (as well as MIDI): game controller output from SimHub, <em>which it implements via Arduino</em><br />
+DirectInput and XInput issues aside, vJoy keeps virtual game devices visible with no app running,<br />
+which avoids having Assetto Corsa or other games getting confused by its devices disappearing and reappearing,<br />
+e.g. when SimHub restarts plugins during game changes.</p>
+<ul>
+<li>SimHub output to vJoy is wanted for 2-paddle clutch</li>
+<li>MIDI output is wanted to modulate ShakeIt effect volume for clutch and loaded wheel slips</li>
+<li>... while, at the same time, <em>continuing to control</em> speed wind fans and (direct drive) harness tensioning</li>
+</ul>
 
 <details>
 <summary>click for doomed assumptions</summary>
@@ -42,7 +38,6 @@ e.g. when SimHub restarts plugins during game changes.
  support may be only for <b>Xbox One</b> and <b>PS/4</b> Game Controllers and mainly via <b>UWP</b>.  
 </ol>
 </details>  
-
 
 <details>
 <summary>click for doomed approaches</summary>
@@ -78,8 +73,10 @@ while avoiding the hassle of releasing custom signed Windows drivers.
 </ol>
 </details>  
 
-### Doomed efforts
-#### [STM32 pedals](../pedals/STM32)
-#### [ESP8266 pedals](../pedals/ESP8266) 
-#### [WeMos D1 UNO R1 ESP8266](../Arduino/ESPDuino)
-#### [mi-360 fork](https://github.com/blekenbleu/mi-360) - practice for hacking [ViGEm.NET](https://github.com/ViGEm/ViGEm.NET) into [VJoySerialFeeder](../Arduino/VJoySerialFeeder)  
+<h3>Doomed efforts</h3>
+<h4><a href="../pedals/STM32">STM32 pedals</a></h4>
+<h4><a href="../pedals/ESP8266">ESP8266 pedals</a></h4>
+<h4><a href="../Arduino/ESPDuino">WeMos D1 UNO R1 ESP8266</a></h4>
+<h4><a href="https://github.com/blekenbleu/mi-360">mi-360 fork</a> - practice for hacking <a href="https://github.com/ViGEm/ViGEm.NET">ViGEm.NET</a> into <a href="../Arduino/VJoySerialFeeder">VJoySerialFeeder</a></h4>
+</body>
+</html> 
