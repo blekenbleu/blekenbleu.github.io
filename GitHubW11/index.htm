@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>GitHub Desktop and Jekyll 2023</title>
+<!-- for text wrap around images:  https://www.homeandlearn.co.uk/WD/wds4p6.html -->
+<style>
+body {
+  width:960px;
+  margin: 60px;
+}
+th {
+  text-align: left;
+}
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<font size=-1><a href="../"><i>back</i></a></font>
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<br>
+
+<h2>GitHub Desktop and Jekyll on Windows 11</h2>
+Differences in Jekyll experiences on different Windows versions is mostly about Ruby and Jekyll evolution.<br>
+Ruby installation has become more trouble-free, without hangs and need for retries.<br>
+Jekyll, on the other hand, seems IMO to have regressed:<br>
+<li>&lt;details&gt; seemingly are no longer supported in markdown
+<li>markdown defaults to blog-specific format
+<li>ignores markdown files lacking front matter starting on the first line<br><br>
+
+This last issue is a distinct difference between Windows Jekyll and whatever GitHub uses to process markdown.<br>
+Fortunately, empty front matter suffices, and a ### heading immediately following overrides the default title.<br>
+My pages include over 60 markdown files that needed editting for this issue;
+<li>starting over, I would completely avoid markdown for GitHub Pages;
+<li>trivial changes typically require over 5 minutes for GitHub to process.<br>
+
+<h3>Ruby updates</h3>
+Gems can be updated, but Ruby itself as installed by <a href="https://rubyinstaller.org/downloads/">RubyInstaller</a> cannot be updated, only replaced.<br>
+While Ruby is here used <i>only</i> for Jekyll, its bundled MSYS2 installation gets used a lot, with numerous packages added.<br>
+Before replacing Ruby, run MSYS2 package manager to document its current package list:<br>
+<li>`pacman -Q > /d/oldMSYS2.txt`<br>
+.. then compare with a list from new MSYS2 to determine what packages had been added.<br>
+Of course, any MSYS2 home/user folder customizations should also be ported.<br>
+
+</body></html>
