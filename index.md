@@ -39,7 +39,7 @@
  &nbsp; [**Altec Model 19**](altec/)  
  &nbsp; [Blu-Ray movies on Windows PC](WinBluRay)  
  &nbsp; [Line 6 JTV-89F guitar](JTV89F/Variax)  
- &nbsp; [**Technics SL-7** direct drive linear tracking turntable](SL-7/)  
+ &nbsp; [**Technics SL-7** direct drive linear tracking turntable](/static/SL-7/)  
  &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README) with SME Series III  
   
 ### [Cameras &amp; lenses (Canon)](Canon/)
