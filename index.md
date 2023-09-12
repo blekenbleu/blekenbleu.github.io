@@ -23,10 +23,10 @@
 - SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
 
   - **Arduino IDE Alternatives**
-    - [There are *many*](https://www.survivingwithandroid.com/10-arduino-ide-alternative-to-start-programming/)
+    - There are *many*
     - [**Visual Micro**](https://www.visualmicro.com/) supports debugging in Visual Studio  
       (which I use e.g. for [**SimHub plugins**](/static/SimHub/))
-      - in [VisualStudio **Marketplace**](https://marketplace.visualstudio.com/items?itemName=VisualMicro.ArduinoIDEforVisualStudio)  
+      - in [VisualStudio **Marketplace**](https://www.visualmicro.com/)  
       - [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
       - Options using Visual Studio **Code**, *a confusingly named editor*, are discounted;&nbsp; I prefer GVim
     - [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/0.31/)
@@ -68,7 +68,7 @@
 ### **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
   - [added to SimHub **MIDIio plugin**](MIDI/plugin)
   - [Windows Joystick HID](Windows/HID/) shared with SimHub
-  - [Windows 10 vJoy installation](pedals/vJoy)
+  - [Windows 10 vJoy installation](pedals/vJoy/)
      - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
      - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360)
 

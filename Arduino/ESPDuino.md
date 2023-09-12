@@ -34,9 +34,7 @@ Available IDEs
 - Arduino
 - NodeMCU  https://frightanic.com/iot/tools-ides-nodemcu/
 - PlatformIO https://platformio.org/install
-  https://www.survivingwithandroid.com/2016/07/arduino-alternative-ide.html
 - Eclipse
-https://www.survivingwithandroid.com/2018/08/10-arduino-ide-alternative-to-start-programming.html
 http://cyaninfinite.com/tutorials/getting-started-with-the-wemos-d1-esp8266-wifi-board/
 
 https://www.ebay.com/itm/132806428073
