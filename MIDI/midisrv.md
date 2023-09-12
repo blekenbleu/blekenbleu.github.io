@@ -4,7 +4,7 @@
 *13 Dec 2021*
 
 #### Background
-- [ESP32-S2 supports composite USB](ESP32/midi.htm), but not reliably including MIDI
+- [ESP32-S2 supports composite USB](/static/ESP32/midi.htm), but not reliably including MIDI
 - [MIDI over Wi-Fi is a "thing"](MIDI/index.htm) (but mostly Apple MIDI via UDP)
 - MIDI over TCP is reliable, but needs WebSocket for speed
 - [mnet MIDIHub](https://xmmc.de/mnet) serves some unsupported flavor of [WebSocket MIDI for TouchDAW](https://xmmc.de/touchdaw/man_midi_ws.htm)  

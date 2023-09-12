@@ -1,5 +1,0 @@
-unset yrange
-set ylabel 'per 10k'
-set xlabel 'Percent Trump voters'
-set title 'Voters owning Teslas'
-p 'tt.txt' u 1:2 w p pt 7 ps 1 t 'Tesla Owners'
