@@ -123,7 +123,8 @@
 5. **IPv6** tends to be problematic, requiring Windows reboots:&nbsp;
    [Disabling IPv6 on Windows 10](https://help.my-private-network.co.uk/support/solutions/articles/6000158531-how-to-disable-ipv6-on-windows-10)
 6. Helpful URLs:  
-  [GitHub Pages Documentation](https://docs.github.com/en/pages)  
+  [GitHub Pages Documentation](https://docs.github.com/en/pages) &nbsp; Jekyll is only one way to generate GitHub Pages... 
+  [GitHub Pages community](https://github.com/orgs/community/discussions/categories/pages)  
   [Jekyll Resources](https://jekyllrb.com/resources/)  
   [Jekyll Talk! forum](https://talk.jekyllrb.com/)  
   [Jekyll github](https://github.com/jekyll) and [github-metadata](https://github.com/jekyll/github-metadata/issues)  
