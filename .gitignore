@@ -6,3 +6,5 @@ _site/
 *.swp
 .DS_Store
 MIDI/plugin/*.txt
+static
+static/
