@@ -5,6 +5,7 @@ _site/
 *~
 *.swp
 .DS_Store
+Gemfile.lock
 MIDI/plugin/*.txt
 static
 static/
