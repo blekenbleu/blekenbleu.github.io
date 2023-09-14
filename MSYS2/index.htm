@@ -1,13 +1,19 @@
 <html><head>
-<style> body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; } </style>
+<style>
+body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; }
+td { padding: 15px; background-color: #DDDDDD; } 
+</style>
 <title>MSYS2 and I</title></head>
 <body>
+<div align=center>
+<table><tr><td>
+
 <font size=-1>
 <a href="../GitHubPages"><i>back to GitHubPages</i></a><br>
 </font> 
 <font size=+1>
 <br>
-<i>19 Feb 2023</i><br>
+<i>14 Sep 2023</i><br>
 <h4>MSYS2 and I</h4>
 <p>I stumbled into MSYS2 from <a href="https://pages.github.com/">GitHub Pages</a>, which wants e.g. <code>jekyll</code>, <code>nokogiri</code>, <code>kramdown</code>,  <br>
 which in turn want <a href=https://rubyinstaller.org/downloads/>Ruby</a>, which bundles MINGW64 and MSYS2.<br>
@@ -47,7 +53,7 @@ which includes alias to invoke <a href="align.bat">align.bat</a> and <a href="im
 
 <h4>Open MinGW64 shell from Windows Explorer</h4>
 Integrating Bash shell usage with Windows wants easily opening a shell in any folder:<br>
-<img width=50% src="Open.png"><br clear=all>
+<img width=30% src="Open.png"><br clear=all>
 <br>
 This capability is implemented via Windows registry;  <a href="bash.reg"><code>bash.reg</code></a> can do that,<br>
 provided that the path to <code>msys2_shell.cmd</code> matches your installation:
@@ -65,4 +71,12 @@ If (as happened to me) Windows complains about not a default application, then c
 <img width=80% src="RegEdit.png"><br clear=all>
 <br>
 <h4><a href="newMSYS2.txt">currently installed MSYS2 packages</a></h4>
+<hr>
+</td></tr><tr><td align=center>
+
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+
+</td></tr></table>
+
+    </div>
 </body></html>
