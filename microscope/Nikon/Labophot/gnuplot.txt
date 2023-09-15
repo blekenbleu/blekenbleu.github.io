@@ -1,6 +1,0 @@
-unset yrange
-# set xlabel 'dial'
-set xlabel 'base mA'
-set ylabel 'Volts or Amperes'
-set title 'Optiphot 66 / Labophot 20W halogen'
-p 'halogen.txt' u 6:($4 * 10) w l t 'base V * 10', '' u 6:2 w l t 'Vcc', '' u 6:($5 * .001) w l t 'collector A', '' u 6:3 w l t 'collector V'
