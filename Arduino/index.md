@@ -5,7 +5,8 @@
 *updated 8 Sep 2023*  
 ## Arduino for STM32 Black 'n Blue Pills, ESP32-S[2,3]
 
-[other content](content.md)
+[sketches](Arduino-Blue-Pill/)  
+[other content](content)
 
 #### Background
 This is for use with [SimHub's Custom Serial devices plugin](https://github.com/SHWotever/SimHub/wiki/Custom-serial-devices).  
