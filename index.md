@@ -13,17 +13,17 @@
   - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](/static/ImageProcessing/TinyML.htm)  
   - [LED color rendering meta-analaysis](/static/ColorRendering/)  
 
-### [Arduino custom USB STM32 Blue Pill sketches](Arduino/)
+### [Arduino custom USB sketches](Arduino/)
 - e.g. for harness tensioning servos
     - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
     - COM ports work from SimHub, but sim games expect HID DirectInput
       - SimHub *directly* supports *real* Arduinos,  
-        but *any* COM may be driven by **SimHub Custom Serial devices**  
-        Some ESP32 / STM32 may be programmed to appear as Arduinos
+        but can drive *any* COM port by **SimHub Custom Serial devices**  
+        Some ESP32 / STM32 may be programmed to appear as Arduino USB COM ports
 - SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
 
   - **Arduino IDE Alternatives**
-    - There are *many*
+    - There are [*many*](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html).
     - [**Visual Micro**](https://www.visualmicro.com/) supports debugging in Visual Studio  
       (which I use e.g. for [**SimHub plugins**](/static/SimHub/))
       - in [VisualStudio **Marketplace**](https://www.visualmicro.com/)  
