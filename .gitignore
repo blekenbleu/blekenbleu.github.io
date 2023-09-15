@@ -7,5 +7,7 @@ _site/
 .DS_Store
 Gemfile.lock
 MIDI/plugin/*.txt
+microscope
+microscope/
 static
 static/
