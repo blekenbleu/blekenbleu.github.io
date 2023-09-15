@@ -5,7 +5,7 @@
 *updated 8 Sep 2023*  
 ## Arduino for STM32 Black 'n Blue Pills, ESP32-S[2,3]
 
-[sketches](Arduino-Blue-Pill/)  
+[sketches](/Arduino-Blue-Pill/)  
 [other content](content)
 
 #### Background
