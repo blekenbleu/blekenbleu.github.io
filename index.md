@@ -72,8 +72,8 @@
   and has opted, along with e.g. [Somnium](https://store.steampowered.com/app/875480/Somnium_Space_VR/),
   to develop [their own XR headset](https://www.roadtovr.com/immersed-visor-pre-orders-500/).  
   While Immersed software seems more practical,  
-  their headset seems less credible than
-  [Somnium's](https://somniumtimes.com/2023/09/06/somnium-vr1-update-and-ama-with-artur-sychov-from-prototype-to-perfection/).  
+  their headset seems less credible than the
+  [**Somnium VR1**](XR/VR1.html).  
 
 ### **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
   - [added to SimHub **MIDIio plugin**](MIDI/plugin)
