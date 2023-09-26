@@ -55,15 +55,25 @@
  &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
 
 ## [Sim driving](pedals/)
-- [ Samsung Odyssey+ for Assetto Corsa ](pedals/#hmd) - [SteamVR](https://steamcommunity.com/app/250820)
- and [WMR](https://learn.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)  
 - [TH8A](pedals/#TH8A) Thrustmaster shifter mods
 - Logitech [G29 pedal mods](pedals/#pedals)
   - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID/)
   - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
   - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
 
-### [Virtual Reality (VR) and Windows Mixed Reality (WMR)](VR)  
+## [Virtual Reality (VR) and Mixed Reality (MR)](VR)  
+- [Samsung Odyssey+ and HP Reverb for Assetto Corsa](pedals/#hmd)  
+  using [SteamVR](https://steamcommunity.com/app/250820)
+  and [Windows Mixed Reality (WMR)](https://learn.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)  
+- Virtual desktops, Immersed and
+  [vergence-accommodation conflict](https://medium.com/vrinflux-dot-com/vergence-accommodation-conflict-is-a-bitch-here-s-how-to-design-around-it-87dab1a7d9ba).  
+  [Immersed](https://www.immersed.com/) has one of the better known
+  [remote collaboration software apps](https://www.roadtovr.com/vr-apps-work-from-home-remote-office-design-review-training-education-cad-telepresence-wfh/),  
+  and has opted, along with e.g. [Somnium](https://store.steampowered.com/app/875480/Somnium_Space_VR/),
+  to develop [their own XR headset](https://www.roadtovr.com/immersed-visor-pre-orders-500/).  
+  While Immersed software seems more practical,  
+  their headset seems less credible than
+  [Somnium's](https://somniumtimes.com/2023/09/06/somnium-vr1-update-and-ama-with-artur-sychov-from-prototype-to-perfection/).  
 
 ### **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
   - [added to SimHub **MIDIio plugin**](MIDI/plugin)
