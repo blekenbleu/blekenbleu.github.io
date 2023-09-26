@@ -15,8 +15,12 @@
 [Helixxvr YouTube: ](https://www.youtube.com/watch?v=bkZCWlC7ano&t=506s) use Assetto Corsa UI in VR HMD  
 
 **HMDs**
-- [HP Reverb G1 HMD](pedals/#HP)  
 - [Samsung Odyssey+ HMD](pedals/#hmd)  
+  Pleasant display, but not enough resolution 
+- [HP Reverb G1 HMD](pedals/#HP)  
+  sharp only at the center;&nbsp; poor prescription lens support.  
+- [Somnium VR1](https://somniumtimes.com/2023/09/06/somnium-vr1-update-and-ama-with-artur-sychov-from-prototype-to-perfection/)  
+  Good enough for botj long term virtual desktop use and sims?  
 
 **[HOTAS as VR controller](https://steamcommunity.com/app/275850/discussions/0/1636418037465132951/)**
 - In Steam > Settings (SteamVR must be turned off) > Controller, General controller settings.&nbsp; Uncheck everything.  
