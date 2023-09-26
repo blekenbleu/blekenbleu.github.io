@@ -61,7 +61,7 @@
   - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
   - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
 
-## [Virtual Reality (VR) and Mixed Reality (MR)](VR)  
+## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
 - [Samsung Odyssey+ and HP Reverb for Assetto Corsa](pedals/#hmd)  
   using [SteamVR](https://steamcommunity.com/app/250820)
   and [Windows Mixed Reality (WMR)](https://learn.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)  
