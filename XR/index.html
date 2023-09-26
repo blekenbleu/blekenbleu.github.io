@@ -1,8 +1,7 @@
 <html><head>
-<style>
-body { margin-left: 80px; } ul {margin-top:0; } dl {margin-top:0; } dt { margin-left:15; } h4 {margin-bottom:0; }
-td { padding: 15px; background-color: #DDDDDD; } 
-</style>
+
+<link rel='stylesheet' type='text/css' href='/static/my.css'>
+
 <title>Xtended / Mixed Reality:&nbsp Virtual or Augmented | blekenbleu.github.io</title>
 </head>
 
@@ -16,24 +15,38 @@ td { padding: 15px; background-color: #DDDDDD; }
 <font size=+1>
 <br>
 
-<h2>Xtended / Mixed Reality:&nbsp Virtual or Augmented</h2>
+<h2>Xtended (XR) / Mixed (MR) Reality:&nbsp Virtual or Augmented</h2>
 <dl><dt><b>Virtual Reality</b><dd>Nothing is real...
 <dt><b>Xtended /Mixed Reality</b><dd>Some physical objects rendered in virtual space<br>
-or some virtual objects superimposed on real space rendition.</dl>
+or some virtual objects superimposed on real space rendition (3D video).</dl>
 
-<h3>HMD nausia</h3><ul compact>
+<h3>HMD nausea</h3><ul compact>
 <li>visual motion illusion without physical cues
 <li>latency / refresh rate(?)<br>
-few complain of nausia from 24fps film (72fps shutter)
+few complain of nausea from 24fps film (72fps shutter)
 <li>Vergence-accommodation conflict<br><img src=vergence-accommodation.webp>
+</ul>
+
+<h3>VR HMD Issues (for me)</h3><ul compact>
+<li>NOT nausea
+<li>without passthru:&nbsp frequent need to remove, reinstall HMD
+<li>prescription eyeglasses may not fit
+<li>switching between (misplaced?) eyeglasses and HMD with prescription inserts
+<li>VR hand controllers are aggravating, easily misplaced and unsuitable for virtual desktop or sims
+<li>"real" objects (props) can be introduced to VR by STL descriptions without passthru cameras for e.g. games
+<li>passthru cameras are wanted for real time random objects in games or virtual objects (desktops) into real space
+<li>ability to generate 3D movies using binocular passthru cameras will be a bonus
+</ul>
 
 <h3 id="links">Links</h3>
-<p><strong>AirCar</strong> <a href="https://steamcommunity.com/app/1073390/guides/">Guides</a>   <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1830980067">controller bindings</a><br />
+<p><strong>AirCar</strong> <a href="https://steamcommunity.com/app/1073390/guides/">Guides</a>
+   <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1830980067">controller bindings</a><br />
     <a href="https://steamcommunity.com/app/1073390/discussions/0/3030299604459488650/">no built-in HOTAS support</a><br />
 <a href="https://www.youtube.com/watch?v=D9uKWikvL2M&amp;t=145s">Assetto Corsa (AC) VR Settings YouTube Tutorial</a><br />
 <a href="pedals/#AC">Assetto Corsa VR setup</a><br />
 <a href="pedals/#Bigscreen">Bigscreen</a><br />
-<a href="https://www.racedepartment.com/threads/cm-custom-shader-patch-giving-better-frame-rates-with-cpu-gpu-optimising.162324/">Custom Shader Patch giving better frame rates with CPU/GPU optimising</a><br />
+<a href="https://www.racedepartment.com/threads/cm-custom-shader-patch-giving-better-frame-rates-with-cpu-gpu-optimising.162324/">Custom
+ Shader Patch giving better frame rates with CPU/GPU optimising</a><br />
 <a href="pedals/#Driver4VR">Driver4VR</a><br />
 <a href="pedals/#fresnel">Fresnel lens "sweet spot"</a><br />
 <a href="pedals/#HOTAS">Hand-On Throttle-And-Stick (HOTAS) in SteamVR</a><br />
@@ -45,7 +58,7 @@ few complain of nausia from 24fps film (72fps shutter)
 Pleasant display, but not enough resolution.</li>
   <li><a href="pedals/#HP">HP Reverb G1 HMD</a><br />
 Sharp only at the center;  poor prescription lens support.</li>
-  <li><a href="https://somniumtimes.com/2023/09/06/somnium-vr1-update-and-ama-with-artur-sychov-from-prototype-to-perfection/">Somnium VR1</a><br />
+  <li><a href=VR1.html><b>Somnium VR1</b></a><br />
 Good enough for both long term virtual desktop use and sims?</li>
 </ul>
 
@@ -54,14 +67,15 @@ Good enough for both long term virtual desktop use and sims?</li>
   <li>In Steam &gt; Settings (SteamVR must be turned off) &gt; Controller, General controller settings.  Uncheck everything.<br />
 Ensure that only Xbox Configuration Support and Xbox Extended Feature Support are enabled.</li>
   <li>Go to detected controllers, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1839832921">customize layout of your HOTAS</a>.  Save.</li>
-  <li>Open SteamVR;  a gamepad icon should appear.$nbsp; if not, be sure to open SteamVR by clicking VR button in Steam.</li>
+  <li>Open SteamVR;  a gamepad icon should appear.&nbsp; if not, be sure to open SteamVR by clicking VR button in Steam.</li>
   <li>Open Steam VR app and make applicable mappings from virtual gamepad.<br />
 TIPS:<br />
  If HOTAS Throttle doesn’t work or is mapped upside down,<br />
  you may need to clear the input and map it to W and S keys with a joystick profiler.<br />
 Also make sure there are no keys pressed while launching the game.<br />
 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1830980067">Fix Unresponsive <strong>AirCar</strong> Controls by Creating a Custom Binding</a><br />
-While in steamVR, go to the steamVR dashboard, hit the Settings button on the right (not the show controls on the left), Controller Options (bottom of the list)&gt; Show More Apps&gt; Aircar<br />
+ While in steamVR, go to the steamVR dashboard, hit the Settings button on the right (not the show controls on the left),<br>
+ Controller Options (bottom of the list)&gt; Show More Apps&gt; Aircar<br />
 <a href="https://steamcommunity.com/app/1073390/discussions/0/1643170903490242441/">an AirCar WMR binding has been uploaded</a><br />
 <a href="https://www.youtube.com/watch?v=Fblz4RqUHoM"><strong>AirCar with HOTAS</strong></a> video using <a href="https://steamcommunity.com/app/1073390/discussions/0/3030299604459488650/#c2290590708538946180">X360CE</a>  on <a href="https://github.com/x360ce/x360ce">GitHub</a> and <a href="https://www.x360ce.com/">website</a></li>
 </ul>
