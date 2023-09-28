@@ -1,26 +1,18 @@
 <html>
 <head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
 <title>Sim driving</title>
 <!-- for text wrap around images:  https://www.homeandlearn.co.uk/WD/wds4p6.html -->
 <style>
-body {
-  width:960px;
-  margin: 60px;
-}
-th {
-  text-align: left;
-}
-table {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
+table.my_table td { width:860px; }
 </style>
 </head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td>
+
 <font size=-1><a href="../"><i>back</i></a></font>
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
@@ -49,6 +41,8 @@ th, td {
 <li><a href="#shakeseat">ShakeSeat</a> <a href="#pad">padding</a>
 <li><a href="ShakeIt/10cmShaker/">eBay "super pucks" AKA Low Frequency Bass Speaker Transducer 3.75"</a>
 <li><a href="#ShakeIt">SimHub ShakeIt</a>
+<li><a href="#accel">SimHub Acceleration properties</a>
+<li><a href=#R7>Aurora R7 Windows 10 sound</a>
 <li><a href="#Simshakeseat">SimHub ShakeIt for ShakeSeat</a>
 <li><a href="../MIDI/plugin/">SimHub MIDI plugin</a>
 <li><a href="#SimHarness">SimHub for 2DOF Harness</a>
@@ -96,8 +90,8 @@ since my vision did not fuse until I was in my mid-40s. &nbsp Consequently,<br>
 I need <i>more practice</i> to learn feedback from controls and ShakeSeat.<br>
 <a name=fresnel>
 Odyssey+ image sharpness is probably not enough to instill real confidence,<br>
-particularly since VR resolution with Fresnel lenses is best in the center</a>, but wants far focus<br>
-which my trifocal eyeglasses cannot provide.<br>
+particularly since VR resolution with Fresnel lenses is best in the center</a>,<br>
+ but wants far focus which my trifocal eyeglasses cannot provide.<br>
 <br>
 This video by another sim driver with previous track experience and consequential<br>
 G-force unlearning / relearning issues: 4:15/15:48 &nbsp
@@ -194,7 +188,8 @@ Odyssey SteamVR game play with GTX 1070 and i7-4790<br>
 https://www.youtube.com/watch?v=5jM3Dx-6wXU<br>
 <br>
 <a name=HP><h5>HP Reverb G1</h5></a>
-While Odysseey+ is better for dark details, HP's Reverb has usefully higher resolution and seemingly higher contrast, at least for daytime driving in Assetto Corsa.<br>
+While Odysseey+ is better for dark details, HP's Reverb has usefully higher resolution<br>
+ and seemingly higher contrast, at least for daytime driving in Assetto Corsa.<br>
 As might be expected with other than mainstream M$ software,<br>
 Windows Mixed Reality incorporates any number of idiosynchrocies indistinguishable from bugs.<br>
 Combined with Nvidia graphics drivers, behaviors that are unambiguously buggy can occur:<br>
@@ -307,7 +302,7 @@ To mitigate information overload, seriously consider first driving a <a href="ht
 Assetto Corsa included <i>neither</i> in its offering; they are <a href="https://www.youtube.com/watch?v=wMGMgIjZCmw">available as mods</a>.<br>
 <a href="https://www.assettocorsa.net/forum/index.php#assetto-corsa-support-forum-pc-version.12">Assetto Corsa</a>
 is a <a href="https://store.steampowered.com/app/244210/Assetto_Corsa/">Steam</a> "game",
-which when launched for Odyssey+ or HP Reverb also runs SteamVR and WMR portal.<br>
+which when launched for WMR HMD also runs SteamVR and WMR portal.<br>
 <a name=USB>
 The game ran fine with TH8A shifter and G29 wheel and pedals, when displaying on a monitor.<br>
 When Options->Video->Rendering Mode set from Single Screen to OpenVR,<br>
@@ -339,8 +334,8 @@ Brake simulation shortcomings can be mitigated by:<ul compact>
 <li>instead of custom circuit board, use a cheap <b>INA333</b> (or AD623) low power rail-to-rail instrumentation amplifier module:<br>
 <img src=INA333front.jpg><img src=INA333rear.jpg><br clear=all>
 <b>Instructions</b> &nbsp The on-board 3.3V low-dropout LDO regulator chip directly supplies power to the INA333 amplifier.<br>
-The amplifier uses a single-ended power supply mode, V- is connected to GND, and V+ is connected to the 3.3V output of the LDO.<br>
-The amplifier uses a 3.3V single-ended power supply.
+The amplifier uses a 3.3V single-ended power supply mode, with V- connected to GND,<br>
+and V+ connected to the 3.3V output of the LDO.<br>
 VIN+ non-inverting input, VIN inverting input. R3 on the board is not soldered.<br>
 VCC regulator LDO input 5V.<br>
 <img src="INA333power.png"><br clear=all>
@@ -367,7 +362,9 @@ A longer screw matching the G29 pedal mount threads was located and screwed just
 Thrusters ideally want rigid, non-resonant but fairly light mounts; a scrap of polymer-coated 10mm MDF was sourced.<br>
 Thruster mount scratched by mounting screw:&nbsp <img src="scratch.jpg"><br>
 Brake pedal pad reinstalled offset right, facilitating heel/toe:&nbsp <img src="offsetBrake.jpg"><br>
-For Thruster clearance, mount must be off-center. Screw hole was counter-bored, large enough for socket so that nut could be recessed. &nbsp <img src="recessed.jpg"><br>
+For Thruster clearance, mount must be off-center.<br>
+ Screw hole was counter-bored,<br>
+ large enough for socket so that nut could be recessed. &nbsp <img src="recessed.jpg"><br>
 Mount will be cleaned with Windex and wiped dry to promote bonding to Thruster's 3M adhesive. &nbsp <img src="offset.jpg"<br clear=all>
 <br>
 Properly applied, hot glue bonds well enough to peel piezo off their metal discs; ask how I know. &nbsp <img src="piezo_damage.jpg"><br clear=all>
@@ -388,8 +385,9 @@ Any number of YouTube videos eloquently laud <a href="https://assettocorsa.club/
 <li><a href="https://www.youtube.com/watch?v=T5aoe8RLvXU">GamerMuscleVideos</a>
 <li><a href="https://www.youtube.com/watch?v=h2l2t1sbru4">2Old4Forza</a> How to Assetto Corsa 2020: Content Manager tips + modding 16:48<br>
 settings (good) 2:37 Single 6:10 apps <a href="https://www.racedepartment.com/downloads/helicorsa.5199/">HeliCorsa</a> 8:00 modding 11:24 Content Mgr mod install 15:00<br>
-[ <i>Sadly, 2Old4Forz is too busy talking about how old school he is @ 14:54 to explain wtf he did to start Content Manager mod install</i> ]
-<li><a href="https://www.youtube.com/watch?v=759TcHZCBww">Davy Jones</a> Assetto Corsa PC Getting Started Guide including Content Manager, Sim Racing System &amp the Crew Chief 1:11:52
+[ <i>2Old4Forz is too busy talking about how old school he is @ 14:54 to explain Content Manager mod install</i> ]
+<li><a href="https://www.youtube.com/watch?v=759TcHZCBww">Davy Jones</a> Assetto Corsa PC Getting Started Guide<br>
+   including Content Manager, Sim Racing System &amp the Crew Chief 1:11:52
 <li><a href="https://www.youtube.com/watch?v=bkZCWlC7ano">Helixxvr</a>This one simple VR trick you didn't know in Assetto Corsa 8:26<br>
 use Assetto Corsa UI in VR HMD.
 <li><a href="https://www.youtube.com/watch?v=D9uKWikvL2M">Alex Nelson</a> Assetto Corsa VR (Oculus) Settings Tutorial [ skip 2:25 ] 23:27<br>
@@ -406,17 +404,18 @@ use Assetto Corsa UI in VR HMD.
 find the best graphics settings for Assetto Corsa
 <li><a href="https://www.youtube.com/watch?v=mLXAdYoCuk0">HokiHoshi</a> Assetto Corsa Mod Install Guide | Content Manager, CSP, Sol, Tracks &amp Cars (Shutoko Revival Project)<br>
 <i>good for installing Content Manager, but then manually installs Sol and other mods</i>
-<li><a href="https://www.youtube.com/watch?v=3UOzkVUiYqU">VIRTUAL DRIVER</a> Assetto Corsa - Content Manager - Sol + Shaders MODs - SRS Tutorial Espanol 2020 (cc translates to English) 21:12
+<li><a href="https://www.youtube.com/watch?v=3UOzkVUiYqU">VIRTUAL DRIVER</a> Assetto Corsa - Content Manager - Sol + Shaders MODs<br> - SRS Tutorial Espanol 2020 (cc translates to English) 21:12
 <li><a href="https://www.youtube.com/watch?v=30sBWfcn1L0">Davy Jones</a> Minor bugs &amp confusion with Sol 1.1.1 &amp Content Manager for Assetto Corsa Apr 2019 6:18<br>
-upgrading the Sol mod for Assetto Corsa to version 1.1.1 using Content Manager. I noticed some inconsistencies in the instructions<br>
-and also experienced a bug with the latest recommended version of the Custom Shaders Patch, or at least it appeared as a bug in my installation
+upgrading the Sol mod for Assetto Corsa to version 1.1.1 using Content Manager.<br>
+ Some inconsistencies in instructions and a bug with the latest recommended Custom Shaders Patch,<br>
+  or at least it appeared as a bug in my installation
 <li><a href="https://www.youtube.com/watch?v=8BaNYSyuH6M">Carlos Panades</a> How to install Mods Sol 1.3.2 + CSP Custom Shaders Patch preview.198 in Assetto Corsa Aug 2019 8:44
 <li><a href="https://www.youtube.com/watch?v=rsWeNbMYngk">Assetto Corsa Content Manager</a> Content Manager Episode 1 - How to get started with CM 2018 5:22
 <li><a href="https://www.youtube.com/watch?v=GHu2hMR4Qas">Mauro Ciacchi</a> Assetto Corsa how to install mods, cars and tracks with Content Manager (no audio)
 <li><a href="https://www.youtube.com/watch?v=H-Fji4-boME">Unleashed Drivers</a> How to extract .acd files and repack them with Assetto Corsa Content Manager 1:23<br>
 useful for editing Assetto Corsa car data
 <li><a href="https://www.youtube.com/watch?v=ykV0QiF4fw0">Crazy Cat Guy</a> Assetto Corsa and Content Manager Horizon Lock option comparison 2:16<br>
-I use Horizon Lock to stop the ground from shaking. Unfortunately this brings the issue of the car moving too much to the sides,<br>
+I use Horizon Lock to stop the ground from shaking.<br> Unfortunately this brings the issue of the car moving too much to the sides,<br>
 especially at very steep corners (like the one at the video here: <a href="https://youtu.be/JcM0_QWqvuk?t=2m12s">https://youtu.be/JcM0_QWqvuk?t=2m12s</a>)<br>
 and also not aligning with the level of the floor of the car (the awesome drawing at the end of my video).
 <li><a href="https://www.youtube.com/watch?v=LNLcX6Rw6vg">Mamiya Motors</a> How To Get Drift Cars On Assetto Corsa | Content Manager Guide | PC 14:34
@@ -460,7 +459,7 @@ Tried again with <a href="https://www.racedepartment.com/downloads/putnam-park.1
 as do <a href="https://www.racedepartment.com/downloads/summit-point-raceway.29502/">Summit Point</a>
 and <a href="https://www.racedepartment.com/downloads/dragons-tail-hillclimb.14457/updates">Tail of the Dragon</a>.<br>
 Mont Tremblant remains <a href="https://assettocorsamods.net/threads/circuit-mont-tremblant-st-jovite-1969.1201/page-3">a work in progress</a>,
-but Patrice COte wrote on March 11, "I don't know when I'll call it finished, let's just say 2020 for now."<br>
+but Patrice COte wrote on March 11,<br> "I don't know when I'll call it finished, let's just say 2020 for now."<br>
 
 There appears to be no progress towards an Assetto Corsa mod for New Hampshire Motor Speedway road course...<br>
 <img width=640 src="https://www.diyauto.com/uploads/users/4/2016/05/2lcv0gx-1464266500.jpg"><br clear=all>
@@ -488,7 +487,8 @@ I seem to recall a V12 E-type mod, but cannot find it...
 <br>
 <h5><a href="https://www.racedepartment.com/threads/fixing-messed-up-windshields-on-mod-cars-using-cm.171394/">Fixing messed up windshields on mod cars using CM</a></h5>
 <h5><a href="https://www.racedepartment.com/threads/cm-custom-shader-patch-giving-better-frame-rates-with-cpu-gpu-optimising.162324/">CM/Custom Shader Patch giving better frame rates with CPU/GPU optimising</a></h5>
-<h5><a href="https://www.racedepartment.com/threads/samsung-odyssey-install.160947/post-2874030">MixedRealityhttps://www.racedepartment.com/threads/samsung-odyssey-install.160947/post-2874030VRDriver change renderTargetScale to 2.0 instead of 1.0</a></h5>
+<h5><a href="https://www.racedepartment.com/threads/samsung-odyssey-install.160947/post-2874030">RaceDepartment Samsung-Odyssey-install</a>
+<h5><a href="https://www.racedepartment.com/threads/samsung-odyssey-install.160947/post-2874030">VRDriver change renderTargetScale to 2.0 instead of 1.0</a></h5>
 disable Advanced Supersampling Filtering
 <h5>"unpack data" feature in the content tab</h5>
 click CM version number around 10 times quickly to get developer mode
@@ -496,7 +496,7 @@ click CM version number around 10 times quickly to get developer mode
 <hr>
 <br><font size=-2><i><a href="#sim">back</a></i></font>
 <a name=shakeseat>
-<h3>SRS ShakeSeat, SimXperience Sim Commander SimVibe and Aurora R7 Windows 10 sound</h3></a>
+<h3>SRS ShakeSeat, SimXperience Sim Commander SimVibe</h3></a>
 Home sim driving rigs cannot realistically simulate cornering and braking G's;<br>
 better to <a href="haptic.htm">more cost-effective haptic feedbacks</a>.<br>
 Niels Heusinkveld <a href="https://www.youtube.com/watch?v=ebZS1b4viYk">agrees (1:-2:/11:44)</a><br>
@@ -550,6 +550,7 @@ After a hundred or so hours of moderately intense sitting,<br>
 the EVA foam-supplemented ShakeSeat looks like this:<br>
 <img src="SRS_EVA.jpg"><br clear=all>
 <br>
+<a name=R7><h3>Aurora R7 Windows 10 sound</h3></a>
 My Aurora R7 has unused 7.1 channel audio on the motherboard.<br>
 To configure 5.1 surround:<br>
 Press Windows key + R to open a Run window and type <code>mmsys.cpl</code><br>
@@ -683,7 +684,8 @@ SimHub appears to save settings automagically..<br>
 Every effect has various controls to manipulate the output: amplitude, frequency, etc.<br>
 Both amplitude and frequency can be changed based on the incoming telemetry.<br>
 Sadly, amplitude cannot be changed independently of frequency, e.g. wheel load vs slip.<br>
-This motivates a <a href="../MIDI/#plugin">SimHub MIDI plugin</a> to send MIDI based on e.g. wheel load to change amplitude of SimHub-generated wheel slip tactile effect.<br>
+This motivates a <a href="../MIDI/#plugin">SimHub MIDI plugin</a> to send MIDI based on<br>
+ e.g. wheel load to change amplitude of SimHub-generated wheel slip tactile effect.<br>
 Effects can be configured as mono, divided front-rear, left-right, or 4-corners.<br>
 <img width=640 src="https://www.racedepartment.com/attachments/1593030117522-png.383988/"><br clear=all>
 <ul compact>
@@ -773,7 +775,8 @@ Implementation embellishes SimHub Wheels slip effect using Custom Effects<br>
 1. latitudinal and longitudinal acceleration properties<br>
 2. loaded tire slips, products of tire slip properties times accelerations<br>
 <br>
-Recent SimHub versions provide <a name=accel>Acceleration</a> properties that were previously estimated from changes in speed and yaw samples to proxy G force.<br>
+Recent SimHub versions provide <a name=accel>Acceleration</a> properties<br>
+that had been estimated from changes in speed and yaw samples to proxy G force.<br>
 Earlier SimHub versions sampled speed and yaw slower than Assetto Corsa sample updates,<br>
 resulting in some changes 2x others, which code here detects and mitigates.<br>
 <br>
@@ -818,7 +821,8 @@ return 50 + (50 * Gyb4);  // range 0-100
 <b>Longitudinal acceleration</b> (right channel) is similar, substituting speed for yaw<br>
 <br>
 <b>Loaded tire slip corner effects</b> use products of tire slips and G force proxies:
-<pre><code>return .01*$prop('GameRawData.Physics.WheelSlip01')*($prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))
+<pre><code>return .01*$prop('GameRawData.Physics.WheelSlip01')
+    *($prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))
 // since this multiplies two properties with 0-100 ranges,
 // results must be reduced by 100 to return the same range
 // left vs right G-force distributions are applied to wheel slips
@@ -853,7 +857,7 @@ Issues with it:<ul compact><li>gear-drive stepper motors are both noisy and dang
 <iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe><br>
 <a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">Here</a> is another direct-drive tensioner for braking only on shoulder and lap belts.<br>
 <br>
-50mm diameter spools on 8.5Nm motors are estimated to provide adequate but safe tension and belt travel.<br>
+50mm diameter spools on 8.5Nm motors should provide adequate but safe tension and belt travel.<br>
 <pre>Torque (N.m) = 9.5488 x Power (kW) / Speed (RPM)</pre>
 For electric scooter motors, stall torque is approximately watts / unloaded RPS.<br>
 For example, a 350W 2750rpm motor might have about 7 N.m stall torque.<br>
@@ -883,7 +887,7 @@ Modifications of RacingMat's design include:<ul compact>
 <li>Blue Pill PWM pins to servo white wires</ul>
 <img width=640 src="https://www.racedepartment.com/attachments/glued-jpg.442520/"><ul compact>
 <li>super capacitors in series require balance circuitry;<br>
-a commodity 16V super capacitor bank with balancing is cheaper and easier, then cut it in half:<br>
+a commodity 16V super capacitor bank with balancing is cheap;&nbsp cut it in half:<br>
 <img src="https://www.racedepartment.com/attachments/halved-jpg.442519/">
 <li>super capacitors effectively short-circuit supplies at power on, requiring current limiting.<br>
 Using an automotive headlamp bulb as a "dummy load",<br> the buck regulator was adjusted for maximum 8V and 4.5A:<br>
@@ -891,7 +895,8 @@ Using an automotive headlamp bulb as a "dummy load",<br> the buck regulator was 
 <li>Button left of LED digits turns LEDs (but not power) off/on.
 <li>Right pushbutton controls display mode: Vin, Vout, Aout, Pout, cycle.
 <li>Pots were received set fully clockwise, turning counterclockwise reduces values.
-<li>Left pot controls Vout, right pot controls Aout. Upper blue LED chip illuminates while powered.
+<li>Left pot controls Vout, right pot controls Aout.
+<li>Upper blue LED chip illuminates while powered.
 <li>Another LED chip just left of that illuminates when current limited.
 <li>LED chip right of digits illuminates when displaying Vout;
 <li>LED chip left of digits illuminates when displaying Vin.</ul>
@@ -1304,5 +1309,10 @@ to display Steam ID, in a web browser tab, enter:<br>
 .. in that console window, enter:<br>
 <code>user_info</code><br>
 </font>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
 </body>
 </html>
