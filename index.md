@@ -86,7 +86,7 @@
 - [Alienware Aurora R7 crashing and overheating](Windows/R7.htm)  
 - [**Antec Phantom VR build** &nbsp; i5-13600, Galax RTX 4090](Windows/PhantomVR.htm)  
 - [HID game controllers and SimHub](Windows/HID/)  &nbsp; [Serial-Lab](Windows/SerialLab)
-- [MSYS2](MSYS2/)
+- [MSYS2](Windows/MSYS2/)
 - [PC misguided buying - January 2022](Windows/PC)  
   - [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)
   - [H670 ATX motherboards](Windows/H670ATX) *cannot underVolt*
