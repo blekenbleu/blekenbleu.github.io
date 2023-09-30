@@ -1,22 +1,15 @@
-<html>
-<head>
+<html><head>
+<link rel='stylesheet' type='text/css' href='/static/my.css'>
 <style>
-body {
-   width:960px;
-   margin-left:60px;
-}
-h2, h3, h4, h5, h6 {
-   margin-bottom:0; 
-}
-ul,dl {
-   margin-top:0;
-   margin-bottom:0;
-}
+table.my_table td { width:960px; background-color:#C0CCFF; }
 </style>
 <title>Dell Inspiron 13 7373 2-in-1 Windows 10 Storage shortage</title>
 </head>
 
-<body bgcolor=#DDDDDD>
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
 <font size=-1><i><a href="../">back</a></i></font>
 
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
@@ -69,14 +62,14 @@ much commercial software employs OEM  obfuscation/installation utilities, which 
 While AOMEI is my preferred backup and disk partition mangler, AOMEI wants a paid PRO version for Dell cloning.<br>
 Consequently, <a href="https://www.macrium.com/reflectfree">Macrium FREE</a> is indicated
  for <a href="https://blog.macrium.com/how-to-migrate-your-old-pc-to-a-new-one-67af145e5a23"><b>this clone operation</b></a>:<br>
-<iframe width="960" height="480" src="https://www.youtube.com/embed/1LoRg0AFBKI"></iframe>
+<iframe width="900" height="450" src="https://www.youtube.com/embed/1LoRg0AFBKI"></iframe><br>
 A <a href="https://pureinfotech.com/clone-windows-10-hard-drive-ssd-macrium-reflect/">text cloning description</a>;&nbsp
 <a href="https://blog.macrium.com/how-to-migrate-your-old-pc-to-a-new-one-67af145e5a23">Macrium clone (blog)</a>
 <h3>Disassembly, SSD swap, reassembly</h3>
-<iframe width="960" height="480" src="https://www.youtube.com/embed/MKk8fyFMiAc?start=251"></iframe>
-<h4>9 Jun 2023:&nbsp 1TB NVMe delivered</h4>
-A fair amount of dust and cat hair in and around the fan:<br>
-<img width=80% src=inside.jpg>
+<iframe width="900" height="450" src="https://www.youtube.com/embed/MKk8fyFMiAc?start=251"></iframe>
+<dl><dt><b>9 Jun 2023:&nbsp 1TB NVMe delivered</b>
+<dd>A fair amount of dust and cat hair in and around the fan:<br>
+<img width=90% src=inside.jpg></dl>
 <h3>Macrium Reflect</h3>
 <i>10 Jun 2023</i> <b>doomed attempt</b><br><br>
 
@@ -105,9 +98,9 @@ This time, with:<ul>
 <li>still cloning hard drive on which Windows in running
 <li>Windows <b>Fast Startup</b> disabled
 <li>Macrium Reflect <code>Rapid delta clone</code> unchecked.
-<img width=80% src=Options.png><br clear=all><br>
+<img width=90% src=Options.png><br clear=all><br>
 <li>Time to clone was appreciably less.<br>
-<img width=80% src=Cloned.png>
+<img width=90% src=Cloned.png>
 </ul>
 
 <h4><i>Nearly</i> identical results</h4>
@@ -117,11 +110,11 @@ This time, with:<ul>
 <li>enters Dell SUPPORT diagnostics
 <li>Repair attempt failures reported;&nbsp restarts 
 <li>Another option after repair "failure":&nbsp <code>Exit and continue to Windows 10</code>
-<img width=80% src="https://1.bp.blogspot.com/-s25_4YJSY3U/X5e_f1AGw7I/AAAAAAAAFBU/g2V1xM8eGVYIkYygikATGCSoqkDYBqULwCPcBGAsYHg/s4032/20201027_111030.jpg">
+<img width=90% src="https://1.bp.blogspot.com/-s25_4YJSY3U/X5e_f1AGw7I/AAAAAAAAFBU/g2V1xM8eGVYIkYygikATGCSoqkDYBqULwCPcBGAsYHg/s4032/20201027_111030.jpg">
 <li>... &nbsp <i>worked!!?!</i><br>
-<img width=80% src=Free.png>
+<img width=90% src=Free.png>
 <li>WinDirStats shows approximately the same usage for that 174/940GB:<br>
-<img width=80% src=Usage_1TB.png>
+<img width=90% src=Usage_1TB.png><br clear=all>
 <code>Windows Resource Protection found corrupt files and successfully repaired them.</code>
 
 <a name=W11>
@@ -138,11 +131,16 @@ I run this daily if not more often.<dl>
 <dt><br><i>Click</i> <font color=blue><b>Run Cleaner</b></font> at lower right, then <font color=blue><b>Continue</b></font>:<br>
 <img src="Continue.png">
 <dt><br><i>Click</i> <font color=blue><b>Yes</b></font> for CCleaner to close <b>Edge Chromium</b> and <b>Google Chrome</b>.<br>
-<dd>One reason to run CCleaner is that Edge Chromium continues running after its windows are closed, monitoring e.g. Google Chrome activity and presumably reporting back to M$...<br>
+<dd>One reason to run CCleaner is that Edge Chromium continues running after its windows are closed,<br>
+ monitoring e.g. Google Chrome activity and presumably reporting back to M$...<br>
 Here, no browser activity occurred after Edge Chromium launch until CCleaner killed it.<br>
 There was no activity for Edge to cache;&nbsp Edge seemingly copied current Chrome activities.<br>
 On a typical day, a half gigabyte of history files and thousands of cookies may be cached:<br>
-<img src="CCleaned.png"> 
+<img width=90% src="CCleaned.png"> 
 </dl>
 
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body>
 </body></html>

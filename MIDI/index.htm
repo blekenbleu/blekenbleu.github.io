@@ -1,13 +1,18 @@
-<html>
-<head>
-<style> body { margin-left: 80px; } h4 {margin-bottom:0} ul {margin-top:0} </style>
+<html><head>
+<link rel='stylesheet' type='text/css' href='/static/my.css'>
+
 <title>MIDI</title>
 </head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td>
+
 <a href="../"><i>back</i></a><br>
 <dl>
 <dt><font size=+2><b>MIDI</b></font>
-<dt><details><summary><b>About MIDI</b>: servers, clients, senders, receivers, control surfaces, sequencers, editors, recorders, instruments</summary>
+<dt><details><summary><b>About MIDI</b>: servers, clients, senders, receivers, control surfaces, sequencers,<br>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp editors, recorders, instruments</summary>
 Historically, <a href="https://www.midi.org/">MIDI (Musical Instrument Digital Interface)</a> was a variation on asynchronous serial communication,<br>
 using the same UART <a href="https://en.wikipedia.org/wiki/MIDI#Technical_specifications">technology</a> as in serial printers, terminals and modems,<br>
 but with idiosynchratic 31.5kbps data rate, 5-pin (ground + 2 in + 2 out) DIN connectors and 5 Volt signals,<br>
@@ -271,7 +276,7 @@ One of two MIDI-over-UDP protocols, uses "well-known" port;
  our designated bridge between IP and MIDI,<br>
  &nbsp supports ipMIDI, RTP, WebSocket, WebMIDI and Bluetooth;<br>
  &nbsp behaves as a client for UDP, but a server for ipMIDI AKA multicast IP.<br>
-It also behaves as a client for TCP WebSocket, looking for servers to announce (via DNS) MIDI service.<br>
+It also behaves as a client for TCP WebSocket<br> looking for servers to announce (via DNS) MIDI service.<br>
 For Apple MIDI (AKA RTP), it uses one UDP port for control and another for MIDI messages<br>
 Whether it wants one or two ports for TCP WebSockets is unclear.<br>
  &nbsp provides its own MIDI ports:<ul>
@@ -282,7 +287,7 @@ Whether it wants one or two ports for TCP WebSockets is unclear.<br>
   <li>Its documentation suggests that it can be both a websocket server and client.
   <li><code>mnet.log</code> reports: <code>WebSocketIO - server listening on port: 6504</code>
   <li>Web browser JavaScript is not allowed to create a WebSocket server,<br>
-      but a JavaScript client to open a WebSocket to that port and try sending some MIDI messages <i>may not be too hard</i>;<br>
+      but a JavaScript client to open a WebSocket to that port<br> and try sending some MIDI messages <i>may not be too hard</i>;<br>
       here are <a href="https://code.tutsplus.com/tutorials/introduction-to-web-midi--cms-25220">an article</a>
       and <a href="https://github.com/fa-m/midi-websocket">sample browser code</a>.
   <ul>
@@ -325,12 +330,12 @@ Whether it wants one or two ports for TCP WebSockets is unclear.<br>
 <li><a href="https://github.com/lathoub/Arduino-AppleMIDI-Library/blob/master/examples/wESP32_NoteOnOffEverySec/wESP32_NoteOnOffEverySec.ino">wESP32_NoteOnOffEverySec.ino</a>
  includes <code>MDNS.addService("apple-midi", "udp", AppleMIDI.getPort());</code><ul>
  <li>replaced <code>ETH.begin();</code> in <code>ETH_Heelper.h:ETH_startup()</code> with <code>WiFi.begin()</code>
- <li>MIDIHub recognizes the device, and the sketch reports <code>Connected to session 4155933516 mnet (ALIENWARE-R7_144) 8</code>,<br>
-    but also reports <code>*** ListenerTimeOutException</code> and many <code>*** ParseException</code>,<br>
+ <li>MIDIHub recognizes the device, and the sketch reports:<br> <code>Connected to session 4155933516 mnet (ALIENWARE-R7_144) 8</code>,<br>
+    ...but also reports <code>*** ListenerTimeOutException</code> and many <code>*** ParseException</code>,<br>
     which occur in <code>AppleMIDI.hpp:parseControlPackets()</code>,<br>
     based on <code>UnexpectedData</code> returned from <code>AppleMIDI_Parser.h: parse()</code> returning <code>UnexpectedData</code><br>
-    which it does for too many reasons: signature, protocolVersion, or not having previously returned something.
- <li>Adding debugging code to <code>AppleMIDI_Parser.h</code> revealed that most ParseExceptions were an unexpected and long signature.
+    which it does for too many reasons: signature, protocolVersion,<br> or not having previously returned something.
+ <li>Adding debugging code to <code>AppleMIDI_Parser.h</code> revealed that<br>most ParseExceptions were an unexpected and long signature.
  <li>Added more debugging code to understand AppleMIDI_Parser
 <details><summary>then MIDI traffic <i>sometimes</i> began flowing:</summary>
 <pre>ESP-ROM:esp32s2-rc4-20191025
@@ -377,13 +382,13 @@ first MIDI.sendNoteOn()</pre></details>
   MIDI-OX must connect to the configured MIDIHub port (e.g. <code>MIDIHUB PORT 2</code>) <i>after</i>
   <li><i>Without</i> Serial Monitor running and <i>with</i> MidiView already watching <code>MIDIHUB PORT 2</code>,<br>
   MIDI traffic seems to flow OK..<br>
-  &nbsp MIDIHub <i>sometimes</i> allows both MIDI_OX and MidiView
+  <li> MIDIHub <i>sometimes</i> allows both MIDI_OX and MidiView
   to simultaneously read <code>MIDIHUB PORT</code>.
  </ul>
 
 <li><a href="https://github.com/lathoub/Arduino-ipMIDI"><b>Arduino ipMIDI Transport</b><a> on <code>MIDIHUB PORT 1</code>
 <br>The <a href="https://github.com/blekenbleu/composite_sketches/blob/main/ESP32_NoteOnOffipMIDI/ESP32_NoteOnOffipMIDI.ino">ESP32_NoteOnOffipMIDI
-  sketch</a> seemed too simple to work with MIDIHub.. but it <i>sometimes does</i>.<br>
+  sketch</a> seemed too simple to work with MIDIHub..<br> but it <i>sometimes does</i>.<br>
   It seems to work more consistently when Serial Monitor is used until notes start,<br>
   &nbsp then connecting MidiView to MIDIHUB PORT 1,<br>
   but it still (also) occasionally stops for no known reason..<br>
@@ -394,7 +399,7 @@ first MIDI.sendNoteOn()</pre></details>
   <li>Unzip <code>esp32fs.jar</code> into <code>arduino-1.8.16\tools\ESP32FS\tool\</code><br><img src="tools.png">
   <li>Launch Arduino and check for <b>ESP32 Sketch Data Upload</b> under Tools:<br><img src="Upload.png">
   <li>Files to be uploaded should be in a <code>Data</code> folder inside the sketch folder:<br><img src="data_folder.png">
-  <li>Launch that tool <i>after</i> uploading the sketch, then in Serial Monitor: &nbsp <code>SPIFFS mounted successfully</code><br>
+  <li>Launch that tool <i>after</i> uploading the sketch,<br> then in Serial Monitor: &nbsp <code>SPIFFS mounted successfully</code><br>
       take care to select SPIFF: &nbsp <img align=top src="SPIFFS.png"><br clear=all>
       &nbsp
 </ul>
@@ -410,5 +415,7 @@ first MIDI.sendNoteOn()</pre></details>
    and perhaps capturing traffic from a mnet MIDIHub client
 </ul>
 
-</body>
-</html>
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
