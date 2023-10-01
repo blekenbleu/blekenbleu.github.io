@@ -43,12 +43,13 @@ table.my_table td { width:960px; background-color:#EEBBFF; }
 <dd><a href=#MAG>MSI MAG Z790 TOMAHAWK WIFI DDR5</a>
 </dl>
 <hr>
-<a name=PARTS><h3>Parts</h3></a>
+<h3>Parts</h3>
 <i>ordered 5 Aug 2023</i>:&nbsp
 <a href="https://pcpartpicker.com/list/3qb7YN">PCPARTPICKER list</a><br>
 
 <details><summary>click for details</summary>
-<dl><dt><a href="https://www.amazon.com/dp/B0BCDR9M33"><b>Intel Core i5-13600K 3.5 GHz 14-Core Processor</b></a>
+<a name=PARTS>
+<dl><dt><a href="https://www.amazon.com/dp/B0BCDR9M33"><b>Intel Core i5-13600K 3.5 GHz 14-Core Processor</b></a></a>
 <dd>Fastest gaming processor suitable for air cooling
 
 <dt><br><a href="https://www.amazon.com/dp/B09FDXJV3M"><b>ID-COOLING SE-226-XT 68.2 CFM CPU Cooler</b></a>
@@ -67,7 +68,7 @@ table.my_table td { width:960px; background-color:#EEBBFF; }
 Z790 Tomahawk motherboard has 6600+ MHz rating for a pair of these (1DPC 2R)<br>
 <a href="https://forum-en.msi.com/index.php?threads/ram-explained-why-two-modules-are-better-than-four-single-vs-dual-rank-stability-testing.363139/">Why two modules are better than four / single vs. dual-rank / stability testing</a><br>
 <a href="https://www.amazon.com/gp/customer-reviews/R1T2WTU3FMB94Y/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B0C4NKHXK7"><b>7000 M/Ts Dual Rank</b></a>
-<pre>"At first you expect the headspreader on these to be too small, but they are very effective.
+<pre style="width:95%; background-color:#DEDEDE">"At first you expect the headspreader on these to be too small, but they are very effective.
  Teamgroup actually used quality thermal pads that are well placed plus good coverage on the PMIC.
 
  I don't know what type of die these chips are, but they clock great!
@@ -227,7 +228,8 @@ That warmer extrusion will be under GPU, fins on it would be good, but could not
    and <a href="https://storage-asset.msi.com/files/pdf/How_to_flash_the_BIOS.pdf"><b>PDF</b></a>
 <li>copy e.g.  <code>E7D91IMS.H50</code> to a USB flash key<br>
    &nbsp &nbsp M-FLASH declined to see <code>7D91vH7</code> on 4GB FAT32 USB key:
-<table bgcolor=#DEDEDE><tr><td><pre>
+
+<pre style="width:45%; background-color:#DEDEDE">
  Volume in drive G is MSI BIOS
  Volume Serial Number is 11AE-0CE9
 
@@ -235,14 +237,15 @@ That warmer extrusion will be under GPU, fins on it would be good, but could not
 
 07/10/2023  05:32 PM        33,554,432 E7D91IMS.H70
                1 File(s)     33,554,432 bytes
-               0 Dir(s)   3,999,678,464 bytes free</pre></td></tr></table>
- &nbsp ... but updated with that same <code>E7D91IMS.H70</code> on another USB key formatted for AOMEI BackUpper...
+               0 Dir(s)   3,999,678,464 bytes free</pre>
+
+ &nbsp ... but updated with that same <code>E7D91IMS.H70</code> on another USB key<br>formatted for AOMEI BackUpper...
 MSI Z690 flash BIOS updates are fussy about USB thumb drives!
 <li>Reset BIOS options to default: <a href="https://download.msi.com/archive/mnu_exe/mb/MAGZ790TOMAHAWKWIFI.pdf">clear CMOS</a>(page 22)
  <i>before</i> M-FLASH<br> or if/when PC fails to boot after M-FLASH.<br>
 A prompt to remove USB key after BIOS update would be nice, before rebooting...<br>
 I yanked out the USB key, to avoid booting AOMEI BackUpper.</ol>
-<a href="https://forum-en.msi.com/index.php?threads/msi-z790-tomahawk-ddr5-wifi-bios-v-h7-update.387647/">MSI Z790 Tomahawk DDR5 WIFI BIOS v.H7 Update</a> discussion in MSU Community<br><br>
+<a href="https://forum-en.msi.com/index.php?threads/msi-z790-tomahawk-ddr5-wifi-bios-v-h7-update.387647/">MSI Z790 Tomahawk DDR5 WIFI BIOS v.H7 Update</a> discussion in MSI Community<br><br>
 
 <a name=W10><li><b>Boot Windows 10 Installation media USB key</b> without networking<br></a>
   Setting a local user account is easier on Windows 10 than 11...<br>
@@ -251,7 +254,9 @@ I yanked out the USB key, to avoid booting AOMEI BackUpper.</ol>
 
 <li>MSI automatically updated drivers with first Windows Update,<br>
  otherwise <a href="https://www.msi.com/blog/auto-install-your-driver-software-with-msi-driver-utility-installer-udi">MSI Driver Utility Installer</a>
-</details>
+
+<li>Install RTX 4090<br><img width=90% src=cooler.jpg>
+</details><br>
 
 <li><a href="compare.htm"><b>YouTube thermals comparison with R7</b></a> and <a href="compare.htm#W11">Windows 11 installation</a>
 <li>Then on to <a href="tune.htm"><b>tuning</b></a><br><br>
@@ -307,7 +312,7 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
     accelerated GPU scheduling</a> was not a winner, in my R7 testing...
 </ul>
 <a name=UV><h4>UnderVolt</h4></a>
-<pre>
+<pre style="width:45%; background-color:#DEDEDE">
 <a href="https://www.reddit.com/r/intel/comments/ro020k/how_to_undervolt_12700k/"> v/f curves Offset Mode vs Adaptive Mode</a>
 <a href="https://www.reddit.com/r/hardware/comments/ympxw8/intel_i513600k_undervolting_my_results_on_power/">Intel i5-13600K Undervolting</a> - reddit
 </pre>
@@ -368,9 +373,10 @@ Reverb G2 + 12600k/3080ti:&nbsp
 * Sergei Strelec's WinPE<br>
 * <a href="https://www.majorgeeks.com/content/page/5_bootable_isos_to_boot_and_repair_your_computer_for_free.html">Ultimate Boot CD (UBCD)</a><br>
 
-<a name=RCV><h4>Parts received 9 Aug 2023</h4></a>
+<h4>Parts received 9 Aug 2023</h4>
 <details><summary>click for details</summary>
-<img width=100% src=image/USPS.jpg><ul compact>
+<a name=RCV>
+<img width=100% src=image/USPS.jpg></a><ul compact>
 <li>wrong CPU (i5-13400) - reordered
 <li><b>bad</b> <i>used</i> PRO Z790-A motherboard - ordered <a href="https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI"><b>MSI MAG Z790 Tomahawk WiFi DDR5</b></a> (23% off, only $10 more)<br>
 FWIW, unlike many PC components, MSI motherboard product boxes are <i>not</i> sealed;<br> their antistatic bags have a short sticky tape strip "seal".<br>
