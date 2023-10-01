@@ -1,19 +1,18 @@
-<html>
-<head>
-<style>
-body {
-   width:1240px;
-   margin-left:60px;
-}
-</style>
-<title>Windows 10 vJoy v2.2.1.1 install:&nbsp not scary (not previously installed)</title>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../../static/my.css'>
+
+<title>Windows 10 vJoy v2.2.1.1 install</title>
 </head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td>
+
 <font size=-1><i><a href="../">back</a></i></font>
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper"></a><br clear=all>
 
-<h3>Windows 10 vJoy v2.2.1.1, then v2.1.6.2 installation:&nbsp not scary (not previously installed)</h3>
+<h3>Windows 10 vJoy v2.2.1.1, then v2.1.6.2 installation:<br> not scary (not previously installed)</h3>
 The latest version with signed driver:
 <a href="https://github.com/njz3/vJoy/releases/tag/v2.2.1.1">
 <code>https://github.com/njz3/vJoy/releases/tag/v2.2.1.1</code></a>  9.5MB<br>
@@ -37,10 +36,10 @@ Sadly, <a href="https://github.com/njz3/vJoy/releases">njz3/vJoy</a> has only v2
 Fire up Windows <b>Device Manager</b> and check Properties - Driver for vJoy, then [Uninstall Device]<br>
 To test <a href="https://sourceforge.net/projects/vjoystick/files/Beta%202.x/2.1.6.20-030216/">v2.1.6 Build 20</a>,
 at that point, I renamed <code>Program Files\vJoy</code> to <code>Program Files\vJoy_2.2.1.1</code>.<br>
-<a href="https://sourceforge.net/projects/vjoystick/files/Beta%202.x/2.1.6.20-030216/">Setup.exe for Version 2.1.6 Build 20</a> installed successfully... &nbsp
+<a href="https://sourceforge.net/projects/vjoystick/files/Beta%202.x/2.1.6.20-030216/">Setup.exe for Version 2.1.6 Build 20</a> installed successfully...<br>
 ... but also disappeared <code>Program Files\vJoy_2.2.1.1\</code>..??</p>
 
-<p><a href="https://github.com/jshafer817/vJoy/releases/tag/v2.1.9.1">v2.1.9.1</a> is the driver <i>most recently known to work</i> with Windows 11;&nbsp
+<p><a href="https://github.com/jshafer817/vJoy/releases/tag/v2.1.9.1">v2.1.9.1</a> is the driver <i>most recently known to work</i> with Windows 11;<br>
 the issue with v2.2.1.1 appears to be<br>
 <a href=https://github.com/njz3/vJoy/issues/4><b>DATETIME</b>
  <code>InitFromRegistry()</code>: File <b>DOWNLOADPATH</b> <code>vJoyInit.reg</code> not found</a>.<br>
@@ -54,13 +53,13 @@ For some reason, includes another 611KB <code>vJoyInstall.exe</code> ..?<br>
 Apps are in <code>C:\Program Files\vJoy\x64\</code><br>
 Linked them into SimHub folder<br>
 vJoyList shows 1 installed;<br>
-vJoy Monitor shows 8 axes and 8 buttons.<br>
+vJoy Monitor shows 8 axes and 16 buttons.<br>
 Command line <code>vJoyConfig.exe</code> and GUI <code>vJoyConf.exe</code><br>
 <br>
-vJoy Monitor runs; one device is configured by default with 8 buttons.
 <table><tr><td>
-<img src="Monitor.png"></td><td>&nbsp
-vJoyConf shows 16 axes and configurable number of buttons;<br> &nbsp &nbsp &nbsp
+vJoy Monitor:&nbsp one device configured with 8 axes.<br>
+<img width=450 src="Monitor.png"></td><td>
+vJoyConf:&nbsp 16 axes, configurable buttons;<br>
 <img src="vJoyConf.png"></td></tr></table><br>
 Setting <code>16</code> Buttons showed up in vJoy Monitor, so all good.<br>
 
@@ -70,7 +69,7 @@ Setting <code>16</code> Buttons showed up in vJoy Monitor, so all good.<br>
 <img src="Test.png"></td></tr></table><br>
 
 No consensus about names assigned to axes and which directions are min and max:<br>
-<img src="Feeder.png"><br clear=all><br>
+<img width=860 src="Feeder.png"><br clear=all><br>
 
 Note that <code>joy.cpl</code> can <i>dynamically</i> display <code>vJoyFeeder.exe</code> changes <i>only<i> when Windows gives it focus.
 
@@ -80,6 +79,10 @@ Note that <code>joy.cpl</code> can <i>dynamically</i> display <code>vJoyFeeder.e
 How to fix:&nbsp installing vJoy and controllers not working anymore.<br>
 <a href="https://www.reddit.com/r/hotas/comments/lfjnn9/how_to_fix_installing_vjoy_and_controllers_not/">
 https://www.reddit.com/r/hotas/comments/lfjnn9/how_to_fix_installing_vjoy_and_controllers_not/</a><br>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
 
 </body>
 </html>

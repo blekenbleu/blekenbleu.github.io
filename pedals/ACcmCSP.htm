@@ -1,25 +1,12 @@
-<html>
-<head>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
 <title>Assetto Corsa, Content Manager and Custom Shading Patch settings</title>
-<style>
-body {
-  width:960px;
-  margin: 60px;
-}
-th {
-  text-align: left;
-}
-table {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-</style>
 </head>
 <body>
+<div align=center>
+<table class="my_table"><tr><td style="width:950">
+
 <font size=-1><a href="index.htm"><i>back</i></a></font>
 <a name=sim><h2>Assetto Corsa, Content Manager and Custom Shading Patch settings</h2></a>
 <a href="https://store.steampowered.com/app/244210/Assetto_Corsa/">Assetto Corsa</a> is a car racing game.&nbsp I own 2 others, but have so far driven only AC.<br>
@@ -49,9 +36,11 @@ Launched from Steam, AC would use the new wheel.  Launched from Sim Commander 4,
 Previously, some things did not work, depending on the sequence in which Windows Mixed Reality was launched<br>
 relative to Steam, CM and AC.<br>
 I have yet to sort a working configuration for WMR+SteamVR+SC4+CM+CSP+AC,<br>
-but worked around the CM+AC+AccuForce issue by renaming ~/Documents/Assetto Corsa/ to ~/Documents/Assetto Corsa.br/<br>
-then configuring AccuForce in CM and launching AC from there, creating a new ~/Documents/Assetto Corsa/<br>
-which lacks all tweaks made in ~/Documents/Assetto Corsa.b4/ which has 96 files different from those in the new folder,<br>
+but worked around the CM+AC+AccuForce issue
+ by renaming <code>~/Documents/Assetto Corsa/</code>
+ to <code>~/Documents/Assetto Corsa.br/</code><br>
+then configuring AccuForce in CM and launching AC from there, creating a new <code>~/Documents/Assetto Corsa/</code><br>
+which lacks all tweaks made in <code>~/Documents/Assetto Corsa.b4/</code> which has 96 files different from those in the new folder,<br>
 based on WinMerge folder comparison. WinMerge external editor was changed to GVim.<br>
 <br>
 At least for the differences, I want to understand what the do and reapply as many as make sense.
@@ -117,7 +106,7 @@ Steering Speed=100%</pre>
 Just delete the file [acos.ini] found in<br>
  <code>Documents \ Assetto Corsa \ cfg \ [cos.ini]</code>
 <dt>cfg\video.ini
-<dd>Many settings that IMO may have not much to do with video, e.g. LOCK_STEER (which is a mystery)<br>
+<dd>Many settings that IMO may have not much to do with video, e.g. <code>LOCK_STEER</code> (still a mystery)<br>
 <a href="https://www.reddit.com/r/assettocorsa/comments/3lhv6p/assetto_corsa_125_a_graphical_settings_adventure/">reddit descriptions and suggested values</a><br>
 <a href="https://revolutionsimracing.com/threads/graphic-guide.1648/"><b><i>fewer acronyms and more about CM performance impacts preview</i></b></a><br>
 * WORLD_DETAIL &nbsp <a href="https://www.assettocorsa.net/forum/index.php?threads/world-detail.2641">
@@ -127,10 +116,13 @@ used only for Grass and some other minor detail</a> (lollipop man?).<br> &nbsp I
 <a href="https://apexonlineracing.com/community/threads/ac-graphic-guide.18275">smoke generation and "High Quality Mirror Reflection" have huge FPS impact</a><br>
 <br>
 <b>values restored from .b4:</b><br>
-* HIDE_ARMS=1
+<li> <code>HIDE_ARMS=1</code>
 </dl>
 <br>
 <br>
 </font>
-</body>
-</html>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>

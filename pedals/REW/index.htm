@@ -1,26 +1,14 @@
-<html>
-<head>
-<title>Tactile Transducer measurements</title>
-<!-- for text wrap around images:  https://www.homeandlearn.co.uk/WD/wds4p6.html -->
-<style>
-body {
-  margin: 60px;
-  width:960px;
-}
-th {
-  text-align: left;
-}
-table {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-</style>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../../static/my.css'>
+
+
+<title>REW Tactile Transducer measurements</title>
 </head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td>
+
 <font size=-1><a href="../"><i>back</i></a></font>
 <a name=sim><h2>Tactile Transducer Measurements</h2></a>
 <font size=+1>
@@ -52,19 +40,22 @@ A first step is to evaluate limitations of equipment:<ul compact>
 </ul>
 Here is frequency and phase response of Realtek motherboard audio output<br>
 looped back to PreSonus AUDIOBOX USB line input:<br>
-<img src="soundcard.png"><br clear=all>
-Anomalies @ 1kHz are presumably PreSonus cross-talk artifacts from REW reference tone in the other channel;<br>
+<img src="soundcard.png"><br clear=all><br>
+
+Anomalies @ 1kHz are presumably PreSonus cross-talk artifacts<br>
+ from REW reference tone in the other channel;<br>
 2k, 3k and 4k glitches may be harmonics of the same.<br>
 How much of rolloff below 60Hz is attributable to motherboard audio or PreSonus is unknown,<br>
 but one takeaway for those using massive Bass Shakers is that soundcards may be a weak link.<br>
 <br>
 With haptics of interest to me ranging only from 10 to 800Hz, loop-back calibrating yields:<br>
 <img src="cal_soundcard.png"><br>
-While flatter would be nicer, 1dB will seem trivial after amplifier, transducer and sensor are introduced:<br>
+Flatter is nicer, but 1dB is trivial after introducing amplifier, transducer and sensor:<br>
 <img src="thrusterHeld.png"><br>
 Without mass loading, useful piezo low frequency response is not expected.<br>
 <br>
-The Dayton "thruster" transducer audibly rattles at some frequencies if not hand-held against the (30mm MDF) desktop:<br>
+The Dayton "thruster" transducer audibly rattles at some frequencies<br>
+ if not hand-held against the (30mm MDF) desktop:<br>
 <img src="unheld.png"><br>
 <br>
 
@@ -75,16 +66,23 @@ fed into a 500kOhm input impedance instrument input,<br>
 cable shielding is very important to avoid AC power hum inductive pickup.<br>
 Wireless mouse RF noise and LCD screen refresh interference may still be audible..<br>
 <br>
-Thruster movement can be sensed at 12Hz but seems weak until 15Hz, then noticeably stronger above 22Hz.<br>
+Thruster movement is sensed at 12Hz but weak until 15Hz,<br> then noticeably stronger above 22Hz.<br>
 Mechanical resonance of the thruster NOT held to 30mm MDF is around 40-45Hz<br>
-Finger-holding a 13mm steel nut against the piezo to approximate mass-loading yields more credible plots:<br>
+Finger-holding a 13mm steel nut against the piezo approximates mass-loading<br>
+and yields more credible plots:<br>
 <img src="FingerNut.png"><br>
 .. but results are inconsistent.<br>
-The (consistent) resonance around 15Hz, corresponding to large phase changes, is presumably the 30mm MDF,<br>
-since it corresponds with cancellations.  Sweeps while holding the thruster against difference surfaces<br>
-result in resonances at different frequencies.  This suggests that, while piezos are uncalibrated and<br>
-probably lack ideally uniform frequency response, they should be able to help analyze differences<br>
+The (consistent) resonance around 15Hz, corresponding to large phase changes,<br>
+ is presumably the 30mm MDF, since it corresponds with cancellations.<br>
+  Sweeps while holding the thruster against difference surfaces<br>
+result in resonances at different frequencies.  This suggests that<br>
+uncalibrated piezos probably lack ideally uniform frequency response<br>
+but should be able to help analyze differences<br>
 in transducer responses in different configurations.<br>
 </font>
-</body>
-</html>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>

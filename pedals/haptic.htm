@@ -1,25 +1,13 @@
-<html>
-<head>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
 <title>Haptic engineering</title>
-<style>
-body {
-  width:960px;
-  margin: 60px;
-}
-th {
-  text-align: left;
-}
-table {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-</style>
 </head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td style="width:700">
+
 <font size=-1><a href="index.htm"><i>back</i></a></font>
 <a name=sim><h2>Haptic engineering</h2></a>
 <font size=+1>
@@ -38,7 +26,8 @@ This means signals additively mixed nonlinearly effectively multiply.
 This means that multiplying two sinusoids results in sum and difference frequencies with phase shift.<br>
 suggesting that linearity can be an important consideration in haptic systems.<br>
 <li><code>x''(t) + x(t)*w**2 = 2*w*cos(w*t)</code><br>
-This corresponds to <i>resonance</i> e.g. of a mass and perfectly elastic spring -or- capacitance and inductance without resistance;<br>
+This corresponds to <i>resonance</i> e.g. of a mass and perfectly elastic spring<br>
+ -or- capacitance and inductance without resistance;<br>
 resonances <i>strongly</i> influence haptics.&nbsp Inelasticity or resistance dampen resonances.
 <li><a href="https://www.sciencedirect.com/topics/engineering/transmission-line-theory">Transmission line</a> effects are also involved;&nbsp
 haptic tranducers drive into structures with <a href="https://en.wikipedia.org/wiki/Distributed_parameter_system">distributed parameters</a>.
@@ -50,19 +39,19 @@ To that end, both a multimeter and <a href="https://www.ebay.com/itm/36292407779
 along with <a href="https://www.amazon.com/gp/product/B01HFTYINS">blunt needle applicators</a> to precisely apply DeoxITs without disassembly.
 </p>
 Engineering is about weighing tradeoffs among relationships, and <i>weighing</i> implies measurements.<br>
-Here, inexpensive contact microphone elements will proxy for accelerometers in haptic stimulus measurements.<br>
+Inexpensive contact microphone elements proxy for accelerometers in haptic stimulus measurements.<br>
 <img width=650 src="contact.jpg"><br clear=all>
 Tips:<ol compact>
 <li><i>before buttoning up wiring, verify microphone cable end-to-end continuity</i>. (ask why)
 <li>Piezos are capacitive, with high source impedance,<br>
 so a better match for so-called instrument inputs,<br>
-for which AudioBox has impedance of 500,000 Ohms, compared to 1200 Ohms for balanced microphones.<br>
+for which AudioBox has impedance of 500,000 Ohms,<br> contrasted to 1200 Ohms for balanced microphones.<br>
 However, high impedance instrument inputs are single-ended and more liable to noise.<br>
 An electrically parallel, piezo pair <img width=120 align=top src="contact_pair.jpg"> with metal discs grounded,<br>
 red leads both soldered to "hot", and epoxied together: <img width=200 align=center src="glued_pair.jpg"><br>
 adds shielding and halves source impedance, improving low frequency response.
 <li>As with exciters and other haptic transducers, contact microphones depend on mass loading.<br>
-Adding mass to piezo sandwich backside, e.g. a steel hex nut by epoxy, also improves low frequency response
+Adding mass to piezo pair backside, e.g. epoxied steel hex nut, improves low frequency response.
 </ol>
 <br>
 Relationship of electrical signals x(t) and y(t) is traditionally evaluated using an <a href="https://www.keysight.com/main/editorial.jspx?cc=US&lc=eng&ckey=2838609">x/y oscilloscope</a>,<br>
@@ -85,11 +74,11 @@ Beyond linearity evaluation, contact mics may be useful for<ul compact>
 <li>frequency response measurements, e.g. <a href="https://www.roomeqwizard.com/">using Room EQ Wizard</a>, which requires Java 8 (1.8)<br>
 which is installed on my PC at <code>/e/my/Android/jre/bin/</code> or <code>E:\my\Android\jre\bin\</code><br>
 REW <a href="https://www.roomeqwizard.com/help/help_en-GB/html/primer.html">measurements</a> include RTA, frequency and phase response, impulse response and waterfalls.
-<li>spectral analyses of "live" haptic signasl.&nbsp If (despite <a href="https://www.avnirvana.com/forums/official-rew-room-eq-wizard-support-forum.10/">extensive support</a>) REW disappoints,
+<li>spectral analyses of "live" haptic signals.<br> If (despite <a href="https://www.avnirvana.com/forums/official-rew-room-eq-wizard-support-forum.10/">extensive support</a>) REW disappoints,
 alternatives include:<ul compact>
 <li>installed:<ul compact>
-<li><a href="https://sourceforge.net/projects/audmes/">AUDio MEasurement System</a> - 2-channel audio generator supports phase difference between channels
-<li><a href="http://www.sillanumsoft.org/">Visual Analyser</a> - x/y oscilloscope supports time delay between channels, but insuffient trace persistence for signals below 50Hz.
+<li><a href="https://sourceforge.net/projects/audmes/">AUDio MEasurement System</a> - 2-channel audio generator supports phase difference.
+<li><a href="http://www.sillanumsoft.org/">Visual Analyser</a> - x/y oscilloscope supports time delay between channels,<br> but insuffient trace persistence for signals below 50Hz.
 <li><a href="https://www.zeitnitz.eu/scope_en">Soundcard Scope</a><br>
 Its separate XY graph tool includes a Time of Persistence slider, which works to low frequencies.<br>
 Its separable signal generator support phase between channels and frequency sweeps,<br>
@@ -106,5 +95,9 @@ but does not sync one generator to the other; frequency settings must be manuall
 </ul>
 </ul>
 </font>
-</body>
-</html>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>

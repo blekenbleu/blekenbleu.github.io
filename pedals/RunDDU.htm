@@ -1,13 +1,17 @@
-<html>
-<style>
-body {
-   margin-left:60px;
-}
-</style>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>DDU to cleanly reinstall Windows GPU drivers</title>
+</head>
+
 <body>
+<div align=center>
+<table class="my_table"><tr><td>
+
 <h3>DDU to cleanly reinstall Windows 10 Nvidia graphics driver</h3>
 <a href="https://forums.guru3d.com/threads/display-driver-uninstaller-thread.379506/">
-DDU recommends</a> setting a system restore point and disabling network and running from Safe mode;<br>
+DDU recommends</a> setting a system restore point, disabling network<br>
+ and running from Safe mode;<br>
 <a href="https://www.youtube.com/watch?v=5DKu4bfnnnw">VivaLaRobo</a> suggests neither.<br>
 <br>
 Download DDU from <a href="https://www.guru3d.com/files-details/display-driver-uninstaller-download.html">guru3d.com</a><br>
@@ -24,11 +28,13 @@ DDU recommends running <code>Clean and Restart</code> twice;  VivaLaRobo only di
 <a href="https://www.racedepartment.com/threads/nvidia-driver-issues.177106/#post-3094724">Bjarne Hansen</a> reported problems solved <i>only</i> after running DDU twice in Safe mode..<br>
 
 <h4><a href="https://community.windows.com/en-us/stories/safeguard-your-computer-with-system-restore-on-windows-10">Windows 10 restore point</a></h4>
-System Properties > System Protection > Create a restore point right now... [Create...]<br>
+<code>System Properties > System Protection > Create a restore point right now... [Create...]</code><br>
 (verify that protection is <code>On</code> for OS (C:) (System)<br>
 
 <h4><a href="https://www.lifewire.com/enabling-network-connections-in-windows-818245">turn off networking</a></h4>
-Disable: Settings > Network & Internet > Network and Sharing Center > Change adapter options. Right-click [network] > Disable<br>
+Disable:<br>
+<code>Settings > Network & Internet > Network and Sharing Center > Change adapter options.</code><br>
+ Right-click: <code>[network] > Disable</code><br>
 
 <h4>
 <a href="https://support.microsoft.com/en-us/windows/start-your-pc-in-safe-mode-in-windows-10-92c27cff-db89-8644-1ce4-b3e5e56fe234">
@@ -50,4 +56,9 @@ Boot tab > under Boot options, clear Safe boot checkbox<br>
 <li><code>Custom</code>, NOT <code>Express</code>
 <li>check <code>[v] Perform a clean installation  [NEXT]</code>
 </sl>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
 </body></html>
