@@ -1,40 +1,41 @@
 <html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
 
-<link rel='stylesheet' type='text/css' href='/static/my.css'>
-
-<style>
-table.my_table td { width:960px; }
-</style>
 <title>Somnium VR1</title>
 </head>
 
 <body>
-<div align=center><table class="my_table"><tr><td>
+<div align=center><table class="my_table"><tr><td style="width:900">
 
 <font size=-1><a href="./"><i>back</i></a></font>
 
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
-<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+<img align=right src="https://www.gixen.com/images/gixenlink.gif"
+ border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>
 <h2><a href="https://somniumtimes.com/2023/09/06/somnium-vr1-update-and-ama-with-artur-sychov-from-prototype-to-perfection/">Somnium VR1</a></h2>
 <iframe width=100% height="480" src="https://www.youtube.com/embed/CRcxGkrMmiA"></iframe>
-Artur claims [34:14/1:20:13] that main customers will be more consumers than enterprises, but IMO cost and value will better fit businesses.
-<li>Independent of application, VR1 runtime supports masking and mesh upload of CAD for e.g instrument panels.
-<h4><a href="https://vr-compare.com/compare?h1=INGl_L_43&h2=fJwyyQiC3">VRcompare:&nbsp Crystal vs VR1</a></h4>
-<h4><a href="https://www.youtube.com/@SomniumSpaceVR/videos">SomniumSpaceVR videos</a></h4>
-<pre>
-Focus distance < 85cm
+<ul>
+<li>Artur claims [34:14/1:20:13] that main customers will be more consumers than enterprises,<br>
+ but IMO cost and value will better fit businesses.
+<li>VR1 runtime supports masking and mesh upload of CAD for e.g instrument panels,<br>
+    independent of application.
+<li><a href="https://vr-compare.com/compare?h1=INGl_L_43&h2=fJwyyQiC3">VRcompare:&nbsp Crystal vs VR1</a>
+<li><a href="https://www.youtube.com/@SomniumSpaceVR/videos">SomniumSpaceVR videos</a>
+<li><a href="#space">SomniumSpace metaverse</a>
+<li> VR1 specification notes:
+<pre>Focus distance < 85cm
 Probably prescription lenses from VR Lens Lab, VROpticians
-4436 x 4157 is native rendered resolution for 2880x2880 per eye; 35ppd
+4436 x 4157 is native rendered resolution for 2880x2880 per eye;&nbsp 35ppd
 (same panels as Crystal)
 "super clear undistorted 125°+ FoV"
-Pimax Crystal QLED vs Somnium VR1; 90 & 120Hz
+Pimax Crystal QLED vs Somnium VR1;&nbsp 90 & 120Hz
 Mixed reality cameras 2x 4000x3000 with 125°+ FoV
 700-850 grams
-576 local dimming zones per eye;  perhaps not needed, because low glare optics.
+576 local dimming zones per eye;&nbsp  perhaps not needed, because low glare optics.
 <a href="https://nofio.co/">Nofio wireless</a> later.
 </pre>
-<ul>
+
 <li>optic block with two aspheric lenses (Artur holds them in the hand)
 <li>the optic block is 4 times sharper than the panel resolution would require
 <li>90 degrees stereo overlap
@@ -42,18 +43,20 @@ Mixed reality cameras 2x 4000x3000 with 125°+ FoV
 <li>local dimming with 576 zones per eye, 200+ nits brightness,<br>
  and while no panel resolution was shared it's obvious it's the same panel as on the Crystal
 <li>manufacturing tolerance is 10 microns from the lens ideal shape
-<li>face interface that can be fixed with magnets on the HMD (identical mechanism as on the G2),<br>
- and people can 3D print their own as CAD files will be provided
+<li>face interface that can be fixed with magnets on the HMD (same mechanism as on HP G2),<br>
+ and provided CAD files for people to 3D print their own.
 
-<li>there will be one 6m optic cable + something (DisplayPort/VirtualLink/DisplayLink?) for the variant without MR cameras,<br>
- and one additional identical cable (connected on the other side of the headset) to carry on the MR camera feed back to the PC
+<li>one 6m optic cable + something (DisplayPort/VirtualLink/DisplayLink?) for variants without MR cameras,<br>
+ and one additional identical cable (connected on the other side of the headset) for MR PC feed.
 
-<li>they have their own OpenXR runtime implementation
-<li>eye tracking is also their own implementation, in their framework, but will opensource everything about it, including the algorithm
-<li>motion compensation is in the framework they developed, and they will expose it for the sim community
+<li>their own OpenXR runtime implementation
+<li>eye tracking is also their framework implementation,<br>
+ but will opensource everything about it, including the algorithm
+<li>motion compensation is in their framework, and they will expose it for the sim community
 <li>they also mentioned about how the Mixed Reality cockpit mapping will work:<br>
  you take the CAD of your car/airplane cockpit and feed it to their software,<br>
- and then you can just interact with it with your hands (you'll need both hand tracking module and MR cameras on the HMD)
+ and then you can just interact with it with your hands<br>
+(both hand tracking module and MR cameras on the HMD)
 
 <li>very large MR camera resolution, something like 4000 x 3000 I think
 <li>MR camera refresh rate is 90 fps
@@ -63,8 +66,9 @@ Mixed reality cameras 2x 4000x3000 with 125°+ FoV
 <li>As of 27 Sep 2023, development appears complete;&nbsp most remaining issues are financial
 <li>Sept update and sign-ups likely to slip into first week of Oct.
 <li>VR2, several years away, will use <a href="https://www.hypervision.ai/">pancake lenses</a>.
-<li>3D video capture from passthru cameras will be a thing;  target for software was unclear (to me).
-<li>Passthru video processing in the PC, wanting more CPU threads than standalone HMD of comparable resolution and frame rate
+<li>3D video capture from passthru cameras will be a thing;&nbsp  target for software was unclear (to me).
+<li>Passthru video processing in the PC, using more CPU resources<br>
+ than non-MR/XR HMD of comparable resolution and frame rate
 </ul>
 
 <br><br><table><tr><th><font size=+2>Sonium VR1</th><th><font size=+2>Pimax Crystal</th></tr>
@@ -83,6 +87,56 @@ Mixed reality cameras 2x 4000x3000 with 125°+ FoV
 Perhaps similar tech for VR1 CAD insertion:<br>
 <iframe width=100% height="480" src="https://www.youtube.com/embed/cvGyn9TBz9k"></iframe>
 
+<h3>Did Somnium Space inspire VR1, or did funding VR1 inspire Somnium Space?</h3>
+<details><summary><i>metadata about Somnium metaspace</i></summary><br>
+
+<a name="space">The following is to some extent guesses, based on e.g.</a>
+<li><a href="https://somniumspace-guide.com/">somniumspace-guide.com</a>
+<li><a href="https://nftplazas.com/somnium-space/">NFT<i>Plazas</i>&nbsp <b>Somnium Space Overview</b></a>
+
+<h4>Somenium Space is virtual property</h4>
+On the web:
+<li>https://somniumspace.com/
+<li>https://somniumtimes.com/
+<li>https://somniumspace-guide.com/
+<li>https://somniumspace.medium.com/
+<li>https://discord.com/channels/494994753146847233/
+<li>https://twitter.com/SomniumSpace
+<li>https://twitter.com/ASychov
+
+<h4><a href="https://somniumspace-guide.com/?page_id=54">Access is free</a></h4>
+
+Access by WebXR, VR client or PC client (free?)<br>
+<a href="https://somniumspace-guide.com/?page_id=139">
+<b>WebXR access is mutually exclusive to 3D (VR meetup)</b></a><br>
+<br>
+Proprietary apps to e.g. interact with other avatars<ul>
+<li><a href="https://somniumspace-guide.com/?page_id=379">Somnium PC</a>
+<li><a href="https://somniumspace-guide.com/?page_id=744">VR Client</a><br>
+SteamVR client no longer works;&nbsp install from www.somniumspace.com<br>
+"SteamVR will need to run for tracking.<br>
+ There is almost no way to bypass that<br>
+ when lighthouse tracking is used."<br>
+
+<li>Somnium Space 3.0 is not yet available
+<li>Somnium Space 2.0 is no longer available, was on Steam<br>
+<a href="https://somniumspace.com/parcel/">
+These were/will be required to put (other)NFTs on parcels</a><br>
+
+<li>Building in Somenium Space requires NFT parcel ownership,
+tracked by Ethereum blockchain
+<li>Transactions involve CUBE tokens,
+<a href="https://www.finder.com/somnium-space-guide">
+(Somnium’s native cryptocurrency)</a>
+<li>Somnium Space’s official market is based on OpenSea
+<li><a href="https://somniumspace-guide.com/?page_id=1488">
+Avatar creation does not require parcel ownership</a><br>
+
+<li><a href="https://medium.com/digital-notice-media-labs/somnium-space-a-virtual-reality-world-review-6cc3df8eb95f">
+Somnium Space Builder on Android or iOS?</a><br>
+<a href="https://www.youtube.com/watch?v=izOhPgvpefA"><i>maybe</i>
+</ul>
+</details>
 
 
 </td></tr><tr><td align=center>
