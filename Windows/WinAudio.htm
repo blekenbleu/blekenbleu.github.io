@@ -1,0 +1,100 @@
+<html><head><title>Windows Sound</title>
+<style>
+table th,td{ text-align:center; }
+</style>
+</head>
+
+<body><h2>Windows Sound</h2>
+<font size=+1>
+<p><i>Before installing
+</i><a href="https://vb-audio.com/Voicemeeter/banana.htm"><code>Voicemeeter Banana</code></a>, <code>Somnium Space</code> <i>worked with</i>
+<code>VB-Audio CABLE</code> <i>by the same folks</i>.</p>
+
+<h3>Windows 11 sound routing</h3>
+Windows sound output does not play default input; some application must route it.<br>
+Except for default input and output, Windows 11 sound devices are configured for exclusive access.<br>
+Consequently, any not-default input (e.g. text-to-voice) output must be somehow split<br>
+to feed both e.g. <a href="../XR/VR1.html#space">Somnium Space VR</a> and default output.<br>
+<b>System > Sound > Sound Mixer</b>, where Sound Mixer requires scrolling nearly to the bottom of <b>System > Sound</b>.<br>
+The <code>v</code> to the right of each App exposes Output and Input device selection.<br><br>
+
+<h4><a href="https://www.youtube.com/watch?v=pEd7jw0uNE4&t=91s">VoiceMeeter setup video by TheFranswah Studio video"</a></h4>
+Making VoiceMeeter the default audio devices.<br>
+<a href="https://www.youtube.com/watch?v=YxWE-enkOhY">VoiceMeeter Potato adds filtering per channel</a><br>
+Official <a href="https://voicemeeter.com/setup-voicemeeter-with-windows-11-disable-mic-privacy/">VoiceMeeter in Windows 11</a><br>
+<br><b><a href="https://steelseries.com/gg/sonar">steelseries Sonar</a> is a gaming-focused VoiceMeeter alternative</a></b>,
+promoted by a <a href="https://steelseries.com/gg/sonar">TheFranswah Studio video</a>.<br><br>
+
+<code>Text to Speech Voice Reader</code> works with <code>Somnium Space</code> using <code>CABLE (VB-Audio Virtual Cable)</code>:
+<br><img src=Properties.jpg><br><br>
+...but <code>Somnium Space</code> has yet to recognize a <code>VoiceMeeter Output (VB-Audio VoiceMeeter VAIO) connection.<br>
+
+<b><a href="https://discord.com/invite/mBvWzeF3a8">VoiceMeeter discord</a></b><br><br>
+
+In the twisted minds of M$, "<code>Don't Allow</code>" means that <i>they are currently allowed</i>.<br>
+  Pressing "<code>Don't Allow</code>" <i>here</i> is equivalent to (right click) <b>Disable</b><br>
+ in Sound control panel <code>Playback</code> or <code>Recording</code>, so baffling redundancy...<br>
+"Allow applications to take exclusive control of this device" is still available<br>
+ in Sound control panel device <code>Properties > Advanced</code>.<br>
+Connecting Somnium Space exclusively to VB-Audio CABLE Out<br>
+ no longer seems to work, but Somnium Space 2D hangs...
+
+<h4>Test script for Text to Speech Voice Reader</h4>
+<code>dot-space-dot</code> between lines avoids voicing last word of previous line when playing any line...
+<pre>
+. Hello.
+. .
+This is voiced from text, and I text poorly.
+. .
+I am uncertain what is actually heard in Somnium Space.
+. .
+I would say something interesting here, but not yet.
+. .
+I am not particularly artificial, just lacking personality.
+. .
+testing 1 2 3.
+. .
+Is this too loud or quiet?
+. .
+I cannot multi-task.
+. .
+I text poorly.
+. .
+line 9.
+. .
+still sorting text to audio.
+. .
+I suppose that all intelligence is artificial.
+. .
+Thanks.
+..
+</pre>
+<hr>
+<b>Text to Speech Voice Reader</b> stalls and hangs if/when connected to a disabled sound input;<br>
+ask me how I know...<br>
+
+<h3>Windows default input</h3>
+Does not get routed to Windows default output,<br> but e.g. Voicemeeter can route specific devices.<br>
+
+<h4>VoiceMeeter patches</h4>
+Reconfigured VoiceMeeter AUX as default Windows sound default output device<br> and VoiceMeeter VAIO as Windows sound default input.<br>
+<table border=1 width=500>
+<tr> <th>source</th> <th>input</th> <th>X-Fi</th> <th>CABLE In</th> <th>Denon</th> <th>Main OUT<br>default in</th> <th>Aux OUT</th></tr>
+<tr> <td></td> <td>INPUT 1</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr> <td></td> <td>INPUT 2</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr> <td></td> <td>INPUT 3</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr> <td>Text to Voice</td> <td>VAIO</td> <td>x</td> <td>x</td> <td>x</td> <td>x</td> <td></td> </tr>
+<tr> <td>default output</td> <td>AUX</td> <td>x</td> <td></td> <td>x</td> <td></td> <td></td> </tr>
+</table>
+Translated:
+Text to Voice outputs to VAIO (default input),<br> used e.g. by Somnium but also passed to X-Fi for headphones and Denon for surround.<br>
+AUX is default output, also passed to X-Fi and Denon (but not Somnium).<br>
+
+<br><b>Exclusive mode disabled for VoiceMeeter Aux Input</b><br>
+<li> because Default Playback Device<br>
+<li>X-Fi volume control is no longer effective...
+<li> VB-Audio CABLE Input attached to VoiceMeeter A2 output for a third source device<br>
+<img src=VB-Audio.jpg>
+
+</body></html>
+
