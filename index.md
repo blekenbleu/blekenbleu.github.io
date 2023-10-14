@@ -96,6 +96,7 @@
   - [Spectrum modem and router regressions](/static/network/Spectrum.htm)  
   - [**Synology DiskStation DS920+**](/static/network/DS920.htm)  
 - [RTX3090](Windows/RTX3090)  
+- [Sound and VoiceMeeter](Windows/WinAudio.htm)  
 - Storage shortage:&nbsp;  [Dell Inspiron 13 7000 2-in-1 Windows 10 NVMe SSD](Windows/NVMe/Inspiron13.htm)  
 - [Vim and X-Mouse](VimTXmouse)
 - Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
