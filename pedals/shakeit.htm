@@ -87,7 +87,7 @@ This effect currently explores three formulae, each gated by gear changes and cl
 <li>high-pass filtering of changes in speed
 <li>surge acceleration
 <li>surge acceleration and high-pass filtering of same (jerk)</ul>
-<img src="shifts.gif"><br clear=all>
+<img src="image/shifts.gif"><br clear=all>
 <font size=-1>
 <i>Front left = Gear; Front right = surge acceleration; Rear left = high pass filter of speed changes;<br>
 Rear right = surge acceleration + high pass filter of acceleration changes</i><br></font><br>
@@ -104,9 +104,9 @@ Here are two plots evaluating methods, gated neither by gear changes nor clutch 
 <li><code>Front right</code> is <code>AccelerationSurge</code> property
 <li><code>Rear left</code> is current speed minus <a href=ShakeIt/index.htm#lpiir>low-pass filtered</a> previous speeds
 <li><code>Rear right</code> is <a href=ShakeIt/index.htm#hpiir>high-pass filtered</a> accelerations</ul>
-<img src="plot1.gif"><br clear=all>
+<img src="image/plot1.gif"><br clear=all>
 This next plot is when braking with front tire lockup, a limit condition:<br>
-<img src="plot2.gif"><br clear=all>
+<img src="image/plot2.gif"><br clear=all>
 The low pass time constant determined to roughly minimize<br>
 differences between <code>Front right</code> and <code>Rear left</code>
 was then also applied to <code>Rear right</code>.<br>

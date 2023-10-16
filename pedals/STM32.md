@@ -6,7 +6,7 @@
 #### Background
 Having poor coordination always and no depth perception until vision fused in my 40s,
 driving and bicycling were as nearly athletic as I cared to get.
-My wife got a BMW E21 320i when her old Toyota Corolla died in the early 1990s.
+My copilot got a BMW E21 320i when her old Toyota Corolla died in the early 1990s.
 The best BMW garage in town offered discounts to BMW CCA members, so we joined.
 This led, in 1995, to a 5-speed [1985 BMW E23 735i](https://drive-my.com/en/test-drive/item/2201-road-test-1985-bmw-735i-e23.html),
 which I wanted to own since reading the September 1985 Road & Track review.
