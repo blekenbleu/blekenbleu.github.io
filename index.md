@@ -60,6 +60,7 @@
   - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID/)
   - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
   - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
+- [wheels for GT racing in VR](pedals/steering.htm)  
 
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
 - [Samsung Odyssey+ and HP Reverb for Assetto Corsa](pedals/#hmd)  
