@@ -24,12 +24,11 @@ table.my_table td { width:860px; }
 <li><a href="ACcmCSP.htm">Assetto Corsa settings</a>
 <li><a href="#AC">Assetto Corsa: installation, keyboard commands</a>
 <li><a href="#tuning">Tuning</a>
-<li><a href="#contentmgr">Content Manager</a> and <a href="#mods">AC mods</a>
-<li><a href="https://www.racedepartment.com/threads/is-there-a-real-head-motion-like-thing-integrated-to-csp.182875/post-3166712">CM Neck FX</a>
+<li><a href="#contentmgr">Content Manager</a> and <a href="#mods">AC mods</a>;&nbsp
+    <a href="https://www.racedepartment.com/threads/is-there-a-real-head-motion-like-thing-integrated-to-csp.182875/post-3166712">CM Neck FX</a>
 <li><a href="#wheelstand">wheel stand</a>
 <li><a href="steering.htm">wheels for GT racing in VR</a>
-<li><a href="STM32">mods using STM32</a>
-<li><a href="ESP8266">mods using ESP8266</a>
+<li>mods using <a href="STM32">STM32</a> &nbsp <a href="ESP8266">ESP8266</a>
 <li><a href="#TH8A">Thrustmaster TH8A shifter mods</a>
 <li><a href="#DCD">DCD WRC Shifter</a>
 <li><a href="#G29">Logitech G29</a>
@@ -41,13 +40,13 @@ table.my_table td { width:860px; }
 <li><a href="#analog">Logitech pedals to AccuForce analog inputs</a>
 <li><a href="#shakeseat">ShakeSeat</a> <a href="#pad">padding</a>
 <li><a href="ShakeIt/10cmShaker/">eBay "super pucks" AKA Low Frequency Bass Speaker Transducer 3.75"</a>
-<li><a href="#ShakeIt">SimHub ShakeIt</a>
+<li><a href="#ShakeIt">SimHub ShakeIt Bass Shakers</a>
 <li><a href="#accel">SimHub Acceleration properties</a>
 <li><a href=#R7>Aurora R7 Windows 10 sound</a>
 <li><a href="#Simshakeseat">SimHub ShakeIt for ShakeSeat</a>
 <li><a href="../MIDI/plugin/">SimHub MIDI plugin</a>
 <li><a href="#SimHarness">SimHub for 2DOF Harness</a>
-<li><a href="#HOTAS">Hand-On Throttle-And-Stick in SteamVR</a>
+<li><a href="#HOTAS">Hand-On Throttle-And-Stick (HOTAS) in SteamVR</a>
 <li><a href="#hmd">Samsung Odyssey+ HMD</a><ul compact>
 <li><a href="#HP">HP Reverb G1 HMD</a>
 <li><a href="#DDU">DDU for clean graphics driver installation</a></ul>
@@ -204,6 +203,7 @@ Many recommend <a href="RunDDU.htm">removing all traces of Nvidia driver install
 <hr>
 <a name=AC><h4>Assetto Corsa (AC)</h4></a>
 <a href="https://www.youtube.com/watch?v=IPci88kRgEU">AC setup including VR</a><br>
+<a href="ACCMSC23.htm"><i>2023 reinstallation</i></a><br>
 <a href="https://forums.overclockers.co.uk/threads/help-with-assetto-corsa-in-vr.18884953/">Help with assetto corsa in VR</a><br>
 <br>
 <details>
@@ -570,7 +570,7 @@ A pioneer in converting sim telemetry to bass shaker audio,<br>
 that is now also available from (free) SimHub as well as SRS' ShakeKit.<br>
 SimXperience has since integrated SimVibe with
 <a href="https://www.simxperience.com/en-us/products/software/simcommander4.aspx">Sim Commander 4</a>,<br>
-which also drives their <a href="#DD">AccuForce direct drive steering wheel</a> (<i>on order</i>).<br>
+which also drives their <a href="#DD">AccuForce direct drive steering wheel</a> (<i>acquired</i>).<br>
 <br>
 SimXperience warns that multiple identical sound adapters can be problematic.<br>
 Both Aurora motherboard and Samsung Odyssey+ sound identify as Realtek:<br>
@@ -645,14 +645,15 @@ After fiddling with Sim Commander 4 SimVibe<br>
 * documentation sucks and effect names are unhelpful<br>
 
 <br>
-SimHub <a href="#ShakeIt">ShakeIt</a> is a better choice for me..<br>
+SimHub <a href="#ShakeIt">ShakeIt Bass Shakers</a> is a better choice for me..<br>
 </details>
 <a name=ShakeIt>
-<h4><a href="https://www.simhubdash.com/download-2/">SimHub</a> ShakeIt</h4></a>
+<h4><a href="https://www.simhubdash.com/download-2/">SimHub</a> ShakeIt Bass Shakers</h4></a>
 (confusingly, one less K than <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">SRS product</a>) is/was free software,<br>
 since integrated into <a href="https://www.simhubdash.com/">SimHub</a>, and somewhat
 comparable to <a href="https://www.simracingstudio.com/download">SRS' licensed app</a>.<br>
-Based on game telemetry, SimHUb ShakeIt generates audio signals<br> which are amplified to power tactile pucks, exciters and shakers.<br>
+Without "Bass Shakers", "ShakeIt" is about rumble motors.<br>
+Based on game telemetry, SimHub ShakeIt Bass Shakers generates audio signals<br> which are amplified to power tactile pucks, exciters and shakers.<br>
 A SimHub license enables more support..<br>
 SimHub ShakeIt used to be <a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">distributed and supported from RaceDepartment</a>, but no more..<br>
 Downloaded SimHub from <a href="http://www.simhubdash.com">http://www.simhubdash.com/</a>
@@ -734,13 +735,13 @@ Nicolas, SimHub
  &nbsp; then some suspension will be wanted to resist those forces while isolating tactile energy.
 </ul>
 <h4><a name="Simshakeseat">SimHub for ShakeSeat: G-force modulated 4 corner tire slip</a></h4>
-Background and disclaimers<br>
-My sim driving experience is only with Assetto Corsa, an office chair and wheel stand.<br>
+<i>Background and disclaimers</i><br>
+My sim driving experience is with an office chair, wheel stand and mostly Assetto Corsa.<br>
 I have no experience with the
 <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">full SRS ShakeKit</a>,
 which may offer a superior experience.<br>
 Without a harness to keep one's back contacting them,<br>
-back transducers in <a href="https://www.simracingstudio.com/product-page/srs-shakekit-plus-includes-srs-license-for-bass-shaker">ShakeKit Plus</a> seem of arguable benefit.<br>
+back transducers in <a href="https://www.simracingstudio.com/product-page/srs-shakekit-plus-includes-srs-license-for-bass-shaker">ShakeKit Plus</a> seem of debatable benefit.<br>
 <br>
 Already using SimHub, having unused motherboard 7.1 sound<br>
 and obsolete Denon surround receiver,<br>
