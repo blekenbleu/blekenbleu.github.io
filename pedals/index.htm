@@ -128,7 +128,7 @@ Ratchet strap secures desk chair to improvised wheel stand. &nbsp
 <img src="image/sidestand.jpg"><br clear=all>
 fan and Odyssey+ HMD perch on top: &nbsp
 <img align=center src="image/wheelstand.jpg"><br clear=all><br>
-<a name=EXT>Work bench wheel stand converted to extrusions for AccuForce</a>:<br>
+<a name=EXT>Work bench wheel stand converted to extrusions</a> for <a href="#DD">AccuForce</a>:<br>
 <img align=left src="image/extruded.jpg"><br clear=all><br>
 Repurposed Adcom ACE-515 distributes power to sim equipment,<br>
 including amplifiers for <a href="#shakeseat">ShakeSeat cushion</a> controlled by <a href="https://github.com/SHWotever/SimHub/wiki/Shake-It-for-bass-shakers">SimHub</a>.<br>
@@ -337,7 +337,7 @@ Better feedback wants direct drive steering, load cell brake pedal and <a href="
 <h4>Project</h4>
 Brake simulation shortcomings can be mitigated by:<ul compact>
 <li> replacing brake potentiometer with a <a href="https://imgur.com/gallery/gOjAf">load cell</a><ul compact>
-<li>That mod uses analog op amp, problematic with Logitech's brake curve, but fine with AccuForce
+<li>That mod uses analog op amp, problematic with Logitech's brake curve, but fine with <a href="#analog">AccuForce</a>
 <li>instead of custom circuit board, use a cheap <b>INA333</b> (or AD623) low power rail-to-rail instrumentation amplifier module:<br>
 <img src=image/INA333front.jpg><img src=image/INA333rear.jpg><br clear=all>
 <b>Instructions</b> &nbsp The on-board 3.3V low-dropout LDO regulator chip directly supplies power to the INA333 amplifier.<br>
@@ -650,8 +650,8 @@ After fiddling with Sim Commander 4 SimVibe<br>
 <br>
 SimHub <a href="#ShakeIt">ShakeIt Bass Shakers</a> is a better choice for me..<br>
 </details>
-<a name=ShakeIt>
-<h4><a href="https://www.simhubdash.com/download-2/">SimHub</a> ShakeIt Bass Shakers</h4></a>
+<a name=ShakeIt> &nbsp </a>
+<h4><a href="https://www.simhubdash.com/download-2/">SimHub</a> ShakeIt Bass Shakers</h4>
 (confusingly, one less K than <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">SRS product</a>) is/was free software,<br>
 since integrated into <a href="https://www.simhubdash.com/">SimHub</a>, and somewhat
 comparable to <a href="https://www.simracingstudio.com/download">SRS' licensed app</a>.<br>
@@ -737,7 +737,7 @@ Nicolas, SimHub
  &nbsp; ... but in instances where isolated mass (e.g. seat) must also resist forces,<br>
  &nbsp; then some suspension will be wanted to resist those forces while isolating tactile energy.
 </ul>
-<h4><a name="Simshakeseat">SimHub for ShakeSeat: G-force modulated 4 corner tire slip</a></h4>
+<a name="Simshakeseat"><h4>SimHub for ShakeSeat: G-force modulated 4 corner tire slip</h4></a>
 <i>Background and disclaimers</i><br>
 My sim driving experience is with an office chair, wheel stand and mostly Assetto Corsa.<br>
 I have no experience with the
@@ -979,14 +979,14 @@ which are mostly recessed and captured in polymer,<br>
 except for 4 nuts that fasten wheel base flange to shifter body,
 which protrude:<br>
 <img src="https://www.racedepartment.com/attachments/dcdnuts-jpg.507000/"><br clear=all>
-That was sorted for my AccuForce
+That was sorted for <a href="#DD">my AccuForce</a>
 <a href="https://www.racedepartment.com/threads/any-other-interest-in-diy-t-slot-extrusion-8020-wheel-stands.204332/post-3404152">mounted</a>
 thru <a href="https://8020.net/40-8020.html">40-8020 T-slotted aluminum profile</a>,<br>
 using rubber gasket material already on order
-to fix another spacing issue.<br>
-<br>
-<a name="Q1R">
-A second spacing issue: between the shifter body and clone Q1r lever:<br></a>
+to fix another spacing issue.<br><br>
+
+<a name="Q1R">A second spacing issue: between the shifter body and clone Q1r lever:<br></a>
+
 <img width=100% src="https://www.racedepartment.com/attachments/q1r_wrc-jpg.508788/"><br clear=all>
 ... addressed by bending the lever's tip inward a few mm.<ul compact>
 <li>Paddles flex;&nbsp particularly the larger of 2
@@ -1006,6 +1006,7 @@ add switch support to Arduino Blue Pill <a href="https://github.com/blekenbleu/A
 converting debounced switch changes from Arduino Blue Pill USB COM port<br> to corresponding SimHub property values,
 then to <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">vJoy virtual switches</a>.
 </ul>
+
 <hr>
 <a name=G29><h4>Logitech G29</h4></a>
 Refurbished Logitech G29 arrived April 2018<br>
@@ -1134,8 +1135,8 @@ SingleRacer made a video for
 <a href="https://www.youtube.com/watch?v=PyX-IdYco4s">taming G29 with FFBclip, Wheel Check and LUT generator</a><br>
 
 <hr>
-<a name=DD><h3>AccuForce wheel base</h3></a>
-Sim driving by VR HMD means not seeing physical controls,
+<a name=DD><h3>AccuForce wheel base (DIY no longer available)</h3></a>
+Sim driving by VR HMD without video passthru means not seeing physical controls,<br>
 unless video capture of controls is reinserted in 3D view,<br>
 without which controls on steering wheel are IMO useless, simplifying direct drive options.<br>
 <a href="https://www.simxperience.com/en-us/products/accessories/accuforcesteering.aspx">AccuForce</a> has a good reputation, with $599
@@ -1150,29 +1151,31 @@ Accuforce uses a <a href="https://www.orientalmotor.com/stepper-motors/technolog
 DIY non-standard 14mm shaft (shared with <a href="http://www.gerit.it/pdf/Servomotori_Lenze_MCS_en.pdf">Lenze MCS 09</a>)
 
 <img align=center src="https://www.simxperience.com/web/image/product.product/727/image_1024/AccuForce%20DIY%20Simulation%20Steering%20Kit?unique=8789346">
-<br clear=all>
-A similarly priced Chinese design, Simagic M10, also used hybrid stepper motor and had a better design for signal connections,
-but no longer available from <a href="https://us.sim-motion.com/collections/simagic-alpha">authorized U.S. source</a>.<br> 
+<br clear=all><br>
+
+A similarly priced Chinese design, Simagic M10, also used hybrid stepper motor<br>
+with a better design for signal connections,
+but is no longer available from <a href="https://us.sim-motion.com/collections/simagic-alpha">authorized U.S. source</a>,<br>
+having been replaced by their <a href="https://shop.simagic.com/products/alpha-mini">Alpha Mini</a>, also relatively compact.<br><br>
 
 70mm steering wheel adapter @ $27 from
 <a href="https://www.ascher-racing.com/shop/clamping-set/">Ascher Racing</a> is no longer available.<br>
 Installation: &nbsp
-<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/Sk_NCV-8R5w"></iframe><br>
+<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/Sk_NCV-8R5w"></iframe><br><br>
 
 <!-- Motor dimensions are <a href="https://www.simxperience.com/Portals/0/Files/AccuForce/DIY_SimXperience_Motor.PDF">in this PDF diagram</a>.<br> -->
-14mm diameter shaft extends 55.4mm from motor case, which has 69.5mm center square spacing of mounting holes (6mm??)<br>
+14mm diameter shaft extends 55.4mm from motor case,<br>
+ which has 69.5mm center square spacing of mounting holes (6mm??)<br>
 AccuForce DIY motor appears to be NEMA 34:<br>
 <img align=center src="https://www.ato.com/Content/Images/uploaded/nema-34-stepper-motor-dimension.jpg"><br clear=all>
 .. for which <a href="https://www.amazon.com/dp/B079R8W1BH">$10 brackets are available</a>: &nbsp
 <img align=center src="https://images-na.ssl-images-amazon.com/images/I/41XuxzH4sWL._AC_.jpg"><br clear=all>
-Spending another $100 for <a href="https://www.simxperience.com/shop/accuforce-your-way-v2-steering-system-869#attr=12,8,10">"Your Way"</a>
-could have been cost-effective..<br>
+With DIY model no longer available, consider instead
+<a href="https://www.simxperience.com/shop/accuforce-your-way-v2-steering-system-869#attr=12,8,10">Your Way</a>,<br>
+ which includes a 14mm-to-70mm PCD hub, then remove its bulky case.<br>
 <img src="https://www.simxperience.com/web/image/product.product/898/image_1024/AccuForce%20Your%20Way%20V2%20Steering%20System%20%28None%2C%20None%2C%20None%29?unique=fe26a1f"><br clear=all>
-... but its case is unnecessarily bulky<br>
-and <a href="https://www.simxperience.com/products/accessories/accuforcesteering/accuforcepromountingbracket.aspx">angled mounting brackets</a> add another $45. &nbsp
-<img align=center width=320 src="https://www.simxperience.com/web/image/product.product/12/image_1024/%5BAF-PRO-MOUNTBRKT-001%5D%20AccuForce%20Pro%20Mounting%20Bracket?unique=8431be6"><br clear=all>
 <br>
-<a name=OG14><h5>Original 14mm wheel adapter</h5></a>
+<a name=OG14><h5>Doomed first attempted 14mm wheel adapter</h5></a>
 <table><tr><td width=55%>
 Ordered <a href="https://www.amazon.com/gp/product/B07MNT9VXW/">14mm flange</a> and <a href="https://www.amazon.com/gp/product/B07YLMNGNG">70mm BC steering wheel hub adapter</a><br>
 from Amazon for less than $25, along with a low cost<br>
@@ -1184,10 +1187,11 @@ for 14mm flange mounting holes and assembled:<br>
 Enlarged 6 MASO holes to match 70mm OC hub screw holes.
 </td><td width=45%><img width=100% src="image/QR320mm.jpg"></td></tr></table>
 <br>
-MASO quick releases seem OK;  Sim Racing Garage liked one adapted for Thrustmaster:<br>
+MASO quick releases <i>seemed</i> OK;  Sim Racing Garage liked one adapted for Thrustmaster:<br>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/9ZNrmjJzFd4"></iframe>
 <br> .. but elastomer buttons compress and allow rattling if wheels are left connected when not in use.<br>
 <br>
+<h3>Logitech pedal attachment to AccuForce Controller</h3>
 <table><tr><td width=60%>
 The AccuForce Controller
 <a name=analog> has a Analog Input (with Molex 0901420008 connector)</a><br>
@@ -1201,7 +1205,7 @@ The AccuForce Controller
 <br>
 <img width=90% src="https://www.racedepartment.com/attachments/g25pinout-png.148609/"><br clear=all>
 <br><br>
-<br><br> &nbsp &nbsp Connector pin spacing is 0.1";&nbsp instead of Molex 0901420008, <br>
+<br><br> &nbsp &nbsp Connector pin spacing is 0.1",<br> instead of Molex 0901420008, <br>
  &nbsp &nbsp I used Dupont breadboard jumpers with a <a href="https://www.amazon.com/gp/product/B01AN7A09A">DB-9 female adapter plate</a>:
 </td><td width=40%>
 <img width=100% align=top src="https://www.simxperience.com/web/image/slide.slide/19/image_1024?unique=5c1ad95"><br clear=all>
@@ -1212,20 +1216,10 @@ The AccuForce Controller
 <i>SimXperience cables are liable to fatigue at connectors;  double-clamping is wanted..</i>
 <br>
 <br>
-<a href="http://trakracer.com">TRAK RACER</a> lists a
-<a href="https://trakracer.eu/products/tr-one-universal-direct-fit-wheel-mount-for-other-direct-drives-requires-tr80-nwma">TR80-NWMDD</a>
-15mm thick aluminum front mount adapter,<br> (180mm width): &nbsp
-<img align=top src="https://cdn.shopify.com/s/files/1/0603/6268/6658/products/TR80-NWMDD.3_360x.png"><br clear=all><br> 
 
 Ricmotech's <a href="https://www.ricmotech.com/Ricmotech_Mini_Mite_Direct_Drive_Steering_System_p/rmt-mm-base.htm">Mini-mite</a>
 <img align=center src="image/Mini-Mite.jpg">
 is <a href="https://www.racedepartment.com/threads/accuforce-mounting-help.171738/post-3021710">an AccuForce clone</a>.<br>
-They also sell a <a href="https://www.ricmotech.com/Mounting_Bracket_for_SimLab_Heusinkveld_Chassis_p/rmt-ddaf-slabadpt.htm">front mounting
-plate</a> to adapt that motor for e.g. Bodnar / Kollmorgen front mounts.<br>
-<div align=center><img width=320 src="https://www.ricmotech.com/assets/images/thumbnails/RMT-DDAF-SLABADPT-2_thumbnail.jpg"></div>
-Ricmotech sells <a href="https://www.ricmotech.com/Monitor_Angle_Brackets_for_80_20_Aluminum_p/rmt-mangle-tslot.htm">T-slot
-monitor angle brackets for 80/20</a> with 43-60 degree tilt adjustment. &nbsp
-<a href="https://ricmotechcom.fatcow.com/vContent/Manuals/MANGLE-TSLOT.pdf"><i>pdf</i></a><br>
 <hr>
 <br><font size=-2><i><a href="#sim">back</a></i></font>
 <a name=HOTAS><h3>Hand-On Throttle-And-Stick (HOTAS) in SteamVR</h3></a>
