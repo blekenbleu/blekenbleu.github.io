@@ -26,11 +26,12 @@ table.my_table td { width:860px; }
 <li><a href="#tuning">Tuning</a>
 <li><a href="#contentmgr">Content Manager</a> and <a href="#mods">AC mods</a>;&nbsp
     <a href="https://www.racedepartment.com/threads/is-there-a-real-head-motion-like-thing-integrated-to-csp.182875/post-3166712">CM Neck FX</a>
-<li><a href="#wheelstand">wheel stand</a>
+<li><a href="#wheelstand">wheel stand</a> &nbsp <a href="#EXT">converted to use aluminum extrusions</a>
 <li><a href="steering.htm">wheels for GT racing in VR</a>
 <li>mods using <a href="STM32">STM32</a> &nbsp <a href="ESP8266">ESP8266</a>
 <li><a href="#TH8A">Thrustmaster TH8A shifter mods</a>
 <li><a href="#DCD">DCD WRC Shifter</a>
+<li><a href="#Q1R">Q1R steering wheel quick release</a>
 <li><a href="#G29">Logitech G29</a>
 <li><a href="#FFB">Force Feedback controls</a>
 <li><a href="#DD">AccuForce wheel base</a>
@@ -126,10 +127,12 @@ Ratchet strap secures desk chair to improvised wheel stand. &nbsp
  mount G29 wheelbase and TH8A shifter;<br>
 <img src="image/sidestand.jpg"><br clear=all>
 fan and Odyssey+ HMD perch on top: &nbsp
-<img align=center src="image/wheelstand.jpg"><br clear=all>
+<img align=center src="image/wheelstand.jpg"><br clear=all><br>
+<a name=EXT>Work bench wheel stand converted to extrusions for AccuForce</a>:<br>
+<img align=left src="image/extruded.jpg"><br clear=all><br>
 Repurposed Adcom ACE-515 distributes power to sim equipment,<br>
 including amplifiers for <a href="#shakeseat">ShakeSeat cushion</a> controlled by <a href="https://github.com/SHWotever/SimHub/wiki/Shake-It-for-bass-shakers">SimHub</a>.<br>
-TH8A shifter plate is rotated slightly ccw to reduce missed shifts.<br>
+<a href="#TH8A">TH8A shifter plate</a> is rotated slightly ccw to reduce missed shifts.<br>
 
 
 <hr>
@@ -995,8 +998,14 @@ held on by only solder and hot glue;<br>
 the micro-USB cable connector stuck straight up with no support.<br>
 That board could be shifted lower on its 3-D printed housing,<br>
 leaving room for a "well" to support the USB cable connector.<br>
-<li><a href="https://www.instagram.com/p/Ci7_awUN8x-/">newer DCD paddle shifters</a> use USB C and a bolt to better anchor the shifter module.<br>
-<br>
+<li><a href="https://www.instagram.com/p/Ci7_awUN8x-/">newer DCD paddle shifters</a> use USB C and a bolt to better anchor the shifter module,<br>
+but USB-C implementation still appears vulnerable:<br>
+<img src="image/DCD_USB-C.jpg">
+<li>Rather than repair that board, which consumes a USB port for only 2 switches,<br>
+add switch support to Arduino Blue Pill <a href="https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/PWM_FullConfiguration">PWM_FullConfiguration sketch</a> and <a href="https://github.com/blekenbleu/Fake8">Fake8 SimHub plugin</a>,<br>
+converting debounced switch changes from Arduino Blue Pill USB COM port<br> to corresponding SimHub property values,
+then to <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">vJoy virtual switches</a>.
+</ul>
 <hr>
 <a name=G29><h4>Logitech G29</h4></a>
 Refurbished Logitech G29 arrived April 2018<br>
