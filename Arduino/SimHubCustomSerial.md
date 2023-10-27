@@ -1,22 +1,40 @@
 ---
 ---
-*updated 27 Mar 2023*
+[*back*](./)  
+*updated 27 Oct 2023*
 ## SimHub Custom serial device for Blue Pill
 
-#### [Background](https://blekenbleu.github.io/Arduino/SimHubCustomSerial.html)
-An [STM32duino sketch](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_ASCII_Servo) was thrown together  
-that moves either of a pair of servos,  
-depending on least significant bit,  
+#### Background
+SimHub directly supports [certain Arduino boards](https://github.com/SHWotever/SimHub/wiki#arduino-support);  
+Arduino IDE also supports (cheaper and more powerful) [STM32 boards](https://github.com/stm32duino/Arduino_Core_STM32#generic-stm32f1-boards);&nbsp; Black and Blue Pills are popular  
+| Device        |    Name    | RAM k | Flash k | US$ ebay |
+|---------------|:----------:|------:|--------:|---------:| 
+| STM32F103C6   | Blue Pill  |    20 |      32 |     2.27 |
+| STM32F103C8   | [Blue Pill](https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html)  |    20 |      64 |     1.80 |
+| STM32F401CCU6 | [Black Pill](https://hackaday.com/2021/01/20/blue-pill-vs-black-pill-transitioning-from-stm32f103-to-stm32f411/) |    64 |     256 |  3.65 |
+| STM32F411CEU6 | [Black Pill](https://docs.zephyrproject.org/latest/boards/arm/blackpill_f411ce/doc/) |   128 |     512 |     5.26 |
+
+Blue Pill lacks built-in USB boot loader;  
+programmed into flash makes (sometimes cheaper) `STM32F103C6` a poor choice.
+- [`Fake8` plugin](https://github.com/blekenbleu/Fake8/) works around SimHub Custom serial device limitations...  
+  ... then [MIDIio plugin](../Windows/HID/) enables sending those switches as a virtual joystick and/or MIDI control surface signals.
+
+
+### [Foreground](https://blekenbleu.github.io/Arduino/SimHubCustomSerial.html)
+An [STM32duino sketch](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_ASCII_Servo) moves either of a pair of servos, selected by least significant bit,  
 for byte values (masked with 0x7F) received by USB COM port,
 [as described here](index.md#serial-servos)  
 
-Google magic revealed likely `SimHub Custom serial devices` help:
-- [SimHub Forum Outputting sim data to Arduino to use with stepper motor gauges](https://www.simhubdash.com/community-2/simhub-support/outputting-sim-data-to-arduino-to-use-with-stepper-motor-gauges/)  
-  - This clarifies that Custom serial device is for "adhoc" protocol with "non-SimHub" sketches  
+Google magic revealed [`SimHub Custom serial devices`](https://github.com/SHWotever/SimHub/wiki/Custom-serial-devices) help:
+- SimHub Forum:&nbsp; [Outputting sim data to Arduino to use with stepper motor gauges](https://www.simhubdash.com/community-2/simhub-support/outputting-sim-data-to-arduino-to-use-with-stepper-motor-gauges/)  
+  - SimHub Custom serial device plugin is for "non-SimHub" sketches and USB `COM` devices.  
+  - **Custom serial device** can display USB `COM` device response, but *cannot process* those responses.
 - [SHWotever/SimHub Custom serial devices](https://github.com/SHWotever/SimHub/wiki/Custom-serial-devices)
-  This walks thru enabling the plugin and defining messages:
+  walks thru enabling that plugin and defining messages:
   ![custom serial device](SimHubCustomSerial.gif)  
-  The [SimHub `Custom serial device` for **Blue Pill harness servos**](https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds.txt) has two enabled Update messages:
+
+  This [SimHub `Custom serial device` profile for **Blue Pill harness servos**](https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds)  
+  has two enabled Update messages:
   1. harness tension settings
       - click `Test untensioned positions` to adjust `Left untensioned` and `Right untenstioned` sliders  
         so that harness is most slack
@@ -60,7 +78,7 @@ Perhaps, if some game were recorded,
 then Replay here would show how data worked...?  
 `round([GameRawData.Physics.AccG01],0)`  
 
-[Rough skeleton for SImHub Custom serial device settings](https://github.com/blekenbleu/SimHub-Profiles/blob/main/tension.shsds.txt)
+[Rough skeleton for SImHub Custom serial device settings](https://github.com/blekenbleu/SimHub-Profiles/blob/main/tension.shsds.txt)  
 Need to understand the nature of available SimHub properties for acceleration.  
 First, record a figure 8 track lap, then play it back and record values.  
 Here is a SimHub Custom Serial formula for relevant properties:  
