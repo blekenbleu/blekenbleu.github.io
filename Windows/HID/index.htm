@@ -33,32 +33,32 @@
       <div class="inner">
 
         <header>
-          <h1>SimHub, Windows HID, MIDI and other controllers</h1>
+          <h2>SimHub and Windows HID, MIDI and other controllers</h2>
         </header>
 
         <section id="main_content">
 
-<h3 id="windows-hid-game-controllers-and-simhub">Windows HID game controllers and SimHub</h3>
-<p>Given:   a <a href="../../MIDI/plugin/">documented</a> and working <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">SimHub plugin that receives
-and sends MIDI CC</a>,<br />
-a <a href="https://github.com/blekenbleu/vJoySDK">working app</a> for receiving direct input and sending <strong>vJoy</strong>,
-which <a href="../../pedals/vJoy/">works for Windows 10 and 11</a>,<br />
-then adding parts of that app to the MIDIio plugin became a <em>fairly</em> obvious to-do.</p>
+<dl><dt>Given:&nbsp <a href="../../MIDI/plugin/">documented</a> and working <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">SimHub plugin that receives
+and sends MIDI CC</a>,
+<dd><a href="https://github.com/blekenbleu/vJoySDK">app</a> receiving DirectInput and sending to <strong>vJoy</strong>,
+<a href="../../pedals/vJoy/">working for Windows 10 and 11</a>,<br />
+<dt>Then:&nbsp adding parts of that app to the MIDIio plugin became a <em>fairly</em> obvious to-do.</dl>
+
 <p>Before diving into the <a href="https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/Program.cs">vJoy sender app single (<em>but 828 line</em>) C# source
 file</a>,<br />
-I somewhat familiarized myself with its API by revising
+sorted its API by revising
  <a href="https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/docs/README.md">the vJoy C# wrapper SDK document,
 converted to Markdown.</a>.<br />
 Next step was branching MIDIio before copying over that source file and pair of DLLs.</p>
 <h3 id="background">Background</h3>
 <p>Wanted (as well as MIDI): game controller output from SimHub, <em>which it implements via Arduino</em><br />
 DirectInput and XInput issues aside, vJoy keeps virtual game devices visible with no app running,<br />
-which avoids having Assetto Corsa or other games getting confused by its devices disappearing and reappearing,<br />
+which avoids confusing Assetto Corsa or other games by devices disappearing and reappearing,<br />
 e.g. when SimHub restarts plugins during game changes.</p>
 <ul>
 <li>SimHub output to vJoy is wanted for 2-paddle clutch, among other things.</li>
 <li>MIDI output is wanted to modulate ShakeIt effect volume for clutch and loaded wheel slips...</li>
-<li>... while, at the same time, <em>continuing to control</em> speed wind fans and (direct drive) harness tensioning</li>
+<li>... while also <em>continuing to control</em> speed wind fans and (direct drive) harness tensioning</li>
 </ul>
 
 <details>
@@ -75,17 +75,17 @@ e.g. when SimHub restarts plugins during game changes.</p>
 <li><a href=https://github.com/ViGEm/ViGEm.NET>ViGEm</a> would be easier (better documented, more robust) than <a href=https://github.com/blekenbleu/vJoySDK>vJoy</a>.
 <li>Microsoft's <a href=https://docs.microsoft.com/en-us/xamarin/graphics-games/monogame/input>MonoGame GamePad Reference</a>
  strongly implies that <a href=https://docs.microsoft.com/en-us/windows/uwp/gaming/input-for-games>Input for games</a>
- support may be only for <b>Xbox One</b> and <b>PS/4</b> Game Controllers and mainly via <b>UWP</b>.  
+ support<br> may be only for <b>Xbox One</b> and <b>PS/4</b> Game Controllers and mainly via <b>UWP</b>.  
 </ol>
 </details>  
 
 <details>
 <summary>click for doomed approaches</summary>
 <ol compact>
-<li>Make other game controllers look (enough) like Xbox,  
+<li>Make other game controllers look (enough) like Xbox,<br>
 while avoiding the hassle of releasing custom signed Windows drivers.
 <ul compact><li>As of Windows 1809, all drivers are required to be a Universal Windows Driver
-  <a href=https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk>UWD</a>
+  <a href=https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk>UWD</a><br>
   AKA (<i>by Intel</i>) "Modern Windows Drivers"  
     </ul>
 <li>Convert <b>COM</b> device to <b>HID</b>?<ul compact>
@@ -118,7 +118,9 @@ while avoiding the hassle of releasing custom signed Windows drivers.
 <li><a href="https://github.com/blekenbleu/mi-360">mi-360 fork</a> - practice for hacking <a href="https://github.com/ViGEm/ViGEm.NET">ViGEm.NET</a> into <a href="../../Arduino/VJoySerialFeeder">VJoySerialFeeder</a>
 
 <h3>Ideal approach(?)</h3>
-<li>integrate SimHub and e.g. fake8 plugin to <a href="https://github.com/Snoothy/UCR">Universal Control Remapper (UCR)</a> via MIDIio.
+<li>Integrate SimHub and e.g. <a href="https://github.com/blekenbleu/Fake8/">fake8 plugin</a> to <a href="https://github.com/Snoothy/UCR">Universal Control Remapper (UCR)</a> via MIDIio.
+<li>Return STM32 inputs by USB COM port as MIDI CCs for fake8 plugin to set SimHub properties.
+
         </section>
 
       </div>
