@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Windows HID game controllers and SimHub | blekenbleu.github.io</title>
+<title>SimHub, Windows HID and other controllers | blekenbleu.github.io</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="Windows HID game controllers and SimHub" />
+<meta property="og:title" content="SimHub, Windows HID and other controllers" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="GitHub Pages configuration; signal processing, microscopes, STM32 and ESP32 projects" />
-<meta property="og:description" content="GitHub Pages configuration; signal processing, microscopes, STM32 and ESP32 projects" />
+<meta name="description" content="SimHub, Windows HID, MIDI control, game controllers, STM32 and ESP32 projects" />
+<meta property="og:description" content="SimHub, Windows HID, MIDI control, game controllers, STM32 and ESP32 projects" />
 <link rel="canonical" href="https://blekenbleu.github.io//Windows/HID/" />
 <meta property="og:url" content="https://blekenbleu.github.io//Windows/HID/" />
 <meta property="og:site_name" content="blekenbleu.github.io" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Windows HID game controllers and SimHub" />
+<meta property="twitter:title" content="SimHub, Windows HID, MIDI and other controllers" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"GitHub Pages configuration; signal processing, microscopes, STM32 and ESP32 projects","headline":"Windows HID game controllers and SimHub","url":"https://blekenbleu.github.io//Windows/HID/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"SimHub, Windows HID, MIDI and other controllers, STM32 and ESP32 projects","headline":"Windows HID game controllers and SimHub","url":"https://blekenbleu.github.io//Windows/HID/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -33,40 +33,40 @@
       <div class="inner">
 
         <header>
-          <h1>Windows HID game controllers and SimHub</h1>
+          <h1>SimHub, Windows HID, MIDI and other controllers</h1>
         </header>
 
         <section id="main_content">
 
 <h3 id="windows-hid-game-controllers-and-simhub">Windows HID game controllers and SimHub</h3>
-<p>Given:   a <a href="../MIDI/plugin/">documented</a> and working <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">SimHub plugin that receives
-and sends MIDI</a>,<br />
-a <a href="https://github.com/blekenbleu/vJoySDK">working sender app</a> for <strong>vJoy</strong>,
-which <a href="../pedals/vJoy/">installs easily on Windows 10</a>,<br />
-then adding parts of that sender app to the MIDIio plugin becomes a <em>fairly</em> obvious to-do.</p>
+<p>Given:   a <a href="../../MIDI/plugin/">documented</a> and working <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">SimHub plugin that receives
+and sends MIDI CC</a>,<br />
+a <a href="https://github.com/blekenbleu/vJoySDK">working app</a> for receiving direct input and sending <strong>vJoy</strong>,
+which <a href="../../pedals/vJoy/">works for Windows 10 and 11</a>,<br />
+then adding parts of that app to the MIDIio plugin became a <em>fairly</em> obvious to-do.</p>
 <p>Before diving into the <a href="https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/Program.cs">vJoy sender app single (<em>but 828 line</em>) C# source
 file</a>,<br />
 I somewhat familiarized myself with its API by revising
  <a href="https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/docs/README.md">the vJoy C# wrapper SDK document,
 converted to Markdown.</a>.<br />
-Next step should be branching MIDIio before copying over that source file and pair of DLLs.</p>
+Next step was branching MIDIio before copying over that source file and pair of DLLs.</p>
 <h3 id="background">Background</h3>
 <p>Wanted (as well as MIDI): game controller output from SimHub, <em>which it implements via Arduino</em><br />
 DirectInput and XInput issues aside, vJoy keeps virtual game devices visible with no app running,<br />
 which avoids having Assetto Corsa or other games getting confused by its devices disappearing and reappearing,<br />
 e.g. when SimHub restarts plugins during game changes.</p>
 <ul>
-<li>SimHub output to vJoy is wanted for 2-paddle clutch</li>
-<li>MIDI output is wanted to modulate ShakeIt effect volume for clutch and loaded wheel slips</li>
+<li>SimHub output to vJoy is wanted for 2-paddle clutch, among other things.</li>
+<li>MIDI output is wanted to modulate ShakeIt effect volume for clutch and loaded wheel slips...</li>
 <li>... while, at the same time, <em>continuing to control</em> speed wind fans and (direct drive) harness tensioning</li>
 </ul>
 
 <details>
 <summary>click for doomed assumptions</summary>
 <ol compact>
-<li>Writing a SimHub plugin would be too hard, <i>disproved by <a href=../MIDI/plugin/>MIDIio</i></a>.  
+<li>Writing a SimHub plugin would be too hard, <i>disproved by <a href=../../MIDI/plugin/>MIDIio</i></a>.  
 <li><a href=https://www.howtogeek.com/792984/directinput-vs.-xinput-for-game-controllers-whats-the-difference>Differences between DirectInput and XInput</a> were unimportant.  
-<li>SimHub Custom serial to <a href=../Arduino/ESPDuino>STM32/ESP32 Arduino</a> would be easier for <a href=../pedals/ESP8266>HID game controller emulation</a>.<br>
+<li>SimHub Custom serial to <a href=../../Arduino/ESPDuino>STM32/ESP32 Arduino</a> would be easier for <a href=../../pedals/ESP8266>HID game controller emulation</a>.<br>
     <i>Unlike FTDI USB chips, CH340G on D1 UNO can <i>only</i> be
     <a href=https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomSerialDeviceAccess>serial</a></i>.  
 <li>According to <a href=http://janaxelson.com/hidpage.htm>Jan Axelson</a>, Microsoft supports HID devices via <b>DirectX</b><br>
@@ -89,36 +89,36 @@ while avoiding the hassle of releasing custom signed Windows drivers.
   AKA (<i>by Intel</i>) "Modern Windows Drivers"  
     </ul>
 <li>Convert <b>COM</b> device to <b>HID</b>?<ul compact>
-  <li> Traditional __serial&lt;&gt;HID__ workaround was vJoy - no longer supported (<i>but it works!</i>)
+  <li> Traditional __serial&lt;&gt;HID__ workaround was vJoy - "<a href="https://github.com/WhiteMagic/JoystickGremlin/issues/193">no longer supported</a>" (<i>but <a href="../../pedals/vJoy/">it works!</a></i>)
   <li> <a href=../SerialLab>Serial-Lab</a> <i>fork already working with D1 UNO ESP8266</i>
-  <li> <a href=../Arduino/VJoySerialFeeder>VJoySerialFeeder</a> <i>least obsolete COM->HID filter</i>
-  <li> <a href=../Arduino/mi360>mi-360</a> <i>HID Xiaomi Gamepad -&gt; Xbox360 filter</i></ul>
+  <li> <a href=../../Arduino/VJoySerialFeeder>VJoySerialFeeder</a> <i>least obsolete COM->HID filter</i>
+  <li> <a href=../../Arduino/mi360>mi-360</a> <i>HID Xiaomi Gamepad -&gt; Xbox360 filter</i></ul>
 <li><a href=https://github.com/ViGEm/ViGEm.NET>ViGEm.NET</a> provides a signed UWD "virtual bus" driver, <but not persistent device?</i><br>
   to which userland programs can filter unsupported devices 
 </ul>
 </ol>
 <h4>workaround for workaround</h4><ul compact>
-<li> <a href=https://github.com/Cleric-K/vJoySerialFeeder/tree/master/Arduino/Joystick>Arduino IBUS sketch</a> running on <a href=../pedals/ESP8266>ESP8266</a>
+<li> <a href=https://github.com/Cleric-K/vJoySerialFeeder/tree/master/Arduino/Joystick>Arduino IBUS sketch</a> running on <a href=../../pedals/ESP8266>ESP8266</a>
 <li> <a href=https://github.com/blekenbleu/mi-360>mi-360</a> uses <a href=https://github.com/ViGEm/ViGEm.NET>ViGEm.NET</a>, which *is* supported.
      <ul compact>
     <li> <a href=https://en.wikipedia.org/wiki/C_Sharp_(programming_language)>C#</a> interface code for Xiaomi Gamepad
     </ul>
-<li> Ultimately, derive a dedicated serial<>ViGEm filter from <a href=../Arduino/mi360>mi-360 fork</a>
+<li> Ultimately, derive a dedicated serial<>ViGEm filter from <a href=../../Arduino/mi360>mi-360 fork</a>
      <ul compact>
     <li> presumably need to understand <a href=https://www.nuget.org/packages/HidLibrary/>HIDLibrary</a> &nbsp; on <a href=https://github.com/mikeobrien/HidLibrary>GitHub</a>
     </ul>
-<li><a href=http://www.signal11.us/oss/hidapi/>HID API Library for Linux, Mac OS X, and Windows</a> &nbsp;
-    <a href=http://www.signal11.us/oss/hidapi/hidapi/doxygen/html/group__API.html>Doxygen</a>
-<li><a href=https://github.com/kmcnaught/vigem-example-dotnet>vigem-example-dotnet</a> - Using ViGem.NET SDK to control a (virtual) XBox controller from C#  
+<li><a href=https://github.com/kmcnaught/vigem-example-dotnet>vigem-example-dotnet</a> - Using ViGem.NET SDK to control a (virtual) XBox 360 controller from C#  
 </ol>
 </details>  
 
 <h3>Doomed efforts</h3>
-<h4><a href="../pedals/STM32">STM32 pedals</a></h4>
-<h4><a href="../pedals/ESP8266">ESP8266 pedals</a></h4>
-<h4><a href="../Arduino/ESPDuino">WeMos D1 UNO R1 ESP8266</a></h4>
-<h4><a href="https://github.com/blekenbleu/mi-360">mi-360 fork</a> - practice for hacking <a href="https://github.com/ViGEm/ViGEm.NET">ViGEm.NET</a> into <a href="../Arduino/VJoySerialFeeder">VJoySerialFeeder</a></h4>
+<li><a href="../../pedals/STM32">STM32 pedals</a>
+<li><a href="../../pedals/ESP8266">ESP8266 pedals</a>
+<li><a href="../../Arduino/ESPDuino">WeMos D1 UNO R1 ESP8266</a>
+<li><a href="https://github.com/blekenbleu/mi-360">mi-360 fork</a> - practice for hacking <a href="https://github.com/ViGEm/ViGEm.NET">ViGEm.NET</a> into <a href="../../Arduino/VJoySerialFeeder">VJoySerialFeeder</a>
 
+<h3>Ideal approach(?)</h3>
+<li>integrate SimHub and e.g. fake8 plugin to <a href="https://github.com/Snoothy/UCR">Universal Control Remapper (UCR)</a> via MIDIio.
         </section>
 
       </div>
