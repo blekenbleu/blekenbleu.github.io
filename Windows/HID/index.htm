@@ -66,7 +66,7 @@ e.g. when SimHub restarts plugins during game changes.</p>
 <ol compact>
 <li>Writing a SimHub plugin would be too hard, <i>disproved by <a href=../../MIDI/plugin/>MIDIio</i></a>.  
 <li><a href=https://www.howtogeek.com/792984/directinput-vs.-xinput-for-game-controllers-whats-the-difference>Differences between DirectInput and XInput</a> were unimportant.  
-<li>SimHub Custom serial to <a href=../../Arduino/ESPDuino>STM32/ESP32 Arduino</a> would be easier for <a href=../../pedals/ESP8266>HID game controller emulation</a>.<br>
+<li>SimHub Custom serial to <a href=../../Arduino/ESPDuino>STM32/ESP32 Arduino</a> for <a href=../../pedals/ESP8266>HID game controller emulation</a>.<br>
     <i>Unlike FTDI USB chips, CH340G on D1 UNO can <i>only</i> be
     <a href=https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomSerialDeviceAccess>serial</a></i>.  
 <li>According to <a href=http://janaxelson.com/hidpage.htm>Jan Axelson</a>, Microsoft supports HID devices via <b>DirectX</b><br>
@@ -84,12 +84,12 @@ e.g. when SimHub restarts plugins during game changes.</p>
 <ol compact>
 <li>Make other game controllers look (enough) like Xbox,<br>
 while avoiding the hassle of releasing custom signed Windows drivers.
-<ul compact><li>As of Windows 1809, all drivers are required to be a Universal Windows Driver
+<ul compact><li>Windows 1809 wants all drivers to be Universal Windows Drivers
   <a href=https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk>UWD</a><br>
   AKA (<i>by Intel</i>) "Modern Windows Drivers"  
     </ul>
 <li>Convert <b>COM</b> device to <b>HID</b>?<ul compact>
-  <li> Traditional __serial&lt;&gt;HID__ workaround was vJoy - "<a href="https://github.com/WhiteMagic/JoystickGremlin/issues/193">no longer supported</a>" (<i>but <a href="../../pedals/vJoy/">it works!</a></i>)
+  <li> Traditional COM&lt;&gt;HID workaround:&nbsp vJoy - "<a href="https://github.com/WhiteMagic/JoystickGremlin/issues/193">no longer supported</a>" (<i>but <a href="../../pedals/vJoy/">it works!</a></i>)
   <li> <a href=../SerialLab>Serial-Lab</a> <i>fork already working with D1 UNO ESP8266</i>
   <li> <a href=../../Arduino/VJoySerialFeeder>VJoySerialFeeder</a> <i>least obsolete COM->HID filter</i>
   <li> <a href=../../Arduino/mi360>mi-360</a> <i>HID Xiaomi Gamepad -&gt; Xbox360 filter</i></ul>
@@ -107,7 +107,7 @@ while avoiding the hassle of releasing custom signed Windows drivers.
      <ul compact>
     <li> presumably need to understand <a href=https://www.nuget.org/packages/HidLibrary/>HIDLibrary</a> &nbsp; on <a href=https://github.com/mikeobrien/HidLibrary>GitHub</a>
     </ul>
-<li><a href=https://github.com/kmcnaught/vigem-example-dotnet>vigem-example-dotnet</a> - Using ViGem.NET SDK to control a (virtual) XBox 360 controller from C#  
+<li><a href=https://github.com/kmcnaught/vigem-example-dotnet>vigem-example-dotnet</a> - C# ViGem.NET SDK (virtual) XBox 360 controller
 </ol>
 </details>  
 
