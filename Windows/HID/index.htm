@@ -41,7 +41,7 @@
 <dl><dt>Given:&nbsp <a href="../../MIDI/plugin/">documented</a> and working <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">SimHub plugin that receives
 and sends MIDI CC</a>,
 <dd><a href="https://github.com/blekenbleu/vJoySDK">app</a> receiving <a href=#DI>DirectInput</a> and sending to <strong>vJoy</strong>,
-<a href="../../pedals/vJoy/">working for Windows 10 and 11</a>,<br />
+<a href="vJoy/">working for Windows 10 and 11</a>,<br />
 <dt>Then:&nbsp adding parts of that app to the MIDIio plugin became a <em>fairly</em> obvious to-do.</dl>
 
 <p>Before diving into the <a href="https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/Program.cs">vJoy sender app single (<em>but 828 line</em>) C# source
@@ -53,7 +53,7 @@ Next step was branching MIDIio before copying over that source file and pair of 
 <details><summary id="background"><b>Background</b></summary><dl>
 <dt><a name=DI><b>DirectInput</b></a>
 <dd>traditional HID devices, e.g.:&nbsp mouse, keyboard, joystick, gamepad<br>
-vJoy generates virtual DirectInput devices
+<a href=vJoy/>vJoy</a> generates virtual DirectInput devices
 <dt><a name=DS3><b>DualShock 3</b></a>
 <dd><a href="https://www.pcgamer.com/ps3-controller-on-pc-guide/">How to use a PS3 DualShock 3 controller on Windows 7 - 11</a>
 	via <a href="https://github.com/nefarius/DsHidMini">DsHidMini</a>
@@ -99,9 +99,9 @@ while avoiding the hassle of releasing custom signed Windows drivers.
   AKA (<i>by Intel</i>) "Modern Windows Drivers"  
     </ul>
 <li>Convert <b>COM</b> device to <b>HID</b>?<ul compact>
-  <li> Traditional COM&lt;&gt;HID workaround:&nbsp vJoy -
+  <li> Traditional COM&lt;&gt;HID workaround:&nbsp <a href=vJoy/>vJoy</a> -
 	 <a href="https://github.com/WhiteMagic/JoystickGremlin/issues/193">"no longer supported"</a>
-	 (<i>but <a href="../../pedals/vJoy/">it works!</a></i>)
+	 (<i>but <a href="vJoy/">it works!</a></i>)
   <li> <a href=../SerialLab>Serial-Lab</a> <i>fork already working with D1 UNO ESP8266</i>
   <li> <a href=../../Arduino/VJoySerialFeeder>VJoySerialFeeder</a> <i>least obsolete COM->HID filter</i>
   <li> <a href=../../Arduino/mi360>mi-360</a> <i>HID Xiaomi Gamepad -&gt; Xbox360 filter</i></ul>
