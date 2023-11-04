@@ -1,7 +1,5 @@
 <html><head>
-
-<link rel='stylesheet' type='text/css' href='/static/my.css'>
-
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
 <title>Xtended / Mixed Reality:&nbsp Virtual or Augmented | blekenbleu.github.io</title>
 </head>
 
@@ -14,17 +12,33 @@
 <h2>Xtended (XR) / Mixed (MR) Reality:&nbsp Virtual or Augmented</h2>
 <dl><dt><b>Virtual Reality</b><dd>Nothing is real...
 <dt><b>Xtended /Mixed Reality</b><dd>Some physical objects rendered in virtual space<br>
-or some virtual objects superimposed on real space rendition (3D video).</dl>
+or some virtual objects superimposed on real space rendition (3D video).
 
-<h3>HMD nausea</h3><ul compact>
+<dt><font size=+1><b>HMD</b></font>
+
+<dd><details><summary>models</summary><ul>
+  <li><a href="../pedals/#hmd">Samsung Odyssey+ HMD</a><br />
+	Pleasant display, but not enough resolution.<br>
+	<code>Steam/steamapps/common/MixedRealityVRDriver/resources/settings/default.vrsettings</code><br>
+	<code>Steam/config/steamvr.vrsettings</code>
+  <li><a href="../pedals/#HP">HP Reverb G1 HMD</a><br />
+	Sharp only at the center;  poor prescription lens support.</li>
+  <li><a href=VR1.html><b>Somnium VR1</b></a> (and <a href="VR1.html#space">Somnium Space metadata</a>)<br>
+	Good enough for both long term virtual desktop use and sims?&nbsp
+	<a href="base_station.htm">SteamVR tracking</a></li>
+  <li>Quest 3:&nbsp good enough resolution?&nbsp marginal passthru</li>
+</ul></details>
+
+<details><summary>nausea</summary>
+<ul compact>
 <li>visual motion illusion without physical cues
 <li>latency / refresh rate(?)<br>
 few complain of nausea from 24fps film (72fps shutter)
 <li><a href="https://medium.com/vrinflux-dot-com/vergence-accommodation-conflict-is-a-bitch-here-s-how-to-design-around-it-87dab1a7d9ba">Vergence-accommodation conflict</a><br>
 <img src=vergence-accommodation.webp>
-</ul>
+</ul></details>
 
-<h3>VR HMD Issues (for me)</h3><ul compact>
+<details><summary>Issues (for me)</summary><ul compact>
 <li>NOT nausea
 <li>without passthru:&nbsp frequent need to remove, reinstall HMD
 <li>prescription eyeglasses may not fit
@@ -33,66 +47,74 @@ few complain of nausea from 24fps film (72fps shutter)
 <li>custom objects (props) can be introduced to VR (e.g. games) by rendering STL without passthru cameras
 <li>passthru cameras are wanted for real time random objects in games or virtual objects (desktops) into real space
 <li>ability to generate 3D movies using binocular passthru cameras will be a bonus
-</ul>
+</ul></details>
 
-<h3 id="links">Links</h3>
-<dl><dt><a href="base_station.htm">Steam VR outside-in tracking</a><br>
-&nbsp &nbsp <a href=SLAM.htm>alternative inside-out tracking AKA SLAM (simultaneous localization and mapping)</a>
-
-<a name=AIRCAR><dt><strong>AirCar</strong></a> <a href="https://steamcommunity.com/app/1073390/guides/">Guides</a>
+<dt><b>Games and Apps</b>
+<dd><a href="https://vr.youtube.com">360 YouTube videos</a>
+<dd><details><summary><b>AirCar</b></summary>
+	<a name=AIRCAR><a href="https://steamcommunity.com/app/1073390/guides/">Guides</a></a>
    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1830980067">controller bindings</a> &nbsp
     <a href="https://steamcommunity.com/app/1073390/discussions/0/3030299604459488650/">no built-in HOTAS support</a> &nbsp
     <a href="joy.htm">joystick as SteamVR controller</a>
    <dd>Go into your SteamVR settings within your HMD while running the game<br> and download / activate the community binding of Aircar for the HP Reverb G2. It will fix your controls.
-<dt><a href="https://www.youtube.com/watch?v=D9uKWikvL2M&amp;t=145s">Assetto Corsa (AC) VR Settings YouTube Tutorial</a>
-<dt><a href="pedals/#AC">Assetto Corsa VR setup</a>
-<dt><a href="mbucchia.html"><b>Foveated Rendering, OpenXR &amp OpenVR</b></a>
-<dt><a href="VR1.html"><b>Somnium VR1</b></a> (and <a href="VR1.html#space">Somnium Space metadata</a>)
-<a href="pedals/#Bigscreen">Bigscreen</a>
-<dt><a href="https://vr.youtube.com">360 YouTube videos</a>
-<dt><a href="https://www.racedepartment.com/threads/cm-custom-shader-patch-giving-better-frame-rates-with-cpu-gpu-optimising.162324/">Custom
+	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1830980067">Fix Unresponsive <strong>AirCar</strong> Controls by Creating a Custom Binding</a><br />
+	 While in steamVR, go to the steamVR dashboard, hit the Settings button on the right (not the show controls on the left),<br>
+	 Controller Options (bottom of the list)&gt; Show More Apps&gt; Aircar<br />
+	<a href="https://steamcommunity.com/app/1073390/discussions/0/1643170903490242441/">an AirCar WMR binding has been uploaded</a><br />
+	<a href="https://www.youtube.com/watch?v=Fblz4RqUHoM"><strong>AirCar with HOTAS</strong></a> video using
+	<a href="https://steamcommunity.com/app/1073390/discussions/0/3030299604459488650/#c2290590708538946180">X360CE</a>
+	on <a href="https://github.com/x360ce/x360ce">GitHub</a> and <a href="https://www.x360ce.com/">website</a></li>
+</details>
+
+<dd><details><summary><b>Assetto Corsa (AC)</b></summary><ul>
+<li><a href="https://www.youtube.com/watch?v=D9uKWikvL2M&amp;t=145s">Assetto Corsa (AC) VR Settings YouTube Tutorial</a>
+<li><a href="../pedals/#AC">Assetto Corsa VR setup</a>
+<li><a href="https://www.racedepartment.com/threads/cm-custom-shader-patch-giving-better-frame-rates-with-cpu-gpu-optimising.162324/">Custom
  Shader Patch giving better frame rates with CPU/GPU optimising</a>
-<dt><a href="pedals/#Driver4VR">Driver4VR</a>
-<dt><a href="pedals/#fresnel">Fresnel lens "sweet spot"</a>
-<dt><a href="pedals/#HOTAS">Hand-On Throttle-And-Stick (HOTAS) in SteamVR</a>
-<dt><a href="https://www.youtube.com/watch?v=bkZCWlC7ano&amp;t=506s">Helixxvr YouTube: </a> use Assetto Corsa UI in VR HMD</dl>
+<li><a href="../pedals/#USB">Windows USB re-enumeration when plugging HMD loses Assetto Corsa sim control assignments</a>
+<li><a href="https://www.youtube.com/watch?v=bkZCWlC7ano&amp;t=506s">Helixxvr YouTube: </a> use Assetto Corsa UI in VR HMD
+</ul></details>
 
-<p><strong>HMDs</strong></p>
-<ul>
-  <li><a href="pedals/#hmd">Samsung Odyssey+ HMD</a><br />
-Pleasant display, but not enough resolution.</li>
-  <li><a href="pedals/#HP">HP Reverb G1 HMD</a><br />
-Sharp only at the center;  poor prescription lens support.</li>
-  <li><a href=VR1.html><b>Somnium VR1</b></a><br />
-Good enough for both long term virtual desktop use and sims?&nbsp
-<a href="base_station.htm">SteamVR tracking</a></li>
-  <li>Quest 3:&nbsp good enough resolution?&nbsp marginal passthru</li>
-</ul>
+<dd><a href="../pedals/#Bigscreen">Bigscreen</a>
+<dd><a href="../pedals/#OVRdrop">OVRdrop</a>
 
-<p><strong><a href="https://steamcommunity.com/app/275850/discussions/0/1636418037465132951/">HOTAS as VR controller</a></strong></p>
-<ul>
-  <li>In Steam &gt; Settings (SteamVR must be turned off) &gt; Controller, General controller settings.  Uncheck everything.<br />
-Ensure that only Xbox Configuration Support and Xbox Extended Feature Support are enabled.</li>
-  <li>Go to detected controllers, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1839832921">customize layout of your HOTAS</a>.  Save.</li>
-  <li>Open SteamVR;  a gamepad icon should appear.&nbsp; if not, be sure to open SteamVR by clicking VR button in Steam.</li>
-  <li>Open Steam VR app and make applicable mappings from virtual gamepad.<br />
-TIPS:<br />
- If HOTAS Throttle doesn’t work or is mapped upside down,<br />
- you may need to clear the input and map it to W and S keys with a joystick profiler.<br />
-Also make sure there are no keys pressed while launching the game.<br />
-<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1830980067">Fix Unresponsive <strong>AirCar</strong> Controls by Creating a Custom Binding</a><br />
- While in steamVR, go to the steamVR dashboard, hit the Settings button on the right (not the show controls on the left),<br>
- Controller Options (bottom of the list)&gt; Show More Apps&gt; Aircar<br />
-<a href="https://steamcommunity.com/app/1073390/discussions/0/1643170903490242441/">an AirCar WMR binding has been uploaded</a><br />
-<a href="https://www.youtube.com/watch?v=Fblz4RqUHoM"><strong>AirCar with HOTAS</strong></a> video using <a href="https://steamcommunity.com/app/1073390/discussions/0/3030299604459488650/#c2290590708538946180">X360CE</a>  on <a href="https://github.com/x360ce/x360ce">GitHub</a> and <a href="https://www.x360ce.com/">website</a></li>
-</ul>
+<dd><details><summary><a href="https://store.steampowered.com/app/1844610/Reality_Mixer__Mixed_Reality_for_VR_headsets/"><strong>Reality
+	 Mixer</strong></a></summary>
+	passes HMD camera video to configurable boxes in VR.   <a href="https://www.youtube.com/watch?v=Bqvm4D2PP18">video</a><ul>
+	<li><a href="https://www.youtube.com/watch?v=FBkbTo_pSXg">flight sim demo video</a><br />
+	<li><a href="https://steamcommunity.com/app/1844610">now officially supports Windows Mixed Reality (WMR) headsets</a></ul></details>
 
-<p><a href="https://www.racedepartment.com/threads/samsung-odyssey-install.160947/post-2874030">MixedRealityVRDriver change renderTargetScale to 2.0 instead of 1.0</a><br />
-<a href="pedals/#OVRdrop">OVRdrop</a><br />
-<a href="https://store.steampowered.com/app/1844610/Reality_Mixer__Mixed_Reality_for_VR_headsets/"><strong>Reality Mixer</strong></a> passes HMD camera video to configurable boxes in VR.   <a href="https://www.youtube.com/watch?v=Bqvm4D2PP18">video</a>    <a href="https://www.youtube.com/watch?v=FBkbTo_pSXg">flight sim demo video</a><br />
-    now officially supports Windows Mixed Reality (WMR) headsets](https://steamcommunity.com/app/1844610)<br />
-<a href="pedals/#USB">Windows USB re-enumeration when plugging HMD loses Assetto Corsa sim control assignments</a></p>
+<dt><details><summary><b>Controllers</b></summary><ul>
+    <li>DirectInput vs XInput vs VR
+    <li>Xbox supported as SteamVR controller<br>
+	emulators:&nbsp <a href="https://www.x360ce.com/">X360CE</a>, <a href="https://github.com/Snoothy/UCR/wiki">UCR</a>, <a href="https://andersmalmgren.github.io/FreePIE/">FreePIE</a>
+	<li><a href="../pedals/#Driver4VR">Driver4VR</a>
+	<li><strong><a href="https://steamcommunity.com/app/275850/discussions/0/1636418037465132951/">HOTAS as VR controller</a></strong> <ul>
+  		<li><a href="../pedals/#HOTAS">Hand-On Throttle-And-Stick (HOTAS) in SteamVR</a>
+  		<li>In Steam &gt; Settings (SteamVR must be turned off) &gt; Controller, General controller settings.  Uncheck everything.<br />
+			Ensure that only Xbox Configuration Support and Xbox Extended Feature Support are enabled.</li>
+  		<li>Go to detected controllers, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1839832921">customize layout of your HOTAS</a>.  Save.</li>
+  		<li>Open SteamVR;  a gamepad icon should appear.&nbsp; if not, be sure to open SteamVR by clicking VR button in Steam.</li>
+  		<li>Open Steam VR app and make applicable mappings from virtual gamepad.<dl>
+		<dt>TIPS:<br />
+	 <dd>If HOTAS Throttle doesn’t work or is mapped upside down,<br />
+	 you may need to clear the input and map it to W and S keys with a joystick profiler.<br />
+	Also make sure there are no keys pressed while launching the game.</dl>
+	</ul></ul>
+</details>
 
+
+<dt><a href="../pedals/#fresnel">Fresnel lens "sweet spot"</a>
+
+<dt><details><summary><a href="mbucchia.html"><b>OpenXR &amp OpenVR</b></a></summary>
+<dd><b>Overlays</b><ul>
+<li><a href="../pedals/#OVRdrop">OVRdrop</a> for SteamVR
+<li><a href="">OpenKneeboard</a> for OpenXR</ul></details>
+
+<dt><b>Tracking</b>
+<dd><a href="base_station.htm">Steam VR outside-in tracking</a>
+<dd><a href=SLAM.htm>alternative inside-out tracking AKA SLAM (simultaneous localization and mapping)</a>
+</dl>
 
 </td></tr><tr><td align=center>
 
