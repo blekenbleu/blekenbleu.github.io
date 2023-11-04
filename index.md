@@ -16,7 +16,7 @@
 ### [Arduino custom USB sketches](Arduino/)
 - e.g. for harness tensioning servos
     - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
-    - COM ports work from SimHub, but sim games expect HID DirectInput
+    - COM ports work from SimHub, but most sim games expect <a href="Windows/HID/#DI">DirectInput</a>
       - SimHub *directly* supports *real* Arduinos,  
         but can drive *any* COM port by **SimHub Custom Serial devices**  
         Some ESP32 / STM32 may be programmed to appear as Arduino USB COM ports
