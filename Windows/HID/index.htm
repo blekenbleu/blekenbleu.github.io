@@ -50,9 +50,18 @@ sorted its API by revising
  <a href="https://github.com/blekenbleu/vJoySDK/blob/main/FeederDemoCS/docs/README.md">the vJoy C# wrapper SDK document,
 converted to Markdown.</a>.<br />
 Next step was branching MIDIio before copying over that source file and pair of DLLs.</p>
-<h3 id="background">Background</h3>
-<p>Wanted (as well as MIDI): game controller output from SimHub, <em>which it implements via Arduino</em><br />
-DirectInput and XInput issues aside, vJoy keeps virtual game devices visible with no app running,<br />
+<details><summary id="background"><b>Background</b></summary><dl>
+<dt><a name=DI><b>DirectInput</b></a>
+<dd>traditional HID devices, e.g.:&nbsp mouse, keyboard, joystick, gamepad<br>
+vJoy generates virtual DirectInput devices
+<dt><a name=DS3><b>DualShock 3</b></a>
+<dd><a href="https://www.pcgamer.com/ps3-controller-on-pc-guide/">How to use a PS3 DualShock 3 controller on Windows 7 - 11</a>
+	via <a href="https://github.com/nefarius/DsHidMini">DsHidMini</a>
+<dt><a name=XI><b>XInput</b></a>
+<dd>Up to 4 controllers that work with Xbox consoles, e.g. Xbox 360
+</dl></details>
+<p>Wanted (as well as MIDI): game controller output from SimHub,<br> <em>which it typically implements via Arduino</em><br />
+<a href=#DI>DirectInput</a> and <a href=#XI>XInput</a> issues aside, vJoy keeps virtual game devices visible with no app running,<br />
 which avoids confusing Assetto Corsa or other games by devices disappearing and reappearing,<br />
 e.g. when SimHub restarts plugins during game changes.</p>
 <ul>
@@ -72,7 +81,8 @@ e.g. when SimHub restarts plugins during game changes.</p>
 <li>According to <a href=http://janaxelson.com/hidpage.htm>Jan Axelson</a>, Microsoft supports HID devices via <b>DirectX</b><br>
     ... but HID support is NOT found in <a href=https://docs.microsoft.com/en-us/dotnet/api/index?view=netframework-4.7.2>.NET APIs</a><br>
     and <i>most Sim controller peripherals use classic DirectInput</i>.
-<li><a href=https://github.com/ViGEm/ViGEm.NET>ViGEm</a> would be easier (better documented, more robust) than <a href=https://github.com/blekenbleu/vJoySDK>vJoy</a>.
+<li><a href=https://github.com/ViGEm/ViGEm.NET>ViGEm</a> would be easier (better documented, more robust)
+	 than <a href=https://github.com/blekenbleu/vJoySDK>vJoy</a>.
 <li>Microsoft's <a href=https://docs.microsoft.com/en-us/xamarin/graphics-games/monogame/input>MonoGame GamePad Reference</a>
  strongly implies that <a href=https://docs.microsoft.com/en-us/windows/uwp/gaming/input-for-games>Input for games</a>
  support<br> may be only for <b>Xbox One</b> and <b>PS/4</b> Game Controllers and mainly via <b>UWP</b>.  
@@ -89,7 +99,9 @@ while avoiding the hassle of releasing custom signed Windows drivers.
   AKA (<i>by Intel</i>) "Modern Windows Drivers"  
     </ul>
 <li>Convert <b>COM</b> device to <b>HID</b>?<ul compact>
-  <li> Traditional COM&lt;&gt;HID workaround:&nbsp vJoy - "<a href="https://github.com/WhiteMagic/JoystickGremlin/issues/193">no longer supported</a>" (<i>but <a href="../../pedals/vJoy/">it works!</a></i>)
+  <li> Traditional COM&lt;&gt;HID workaround:&nbsp vJoy -
+	 <a href="https://github.com/WhiteMagic/JoystickGremlin/issues/193">"no longer supported"</a>
+	 (<i>but <a href="../../pedals/vJoy/">it works!</a></i>)
   <li> <a href=../SerialLab>Serial-Lab</a> <i>fork already working with D1 UNO ESP8266</i>
   <li> <a href=../../Arduino/VJoySerialFeeder>VJoySerialFeeder</a> <i>least obsolete COM->HID filter</i>
   <li> <a href=../../Arduino/mi360>mi-360</a> <i>HID Xiaomi Gamepad -&gt; Xbox360 filter</i></ul>
