@@ -79,7 +79,7 @@
 ### **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
   - [added to SimHub **MIDIio plugin**](MIDI/plugin)
   - [Windows Joystick HID](Windows/HID/) shared with SimHub
-  - [Windows 10 vJoy installation](pedals/vJoy/)
+  - [Windows 10 vJoy installation](Windows/HID/vJoy/)
      - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
      - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360)
 
