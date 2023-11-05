@@ -44,14 +44,31 @@
 <img width=850 src="https://mbucchia.github.io/OpenXR-Toolkit/site/ecosystem2.png"></details>
 
 <dt><a href="https://github.com/mbucchia/OpenXR-Toolkit"><b>OpenXR Toolkit</b></a>
-<dd>tweak features and settings in OpenXR applications, e.g. DCS World and MSFS 2020<br>
+<dd>tweak OpenXR game features and settings, e.g. DCS World and MSFS 2020<br>
 via <a href="#OC">OpenComposite</a>, also works with
 <a href="https://mbucchia.github.io/OpenXR-Toolkit/opencomposite#game-compatibility">e.g. Assetto Corsa, Project Cars 2</a>
 
 <dt><a href="https://learn.microsoft.com/en-us/windows/mixed-reality/develop/native/openxr-getting-started#getting-started-with-openxr-for-windows-mixed-reality-headsets">
 <b>OpenXR for Windows Mixed Reality headsets</b></a>
 <dd><dt><li>Automagically installed for WMR headsets for Windows 20H2 or newer
-<dt>
+<dt><b>SteamVR</b>
+<dd><details><summary>thanks to OpenComposite, supports both OpenVR and OpenXR</summary>
+OpenVR ToolKit works with OpenVR,<br> but
+<a href="https://forums.flightsimulator.com/t/vr-mode-disables-ovr-toolkit-and-steamvr-unable-to-show-twitch-chat-when-vr-mode-activated/572016">reportedly</a>
+ works with e.g. Reverb G2, which now uses OpenXR..?<br>
+Fred Emmott owns <a href="https://github.com/OpenKneeboard/OpenKneeboard">OpenKneeboard</a>, diagrammed SteamVR flow:<br>
+<img width=640 src="https://fredemmott.com/assets/images/2022-05-vr/overview.svg"><ul>
+WMR headsets are driven by <code>Windows Holographic API -&gt WMR runtime</code>,<br>
+ but that API may be driven by:<ul>
+<li>directly from games or game engines (but none of interest)
+<li>SteamVR, provoking performance issues
+<li>a special version of OpenXR, which may be driven by games,<br> game engines or <b>OpenComposite from OpenVR.</b><br>
+This last is most performant for games of interest.
+</ul><div align=center><img src="https://fredemmott.com/assets/images/2022-05-vr/opencomposite-openxr.svg"></div>
+</details>
+
+<dt><a href="https://openkneeboard.com/"><b>OpenKneeboard</b></a> supports one or 2 overlays for OpenXR.
+<dd>Virtual Desktop OpenXR (VDXR) also works for Oculus, not WMR.
 
 </dl>
 

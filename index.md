@@ -63,6 +63,7 @@
 - [wheels for GT racing in VR](pedals/steering.htm)  
 
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
+- [OpenVR vs OpenXR](XR/mbucchia.html)
 - [Samsung Odyssey+ and HP Reverb for Assetto Corsa](pedals/#hmd)  
   using [SteamVR](https://steamcommunity.com/app/250820)
   and [Windows Mixed Reality (WMR)](https://learn.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)  
