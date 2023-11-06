@@ -88,6 +88,7 @@ WMR headsets are driven by <code>Windows Holographic API -&gt WMR runtime</code>
 <li>directly from games or game engines (but none of interest)<br>
 Matthieu Bucchianeri recommends Unreal over Unity,<br>
 with UE5.3 adding VRS (<a href=#FR>Variable Rate Shading</a>) with eye gaze.<br>
+<li><a href="https://developer.nvidia.com/blog/delivering-dynamic-foveated-rendering-with-nvidia-vrss-2/">Nvidia VRSS2</a> is only on DX11;&nbsp "UE5 is all in on DX12"
 <li>SteamVR, provoking performance issues
 <li>a special version of OpenXR, which may be driven by games,<br> game engines or <b>OpenComposite from OpenVR.</b><br>
 This last is most performant for games of interest.
@@ -122,9 +123,14 @@ Settings &gt System &gt Display &gt Graphics Default settings<br> <code>Change d
 <dt><a href="https://github.com/mbucchia/WMR-Passthrough">Windows Mixed Reality Passthrough for OpenXR</a>
 <dd>Works with HP Reverb (not G2) cameras and e.g. <a href="https://stereokit.net/">StereoKit</a> apps.
 
-<dt><a href="https://www.nvidia.com/en-us/geforce/technologies/dlss/">Nvidia Deep Learning SuperSampling (DLSS)</a>
+<a name=DLSS><dt></a><a href="https://www.nvidia.com/en-us/geforce/technologies/dlss/">Nvidia Deep Learning SuperSampling (DLSS)</a>
 <dd>based on Temporal (instead of MultiSample) AntiAliasing.
+
 <dt><a href="https://steamcommunity.com/app/1012790/discussions/0/3824162050996037250/">Graphics Settings Guide</a><dd>from Into the Radius VR
+
+<dt>image sharpening (impacts performance)
+<dd><a href="https://www.reddit.com/r/hoggit/comments/11omwxn/for_openxr_reverb_g2_which_should_i_use_nis_fsr/">CAS
+	 (Contrast Adaptive Sharpening) vs NIS (Nvidia Image Scaling)</a>
 </dl>
 
 </td></tr><tr><td align=center>
