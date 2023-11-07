@@ -84,13 +84,13 @@ disabling hardware-accelerated GPU scheduling (HAGS).
 <a href="https://fredemmott.com/blog/2022/05/29/vr-software-components.html">Fred Emmott</a> owns <a href="https://github.com/OpenKneeboard/OpenKneeboard">OpenKneeboard</a>, diagrammed SteamVR flow:<br>
 <img width=640 src="https://fredemmott.com/assets/images/2022-05-vr/overview.svg"><ul>
 WMR headsets are driven by <code>Windows Holographic API -&gt WMR runtime</code>,<br>
- but that API may be driven by:<ul>
+ but that API may be driven:<ul>
 <li>directly from games or game engines (but none of interest)<br>
 Matthieu Bucchianeri recommends Unreal over Unity,<br>
-with UE5.3 adding VRS (<a href=#FR>Variable Rate Shading</a>) with eye gaze.<br>
-<li><a href="https://developer.nvidia.com/blog/delivering-dynamic-foveated-rendering-with-nvidia-vrss-2/">Nvidia VRSS2</a> is only on DX11;&nbsp "UE5 is all in on DX12"
-<li>SteamVR, provoking performance issues
-<li>a special version of OpenXR, which may be driven by games,<br> game engines or <b>OpenComposite from OpenVR.</b><br>
+with UE5.3 adding VRS (<a href=#FR>Variable Rate Shading</a>) with eye gaze,<br>
+ &nbsp &nbsp but <a href="https://developer.nvidia.com/blog/delivering-dynamic-foveated-rendering-with-nvidia-vrss-2/">Nvidia VRSS2</a> is only on DX11;&nbsp "UE5 is all in on DX12"
+<li>from SteamVR, provoking performance issues
+<li>using a special version of OpenXR, which may be driven by games,<br> game engines or <b>OpenComposite from OpenVR.</b><br>
 This last is most performant for games of interest.
 </ul><div align=center><img src="https://fredemmott.com/assets/images/2022-05-vr/opencomposite-openxr.svg"></div>
 
