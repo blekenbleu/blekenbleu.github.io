@@ -11,8 +11,7 @@
 10 Sep 2023 [instructions](https://jekyllrb.com/docs/installation/windows/) seem OK,
 so far as it goes (not nearly far enough)...   
 
-Debugging **Jekyll** page generation wants
-a **GitHub** Pages repository [local copy](html.html),  
+Debugging **Jekyll** page generation wants a **GitHub** Pages repository local copy,  
 but `jekyll new` creates a **GitHub** Pages for *blogging*;  
 **Jekyll** for *pages* is configured rather differently.
 
