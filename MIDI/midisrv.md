@@ -5,7 +5,7 @@
 
 #### Background
 - [ESP32-S2 supports composite USB](/static/ESP32/midi.htm), but not reliably including MIDI
-- [MIDI over Wi-Fi is a "thing"](MIDI/index.htm) (but mostly Apple MIDI via UDP)
+- [Wireless MIDI is a "thing"](./#WF) (but mostly Apple MIDI via UDP)
 - MIDI over TCP is reliable, but needs WebSocket for speed
 - [mnet MIDIHub](https://xmmc.de/mnet) serves some unsupported flavor of [WebSocket MIDI for TouchDAW](https://xmmc.de/touchdaw/man_midi_ws.htm)  
 - Many WebSocket MIDI implementations are in JavaScript,  
