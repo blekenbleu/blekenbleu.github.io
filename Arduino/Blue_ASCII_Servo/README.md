@@ -50,6 +50,6 @@ Tighter shoulder straps increase servo current, leading to overheating and failu
 Wide bed casters work fine as pulleys for 2-inch shoulder straps:  
 ![racedepartment](https://www.racedepartment.com/attachments/bedcasters-jpg.437943/)  
 
-### Alternative:&nbsp; recommended for more than 2 servos, [blek2char](../blek2char)
+### Alternative:&nbsp; recommended for more than 2 servos, [blek2char](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/blek2char)
 
 Other alternatives:&nbsp; [SimHub Custom serial profile atlas](../shsds.htm)

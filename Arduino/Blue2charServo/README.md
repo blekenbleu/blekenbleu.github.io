@@ -9,7 +9,7 @@ Allocating 1 bit in each character to identifying
 whether it is first or second of a character pair leaves 12 bits available.  
 This most-significant-bit on first character ploy is used by [MIDI](https://blekenbleu.github.io/MIDI/)...
 
-This evolved to [blek2char](../blek2char/)
+This evolved to [blek2char](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/blek2char)
 
 ![](blek2char.gif)  
 
