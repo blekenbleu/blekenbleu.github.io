@@ -89,9 +89,9 @@ SimHub subsequently made <code>GameRawData.Physics.Acc</code> available in AC bu
 The profile version currently on GitHub uses those unportable properties.<br>
 SimHub now has <code>GameData.Accelerations</code> that seeemingly are available for most games.<br>
 Here is a comparison of the original formulae:<br>
-<img src="../YawSpeed.gif"><br clear=all>
+<img src="../image/YawSpeed.gif"><br clear=all>
 .. and SimHub's properties, rescaled:<br>
-<img src="../Accprop.gif"><br clear=all>
+<img src="../image/Accprop.gif"><br clear=all>
 .. where <code>Front right</code> is deceleration, <code>Rear right</code> is acceleration,<br>
 <code>Front left</code> is right G and <code>Rear left</code> is left G.<br>
 While agreement between these implementations is acceptable,<br>
@@ -111,8 +111,8 @@ After accounting for jitter, various derivations of <b>proxyG</b> are acceptably
 <dt><b><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxyL.js.txt">proxyL</a></b>
 <dd>Wheel loads can be roughly estimated from accelerations if otherwise unavailable.<br>
 Here are simultaneous plots, first from Assetto Corsa <code>GameRawData.Physics.WheelLoad0[1-4]</code>:<br>
-<img src="../ACload.gif"><br clear=all><br>... then a proxy for loads estimated from accelerations:<br>
-<img src="../Gload.gif"><br clear=all>
+<img src="../image/ACload.gif"><br clear=all><br>... then a proxy for loads estimated from accelerations:<br>
+<img src="../image/Gload.gif"><br clear=all>
 <dt><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxyS.js.txt"><b>proxyS</b></a>
 <dd>Wheel slips can be calculated from vehicle and wheel speeds, if available.<br>
 <b>iRacing</b> wheel slip is <i>estimated</i> from relative changes between engine and vehicle speeds,<br>
