@@ -62,6 +62,8 @@
   - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
 - [wheels for GT racing in VR](pedals/steering.htm)  
 
+## [SimHub](SimHub/)
+
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
 - [OpenVR vs OpenXR](XR/mbucchia.html)
 - [Samsung Odyssey+ and HP Reverb for Assetto Corsa](pedals/#hmd)  
@@ -141,7 +143,7 @@
   [Jekyll Resources](https://jekyllrb.com/resources/)  
   [Jekyll Talk! forum](https://talk.jekyllrb.com/)  
   [Jekyll github](https://github.com/jekyll) and [github-metadata](https://github.com/jekyll/github-metadata/issues)  
-7. [Site Map](SiteMap.htm)  
+7. [**Site Map**](SiteMap.htm)  
 
 **GitHub's [Default welcome page - Markup tutorial](Welcome)**  
 **[W3C Link Checker](https://validator.w3.org/checklink)**  
