@@ -20,21 +20,19 @@ table.my_table td { width:860px; }
 <br>
 <a name=sim><h2>sim driving</h2></a>
 
-<h4>Intro</h4><br>
-I suppose there are drivers who can turn competitive times within a few laps<br>
-in a car and on a circuit new to them.<br>
-Further, some individuals seemingly can launch unfamiliar simulation programs<br>
+<b><b>background</b></b><br>
+Some drivers turn competitive times within a few laps in a car and on a circuit new to them.<br>
+Worse, some folks seemingly launch new sims<br>
 and comfortably master controls with minimal instruction and tweaking.<br>
-The following is <i><b>not</b></i> for you.&nbsp Instead, this is for tweakers and incrementalists..<br>
+The following is <i><b>not</b></i> for you;&nbsp  this is instead for tweakers and incrementalists..<br>
 
-<details>
-<summary><i>your mileage may vary</i> <code>[click for details]</code></summary>
+<details><summary><i>your mileage may vary</i> <code>[click for details]</code></summary>
 Niels Heusinkveld, owner of the <a href="https://heusinkveld.com/">sim pedal company</a>,
-described his first <code>real</code> track experience:<br>
+described his first <i>real</i> track experience:<br>
 <iframe align=center width="640" height="480" src="https://www.youtube.com/embed/ExJEGp9itHE"></iframe><br>
 I was struck by his lack of appreciation for inertial forces,<br>
 although he certainly noted tail-wagging from too much throttle out of wet corners.<br>
-As a 20-year sim racer, Niels is used to mostly depending on visual cues,<br>
+As a 20-year sim racer, Niels learned to mostly depending on visual cues,<br>
 not to mention (although he did) less precision in real pedals than his sim pedal products<br>
 and lack of weight and feedback from real power steering.<br>
 He reported a somewhat sore neck from roughly 1-G lateral acceleration,<br>
@@ -42,7 +40,7 @@ while depending mostly on visual cues and control feedback, rather than G-forces
 He was surprised about understeer with relatively small slip and steering angles.<br>
 He was unaware where he looked on track, contrasted to awareness of bezels with triple screens.<br>
 While he was aware of e.g. the rear stepping out, that seemed mostly from change of view.<br>
-Compared to sim, "real life was wrong".<ul compact>
+Compared to sim, "real life was wrong".<ul>
 <li>Tired synchros made real shifts notably slower
 <li>Feeling buttock G forces was not a revelation
 <li>seat feel did not add a dimension
@@ -52,7 +50,7 @@ Compared to sim, "real life was wrong".<ul compact>
 <li>The bug did not bite; sim comfort and convenience are preferred</ul>
 
 By comparison, I am relatively unused to depending on feedback from controls<br>
-and probably more than most "real" drivers used to depending on G forces<br>
+and probably more than most "real" drivers depended on G forces<br>
 and relatively less on vision, presumably because lacking confidence in depth perception,<br>
 since my vision did not fuse until I was in my mid-40s. &nbsp Consequently,<br>
 I need <i>more practice</i> to learn feedback from controls and ShakeSeat.<br>
@@ -65,12 +63,33 @@ This video by another sim driver with previous track experience and consequentia
 G-force unlearning / relearning issues: 4:15/15:48 &nbsp
 <iframe align=center width="640" height="480" src="https://www.youtube.com/embed/XjcW3qzWTyE"></iframe><br>
 <br>
-FWIW, I expect professional and better amateur drivers will generally adapt more quickly between sim and real racing,<br>
+FWIW, professional and better amateur drivers probably adapt more quickly between sim and real racing,<br>
 since G-forces differ so much between street and many race cars.<br>
 <br>
-This is also biased towards streetable BMWs with power steering and brakes,<br>
+What follows is biased towards streetable BMWs with power steering and brakes,<br>
 minimal aero and enough mods to be pleasant on track, but far from real racing cars.<br>
-Consequently, neither brutally stiff brake pedals nor massive steering effort are goals.
+For example, neither brutally stiff brake pedals nor massive steering effort are wanted.
+</details>
+
+<details><summary><b>Intro and Context</b></summary>
+<a name=DSC><h4>Driving simulation components</h4></a>
+<dl><dt>A sim game:&nbsp<a href=#AC>Assetto Corsa</a><br>
+<dd>works for me, thanks to mods including many cars and most tracks I have driven.
+<dt>Controls
+<dd>wheel, pedals, shifter to control the car in game, perhaps enhanced by e.g. launch control<br>
+<br>other controls are wanted for adjusting feedback
+<dt>Feedback
+<dd><ul><li>visual (<a href=#hmd>VR</a>) with <a href=#VRC>controls</a>
+<li>tactile<ul><li><a href=#DD>steering force feedback</a>
+<li>harness tensioning
+<li>wheel slip
+<li>traction loss
+<li>brake engagement and ABS
+<li>clutch engagement and autoclutch</ul>
+Tactile feedback will be controlled using SimHub,<br>
+which will in turn will involve MIDI.
+<li>audio:&nbsp game output to speakers or headphones
+</ul></dl>
 </details>
 
 <hr>
@@ -116,7 +135,7 @@ Assetto Corsa > Properties > LOCAL FILES dropdown >MOVE INSTALL FOLDER..
 </pre>
 
 
-<ul compact>
+<ul>
 <li> Single screen sucks, can neither estimate car width<br>
 &nbsp nor see right turn apexes.&nbsp vFOV - approx 33,<br>
 per 15:44/17:37 in https://www.youtube.com/watch?v=cpnlSnqWy6g
@@ -192,18 +211,17 @@ Within Drive, the pit menu appears, but disappears once driving.<br>
 Esc does not work while pit menu is active, so unable to e.g. gracefully exit.<br>
 <br>
 Instead, what works: Install <a href="#contentmgr">Content Manager</a> in Steam and launch from <a href="steam://open/console">there</a>.<br>
-Customize mouse Forward and Back buttons to [Ctrl + space bar] and [Esc] keystrokes, respectively, for SteamVR<br>
+<a name=VRC>Customize mouse Forward and Back buttons to [Ctrl + space bar] and [Esc] keystrokes, respectively, for SteamVR<br></a>
  e.g. using <a href="https://www.logitech.com/en-us/articles/11650">Logitech SetPoint Settings</a>.<br>
 <img src="image/Forward.png"><br clear=all></details>
 
 
-<a href="https://www.racedepartment.com/downloads/categories/ac-apps.4/">Apps</a><br>
-
-
-<details><summary><b>Content Manager</b></summary>
+<dd><a href="#tuning">Tuning</a><br>
+<a href="https://www.racedepartment.com/downloads/categories/ac-apps.4/">Apps</a><ul>
+<li><details><summary><b>Content Manager</b></summary>
 <a name=contentmgr>
 Any number of YouTube videos eloquently laud</a> <a href="https://assettocorsa.club/content-manager.html">Content Manager</a>:
-<ul compact>
+<ul>
 <li><a href="https://www.youtube.com/watch?v=0U2REMdpP9E">Chris Haye</a> Content Manager for Assetto Corsa - The Best Assetto Corsa Mod
 <li><a href="https://www.youtube.com/watch?v=T5aoe8RLvXU">GamerMuscleVideos</a>
 <li><a href="https://www.youtube.com/watch?v=h2l2t1sbru4">2Old4Forza</a> How to Assetto Corsa 2020: Content Manager tips + modding 16:48<br>
@@ -263,9 +281,9 @@ which traditionally delights in making things <b><i>harder and less efficient</i
 <br>
 Custom Shaders - clicked install from Content Manager; it went gray.....<br>
 finally went active: "Updated successfully</details>
-<dd> <a href="https://www.racedepartment.com/threads/is-there-a-real-head-motion-like-thing-integrated-to-csp.182875/post-3166712">CM Neck FX</a>
+<li> <a href="https://www.racedepartment.com/threads/is-there-a-real-head-motion-like-thing-integrated-to-csp.182875/post-3166712">CM Neck FX</a></ul>
 
-<details><summary><b>Mods</b></summary>
+<dd><details><summary><b>Mods</b></summary>
 <a name=mods>
 For example</a>, no video watched so far recommends downloading new mods <i>within Content Manager</i><br>
 &nbsp by clicking <code>CONTENT</code> in the top bar, then <b>get new mods</b>, perhaps because <b><i>those downloads fail</i></b>...<br>
@@ -315,11 +333,8 @@ I seem to recall a V12 E-type mod, but cannot find it...
 disable Advanced Supersampling Filtering
 <h5>"unpack data" feature in the content tab</h5>
 click CM version number around 10 times quickly to get developer mode</details>
-<dd>mods using <a href="STM32">STM32</a> &nbsp <a href="ESP8266">ESP8266</a>
-<dd><a href="#tuning">Tuning</a>
-<dt> <details><summary>
-<font color=#007700><b>AccuForce wheel base (DIY model no longer available)</b></font>
-</summary>
+
+<dt><br><details><summary><font color=#007700><b>AccuForce wheel base (DIY model no longer available)</b></font></summary>
 <a name=DD>
 Sim driving by VR HMD without video passthru means not seeing physical controls</a>,<br>
 unless video capture of controls is reinserted in 3D view,<br>
@@ -378,13 +393,24 @@ MASO quick releases <i>seemed</i> OK;  Sim Racing Garage liked one adapted for T
 
 <dd><a href="#OG14">Original 14mm wheel adapter</a>
 <dd><a href="DDclamp.htm">DIY DD steering shaft clamp</a>
-<dt> <details><summary>
-<font color=#007700><b>G29 pedal mods</b></font>
-</summary>
+<dd><details><summary><b>Force Feedback controls</b></summary>
+<a name="FFB">&nbsp </a>
+<a href="https://www.racedepartment.com/threads/ffb-real-time-monitoring-now-possible.159219/">SimHub Force feedback utility</a><br>
+<a href="https://boxthislap.org/thrustmaster-ts-pc-ts-xw-assetto-corsa-settings/">AC FFB percentage directly in game</a>
+(using Plus and Minus keys of your Numeric Pad)<br><br>
+
+<a href="https://www.assettocorsa.net/forum/index.php?threads/force-feedback-anti-clipping-tool-5-2-released.14165/">Force feedback (FFB) anti-clipping tool</a><br>
+<a href="https://www.racedepartment.com/downloads/ffbclip-app.7910/">FFBclip evidently works in VR</a>:<br>
+<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/4qkP77ikMG0"></iframe><br><br>
+SingleRacer made a video for 
+<a href="https://www.youtube.com/watch?v=PyX-IdYco4s">taming G29 with FFBclip, Wheel Check and LUT generator</a></details>
+
+<dt><br><b>Pedals</b>
+<dd><details><summary><font color=#007700><b>G29 pedal mods</b></font></summary>
 <a name=pedals>
 <h4> Problems</h4></a>
 Lacking inertial cues from braking velocity changes, sim racing seems harder (IMO) than real.<br>
-Although Logitech improved pedal <i>feel</i> with their G29, braking control remains problematic:,<ul compact>
+Although Logitech improved pedal <i>feel</i> with their G29, braking control remains problematic:,<ul>
 <li> signal to sim software is based on pedal movement distance, not pressure.<br>
 This can be largely corrected by controls within Assetto Corssa.
 <li> feedback, if any, for tires losing grip during braking comes thru the steering wheel,
@@ -392,10 +418,9 @@ instead of the brake pedal.<br>
 Better feedback wants direct drive steering, load cell brake pedal and <a href="#SimHarness">active harness tensioning</a>.
 </ul>
 
-
 <h4>Project</h4>
-Brake simulation shortcomings can be mitigated by:<ul compact>
-<li> replacing brake potentiometer with a <a href="https://imgur.com/gallery/gOjAf">load cell</a><ul compact>
+Brake simulation shortcomings can be mitigated by:<ul>
+<li> replacing brake potentiometer with a <a href="https://imgur.com/gallery/gOjAf">load cell</a><ul>
 <li>That mod uses analog op amp, problematic with Logitech's brake curve, but fine with <a href="#analog">AccuForce</a>
 <li>instead of custom circuit board, use a cheap <b>INA333</b> (or AD623) low power rail-to-rail instrumentation amplifier module:<br>
 <img src=image/INA333front.jpg><img src=image/INA333rear.jpg><br clear=all>
@@ -409,7 +434,7 @@ VCC regulator LDO input 5V.<br>
 <img src="image/INA333.png">
 </ul>
 <li> simulating ABS feedback at the brake pedal
-<li>e.g. @ 3:47/10:56 of this video: <a href="https://www.youtube.com/watch?v=8aLqqcEaUVk">DIY RUMBLE PEDALS SIM RACING</a><ul compact>
+<li>e.g. @ 3:47/10:56 of this video: <a href="https://www.youtube.com/watch?v=8aLqqcEaUVk">DIY RUMBLE PEDALS SIM RACING</a><ul>
 <li>Make a property for <a href="https://github.com/SHWotever/SimHub/issues/430">tire slip data from SimHub's ShakeIt effect</a>
  to drive <a href="https://github.com/SHWotever/SimHub/wiki#custom-serial-devices-support">Custom serial devices</a>
 <li>Easier to use the effect with <a href="https://www.daytonaudio.com/product/1180/daex32ep-4-thruster-32mm-exciter-40w-4-ohm">an exciter</a>.</ul>
@@ -436,6 +461,7 @@ Mount will be cleaned with Windex and wiped dry to promote bonding to Thruster's
 Properly applied, hot glue bonds well enough to peel piezo off their metal discs; ask how I know. &nbsp <img src="image/piezo_damage.jpg"><br clear=all>
 Obtaining that bond consistently is difficult, and hot glue's resilience is not ideal for capturing vibration energy,<br>
 Consequently, two-part epoxy is a better choice for bonding piezo pairs and mass-loading.</details>
+
 <dd> <details><summary><b> Logitech pedal attachment to AccuForce Controller </b></summary>
 <table><tr><td width=60%>
 The AccuForce Controller
@@ -468,94 +494,21 @@ Ricmotech's <a href="https://www.ricmotech.com/Ricmotech_Mini_Mite_Direct_Drive_
 is <a href="https://www.racedepartment.com/threads/accuforce-mounting-help.171738/post-3021710">an AccuForce clone</a>.
 </details>
 
-<dt><a href=PT2.htm><font color=#007700><b>ProtoSimTech PT2 pedals</b></font></a>
-<dd><a href="https://www.racedepartment.com/search/?q=ProtoSimTech&o=relevance">on RaceDepartment</a>
+<dd><a href=PT2.htm><font color=#007700><b>ProtoSimTech PT2 pedals</b></font></a>
+	&nbsp <a href="https://www.racedepartment.com/search/?q=ProtoSimTech&o=relevance">on RaceDepartment</a>
 
-<dt><font color=#007700><b>harness tensioning</b></font>
-<dd><a href="#accel">SimHub Acceleration properties</a>
-<dd> <details> <summary> <b>SimHub 2DOF harness tensioning</b> </summary>
-<a name="SimHarness">
-One expedient for simulating sustained G forces is a G Harness.</a><br>
-SimXperience is a pioneer for that, with a <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a>,<br>
-typically sold as an accessory for their <a href="https://www.simxperience.com/en-us/products/motionsimulatorkits/gs-5g-seat.aspx">US$3K GS-5 G-Seat</a>.<br><br>
-For members of <a href="https://www.simhubdash.com">Wotever's SimHub Discord (see Live Support)</a><br>
-he has developed an <a href="https://discord.com/channels/299259397060689920/843488595062423553">#experimental-belt-tensioner</a>.<br>
-<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/7ao_srZlhNc"></iframe><br>
-.. for which he recently added a dedicated SimHub plugin:<br>
-<img width=640 src="image/SHtensionner.gif"><br clear=all>
-Issues with it:<ul compact><li>gear-drive stepper motors are both noisy and dangerously torquey
-<li>suboptimal physics linearly adds lateral and longitudinal acceleration,<br> instead of square root of sum of squares
-<li>however, adequate range of motion to allow slackening e.g. for acceleration</ul>
-<a href="https://lebois-racing.fr/seat-belt-tensioner">Lebois</a> built a <a href="https://www.flickr.com/photos/94602950@N04/sets/72157717763752498/">direct-drive tensioner using PWM drive of a (too powerful?) DC motor</a>.<br>
-<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe><br>
-<a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">Here</a> is another direct-drive tensioner for braking only on shoulder and lap belts.<br>
-<br>
-50mm diameter spools on 8.5Nm motors should provide adequate but safe tension and belt travel.<br>
-<pre>Torque (N.m) = 9.5488 x Power (kW) / Speed (RPM)</pre>
-For electric scooter motors, stall torque is approximately watts / unloaded RPS.<br>
-For example, a 350W 2750rpm motor might have about 7 N.m stall torque.<br>
-<br>
-<a href="https://www.racedepartment.com/members/racingmat.164315">RacingMat</a> developed a <a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioning using a pair of 35kg.cm hobby servos</a>.<br><br>
-Parts budget (US$):<dl compact>
-<dt>41.40<dd><a href="https://www.ebay.com/itm/282250363739">RSD3235 servo pair</a>
-<dt>17.25<dd><a href="https://www.ebay.com/itm/264645806540">6x 100F super capacitors</a>
-<dt>10.00<dd><a href="https://www.amazon.com/gp/product/B08C594VNP">12VDC 5A power supply</a>
-<dt>6.95<dd><a href="https://www.amazon.com/gp/product/B07J9RQ8B6">5A constant current DC-DC buck regulator</a>
-<dt>7.26<dd><a href="https://www.amazon.com/dp/B000I1BWVW">wide bed casters</a>
-<dt>3.03<dd><a href="https://www.ebay.com/itm/143881049059">STM32F103C8T6 Blue Pill</a><br>
-to flash STM32 modules, a <a href="https://www.ebay.com/itm/352694692698"> ST-Link V2 clone</a> is wanted.<br>
-Beware of similar USB-TTL dongles <i>wrongly listed as</i> ST-LINK;<br>
-they are for more generic, but less convenient serial programming. 
-<dt>18.86<dd><a href="https://www.amazon.com/gp/product/B082FPRHGP">2-inch 4 point harness</a></dl>
-Modifications of RacingMat's design include:<ul compact>
-<li>suspending those servos between harness belt segments, reducing noise:<br>
-<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/KSJQ8uF8pIc"></iframe>
-<li>repurposing wide bed casters as harness pulleys:<br>
-<img src="https://www.racedepartment.com/attachments/bedcasters-jpg.437943/">
-<li>(optionally) adding super capacitors to the power supply for faster servo response:<ul compact>
-<li>+8VDC from regulator (and super caps) to servo red wires
-<li>-8VDC to servo black wires
-<li>Blue Pill is powered and controlled by USB.
-<li>Blue Pill ground pin to -8VDC
-<li>Blue Pill PWM pins to servo white wires</ul>
-<img width=640 src="https://www.racedepartment.com/attachments/glued-jpg.442520/"><ul compact>
-<li>super capacitors in series require balance circuitry;<br>
-a commodity 16V super capacitor bank with balancing is cheap;&nbsp cut it in half:<br>
-<img src="https://www.racedepartment.com/attachments/halved-jpg.442519/">
-<li>super capacitors effectively short-circuit supplies at power on, requiring current limiting.<br>
-Using an automotive headlamp bulb as a "dummy load",<br> the buck regulator was adjusted for maximum 8V and 4.5A:<br>
-<img src="https://www.racedepartment.com/attachments/controls-jpg.438828/"><ul compact>
-<li>Button left of LED digits turns LEDs (but not power) off/on.
-<li>Right pushbutton controls display mode: Vin, Vout, Aout, Pout, cycle.
-<li>Pots were received set fully clockwise, turning counterclockwise reduces values.
-<li>Left pot controls Vout, right pot controls Aout.
-<li>Upper blue LED chip illuminates while powered.
-<li>Another LED chip just left of that illuminates when current limited.
-<li>LED chip right of digits illuminates when displaying Vout;
-<li>LED chip left of digits illuminates when displaying Vin.</ul>
 
-</ul>
-<li>PWM servo control by Arduino code running in an STM32 "Blue Pill".<br>
-Here is the <a href="../Arduino">Arduino STM32 servo driver</a> for this solution.
-<li>harness tensioning signals from SimHub drive the USB-attached "Blue Pill":<br>
-<img width=640 src="../Arduino/SimHubCustomSerial.gif"><br clear=all>
-Here is the <a href="../Arduino/SimHubCustomSerial">SimHub Custom serial device harness tensioning control</a> description.<br>
-Here is the <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds.txt">SimHub Custom serial device profile</a>.
-</ul></details>
-
-<dt><font color=#007700><b>hand controllers</b></font>
+<dt><br><font color=#007700><b>hand controllers</b></font>
 <dd>Hand-On Throttle-And-Stick (<a href=../XR/joy.htm><b>HOTAS</b></a>) in SteamVR
+<dd>Mouse intercepted for SimHub (<a href-"">SHmouse</a>
 
-<dt><font color=#007700><b>shifters</b></font>
-<dd><details>
-<summary>
-<b>Thrustmaster TH8A shifter mods</b>
-</summary>
+<dt><br><font color=#007700><b>shifters</b></font>
+<dd><details><summary><b>Thrustmaster TH8A shifter mods</b></summary>
 <a name=TH8A><h5>$15 fixes</h5></a>
-<dl compact>
+<dl>
 <dt>Problems
 <dd>Compared to real cars, *LOTS* of missed shifts with a stock TH8A.<br>
-Although sturdy, TH8A throws are too long and resistance is too low.<ul compact>
+Although sturdy, TH8A throws are too long and resistance is too low.<ul>
 <li>On track in a real BMW, a lighter knob improves shift feedback.
 <li>Simply shortening shift levers can unacceptably increase effort in some <i>real</i> cars,<br> but works very well here.
 </ul>
@@ -564,24 +517,22 @@ Although sturdy, TH8A throws are too long and resistance is too low.<ul compact>
 The TH8A has an M9x1.25 thread for shift knobs.<br>
 $20 buys a <a href="https://www.amazon.com/gp/product/B01312FOFO">fairly complete tap and die set</a>
 or $6.30 gets just a needed <a href="https://www.amazon.com/gp/product/B01312FOFO">10mm x 1.25 hex die</a><br>
-<details>
-<summary><code>[click for lever shortening details]</code></summary>
-<ul compact>
+<details><summary><code>[click for lever shortening details]</code></summary> <ul>
 <li>   Unscrew the knob; fit a wrench on its flats to remove (and eventually replace) the lever<br>
-<img width=640 src=image/wrench.jpg><br clear=all>  
+	<img width=640 src=image/wrench.jpg><br clear=all>  
 <li>   Screw an M10x1.25 die over existing threads, clamp shaft flats in a vice and cut another couple of inches of threads<br>
-<img width=640 src=image/vice.jpg><br clear=all>  
+	<img width=640 src=image/vice.jpg><br clear=all>  
 <li>   Cut an inch or so off the shaft<br>
-<img width=640 src=image/cut.jpg><br clear=all>  
+	<img width=640 src=image/cut.jpg><br clear=all>  
 <li>  Grind a half inch or so of new flats on shortened shaft end<br>
-<img width=640 src=image/flats.jpg><br clear=all>  
+<	img width=640 src=image/flats.jpg><br clear=all>  
 <li> Using a 5/16 bit, drill about 1.5 inches into 2 inch cork ball and thread it onto the shortened shaft<br>
-<img width=640 src=image/cork.jpg><br clear=all>
+	<img width=640 src=image/cork.jpg><br clear=all>
 <li> I may eventually shorten the shaft another 1/2 inch or so, but shifting is much improved<br>
-<img width=640 src=image/grip.jpg><br clear=all>
-</ul>
-</details>
+	<img width=640 src=image/grip.jpg><br clear=all>
+</ul> </details>
 </dl>
+
 Even with shorter shifts and <a href="https://nolitto3d.com/products/clixbeetle-pro">ClixBeetle's</a> stronger detents,<br>
 shifts were still occasionally missed,
 e.g. reverse, 6 vs 4, or 7 vs 5.<br>
@@ -594,9 +545,7 @@ appropriately connected using a scroll saw.<br>
 Delrin yields appreciably smoothed shifts,<br>
 and tweaked connecting slots eliminated missed shifts.</details>
 
-<dd><details><summary><b>
-DCD WRC Shifter
-</b></summary>
+<dd><details><summary><b>DCD WRC Shifter</b></summary>
 <a name=DCD><i>Ordered Sep 16; delivered Oct 2.</i><br></a>
 Windows 10 recognized and set it up.<br>
 SimHub Controls and events Controller status
@@ -621,7 +570,7 @@ to fix another spacing issue.<br><br>
 <a name="Q1R">A second spacing issue: between the shifter body and clone Q1r lever:<br></a>
 
 <img width=100% src="https://www.racedepartment.com/attachments/q1r_wrc-jpg.508788/"><br clear=all>
-... addressed by bending the lever's tip inward a few mm.<ul compact>
+... addressed by bending the lever's tip inward a few mm.<ul>
 <li>Paddles flex;&nbsp particularly the larger of 2
 <li>shifter body wobbled in the wheel base flange;&nbsp addressed by shimming.
 <li>the micro-USB socket broke off its controller board;&nbsp
@@ -643,17 +592,82 @@ converting debounced switch changes from Arduino Blue Pill USB COM port<br> to c
 then to <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">vJoy virtual switches</a>.
 </ul></details>
 
-<dt><font color=#007700><b>tactile feedback</b></font>
-<dd> <details><summary><b>Windows 10/11 sound</b></summary>
-<a name=R7>My Aurora R7</a> has unused 7.1 channel audio on the motherboard.<br>
-To configure 5.1 surround:<br>
-Press Windows key + R to open a Run window and type <code>mmsys.cpl</code><br>
-The Realtek Speakers / Headphone must be set to 5.1,<br>
-NOT Quadraphonic, which matrixes from stereo.<br>
-Denon POA-8300 failed to drive front pucks from speakers A, but B works.</details>
+<dt><br><font color=#007700><b>tactile feedback</b></font>
+<dd><font color=#007700><b>harness tensioning</b></font><ul>
+<li><a href="#accel">SimHub Acceleration properties</a>
+<li> <details> <summary> <b>SimHub 2DOF harness tensioning</b> </summary>
+<a name="SimHarness">
+One expedient for simulating sustained G forces is a G Harness.</a><br>
+SimXperience is a pioneer for that, with a <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a>,<br>
+typically sold as an accessory for their <a href="https://www.simxperience.com/en-us/products/motionsimulatorkits/gs-5g-seat.aspx">US$3K GS-5 G-Seat</a>.<br><br>
+For members of <a href="https://www.simhubdash.com">Wotever's SimHub Discord (see Live Support)</a><br>
+he has developed an <a href="https://discord.com/channels/299259397060689920/843488595062423553">#experimental-belt-tensioner</a>.<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/7ao_srZlhNc"></iframe><br>
+.. for which he recently added a dedicated SimHub plugin:<br>
+<img width=640 src="image/SHtensionner.gif"><br clear=all>
+Issues with it:<ul><li>gear-drive stepper motors are both noisy and dangerously torquey
+<li>suboptimal physics linearly adds lateral and longitudinal acceleration,<br> instead of square root of sum of squares
+<li>however, adequate range of motion to allow slackening e.g. for acceleration</ul>
+<a href="https://lebois-racing.fr/seat-belt-tensioner">Lebois</a> built a <a href="https://www.flickr.com/photos/94602950@N04/sets/72157717763752498/">direct-drive tensioner using PWM drive of a (too powerful?) DC motor</a>.<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe><br>
+<a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">Here</a> is another direct-drive tensioner for braking only on shoulder and lap belts.<br>
+<br>
+50mm diameter spools on 8.5Nm motors should provide adequate but safe tension and belt travel.<br>
+<pre>Torque (N.m) = 9.5488 x Power (kW) / Speed (RPM)</pre>
+For electric scooter motors, stall torque is approximately watts / unloaded RPS.<br>
+For example, a 350W 2750rpm motor might have about 7 N.m stall torque.<br>
+<br>
+<a href="https://www.racedepartment.com/members/racingmat.164315">RacingMat</a> developed a <a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioning using a pair of 35kg.cm hobby servos</a>.<br><br>
+Parts budget (US$):<dl>
+<dt>41.40<dd><a href="https://www.ebay.com/itm/282250363739">RSD3235 servo pair</a>
+<dt>17.25<dd><a href="https://www.ebay.com/itm/264645806540">6x 100F super capacitors</a>
+<dt>10.00<dd><a href="https://www.amazon.com/gp/product/B08C594VNP">12VDC 5A power supply</a>
+<dt>6.95<dd><a href="https://www.amazon.com/gp/product/B07J9RQ8B6">5A constant current DC-DC buck regulator</a>
+<dt>7.26<dd><a href="https://www.amazon.com/dp/B000I1BWVW">wide bed casters</a>
+<dt>3.03<dd><a href="https://www.ebay.com/itm/143881049059">STM32F103C8T6 Blue Pill</a><br>
+to flash STM32 modules, a <a href="https://www.ebay.com/itm/352694692698"> ST-Link V2 clone</a> is wanted.<br>
+Beware of similar USB-TTL dongles <i>wrongly listed as</i> ST-LINK;<br>
+they are for more generic, but less convenient serial programming. 
+<dt>18.86<dd><a href="https://www.amazon.com/gp/product/B082FPRHGP">2-inch 4 point harness</a></dl>
+Modifications of RacingMat's design include:<ul>
+<li>suspending those servos between harness belt segments, reducing noise:<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/KSJQ8uF8pIc"></iframe>
+<li>repurposing wide bed casters as harness pulleys:<br>
+<img src="https://www.racedepartment.com/attachments/bedcasters-jpg.437943/">
+<li>(optionally) adding super capacitors to the power supply for faster servo response:<ul>
+<li>+8VDC from regulator (and super caps) to servo red wires
+<li>-8VDC to servo black wires
+<li>Blue Pill is powered and controlled by USB.
+<li>Blue Pill ground pin to -8VDC
+<li>Blue Pill PWM pins to servo white wires
+<img width=640 src="https://www.racedepartment.com/attachments/glued-jpg.442520/">
+<li>super capacitors in series require balance circuitry;<br>
+a commodity 16V super capacitor bank with balancing is cheap;&nbsp cut it in half:<br>
+<img src="https://www.racedepartment.com/attachments/halved-jpg.442519/">
+<li>super capacitors effectively short-circuit supplies at power on, requiring current limiting.<br>
+Using an automotive headlamp bulb as a "dummy load",<br> the buck regulator was adjusted for maximum 8V and 4.5A:<br>
+<img src="https://www.racedepartment.com/attachments/controls-jpg.438828/"><ul>
+<li>Button left of LED digits turns LEDs (but not power) off/on.
+<li>Right pushbutton controls display mode: Vin, Vout, Aout, Pout, cycle.
+<li>Pots were received set fully clockwise, turning counterclockwise reduces values.
+<li>Left pot controls Vout, right pot controls Aout.
+<li>Upper blue LED chip illuminates while powered.
+<li>Another LED chip just left of that illuminates when current limited.
+<li>LED chip right of digits illuminates when displaying Vout;
+<li>LED chip left of digits illuminates when displaying Vin.</ul>
 
-<dd><a href="ShakeIt/10cmShaker/">eBay "super pucks" AKA Low Frequency Bass Speaker Transducer 3.75"</a>
-<dd><details><summary><b>SRS ShakeSeat</b></summary>
+</ul>
+<li>PWM servo control by Arduino code running in an STM32 "Blue Pill".<br>
+Here is the <a href="../Arduino">Arduino STM32 servo driver</a> for this solution.
+<li>harness tensioning signals from SimHub drive the USB-attached "Blue Pill":<br>
+<img width=640 src="../Arduino/SimHubCustomSerial.gif"><br clear=all>
+Here is the <a href="../Arduino/SimHubCustomSerial">SimHub Custom serial device harness tensioning control</a> description.<br>
+Here is the <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds.txt">SimHub Custom serial device profile</a>.
+</ul></details></ul></ul>
+
+<dd><font color=#007700><b>tactile transducers AKA exciters or shakers</b></font><ul>
+<li><a href="ShakeIt/10cmShaker/">eBay "super pucks" AKA Low Frequency Bass Speaker Transducer 3.75"</a>
+<li><details><summary><b>SRS ShakeSeat</b> &nbsp &nbsp <a href="#pad">padding</a></summary>
 <a name=shakeseat>Home sim driving rigs</a> cannot realistically simulate cornering and braking G's;<br>
 better to <a href="haptic.htm">more cost-effective haptic feedbacks</a>.<br>
 Niels Heusinkveld <a href="https://www.youtube.com/watch?v=ebZS1b4viYk">agrees (1:-2:/11:44)</a><br>
@@ -705,9 +719,8 @@ one was trimmed one to about 17x17 inches and marked using a bowl for disc remov
 After a hundred or so hours of moderately intense sitting,<br>
 the EVA foam-supplemented ShakeSeat looks like this:<br>
 <img src="image/SRS_EVA.jpg"></details>
-<dd> &nbsp &nbsp <a href="#pad">padding</a>
 
-<dd><details> <summary> <b><a href="https://www.simhubdash.com/download-2/">SimHub</a> ShakeIt Bass Shakers</b> </summary>
+<li><details> <summary> <b><a href="https://www.simhubdash.com/download-2/">SimHub</a> ShakeIt Bass Shakers</b> </summary>
 <a name=ShakeIt>(confusingly,</a>
 one less K than <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">SRS product</a>) is/was free software,<br>
 since integrated into <a href="https://www.simhubdash.com/">SimHub</a>, and somewhat
@@ -755,7 +768,7 @@ This motivates a <a href="../MIDI/#plugin">SimHub MIDI plugin</a> to send MIDI b
  e.g. wheel load to change amplitude of SimHub-generated wheel slip tactile effect.<br>
 Effects can be configured as mono, divided front-rear, left-right, or 4-corners.<br>
 <img width=640 src="https://www.racedepartment.com/attachments/1593030117522-png.383988/"><br clear=all>
-<ul compact>
+<ul>
 <li><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3091486">
 ShakeIt's wheelslip effects were updated</a>
 <li><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/post-3090977">
@@ -797,7 +810,7 @@ Nicolas, SimHub
  &nbsp; then some suspension will be wanted to resist those forces while isolating tactile energy.
 </ul></details>
 
-<details> <summary> &nbsp &nbsp for ShakeSeat: <b>G-force modulated 4 corner tire slip</b> </summary>
+for ShakeSeat:&nbsp <details><summary><b>G-force modulated 4 corner tire slip</b></summary>
 <a name="Simshakeseat"><i>Background and disclaimers</i></a><br>
 My sim driving experience is with an office chair, wheel stand and mostly Assetto Corsa.<br>
 I have no experience with the
@@ -906,6 +919,7 @@ a Custom serial device for <a href="#SimHarness">2DOF harness tensioning</a>.<br
 The complete SimHub profile is <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile">available here</a>
  along with a <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile.txt">revised version</a><br>
 After awhile, SimHub can accumulate too many profiles; <a href="shakeit.htm">here are mine</a>.</details>
+</ul>
 
 <dd><a href="../MIDI/plugin/">SimHub MIDI plugin</a>
 
@@ -991,8 +1005,17 @@ After fiddling with Sim Commander 4 SimVibe
 SimHub <a href="#ShakeIt">ShakeIt Bass Shakers</a> is a better choice for me..<br>
 </details>
 
+<dd> <details><summary><b>Windows 10/11 sound</b></summary>
+<a name=R7>My Aurora R7</a> has unused 7.1 channel audio on the motherboard.<br>
+To configure 5.1 surround:<br>
+Press Windows key + R to open a Run window and type <code>mmsys.cpl</code><br>
+The Realtek Speakers / Headphone must be set to 5.1,<br>
+NOT Quadraphonic, which matrixes from stereo.<br>
+Denon POA-8300 failed to drive front pucks from speakers A, but B works.</details>
+
+
 <a name=hmd>
-<dt><font color=#007700><b>VR HMD</b></font>
+<dt><br><font color=#007700><b>VR HMD</b></font>
 </a>
 <dd><details><summary><b>Samsung HMD Odyssey+</b></summary>
 Miserably documented and barely supported (sold only in the U.S.)<br>
@@ -1048,7 +1071,7 @@ Combined with Nvidia graphics drivers, unambiguously buggy behaviors can occur:<
 These were eventually addressed for GTX 1080Ti by reverting to Nvidia 456.55 driver.<br>
 <a name=DDU><h4>Nvidia graphics driver crashes</h4></a>
 Many recommend <a href="RunDDU.htm">removing all traces of Nvidia driver installation, using DDU</a></details>
-<dt><font color=#007700><b>other software</b></font><ul>
+<dt><br><font color=#007700><b>other software</b></font><ul>
 <li><details><summary><b>BigScreen</b></summary>
 <a name=Bigscreen>Free</a>
 <a href="https://store.steampowered.com/app/457550/Bigscreen_Beta/">BigScreen Beta</a>
@@ -1070,7 +1093,7 @@ to display, in a web browser tab, enter:&nbsp
 <code>steam://open/console</code><br>
 .. then, in that console window, enter:&nbsp <code>user_info</code></ul>
 
-<dt><a href="steering.htm"><font color=#007700><b>wheels for GT racing in VR</b></font></a>
+<dt><br><a href="steering.htm"><font color=#007700><b>wheels for GT racing in VR</b></font></a>
 <dd><details><summary><b> Logitech G29 </b></summary>
 <a name=G29>Refurbished Logitech G29 <i>arrived April 2018</i><br></a>
 seemingly unblemished with original contents and dividers in unoriginal plain brown box.<br>
@@ -1093,7 +1116,7 @@ the G29 racing wheel to PlayStation 4, PlayStation 3, or PC.<br>
 PC: Set the mode switch to PS4.<br>
 NOTE: You must install Logitech Gaming Software (LGS) 8.70 or later<br>
 on the PC for full functionality. Once you've installed LGS,<br>
-all buttons and accessories will function in the games that support them."<ul compact>
+all buttons and accessories will function in the games that support them."<ul>
 <li> Logitech's Gaming Software (LGS) nowhere admits its version,<br>
 but filename includes it: <code>LGS_8.98.234X64_Logitech.exe</code><br>
 <li> Undocumented icon for Overwolf, which evidently 
@@ -1138,7 +1161,7 @@ select Game Controller Settings > Properties to test input<br>
 When G29 USB is connected without running Logitech Gaming Software (LGS),<br>
 G29 is under Unspecified in Windows Devices control panel
 
-<ul compact>
+<ul>
 <li><a href="https://support.logi.com/hc/en-my/articles/360023349533-Program-buttons-on-the-G29-and-G920-racing-wheels-with-Logitech-Gaming-Software">Logitech
 Gaming Software (LGS) G29 button mapping</a>
 <li>LGS includes a <a href="https://support.logi.com/hc/en-my/articles/360023181494">G29 AC button profile</a>
@@ -1180,22 +1203,8 @@ Two G29 wheel issues:<br>
 &nbsp goes 'molasses' and unresponsive when cornering limits exceeded.</details>
 
 <dd><a href="#Q1R">Q1R steering wheel quick release</a>
-<dd><details><summary><b>
-Force Feedback controls
-</b></summary>
-<a name="FFB">&nbsp </a>
-<a href="https://www.racedepartment.com/threads/ffb-real-time-monitoring-now-possible.159219/">SimHub Force feedback utility</a>
-<br>
-<a href="https://boxthislap.org/thrustmaster-ts-pc-ts-xw-assetto-corsa-settings/">AC FFB percentage directly in game</a>
-(using Plus and Minus keys of your Numeric Pad)<br>
-<br>
-<a href="https://www.assettocorsa.net/forum/index.php?threads/force-feedback-anti-clipping-tool-5-2-released.14165/">Force feedback (FFB) anti-clipping tool</a><br>
-<a href="https://www.racedepartment.com/downloads/ffbclip-app.7910/">FFBclip evidently works in VR</a>:<br>
-<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/4qkP77ikMG0"></iframe><br><br>
-SingleRacer made a video for 
-<a href="https://www.youtube.com/watch?v=PyX-IdYco4s">taming G29 with FFBclip, Wheel Check and LUT generator</a></details>
 
-<dt> <details><summary> <font color=#007700> <b> wheelstand </b> </font> </summary>
+<dt><br><details><summary><font color=#007700><b>wheelstand</b></font></summary>
 <a name=wheelstand>Clamping G29 wheel to computer cart compromises computing</a>;<br>
  pivoting desk chair to wheel stand makes more sense.<br>
 Harbor Freight clamping work bench:<br>
@@ -1209,13 +1218,13 @@ Ratchet strap secures desk chair to improvised wheel stand. &nbsp
 <img src="image/sidestand.jpg"><br clear=all>
 fan and Odyssey+ HMD perch on top: &nbsp
 <img align=center src="image/wheelstand.jpg"><br clear=all><br>
-<a name=EXT>Work bench wheel stand converted to extrusions</a> for <a href="#DD">AccuForce</a>:<br>
-<img align=left src="image/extruded.jpg"><br clear=all><br>
 Repurposed Adcom ACE-515 distributes power to sim equipment,<br>
 including amplifiers for <a href="#shakeseat">ShakeSeat cushion</a> controlled by
 <a href="https://github.com/SHWotever/SimHub/wiki/Shake-It-for-bass-shakers">SimHub</a>.<br>
 <a href="#TH8A">TH8A shifter plate</a> is rotated slightly ccw to reduce missed shifts.</details>
-<dd><a href="#EXT">converted to use aluminum extrusions</a>
+
+<dd><a name=EXT>converted to extrusions</a> for <a href="#DD">AccuForce</a>:<br>
+<img align=left src="image/extruded.jpg"><br clear=all><br>
 </dl>
 
 </font>

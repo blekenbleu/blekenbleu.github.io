@@ -15,7 +15,8 @@ table.ct th, td { text-align:center; }
 <h2>Windows Sound</h2>
 <font size=+1>
 <p><i>Before installing VB-Audio's
-</i><a href="https://vb-audio.com/Voicemeeter/banana.htm"><code>Voicemeeter Banana</code></a>, <code>Somnium Space</code> <i>worked with their</i>
+</i><a href=#VM><code>Voicemeeter Banana</code></a>,<br>
+ <code>Somnium Space</code> <i>worked with their</i>
 <code>VB-Audio CABLE</code>.<br>
 It quit because of Windows sound complexities and problematic configuration.</p>
 
@@ -26,35 +27,29 @@ Windows sound output does not play default input;&nbsp some application must rou
 Except for defaults, Windows 11 configures sound devices for
 <a href="https://answers.microsoft.com/en-us/windows/forum/all/what-is-exclusive-mode-and-what-does-it-do/26922597-f6c8-4080-a675-199e37f37a0b">exclusive access</a>.<br>
 Windows settings could, but fails to warn when multiple programs are misconfigured<br> to use the same device having exclusive access set.<br>
-Consequently, any not-default input (e.g. text-to-voice) output must be somehow split<br>
-to feed both e.g. <a href="../XR/VR1.html#space">Somnium Space VR</a> and default output.<br>
+Consequently, any not-default input (e.g. <a href=#TTS>text-to-speech</a>) output<br>
+must be somehow split to feed both e.g.
+<a href="../XR/VR1.html#space">Somnium Space VR</a> and default sound.<br>
 <b>System > Sound > Sound Mixer</b>,<br> where Sound Mixer requires scrolling nearly to the bottom of <b>System > Sound</b>.<br>
-The <code>v</code> to the right of each App exposes Output and Input device selection.
+The <code>v</code> to the right of each App exposes Output and Input device selection.<br>
 
-<h4><a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/#post-3446537:>VoiceMeeter Banana configuration</a></h4>
+<a name=TTS><br></a>
+<a href="https://apps.microsoft.com/detail/text-to-speech-voice-reader/9NGSXZ0ZTH1G?hl=en-US&gl=US"><b>Text to Speech Voice Reader</b></a>
+ works with <code>Somnium Space</code><br>
+via <a href="https://vb-audio.com/Cable/"><code>CABLE (VB-Audio Virtual Cable)</code></a>:
+<br><div align=center><img src=image/Properties.jpg></div><br>
+...but <code>Somnium Space</code> did not recognize <a href=#VM><code>VoiceMeeter</a> Output (VB-Audio VoiceMeeter VAIO)</code> device.<br>
 
-<h4><a href="https://www.youtube.com/watch?v=pEd7jw0uNE4&t=91s">VoiceMeeter setup video by TheFranswah Studio video"</a></h4>
-Making VoiceMeeter the default audio devices.<br>
-<a href="https://www.youtube.com/watch?v=YxWE-enkOhY">VoiceMeeter Potato adds filtering per channel</a><br>
-Official <a href="https://voicemeeter.com/setup-voicemeeter-with-windows-11-disable-mic-privacy/">VoiceMeeter in Windows 11</a><br>
-<br><b><a href="https://steelseries.com/gg/sonar">steelseries Sonar</a> is a gaming-focused VoiceMeeter alternative</a></b>,<br>
-promoted by a <a href="https://steelseries.com/gg/sonar">TheFranswah Studio video</a>.<br><br>
 
-<code>Text to Speech Voice Reader</code> works with <code>Somnium Space</code> using <code>CABLE (VB-Audio Virtual Cable)</code>:
-<br><img src=image/Properties.jpg><br><br>
-...but <code>Somnium Space</code> did not recognize <code>VoiceMeeter Output (VB-Audio VoiceMeeter VAIO) device.<br>
-
-<b><a href="https://discord.com/invite/mBvWzeF3a8">VoiceMeeter discord</a></b><br><br>
-
-In the twisted minds of M$, "<code>Don't Allow</code>" means that <i>they are currently allowed</i>.<br>
+In twisted M$ minds, "<code>Don't Allow</code>" means that <i>this device is currently allowed</i>.<br>
   Pressing "<code>Don't Allow</code>" <i>here</i> is equivalent to (right click) <b>Disable</b><br>
  in Sound control panel <code>Playback</code> or <code>Recording</code>, so baffling redundancy...<br>
 "Allow applications to take exclusive control of this device" is still available<br>
- in Sound control panel device <code>Properties > Advanced</code>.<br>
-Connecting Somnium Space exclusively to VB-Audio CABLE Out<br>
+ in Sound control panel device <code>Properties &gt; Advanced</code>.<br>
+Connecting Somnium Space exclusively to <code>VB-Audio CABLE Out</code><br>
  no longer seems to work, but Somnium Space 2D hangs...
 
-<h4>Test script for Text to Speech Voice Reader</h4>
+<h4>Test script for <a href=#TTS>Text to Speech Voice Reader</a></h4>
 "<code>. .</code>" between lines reduces voicing last word of previous line when playing a line...
 <pre>
 . Hello.
@@ -85,24 +80,36 @@ Thanks.
 ..
 </pre>
 <hr>
-<b>Text to Speech Voice Reader</b> stalls and hangs if connected to a disabled sound input;<br>
+<a name=#TTS><b>Text to Speech Voice Reader</b></a> stalls and hangs if connected to a disabled sound input;<br>
 ask me how I know...<br>
 
 <h3>Windows default input</h3>
 Does not get routed to Windows default output,<br> but e.g. Voicemeeter can route specific devices.<br>
 
+<a name=VM><h3></a><a href="https://vb-audio.com/Voicemeeter/banana.htm">VoiceMeeter Banana</a></h3>
+
+<a href="https://discord.com/invite/mBvWzeF3a8"><i>VoiceMeeter discord</i></a><br>
+<a href="https://www.youtube.com/watch?v=YxWE-enkOhY"><i>VoiceMeeter Potato adds filtering per channel</i></a><br>
+
+<h4><a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/#post-3446537:>VoiceMeeter Banana configuration</a></h4>
+
+<h4><a href="https://www.youtube.com/watch?v=pEd7jw0uNE4&t=91s">VoiceMeeter setup video by TheFranswah Studio video"</a></h4>
+Making VoiceMeeter the default audio devices.<br>
+Official <a href="https://voicemeeter.com/setup-voicemeeter-with-windows-11-disable-mic-privacy/">VoiceMeeter in Windows 11</a><br>
+
 <h4>VoiceMeeter patches</h4>
-Reconfigured VoiceMeeter AUX as default Windows sound default output device<br> and VoiceMeeter VAIO as Windows sound default input.<br>
+Reconfigured VoiceMeeter AUX as default Windows sound output device<br> and VoiceMeeter VAIO as Windows sound default input.<br>
 <table class="ct" border=1 width=500>
 <tr> <th>source</th> <th>input</th> <th>X-Fi</th> <th>CABLE In</th> <th>Denon</th> <th>Main OUT<br>default in</th> <th>Aux OUT</th></tr>
 <tr> <td></td> <td>INPUT 1</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr> <td></td> <td>INPUT 2</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr> <td></td> <td>INPUT 3</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-<tr> <td>Text to Voice</td> <td>VAIO</td> <td>x</td> <td>x</td> <td>x</td> <td>x</td> <td></td> </tr>
+<tr> <td>Text to Speech</td> <td>VAIO</td> <td>x</td> <td>x</td> <td>x</td> <td>x</td> <td></td> </tr>
 <tr> <td>default output</td> <td>AUX</td> <td>x</td> <td></td> <td>x</td> <td></td> <td></td> </tr>
 </table>
 Translated:
-Text to Voice outputs to VAIO (default input),<br> used e.g. by Somnium but also passed to X-Fi for headphones and Denon for surround.<br>
+Text to Speech outputs to VAIO (default input), used e.g. by Somnium,<br>
+ but also passed to X-Fi for headphones and Denon for surround.<br>
 AUX is default output, also passed to X-Fi and Denon (but not Somnium).<br>
 
 <br><b>Exclusive mode disabled for VoiceMeeter Aux Input</b><br>
@@ -114,7 +121,7 @@ AUX is default output, also passed to X-Fi and Denon (but not Somnium).<br>
 <img src=image/VB-Audio.jpg><br><br>
 <img src=image/hook.jpg><br><br>
 <img src=image/mixer.jpg>
-<details>
+</details>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
