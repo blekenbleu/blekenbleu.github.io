@@ -23,8 +23,9 @@
 <dl>
 SimHub's MIDI plugin supports neither reading MIDI sliders<br>
  nor emulating any MIDI controls, motivating:<br>
-<br><div align=center> 
-<i>this</i> <a href="https://github.com/blekenbleu/blekenbleu.MIDIio"><font color=green size=+1)<b>MIDIio</b> plugin</font></a>.
+
+<div align=center> 
+<font size=+2><i>this</i> <a href="https://github.com/blekenbleu/blekenbleu.MIDIio"><font color=green size=+3)<b>MIDIio</b> plugin</font></a></font>.
 </div>
 <hr>
 
@@ -36,36 +37,34 @@ SimHub's MIDI plugin supports neither reading MIDI sliders<br>
 <li>Pressed MIDI event keys also become available properties<br>
     (search <code>PluginManager</code>) without going thru <code>controls</code><img align=middle src="controls.gif"> ...
 </ul>
-<li><a href="https://www.racedepartment.com/downloads/simmidi.27118/">SimMidi</a>'s SimHub plugin controls MIDI encoder LEDs by udp telemetry from SimHub.<br>
-    That download also includes Juan P Bello's <a href="https://www.hobbytronics.co.uk/datasheets/9_MIDI_code.pdf"><code>MIDI_commands.pdf</code></a>.
+<li><a href="https://www.racedepartment.com/downloads/simmidi.27118/">SimMidi</a>'s SimHub plugin controls MIDI encoder LEDs<br> by udp telemetry from SimHub.<br>
+    That download also includes Juan P Bello's <a href="https://ia802206.us.archive.org/29/items/midi-code-notes-NYU-FMT-Bello/9_MIDI_code.pdf"><code>MIDI Code</code></a>.
 <li>Also want SimHub to emulate a joystick without involving Arduino;<br>
-    <a href="https://github.com/kmcnaught/vigem-example-dotnet">vigem-example-dotnet</a> implements simple programmatic control of <a href="https://github.com/ViGEm/ViGEm.NET">ViGem.NET</a>,<br>
-    which implements a <a href="../../Windows/HID">virtual XBox controller</a>.<br>
-</ul>
+    this is also implemented in <a href="https://github.com/blekenbleu/blekenbleu.MIDIio"><b>MIDIio</b></a>.<br>
+</ul><br>
+
 <dl>
 <dt><b><i>See also</i></b>:
 <a href="https://www.racedepartment.com/threads/simhub-plugin-s-for-output-to-midi-and-vjoy.210079/#post-3446448">Race Department wireless MIDI thread</a>
-<dd>for:&nbsp SimHub plugins, VST mixer using Voicemeeter with VSTHost, MidiView,<br>
+<dd>for:&nbsp SimHub plugins, VST mixer using <a href="https://vb-audio.com/Voicemeeter/"><b>Voicemeeter</b></a>
+   with <a href="https://www.hermannseib.com/english/vsthost.htm"><b>VSTHost</b></a>,
+   <a href="https://hautetechnique.com/midi/midiview/"><b>MidiView</b></a>,<br>
    Android Wireless Mixer controls, MIDIShift, iPad Midi Controller Pro, etc.
 </dl>
 
 <h3>candidate MIDI libraries</h3>
-<a href="https://techgaun.github.io/active-forks/">Search active GitHub forks</a>
-<dl>
+<div align=center><a href="https://techgaun.github.io/active-forks/">Search active GitHub forks</a></div><br>
 
-<dt><a href="https://github.com/melanchall/drywetmidi"><b>DryWetMIDI</b></a> - used by SimHub
+<dl><dt><a href="https://github.com/melanchall/drywetmidi"><b>DryWetMIDI</b></a> - used by SimHub, many others,
  (<b>and <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">me</a></b>)
 <dd><a href="https://melanchall.github.io/drywetmidi/">Documentation</a>, <a href="https://www.codeproject.com/Articles/melanchall#Article">Code Project Articles</a>;&nbsp;
-    also used by <a href="https://github.com/melanchall/drywetmidi/network/dependents">many others</a>;&nbsp
-    <a href="https://melanchall.github.io/drywetmidi/articles/dev/Project-health.html"><b>maintained</b></a>
+    <a href="https://melanchall.github.io/drywetmidi/articles/dev/Project-health.html"><b><i>maintained</i></b></a></dl>
 
-<dt><a href="https://github.com/naudio/NAudio"><b>NAudio</b></a>
-<dd>MIDI event model, demo apps, <a href="https://github.com/naudio/NAudio/blob/master/Docs/MidiInAndOut.md">documentation</a>,
-    <a href="https://github.com/naudio/NAudio/network/dependents">used by <b>many</a>, including SimHub</b>
+<details><summary>other candidate MIDI libraries</summary><dl>
+<dt><a href="https://github.com/naudio/NAudio"><b>NAudio</b></a> - used by <i>many, including SimHub</i>
+<dd>MIDI event model, demo apps, <a href="https://github.com/naudio/NAudio/blob/master/Docs/MidiInAndOut.md">documentation</a>
 
-<dt><hr>
-
-<dt><br><a href="https://github.com/ho0ber/NK2Tray"><b>NK2Tray</b></a>
+<dt><a href="https://github.com/ho0ber/NK2Tray"><b>NK2Tray</b></a>
 <dd>Uses NAudio, has Wiki, supports nanoKONTROL
 
 <dt><a href="https://github.com/obiwanjacobi/midi.net"><b>MIDI.NET</b></a>
@@ -87,7 +86,7 @@ SimHub's MIDI plugin supports neither reading MIDI sliders<br>
     <a href="https://www.codeproject.com/Articles/Leslie-Sanford#Article">Leslie Sanford Code Project articles</a>,<br>
     <a href="https://gamedev.stackexchange.com/questions/149223/how-to-import-the-sanford-midi-library">importing the Sanford MIDI library</a>,
     <a href="https://forum.unity.com/threads/implementing-c-midi-toolkit.128731/">Implementing C# MIDI Toolkit</a>
-</dl>
+</dl></details>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
