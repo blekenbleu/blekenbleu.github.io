@@ -18,15 +18,18 @@ table.ct th, td { text-align:center; }
 </i><a href=#VM><code>Voicemeeter Banana</code></a>,<br>
  <code>Somnium Space</code> <i>worked with their</i>
 <code>VB-Audio CABLE</code>.<br>
-It quit because of Windows sound complexities and problematic configuration.</p>
+It quit because of Windows sound terminolgy<br> and problematic configuration.</p>
 
 <h4><a href=../pedals/WindowsAudio.htm>Windows audio basics</a></h4>
 
 <h3>Windows 11 sound routing</h3>
-Windows sound output does not play default input;&nbsp some application must route it.<br>
-Except for defaults, Windows 11 configures sound devices for
-<a href="https://answers.microsoft.com/en-us/windows/forum/all/what-is-exclusive-mode-and-what-does-it-do/26922597-f6c8-4080-a675-199e37f37a0b">exclusive access</a>.<br>
-Windows settings could, but fails to warn when multiple programs are misconfigured<br> to use the same device having exclusive access set.<br>
+Windows sound output does not play default input;<br> some application[s] must route it.<br>
+Except for defaults, Windows 11 configures sound devices<br> for
+<a href="https://answers.microsoft.com/en-us/windows/forum/all/what-is-exclusive-mode-and-what-does-it-do/26922597-f6c8-4080-a675-199e37f37a0b">exclusive access</a>,
+potentially reducing latency.<br>
+Windows settings could, <i>but fails to</i> warn<br>
+when multiple programs are misconfigured<br>
+to use the same device having exclusive access set.<br>
 Consequently, any not-default input (e.g. <a href=#TTS>text-to-speech</a>) output<br>
 must be somehow split to feed both e.g.
 <a href="../XR/VR1.html#space">Somnium Space VR</a> and default sound.<br>
@@ -38,10 +41,11 @@ The <code>v</code> to the right of each App exposes Output and Input device sele
  works with <code>Somnium Space</code><br>
 via <a href="https://vb-audio.com/Cable/"><code>CABLE (VB-Audio Virtual Cable)</code></a>:
 <br><div align=center><img src=image/Properties.jpg></div><br>
-...but <code>Somnium Space</code> did not recognize <a href=#VM><code>VoiceMeeter</a> Output (VB-Audio VoiceMeeter VAIO)</code> device.<br>
+...but <code>Somnium Space</code> did not detect <a href=#VM>VoiceMeeter</a> Output<br>
+<code>(VB-Audio VoiceMeeter VAIO)</code> virtual device.<br>
 
 
-In twisted M$ minds, "<code>Don't Allow</code>" means that <i>this device is currently allowed</i>.<br>
+In twisted M$ minds, "<code>Don't Allow</code>" means<br> that <i>this device is currently allowed</i>.<br>
   Pressing "<code>Don't Allow</code>" <i>here</i> is equivalent to (right click) <b>Disable</b><br>
  in Sound control panel <code>Playback</code> or <code>Recording</code>, so baffling redundancy...<br>
 "Allow applications to take exclusive control of this device" is still available<br>
@@ -50,7 +54,7 @@ Connecting Somnium Space exclusively to <code>VB-Audio CABLE Out</code><br>
  no longer seems to work, but Somnium Space 2D hangs...
 
 <h4>Test script for <a href=#TTS>Text to Speech Voice Reader</a></h4>
-"<code>. .</code>" between lines reduces voicing last word of previous line when playing a line...
+"<code>. .</code>" between lines reduces voicing previous word when playing a line...
 <pre>
 . Hello.
 . .
@@ -80,7 +84,8 @@ Thanks.
 ..
 </pre>
 <hr>
-<a name=#TTS><b>Text to Speech Voice Reader</b></a> stalls and hangs if connected to a disabled sound input;<br>
+<a name=#TTS><b>Text to Speech Voice Reader</b></a> stalls and hangs<br>
+ if connected to a disabled sound input;&nbsp
 ask me how I know...<br>
 
 <h3>Windows default input</h3>
@@ -98,29 +103,46 @@ Making VoiceMeeter the default audio devices.<br>
 Official <a href="https://voicemeeter.com/setup-voicemeeter-with-windows-11-disable-mic-privacy/">VoiceMeeter in Windows 11</a><br>
 
 <h4>VoiceMeeter patches</h4>
-Reconfigured VoiceMeeter AUX as default Windows sound output device<br> and VoiceMeeter VAIO as Windows sound default input.<br>
+Reconfigured VoiceMeeter VAIO as default Windows sound output device<br>
+and VB-Audio Cable as Windows sound default input.<br>
 <table class="ct" border=1 width=500>
-<tr> <th>source</th> <th>input</th> <th>X-Fi</th> <th>CABLE In</th> <th>Denon</th> <th>Main OUT<br>default in</th> <th>Aux OUT</th></tr>
-<tr> <td></td> <td>INPUT 1</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-<tr> <td></td> <td>INPUT 2</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-<tr> <td></td> <td>INPUT 3</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-<tr> <td>Text to Speech</td> <td>VAIO</td> <td>x</td> <td>x</td> <td>x</td> <td>x</td> <td></td> </tr>
-<tr> <td>default output</td> <td>AUX</td> <td>x</td> <td></td> <td>x</td> <td></td> <td></td> </tr>
-</table>
-Translated:
-Text to Speech outputs to VAIO (default input), used e.g. by Somnium,<br>
- but also passed to X-Fi for headphones and Denon for surround.<br>
-AUX is default output, also passed to X-Fi and Denon (but not Somnium).<br>
+<tr> <th>source /<br>destination</th> <th>input</th> <th>CABLE In<br>default In</th>
+	 <th>CABLE Out</th> <th>A1<br>X-Fi</th> <th>A2<br>Denon</th>
+	 <th>A3<br>RealTek</th> <th>B1<br>Somnium</th> <th>B2</th></tr>
+<tr> <td>Text to Speech</td> <td>Cable In</td> <td>x</td> <td></td>
+	 <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr> <td>Cable Out</td> <td>INPUT 1</td> <td></td> <td>x</td>
+	 <td>x</td> <td>x</td> <td></td> <td>x</td> <td></td> </tr>
+<tr> <td></td> <td>INPUT 2</td> <td></td> <td></td> <td></td>
+	 <td></td> <td></td> <td></td> <td></td> </tr>
+<tr> <td></td> <td>INPUT 3</td> <td></td> <td></td> <td></td>
+	 <td></td> <td></td> <td></td> <td></td> </tr>
+<tr> <td>default output</td> <td>VAIO</td> <td></td> <td></td>
+	 <td>x</td> <td>x</td> <td></td> <td></td> <td></td> </tr>
+<tr> <td>SimHub</td> <td>AUX</td> <td></td> <td></td> <td></td>
+	 <td></td> <td>x</td> <td></td> <td></td> </tr>
+</table><dl>
+<dt>Translated:
+Text to Speech outputs to VB-Cable (default input),
+<dd>used e.g. by Somnium via B1 virtual device,
+<dd>but also passed to X-Fi for headphones and Denon for surround.
+<dt>VAIO is Windows default output, also passed to X-Fi and Denon (but not Somnium).
+<dt>SimHub tactile goes to AUX, which gets routed to RealTek motherboard audio
 
-<br><b>Exclusive mode disabled for VoiceMeeter Aux Input</b><br>
-<li> because Default Playback Device<br>
+<dt><b>Exclusive mode disabled for VoiceMeeter VAIO Input</b>
+<dd><ul><li> because Default Playback Device
 <li>X-Fi volume control is no longer effective...
 <li>Windows volume slider is bypassed;&nbsp  <a href="https://voicemeeter.com/volume-control-how-to-change-the-volume-of-your-main-output-without-the-mouse/">VoiceMeeter volume control HowTo</a>
-<li> VB-Audio CABLE Input attached to VoiceMeeter A2 output for a third source device
+<li>VB-Audio CABLE patched to VoiceMeeter Input 1 for a third Playback device</ul></dl>
 <details><summary>click for images</summary>
 <img src=image/VB-Audio.jpg><br><br>
 <img src=image/hook.jpg><br><br>
-<img src=image/mixer.jpg>
+<table><tr><td>
+VB-Audio manages to have its CABLE input labelled Output;<br>
+Somnium is the only app needing non-default device:</td><td>
+ Similarly VB-Audio outputs are labelled Inputs:</td></tr><tr><td>
+<img src=image/mixer.jpg></td><td style="vertical-align: top;">
+<img src=image/Sound.png></td></tr></table>
 </details>
 
 </td></tr><tr><td align=center>
