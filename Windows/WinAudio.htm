@@ -20,7 +20,23 @@ table.ct th, td { text-align:center; }
 <code>VB-Audio CABLE</code>.<br>
 It quit because of Windows sound terminolgy<br> and problematic configuration.</p>
 
-<h4><a href=../pedals/WindowsAudio.htm>Windows audio basics</a></h4>
+<h4><a href=../pedals/WindowsAudio.htm>Windows audio basics</a></h4><br>
+
+<details><summary><b>Windows Audio Latency</b></summary><ul>
+<li><a href="https://www.thewindowsclub.com/sound-delays-lags-and-audio-latency-in-windows-10">REal or REduce Audio Latency</a> on <a href="https://github.com/miniant-git/REAL">GitHub</a>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/audio/low-latency-audio">Low Latency Audio:&nbsp <b>AudioGraph API</b></a>
+<li><a href="https://windowsreport.com/audio-lagging/">Replace Realtek driver with generic Windows driver</a><br>
+ &nbsp &nbsp (<i>High Definition Audio Device</i>)<br>
+ &nbsp &nbsp <a href="https://discuss.cakewalk.com/index.php?/topic/40595-cakewalkrealtekasio-and-windows-11-%F0%9F%99%84/">use WASAPI Exclusive for sub 5ms latency</a>
+<li><a href="https://www.sweetwater.com/sweetcare/articles/roland-difference-between-asio-wdm-mme-drivers/">ASIO (better overall)
+	 vs MME (old, poor) vs WDM(KS)<br> vs WASAPI(not as low as ASIO)</a>
+<li><a href="https://gearspace.com/board/music-computers/1376608-asio-still-necessary-low-latency.html"><b>WASAPI</b></a> <b>Exclusive</b>:&nbsp but only one app;<br>
+ &nbsp &nbsp <b>Low Latency Mode (aka AudioGraph)</b>:&nbsp only with certain devices
+<li><a href="https://www.baumannmusic.com/2021/the-official-asio-driver-for-realtek-hd-audio-dell-hp-lenovo-asus/">official RealTek add-on ASIO driver</a> on <a href="https://www.dell.com/support/home/de-de/drivers/driversdetails?driverid=7776f">Dell website</a><br>
+<li><a href="https://www.resplendence.com/latencymon"><b>LatencyMon</b></a><br>
+<li><a href="https://forum.vb-audio.com/viewtopic.php?t=1204">VB ASIO driver tester</a><br>
+<li><a href="https://oblique-audio.com/rtl-utility.php">RTL UTILITY - Round Trip Latency</a><br>
+</details>
 
 <h3>Windows 11 sound routing</h3>
 <h4>Windows default input</h4>
@@ -149,32 +165,39 @@ Somnium is the only app needing non-default device:</td><td>
  for e.g. clutch and loaded wheel slip telemetry<br>
  can be modulated by <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">MIDIio</a> <i>outside SimHub</i>.<br>
 Possiblities;<ul>
-<li><A HREF="https://voicemeeter.com/user-guide-connect-audio-apps-to-the-voicemeeter-insert-driver/">VoiceMeeter ASIO Insert</a>
-with MIDI-aware VST host and multichannel fader VST.
 <li>a MIDI-aware fader app reading audio from a multichannel virtual cable<br> and writing to tactile amplifier sound card.<br>
-While there are thousands of VST plugins, few implement multichannel faders.<br>
+<li><details><summary>MIDI-aware VST host and multichannel fader VST with
+<A HREF="https://voicemeeter.com/user-guide-connect-audio-apps-to-the-voicemeeter-insert-driver/">VoiceMeeter ASIO Insert</a></summary>
 Seemingly few VST hosts hosts implement easy MIDI configuration.<br>
-Beyond that, VST plugins come in multiple flavors (VST or VST3, 32- or 64-bit).
+Beyond that, few support all VST plugins flavors (VST or VST3, 32- or 64-bit).<br>
+VST hosts mentioned in <a href="https://forum.vb-audio.com/search.php?keywords=vst+host">VB-Audio's Forums</a>:<br>
+<a href="https://www.cantabilesoftware.com/free-vst-host">Cantabile Lite</a>,
+ <a href="https://github.com/falkTX/Carla">Carla</a>, <a href="https://github.com/kushview/element">Element</a>,
+<a href="https://github.com/RainOrigami/VoxYou">VoxYou</a>, VSTHost
+<ul>
+<li><a href="https://technium.ch/voicemeeter-banana-setup-tutorial/">Voicemeeter Banana Setup - Tutorial with VoxYou</a>
 <li><a href="https://unison.audio/vst-host/">The 7 Most Impressive Free VST Hosts Of 2023</a>
 <li><a href="https://github.com/obiwanjacobi/vst.net/issues/10">VST Host 32/64 bit mixed plugin support - VST.NET</a>
-<li><a href="https://github.com/mikeoliphant/AudioPlugSharp">AudioPlugSharp - Easily create VST3 audio plugins in C#</a>
 <li><a href="https://hackaday.io/project/160858-vstibox/log/152480-c-vst-host-daw">C# VST host</a>
 <li><a href="https://hackaday.io/project/160858-vstibox">VSTiBox is a synthesizer for hosting VST software synths</a>
+<li><a href="https://teragonaudio.com/article/How-to-make-your-own-VST-host.html">How to make your own VST host</a>
+<li><a href="https://www.hermannseib.com/english/vsthost.htm"><b>VSTHost</b></a><br>
+&nbsp <a href="https://forum.hermannseib.com/viewtopic.php?t=32">https://forum.hermannseib.com/viewtopic.php?t=32</a><br>
+&nbsp <a href="https://forum.hermannseib.com/viewtopic.php?t=26">VSTHost Registry Entries</a>
+<li><a href="https://github.com/perivar/AudioVSTToolbox">AudioVSTToolbox with MidiHost example</a>
+</ul></details>
+While there are thousands of VST plugins, few implement multichannel faders.<br>
+<li><a href="https://github.com/mikeoliphant/AudioPlugSharp">AudioPlugSharp - Easily create VST3 audio plugins in C#</a>
+<li><a href="https://www.nuget.org/packages/PortAudioSharp2">PortAudioSharp2 C# binding</a>
+<li><a href="https://github.com/Kyle-Gagner/PortAudio.Net/tree/master">PortAudio.Net</a> &nbsp
+	<a href="https://files.portaudio.com/docs/v19-doxydocs/api_overview.html">API overview</a> &nbsp
+	<a href="https://github.com/PortAudio/portaudio/wiki">Wiki</a>
 <li><a href="https://github.com/obiwanjacobi/vst.net">VST.NET 2</a><br>
 	<a href="https://obiwanjacobi.github.io/vst.net/GettingStarted.html">Getting Started</a>
-<li><a href="https://teragonaudio.com/article/How-to-make-your-own-VST-host.html">How to make your own VST host</a>
-<li><a href="https://www.hermannseib.com/english/vsthost.htm"><b>VSTHost</b></a>
-<li><a href="https://forum.hermannseib.com/viewtopic.php?t=32">https://forum.hermannseib.com/viewtopic.php?t=32</a>
-<li><a href="https://forum.hermannseib.com/viewtopic.php?t=26">VSTHost Registry Entries</a>
-<li><a href="https://github.com/perivar/AudioVSTToolbox">AudioVSTToolbox with MidiHost example</a>
 <li><a href="https://docs.juce.com/master/tutorial_create_projucer_basic_plugin.html">JUCE tutorial: Create a basic Audio/MIDI plugin</a>
 <li><a href="https://github.com/markheath/naudio-asio-patchbay">low-level routing of audio using ASIO in NAudio</a>
 <li><a href=https://github.com/LAGonauta/ASIORecAndPlay"">route multichannel audio from one ASIO interface to another</a>
 
-<li><a href="https://github.com/Kyle-Gagner/PortAudio.Net/tree/master">PortAudio.Net</a><br>
-	<a href="https://files.portaudio.com/docs/v19-doxydocs/api_overview.html">API overview</a> &nbsp
-	<a href="https://github.com/PortAudio/portaudio/wiki">Wiki</a>
-<li><a href="https://www.nuget.org/packages/PortAudioSharp2">PortAudioSharp2 C# binding</a>
 
 <li><a href="https://www.boost.org/doc/libs/1_83_0/doc/html/boost_asio/overview/signals.html">Boost.Asio signal handling</a>
 <li><a href="https://www.tobias-erichsen.de/software.html">loopMIDI</a>
