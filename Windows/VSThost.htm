@@ -40,8 +40,6 @@ LightHost, VSTHost<br>
 <li>Floods list with its own plugins even with constrained plugin path:<br><img src=image/Element_PluginPath.png>
 <li>Buried under <b>File &gt Preferences</b>:<br><img src=image/Element_General.png><br>
 	<img src=image/Element_Audio.png><br><img src=image/Element_MIDI.png><br>
-
-
 </details>
 
 <dt><a href="https://www.softpedia.com/get/Multimedia/Audio/Other-AUDIO-Tools/MiniHost.shtml">MiniHost</a>
@@ -52,20 +50,31 @@ LightHost, VSTHost<br>
 <li>MIDI device selection under <b>MIDI</b>:<br><img src=image/MiniHostMIDIports.png>
 <li>Select <code>Voicemeeter Insert Virtual ASIO</code>:<br><img src=image/MiniHostASIOdriver.png>
 <li>Only single channel pairs allowed:</code>:<br><img src=image/MiniHostASIOchannels.png>
-
-	
 </ul></details>
 
-<dt><a href=""></a>
-<dd>
-
 <dt><a href="https://www.hermannseib.com/english/vsthost.htm"><b>VSTHost</b></a>
-<dd> works with 32-bit plugins;&nbsp problematic configuration<br>
-	<a href="https://forum.hermannseib.com/viewtopic.php?t=32">https://forum.hermannseib.com/viewtopic.php?t=32</a><br>
+<dd>works poorly with 32- and 64-bit plugins<br>
+	<a href="https://forum.hermannseib.com/viewforum.php?f=2">Forum</a> &nbsp - &nbsp
 	<a href="https://forum.hermannseib.com/viewtopic.php?t=26">VSTHost Registry Entries</a>
+<dd><details><summary><b>Hateful</b>:&nbsp <i>almost</i> works, awful controls,
+ <a href-"https://www.hermannseib.com/documents/VSTHost.pdf">obsolete documentation</a></summary>
+I have been lost here before (Windows 10, several years ago)<ul>
+<li>A plugin configuration configuration gets saved (if at all) as a so-called Performance.
+<li>After manually reloading a performance, its MIDI configuration is restored
+<li>It loads the known 8 channel VST plugin with full range faders, vstMixer,<br>
+	 but <i>without its patch panel</i>, so <b>useless</b>.
+<li>ASIO device is available <i>only</i> by loading Devices &gt Wave &gt Output Port:<br>
+	<img src=image/VSTHost64WaveASIO.png><br>
+<li>Connection to <code>Voicemeeter Insert Virtual ASIO</code> is only effective<br>
+	 <i>after</i> first loading another ASIO device.
+<li>... then Devices &gt ASIO channel selection gets enabled:<br><img src=image/VSTHost64ASIOchannels.png><br><br>
+<li>MIDI channel learning is buried under Plugin &gt Window &gt MIDI -&gt Parameter:<br><img src=image/hateful.png><br>
+<i>saving/restoring MIDI mapping is easy, even though saving/restoring related plugin is not..</i>
+</ul></details>
+
 
 <dt><a href="https://www.hermannseib.com/english/savihost.htm">SAVIHost</a>
-<dd> single plugin VSTHost derivative, not learning MIDI, no ASIO hooks?...
+<dd> single plugin VSTHost derivative, renders vstMixer correctly, but only 2 channels, not learning MIDI?...
 
 <dt><a href="https://unison.audio/vst-host/">The 7 Most Impressive Free VST Hosts Of 2023</a>
 <dd>NanoHost lacks ASIO hooks for VoiceMeeter
