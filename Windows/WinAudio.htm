@@ -166,44 +166,27 @@ Somnium is the only app needing non-default device:</td><td>
 <img src=image/Sound.png></td></tr></table>
 </details></details><br>
 
-<details><summary><b>tactile signal manipulation for <a href=../../static/SimHub/HowTo.htm#HowTo>SimHub ShakeIt</a></b></summary>
+<details><summary><b>tactile signal manipulation</b> for <a href=../../static/SimHub/HowTo.htm#HowTo><b>SimHub ShakeIt</b></a></summary>
 <a name=SH>ShakeIt</a> tactile effect audio signal amplitudes<br>
  for e.g. clutch and loaded wheel slip telemetry<br>
  can be modulated by <a href="https://github.com/blekenbleu/blekenbleu.MIDIio">MIDIio</a> <i>outside SimHub</i>.<br>
 Possiblities;<ul>
-<li>a MIDI-aware multichannel fader app reading tactile audio from a virtual cable<br> and writing to an amplifier sound card.<br>
-<li><details><summary>MIDI-aware VST host and multichannel fader plugin with
-<A HREF="https://voicemeeter.com/user-guide-connect-audio-apps-to-the-voicemeeter-insert-driver/">VoiceMeeter ASIO Insert</a></summary>
-<a name=VST>Seemingly few VST hosts</a> implement easy MIDI configuration.<br>
-Beyond that, few support all VST plugins flavors (VST or VST3, 32- or 64-bit).<br>
-VST hosts mentioned in <a href="https://forum.vb-audio.com/search.php?keywords=vst+host">VB-Audio's Forums</a>:<br>
-<a href="https://www.cantabilesoftware.com/free-vst-host">Cantabile Lite</a>,
- <a href="https://github.com/falkTX/Carla">Carla</a>, <a href="https://github.com/kushview/element">Element</a>,
-LightHost, VSTHost
-<ul>
-<li>LightHost does not support MIDI
-<li><a href="https://github.com/RainOrigami/VoxYou"><b>VoxYou</b></a> works with VoiceMeeter and supports MIDI,<br>
-	but is fragile and seemingly supports only 64-bit plugins/<br>
-	<a href="https://technium.ch/voicemeeter-banana-setup-tutorial/">VoiceMeeter Banana Setup - Tutorial with VoxYou</a>
-<li><a href="https://www.hermannseib.com/english/vsthost.htm"><b>VSTHost</b></a> works with 32-bit plugins;&nbsp problematic configuration<br>
-	&nbsp <a href="https://forum.hermannseib.com/viewtopic.php?t=32">https://forum.hermannseib.com/viewtopic.php?t=32</a><br>
-	&nbsp <a href="https://forum.hermannseib.com/viewtopic.php?t=26">VSTHost Registry Entries</a>
-<li><a href="https://www.hermannseib.com/english/savihost.htm">SAVIHost</a> single plugin VSTHost derivative, not learning MIDI, no ASIO hooks?...
-<li><a href="https://unison.audio/vst-host/">The 7 Most Impressive Free VST Hosts Of 2023</a><br>
-	NanoHost lacks ASIO hooks for VoiceMeeter;&nbsp LiveProfessor is NOT free.
-<li><a href="https://github.com/obiwanjacobi/vst.net/issues/10">VST Host 32/64 bit mixed plugin support - VST.NET</a>
-<li><a href="https://hackaday.io/project/160858-vstibox/log/152480-c-vst-host-daw">C# VST host</a>
-<li><a href="https://hackaday.io/project/160858-vstibox">VSTiBox is a synthesizer for hosting VST software synths</a>
-<li><a href="https://teragonaudio.com/article/How-to-make-your-own-VST-host.html">How to make your own VST host</a>
-<li><a href="https://github.com/perivar/AudioVSTToolbox">AudioVSTToolbox with MidiHost example</a>
-</ul></details></ul><br>
+<li>MIDI-aware multichannel fader app reading tactile audio from a virtual cable<br> and writing to an amplifier sound card.<br>
+<li>MIDI-aware <a href=VSThost.htm><b>VST host</b></a> and multichannel fader plugin for
+<A HREF="https://voicemeeter.com/user-guide-connect-audio-apps-to-the-voicemeeter-insert-driver/">VoiceMeeter ASIO Insert</a><br>
+ &nbsp Among thousands of VST plugins, few implement multichannel faders.<br>
 
-While there are thousands of VST plugins, few implement multichannel faders.<br>
+<details><summary>Known VST multichannel fader plugins</summary><a name=faders><ul></a>
+<li><a href="https://www.kvraudio.com/product/vstmixer-by-mirax-labs">Mirax Labs vstMixer</a><br>
+<img src=image/vstMixer.png><br>Loaded by neither VoxYou nor Element;&nbsp tiny panels patch inputs to output faders.<br><br>
 
-<details><summary>known VST multichannel fader plugins</summary><ul>
+<li><a href="https://www.audioworld.de/AudioWorld%20VST-Plugins.php">SonicAlarm_multi-channel_level_trimmer</a><br>
+	<img src=image/SonicAxiom_multi-channel_level_trimmer_8x_mono.png><br>
+	Only +/-12 range<br><br>
+
 <li><a href="https://www.matthiaskronlachner.com/?p=1910"><b>mcfx multichannel audio 64-bit plug-in suite</b></a>
- 	&nbsp <a href="https://github.com/kronihias/mcfx">on GitHub</a><ul>
-	<li>Works with VoxYou, but only +/-20db fader range</ul>
+ 	&nbsp <a href="https://github.com/kronihias/mcfx">on GitHub</a><br><img src=image/mcfx_gain_delay8.png><ul>
+	<li>Works with VoxYou and Element, but only +/-20db fader range</ul>
  <details><summary>installation details</summary><pre>
 Output folder: C:\Program Files\Steinberg\VSTPlugins
 Extract: mcfx_convolver16.dll... 100%
@@ -256,7 +239,7 @@ Output folder: C:\WINDOWS\system32
 Extract: libfftw3f-3.dll... 100%
 Completed</pre>
 </ul></details><br>
-<h4>DIY fader plugin?</h4><ul>
+<details><summary><b>DIY fader plugin?</b></summary><ul>
 <li><a href="https://github.com/mikeoliphant/AudioPlugSharp">AudioPlugSharp - Easily create VST3 audio plugins in C#</a>
 <li><a href="https://www.nuget.org/packages/PortAudioSharp2">PortAudioSharp2 C# binding</a>
 <li><a href="https://github.com/Kyle-Gagner/PortAudio.Net/tree/master">PortAudio.Net</a> &nbsp
@@ -274,6 +257,8 @@ Completed</pre>
 <li><a href="https://vb-audio.com/Voicemeeter/VoicemeeterBanana_UserManual.pdf">VoiceMeeter Remote API</a> with audio callbacks (pg 57/74)<br>
 	<a href="https://forum.vb-audio.com/viewtopic.php?f=8&t=346">general info</a> &nbsp
 	<a href="https://github.com/vburel2018/Voicemeeter-SDK">GitHub SDK</a><br>
+</ul>
+</details>
 </details>
 </ul>
 <pre>
