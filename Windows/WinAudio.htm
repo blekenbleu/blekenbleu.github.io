@@ -177,16 +177,12 @@ Possiblities;<ul>
  &nbsp Among thousands of VST plugins, few implement multichannel faders.<br>
 
 <details><summary>Known VST multichannel fader plugins</summary><a name=faders><ul></a>
-<li><a href="https://www.kvraudio.com/product/vstmixer-by-mirax-labs">Mirax Labs vstMixer</a><br>
-<img src=image/vstMixer.png><br>Loaded by neither VoxYou nor Element;&nbsp tiny panels patch inputs to output faders.<br><br>
-
-<li><a href="https://www.audioworld.de/AudioWorld%20VST-Plugins.php">SonicAlarm_multi-channel_level_trimmer</a><br>
-	<img src=image/SonicAxiom_multi-channel_level_trimmer_8x_mono.png><br>
-	Only +/-12 range<br><br>
 
 <li><a href="https://www.matthiaskronlachner.com/?p=1910"><b>mcfx multichannel audio 64-bit plug-in suite</b></a>
  	&nbsp <a href="https://github.com/kronihias/mcfx">on GitHub</a><br><img src=image/mcfx_gain_delay8.png><ul>
-	<li>Works with VoxYou and Element, but only +/-20db fader range</ul>
+	<li>Works with VoxYou, VSTHost and Element, but only +/-18db fader range
+	<li>Only VoxYou renders its full UI
+	<li>C++ source seems not too daunting;  gain limits line 362 of PluginEditor.cpp</ul>
  <details><summary>installation details</summary><pre>
 Output folder: C:\Program Files\Steinberg\VSTPlugins
 Extract: mcfx_convolver16.dll... 100%
@@ -237,8 +233,20 @@ Extract: mcfx_meter8.dll... 100%
 Output folder: C:\Program Files\Steinberg\VSTPlugins
 Output folder: C:\WINDOWS\system32
 Extract: libfftw3f-3.dll... 100%
-Completed</pre>
-</ul></details><br>
+Completed
+</pre>
+</details><br>
+
+<li><a href="https://www.kvraudio.com/product/vstmixer-by-mirax-labs">Mirax Labs vstMixer</a><br>
+<img src=image/vstMixer.png><br>Loaded by neither VoxYou nor Element;&nbsp tiny panels patch inputs to output faders.<br><br>
+
+<li><a href="https://www.audioworld.de/AudioWorld%20VST-Plugins.php">SonicAlarm_multi-channel_level_trimmer</a><br>
+	<img src=image/SonicAxiom_multi-channel_level_trimmer_8x_mono.png><br>
+	Only +/-20 range<br><br>
+</ul>
+</details>
+</ul>
+
 <details><summary><b>DIY fader plugin?</b></summary><ul>
 <li><a href="https://github.com/mikeoliphant/AudioPlugSharp">AudioPlugSharp - Easily create VST3 audio plugins in C#</a>
 <li><a href="https://www.nuget.org/packages/PortAudioSharp2">PortAudioSharp2 C# binding</a>
@@ -249,7 +257,7 @@ Completed</pre>
 	<a href="https://obiwanjacobi.github.io/vst.net/GettingStarted.html">Getting Started</a>
 <li><a href="https://docs.juce.com/master/tutorial_create_projucer_basic_plugin.html">JUCE tutorial: Create a basic Audio/MIDI plugin</a>
 <li><a href="https://github.com/markheath/naudio-asio-patchbay">low-level routing of audio using ASIO in NAudio</a>
-<li><a href=https://github.com/LAGonauta/ASIORecAndPlay"">route multichannel audio from one ASIO interface to another</a>
+<li><a href="https://github.com/LAGonauta/ASIORecAndPlay">route multichannel audio from one ASIO interface to another</a>
 
 
 <li><a href="https://www.boost.org/doc/libs/1_83_0/doc/html/boost_asio/overview/signals.html">Boost.Asio signal handling</a>
@@ -259,12 +267,7 @@ Completed</pre>
 	<a href="https://github.com/vburel2018/Voicemeeter-SDK">GitHub SDK</a><br>
 </ul>
 </details>
-</details>
-</ul>
-<pre>
 
-</pre>
-</details>
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table></div>
