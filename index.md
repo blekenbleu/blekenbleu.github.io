@@ -64,7 +64,7 @@
   - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
 - [wheels for GT racing in VR](pedals/steering.htm)  
 
-## [SimHub](SimHub/)
+## [SimHub](SimHub/) sim driving telemetry processing
 
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
 - [OpenVR vs OpenXR](XR/mbucchia.html)
