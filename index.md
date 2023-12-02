@@ -47,6 +47,8 @@
 
 ### [Chromebook](ChromeBook/)
 
+### [My GitHub Repositories](https://github.com/blekenbleu?tab=repositories)
+
 ## [Microscopes and photomicography](microscope/)  
  &nbsp; **American Optical** [Series 10](microscope/#AO) / [Series 120](microscope/AO/) / [Reichert EPIStar](microscope/#EPIStar)  
  &nbsp; **Nikon** [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) [Metaphot](microscope/Nikon/Metaphot/)  
@@ -145,7 +147,7 @@
   [Jekyll github](https://github.com/jekyll) and [github-metadata](https://github.com/jekyll/github-metadata/issues)  
 7. [**Site Map**](SiteMap.htm)  
 
-**GitHub's [Default welcome page - Markup tutorial](Welcome)**  
+**GitHub Page's [default welcome page - Markup tutorial](Welcome)**  
 **[W3C Link Checker](https://validator.w3.org/checklink)**  
 
 [GitHub repository](https://github.com/blekenbleu/blekenbleu.github.io)
