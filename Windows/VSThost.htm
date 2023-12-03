@@ -27,7 +27,7 @@ LightHost, VSTHost<br>
 <dt><br><a href="https://www.cantabilesoftware.com/tour">Cantible Lite</a><dd> does not support MIDI
 
 <dt><a href="https://kx.studio/Applications:Carla">Carla 32- or 64-bit</a> &nbsp <a href="https://github.com/falkTX/Carla">GitHub</a>
-<dd><details><summary>User Interface and "<a href="https://kx.studio/Applications:Carla#Usage">documentation</a>" from Hell</summary>
+<dd><details><summary>IMO awful user interface and "<a href="https://kx.studio/Applications:Carla#Usage">documentation</a>":</summary>
 <a name=carla><ul></a>
 <li><b>Settings &gt Configure Carla &gt Engine &gt Audio driver:&nbsp ASIO [...]</b> for Voicemeeter Insert Virtual ASIO<br>
 	<img src=image/CarlaASIO.png><br><br>
@@ -41,11 +41,11 @@ LightHost, VSTHost<br>
 <li>two XML configurations files:  one for vstMixer MIDI configuraton, another for all else<br><br>
 </ul></details>
 
-<dt><a href="https://kushview.net/element/"><b>Element</b></a>
-<dd><details><summary>64-bit;&nbsp crippled by Windows UI,
-	but decent <a href="https://element.readthedocs.io/en/latest/">documentation</a></summary><ul>
-<li>Rejected because <a href="https://element.readthedocs.io/en/latest/app/automatic-connections.html">routing
-	 ASIO channels</a> to/from plugin seemed patholigically GUI:<br>
+<dt><a href="https://kushview.net/element/">Element</a>
+<dd>64-bit;&nbsp crippled by Windows UI, but decent <a href="https://element.readthedocs.io/en/latest/">documentation</a>
+	<details><summary>Rejected because IMO patholigically GUI
+	<a href="https://element.readthedocs.io/en/latest/app/automatic-connections.html"> ASIO channels routing</a>:
+</summary><ul>
 <img src=image/Element_Options.png><br><div align=center><i>some configuration buried under</i> <b>Options</b></div>
 <li>Plugin Manager buried under <b>View</b><br><img src=image/Element_View.png>
 <li>Floods list with its own plugins even with constrained plugin path:<br><img src=image/Element_PluginPath.png>
@@ -68,14 +68,18 @@ LightHost, VSTHost<br>
 <dt><a href="https://www.tone2.com/nanohost.html">NanoHost</a><dd> supports only 2 channels
 
 <dt><a href="https://www.hermannseib.com/english/savihost.htm">SAVIHost</a>
-<dd> single plugin VSTHost derivative, renders vstMixer correctly,<br> but only 2 channels, not learning MIDI?...
+<dd> single plugin VSTHost derivative, 32- and 64-bit versions,<br>
+	renders vstMixer and <b>mcfx_gain_delay</b> correctly,<br>
+	but only 2 channels, not learning MIDI?...
 
-<dt><a href="https://github.com/RainOrigami/VoxYou"><b>VoxYou</b></a>
+<dt><a href="https://github.com/RainOrigami/VoxYou"><font size=+1><b>VoxYou</b></font></a>
 <dd> works with VoiceMeeter and supports MIDI,<br>
-	but is fragile and seemingly supports only 64-bit plugins/<br>
+	but is fragile and supports only 64-bit plugins;<br>
+	correctly renders e.g.  <b>mcfx_gain_delay8</b> and  <b>mcfx_meter8</b>.<br>
+	Idiosynchratic interface but easy configuration, my favorite!<br> 
 	<a href="https://technium.ch/voicemeeter-banana-setup-tutorial/">VoiceMeeter Banana Setup - Tutorial with VoxYou</a>
 
-<dt><a href="https://www.hermannseib.com/english/vsthost.htm"><b>VSTHost</b></a>
+<dt><a href="https://www.hermannseib.com/english/vsthost.htm">VSTHost</a>
 <dd>for 32- and 64-bit plugins &nbsp - &nbsp
 	<a href="https://forum.hermannseib.com/viewforum.php?f=2">Forum</a> &nbsp - &nbsp
 	<a href="https://forum.hermannseib.com/viewtopic.php?t=26">VSTHost Registry Entries</a>
