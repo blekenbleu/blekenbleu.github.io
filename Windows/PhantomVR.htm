@@ -22,11 +22,11 @@ table.my_table td { width:960px; background-color:#EEBBFF; }
 <img width=80% src=image/Antec.jpg></div>
 <h4>Contents</h4><dl>
 <dt><a href="#PARTS">Parts</a>
-<dd><a href=#AIR>Airflow</a>
+<dd><a href=#AIR>Airflow</a> &nbsp <a href=#FAN>fan BIOS settings</a> &nbsp <a href=#FANC>control</a> &nbsp <a href=tune.htm#Mfan>MSI Center Customize</a>
 <dd><a href="#ALT">Alternatives</a>
 <dt><a href="DP502build.htm">Assembly</a>
 <dt><a href="#TODO">After Assembly</a>
-<dd><a href=#FAN>BIOS fan settings</a>
+<dd><a href=#FAN>BIOS fan settings</a> &nbsp <a href=#FANC>control</a> &nbsp <a href=tune.htm#Mfan>MSI Center Customize</a>
 <dd><a href=#BIOS>BIOS update HowTo</a>
 <dd><a href=#W10>Windows 10</a>
 <dd><a href=compare.htm>Comparing YouTube thermals with Aurora R7</a>
@@ -123,19 +123,27 @@ Z790 Tomahawk motherboard has 6600+ MHz rating for a pair of these (1DPC 2R)<br>
 <details><summary>click for details</summary>
 <a name=AIR><img width=100% src=image/dp502-airflow.png></a>
 <dl>
-<dt><b>power supply</b>
+<dt><br><b>power supply</b>
 <dd>Separately from other case airflow, its fan draws air in thru Antec bottom case filter, exhausting out back.<br>
 <img src="image/PSU-airflow-bottom-mounted.jpg">
-<dt><b>3 front input Arctic fans</b>
+
+<dt><br><b>3 front input Arctic fans</b>
+ &nbsp see <a href=#FAN>BIOS FAN settings</a>
 <dd>exhausting into Antec case front filter
+<br>attached to motherboard FAN6
 <dt><b>2 top exhaust Arctic fans</b>
 <dd>mounted behind 5.25-inch optical drive
+<br>attached to motherboard FAN6
 <dt><b>1 rear case exhaust Antec fan</b>
 <dd>mounted backwards, as received..
+<br>replaced by Scythe KazeFlex 120 PWM fan
+<br>attached to motherboard SYS_FAN1
 <dt><b>1 chamber Antec fan</b>
 <dd>mounted above PSU chamber, drawing air from lower front input, exhausting to GPU
+<br>attached to motherboard FAN4
 <dt><b>1 PWM ID-Cooling fan</b>
 <dd>exhausting into heat sink fin stack
+<br>attached to motherboard CPU_FAN1
 <dt><b>case fan arrows</b>
 <dd>molded into fans, blade rotation and airflow directions
 <li>most case fans have label on hub:&nbsp input side
@@ -145,7 +153,7 @@ Z790 Tomahawk motherboard has 6600+ MHz rating for a pair of these (1DPC 2R)<br>
 </dl>
 </details>
 
-<h4>Alternatives</h4>
+<h4>Alternative parts</h4>
 <details><summary>click for details</summary>
 
 <a name=ALT><h5>Alternative power supply</h4></a>
@@ -194,7 +202,7 @@ An air-cooled RTX 4090 installed in PCIe slot near CPU leaves only bottom 2-3 po
 Initial boot took awhile, presumably feeling up fans, DDR5, CPU and other hardware.<br>
 Motherboard debug LEDs iterated, but too quickly for me to decode.<br><br>
 
-<a name=FAN><b>BIOS FAN settings</b> in Hardware Monitor<br></a>
+<a name=FAN><b>BIOS FAN settings</b> in Hardware Monitor</a> &nbsp see <a href="#FANC">Fan control</a><br>
 CPU fan defaulted to Auto and around 790rpm;&nbsp  I switched it to PWM.<br>
 Back fan (<code>SYS_FAN1</code>) defaulted to DC and ~ 950 rpm, switched to smart
 based on CPU temp<br>
@@ -209,7 +217,8 @@ Clicking CPU under GAME BOOST started fans ramping up...unclicked!<br>
 <img src=image/MSIfanBIOS1.jpg><br clear=all>
 <a href="https://forum-en.msi.com/index.php?threads/are-really-all-bios-settings-save-in-oc-profile-save-save-to-usb-flash-drive-file.375418/">Reportedly</a>, all BIOS settings will be saved in (F9)
 and restored from (F8) so-called Overclocking Profiles.<br>
-Hardware Monitor in Advanced appears the same as in EZ.<br>
+Hardware Monitor in Advanced appears the same as in EZ.<br><br>
+
 <li><a href="https://download.msi.com/archive/mnu_exe/mb/Intel700BIOS.pdf"><b>BIOS manual</b></a>
   &nbsp <a href="https://forum-en.msi.com/index.php?forums/gaming-motherboards-meg-mpg-mag.122/">fora</a><br>
 <br>
@@ -309,16 +318,19 @@ Nearly all MSI Center content on MSI's YouTube channel is laptop-specific.<br>
  &nbsp &nbsp <a href="https://www.reddit.com/r/hardware/comments/ympxw8/intel_i513600k_undervolting_my_results_on_power/">Intel i5-13600K Undervolting</a> - reddit
 </div></div>
 
-<a name=FANC><h4>Fan control</h4></a>
+<a name=FANC><h4>Fan control</h4></a> &nbsp see <a href=tune.htm#Mfan>MSI Center Customize</a>
 <details><summary>click for details</summary>
-Per MSI's <a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42), BIOS can sort DC (3-wire) vs PWM (4-wire) fans.
+MSI BIOS can sort DC (3-wire) vs PWM (4-wire) fans:<br>
+<img src=image/MSI_FAN.png><br><a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">motherboard manual</a> (page 42)<br><br>
+
 <ul compact>
-<li><a href="https://www.youtube.com/watch?v=sNSqBKGlH-A">Fan control using MSI center</a> - <b>Mike's unboxing</b> video
+<li><a href="https://www.youtube.com/watch?v=sNSqBKGlH-A">Fan control using MSI center</a> - but MSI center is a resource hog.
 <li><a href="https://www.youtube.com/watch?v=hZW0hBumShw">Adjust Gaming PC Fans For Silent Mode and Gaming Mode</a> - <b>MSI motherboard</b>
 <li><a href="https://www.youtube.com/watch?v=Y3aZFsK8uaU&t=1590s">back fan tuning</a>
-<li><a href="https://www.youtube.com/watch?v=uDPKVKBMQU8"><b>Fan Control</b></a> JayzTwoCents  <a href="https://github.com/rem0o/fancontrol.releases">GitHub</a> &nbsp
+<li><a href="https://www.youtube.com/watch?v=uDPKVKBMQU8"><b>Fan Control</b> (JayzTwoCents)</a> nice, but lacks MSI motherboard DC fan support
+<br> &nbsp <a href="https://github.com/rem0o/fancontrol.releases">GitHub</a> &nbsp
     <b>HowTo</b>:&nbsp <a href="https://www.digitaltrends.com/computing/how-to-use-fan-control/">digitaltrends</a>
-<li>setting <a href="https://www.youtube.com/watch?v=GvyQXkFUe3E&t=354s">BIOS OC CPU Cooler Tuning to Water Cooler</a> enables higher boost without overwhelming good air coolers.
+<li>setting <a href="https://www.youtube.com/watch?v=GvyQXkFUe3E&t=354s">BIOS OC CPU Cooler Tuning to Water Cooler</a> higher boost without overwhelming good air coolers.
 </ul>
 </details><br>
 
