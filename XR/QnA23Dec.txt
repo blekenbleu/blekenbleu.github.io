@@ -1,0 +1,203 @@
+Quotes extracted from Live Caption of Stage Channel Q & A
+Some minor rearranged for clarity:
+
+... my impressions of how all the visit of YouTubers went.
+First of all it was a blast.
+We have not restricted any of the YouTuber by any NDA.
+The only ask was, come here; we'll show you VR1.
+All the devices we show them are still manually assembled.
+All the components are manually picked and manually inspected...
+Even few days before they arrived, we have been doing some changes,
+so we have been reassembling some of the headsets they were trying
+because we wanted to for example improve the IPD adjustment slider...
+... the housings of the lenses, some of those parts were 3D printed.
+The precision and the tolerances when you 3D print something
+are way off from the tolerances which will be coming out of the factory.
+On Monday, I had the dry run of every headset we will be showing them.
+When I test the headsets, I loved it; like yeah,
+there's some slider problems where the IPD would not stay,
+but because the sweet spot is very big, I didn't have a problem with that.
+I didn't see any distortions.  There is some chromatic aberration,
+but nothing to me was and still nothing is right now a deal breaker.
+So I said, that is a green light for sure.
+
+We told them like give us the feedback cause we have 3 months to go
+until we start shipping the unit, so there's plenty of time,
+we're still going through iterations.  It's all good;
+give us feedback, we can change things if needed.
+It felt at some point like an exercise of,
+lets find all things which are wrong with the headset,
+but because that's what kind of what they asked,
+lets forget about all the good things.
+
+re: Brad's distortion
+pinned down to a physical inconsistency with the lens.
+All the produced lenses from the factory are in limit of tolerance.
+We are still modifying small surfaces of the mold to make the tolerances
+even smaller, right to nail down to maximum precision.
+We showed YouTubers the very expensive machine which is
+still being calibrated to automatically watch for inconsistencies,
+but it doesn't happen right now because the machine is still being calibrated.
+
+These lenses which they've seen had no coating at all;
+ no antiglare, no antiscratch.  It will improve every aspect of the image.
+We don't think there is a mathematical mistake in the warping,
+it's normal that warping changes until the release;  we are on
+version, I don't know 7 and we will probably be on version 15, 12 or 14
+upon release.  We're receiving the latest lenses,
+and we're recalculating the warping to match that stuff.
+So that's about the main complaint.  Once Brad's seen that thing,
+he would be very hard to concentrate on anything else.
+We listened and we wrote down everything like literature.
+
+Regarding the strap, counterweight is needed.
+The upper strap is a bit short.  When you have a bigger head,
+ it's not possible to put the back part lower,
+the weight is more on your nose.  We'll fix it; it's not a problem.
+
+Tyriel noticed the same thing as Brad, and then he noticed later that
+the world felt off scale;  that was new to everyone.  Things in the
+distance like the floor was a little bit off scale expected.
+One fix which we immediately changed, because Somnium VR1 will allow you
+to change the physical rendered FoV of the headset.
+Optics are capable of rendering up to 130 degrees horizontally
+and vertically 106 degrees.  Depending on distance of your eyes
+and other factors, what you can see will differ.
+If your FoV is 120, it doesn't make sense to render 130,
+because you don't see it.
+It saves the power of your computer in terms of the performance,
+but it also changes a bit the way image is done.  We tried to reapply
+the warping for Tyriel;  if I remember correctly, it helped him a bit,
+but he still felt it.
+This will be 2 sliders, vertical and horizontal,
+and I recommend everyone measuring their FoV many times.
+Tyriel was saying that it's a bit front heavy, but not a horrible deal breaker.
+
+The eye tracking system will calculated and tell you what is your proper IPD.
+
+Chromatic aberration:  from what I remember they said, yeah I see it's there,
+but they didn't take it as a critical issue.
+If you go to Tyriel's thru the lens video in the menus of Steam,
+and he went from VR1 to Quest 3, you can see how much chromatic aberration
+on the Quest 3, but again, thru the lens videos also not doing justice.
+It will improve a lot actually because of the warping profile,
+and because of the coating it will improve even more.,
+but more importantly, we are working on a hardware solution
+which we cannot tell you what it is, but we're testing right now,
+which will eliminate 98% of chromatic aberrations on the whole FoV.
+
+We will put that as an optional add-on,
+because we know that the current chromatic aberration situation is not critical.
+It's good for me;  totally fine, but if someone wants like an ultimate CA killer,
+those components will be added at the production line, hopefully.
+We'll confirm that in the mid of January because we're waiting for some components.
+That will be a world first actually if what we think our physical will work.
+We'll just have it as an option, because even without that, it works perfectly fine.
+
+How much CA killer cost?  I would say additional $200-300.
+If you ask me, I would not go for it.
+If you're in an action scene or simulator, I didn't see it.
+CA killer is both hardware and software.
+
+So by the way, I have to say also one thing:
+while I respect every single YouTuber we have invited
+(otherwise I would never invited them), I love their opinions,
+I love their channels and I think they're very honest people.
+Please know that is what I think.
+It doesn't mean that I agree with everything they say.
+
+Weeks before YouTubers, when VR Optician guy was visiting us
+for some conversations about lenses, some prototypes and stuff,
+because we're continuing to make progress with that, we gave him
+previous prototypes of VR1 which had previous lenses and warping profile.
+He took it on and said "damn, today you have made me even more excited about VR1."
+He sad, "woah, you've got a customer."
+
+Optical system is sealed, unlike some other headsets,
+anywhere from the outer part of the lens until the screen.
+When the headset is exiting the factory would do the same 60 megabit
+check with automated system, logging everything,
+so we can always go back and look at the headset parameters
+and know that everything was perfect when leaving the system.
+
+Optical stacks, not from the start of orders, but will be sold separately,
+boards separately, cables separately.  If someone is feeling luck and
+super, super professional, you might be able to do that,
+but I would not guarantee that you will be able to use the headset afterwards.
+
+One of the things which I like about our headset is there's no light leakage in it.
+It hugs your face and it doesn't wobble.
+That is absolutely important, that it doesn't wobble.
+We are still experimenting with a face mask.  We are not going for the cheap
+face mask material, and actually they did not complain about face masks at all.
+What we want to improve is width of the face mask on the bottom side
+to distribute weight better.  We just didn't have time to receive the final batch.
+
+"100% you guys are queens of drama."
+
+Somnium will not go to CES;  personal conflicts.
+We can showcase some stuff to people later.
+
+These are the things I'm proud of:
+1) undistorted field of view 120+
+2) vibrancy of display
+3) sharpness and absence of screen door effect.
+
+If you buy fully loaded VR1,
+the only thing you will need to buy yourself are base stations and controllers.
+
+We're using the same facility as Vrgineers,
+but we are improving it quite dramatically for VR1
+because volumes will be much higher with new machinery,
+new testing machinery, new rooms, and it will be very upgraded,
+if not like completely new line.
+
+I said to every YouTuver this is not the headset for everyone.
+It was never meant to be.
+We can't even build a headset for everyone because the price.
+This is the lowest possible price we can start selling it at.
+We cannot subsidize it; we must cover out costs.
+We will not get rich out of this headset.
+
+It's consistent image on the whole FoV
+It gets more blurry as you lose ppd, but it's not distorted.
+Because we are partners with TryMyTech from Sebastion from MRTV,
+I'm thinking to start TryMyTech experience in our office in Prague
+and let several people per month just test the VR1,
+maybe the end of January and then record their experience.
+
+Semi-transparent version is in the works, maybe sometime end of January,
+we will be receiving some experimental parts of the transparent edition.
+
+By default, displays are color accurate.
+You in software can crank up contrast.
+
+3D models will be released and printable models optimized for Prusa.
+
+For mixed reality, the masking of the cockpit we have seen,
+we will be providing a software which will allow you to do the same
+at home in a very quick and easy way, so you'll be able to put tomorrow
+your space in blender or cat file.  You'll be able to upload that
+and then the software wil mask exactly what they want to be masked.
+So you will have a cockpit directly and will be the first consumer
+headset which will allow you to do that with mixed reality.
+
+The moment that you start ordering,
+you'll be also able to go to VR Optician website to order lenses for VR1.
+
+There are still questions up to which extent we will be able to open source
+all things.  Our eye tracking is completely open source, all things.
+Having an ability to access all the sensors and cameras, of course,
+but if there were some parts here, some parts I'm not sure yet
+we're discussing with.
+
+We have our own OpenXR runtime.  Our eye tracking is fully working.
+The algorithm will be improved, as always will be refined,
+and even after release, it's completely open source;
+it's in-house made, it works very well.
+
+We had so much fun, I will ask (YouTubers) to come again, That's my evil plan.
+
+
+There is no show stopper;
+everything is fixable and everything is tweakable.
