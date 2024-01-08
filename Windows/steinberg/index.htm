@@ -31,7 +31,7 @@ Seemingly no need to sign their license agreement for GPLv3 open source VST3 plu
 My impression is that Steinberg supports building ASIO drivers,<br> but not communicating with those drivers.
 <dt><i>8 Jan</i>&nbsp <a href="https://steinbergmedia.github.io/vst3_dev_portal/"><b>VST 3 Developer Portal</b></a>
 <dd><a href="https://steinbergmedia.github.io/vst3_dev_portal/pages/Getting+Started/Links.html">Getting started</a> choice of
-	<a href="https://www.steinberg.net/developers/">Steinberg SDKs available by zip</a> - or - 
+	<a href="https://www.steinberg.net/developers/">Steinberg SDKs available by zip</a><br> - or - 
 	<a href="https://github.com/steinbergmedia/vst3sdk"><b>GitHub repository</b></a>
 <dd><br><a href="https://steinbergmedia.github.io/vst3_dev_portal/pages/What+is+the+VST+3+SDK/Plug-in+Examples.html#again"><b>AGain</b></a><br>
 	<img src="https://steinbergmedia.github.io/vst3_dev_portal/resources/what_is_2.jpg"><br>
@@ -44,11 +44,12 @@ My impression is that Steinberg supports building ASIO drivers,<br> but not comm
 <li>added path to MSBuild.exe (<code>VS/2022/Community/MSBuild/Current/Bin</code>)<br> and bash <code>alias msbuild=MSBuild.exe</code>
 <li><a href="https://steinbergmedia.github.io/vst3_dev_portal/pages/Getting+Started/Preparation+on+Windows.html">C:\Program Files\Common Files\VST3\</a>
 </ul>
-<dd><b>Building VST3</b> using <code>msys64 ucrt64.exe</code>,<br>
-	 adapted from <a href="https://github.com/steinbergmedia/vst3sdk#how-to-build-vst3">How to build VST3</a>:<ul>
+<dd><br><b>Building VST3</b> using <code>msys64 ucrt64.exe</code>,
+	 from <a href="https://github.com/steinbergmedia/vst3sdk#how-to-build-vst3">How to build VST3</a>:<ul>
 	<li>created <code>C:\Users\bleke\AppData\Local\Programs\Common\VST3\</code>
-	<li>temporarily enable <code>Developer Mode</code> in Settings > System<br><img src=developer.png>
-	<pre>$ cd /d/my/GitHub/
+	<li>temporarily enable <code>Developer Mode</code> in Settings > System<br><img src=developer.png></ul>
+<dd><br>Using <a href="https://www.msys2.org/">MSYS2</a> <code>ucrt64.exe</code>:
+<font size=+1><pre style="background: #BBBBBB">$ cd /d/my/GitHub/
 $ mkdir VST3
 $ cd VST3
 $ git clone --recursive https://github.com/steinbergmedia/vst3sdk.git
@@ -56,7 +57,7 @@ $ mkdir build
 $ cd build
 $ cmake.exe -G "Visual Studio 17 2022" -A x64 ../vst3sdk
 $ cmake --build .
-</pre>
+</pre></font>
 </dl>
 
 </td></tr><tr><td align=center>
