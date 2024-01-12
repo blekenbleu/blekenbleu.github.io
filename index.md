@@ -3,15 +3,16 @@
 *8 Jan 2024*  
 
 ## Signal Processing
-  - [DeltaWave vs Wave Corrector](/static/ImageProcessing/DeltaWave_WaveCorrector.html)
-  - [dimg - visual difference utility](/static/ImageProcessing/dimg.html)
+  - [Aliasing and oversampling](../static/ImageProcessing/ao.html)
+  - [DeltaWave vs Wave Corrector](../static/ImageProcessing/DeltaWave_WaveCorrector.html)
+  - [dimg - visual difference utility](../static/ImageProcessing/dimg.html)
   - [Hugin image alignment](microscope/objectives/Hugin.htm)  
-  - [Special Error Diffusion](/static/ImageProcessing/sped.html)
-  - [Neighborhood Mask Dithered Interpolation](/static/ImageProcessing/NMDI.html)
-  - [Harry Niquist was not wrong but is misunderstood](/static/ImageProcessing/Nyquist.html)
-  - [dither:&nbsp; noise is not always bad](/static/ImageProcessing/dither.html)
-  - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](/static/ImageProcessing/TinyML.htm)  
-  - [LED color rendering meta-analaysis](/static/ColorRendering/)  
+  - [Special Error Diffusion](../static/ImageProcessing/sped.html)
+  - [Neighborhood Mask Dithered Interpolation](../static/ImageProcessing/NMDI.html)
+  - [Harry Niquist was not wrong but is misunderstood](../static/ImageProcessing/Nyquist.html)
+  - [dither:&nbsp; noise is not always bad](../static/ImageProcessing/dither.html)
+  - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](../static/ImageProcessing/TinyML.htm)  
+  - [LED color rendering meta-analaysis](../static/ColorRendering/)  
 
 ### [Arduino custom USB sketches](Arduino/)
 - e.g. for harness tensioning servos
@@ -25,26 +26,26 @@
   - **Arduino IDE Alternatives**
     - There are [*many*](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html).
     - [**Visual Micro**](https://www.visualmicro.com/) supports debugging in Visual Studio  
-      (which I use e.g. for [**SimHub plugins**](/static/SimHub/))
+      (which I use e.g. for [**SimHub plugins**](../static/SimHub/))
       - in [VisualStudio **Marketplace**](https://www.visualmicro.com/)  
       - [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
       - Options using Visual Studio **Code**, *a confusingly named editor*, are discounted;&nbsp; I prefer GVim
     - [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/0.31/)
       - interesting, because [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
   - [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black)
-  - [**ESP32-S[2-3]**](/static/ESP32/) for **composite USB** and wireless Arduino devices  
+  - [**ESP32-S[2-3]**](../static/ESP32/) for **composite USB** and wireless Arduino devices  
 
 ## Audio  
- &nbsp; [**Audio-Technica AT-LP140XP**](/static/AT-LP140XP/) microphonics  
- &nbsp; [**Altec Model 19**](/static/altec/)  
+ &nbsp; [**Audio-Technica AT-LP140XP**](../static/AT-LP140XP/) microphonics  
+ &nbsp; [**Altec Model 19**](../static/altec/)  
  &nbsp; [Blu-Ray movies on Windows PC](WinBluRay)  
- &nbsp; [**Carver AL-III**](/static/Carver/)  
+ &nbsp; [**Carver AL-III**](../static/Carver/)  
  &nbsp; [Line 6 JTV-89F guitar](JTV89F/Variax)  
- &nbsp; [**Technics SL-7** direct drive linear tracking turntable](/static/SL-7/)  
+ &nbsp; [**Technics SL-7** direct drive linear tracking turntable](../static/SL-7/)  
  &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README) with SME Series III  
  &nbsp; [Windows audio](Windows/WinAudio.htm)  
   
-### [Cameras &amp; lenses (Canon)](/static/Canon/)
+### [Cameras &amp; lenses (Canon)](../static/Canon/)
 
 ### [Chromebook](ChromeBook/)
 
@@ -98,10 +99,10 @@
   - [Flight Simulator 2020 and Alienware Area 51 R2](Windows/FS2020)
   - [H670 ATX motherboards](Windows/H670ATX) *cannot underVolt*
 - **Routers, modems and SAN**:  
-  - [Buffalo LinkStation 210](/static/network/LinkStation.htm)  
-  - [Sagemcom F@st 5260, FreshTomato and Linksys EA6500v2](/static/network/FreshTomato.htm)  
-  - [Spectrum modem and router regressions](/static/network/Spectrum.htm)  
-  - [**Synology DiskStation DS920+**](/static/network/DS920.htm)  
+  - [Buffalo LinkStation 210](../static/network/LinkStation.htm)  
+  - [Sagemcom F@st 5260, FreshTomato and Linksys EA6500v2](../static/network/FreshTomato.htm)  
+  - [Spectrum modem and router regressions](../static/network/Spectrum.htm)  
+  - [**Synology DiskStation DS920+**](../static/network/DS920.htm)  
 - [RTX3090](Windows/RTX3090)  
 - **[Sound and VoiceMeeter](Windows/WinAudio.htm), [VST hosts](Windows/VSThost.htm) and [VST3 plugins](Windows/steinberg/)**  
 - Storage shortage:&nbsp;  [Dell Inspiron 13 7000 2-in-1 Windows 10 NVMe SSD](Windows/NVMe/Inspiron13.htm)  
@@ -112,7 +113,7 @@
 
 ---
 
-#### [COVID-19 plots](/static/covid)
+#### [COVID-19 plots](../static/covid)
 
 ---
 
