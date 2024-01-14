@@ -1,7 +1,7 @@
 ---
 ---
-*8 Jan 2024*  
-
+*14 Jan 2024*  
+![](Jan14stitch.jpg)  
 ## Signal Processing
   - [Aliasing and oversampling](../static/ImageProcessing/ao.html)
   - [DeltaWave vs Wave Corrector](../static/ImageProcessing/DeltaWave_WaveCorrector.html)
