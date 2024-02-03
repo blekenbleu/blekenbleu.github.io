@@ -67,6 +67,8 @@
 - [wheels for GT racing in VR](pedals/steering.htm)  
 
 ## [SimHub](SimHub/) sim driving telemetry processing
+- [Custom serial profiles](Arduino/shsds.htm)
+- [ShakeIt Bass Shaker Profiles](pedals/shakeit.htm)
 
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
 - [OpenVR vs OpenXR](XR/mbucchia.html)

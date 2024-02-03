@@ -175,15 +175,7 @@ ROAD IMPACTS (curiosity?)
 <i>loaded wheel slips</i> output from <code>proxy_G</code> and <code>proxyS</code>
 <br> &nbsp <br>
 
-<dt><b>Schnirbus tweaked slip</b>
-<dd><i>Experimental 4-corner Wheelslip for iRacing</i> group (4 effects, 1 output),<ul compact>
-<li><code>wslip</code> from WHEELS SLIP
-<li><code>sideways</code> from SPEED WITH CURVING <i>only generate in turns</i>
-<li><code>long shift</code> from <code>GameRawData.Telemetry.LongAccel</code>
-<li><i>4-Corner Slip output</i> from <code>wslip</code>, <code>sideways</code> and <code>long shift</code>
-</ul>
-
-<dt><b>portable Loaded 4-Wheel Slips group</b> 1 group w/7 effects
+<dt><br><b>portable Loaded 4-Wheel Slips group</b> 1 group w/7 effects
 <dd><a href=ShakeIt/index.htm#G><code>proxyG</code> from
  <code>AccelerationSurge, AccelerationSway</code></a>,<br>
 <code>proxyS</code> from WHEELS SLIP effect,<br>
@@ -195,7 +187,37 @@ ROAD IMPACTS (curiosity?)
 <a href=ShakeIt/speedshift.js>tactile output based on speed changes during shifts and clutch releases</a>
 <br> &nbsp <br>
 
-<dt><b>Loaded4-chanWheelSlipsUndersteer</b> 7 effects
+<a name=dMASS>
+<dt></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Automobilista%202%20-%20dMASS%20Loaded%20Slip%20-%20tweaked%20gate%2C%20Forced%20Frequency.siprofile"><b>dMASS tweaked wheelslip</b></a> &nbsp <i>3 Feb 2024</i>
+<dd><i>Loaded Slip</i> group, tweaked for Automobilista 2<ul>
+<li>CUSTOM EFFECT <i>AbsAcc</i> - used in CUSTOM EFFECT <i>proxyL</i>
+<li>CUSTOM EFFECT <i>proxyL</i> - simulates load on each wheel
+<li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip to control tire squeal
+<li>WHEELS SLIP <i>gate</i> - mutes tire squeal for small slippages
+<li>CUSTOM EFFECT <i>noisy: frequencies</i> - applies noise and minimum frequency to <i>ProxyS</i> for <i>output loaded wheel slips</i><br>
+  These formulae could be moved to <i>output loaded wheel slips</i> <code>Force Frequencies</code> if no need to tweak Gamma or Minimum Force
+<li>CUSTOM EFFECT <i>output loaded wheel slips</i> combines <i>gate</i> and <i>proxyL</i> to modulate amplitude;<br>
+ &nbsp <i>noisy</i> modulates tire squeal-&gt;shudder frequency</ul>
+<b>Adjustments</b><br>
+All but the last are properties, which are constrained by SimHub to be >= 0 and <= 100<ul>
+<li>CUSTOM EFFECT <i>AbsAcc</i> <code>Gamma Factor</code> controls load transfers among wheels
+<li>CUSTOM EFFECT <i>proxyL</i> <code>Gamma Factor, Input Gain</code> control how soon max amplitude occurs
+<li>WHEELS SLIP <i>ProxyS</i> <code>Threshold, Input Gain</code><br> control how much slip to ignore and how much gain to apply to slip telemetry
+<li>WHEELS SLIP <i>gate</i> <code>Gamma Factor, Threshold, Input Gain</code><br> mutes high frequency haptic below <code>Threshold</code>
+<li>CUSTOM EFFECT <i>noisy: frequencies</i> <code>Gamma Factor, Minimum Force</code><br>
+    NCalc formulae may need tweaking; <code>Minimum Force</code> controls minimum haptic frequency
+<li>CUSTOM EFFECT <i>output loaded wheel slips</i> generates haptic signals;<ul>
+<li><code>ShakeITBSV3Plugin.Export.noisy.*</code> are constrained 0 to 100 by SimHub
+<li><code>9*[ShakeITBSV3Plugin.Export.noisy.*]</code><br> thus constrains Forced Frequencies between <code>9*</code><i>noisy</i> <code>Minimum Force</code> and 900(Hz)
+</ul></ul>
+
+<dt><br><b>Empty</b> 0 effects
+<br> &nbsp <br>
+
+<dt><b>New</b> 1 effect
+<dd>vanilla RPMS to test for SimHub ACC bug
+
+<dt><br><b>Loaded4-chanWheelSlipsUndersteer</b> 7 effects
 <dd>(unused) <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from Yaw, Speed</a>,<br>
 <a href=ShakeIt/index.htm#G><code>proxyG</code> from
  <code>AccelerationSurge, AccelerationSway</code></a>,<br>
@@ -204,13 +226,15 @@ ROAD IMPACTS (curiosity?)
 <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>,<br>
 <a href=ShakeIt/index.htm#UOS>unloaded under, oversteer from <code>proxyG</code> and <code>proxyS</code></a>,<br>
 (unused)<a href=ShakeIt/index.htm#mix>mix slips and oversteer</a>
-<br> &nbsp <br>
 
-<dt><b>Empty</b> 0 effects
-<br> &nbsp <br>
+<dt><br><b>Schnirbus tweaked slip</b>
+<dd><i>Experimental 4-corner Wheelslip for iRacing</i> group (4 effects, 1 output),<ul compact>
+<li><code>wslip</code> from WHEELS SLIP
+<li><code>sideways</code> from SPEED WITH CURVING <i>only generate in turns</i>
+<li><code>long shift</code> from <code>GameRawData.Telemetry.LongAccel</code>
+<li><i>4-Corner Slip output</i> from <code>wslip</code>, <code>sideways</code> and <code>long shift</code>
+</ul>
 
-<dt><b>New</b> 1 effect
-<dd>vanilla RPMS to test for SimHub ACC bug
 </dl>
 </font>
 
