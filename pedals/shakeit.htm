@@ -148,11 +148,11 @@ ROAD IMPACTS (curiosity?)
 <li>CUSTOM EFFECT <i>proxyL</i> - simulates load on each wheel
 <li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip to control tire squeal
 <li>WHEELS SLIP <i>gate</i> - mutes tire squeal for small slippages
-<li>CUSTOM EFFECT <i>noisy: frequencies</i> - for <i>output loaded wheel slips</i> <code>Forced Frequencies</code>.<br>
+<li>CUSTOM EFFECT <i>noisy: frequencies</i><br> - for <i>output loaded wheel slips</i> <code>Forced Frequencies</code>.<br>
   Applies noise and minimum frequency to <i>ProxyS</i>.<br>
-  Formulae could move to <i>output loaded wheel slips</i> <code>Forced Frequencies</code><br> if no need to tweak Gamma or Minimum Force
-<li>CUSTOM EFFECT <i>output loaded wheel slips</i>:&nbsp <i>gate</i> <code>*</code> <i>proxyL</i> modulates amplitude;<br>
-  &nbsp <i>noisy</i> modulates tire squeal-&gt;shudder frequency.<br>
+  Formulae could move to <i>output loaded wheel slips</i> <code>Forced Frequencies</code>,<br> &nbsp if no need to tweak Gamma or Minimum Force
+<li>CUSTOM EFFECT <i>output loaded wheel slips</i>:<br> - <i>gate</i> <code>*</code> <i>proxyL</i> modulates amplitude;<br>
+  - <i>noisy</i> modulates tire squeal-&gt;shudder frequency.<br>
 </ul>
 <details><summary><b>Adjustments</b></summary>
 All but the last are properties, which are constrained by SimHub to be >= 0 and <= 100<ul>
@@ -173,14 +173,16 @@ All but the last are properties, which are constrained by SimHub to be >= 0 and 
 <dd><i>Loaded Slip</i> group, tweaked for Automobilista 2<ul>
 <li>CUSTOM EFFECT <i>AbsAcc</i> - used in CUSTOM EFFECT <i>proxyL</i>
 <li>CUSTOM EFFECT <i>proxyL</i> - simulates load on each wheel
-<li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip for <i>ProxyGS: slip / accel</i> CUSTOM EFFECT
-<li>CUSTOM EFFECT <i>ProxyGS: slip / accel</i><br> base <i>noisy: frequencies</i> on <code>slip/accel</code> <i>ratio</i>, instead of <code>slip</code>
-<li>CUSTOM EFFECT <i>noisy: frequencies</i> - for <i>output loaded wheel slips</i> <code>Forced Frequencies</code>.<br>
+<li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip
+<li>CUSTOM EFFECT <i>ProxyGS: slip / accel</i> converts <i>ProxyS</i><br>
+ - for <i>noisy: frequencies</i> based on <code>slip/accel</code> <i>ratio</i>, instead of <code>slip</code>
+<li>CUSTOM EFFECT <i>noisy: frequencies</i><br> - for <i>output loaded wheel slips</i> <code>Forced Frequencies</code>.<br>
   Applies noise and minimum frequency to <i>ProxyGS</i>.<br>
-  Formulae could move to <i>output loaded wheel slips</i> <code>Forced Frequencies</code><br> if no need to tweak Gamma or Minimum Force
+  Formulae could move to <i>output loaded wheel slips</i> <code>Forced Frequencies</code>,<br> &nbsp if no need to tweak Gamma or Minimum Force
 <li>WHEELS SLIP <i>gate</i> - mutes tire squeal for small slippages
-<li>CUSTOM EFFECT <i>output loaded wheel slips</i>:&nbsp <i>gate</i> <code>*</code> <i>proxyL</i> modulates amplitude;<br>
-  &nbsp <i>noisy</i> modulates tire squeal-&gt;shudder frequency.<br>
+<li>CUSTOM EFFECT <i>output loaded wheel slips</i>:<br>
+ - <i>gate</i> <code>*</code> <i>proxyL</i> modulates amplitude;<br>
+ - <i>noisy</i> modulates tire squeal-&gt;shudder frequency.<br>
 </ul>
 <details><summary><b>Adjustments</b></summary>
 All but the last are properties, which are constrained by SimHub to be >= 0 and <= 100<ul>
