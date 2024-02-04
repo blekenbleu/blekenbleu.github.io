@@ -21,7 +21,7 @@
 
 <a name=intro>
 <h3>Introduction</h3></a>
-Bass Shaker effects are output as audio signals, instead of to rumble motors via Arduino.<br>
+Bass Shaker effects are output as audio signals, contrasted to rumble motors via Arduino.<br>
 As of 18 Sep 2021, my SimHub listed 28 profiles for Any Game, 1 for RaceRoom and 1 for Assetto Corsa.<br>
 This does not mean that 28 profiles work well with any game supported by SimHub;<br>
 merely that 1 depends on a property unique to RR and another uses AC-unique properties.<br>
@@ -29,60 +29,198 @@ The profile count is expected to drop while documenting,<br>
 as duplicates are pruned and others are consolidated,<br>
 since these employ less than 2 dozen usefully unique effects.<br>
 <br>
-A SimHub effect may generate a tactile output, a custom property or both.<br>
-Custom tactile effects typically depend on two or more custom properties,<br>
+A SimHub effect may generate haptic outputs, custom properties or both.<br>
+Custom haptic effects typically depend on two or more properties,<br>
 each of which may involve 4 formulae, one for each wheel.<br>
 Typically, JavaScript for only one formula (corner) of a custom property will be documented,<br>
 with the other 3 hopefully obvious by symmetry.<br>
-Several <i>different</i> JavaScript formulae may share the <i>same custom property name</i>,<br>
+Several <i>different</i> formulae may share the <i>same custom property name</i>,<br>
 exploiting different SimHub properties available in various versions for various games.<br>
-Among the 28 profiles, there are likely multiple versions of the same formula,<br>
-which should be reduced to a single best version by the completion of this document.<br>
+Among the many profiles are often multiple variations on the same formula,<br>
+some of which should be reduced to a single best version by the completion of this document,<br>
+but others address different tranducers, sims, tracks, cars, driving styles and preferences.<br>
 <br>
-My main interest in tactile effects is for driving aids.<br>
-My tactile transducers are small and generally dedicated to single effects.<br>
+My main interest in haptic effects is for driving aids,<br>
+in other words, more warnings <i>before</i> control is lost.<br>
+My haptic transducers are small and generally dedicated to single effects.<br>
+For example, 4 wheel loaded wheel slips feed 4 Dayton pucks in a seat cushion.<br>
 Others may wish to repurpose and mix these effects for more elaborate transducer configurations,<br>
 which would likely want substantially different (e.g. frequency) settings.
 
 <a name=prof>
 <h3>Profiles</h3></a>
 <dl>
-<dt><b>Default profile</b> 17 effects
-<dd>ShakeIt plugin as initially received; only RPM was IMO useful as provided
-<br> &nbsp <br>
+<dt><br><b>Default profile</b> 17 effects
+<dd>ShakeIt plugin as initially received; only RPM was IMO interesting as provided.<br>
+I feed that to a small shaker attached to dead pedal (foot rest left of clutch).
 
-<dt><b>AC1</b> 2 effects
+<dt><br><b>AC1</b> 2 effects
 <dd>prune of provided Default, leaving only WHEELS SLIPS and RPMS
-<br> &nbsp <br>
 
-<dt><b>RPM-modulated up/downshifts</b> 3 effects
-<dd><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-197#post-3357575">by request</a>
-<br> &nbsp <br>
-
-<dt><b>Brake Runout, Road Noise</b> 2 output effects for mixing to a single tactile channel
-<dd>While ABS is handy IRL, the SimHub effect IMO activates too late for use as a braking aid.<br>
-Instead, a first effect simulates some rotor runout for light braking,<br>
-progressing to a second, road noise effect for moderate pressure.<br>
-At high pedal pressures, feet become substantially insensitive to moderate tactile stimulation.<br>
-Attempting to generate tactile stimulus powerful enough to be sensed with strong pedal pressure<br>
- is liable to overheat the associated transducer; ask me how I know.<br>
-<a href=ShakeIt/index.htm#B>Current implemention</a> is
-binary (thresholded <code>Brake</code> property);<br>
-should probably be proportional (piece-wise linear).
-<br> &nbsp <br>
-
-<a name=u4ssc><dt>AC-specific <b>(un)Loaded 4-Wheel Slips with Speed Curving</b> 5 effects</a>
+<a name=u4ssc><dt><br>AC-specific <b>(un)Loaded 4-Wheel Slips with Speed Curving</b> 5 effects</a>
 <dd><font size=-2><i>Uses some proprietary Assetto Corsa properties</i><br></font>
 <a href=ShakeIt/index.htm#ACproxyL>ACproxyL</a>,<br>
 <a href=ShakeIt/index.htm#ACproxyS>ACproxyS</a>,<br>
-<a href="ShakeIt/index.htm#LWS"<i>loaded wheel slips</i></a> tactile effect,<br>
-<a href=ShakeIt/index.htm#OS><i>trailing oversteer</i></a> tactile effect,<br>
+<a href="ShakeIt/index.htm#LWS"<i>loaded wheel slips</i></a> haptic effect,<br>
+<a href=ShakeIt/index.htm#OS><i>trailing oversteer</i></a> haptic effect,<br>
 generic SPEED WITH CURVING effect to export <code>SpeedCurv</code> property for PWM fan custom serial device.
-<br> &nbsp <br>
 
-<dt><b>speed shifts</b>
+<dt><br><b>Brake Runout, Road Noise</b> 2 output effects for mixing to a single haptic channel
+<dd>While ABS can be handy IRL, SimHub's effect IMO activates too late for use as a braking aid.<br>
+Instead, a first effect simulates some rotor runout for light braking,<br>
+progressing to a second, road noise effect for moderate pressure.<br>
+At high pedal pressures, feet become substantially insensitive to moderate haptic stimulation.<br>
+In real life, brake pedal feel becomes dead when wheels lock.<br>
+Attempting to generate haptic stimulus powerful enough to be sensed with strong pedal pressure<br>
+is liable to overheat associated transducers; ask me how I know.<br>
+<a href=ShakeIt/index.htm#B>Current implemention</a> is
+binary (thresholded <code>Brake</code> property);<br>
+should probably be proportional (piece-wise linear).
+
+<dt><br><b>Empty</b> 0 effects
+
+<dt><br><b>Loaded4-chanWheelSlipsUndersteer</b> 7 effects
+<dd>(unused) <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from Yaw, Speed</a>,<br>
+<a href=ShakeIt/index.htm#G><code>proxyG</code> from
+ <code>AccelerationSurge, AccelerationSway</code></a>,<br>
+<a href=ShakeIt/index.htm#GL><code>proxyL</code> from <code>proxyG</code></a>,<br>
+<code>proxyS</code> from WHEELS SLIP effect,<br>
+<a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>,<br>
+<a href=ShakeIt/index.htm#UOS>unloaded under, oversteer from <code>proxyG</code> and <code>proxyS</code></a>,<br>
+(unused)<a href=ShakeIt/index.htm#mix>mix slips and oversteer</a>
+
+<dt><br><b>Loaded4-chanWheelslipUndersteer</b> 7 effects
+<dd><i>unused</i> <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from
+<code>OrientationYaw</code> and <code>SpeedKmh</code></a>,<br>
+<a href=ShakeIt/index.htm#AA><code>AbsAcc</code> from
+<code>AccelerationSway</code> and <code>AccelerationSurge</code></a>,<br>
+<a href=ShakeIt/index.htm#AAL><code>proxyL</code> from <code>AccelerationSway</code>,
+ <code>AccelerationSurge</code> and <code>AbsAcc</code></a>,<br>
+<code>proxyS</code> from WHEELS SLIP,<br>
+<a href=ShakeIt/index.htm#LWS><code>LoadedWheelSlip</code> from <code>proxyL</code> and <code>proxyS</code></a>,<br>
+<a href=ShakeIt/index.htm#UOS><code>UnderOversteer</code> from <code>proxyS</code> and <code>AbsAcc</code></a>,<br>
+<a href=ShakeIt/index.htm#mix><i>mix slips and oversteer</i> from
+ <code>UnderOversteer</code>, <code>proxyS</code> and <code>LoadedSlip</code></a>
+
+<dt><br><b>NewLoaded4-chanWheelslipUndersteer</b> 7 effects
+<dd>from <a href=#rrrel>RRRELoaded4-chanWheelslipUndersteer</a>
+
+<dt><br><b>(un)Loaded 4-Wheel Slips</b> 4 effects
+<dd><a href="ShakeIt/index.htm#ACproxy_G">AC_proxy_G</a>,<br>
+<a href=ShakeIt/index.htm#ACproxyS>AC proxyS</a>,<br>
+Loaded slips by combined(<a href=ShakeIt/index.htm#GL>proxyL</a>
+and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
+<a href=ShakeIt/index.htm#GOS>Unloaded WheelSlip (trailing oversteer) from proxy_G</a>
+
+<dt><br><b>Aug14Loaded4-chanWheelslipUndersteer</b> 6 effects
+<dd>also derived from <a href=#rrrel>RangeyRover</a><ul compact>
+<li><a href=ShakeIt/index.htm#AA>AbsAcc</a>
+<li><a href=ShakeIt/index.htm#AAL>load from AbsAcc</a>
+<li>code>proxyS</code> from WHEELS SLIP</a>
+<li><a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>
+<li><a href=ShakeIt/index.htm#GUOS>gated under, oversteer</a>
+<li><a href=ShakeIt/index.htm#mix>mix slips and oversteer</a></ul>
+<i>mix slips and oversteer</i> disabled, output <code>LoadedSlip</code>
+
+<dt><br><b>Aug19Loaded4-chanWheelslipUndersteer</b> group of 3 telemetery properties + 2 output effects
+<dd>non-output effects group:<ul compact>
+<li><a href=ShakeIt/index.htm#AA>AbsAcc</a>,
+<li><a href=ShakeIt/index.htm#AAL>load from AbsAcc</a> 
+<li>code>proxyS</code> from WHEELS SLIP</a></ul>
+<a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>, &nbsp
+<a href=ShakeIt/index.htm#GUOS>gated under, oversteer</a> 
+
+<dt><br><b>front/rear Wheel Slip experiments</b> 5 effects
+<dd><code>proxy_G</code> from <code>GameRawData.Physics.WheelLoad</code>,<br>
+<code>slip</code> from WHEELS SLIP,<br>
+<i>average vs correlated front slip</i> haptic output from <code>slip</code><br>
+<code>proxyS</code> from <code>GameRawData.Physics.WheelSlip</code>,<br>
+<i>loaded wheel slips</i> output from <code>proxy_G</code> and <code>proxyS</code>
+
+<dt><br><a href=ShakeIt/index.htm#joy><b>joystick telemetry</b></a> 2 effects
+<dd>output based on SideWinder slider when button 7 is pressed<br>
+ROAD IMPACTS (curiosity?)
+
+<a name=dMASS>
+<dt><br></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Automobilista%202%20-%20dMASS%20Loaded%20Slip%20-%20tweaked%20gate%2C%20Forced%20Frequency.siprofile"><b>dMASS tweaked wheelslip</b></a> &nbsp <i>3 Feb 2024</i>
+<dd><i>Loaded Slip</i> group, tweaked for Automobilista 2<ul>
+<li>CUSTOM EFFECT <i>AbsAcc</i> - used in CUSTOM EFFECT <i>proxyL</i>
+<li>CUSTOM EFFECT <i>proxyL</i> - simulates load on each wheel
+<li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip to control tire squeal
+<li>WHEELS SLIP <i>gate</i> - mutes tire squeal for small slippages
+<li>CUSTOM EFFECT <i>noisy: frequencies</i> - for <i>output loaded wheel slips</i> <code>Forced Frequencies</code>.<br>
+  Applies noise and minimum frequency to <i>ProxyS</i>.<br>
+  Formulae could move to <i>output loaded wheel slips</i> <code>Forced Frequencies</code><br> if no need to tweak Gamma or Minimum Force
+<li>CUSTOM EFFECT <i>output loaded wheel slips</i>:&nbsp <i>gate</i> <code>*</code> <i>proxyL</i> modulates amplitude;<br>
+  &nbsp <i>noisy</i> modulates tire squeal-&gt;shudder frequency.<br>
+</ul>
+<details><summary><b>Adjustments</b></summary>
+All but the last are properties, which are constrained by SimHub to be >= 0 and <= 100<ul>
+<li>CUSTOM EFFECT <i>AbsAcc</i> <code>Gamma Factor</code> controls load transfers among wheels
+<li>CUSTOM EFFECT <i>proxyL</i> <code>Gamma Factor, Input Gain</code> control how soon max amplitude occurs
+<li>WHEELS SLIP <i>ProxyS</i> <code>Threshold, Input Gain</code><br> control how much slip to ignore and how much gain to apply to slip telemetry
+<li>WHEELS SLIP <i>gate</i> <code>Gamma Factor, Threshold, Input Gain</code><br> mutes high frequency haptic below <code>Threshold</code>
+<li>CUSTOM EFFECT <i>noisy: frequencies</i> <code>Gamma Factor, Minimum Force</code><br>
+    NCalc formulae may need tweaking; <code>Minimum Force</code> controls minimum haptic frequency.<br>
+    Lower <code>Gamma</code> reduces frequencies for more slip and haptic sensing.
+<li>CUSTOM EFFECT <i>output loaded wheel slips</i> generates haptic signals;<ul>
+<li><code>ShakeITBSV3Plugin.Export.noisy.*</code> are constrained 0 to 100 by SimHub
+<li><code>9*[ShakeITBSV3Plugin.Export.noisy.*]</code><br> thus constrains Forced Frequencies between <code>9*</code><i>noisy</i> <code>Minimum Force</code> and 900(Hz)
+</ul></ul></details>
+
+<a name=Slip/G>
+<dt><br></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%20Loaded%20Slip_Accel%20-%20gated%20Forced%20Frequency.siprofile"><b>Loaded Slip/Accel</b></a> &nbsp <i>4 Feb 2024 - derived from <a href=$dMASS>dMass tweaked wheelslip</a></i>
+<dd><i>Loaded Slip</i> group, tweaked for Automobilista 2<ul>
+<li>CUSTOM EFFECT <i>AbsAcc</i> - used in CUSTOM EFFECT <i>proxyL</i>
+<li>CUSTOM EFFECT <i>proxyL</i> - simulates load on each wheel
+<li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip for <i>ProxyGS: slip / accel</i> CUSTOM EFFECT
+<li>CUSTOM EFFECT <i>ProxyGS: slip / accel</i><br> base <i>noisy: frequencies</i> on <code>slip/accel</code> <i>ratio</i>, instead of <code>slip</code>
+<li>CUSTOM EFFECT <i>noisy: frequencies</i> - for <i>output loaded wheel slips</i> <code>Forced Frequencies</code>.<br>
+  Applies noise and minimum frequency to <i>ProxyGS</i>.<br>
+  Formulae could move to <i>output loaded wheel slips</i> <code>Forced Frequencies</code><br> if no need to tweak Gamma or Minimum Force
+<li>WHEELS SLIP <i>gate</i> - mutes tire squeal for small slippages
+<li>CUSTOM EFFECT <i>output loaded wheel slips</i>:&nbsp <i>gate</i> <code>*</code> <i>proxyL</i> modulates amplitude;<br>
+  &nbsp <i>noisy</i> modulates tire squeal-&gt;shudder frequency.<br>
+</ul>
+<details><summary><b>Adjustments</b></summary>
+All but the last are properties, which are constrained by SimHub to be >= 0 and <= 100<ul>
+<li>CUSTOM EFFECT <i>AbsAcc</i> <code>Gamma Factor</code> controls load transfers among wheels
+<li>CUSTOM EFFECT <i>proxyL</i> <code>Gamma Factor, Input Gain</code> control how soon max amplitude occurs
+<li>WHEELS SLIP <i>ProxyS</i> <code>Threshold, Input Gain</code><br> control how much slip to ignore and how much gain to apply to slip telemetry
+<li>CUSTOM EFFECT <i>ProxyGS: slip / accel</i> - perhaps <code>Gamma Factor</code>?
+<li>WHEELS SLIP <i>gate</i> <code>Gamma Factor, Threshold, Input Gain</code><br> mutes high frequency haptic below <code>Threshold</code>
+<li>CUSTOM EFFECT <i>noisy: frequencies</i> <code>Gamma Factor, Minimum Force</code><br>
+    NCalc formulae may need tweaking; <code>Minimum Force</code> controls minimum haptic frequency.<br>
+    Lower <code>Gamma</code> reduces frequencies for more slip and haptic sensing.
+<li>CUSTOM EFFECT <i>output loaded wheel slips</i> generates haptic signals;<ul>
+<li><code>ShakeITBSV3Plugin.Export.noisy.*</code> are constrained 0 to 100 by SimHub
+<li><code>9*[ShakeITBSV3Plugin.Export.noisy.*]</code><br> thus constrains Forced Frequencies between <code>9*</code><i>noisy</i> <code>Minimum Force</code> and 900(Hz)
+</ul></ul></details>
+
+<dt><br><b>New</b> 1 effect
+<dd>vanilla RPMS to test for SimHub ACC bug
+
+<dt><br><b>portable Loaded 4-Wheel Slips group</b> 1 group w/7 effects
+<dd><a href=ShakeIt/index.htm#G><code>proxyG</code> from
+ <code>AccelerationSurge, AccelerationSway</code></a>,<br>
+<code>proxyS</code> from WHEELS SLIP effect,<br>
+<a href=ShakeIt/index.htm#GL><code>proxyL</code> from <code>proxyG</code></a>
+ or <code>GameRawData.Physics.WheelLoad</code>,<br>
+<a href=ShakeIt/index.htm#LWS><code>proxyLS</code> Loaded WheelSlip</a>,<br>
+<a href=ShakeIt/index.htm#GOS>Unloaded rear WheelSlip (trailing  oversteer)</a>,<br>
+<a href=ShakeIt/index.htm#LOU>Loaded over, understeer from <code>proxyLS</code>,<br>
+<a href=ShakeIt/speedshift.js>haptic output based on speed changes during shifts and clutch releases</a>
+
+<dt><br><b>RPM-modulated up/downshifts</b> 3 effects
+<dd><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-197#post-3357575">by request</a>
+
+<a name=rrrel><dt><br><b>RRRELoaded4-chanWheelslipUndersteer</b> 6 effects</a>
+<dd>from <a href="https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/page-4#post-3427571">RangeyRover</a>
+
+<dt><br><b>speed shifts</b>
 <dd>Tactile effect for shifts should IMO reflect shift smoothness,<br>
-which presumably corresponds in speed changes during those shifts.<br>
+which presumably corresponds in speed changes during those shifts.
+<details><summary>click for details</summary>
 This effect currently explores three formulae, each gated by gear changes and clutch releases:<ul compact>
 <li>high-pass filtering of changes in speed
 <li>surge acceleration
@@ -109,123 +247,7 @@ This next plot is when braking with front tire lockup, a limit condition:<br>
 <img src="image/plot2.gif"><br clear=all>
 The low pass time constant determined to roughly minimize<br>
 differences between <code>Front right</code> and <code>Rear left</code>
-was then also applied to <code>Rear right</code>.<br>
-<br> &nbsp <br>
-
-<dt><b>(un)Loaded 4-Wheel Slips</b> 4 effects
-<dd><a href="ShakeIt/index.htm#ACproxy_G">AC_proxy_G</a>,<br>
-<a href=ShakeIt/index.htm#ACproxyS>AC proxyS</a>,<br>
-Loaded slips by combined(<a href=ShakeIt/index.htm#GL>proxyL</a>
-and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
-<a href=ShakeIt/index.htm#GOS>Unloaded WheelSlip (trailing oversteer) from proxy_G</a>
-<br> &nbsp <br>
-
-<a name=rrrel><dt><b>RRRELoaded4-chanWheelslipUndersteer</b> 6 effects</a>
-<dd>from <a href="https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/page-4#post-3427571">RangeyRover</a>
-<br> &nbsp <br>
-
-<dt><b>NewLoaded4-chanWheelslipUndersteer</b> 7 effects
-<dd>from <a href=#rrrel>RRRELoaded4-chanWheelslipUndersteer</a>
-<br> &nbsp <br>
-
-<dt><b>Loaded4-chanWheelslipUndersteer</b> 7 effects
-<dd><i>unused</i> <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from
-<code>OrientationYaw</code> and <code>SpeedKmh</code></a>,<br>
-<a href=ShakeIt/index.htm#AA><code>AbsAcc</code> from
-<code>AccelerationSway</code> and <code>AccelerationSurge</code></a>,<br>
-<a href=ShakeIt/index.htm#AAL><code>proxyL</code> from <code>AccelerationSway</code>,
- <code>AccelerationSurge</code> and <code>AbsAcc</code></a>,<br>
-<code>proxyS</code> from WHEELS SLIP,<br>
-<a href=ShakeIt/index.htm#LWS><code>LoadedWheelSlip</code> from <code>proxyL</code> and <code>proxyS</code></a>,<br>
-<a href=ShakeIt/index.htm#UOS><code>UnderOversteer</code> from <code>proxyS</code> and <code>AbsAcc</code></a>,<br>
-<a href=ShakeIt/index.htm#mix><i>mix slips and oversteer</i> from
- <code>UnderOversteer</code>, <code>proxyS</code> and <code>LoadedSlip</code></a>
-<br> &nbsp <br>
-
-<dt><b>Aug14Loaded4-chanWheelslipUndersteer</b> 6 effects
-<dd>also derived from <a href=#rrrel>RangeyRover</a><ul compact>
-<li><a href=ShakeIt/index.htm#AA>AbsAcc</a>
-<li><a href=ShakeIt/index.htm#AAL>load from AbsAcc</a>
-<li>code>proxyS</code> from WHEELS SLIP</a>
-<li><a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>
-<li><a href=ShakeIt/index.htm#GUOS>gated under, oversteer</a>
-<li><a href=ShakeIt/index.htm#mix>mix slips and oversteer</a></ul>
-<i>mix slips and oversteer</i> disabled, output <code>LoadedSlip</code>
-<br> &nbsp <br>
-
-<dt><b>Aug19Loaded4-chanWheelslipUndersteer</b> group of 3 telemetery properties + 2 output effects
-<dd>non-output effects group:<ul compact>
-<li><a href=ShakeIt/index.htm#AA>AbsAcc</a>,
-<li><a href=ShakeIt/index.htm#AAL>load from AbsAcc</a> 
-<li>code>proxyS</code> from WHEELS SLIP</a></ul>
-<a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>, &nbsp
-<a href=ShakeIt/index.htm#GUOS>gated under, oversteer</a> 
-<br> &nbsp <br>
-
-<dt><a href=ShakeIt/index.htm#joy><b>joystick telemetry</b></a> 2 effects
-<dd>output based on SideWinder slider when button 7 is pressed<br>
-ROAD IMPACTS (curiosity?)
-<br> &nbsp <br>
-
-<dt><b>front/rear Wheel Slip experiments</b> 5 effects
-<dd><code>proxy_G</code> from <code>GameRawData.Physics.WheelLoad</code>,<br>
-<code>slip</code> from WHEELS SLIP,<br>
-<i>average vs correlated front slip</i> tactile output from <code>slip</code><br>
-<code>proxyS</code> from <code>GameRawData.Physics.WheelSlip</code>,<br>
-<i>loaded wheel slips</i> output from <code>proxy_G</code> and <code>proxyS</code>
-<br> &nbsp <br>
-
-<dt><br><b>portable Loaded 4-Wheel Slips group</b> 1 group w/7 effects
-<dd><a href=ShakeIt/index.htm#G><code>proxyG</code> from
- <code>AccelerationSurge, AccelerationSway</code></a>,<br>
-<code>proxyS</code> from WHEELS SLIP effect,<br>
-<a href=ShakeIt/index.htm#GL><code>proxyL</code> from <code>proxyG</code></a>
- or <code>GameRawData.Physics.WheelLoad</code>,<br>
-<a href=ShakeIt/index.htm#LWS><code>proxyLS</code> Loaded WheelSlip</a>,<br>
-<a href=ShakeIt/index.htm#GOS>Unloaded rear WheelSlip (trailing  oversteer)</a>,<br>
-<a href=ShakeIt/index.htm#LOU>Loaded over, understeer from <code>proxyLS</code>,<br>
-<a href=ShakeIt/speedshift.js>tactile output based on speed changes during shifts and clutch releases</a>
-<br> &nbsp <br>
-
-<a name=dMASS>
-<dt></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Automobilista%202%20-%20dMASS%20Loaded%20Slip%20-%20tweaked%20gate%2C%20Forced%20Frequency.siprofile"><b>dMASS tweaked wheelslip</b></a> &nbsp <i>3 Feb 2024</i>
-<dd><i>Loaded Slip</i> group, tweaked for Automobilista 2<ul>
-<li>CUSTOM EFFECT <i>AbsAcc</i> - used in CUSTOM EFFECT <i>proxyL</i>
-<li>CUSTOM EFFECT <i>proxyL</i> - simulates load on each wheel
-<li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip to control tire squeal
-<li>WHEELS SLIP <i>gate</i> - mutes tire squeal for small slippages
-<li>CUSTOM EFFECT <i>noisy: frequencies</i> - applies noise and minimum frequency to <i>ProxyS</i> for <i>output loaded wheel slips</i><br>
-  These formulae could be moved to <i>output loaded wheel slips</i> <code>Force Frequencies</code> if no need to tweak Gamma or Minimum Force
-<li>CUSTOM EFFECT <i>output loaded wheel slips</i> combines <i>gate</i> and <i>proxyL</i> to modulate amplitude;<br>
- &nbsp <i>noisy</i> modulates tire squeal-&gt;shudder frequency</ul>
-<b>Adjustments</b><br>
-All but the last are properties, which are constrained by SimHub to be >= 0 and <= 100<ul>
-<li>CUSTOM EFFECT <i>AbsAcc</i> <code>Gamma Factor</code> controls load transfers among wheels
-<li>CUSTOM EFFECT <i>proxyL</i> <code>Gamma Factor, Input Gain</code> control how soon max amplitude occurs
-<li>WHEELS SLIP <i>ProxyS</i> <code>Threshold, Input Gain</code><br> control how much slip to ignore and how much gain to apply to slip telemetry
-<li>WHEELS SLIP <i>gate</i> <code>Gamma Factor, Threshold, Input Gain</code><br> mutes high frequency haptic below <code>Threshold</code>
-<li>CUSTOM EFFECT <i>noisy: frequencies</i> <code>Gamma Factor, Minimum Force</code><br>
-    NCalc formulae may need tweaking; <code>Minimum Force</code> controls minimum haptic frequency
-<li>CUSTOM EFFECT <i>output loaded wheel slips</i> generates haptic signals;<ul>
-<li><code>ShakeITBSV3Plugin.Export.noisy.*</code> are constrained 0 to 100 by SimHub
-<li><code>9*[ShakeITBSV3Plugin.Export.noisy.*]</code><br> thus constrains Forced Frequencies between <code>9*</code><i>noisy</i> <code>Minimum Force</code> and 900(Hz)
-</ul></ul>
-
-<dt><br><b>Empty</b> 0 effects
-<br> &nbsp <br>
-
-<dt><b>New</b> 1 effect
-<dd>vanilla RPMS to test for SimHub ACC bug
-
-<dt><br><b>Loaded4-chanWheelSlipsUndersteer</b> 7 effects
-<dd>(unused) <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from Yaw, Speed</a>,<br>
-<a href=ShakeIt/index.htm#G><code>proxyG</code> from
- <code>AccelerationSurge, AccelerationSway</code></a>,<br>
-<a href=ShakeIt/index.htm#GL><code>proxyL</code> from <code>proxyG</code></a>,<br>
-<code>proxyS</code> from WHEELS SLIP effect,<br>
-<a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>,<br>
-<a href=ShakeIt/index.htm#UOS>unloaded under, oversteer from <code>proxyG</code> and <code>proxyS</code></a>,<br>
-(unused)<a href=ShakeIt/index.htm#mix>mix slips and oversteer</a>
+was then also applied to <code>Rear right</code>.</details>
 
 <dt><br><b>Schnirbus tweaked slip</b>
 <dd><i>Experimental 4-corner Wheelslip for iRacing</i> group (4 effects, 1 output),<ul compact>
