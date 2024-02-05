@@ -79,39 +79,6 @@ should probably be proportional (piece-wise linear).
 
 <dt><br><b>Empty</b> 0 effects
 
-<dt><br><b>Loaded4-chanWheelSlipsUndersteer</b> 7 effects
-<dd>(unused) <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from Yaw, Speed</a>,<br>
-<a href=ShakeIt/index.htm#G><code>proxyG</code> from
- <code>AccelerationSurge, AccelerationSway</code></a>,<br>
-<a href=ShakeIt/index.htm#GL><code>proxyL</code> from <code>proxyG</code></a>,<br>
-<code>proxyS</code> from WHEELS SLIP effect,<br>
-<a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>,<br>
-<a href=ShakeIt/index.htm#UOS>unloaded under, oversteer from <code>proxyG</code> and <code>proxyS</code></a>,<br>
-(unused)<a href=ShakeIt/index.htm#mix>mix slips and oversteer</a>
-
-<dt><br><b>Loaded4-chanWheelslipUndersteer</b> 7 effects
-<dd><i>unused</i> <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from
-<code>OrientationYaw</code> and <code>SpeedKmh</code></a>,<br>
-<a href=ShakeIt/index.htm#AA><code>AbsAcc</code> from
-<code>AccelerationSway</code> and <code>AccelerationSurge</code></a>,<br>
-<a href=ShakeIt/index.htm#AAL><code>proxyL</code> from <code>AccelerationSway</code>,
- <code>AccelerationSurge</code> and <code>AbsAcc</code></a>,<br>
-<code>proxyS</code> from WHEELS SLIP,<br>
-<a href=ShakeIt/index.htm#LWS><code>LoadedWheelSlip</code> from <code>proxyL</code> and <code>proxyS</code></a>,<br>
-<a href=ShakeIt/index.htm#UOS><code>UnderOversteer</code> from <code>proxyS</code> and <code>AbsAcc</code></a>,<br>
-<a href=ShakeIt/index.htm#mix><i>mix slips and oversteer</i> from
- <code>UnderOversteer</code>, <code>proxyS</code> and <code>LoadedSlip</code></a>
-
-<dt><br><b>NewLoaded4-chanWheelslipUndersteer</b> 7 effects
-<dd>from <a href=#rrrel>RRRELoaded4-chanWheelslipUndersteer</a>
-
-<dt><br><b>(un)Loaded 4-Wheel Slips</b> 4 effects
-<dd><a href="ShakeIt/index.htm#ACproxy_G">AC_proxy_G</a>,<br>
-<a href=ShakeIt/index.htm#ACproxyS>AC proxyS</a>,<br>
-Loaded slips by combined(<a href=ShakeIt/index.htm#GL>proxyL</a>
-and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
-<a href=ShakeIt/index.htm#GOS>Unloaded WheelSlip (trailing oversteer) from proxy_G</a>
-
 <dt><br><b>Aug14Loaded4-chanWheelslipUndersteer</b> 6 effects
 <dd>also derived from <a href=#rrrel>RangeyRover</a><ul compact>
 <li><a href=ShakeIt/index.htm#AA>AbsAcc</a>
@@ -173,15 +140,14 @@ All but the last are properties, which are constrained by SimHub to be >= 0 and 
 <dd><i>Loaded Slip</i> group, tweaked for Automobilista 2<ul>
 <li>CUSTOM EFFECT <i>AbsAcc</i> - used in CUSTOM EFFECT <i>proxyL</i>
 <li>CUSTOM EFFECT <i>proxyL</i> - simulates load on each wheel
-<li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip
+<li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip for <i>ProxyGS</i>
 <li>CUSTOM EFFECT <i>ProxyGS: slip / accel</i> converts <i>ProxyS</i><br>
- - for <i>noisy: frequencies</i> based on <code>slip/accel</code> <i>ratio</i>, instead of <code>slip</code>
+ - for <code>gate</code> and <i>noisy: frequencies</i> based on <code>slip/accel</code> <i>ratio</i>, instead of <code>slip</code>
 <li>CUSTOM EFFECT <i>noisy: frequencies</i><br> - for <i>output loaded wheel slips</i> <code>Forced Frequencies</code>.<br>
   Applies noise and minimum frequency to <i>ProxyGS</i>.<br>
   Formulae could move to <i>output loaded wheel slips</i> <code>Forced Frequencies</code>,<br> &nbsp if no need to tweak Gamma or Minimum Force
-<li>WHEELS SLIP <i>gate</i> - mutes tire squeal for small slippages
 <li>CUSTOM EFFECT <i>output loaded wheel slips</i>:<br>
- - <i>gate</i> <code>*</code> <i>proxyL</i> modulates amplitude;<br>
+ - <i>ProxyGS</i> <code>gate*</code> <i>proxyL</i> modulates amplitude;<br>
  - <i>noisy</i> modulates tire squeal-&gt;shudder frequency.<br>
 </ul>
 <details><summary><b>Adjustments</b></summary>
@@ -190,7 +156,6 @@ All but the last are properties, which are constrained by SimHub to be >= 0 and 
 <li>CUSTOM EFFECT <i>proxyL</i> <code>Gamma Factor, Input Gain</code> control how soon max amplitude occurs
 <li>WHEELS SLIP <i>ProxyS</i> <code>Threshold, Input Gain</code><br> control how much slip to ignore and how much gain to apply to slip telemetry
 <li>CUSTOM EFFECT <i>ProxyGS: slip / accel</i> - perhaps <code>Gamma Factor</code>?
-<li>WHEELS SLIP <i>gate</i> <code>Gamma Factor, Threshold, Input Gain</code><br> mutes high frequency haptic below <code>Threshold</code>
 <li>CUSTOM EFFECT <i>noisy: frequencies</i> <code>Gamma Factor, Minimum Force</code><br>
     NCalc formulae may need tweaking; <code>Minimum Force</code> controls minimum haptic frequency.<br>
     Lower <code>Gamma</code> reduces frequencies for more slip and haptic sensing.
@@ -198,6 +163,39 @@ All but the last are properties, which are constrained by SimHub to be >= 0 and 
 <li><code>ShakeITBSV3Plugin.Export.noisy.*</code> are constrained 0 to 100 by SimHub
 <li><code>9*[ShakeITBSV3Plugin.Export.noisy.*]</code><br> thus constrains Forced Frequencies between <code>9*</code><i>noisy</i> <code>Minimum Force</code> and 900(Hz)
 </ul></ul></details>
+
+<dt><br><b>Loaded4-chanWheelSlipsUndersteer</b> 7 effects
+<dd>(unused) <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from Yaw, Speed</a>,<br>
+<a href=ShakeIt/index.htm#G><code>proxyG</code> from
+ <code>AccelerationSurge, AccelerationSway</code></a>,<br>
+<a href=ShakeIt/index.htm#GL><code>proxyL</code> from <code>proxyG</code></a>,<br>
+<code>proxyS</code> from WHEELS SLIP effect,<br>
+<a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>,<br>
+<a href=ShakeIt/index.htm#UOS>unloaded under, oversteer from <code>proxyG</code> and <code>proxyS</code></a>,<br>
+(unused)<a href=ShakeIt/index.htm#mix>mix slips and oversteer</a>
+
+<dt><br><b>Loaded4-chanWheelslipUndersteer</b> 7 effects
+<dd><i>unused</i> <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from
+<code>OrientationYaw</code> and <code>SpeedKmh</code></a>,<br>
+<a href=ShakeIt/index.htm#AA><code>AbsAcc</code> from
+<code>AccelerationSway</code> and <code>AccelerationSurge</code></a>,<br>
+<a href=ShakeIt/index.htm#AAL><code>proxyL</code> from <code>AccelerationSway</code>,
+ <code>AccelerationSurge</code> and <code>AbsAcc</code></a>,<br>
+<code>proxyS</code> from WHEELS SLIP,<br>
+<a href=ShakeIt/index.htm#LWS><code>LoadedWheelSlip</code> from <code>proxyL</code> and <code>proxyS</code></a>,<br>
+<a href=ShakeIt/index.htm#UOS><code>UnderOversteer</code> from <code>proxyS</code> and <code>AbsAcc</code></a>,<br>
+<a href=ShakeIt/index.htm#mix><i>mix slips and oversteer</i> from
+ <code>UnderOversteer</code>, <code>proxyS</code> and <code>LoadedSlip</code></a>
+
+<dt><br><b>NewLoaded4-chanWheelslipUndersteer</b> 7 effects
+<dd>from <a href=#rrrel>RRRELoaded4-chanWheelslipUndersteer</a>
+
+<dt><br><b>(un)Loaded 4-Wheel Slips</b> 4 effects
+<dd><a href="ShakeIt/index.htm#ACproxy_G">AC_proxy_G</a>,<br>
+<a href=ShakeIt/index.htm#ACproxyS>AC proxyS</a>,<br>
+Loaded slips by combined(<a href=ShakeIt/index.htm#GL>proxyL</a>
+and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
+<a href=ShakeIt/index.htm#GOS>Unloaded WheelSlip (trailing oversteer) from proxy_G</a>
 
 <dt><br><b>New</b> 1 effect
 <dd>vanilla RPMS to test for SimHub ACC bug
