@@ -44,6 +44,9 @@ My main interest in haptic effects is for driving aids,<br>
 in other words, more warnings <i>before</i> control is lost.<br>
 My haptic transducers are small and generally dedicated to single effects.<br>
 For example, 4 wheel loaded wheel slips feed 4 Dayton pucks in a seat cushion.<br>
+
+<br><div align=center>link for <a href=tires.htm>tire haptics discussion</a></div><br>
+
 Others may wish to repurpose and mix these effects for more elaborate transducer configurations,<br>
 which would likely want substantially different (e.g. frequency) settings.
 
@@ -136,19 +139,25 @@ All but the last are properties, which are constrained by SimHub to be >= 0 and 
 </ul></ul></details>
 
 <a name=Slip/G>
-<dt><br></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%20Loaded%20Slip_Accel%20-%20gated%20Forced%20Frequency.siprofile"><b>Loaded Slip/Accel</b></a> &nbsp <i>4 Feb 2024 - derived from <a href=$dMASS>dMass tweaked wheelslip</a></i>
+<dt><br></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%20Loaded%20Slip_Accel%20-%20gated%20Forced%20Frequency.siprofile"><b>Loaded Slip/Accel</b></a> &nbsp <i>4 Feb 2024 - derived from <a href=$dMASS>dMass tweaked wheelslip</a></i><br>
+
+<br><div align=center>link for <a href=tires.htm>tire haptics discussion</a></div><br>
+
 <dd><i>Loaded Slip</i> group, works with AC and Automobilista 2<ul>
 <li>CUSTOM EFFECT <i>AbsAcc</i> - used in CUSTOM EFFECT <i>proxyL</i>
 <li>CUSTOM EFFECT <i>proxyL</i> - simulates load on each wheel
 <li>WHEELS SLIP <i>ProxyS</i> - conditions wheelslip for <i>ProxyGS</i>
 <li>CUSTOM EFFECT <i>ProxyGS: slip / accel</i> converts <i>ProxyS</i><br>
- - for <code>gate</code> and <i>noisy: frequencies</i> based on <code>slip/accel</code> <i>ratio</i>, instead of <code>slip</code>
+ - for <code>gate</code> and <i>noisy: frequencies</i> based on <code>slip/accel</code>
+   <i>ratio</i>, instead of <code>slip</code>
+<li>CUSTOM EFFECT <i>frequency limits</i> - for rescaling <i>ProxyGS</i>
 <li>CUSTOM EFFECT <i>noisy: frequencies</i><br> - for <i>output loaded wheel slips</i> <code>Forced Frequencies</code>.<br>
-  Applies noise and minimum frequency to <i>ProxyGS</i>.<br>
-  Formulae could move to <i>output loaded wheel slips</i> <code>Forced Frequencies</code>,<br> &nbsp if no need to tweak Gamma or Minimum Force
-<li>CUSTOM EFFECT <i>output loaded wheel slips</i>:<br>
+  Rescales <i>ProxyGS</i> to forced frequencies, adding noise.<br>
+  - Formulae could move to <i>output loaded wheel slips</i> <code>Forced Frequencies</code>,<br>
+  &nbsp if no need to tweak Gamma or Minimum Force
+<li>CUSTOM EFFECT <i>output loaded wheel slips</i> haptic signals:<br>
  - <i>ProxyGS</i> <code>gate*</code> <i>proxyL</i> modulates amplitude;<br>
- - <i>noisy</i> modulates tire squeal-&gt;shudder frequency.<br>
+ - <i>noisy</i> modulates tire squeal-&gt;moan-&gt;judder frequency.<br>
 </ul>
 <details><summary><b>Adjustments</b></summary>
 All but the last are properties, which are constrained by SimHub to be >= 0 and <= 100<ul>
@@ -156,6 +165,24 @@ All but the last are properties, which are constrained by SimHub to be >= 0 and 
 <li>CUSTOM EFFECT <i>proxyL</i> <code>Gamma Factor, Input Gain</code> control how soon max amplitude occurs
 <li>WHEELS SLIP <i>ProxyS</i> <code>Threshold, Input Gain</code><br> control how much slip to ignore and how much gain to apply to slip telemetry
 <li>CUSTOM EFFECT <i>ProxyGS: slip / accel</i> - perhaps <code>Gamma Factor</code>?
+<li>CUSTOM EFFECT <i>frequency limits</i><br>
+    - <code>Front left</code> is low frequency limit;<br>
+    - <code>Front right</code> is high frequency limit/10<br>
+    - <code>Rear left</code> calculates <i>ProxySG</i> rescaling factor from <code>Front left, right</code>.
+	<pre>out = low + high*noisy/10
+
+// SG is 0 for max slips and 100 for min
+// noise is 1/3 of frequency
+noisy = factor*(rand(SG/3) + SG)
+
+// if SG==0, then out = low
+
+// solve for high, when SG==100
+out = high*10 = low + 0.1*high*noisy
+noisy = factor*4*100/3	// factor*(rand(100/3) + 100)
+high*10 = low + high*factor*4*10/3
+(high*10 - low)/high = factor*40/3
+factor = 3*(high*10 - low)/(high*40) = 0.075*(10*high - low)/high</pre>
 <li>CUSTOM EFFECT <i>noisy: frequencies</i> <code>Gamma Factor, Minimum Force</code><br>
     NCalc formulae may need tweaking; <code>Minimum Force</code> controls minimum haptic frequency.<br>
     Lower <code>Gamma</code> reduces frequencies for more slip and haptic sensing.
