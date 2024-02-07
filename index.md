@@ -21,7 +21,6 @@
       - SimHub *directly* supports *real* Arduinos,  
         but can drive *any* COM port by **SimHub Custom Serial devices**  
         Some ESP32 / STM32 may be programmed to appear as Arduino USB COM ports
-- SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
 
   - **Arduino IDE Alternatives**
     - There are [*many*](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html).
@@ -59,11 +58,13 @@
  &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
 
 ## [Sim driving](pedals/)
-- [TH8A](pedals/#TH8A) Thrustmaster shifter mods
 - Logitech [G29 pedal mods](pedals/#pedals)
   - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID/)
   - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
   - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
+- [ShakeSeat](pedals/#shakeseat)  
+- SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
+- [TH8A](pedals/#TH8A) Thrustmaster shifter mods
 - [wheels for GT racing in VR](pedals/steering.htm)  
 
 ## [SimHub](SimHub/) sim driving telemetry processing
@@ -111,7 +112,6 @@
 - [Vim and X-Mouse](VimTXmouse)
 - Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](Windows/NVMe/)  
-
 
 ---
 
