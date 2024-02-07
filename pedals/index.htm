@@ -405,7 +405,11 @@ MASO quick releases <i>seemed</i> OK;  Sim Racing Garage liked one adapted for T
 SingleRacer made a video for 
 <a href="https://www.youtube.com/watch?v=PyX-IdYco4s">taming G29 with FFBclip, Wheel Check and LUT generator</a></details>
 
-<dt><br><b>Pedals</b>
+<dt><br><font color=#007700><b>hand controllers</b></font>
+<dd>Hand-On Throttle-And-Stick (<a href=../XR/joy.htm><b>HOTAS</b></a>) in SteamVR
+<dd>Mouse intercepted for SimHub (<a href-"">SHmouse</a>
+
+<dt><br><b>pedals</b>
 <dd><details><summary><font color=#007700><b>G29 pedal mods</b></font></summary>
 <a name=pedals>
 <h4> Problems</h4></a>
@@ -499,10 +503,6 @@ is <a href="https://www.racedepartment.com/threads/accuforce-mounting-help.17173
 
 &nbsp <a href=zombie.htm><font color=#000077><b>zombie pedal</b></font></a>
 
-
-<dt><br><font color=#007700><b>hand controllers</b></font>
-<dd>Hand-On Throttle-And-Stick (<a href=../XR/joy.htm><b>HOTAS</b></a>) in SteamVR
-<dd>Mouse intercepted for SimHub (<a href-"">SHmouse</a>
 
 <dt><br><font color=#007700><b>shifters</b></font>
 <dd><details><summary><b>Thrustmaster TH8A shifter mods</b></summary>
@@ -667,72 +667,18 @@ Here is the <a href="../Arduino/SimHubCustomSerial">SimHub Custom serial device 
 Here is the <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds.txt">SimHub Custom serial device profile</a>.
 </ul></details></ul></ul>
 
-<dd><font color=#007700><b>tactile transducers AKA exciters or shakers</b></font><ul>
+<dd><font color=#007700><b>haptic transducers AKA exciters or shakers</b></font><ul>
 <li><a href="ShakeIt/10cmShaker/">eBay "super pucks" AKA Low Frequency Bass Speaker Transducer 3.75"</a>
-<li><details><summary>
 <a name=SRS>
-<b>SRS ShakeSeat</b></a> &nbsp &nbsp <a href="#pad">padding</a></summary>
-<a name=shakeseat>Home sim driving rigs</a> cannot realistically simulate cornering and braking G's;<br>
-better to employ <a href="haptic.htm">more cost-effective haptic feedbacks</a>.<br>
-Niels Heusinkveld <a href="https://www.youtube.com/watch?v=ebZS1b4viYk?t=115s">agrees (1:55:/11:44)</a><br>
-When cornering limits are exceeded, G29 wheel seems to go into 'slow motion',<br> making spins unrecoverable.<br>
-Assetto Corsa physics software overwhelming Gateway i5 was originally suspected,<br>
-but it still happens with Aurora i7, so perhaps G29 is  being overwhelmed by too much I/O.<br>
-Perhaps diverting appropriate feedback from G29 to other haptics would help,<br>
-leaving only those that actually help steer..<br>
-<br>
-
-Many sim racers use sim racing chassis, with actuators at 4 corners;<br>
-<a href="https://www.slip-angle.com/new-page-1">Slip-Angle</a> has IMO a good isolation system for extruded aluminum chassis.<br>
-Sim Racing Studio's
-<a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">ShakeKit</a>,
-comprised of <a href="https://www.simracingstudio.com/product-page/srs-license">software</a>, USB soundcard, amplifiers,<br>
-and 4 <a href="https://www.amazon.com/dp/B0045W10VW">Dayton bass shaker pucks</a> in a thinly padded seat cushion.<br>
-That <a href="https://www.simracingstudio.com/product-page/srs-shakeseat">ShakeSeat cushion</a> is available separately for about half the cost.<br>
-<a href="http://simracinggarage.com/sim-racing-studio-shakekit-review">Barry Rowland</a> considers the ShakeKit: &nbsp
-"Probably the easiest way for you to get<br> a proper feeling transducer solution deployed on your Sim Racing setup."<br>
-<table style="width:700px"><tr><td align=center>
-<a href="https://www.youtube.com/watch?v=bbsFZs-hLMg">Karl Gosling YouTube review</a><br>
-<table style="width:200px">
-<caption><a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">ShakeSeat</a> GX16-8p wiring</caption>
-<tr><th>polarity </th><th>left   </th><th>right   </th></tr>
-<tr><td>pos front</td><td>2 black</td><td>1 red   </td></tr>
-<tr><td>neg front</td><td>6 blue </td><td>4 green </td></tr>
-<tr><td>pos rear </td><td>5 white</td><td>7 orange</td></tr>
-<tr><td>neg rear </td><td>8 tan  </td><td>3 yellow</td></tr>
-</table></td><td>
-<img align=center width=360 src="https://static.wixstatic.com/media/092827_f5c3483fde264599adc2122ee3c131df~mv2.jpg">
-</td></tr></table>
-Debugged the above and wired a matching bulkhead connector via 6 ft zip cord<br>
-to mismatched  amplifiers, one with an FM tuner,<br>
-so fed an FM station to the rear ShakeSeat puck pair.<br>
-Sound is surprisingly intelligible and the feel is at least not unpleasant.<br>
-Left and right are easily distinguished,<br>
-but blend nicely when fed equal amounts of monaural signal,<br>
-so left rear vs right rear vs both rear should be useful cues.<br>
-
-<a name=pad><h4>[dis]comfort</h4></a>
-As a frequent bike rider, my butt is not particularly tender,<br>
-but sitting on four hard pucks for hours is unpleasant,<br>
-and Sim Racing Studio's soft foam does little to spread pressure.<br>
-From available 1/2" INTERLOCKING EVA FOAM MATS:
-<img align=center width=320 src="https://i5.walmartimages.com/asr/dbd9aabc-b658-4264-8006-0af39ec4d544_1.094348d66aacf28d6836b01e75bb7f27.jpeg"><br clear=all>
-<br>
-one was trimmed one to about 17x17 inches and marked using a bowl<br> for disc removal at puck locations:<br>
-<img src="image/EVAshakeseat.jpg"><br clear=all>
-<br>
-After a hundred or so hours of moderately intense sitting,<br>
-the EVA foam-supplemented ShakeSeat looks like this:<br>
-<img src="image/SRS_EVA.jpg"></details>
-
-<li><a href=PuckSeat.htm>4 years later:&nbsp ShakeSeat cushion -&gt <b>PuckSeat</b></a> modifications
+<li><a href=PuckSeat.htm#shakeseat><b>SRS ShakeSeat</b></a> &nbsp &nbsp <a href="PuckSeat.htm#pad">padding</a>
+<li><i>4 years later</i>:&nbsp <a href=PuckSeat.htm>ShakeSeat cushion -&gt <b>PuckSeat</b></a> modifications
 <li><details> <summary> <b><a href="https://www.simhubdash.com/download-2/">SimHub</a> ShakeIt Bass Shakers</b> </summary>
 <a name=ShakeIt>(confusingly,</a>
 one less K than <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">SRS product</a>) is/was free software,<br>
 since integrated into <a href="https://www.simhubdash.com/">SimHub</a>, and somewhat
 comparable to <a href="https://www.simracingstudio.com/download">SRS' licensed app</a>.<br>
 Without "Bass Shakers", "ShakeIt" is about rumble motors.<br>
-Based on game telemetry, SimHub ShakeIt Bass Shakers generates audio signals<br> which are amplified to power tactile pucks, exciters and shakers.<br>
+Based on game telemetry, SimHub ShakeIt Bass Shakers generates audio signals<br> which are amplified to power haptic pucks, exciters and shakers.<br>
 A SimHub license enables more support..<br>
 SimHub ShakeIt used to be <a href="https://www.racedepartment.com/downloads/shakeit-diy-rumble-feedback-for-assettocorsa-codmasters-pcars-rf1-rf2-iracing.13563/updates">distributed and supported from RaceDepartment</a>, but no more..<br>
 Downloaded SimHub from <a href="http://www.simhubdash.com">http://www.simhubdash.com/</a>
@@ -771,7 +717,7 @@ Every effect has various controls to manipulate the output: amplitude, frequency
 Both amplitude and frequency can be changed based on the incoming telemetry.<br>
 Sadly, amplitude cannot be changed independently of frequency, e.g. wheel load vs slip.<br>
 This motivates a <a href="../MIDI/#plugin">SimHub MIDI plugin</a> to send MIDI based on<br>
- e.g. wheel load to change amplitude of SimHub-generated wheel slip tactile effect.<br>
+ e.g. wheel load to change amplitude of SimHub-generated wheel slip haptic effect.<br>
 Effects can be configured as mono, divided front-rear, left-right, or 4-corners.<br>
 <img width=640 src="https://www.racedepartment.com/attachments/1593030117522-png.383988/"><br clear=all>
 <ul>
@@ -806,14 +752,14 @@ Nicolas, SimHub
 </pre>
 <li><b>isolation:</b><br>
  &nbsp; When tactile transducers are NOT directly stimulating a sim racer,<br>
- &nbsp; then energy is unavoidably wasted shaking whatever that transducer is attached to.<br>
- &nbsp; So much as possible, that attached mass should be minimized.<br>
- &nbsp; That will typically require isolating shaken masses from others,<br>
- &nbsp; typically using underdamped springs, which may be simple elastomer bushings<br>
- &nbsp; or more elaborate coil spring and elastomer damper assemblies, e.g.:<br>
+ &nbsp; then energy is unavoidably wasted on whatever that transducer is attached.<br>
+ &nbsp; So much as possible, such mass should be minimized.<br>
+ &nbsp; That typically involves isolating shaken masses from others,<br>
+ &nbsp; ideally using underdamped springs, which may be simple elastomer bushings<br>
+ &nbsp; or more elaborate spring and damper assemblies, e.g.:<br>
  &nbsp; <a href="https://simtag.shop/gb/accueil/482-racebass-isolators.html"><img src="image/racebass-isolators.jpg"></a><br clear=all>
- &nbsp; ... but in instances where isolated mass (e.g. seat) must also resist forces,<br>
- &nbsp; then some suspension will be wanted to resist those forces while isolating tactile energy.
+ &nbsp; ... but in instances where isolated mass (e.g. seat) must also resist forces in some direction,<br>
+ &nbsp; then e.g. suspension arms are wanted to resist those forces while isolating tactile energy in other directions.
 </ul></details>
 
 for ShakeSeat:&nbsp <details><summary><b>G-force modulated 4 corner tire slip</b></summary>
@@ -826,7 +772,7 @@ Without a harness to keep one's back contacting them,<br>
 back transducers in <a href="https://www.simracingstudio.com/product-page/srs-shakekit-plus-includes-srs-license-for-bass-shaker">ShakeKit Plus</a>
 seem of debatable benefit.<br>
 <br>
-Already using SimHub, having unused motherboard 7.1 sound<br>
+Already using SimHub with available motherboard 7.1 sound<br>
 and obsolete Denon surround receiver,<br>
  a ShakeSeat pad was ordered because:<br>
 * <a href="https://www.youtube.com/watch?v=mlJfIFhdk1c&t=306s">Sim Racing Garage review</a><br>
@@ -1012,10 +958,10 @@ SimHub <a href="#ShakeIt">ShakeIt Bass Shakers</a> is a better choice for me..<b
 </details>
 
 <dd> <details><summary><b>Windows 10/11 sound</b></summary>
-<a name=R7>My Aurora R7</a> has unused 7.1 channel audio on the motherboard.<br>
-To configure 5.1 surround:<br>
+<a name=R7>My Aurora R7</a> has 7.1 channel audio available on the motherboard.<br>
+To configure discrete surround channels:<br>
 Press Windows key + R to open a Run window and type <code>mmsys.cpl</code><br>
-The Realtek Speakers / Headphone must be set to 5.1,<br>
+The Realtek Speakers / Headphone must be set to 7.1 or 5.1,<br>
 NOT Quadraphonic, which matrixes from stereo.<br>
 Denon POA-8300 failed to drive front pucks from speakers A, but B works.</details>
 
@@ -1077,6 +1023,9 @@ Combined with Nvidia graphics drivers, unambiguously buggy behaviors can occur:<
 These were eventually addressed for GTX 1080Ti by reverting to Nvidia 456.55 driver.<br>
 <a name=DDU><h4>Nvidia graphics driver crashes</h4></a>
 Many recommend <a href="RunDDU.htm">removing all traces of Nvidia driver installation, using DDU</a></details>
+
+<dd><a href="../XR/VR1.html"><b>Somnium VR1</b></a>
+
 <dt><br><font color=#007700><b>other software</b></font><ul>
 <li><details><summary><b>BigScreen</b></summary>
 <a name=Bigscreen>Free</a>
@@ -1099,7 +1048,8 @@ to display, in a web browser tab, enter:&nbsp
 <code>steam://open/console</code><br>
 .. then, in that console window, enter:&nbsp <code>user_info</code></ul>
 
-<dt><br><a href="steering.htm"><font color=#007700><b>wheels for GT racing in VR</b></font></a>
+<dt><br><font color=#007700><b>wheels</b></font>
+<dd><a href="steering.htm#F=PRO"><b>Cube Controls F-PRO</b></a>
 <dd><details><summary><b> Logitech G29 </b></summary>
 <a name=G29>Refurbished Logitech G29 <i>arrived April 2018</i><br></a>
 seemingly unblemished with original contents and dividers in unoriginal plain brown box.<br>
@@ -1208,6 +1158,7 @@ Two G29 wheel issues:<br>
 2) weird feedback, occasional cogging, arbitrary excessive resistance,<br>
 &nbsp goes 'molasses' and unresponsive when cornering limits exceeded.</details>
 
+<dd><a href="steering.htm">others for GT racing in VR</a>
 <dd><a href="#Q1R">Q1R steering wheel quick release</a>
 
 <dt><br><details><summary><font color=#007700><b>wheelstand</b></font></summary>
