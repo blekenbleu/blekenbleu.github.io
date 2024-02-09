@@ -1,0 +1,40 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../../static/my.css'>
+
+<title>ShakeIt formulae</title>
+</head><body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<font size=-1><a href="../shakeit.htm"><i>back</i></a></font><br>
+<h4>JavaScript</h4>
+
+<a name=iirH><h4>iirH:&nbsp high-pass IIR</h4>
+<pre><b>Run once javascript code</b>
+root["low"] = 38;	// whatever initial value should be
+const tc = 3;		// higher values increase sensitivity
+function iirH(i) {
+	i -= root["low"]; 
+	root["low"] += i / tc;
+	return i;
+}
+
+<b>Javascript</b>
+// shifts and driven wheel longitudinal slips
+return 10 * Math.abs(iirH(3000 * $prop('SpeedMph') / (1 + $prop('Rpms'))));
+</pre>
+<a name=iirL><h4>iirL:&nbsp low-pass IIR</h4>
+<pre><b>Run once javascript code</b>
+root["low"] = 38;	// whatever initial value should be
+const tc = 3;		// higher values decrease sensitivity
+function iirL(i) {
+	root["low"] += (i - root["low"]) / tc;
+	return root["low"];
+}
+
+<b>Javascript</b>
+</pre>
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
