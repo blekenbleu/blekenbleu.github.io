@@ -3,7 +3,7 @@
 
 <title>ShakeIt profiles</title>
 <style>
-table.my_table td { width:870px; }
+table.my_table td { width:880px; }
 </style>
 </head>
 
@@ -149,13 +149,13 @@ All but the last are properties, which are constrained by SimHub to be >= 0 and 
 <li><i>ProxyS</i> - conditions wheelslip for <i>ProxySG</i>
 <li>CUSTOM EFFECT <i>noisy</i><ul>
 <li><code>SG()</code>: converts <i>ProxyS</i> to <code>slip/grip</code> <i>ratio</i>, instead of <code>slip</code><br>
-<li><code>function SG(s, g) { return Math.abs(.5 * s / Math.max(.1, Math.abs(g))) - 5 };</code><br>
+<li><code>function SG(s,g) { return 100-Math.min(100,Math.abs(.5*s/Math.max(.1,Math.abs(g)))) };</code><br>
  - for <i>output</i> <code>gate</code> and <i>noisy</i> <code>noise()</code>
 <li><code>noise()</code>: converts <code>SG()</code> output to frequency control range 0 to 100
-<li><code>function noise(sg) { return f * (Math.random() * (1 + (100 - sg) / n) + 100 - sg) };</code></ul>
+<li><code>function noise(sg) { return f * (sg + Math.random() * (1 + sg / n)) };</code></ul>
 
 <li>CUSTOM EFFECT <i>output loaded wheel slips</i> haptic signals:<br>
- - <i>proxyL</i> wheel load calculations now integrated here<br>
+ - <i>proxyL</i> wheel load calculations are now integrated here<br>
  - <code>gate(SG) * </code> <i>proxyL</i> modulates amplitude:<br>
  &nbsp <img width=80% src=image/figure8_loads.png><br>
   &nbsp  &nbsp <i>estimated wheel load examples on
