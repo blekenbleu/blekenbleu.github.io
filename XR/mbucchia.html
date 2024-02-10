@@ -1,7 +1,7 @@
 <html><head>
 <link rel='stylesheet' type='text/css' href='../../static/my.css'>
 
-<title>OpenKneeboard, OpenXR &amp OpenVR</title>
+<title>SteamVR, OpenXR &amp OpenVR</title>
 </head>
 
 <body>
@@ -10,7 +10,9 @@
 <font size=-1><a href="./"><i>back</i></a></font><br>
 
 <font size=+1>
-<h2>OpenKneeboard, OpenXR &amp OpenVR</h2> <dl>
+<h2>SteamVR, OpenXR &amp OpenVR</h2>
+
+<dl>
 <dt><details><summary><b>Foveated Rendering</b></summary>
 	<a name=FR><dd><ul> <li></a><a href="https://github.com/mbucchia/Quad-Views-Foveated"><b>Eye-TrackedFoveated Rendering via Quad Views</b></a><br>
 	for <b>OpenXR</b> games, e.g. DCS and Pavlov VR
@@ -20,7 +22,7 @@
 	Dynamic Foveated Rendering currently for<br> HP Reverb G2 <i>Omnicept Edition</i>, Quest Pro, Varjo;<br>
 	Fixed Foveated Rendering for most others.  </ul>
 
-	<dd><b>Fixed Foveated Rendering for WMR HMDs in Assetto Corsa</b> <ul compact>
+	<dd><b>Fixed Foveated Rendering for WMR HMDs in Assetto Corsa</b> <ul>
 	<li>For <code>Glare</code> setting under
 	 <a href="https://www.drifted.com/assetto-corsa-content-manager/#presets"><b>Video settings</b></a>
 	 is <i>Medium</i> or lower,<br>
@@ -30,20 +32,27 @@
 	<li><a href="https://www.racedepartment.com/threads/single-pass-stereo.255509/#post-3676336">Content Manager interactions with OpenXR toolkit</a>
 	</ul></details>
 
-<dt><details><summary><b>OpenXR vs OpenVR</b></summary>
-	<dd><a href="https://partner.steamgames.com/doc/features/steamvr/openvr">OpenVR</a>:&nbsp
- 	required for controllers;&nbsp
- 	&nbsp <a href="https://store.steampowered.com/app/955610/OpenVR_Benchmark/">OpenVR Benchmark</a>
+<dt><a href="https://steamcommunity.com/app/1012790/discussions/0/3824162050996037250/">Graphics Settings Guide</a><dd>from Into the Radius VR
 
-	<dd><a href="https://www.khronos.org/files/openxr-10-reference-guide.pdf">OpenXR</a>:&nbsp
- 	supports <a href=#FR>Foveated Rendering</a> for multiple headsets
-</details>
+<dt>image sharpening (impacts performance)
+<dd><a href="https://www.reddit.com/r/hoggit/comments/11omwxn/for_openxr_reverb_g2_which_should_i_use_nis_fsr/">CAS
+	 (Contrast Adaptive Sharpening) vs NIS (Nvidia Image Scaling)</a>
 
-<dt><details><summary><a href="https://mbucchia.github.io/OpenXR-Toolkit/#opencomposite"><b>OpenComposite</b></a></summary>
-<a name=OC>
-<dd>Play SteamVR games with OpenXR instead of OpenVR<br></a>
-<img width=850 src="ecosystem.png"><br clear=all>
-<a href="https://gitlab.com/znixian/OpenOVR">on GitLab</a>:&nbsp
+<dt><details><summary>Microsoft Store <a href="https://apps.microsoft.com/detail/openxr-tools-for-windows-mixed-reality/9N5CVVL23QBT?hl=en-US&gl=US">OpenXR Tools for Windows Mixed Reality</a></summary>
+<dd><img width=500 src="OpenXR_ToolKitWMR.png"></details>
+
+<a name=DLSS><dt></a><a href="https://www.nvidia.com/en-us/geforce/technologies/dlss/">Nvidia Deep Learning SuperSampling (DLSS)</a>
+<dd>based on Temporal (instead of MultiSample) AntiAliasing.
+
+<a name=OK>
+<dt></a><a href="https://openkneeboard.com/"><b>OpenKneeboard</b></a> supports one or 2 overlays for OpenXR.
+<dd><a href="https://github.com/mbucchia/VirtualDesktop-OpenXR">Virtual Desktop OpenXR</a> (VDXR) also works for Oculus, not WMR.<br>
+OpenKneeboard's <a href="https://fredemmott.com/blog/2022/05/29/vr-software-components.html">Fred Emmott</a> diagrammed SteamVR flow:<br>
+<img width=640 src="https://fredemmott.com/assets/images/2022-05-vr/overview.svg">
+
+<dt><br><a href="https://mbucchia.github.io/OpenXR-Toolkit/#opencomposite"><b>OpenComposite</b></a><br>
+<dd><details><summary>Play SteamVR games with OpenXR instead of OpenVR</summary>
+<a href="https://gitlab.com/znixian/OpenOVR">on GitLab</a>:<a name=OC>&nbsp</a>
 download from <a href="https://ci.appveyor.com/project/ZNix/openovr">AppVeyor</a> &gt Platform: x64 &gt Artifacts &gt OpenComposite.zip<br>
 Replace <code>openvr_api.dll</code> in the game:
 <pre>$ find . -name openvr_api.dll -print
@@ -76,13 +85,30 @@ Make sure to <a href="https://www.racedepartment.com/threads/steamvr-constantly-
 disabling hardware-accelerated GPU scheduling (HAGS).
 </details>
 
+<dt><b>OpenXR vs OpenVR</b>
+	<dd><a href="https://partner.steamgames.com/doc/features/steamvr/openvr">OpenVR</a>:&nbsp
+ 	required for controllers;&nbsp
+ 	&nbsp <a href="https://store.steampowered.com/app/955610/OpenVR_Benchmark/">OpenVR Benchmark</a>
+
+	<dd><a href="https://www.khronos.org/files/openxr-10-reference-guide.pdf">OpenXR</a>:&nbsp
+ 	supports <a href=#FR>Foveated Rendering</a> for multiple headsets
+
+<dt><a href="https://mbucchia.github.io/OpenXR-Toolkit/"><b>OpenXR ToolKit</b></a> <a href="https://github.com/mbucchia/OpenXR-Toolkit">on GitHub</a>
+<dd>tweak OpenXR features and settings on e.g. DCS and MSFS 2020<br>
+via <a href="#OC">OpenComposite</a>, works with e.g.
+<a href="https://mbucchia.github.io/OpenXR-Toolkit/opencomposite#game-compatibility">Assetto Corsa, Project Cars 2</a>
+
+<dt><a href="https://learn.microsoft.com/en-us/windows/mixed-reality/develop/native/openxr-getting-started#getting-started-with-openxr-for-windows-mixed-reality-headsets">
+<b>OpenXR for Windows Mixed Reality headsets</b></a>
+<dd><img width=650 src="ecosystem.png"><br clear=all>
+ - Automagically installed for WMR on Windows >= 20H2
+<dd><a href="https://forums.flightsimulator.com/t/openxr-tools-for-windows-mixed-reality-update-in-the-store-4-14/586988?page=3">14 Apr 2023 settings</a> &nbsp experiment with HAGS
+
 <dt><b>SteamVR</b>
 <dd><details><summary>with OpenComposite, supports both OpenVR and OpenXR</summary>
 <a name=SVR>OpenVR ToolKit</a> works with OpenVR,<br> but
 <a href="https://forums.flightsimulator.com/t/vr-mode-disables-ovr-toolkit-and-steamvr-unable-to-show-twitch-chat-when-vr-mode-activated/572016">reportedly</a>
  works with e.g. Reverb G2, which now uses OpenXR..?<br>
-<a href="https://fredemmott.com/blog/2022/05/29/vr-software-components.html">Fred Emmott</a> owns <a href="https://github.com/OpenKneeboard/OpenKneeboard">OpenKneeboard</a>, diagrammed SteamVR flow:<br>
-<img width=640 src="https://fredemmott.com/assets/images/2022-05-vr/overview.svg"><ul>
 WMR headsets are driven by <code>Windows Holographic API -&gt WMR runtime</code>,<br>
  but that API may be driven:<ul>
 <li>directly from games or game engines (but none of interest)<br>
@@ -97,13 +123,8 @@ This last is most performant for games of interest.
 <iframe width="800" height="450" src="https://www.youtube.com/embed/fHKKHImI7Dg"></iframe>
 </details>
 
-<dt><a href="https://mbucchia.github.io/OpenXR-Toolkit/"><b>OpenXR ToolKit</b></a> <a href="https://github.com/mbucchia/OpenXR-Toolkit">on GitHub</a>
-<dd>tweak OpenXR features and settings on e.g. DCS and MSFS 2020<br>
-via <a href="#OC">OpenComposite</a>, works with e.g.
-<a href="https://mbucchia.github.io/OpenXR-Toolkit/opencomposite#game-compatibility">Assetto Corsa, Project Cars 2</a>
-
-<dt><details><summary>Microsoft Store <a href="https://apps.microsoft.com/detail/openxr-tools-for-windows-mixed-reality/9N5CVVL23QBT?hl=en-US&gl=US">OpenXR Tools for Windows Mixed Reality</a></summary>
-<dd><img width=500 src="OpenXR_ToolKitWMR.png"></details>
+<dt><a href="https://github.com/mbucchia/WMR-Passthrough">Windows Mixed Reality Passthrough for OpenXR</a>
+<dd>Works with HP Reverb (not G2) cameras and e.g. <a href="https://stereokit.net/">StereoKit</a> apps.
 
 <dt>Win 11 performance hacks
 <dd><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/using-microsoft-edge#monitor-and-input-handling-issues">virtual monitor pre-allocation</a>,
@@ -112,25 +133,6 @@ via <a href="#OC">OpenComposite</a>, works with e.g.
 <a href="https://forums.flightsimulator.com/t/dont-set-location-of-openxr-runtime-with-the-registry-use-openxr-loader-specs-instead/323323">Use OpenXR Loader Specs instead of registry key</a> <br>
 Settings &gt System &gt Display &gt Graphics Default settings<br> <code>Change default graphics settings</code> &nbsp (HAGS)
 
-<dt><a href="https://learn.microsoft.com/en-us/windows/mixed-reality/develop/native/openxr-getting-started#getting-started-with-openxr-for-windows-mixed-reality-headsets">
-<b>OpenXR for Windows Mixed Reality headsets</b></a>
-<li>Automagically installed for WMR on Windows >= 20H2
-<dd><a href="https://forums.flightsimulator.com/t/openxr-tools-for-windows-mixed-reality-update-in-the-store-4-14/586988?page=3">14 Apr 2023 settings</a> &nbsp experiment with HAGS
-
-<dt><a href="https://openkneeboard.com/"><b>OpenKneeboard</b></a> supports one or 2 overlays for OpenXR.
-<dd><a href="https://github.com/mbucchia/VirtualDesktop-OpenXR">Virtual Desktop OpenXR</a> (VDXR) also works for Oculus, not WMR.
-
-<dt><a href="https://github.com/mbucchia/WMR-Passthrough">Windows Mixed Reality Passthrough for OpenXR</a>
-<dd>Works with HP Reverb (not G2) cameras and e.g. <a href="https://stereokit.net/">StereoKit</a> apps.
-
-<a name=DLSS><dt></a><a href="https://www.nvidia.com/en-us/geforce/technologies/dlss/">Nvidia Deep Learning SuperSampling (DLSS)</a>
-<dd>based on Temporal (instead of MultiSample) AntiAliasing.
-
-<dt><a href="https://steamcommunity.com/app/1012790/discussions/0/3824162050996037250/">Graphics Settings Guide</a><dd>from Into the Radius VR
-
-<dt>image sharpening (impacts performance)
-<dd><a href="https://www.reddit.com/r/hoggit/comments/11omwxn/for_openxr_reverb_g2_which_should_i_use_nis_fsr/">CAS
-	 (Contrast Adaptive Sharpening) vs NIS (Nvidia Image Scaling)</a>
 </dl>
 
 </td></tr><tr><td align=center>
