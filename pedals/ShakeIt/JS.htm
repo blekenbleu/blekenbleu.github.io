@@ -23,6 +23,7 @@ function iirH(i) {
 // shifts and driven wheel longitudinal slips
 return 10 * Math.abs(iirH(3000 * $prop('SpeedMph') / (1 + $prop('Rpms'))));
 </pre>
+
 <a name=iirL><h4>iirL:&nbsp low-pass IIR</h4>
 <pre><b>Run once javascript code</b>
 root["low"] = 38;	// whatever initial value should be
@@ -34,6 +35,52 @@ function iirL(i) {
 
 <b>Javascript</b>
 </pre>
+
+<a name=LS><h4>Loaded wheel slip</h4>
+<pre><b>Run once javascript code</b>
+<a name=AA>function AbsAcc(a) { return 100 * Math.abs(.05 * a)**0.3 }</a>
+function SG(s, g) { return Math.abs(.5 * s / Math.max(.1, Math.abs(g))) - 5 };
+function gate(s, g) { return 0.01 * Math.min(100, 35 * SG(s,g)) }
+var s,d,L;
+
+<b>Javascript</b>
+// front left load
+<a name=PL>// proxyL</a>
+d = (0 > (s = $prop('AccelerationSway'))) ? 4 : -4;
+L = 25 + AbsAcc(s) / d  // 0-50% left-right distribution
+d = (0 < (s = $prop('AccelerationSurge'))) ? 100 : -100
+// if both accel are 0, then no load shift and each corner gets 25%
+L *= (1 + AbsAcc(s) / d); // 0-100% fore-aft distribution
+s = $prop('ShakeITBSV3Plugin.Export.proxyS.FrontLeft');
+return L * gate(s, $prop('GlobalAccelerationG'));
+</pre>
+
+<a name=n><h4>noise</h4>
+<pre><b>Run once javascript code</b>
+const n = 3;		// fraction of range for random()
+const f = n / (1 + n);
+function SG(s, g) { return 100 - Math.min(100, Math.abs(.5*s/Math.max(.1,Math.abs(g)))) };
+function noise(sg) { return f * (sg + Math.random() * (1 + sg / n)) };
+var s;
+
+<b>Javascript</b>
+s = $prop('ShakeITBSV3Plugin.Export.proxyS.FrontLeft');
+//return SG(s, $prop('GlobalAccelerationG'))
+//return noise(0)
+return noise(SG(s, $prop('GlobalAccelerationG')));
+</pre>
+
+<a name=TH><h4>Tire haptic</h4>
+<pre><b>Run once javascript code</b>  
+const low = 25;
+const high = 1000;
+const f = .01 * (high - low);
+
+<b>Javascript</b>
+return low + f * $prop('ShakeITBSV3Plugin.Export.noisy.FrontLeft')
+</pre>
+
+
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table></div>
