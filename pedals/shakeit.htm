@@ -84,23 +84,44 @@ generating powerfule haptic stimulae can overheat transducers; ask me how I know
 binary (thresholded <code>Brake</code> property);<br>
 should probably be proportional (piece-wise linear).
 
-<dt><br><b>Empty</b> 0 effects
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Assetto%20Corsa%20-%20Loaded_WheelSlip9.1.20.siprofile"><b>Assetto Corsa - Loaded_WheelSlip9.1.20</b></a>
+  discussed <a href=https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/post-3739847>here</a><br>
+<dd>SimHub 9.1.20 added <code>Forced Frequencies</code> to CUSTOM EFFECT, and AC has <code>GameRawData.Physics.WheelLoad0x</code> telemetry properties,<br>
+    allowing this a simple low overhead profile for loaded wheel slip simulating tire squeal<br> to shudder based on increasing slip, with amplitude based on tire load (no load = no tactile)
+<dt><br> <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile.txt><b>SimHub ShakeIt Bass Shakers custom 4 corner tire slip</b></a>
+<dd> <i>updated to</i> <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%204-channel%20wheelslip%20-%20CUSTOM%20Forced%20Frequency.siprofile><code>Forced Frequencies</code></a>
+   AKA <a href=https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/>GmodulatedWheelSlip.siprofile.txt</a>
+   and <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile>the orginal</a>, as described <a href=./#Simshakeseat>here</a>.
+<dt><br><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/sierses_4-channel_wheelslip.siprofile><b>sierses_4-channel_wheelslip.siprofile</b></a>
+<dd> - <i>updated to</i>: <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%204-channel%20wheelslip%20mix%20-%20CUSTOM%20Forced%20Frequency.siprofile>Forced Frequency squeal-shudder</a>
+<ul><li> based on <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/NewLoaded4-chanWheelslipUndersteer.siprofile>NewLoaded4-chanWheelslipUndersteer.siprofile</a>
+<li>wrapped effects in an embedded GroupContainer<ul>
+    <li>custom effects for property AbsAcc from abs AccelerationSway, Surge
+    <li>custom effects for property proxyL, based on Abs.Acc
+    <li>proxyS properties exported from Wheels Slip effect
+    <li>custom effect generates proxyL * proxyS / 100
+    <li>custom effect for under, oversteer properties (and outputs) from proxyS front-rear differences * AbsAcc
+    <li>custom effect generates mixes of oversteer and loaded slips</ul></ul>
+<dt><br><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/NewLoaded4-chanWheelslipUndersteer.siprofile><b>NewLoaded4-chanWheelslipUndersteer.siprofile</b></a>
+<dd>    same effects as above<ul>
+<li> <i>14 Aug 2021</i> accelerations applied to slip differences for under/oversteer<br> were all wrong
+<li> <b>to do</b>: replace AbsAcc custom effect with G-Forces effects</ul>
 
 <dt><br><b>Aug14Loaded4-chanWheelslipUndersteer</b> 6 effects
 <dd>also derived from <a href=#rrrel>RangeyRover</a><ul compact>
 <li><a href=ShakeIt/index.htm#AA>AbsAcc</a>
 <li><a href=ShakeIt/index.htm#AAL>load from AbsAcc</a>
-<li>code>proxyS</code> from WHEELS SLIP</a>
+<li><code>proxyS</code> from WHEELS SLIP</a>
 <li><a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>
 <li><a href=ShakeIt/index.htm#GUOS>gated under, oversteer</a>
 <li><a href=ShakeIt/index.htm#mix>mix slips and oversteer</a></ul>
 <i>mix slips and oversteer</i> disabled, output <code>LoadedSlip</code>
 
-<dt><br><b>Aug19Loaded4-chanWheelslipUndersteer</b> groups 3 telemetery properties + 2 outputs
-<dd>non-output property effects group:<ul compact>
+<dt><br><b>Aug19Loaded4-chanWheelslipUndersteer</b> groups 3 telemetery effects + 2 outputs
+<dd>non-output telemetery effects group:<ul compact>
 <li><a href=ShakeIt/index.htm#AA>AbsAcc</a>,
 <li><a href=ShakeIt/index.htm#AAL>load from AbsAcc</a> 
-<li>code>proxyS</code> from WHEELS SLIP</a></ul>
+<li><code>proxyS</code> from WHEELS SLIP</a></ul>
 output effects:&nbsp <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>, &nbsp
 <a href=ShakeIt/index.htm#GUOS>gated under/oversteer</a> 
 
