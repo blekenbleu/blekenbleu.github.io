@@ -31,6 +31,7 @@ merely that 1 depends on a property unique to RR and 2 use AC-unique properties.
 That profile count was expected to drop while documenting,<br>
 with duplicates pruned and others consolidated,<br>
 since these employ less than 2 dozen usefully unique effects.<br>
+(14 Mar 2024:&nbsp now ShakeIt 52 profiles;&nbsp so much for intentions)<br>
 <br>
 A SimHub effect may generate haptic outputs, custom properties or both.<br>
 Custom haptic effects typically depend on two or more properties,<br>
@@ -56,16 +57,16 @@ which would likely want substantially different (e.g. frequency) settings.
 <a name=prof>
 <h3>Profiles</h3></a>
 Many of these are based on obsolete SimHub versions which lack many current properties.<br>
-For example, ProxyS effects will disappear.
+For example, ProxyS effects <i>should</i> disappear.
 <dl>
-<dt><br><b>Default profile</b> 17 effects
+<dt><br><b>Default profile</b> 17 effects (then, 22 as of 14 Mar 2024)
 <dd>ShakeIt plugin as initially received; only RPM was IMO interesting as provided.<br>
-I feed that to a small shaker attached to dead pedal (foot rest left of clutch).
+That feeds a small shaker attached to dead pedal (foot rest left of clutch).
 
-<dt><br><b>AC1</b> 2 effects
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/AC1.siprofile"><b>AC1</b></a> 2 effects
 <dd>prune of provided Default, leaving only WHEELS SLIPS and RPMS
 
-<a name=u4ssc><dt><br>AC-specific <b>(un)Loaded 4-Wheel Slips with Speed Curving</b> 5 effects</a>
+<a name=u4ssc><dt><br>AC-specific <b>(un)Loaded 4-Wheel Slips with Speed Curving</b> (no longer available)</a>
 <dd><font size=-2><i>Uses some proprietary Assetto Corsa properties</i><br></font>
 <a href=ShakeIt/index.htm#ACproxyL>ACproxyL</a>,<br>
 <a href=ShakeIt/index.htm#ACproxyS>ACproxyS</a>,<br>
@@ -102,12 +103,14 @@ should probably be proportional (piece-wise linear).
     <li>custom effect generates proxyL * proxyS / 100
     <li>custom effect for under, oversteer properties (and outputs) from proxyS front-rear differences * AbsAcc
     <li>custom effect generates mixes of oversteer and loaded slips</ul></ul>
+
 <dt><br><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/NewLoaded4-chanWheelslipUndersteer.siprofile><b>NewLoaded4-chanWheelslipUndersteer.siprofile</b></a>
+<dd>from <a href=#rrrel>RRRELoaded4-chanWheelslipUndersteer</a>
 <dd>    same effects as above<ul>
 <li> <i>14 Aug 2021</i> accelerations applied to slip differences for under/oversteer<br> were all wrong
 <li> <b>to do</b>: replace AbsAcc custom effect with G-Forces effects</ul>
 
-<dt><br><b>Aug14Loaded4-chanWheelslipUndersteer</b> 6 effects
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Aug14Loaded4-chanWheelslipUndersteer.siprofile"><b>Aug14Loaded4-chanWheelslipUndersteer</b></a> 6 effects
 <dd>also derived from <a href=#rrrel>RangeyRover</a><ul compact>
 <li><a href=ShakeIt/index.htm#AA>AbsAcc</a>
 <li><a href=ShakeIt/index.htm#AAL>load from AbsAcc</a>
@@ -117,20 +120,13 @@ should probably be proportional (piece-wise linear).
 <li><a href=ShakeIt/index.htm#mix>mix slips and oversteer</a></ul>
 <i>mix slips and oversteer</i> disabled, output <code>LoadedSlip</code>
 
-<dt><br><b>Aug19Loaded4-chanWheelslipUndersteer</b> groups 3 telemetery effects + 2 outputs
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Aug19Loaded4-chanWheelslipUndersteer.siprofile"><b>Aug19Loaded4-chanWheelslipUndersteer</b></a> groups 3 telemetery effects + 2 outputs
 <dd>non-output telemetery effects group:<ul compact>
 <li><a href=ShakeIt/index.htm#AA>AbsAcc</a>,
 <li><a href=ShakeIt/index.htm#AAL>load from AbsAcc</a> 
 <li><code>proxyS</code> from WHEELS SLIP</a></ul>
 output effects:&nbsp <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>, &nbsp
 <a href=ShakeIt/index.htm#GUOS>gated under/oversteer</a> 
-
-<dt><br><b>front/rear Wheel Slip experiments</b> 5 effects
-<dd><code>proxy_G</code> from <code>GameRawData.Physics.WheelLoad</code>,<br>
-<code>slip</code> from WHEELS SLIP,<br>
-<i>average vs correlated front slip</i> haptic output from <code>slip</code><br>
-<code>proxyS</code> from <code>GameRawData.Physics.WheelSlip</code>,<br>
-<i>loaded wheel slips</i> output from <code>proxy_G</code> and <code>proxyS</code>
 
 <a name=gsr>
 <dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%20gated%20speed_rpm%20shift%20.siprofile"><b>gated speed/rpm shift</b></a> 2 effects</a>
@@ -143,7 +139,7 @@ SimHub GEAR SHIFT fails to pulse for some shifts...
 ROAD IMPACTS (curiosity?)
 
 <a name=dMASS>
-<dt><br></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Automobilista%202%20-%20dMASS%20Loaded%20Slip%20-%20tweaked%20gate%2C%20Forced%20Frequency.siprofile"><b>dMASS tweaked wheelslip</b></a> &nbsp <i>3 Feb 2024</i>
+<dt><br></a><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Automobilista%202%20-%20dMASS%20Loaded%20Slip%20-%20tweaked%20gate%2C%20Forced%20Frequency.siprofile"><b>dMASS tweaked wheelslip</b></a> &nbsp <i>3 Feb 2024</i>
 <dd><i>Loaded Slip</i> group, tweaked for Automobilista 2<ul>
 <li>CUSTOM EFFECT <i>AbsAcc</i> - used in CUSTOM EFFECT <i>proxyL</i>
 <li>CUSTOM EFFECT <i>proxyL</i> - simulates load on each wheel
@@ -170,7 +166,7 @@ All but the last are properties, which are constrained by SimHub to be >= 0 and 
 </ul></ul></details>
 
 <a name=S/G>
-<dt><br></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/LoadedSlipGrip.siprofile"><b>Loaded Slip/Grip</b></a> &nbsp <i>14 Mar 2024</i>
+<dt><br></a><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/LoadedSlipGrip.siprofile"><b>Loaded Slip/Grip</b></a> &nbsp <i>14 Mar 2024</i>
 <dd><a href=ShakeIt/SG.htm><i>Discussion</i></a><br>
 Earlier profiles used <code>GlobalAccelerationG</code>, which turns out to be only surge.<br>
 This profile generates CUSTOM effect with 2D horizontal acceleration,<br> to better complement 2D <i>wslip</i>.<ul>
@@ -205,9 +201,8 @@ This profile generates CUSTOM effect with 2D horizontal acceleration,<br> to bet
 <li>CUSTOM EFFECT <i>output</i>:&nbsp increase <code>Threshold</code> to mute weak slip 
 </ul></details>
 
-
 <a name=Slip/G>
-<dt><br></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%20Loaded%20Slip_G%20-%20gated%20Frequency.siprofile"><b>Loaded Slip/G</b></a> &nbsp <i>9 Feb 2024</i>
+<dt><br></a><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%20Loaded%20Slip_G%20-%20gated%20Frequency.siprofile"><b>Loaded Slip/G</b></a> &nbsp <i>9 Feb 2024</i>
 
 &nbsp &nbsp link for <a href=tires.htm>tire haptics discussion</a><br>
 
@@ -239,7 +234,7 @@ This profile generates CUSTOM effect with 2D horizontal acceleration,<br> to bet
   &nbsp <img src=image/limit25.png><br>
 </ul></details>
 
-<dt><br><b>Loaded4-chanWheelSlipsUndersteer</b> 7 effects
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Loaded4-chanWheelslipsUndersteer.siprofile"><b>Loaded4-chanWheelSlipsUndersteer</b></a> 7 effects
 <dd>(unused) <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from Yaw, Speed</a>,<br>
 <a href=ShakeIt/index.htm#G><code>proxyG</code> from
  <code>AccelerationSurge, AccelerationSway</code></a>,<br>
@@ -249,7 +244,7 @@ This profile generates CUSTOM effect with 2D horizontal acceleration,<br> to bet
 <a href=ShakeIt/index.htm#UOS>unloaded under, oversteer from <code>proxyG</code> and <code>proxyS</code></a>,<br>
 (unused)<a href=ShakeIt/index.htm#mix>mix slips and oversteer</a>
 
-<dt><br><b>Loaded4-chanWheelslipUndersteer</b> 7 effects
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/NewLoaded4-chanWheelslipUndersteer.siprofile"><b>Loaded4-chanWheelslipUndersteer</b></a> 7 effects
 <dd><i>unused</i> <a href=ShakeIt/index.htm#YSG><code>proxy_G</code> from
 <code>OrientationYaw</code> and <code>SpeedKmh</code></a>,<br>
 <a href=ShakeIt/index.htm#AA><code>AbsAcc</code> from
@@ -262,20 +257,14 @@ This profile generates CUSTOM effect with 2D horizontal acceleration,<br> to bet
 <a href=ShakeIt/index.htm#mix><i>mix slips and oversteer</i> from
  <code>UnderOversteer</code>, <code>proxyS</code> and <code>LoadedSlip</code></a>
 
-<dt><br><b>NewLoaded4-chanWheelslipUndersteer</b> 7 effects
-<dd>from <a href=#rrrel>RRRELoaded4-chanWheelslipUndersteer</a>
-
-<dt><br><b>(un)Loaded 4-Wheel Slips</b> 4 effects
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Loaded4-WheelSlips.siprofile"><b>(un)Loaded 4-Wheel Slips</b></a> 4 effects
 <dd><a href="ShakeIt/index.htm#ACproxy_G">AC_proxy_G</a>,<br>
 <a href=ShakeIt/index.htm#ACproxyS>AC proxyS</a>,<br>
 Loaded slips by combined(<a href=ShakeIt/index.htm#GL>proxyL</a>
 and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
 <a href=ShakeIt/index.htm#GOS>Unloaded WheelSlip (trailing oversteer) from proxy_G</a>
 
-<dt><br><b>New</b> 1 effect
-<dd>vanilla RPMS to test for SimHub ACC bug
-
-<dt><br><b>portable Loaded 4-Wheel Slips group</b> 1 group w/7 effects
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/portable_Loaded4WheelSlipsgroup.siprofile"><b>portable Loaded 4-Wheel Slips group</b></a> 1 group w/7 effects
 <dd><a href=ShakeIt/index.htm#G><code>proxyG</code> from
  <code>AccelerationSurge, AccelerationSway</code></a>,<br>
 <code>proxyS</code> from WHEELS SLIP effect,<br>
@@ -286,13 +275,13 @@ and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
 <a href=ShakeIt/index.htm#LOU>Loaded over, understeer from <code>proxyLS</code>,<br>
 <a href=ShakeIt/speedshift.js>haptic output based on speed changes during shifts and clutch releases</a>
 
-<dt><br><b>RPM-modulated up/downshifts</b> 3 effects
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/ShiftRPMeffects.siprofile"><b>RPM-modulated up/downshifts</b></a> 3 effects
 <dd><a href="https://www.racedepartment.com/threads/tactile-immersion-general-discussion-hardware-software.137631/page-197#post-3357575">by request</a>
 
-<a name=rrrel><dt><br><b>RRRELoaded4-chanWheelslipUndersteer</b> 6 effects</a>
+<a name=rrrel><dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/RaceRoom%20Racing%20Experience%20-%20RRShakers.siprofile"><b>RRRELoaded4-chanWheelslipUndersteer</b></a> 6 effects</a>
 <dd>from <a href="https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/page-4#post-3427571">RangeyRover</a>
 
-<dt><br><b>speed shifts</b>
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/SpeedShiftsGrp.siprofile"><b>speed shifts</b></a>
 <dd>Tactile effect for shifts should IMO reflect shift smoothness,<br>
 which presumably corresponds in speed changes during those shifts.
 <details><summary>click for details</summary>
@@ -324,7 +313,7 @@ The low pass time constant determined to roughly minimize<br>
 differences between <code>Front right</code> and <code>Rear left</code>
 was then also applied to <code>Rear right</code>.</details>
 
-<dt><br><b>Schnirbus tweaked slip</b>
+<dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Schnirbus%20experimental%20slip.siprofile"><b>Schnirbus tweaked slip</b></a>
 <dd><i>Experimental 4-corner Wheelslip for iRacing</i> group (4 effects, 1 output),<ul compact>
 <li><code>wslip</code> from WHEELS SLIP
 <li><code>sideways</code> from SPEED WITH CURVING <i>only generate in turns</i>
