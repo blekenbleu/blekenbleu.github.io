@@ -170,45 +170,39 @@ All but the last are properties, which are constrained by SimHub to be >= 0 and 
 </ul></ul></details>
 
 <a name=S/G>
-<dt><br></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%20Loaded%20Slip_Grip.siprofile"><b>Loaded Slip/Grip</b></a> &nbsp <i>15 Feb 2024</i>
+<dt><br></a><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/LoadedSlipGrip.siprofile"><b>Loaded Slip/Grip</b></a> &nbsp <i>14 Mar 2024</i>
 <dd><a href=ShakeIt/SG.htm><i>Discussion</i></a><br>
 Earlier profiles used <code>GlobalAccelerationG</code>, which turns out to be only surge.<br>
-This profile generates CUSTOM effect with 2D <i>Grip.All</i> acceleration,<br> to better complement 2D <i>proxyS</i>.<ul>
-<li><i>ProxyS</i> - conditions wheelslip for <code>SG()</code>
-<li>CUSTOM EFFECT <i>Grip</i><ul>
-	<li><code>const gain = 9;	// scales results between 0 and 100</code>
-	<li><code>const Ygain = 200;	// scales Yaw acceleration to Surge range</code>
-	<li><code>function RMS(a, b)	// returns square root of sum of squares of yaw and surge</code>
-	<li><code>const Hgain = 3 / 50; // rescales RMS() result to unity for 1G</code>
-	<li><code>function L(h, g)		// shifts heave so that -1G = 0;<br> scales product of RMS() and shifted heave for 0 to 100 range</code></ul>
-<pre>y = Ygain * $prop('OrientationYawAcceleration');
-return L($prop('AccelerationHeave'), RMS($prop('AccelerationSurge'), y));</pre>
+This profile generates CUSTOM effect with 2D horizontal acceleration,<br> to better complement 2D <i>wslip</i>.<ul>
+<li>CUSTOM EFFECT <i>Haccel</i>;&nbsp <i>Min</i> and <i>Max/10</i> for <i>output</i> Forced Frequencies<br>
+	<i>Haccel</i> is proxy for <i>Grip</i>
+<li>WHEELS SLIP exports <i>wslip</i> - wheelslip conditioned for <i>slip/grip</i>
+<li>CUSTOM EFFECT <i>slip/grip</i><ul>
+	<li>estimates wheel loads from heave, sway and surge
+	<li>applies wheel loads to <i>Haccel</i> as grip proxy
+	<li>forces some minimum grip to avoid divide by zero when no horizontal acceleration
+	<li>divides <i>wslip</i> by this grip proxy
+	</ul>
 
-<li>CUSTOM EFFECT <i>noisy</i><ul>
-<li><code>SG()</code>: converts <i>ProxyS</i> to <code>slip/grip</code> <i>ratio</i>, instead of <code>slip</code><br>
-<li><code>function SG(s,g) { return 100-Math.min(100,Math.abs(.5*s/Math.max(.1,Math.abs(g)))) };</code><br>
- - for <i>output</i> <code>gate</code> and <i>noisy</i> <code>noise()</code>
-<li><code>noise()</code>: converts <code>SG()</code> output to frequency control range 0 to 100
-<li><code>function noise(sg) { return f * (sg + Math.random() * (1 + sg / n)) };</code></ul>
+<li>CUSTOM EFFECT <i>AC slip/grip</i><ul>
+<li>employs Assetto Corsa-specific <code>GameRawData.Physics.WheelLoad</code> instead of estimating</ul>
 
-<li>CUSTOM EFFECT <i>output loaded wheel slips</i> haptic signals:<br>
- - <code>proxyL()</code> wheel load calculations are now integrated here<br>
- - <code>SG() * proxyL()</code> modulates tire slip haptic amplitude:<br>
+<li>CUSTOM EFFECT <i>output:&nbsp loaded wheel slips</i> haptic signals:<ul>
+<li><code>proxyL()</code> wheel load calculations are now integrated here<br>
+<li><code>SlipGate() mutes output for low slip<br>
  &nbsp <img width=80% src=image/figure8_loads.png><br>
-  &nbsp  &nbsp <i>estimated wheel load examples on
+  &nbsp  &nbsp estimated wheel load examples on
  <a href="https://www.racedepartment.com/downloads/clarksville-indiana_sportsdome-speedway_figure-8-oval.28318/">figure 8 track</a></i><br><br>
- - <i>noisy</i>, rescaled by <code>low</code> and <code>high</code>, frequency modulates tire squeal-&gt;moan-&gt;judder.<br>
+<li><b>Forced Frequencies</b> apply <code>noisy()</code> to <i>slip/grip</i><br> rescaled by <code>low</code> and <code>high</code><br>
+	 to frequency modulate tire squeal-&gt;moan-&gt;judder.<br>
+</ul>
 </ul>
 <details><summary><b>Adjustments</b></summary>
-<i>ProxyS</i>, <i>Grip</i> and <i>noisy</i> are properties, constrained by SimHub to be >= 0 and <= 100<ul>
-<li>WHEELS SLIP <i>ProxyS</i>:&nbsp perhaps tweak <code>Threshold, Input Gain</code><br> to change how much slip to ignore and how much to boost slip telemetry
-<li>CUSTOM EFFECT <i>Grip</i>:&nbsp <code>Minimum force</code> at least 1 to avoid divides by 0;<br> reduce input gain to avoid saturation
-<li>CUSTOM EFFECT <i>noisy</i>:&nbsp perhaps tweak <code>Gamma, Input Gain</code><br> to alter tire haptic transitions from squeal to moan to judder
-<li>CUSTOM EFFECT <i>output</i> Forced Frequencies<br>
-    - <code>low</code> is low frequency limit<br>
-    - <code>high</code> is high frequency limit<br>
- &nbsp In this example, low frequency limit is <code>25Hz</code> and upper frequency limit is <code>1000Hz</code>:<br>
-  &nbsp <img src=image/limit25.png><br>
+<i>Haccel</i>, <i>wslip</i> and <i>slip/grip</i> are properties, constrained by SimHub to be >= 0 and <= 100<ul>
+<li><i>Haccel</i> Rear left and right set <i>output</i> Min and Max/10 Force Frequencies
+<li>WHEELS SLIP <i>wslip</i>:&nbsp perhaps tweak <code>Threshold, Gamma, Input Gain</code><br> to change how much slip to ignore and avoid clipping at 100
+<li>CUSTOM EFFECT <i>slip/grip</i>:&nbsp reduce input gain to avoid clipping @ 100;<br> increase gamma to increase average haptic activity
+<li>CUSTOM EFFECT <i>output</i>:&nbsp increase <code>Threshold</code> to mute weak slip 
 </ul></details>
 
 
@@ -232,7 +226,7 @@ return L($prop('AccelerationHeave'), RMS($prop('AccelerationSurge'), y));</pre>
  &nbsp <img width=80% src=image/figure8_loads.png><br>
   &nbsp  &nbsp <i>estimated wheel load examples on
  <a href="https://www.racedepartment.com/downloads/clarksville-indiana_sportsdome-speedway_figure-8-oval.28318/">figure 8 track</a></i><br><br>
- - <i>noisy</i>, rescaled by <code>low</code> and <code>high</code>, frequency modulates tire squeal-&gt;moan-&gt;judder.<br>
+ - <code>noisy(<i>slip/grip</i>)</code>, rescaled by <code>Min</code> and <code>10 *Max/10</code>, frequency modulates tire squeal-&gt;moan-&gt;judder.<br>
 </ul>
 <details><summary><b>Adjustments</b></summary>
 <i>ProxyS</i> and <i>noisy</i> are properties, constrained by SimHub to be >= 0 and <= 100<ul>
