@@ -113,6 +113,9 @@
 - Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](Windows/NVMe/)  
 
+### HVAC
+- [Air filtration](hvac/)  
+
 ---
 
 #### [COVID-19 plots](../static/covid)
