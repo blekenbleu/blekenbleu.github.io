@@ -13,6 +13,7 @@
   - [dither:&nbsp; noise is not always bad](../static/ImageProcessing/dither.html)
   - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](../static/ImageProcessing/TinyML.htm)  
   - [LED color rendering meta-analaysis](../static/ColorRendering/)  
+  - [Apple AirPod Pro as lame hearing aid](Apple/)  
 
 ### [Arduino custom USB sketches](Arduino/)
 - e.g. for harness tensioning servos
