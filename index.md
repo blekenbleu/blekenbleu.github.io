@@ -29,7 +29,8 @@
       (which I use e.g. for [**SimHub plugins**](../static/SimHub/))
       - in [VisualStudio **Marketplace**](https://www.visualmicro.com/)  
       - [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
-      - Options using Visual Studio **Code**, *a confusingly named editor*, are discounted;&nbsp; I prefer GVim
+      - Options using Visual Studio **Code**, *a confusingly named editor*,  
+        are discounted;&nbsp; I prefer [**GVim**](https://www.vim.org/download.php)
     - [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/0.31/)
       - interesting, because [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
   - [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black)
