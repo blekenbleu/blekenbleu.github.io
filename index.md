@@ -21,7 +21,7 @@
     - COM ports work from SimHub, but most sim games expect <a href="Windows/HID/#DI">DirectInput</a>
       - SimHub *directly* supports *real* Arduinos,  
         but can drive *any* COM port by **SimHub Custom Serial devices**  
-        Some ESP32 / STM32 may be programmed to appear as Arduino USB COM ports
+        Some ESP32 / STM32 may appear as Arduino USB COM ports
 
   - **Arduino IDE Alternatives**
     - There are [*many*](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html).
