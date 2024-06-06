@@ -50,7 +50,9 @@
 
 ### [Chromebook](ChromeBook/)
 
-### [My GitHub Repositories](https://github.com/blekenbleu?tab=repositories)
+### [Ender-3 V3 SE](Ender3V3SE/)
+
+### [GitHub Repositories](https://github.com/blekenbleu?tab=repositories)
 
 ## [Microscopes and photomicography](microscope/)  
  &nbsp; **American Optical** [Series 10](microscope/#AO) / [Series 120](microscope/AO/) / [Reichert EPIStar](microscope/#EPIStar)  
