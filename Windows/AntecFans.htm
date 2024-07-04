@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:700px; background-color:#DDDDFF; }
+</style>
+
+<meta charset="utf-8">
+<meta name="google" value="notranslate">
+
+<title>Antec Phantom DP502 VR PC</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<a href="PhantomVR.htm"<i>back</i></a>
+
+<h2>Antec Phantom DP502 Fans</h2>
+<details><summary><b>Ignore <a href=tune.htm#Mfan>MSI</a>
+ and Fan Control software</b></summary>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=sNSqBKGlH-A">Fan control
+ using MSI center</a> - but MSI center is a resource hog.
+<li>Fan Control does not understand Antec's fan controller
+<li><a href="https://www.youtube.com/watch?v=uDPKVKBMQU8"><b>Fan Control</b>
+ (JayzTwoCents)</a> nice, but lacks MSI motherboard DC fan support
+<br> &nbsp <a href="https://github.com/rem0o/fancontrol.releases">GitHub</a> &nbsp
+    <b>HowTo</b>:&nbsp <a href="https://www.digitaltrends.com/computing/how-to-use-fan-control/">digitaltrends</a>
+</ul>
+</details>
+
+<a name=FANC><h4>Fan control</h4></a>
+<details><summary>click for motherboard connection details</summary>
+MSI BIOS can sort DC (3-wire) vs PWM (4-wire) fans:<br>
+<img src=image/MSI_FAN.png><br>
+<a href="https://download.msi.com/archive/mnu_exe/mb/PROZ790-AWIFI.pdf">
+motherboard manual</a> (page 42)<br><br>
+</details>
+reboot into BIOS:&nbsp <code>shutdown /r /fw /f /t 0</code><br>
+<br>
+
+YouTube:<ul compact>
+<li><a href="https://www.youtube.com/watch?v=hZW0hBumShw">Adjust
+ Gaming PC Fans For Silent Mode and Gaming Mode</a> - <b>MSI motherboard</b>
+<li><a href="https://www.youtube.com/watch?v=Y3aZFsK8uaU&t=1590s">back fan tuning</a>
+<li>setting <a href="https://www.youtube.com/watch?v=GvyQXkFUe3E&t=354s">BIOS
+ OC CPU Cooler Tuning to Water Cooler</a><br> higher boost without overwhelming good air coolers.
+</ul>
+
+
+<h3>Airflow</h3>
+<details><summary>click for details</summary>
+<a name=AIR><img width=100% src=image/dp502-airflow.png></a>
+<dl>
+<dt><br><b>power supply</b>
+<dd>Separately from other case airflow,
+ its fan draws air in thru Antec bottom case filter, exhausting out back.<br>
+<img src="image/PSU-airflow-bottom-mounted.jpg">
+<dt><b>case fan arrows</b>
+<dd>molded into fans, blade rotation and airflow directions
+<li>most case fans have label on hub:&nbsp input side
+<li>unlabeled motor location spider is typically on the exhaust side
+<li>Both Antec fans have label on (exhaust) motor location spider;
+<li>one Antec fan has blades reversed...</dl>
+</details><br>
+
+5 Arctic 3-wire fans are plugged into Antec's fan and LED controller,<br>
+which can control speed for up to six 3-wire fans<br>
+ from a single PWM (4-wire) motherboard fan control as <font color=red><b><i>FAN6</i></b></font>
+
+<dl><dt><br><b>3 front input Arctic fans</b>
+ &nbsp see <a href=#FAN>BIOS FAN settings</a>
+<dd>exhausting into Antec case front filter
+<br>attached to motherboard <font color=red><b><i>FAN6</i></b></font>
+<dt><b>2 top exhaust Arctic fans</b>
+<dd>mounted behind 5.25-inch optical drive
+<br>attached to motherboard <font color=red><b><i>FAN6</i></b></font>
+<dt><b>1 rear case exhaust Antec fan</b>
+<dd>mounted backwards, as received..
+<br>replaced by Scythe KazeFlex 120 PWM fan
+<br>attached to motherboard <font color=red><b><i>SYS_FAN1</i></b></font>
+<dt><b>1 chamber Antec fan</b>
+<dd>mounted above PSU chamber, drawing air from lower front input,<br>
+ exhausting to GPU;&nbsp; attached to motherboard <font color=red><b><i>FAN4</i></b></font>
+<dt><b>1 PWM ID-Cooling fan</b>
+<dd>exhausting into heat sink fin stack
+<br>attached to motherboard <font color=red><b><i>CPU_FAN1</i></b></font>
+</dl>
+
+<a name=FAN><b>BIOS FAN settings</b> in Hardware Monitor</a> &nbsp see <a href="#FANC">Fan control</a><br>
+CPU fan (<font color=red><code>CPU_FAN1</code></font>) defaulted to Auto and around 790rpm;
+<li>switched to PWM.<br>
+Back fan (<font color=red><code>SYS_FAN1</code></font>) defaulted to DC and ~ 950 rpm
+<li>switched to smart based on CPU temp<br>
+&emsp; 0% @34C, 8% @46C, 90% @70C ~ 936rpm @39C<br>
+Antec fan controller  (<font color=red><code>SYS_FAN6</code></font>) defaulted to DC and ~ 1800rpm,
+<li>switched to PWM and smart based on System..<br>
+&emsp; <i>around 15% still reports 1090rpm and louder than wanted...</i><br>
+Antec DC chamber fan (<font color=red><code>SYS_FAN4</code></font>)
+<li> switched to smart based on PCH
+
+
+<a name=Mfan>
+<h4>MSI Center fan tuning:<br>Features > User Scenario > (Fan on) > Customize (clover)</h4>
+</a>
+<img width=80% src=image/CPUfan.png><br clear=all>
+CPU Fan<br><br>
+
+<i>24 Aug 2023</i>:&nbsp KazeFlex 120 PWM fan replaced rear Antec fan<br>
+ &emsp; reconfigured SYSFan1 to PWM in BIOS;<br>
+ &emsp; new SYSFan1,5,6 curves for reduced idle noise
+ &emsp; <img width=80% src=image/Aug24fan1.png><br clear=all>
+<i>Fan1:&nbsp rear exhaust now Scythe KazeFlex PWM</i><br><br>
+
+<img width=80% src=image/Aug24fan5.png><br clear=all><i>Fan5:&nbsp Antec chamber fan below GPU</i><br><br>
+
+<img width=80% src=image/Aug24fan6.png><br clear=all><i>Fan6:&nbsp 5 Artic fans by Antec controller</i><br><br>
+
+Antec controller poorly matches Arctic case fans,<br>
+which run fast at very low PWM % needed for quiet low load operation.<br>
+Replacing puny stock Antec fan with Scythe's KazeFlex significantly altered airflow;<br>
+most heat now flows out PC rear instead of top, with less noise.<br>
+Case air pressure may now be negative,<br>
+wanting top exhaust fans driven separately from front intake fans.<br><br>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>

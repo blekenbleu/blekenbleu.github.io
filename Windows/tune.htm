@@ -22,7 +22,7 @@ table.my_table td { width:960px; background-color:#CCCCEE; }
 <dl>
 <dt><b>Contents</b>
 <dd><a href=#XTU>Intel Extreme Tuning Utility (Intel XTU)</a>
-<dd><a href=#Mfan>MSI Center User Scenario Customize Fan</a>
+<dd><a href=AntecFans.htm#Mfan>MSI Center User Scenario Customize Fan</a>
 <dd><a href=#MtryIT>MSI TryIt DDR5 tuning</a>
 <dd><a href=#MKB>MSI Kombuster 1440 score</a>
 <dd><a href=#R23>CineBench R23 24340 score</a>
@@ -47,46 +47,10 @@ Core Max, CPU Package, MOS and (DDR5) SPD Hub Temperatures increase during stess
 <li>XTU Memory Stress test provoked CPU thermal throttling with -95mV offset when CPU stress did not...
 </ul>
 </details>
-Covers raised MOS (45-48) and DDR5 Temperatures (41-44) about 3C during XTU stress testing.<br><br>
+Covers raised MOS (45-48) and DDR5 Temperatures (41-44)<br> &emsp; about 3C during XTU stress testing.<br><br>
 
-<b>MSI Center User Scenario Customize Fan</b> &nbsp see <a href=PhantomVR.htm#AIR>Airflow</a>
-<details><summary>click for details</summary>
-<ul compact>
-<a name=Mfan>
-<li><b>MSI Center fan tuning</b>:&nbsp Features > User Scenario > (Fan on) > Customize (clover)
-</a><br><br>
-<img width=80% src=image/CPUfan.png><br clear=all>
-CPU Fan<br><br>
-<img width=80% src=image/SysFan1.png><br clear=all>
-Smart Fan1<br><br>
-<img width=80% src=image/SysFan5.png><br clear=all>
-Smart Fan5:&nbsp negligible heat exhausted by Antec rear...<br><br>
-<img width=80% src=image/SmartFan6.png><br clear=all>
-<li>Smart Fan6 Antec controller poorly matches Arctic case fans,<br>
-running fast at very low PWM % needed for quiet low load operation,<br>
-still overwhelming Fan5, with essentially all heat out case top<br><br>
-<li>Arctic case fans then need to be driven by CPU temp to exhaust warm air
-<li>Arctic fans overwhelm Antec rear exhaust fan.
-<li><a href="https://www.youtube.com/watch?v=WBoLyC0tSDQ&t=804s">Quieter and more powerful Scythe Kaze Flex 120mm PWM</a>
- ordered to replace stock Antec exhaust
-<li>CPU fan (ID-COOLING SE-226-XT) seems fine;&nbsp fin stack top is always cool...
-<li>Antec rear exhaust fan is noisy;&nbsp idle speed reduced to be tolerable
-<li>Driving Antec chamber fan from GPU temperature is supported by neither MSI BIOS nor Center.<br><br>
-
-<li><i>24 Aug 2023</i>:&nbsp KazeFlex 120 PWM fan received, replacing rear Antec fan<br>
- &nbsp &nbsp reconfigured SYSFan1 to PWM in BIOS;<br>
- &nbsp &nbsp dialed new SYSFan1,5,6 curves in MSI Center User Scenario for reduced idle noise
- &nbsp &nbsp <img width=80% src=image/Aug24fan1.png><br clear=all>
-<i>Fan1:&nbsp now Scythe KazeFlex PWM</i><br><br>
-&nbsp <img width=80% src=image/Aug24fan5.png><br clear=all><i>Fan5</i><br><br>
-&nbsp <img width=80% src=image/Aug24fan6.png><br clear=all><i>Fan6</i>
-:&nbsp replacing puny stock Antec fan with Scythe's KazeFlex significantly altered airflow;<br>
-most heat now flows out the back instead of the top, with less noise.&nbsp Case air pressure<br>
-may now be negative, wanting top exhaust fans driven separately from front intake fans.<br><br>
-<li>Reran XTU benchmark with glass cover removed, then installed, then reran Heaven benchmark:<br>
- &nbsp &nbsp <img width=80% src=image/CPUbenchHeaven.png>
-</ul>
-</details><br>
+<details><summary><i>24 Aug 2023</i>:&nbsp Reran XTU benchmark with glass cover removed,<br> &emsp; then installed, then reran Heaven benchmark</summary>
+ &nbsp &nbsp <img width=80% src=image/CPUbenchHeaven.png></details><br>
 
 <b>MSI TryIt DDR5 tuning</b>
 <details><summary>click for details</summary>
