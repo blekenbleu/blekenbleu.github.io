@@ -32,8 +32,18 @@ Dual Z-axis drive;&nbsp Y-axis uses paired 8mm steel shafts.<br>
 Tap "Extrude", and filament will flow out of the nozzle smoothly.<br>
 Tap "Retract", and the filament will exit quickly.<br><br>
 <ul>
-<li><a href=https://www.crealityexperts.com/ender-3-v3se-assembly-guide><b>here are IMO much better setup instructions</b></a>
-<li><a href=https://www.creality.com/pages/download-ender-3-v3-se?spm=..page_1934481.products_display_1.1>Downloads</a>
+<li><a href="https://www.youtube.com/watch?v=HvWYVBUAxsU">Kaki DIY:&nbsp;
+ Setup for perfect consistent prints</a> IMO best video<br>
+includes checks for square, calibration print:<br><img src=LevelTest.jpg>
+<li><a href=https://www.crealityexperts.com/ender-3-v3se-assembly-guide>assembly instructions better than Creality's</a>
+<li><a href=https://www.creality.com/pages/download-ender-3-v3-se?spm=..page_1934481.products_display_1.1>Creality Downloads</a>
+<li><a href=https://www.youtube.com/watch?v=t0yQjWxEaIM>Hot End jam - extruder and hot end disassembly video</a> | Kaki DIY
+<li><a href=https://ellis3dp.com/Print-Tuning-Guide/>Ellis' Print Tuninig Guide</a>
+<li><a href=https://www.klipper3d.org/Config_checks.html>Klipper Configuration checks</a>
+<li><a href="https://www.youtube.com/watch?v=rSCwTtJdzo0">Tuning 3D Printers</a> MandicReally video
+<li>glue stick? <a href=https://www.3dsourced.com/rankings/best-glue-sticks-for-3d-printing/>Bed Weld or Elmer's purple</a>
+<li><a href=https://kingroon.com/blogs/3d-printing-guides/prusaslicer-vs-orcaslicer-vs-cura-a-comparison-of-the-best-slicers-for-your-3d-printing-needs>PrusaSlicer vs OrcaSlicer vs Cura</a>
+
 <li><details><summary>upgrade options</summary>
 <img src=options.jpg><br> <ul>
 <li><a href=https://3dprintmentor.com/ender-3-v3-se-upgrades/><b>15 Ender 3 V3 SE upgrades</b></a>
@@ -45,6 +55,7 @@ Tap "Retract", and the filament will exit quickly.<br><br>
 <li><a href=https://www.amazon.com/gp/product/B0D3FD43W7>Clog Poke</a>
 <li><a href=https://www.aliexpress.us/item/3256806798813824.html>X-axis linear rail</a>
 <li><a href=https://www.aliexpress.us/item/3256806799328502.html>Dual Y-axis linear rail</a>
+<li><a href=https://www.youtube.com/watch?v=MTskpTEqJN4>3D printed Filament Guide</a>
 <li><a href=https://all3dp.com/2/best-ender-3-v3-se-upgrade/>All-Metal Hot End with Ceramic Heating Kit</a>
 </ul></details><br>
 
@@ -52,12 +63,23 @@ Tap "Retract", and the filament will exit quickly.<br><br>
  &nbsp; <img  width=480 src=https://img.fantaskycdn.com/2722f178fd405fea569d93fed5fad391.jpg><ul>
 <li>basically Creality's official Klipper support -
  <a href=https://www.reddit.com/r/Creality/comments/18uu4jf/got_the_new_ender_3_v3_se_with_the_sonic_pad/>reddit</a>
- &nbsp; <a href="https://www.creality.com/pages/download-creality-sonic-pad">Downloads</a>
+ <br>&nbsp; <a href="https://www.creality.com/pages/download-creality-sonic-pad"><b>Documentation and Firmware Downloads</b></a>
 <li><a href=https://www.youtube.com/watch?v=G6QWrpfOpRk>video review</a>:&nbsp; Ender-3 V3 SE with Sonic Pad for Klipper
 <li><a href=https://www.youtube.com/watch?v=b_JCf1UbjEs>Creality video</a>:&nbsp Bring klipper into Ender 3 V3 SE with Sonic Pad
 <li><a href=https://all3dp.com/4/creality-sonic-pad-review/><b>Klipper on Sonic Pad with Ender 3 V2</b></a>
 <li><a href=https://discord.com/channels/1120889480258269256/1128264532863754252/1250448561020211282>discord:
 	 &nbsp Ender-3 V3 SE Klipper config</a>
+<li>CREALITY EXPERTS <a href=https://www.crealityexperts.com/creality-sonic-pad-setup-guide>Creality Sonic Pad Setup Guide</a>
+<li><a href=https://www.youtube.com/watch?v=BRdYLZXPCYk&t=591s>Prusaslicer with Sonic Pad</a> Embrace Making video
+<li>PRUSE:&nbsp; <a href=https://help.prusa3d.com/article/sending-files-to-octoprint-duet_1663>Sending files to Octoprint</a>
+<li><a href=https://www.printables.com/model/826612-creality-ender-3-v3-se-prusaslicer-slicer-profile>Creality Ender 3 V3 SE PrusaSlicer Slicer profile</a>
+	<br>compare to <a href=https://www.printables.com/model/699208-creality-ender-3-v3-ke-slicer-profiles-for-prusasl/files>his KE profile</a>
+    <br>compare to <a href=https://github.com/eb2292/enderv3ke-prusaslicer>EnderV3 KE PrusaSlicer <b>Klipper</b> Profile</a>
+<li><a href=https://www.reddit.com/r/klippers/comments/z1cr8t/ender_3v2_run_out_sensor_config/>Sonic Pad with filament sensor</a>
+<br>add to printer.cfg:<pre>
+[filament_switch_sensor filament_sensor]
+pause_on_runout: true
+switch_pin: !PA4</pre>
 </ul><br>
 
 <li><a href="https://discord.com/channels/1120889480258269256/1120889481747251303">discord:&nbsp; #official_links</a>
