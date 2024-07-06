@@ -367,195 +367,60 @@ overlay img when hovering</a>
 <br>tool tips for many buttons are launched by hovering mouse pointer &emsp;
 
 
-<em>some</em> submenus highlight <span style="background-color: #FFFFFF"><font color="black">ACTIVE</font></span> selection on LCD
+<br><em>some</em> submenus highlight <span style="background-color: #FFFFFF"><font color="black">ACTIVE</font></span> selection on LCD
 <br><a href=https://ko-fi.com/post/Creality-Ender-3-V3-SE--E-Step-Calibration-X7X5QF4GE>Creality Ender 3 V3 SE - E-Step Calibration</a>
 <br><a href=https://www.manualslib.com/manual/1869756/Creality-Ender-3-V2.html?page=30#manual>Creality-Ender-3-V2 better manual</a>
 <br><a href=https://wiki.creality.com/en/Products/Ender-Series/Ender-3-V3-SE-3D-Printer/UserManual>Ender-3 V3 SE User Manual</a>
-<br><a href=https://www.youtube.com/watch?v=72MMv1HeHJg>New And Improved But Too Much Extrude | Ender 3 V3 SE</a>
-<br>
 </p>
 
 <div class="tree">
-<p>Press control or touch screen for menu</p>
+<p>Main</p>
 <ul>
-  <li><p><a href="#U1">DISPLAY</a></p>
+  <li><p><tt>set sweep or single frequency</tt>Control</p>
+  </li>
+  <li><p><a href="#U1">Print</a></p>
     <ul>
-      <li><p><tt>2/4 limit for aa/ch firmware</tt><a href="#U1L1">TRACE</a></p>
+	  <li><p>File Selection</p></li>
+	  <li><p>Pause</p></li>
+      <li><p><tt>2/4 limit for aa/ch firmware</tt><a href="#U1L1">Tune</a></p>
         <dl>
           <dt><p id="yel">
-	    <tt>select, toggle off/on</tt>TRACE 0</p></dt>
+	    <tt>select, toggle off/on</tt>Printing Speed</p></dt>
           <dt><p id="blu">
-	    <tt>select, toggle off/on</tt>TRACE 1</p></dt>
+	    <tt>select, toggle off/on</tt>Nozzle Temperature</p></dt>
           <dt><p id="grn"><tt>{<em><b>4-trace firmware only</b></em>}<br>
-	        select, toggle off/on</tt>TRACE 2</p></dt>
+	        select, toggle off/on</tt>Bed Temperature</p></dt>
           <dt><p id="red"><tt>{<b><em>4-trace firmware only</em></b>}<br>
-	        select, toggle off/on</tt>TRACE 3</p></dt>
+	        select, toggle off/on</tt>Fan speed</p></dt>
+		  <dt><p>Z offset</p></dt>
         </dl> 
       </li>
-      <li><p>FORMAT</p>
-        <dl>
-          <dd><p><tt>measured magnitude log scaled</tt>LOGMAG</p></dd>
-	  <dt><p><tt>-180<=linear degrees<=+180</tt>PHASE</p></dt>
-	  <dt><p><tt>see TRANSFORM</tt>DELAY</p></dt>
-	  <dt><p><i>    </i>SMITH</p></dt>
-	  <dt><p><tt>Standing Wave Ratio</tt>SWR</p></dt>
-	  <dt><p><tt>..but better?</tt>MORE</p>
-	    <ul>
-	      <li><p><tt>(for S21) imaginary vs real</tt>POLAR</p></li>
-	      <li><p><tt>measured magnitude linear scaled</tt>LINEAR</p></li>
-	      <li><p><tt>inline component</tt>REAL</p></li>
-	      <li><p><tt>quaderature component</tt>IMAG</p></li>
-	      <li><p><tt>real impedance component</tt>RESISTANCE</p></li>
-	      <li><p><tt>imaginary impedance component</tt>REACTANCE</p></li>
-            </ul>
-	  </dt>
-        </dl>
-      </li>
-      <li><p>SCALE</p>
-        <dl>
-          <dt id="p60">
-	    <p><a href="#U131">SCALE/DIV</a></p>
-	    <p><tt>rescale trace vertically</tt>
-               <a href="#U133">NUM KEYS</a></p>
-          </dt>
-          <dt><p><tt>touch nanoVNA screen below menu to launch numeric keypad;<br>
-		     click link here for numeric input discussion</tt>
-		 <a href="#U132">REFERENCE POSITION</a></p>
-	    <p><tt>position trace vertically</tt>
-               <a href="#U133">NUM KEYS</a></p>
-	  </dt>
-	  <dt><p><tt>compensate CAL by e.g. cable length in picoseconds</tt>
-		 <a href="#U134">ELECTRICAL DELAY</a></p>
-	      <p>NUM KEYS</p>
-	  </dt>
-        </dl>
-      </li>
-      <li><p><tt>for TDR</tt><a href="https://groups.io/g/nanovna-users/attachment/3083/0/TDR.pdf">TRANSFORM</a></p>
-        <dl>
-          <dt><p><tt>enables LOW/BANDPASS</tt>TRANSFORM ON</p></dt>
-          <dt><p><tt>set REAL start 50kHz</tt>LOW PASS IMPULSE</p></dt>
-          <dt><p><tt>set REAL start 50kHz</tt>LOW PASS STEP</p></dt>
-          <dt><p><tt>set SWR, LINEAR or LOGMAG</tt>BANDPASS</p></dt>
-          <dt id="u60"><p><tt>modifies LOW/BANDPASS</tt>WINDOW</p>
-	    <ul>
-	      <li><p><tt>max resolution</tt>MINIMUM</p></li>
-	      <li><p>NORMAL</p></li>
-	      <li><p><tt>max dymanic range</tt>MAXIMUM</p></li>
-            </ul>
-          </dt>
-          <dt><p><tt>tweak for actual distance</tt>VELOCITY FACTOR</p>
-	      <p>NUM KEYS</p>
-          </dt>
-        </dl> 
-      </li>
-      <li><p><tt>select port to measure;<br>
-	works for 2 and 4 trace firmware</tt>CHANNEL</p>
-        <ul>
-	  <li><p>CH0 REFLECT</p></li>
-	  <li><p>CH1 THROUGH</p></li>
-        </ul>
-      </li>
-    </ul>
+	  <li><p>Stop</p></li>
+	</ul>
   </li>
-  <li id="u30"><p><a href="#U2">MARKER</a></p>
+  <li><p><a href="#N4">Leveling</a></p>
+  </li>
+  <li id="u30"><p><a href="#U2">Prepare</a></p>
     <ul>
 	<li id="p20"><p><tt>with 2 markers enabled,
-	 marker 2 will read DELTA Frequency in relation to marker 1</tt>SELECT MARKER
-	  <dl>
-	  <dt><p>MARKER 1</p></dt>
-	  <dt><p>MARKER 2</p></dt>
-	  <dt><p>MARKER 3</p></dt>
-	  <dt><p>MARKER 4</p></dt>
-	  <dt><p>ALL OFF</p></dt>
-	  </dl>
+	 marker 2 will read DELTA Frequency in relation to marker 1</tt>Extrude
 	</li>
 	<li>
-	<dl id="li-child">
-	<dd><p><tt>increase minimum sweep frequency<br>
-	to selected marker</tt>START</p></dd>
-	<dt><p><tt>decrease maximum sweep frequency<br>
-	to selected marker</tt>STOP</p></dt>
-	<dt><p><tt>shift center of frequency sweep<br>
-	to selected marker</tt>CENTER</p></dt>
-	<dt><p><tt>sweep frequency between 2 current markers</tt>SPAN</p></dt>
-	</dl>
+	<p>Retract</p>
+	</li>
+	<li>
+	<p>Preheat PLA</p>
+	</li>
+	<li>
+	<p>Preheat TPU</p>
+	</li>
+	<li>
+	<p>Cooldown</p>
+	</li>
+	<li>
+	<p>Language selection</p>
 	</li>
     </ul>
-  </li>
-  <li><p><tt>set sweep or single frequency</tt>STIMULUS</p>
-    <dl>
-      <dt id="p40"><p><tt>sweep lower limit &gt 50kHz</tt>START</p><p>
-	<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
-      <dt><p><tt>sweep upper limit &lt 900mHz</tt>STOP</p><p>
-		<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
-      <dt><p><tt>(START+STOP)/2</tt>CENTER</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
-      <dt><p><tt>STOP-START</tt>SPAN</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
-      <dt><p><tt>50 kHz &lt constant &lt 900mHz</tt>CW FREQ</p><p>
-	<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
-      <dt><p><tt>freeze data collection;<br>
-	click hyperlink for saving frozen data via USB</tt><a href="#U36">PAUSE SWEEP</a></p></dt>
-    </dl>
-  </li>
-  <li><p><a href="#N4">CAL</a></p>
-    <ul>
-      <li><p><tt>press after CALIBRATE or to preserve other settings</tt>SAVE</p>
-            <dl>
-              <dt><p>SAVE 0</p></dt>
-              <dt><p>SAVE 1</p></dt>
-              <dt><p>SAVE 2</p></dt>
-              <dt><p>SAVE 3</p></dt>
-              <dt><p>SAVE 4</p></dt>
-            </dl>
-      </li>
-      <li><p><tt>press to clear data before CALIBRATE</tt>RESET</p></li>
-      <li><p><tt>press RESET to clear data before calibrating.<br>
-	Make appropriate [dis]connections before touching associated button</tt>CALIBRATE</p>
-        <dl>
-          <dt><p>OPEN</p></dt>
-          <dt><p>SHORT</p></dt>
-          <dt><p><tt>attach 50 Ohm load to CH0</tt>LOAD</p></dt>
-          <dt><p><tt>attach 50 Ohm loads to CHO + CH1</tt>ISOLATION</p></dt>
-          <dt><p><tt>connect cable[s] CH0<=>CH1</tt>THRU</p></dt>
-          <dt><p>DONE</p>
-            <ul>
-              <li><p>SAVE 0</p></li>
-              <li><p>SAVE 1</p></li>
-              <li><p>SAVE 2</p></li>
-              <li><p>SAVE 3</p></li>
-              <li><p>SAVE 4</p></li>
-            </ul>
-          </dt>
-        </dl>
-      </li>
-      <li id="u30"><p><tt>toggle calibration<br>on / off</tt>CORRECTION</p></li>
-    </ul>
-  </li>
-  <li><p>RECALL</p>
-      <dl>
-        <dt><p>RECALL 0</p></dt>
-        <dt><p>RECALL 1</p></dt>
-        <dt><p>RECALL 2</p></dt>
-        <dt><p>RECALL 3</p></dt>
-        <dt><p>RECALL 4</p></dt>
-      </dl>
-  </li>
-  <li>
-    <p>
-    <tt>TOUCH, SAVE, VERSION, DFU</tt>
-	CONFIG
-    </p>
-      <dl>
-        <dd><p><a href="#TSC">TOUCH CAL</a></p></dd>
-        <dt><p><a href="#TSC">TOUCH TEST</a></p></dt>
-        <dt><p><tt>touchscreen calibration</tt>SAVE</p></dt>
-        <dt><p>VERSION</p></dt>
-        <dt><p>DFU</p>
-	  <ul>
-	    <li><p>RESET AND ENTER DFU</p></li>
-	    <li><p>CANCEL</p></li>
-	  </ul>
-	</dt>
-      </dl>
   </li>
 </ul>
 
