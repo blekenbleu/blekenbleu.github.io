@@ -11,8 +11,8 @@
 }
 
 body {
-  margin: 0;
-  padding: 0px;
+  margin: 100;
+  padding: 10px;
   color: #ffffff;
   font: 11px Verdana, sans-serif;
   background: #000043;
@@ -361,7 +361,7 @@ div {
 <p align=center>
 <font size=+1><a href="#U0">Ender-3 V3 SE</a> Menu</font><br>
 
-<a href="">help is linked by selecting</a> for buttons with underlined text &emsp;
+<a href="">help is linked by selecting</a> for buttons with underlined text<br>
 <a href=https://stackoverflow.com/questions/27809922/in-html-how-can-you-make-an-image-appear-while-you-are-hovering-over-text>
 overlay img when hovering</a>
 <br>tool tips for many buttons are launched by hovering mouse pointer &emsp;
@@ -374,36 +374,16 @@ overlay img when hovering</a>
 </p>
 
 <div class="tree">
-<p>Main</p>
+<p><tt>turn and press knob to navigate</tt>Main</p>
 <ul>
-  <li><p><tt>set sweep or single frequency</tt>Control</p>
-  </li>
-  <li><p><a href="#U1">Print</a></p>
+  <li id="u30"><p><a href="https://www.youtube.com/watch?v=gkfT2Prrfb0">Prepare</a></p>
     <ul>
-	  <li><p>File Selection</p></li>
-	  <li><p>Pause</p></li>
-      <li><p><tt>2/4 limit for aa/ch firmware</tt><a href="#U1L1">Tune</a></p>
-        <dl>
-          <dt><p id="yel">
-	    <tt>select, toggle off/on</tt>Printing Speed</p></dt>
-          <dt><p id="blu">
-	    <tt>select, toggle off/on</tt>Nozzle Temperature</p></dt>
-          <dt><p id="grn"><tt>{<em><b>4-trace firmware only</b></em>}<br>
-	        select, toggle off/on</tt>Bed Temperature</p></dt>
-          <dt><p id="red"><tt>{<b><em>4-trace firmware only</em></b>}<br>
-	        select, toggle off/on</tt>Fan speed</p></dt>
-		  <dt><p>Z offset</p></dt>
-        </dl> 
-      </li>
-	  <li><p>Stop</p></li>
-	</ul>
-  </li>
-  <li><p><a href="#N4">Leveling</a></p>
-  </li>
-  <li id="u30"><p><a href="#U2">Prepare</a></p>
-    <ul>
-	<li id="p20"><p><tt>with 2 markers enabled,
-	 marker 2 will read DELTA Frequency in relation to marker 1</tt>Extrude
+	<li><p>Move</p></li>
+	<li><p>Disable stepper</p></li>
+	<li><p>Auto home</p></li>
+	<li><p>Z-offset</p></li>
+	<li><p><tt>filament melt piled between nozzle and bed</tt>
+    Extrude</p>
 	</li>
 	<li>
 	<p>Retract</p>
@@ -418,9 +398,67 @@ overlay img when hovering</a>
 	<p>Cooldown</p>
 	</li>
 	<li>
-	<p>Language selection</p>
+	<p>Language</p>
 	</li>
     </ul>
+  </li>
+  <li><p><a href="#U1">Print</a></p>
+   	  <ul>
+	  <li><p>File Selection</p></li>
+	  <li><p>Pause</p></li>
+      <li><p><tt>2/4 limit for aa/ch firmware</tt>
+			 <a href="#U1L1">Tune</a></p>
+          <dl>
+          <dt><p id="yel"><tt>select, toggle off/on</tt>Printing Speed</p></dt>
+          <dt><p id="blu"><tt>select, toggle off/on</tt>Nozzle Temperature</p></dt>
+          <dt><p id="grn"><tt>{<em><b>4-trace firmware only</b></em>}<br>select, toggle off/on</tt>
+						  Bed Temperature</p></dt>
+          <dt><p id="red"><tt>{<b><em>4-trace firmware only</em></b>}<br>select, toggle off/on</tt>
+						  Fan speed</p></dt>
+		  <dt><p>Z offset</p></dt>
+          </dl> 
+      </li>
+	  <li><p>Stop</p></li>
+	  </ul>
+  </li>
+  <li><p><tt>Tune to reduce stringing</tt>
+	  <a href="https://www.youtube.com/watch?v=E094kM4e8aY">Control</a></p>
+	  <dl>
+	  <dt><p>Store Configuration</p></dt>
+	  <dt><p>Read Configuration</p></dt>
+	  <dt><p>Edit leveling data</p></dt>
+	  <dt><p>Motion</p>
+		  <ul>
+		  <li><p>Max Speed</p>
+			  <dl>
+			  <dt><p>Max Speed X</p></dt>
+			  <dt><p>Max Speed Y</p></dt>
+			  <dt><p>Max Speed Z</p></dt>
+			  <dt><p>Max Speed E</p></dt>
+			  </dl>
+		  </li>
+		  <li><p>Max Acceleration</p>
+			  <dl>
+			  <dt><p>Max Acceleration X</p></dt>
+			  <dt><p>Max Acceleration Y</p></dt>
+			  <dt><p>Max Acceleration Z</p></dt>
+			  <dt><p>Max Acceleration E</p></dt>
+			  </dl>
+		  </li>
+		  <li><p>Steps-per-mm</p></li>
+		  </ul>
+	  </dt>
+	  <dt><p>Temperature</p></dt>
+	  </dl>
+  </li>
+  <li><p><a href="https://www.youtube.com/watch?v=iaExzAYR_Fo">Leveling</a></p>
+	  <ul>
+	  <li><p>Nozzle heating</p></td>
+	  <li><p>Nozzle cleaning</p></td>
+	  <li><p>Nozzle Auto Z offset</p></td>
+	  <li><p><img width=70 src=leveled.jpg></p></li>
+	  <li><p><a href="https://github.com/bowsmin12/Ender-3-V3-Creality-Bed-Test">Bed level test gcode</a></p></li>
+	  </ul>
   </li>
 </ul>
 
