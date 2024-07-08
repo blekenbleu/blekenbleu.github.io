@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:600px; }
+</style>
+
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta name="google" value="notranslate">
+
+<title>Creality Sonic Pad</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<a href="../"<i>back</i></a>
+
+<h2><a href="https://www.creality.com/products/creality-ender-3-v3-se">Creality </a></h2>
+
+<li><a href=https://www.creality.com/blog/sonic-pad-october-upgrade-compatible-with-ender-3-v3-se><b>Sonic Pad - Klipper</b></a><br>
+ &nbsp; <img  width=480 src=https://img.fantaskycdn.com/2722f178fd405fea569d93fed5fad391.jpg><ul>
+<li>basically Creality's official Klipper support -
+ <a href=https://www.reddit.com/r/Creality/comments/18uu4jf/got_the_new_ender_3_v3_se_with_the_sonic_pad/>reddit</a>
+ <br>&nbsp; <a href="https://www.creality.com/pages/download-creality-sonic-pad"><b>Documentation and Firmware Downloads</b></a>
+<li><a href=https://www.youtube.com/watch?v=G6QWrpfOpRk>video review</a>:&nbsp; Ender-3 V3 SE with Sonic Pad for Klipper
+<li><a href=https://www.youtube.com/watch?v=b_JCf1UbjEs>Creality video</a>:&nbsp Bring klipper into Ender 3 V3 SE with Sonic Pad
+<li><a href=https://all3dp.com/4/creality-sonic-pad-review/><b>Klipper on Sonic Pad with Ender 3 V2</b></a>
+<li><a href=https://discord.com/channels/1120889480258269256/1128264532863754252/1250448561020211282>discord:
+	 &nbsp Ender-3 V3 SE Klipper config</a>
+<li>CREALITY EXPERTS <a href=https://www.crealityexperts.com/creality-sonic-pad-setup-guide>Creality Sonic Pad Setup Guide</a>
+<li><a href=https://www.reddit.com/r/klippers/comments/z1cr8t/ender_3v2_run_out_sensor_config/>Sonic Pad code</a> for <a href=#runout>filament runout sensor</a>
+<br>add to printer.cfg:<pre>
+[filament_switch_sensor filament_sensor]
+pause_on_runout: true
+switch_pin: !PA4</pre>
+<li><a href=https://www.klipper3d.org/Config_checks.html>Klipper Configuration checks</a>
+</ul><br>
+
+<h4><i>8 Jul 2024</i>&nbsp; Initialize</h4><ul>
+<li>Plug in ethernet and power, turn on
+<li>Sonic pad immediately downloaded 2 new firmwares
+<li>Selected Ender-3 V3 SE and wrote new firmware to microSDHC;<br>
+    &nbsp; did NOT flash the printer...
+<li>Sonic obviously used ethernet to download new code, but would not admit IP address
+<li>connected via Wi-Fi as <a href=http://192.68.1.120:8819><code>192.168.1.120:8819</code></a>
+
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
