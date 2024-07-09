@@ -61,6 +61,8 @@
 ## [MIDI](MIDI/) wireless, *including Android app* - [**SimHub plugin**](MIDI/plugin/)
  &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
 
+### [OnShape CAD](onshape/)
+
 ## [Sim driving](pedals/)
 - Logitech [G29 pedal mods](pedals/#pedals)
   - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID/)
