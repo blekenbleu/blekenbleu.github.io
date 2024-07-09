@@ -44,9 +44,24 @@ switch_pin: !PA4</pre>
 <li>Sonic pad immediately downloaded 2 new firmwares
 <li>Selected Ender-3 V3 SE and wrote new firmware to microSDHC;<br>
     &nbsp; did NOT flash the printer...
-<li>Sonic obviously used ethernet to download new code, but would not admit IP address
+<li>Sonic obviously used ethernet to download new code,<br> but would not admit IP address
 <li>connected via Wi-Fi as <a href=http://192.68.1.120:8819><code>192.168.1.120:8819</code></a>
-
+<li><b>problematic instructions</b><ul>
+<li>since not instructed otherwise, left original panel attached<br>when inserting SDHC card for new firmware
+<li>Instructions directed USB-C; not really for Ender-3 V3 SE...
+<li>Original SE panel beeped horribly.. further instructions failed
+<li>tried again with another SDHC; same results
+<lI>tried with panel removed, misfingered touch screen
+<li> tried again, plugging serial cable to Sonic,<br> then unplugging and replugging..
+<li>communication established, whew!
+</ul>
+<li>started calibration.. I loathe that touch screen.
+<li>After printer setup, Wired Network is reported 192.168.1.40<br>
+attempting to disable Wi-Fi still reports connected, wtf...
+<li>Reviewing bed heightmap on PC shows warp<br> with upper left highest, upper right lowest,<br>
+ &nbsp then fron left and right roughly equal.
+<li>IMO, web UI is hot garbage.  Cannot find printer controls.
+</ul>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
