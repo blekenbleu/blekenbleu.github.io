@@ -36,8 +36,31 @@ table.my_table td { width:600px; }
 [filament_switch_sensor filament_sensor]
 pause_on_runout: true
 switch_pin: !PA4</pre>
-<li><a href=https://www.klipper3d.org/Config_checks.html>Klipper Configuration checks</a>
+
+<li><a href=https://www.klipper3d.org/Config_checks.html>Klipper Configuration checks</a><ul>
+	<li><a href=https://www.youtube.com/watch?v=-aPiY6ilaWM&t=380s>Klipper Pre-Flight</a> video - PID, rotation distance<br>
+		Nero3D explains G-code pins and extruder steps vs flow</ul>
 </ul><br>
+
+<details><summary>Klipper terminology, docs</summary><dl>
+<dt>Klipper
+<dd>hardware-agnostic Python G-code interpreter &nbsp <a href=https://www.klipper3d.org/>docs</a><br> with<ul>
+<li>all configuration by config file
+<li>Custom programmable macros in printer config file
+<li>Automatic bed leveling and delta calibration
+<li>extruder rotation distance and 
+	<a href=https://www.klipper3d.org/Kinematics.html#pressure-advance>Smooth Pressure Advance</a>
+<li>Run-time "exclude object"
+<li>filament runout
+<li><a href=https://www.klipper3d.org/Kinematics.html>extensive kinematics</a>
+<li>JSON API via <a href="https://github.com/Arksine/moonraker">Moonraker</a>
+</ul>
+<dt>web interfaces
+<dd><a href=https://github.com/mainsail-crew/mainsail>Mainsail</a> (port 8819) &nbsp <a href=https://docs.mainsail.xyz/>docs</a><br>
+	 <a href=https://github.com/fluidd-core/fluidd>Fluidd</a> (default) &nbsp <a href=https://docs.fluidd.xyz/>docs</a>,<br>
+	 <a href=https://github.com/KlipperScreen/KlipperScreen>KlipperScreen</a> touchscreen GUI,<br>
+	 <a href=https://github.com/OctoPrint/OctoPrint>OctoPrint</a> &nbsp <a href=https://docs.octoprint.org/en/master/>docs</a>
+</dl></details>
 
 <h4><i>9 Jul 2024</i>&nbsp; Initialize</h4><ul>
 <li>Plug in ethernet and power, turn on
