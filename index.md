@@ -77,6 +77,8 @@
 - [Custom serial profiles](Arduino/shsds.htm)
 - [ShakeIt Bass Shaker Profiles](pedals/shakeit.htm)
 
+### [Two Factor Authentication](2fas/) - iOS and 2FAS
+
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
 - [OpenVR vs OpenXR](XR/mbucchia.html)
 - [Samsung Odyssey+ and HP Reverb for Assetto Corsa](pedals/#hmd)  
