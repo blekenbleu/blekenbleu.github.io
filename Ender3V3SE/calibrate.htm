@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:600px; }
+</style>
+
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta name="google" value="notranslate">
+
+<title>Calibration</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<a href="index.htm"<i>back</i></a>
+
+<h2>Tuning and Calibration</h2>
+<ul>
+<li><a href=https://ellis3dp.com/Print-Tuning-Guide/>Ellis' Print Tuninig Guide</a>
+<li><a href="https://www.youtube.com/watch?v=rSCwTtJdzo0">Tuning 3D Printers</a> MandicReally video
+<li><a href=https://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide>Triffid Hunter's Calibration Guide</a>
+<li><a href=https://www.obico.io/blog/Klipper-ender-3-tuning-guide/#slicer-settings-for-klipper-and-ender-3>Klipper Tuning Guide for Ender 3</a><br>
+<li><a href=https://www.klipper3d.org/Config_checks.html>Klipper Configuration checks</a>
+</ul></br>
+
+Ender-3 V3 SE is similar to other Creality cartesian<br> ("bed-slinger") filament 3D printers;<br>
+ &emsp; 	Creality has <a href="https://store.creality.com/blog/3d-printer-calibration">a decent overview</a>.<br><br>
+
+<dl>
+<dt>Bed leveling
+<dd>Ender-3 V3 SE automates that, using <a href=https://www.youtube.com/watch?v=noX6OoYT088&t=122s>its CR-Touch probe</a>
+<br>Sonic Pad and Orca slicer enable high resolution bed leveling<br> of area actually used for printing a design.
+<dt>Z offset
+<dd>Ender-3 V3 SE load sensor nominally automates this, but final calibration depends on extruder calibration and printing samples
+<dt>Extruder steps AKA <a href=https://www.youtube.com/watch?v=XwyrkZaDi9M>rotational distance</a>
+<dd>removing hot end avoids wasting filament,<br> but involves <a href=https://www.youtube.com/watch?v=A-HNS4-mfLg>first removing extruder</a>
+<dt>Temperature PID
+<dd>Bed and hot end
+<dt><a href=https://www.instructables.com/Perfect-Prints-the-Ultimate-Guide-to-Filament-Cali/>Ultimate filament calibration</a>
+<dt>Temperature tower
+<dt><a href=https://ellis3dp.com/Print-Tuning-Guide/articles/index_pressure_advance.html>Pressure Advance</a>
+	<dd><a href=https://www.obico.io/blog/klipper-pressure-advance/>Klipper Pressure Advance Tuning</a>
+<dt><a href=https://ellis3dp.com/Print-Tuning-Guide/articles/extrusion_multiplier.html>Extrusion Multiplier</a>
+<dd>filament-specific
+<dt><a href=https://ellis3dp.com/Print-Tuning-Guide/articles/retraction.html>Retraction</a>
+<dd>Pressure Advance and probably <a href=https://3dprintbeginner.com/flow-rate-calibration/>flow rate</a> should precede
+<dt>Speed
+<dd><a href=https://ellis3dp.com/Print-Tuning-Guide/articles/determining_max_volumetric_flow_rate.html>Determining Maximum Volumetric Flow Rate</a>
+<dt>Dimensions
+<dd>cube?
+</dl>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
