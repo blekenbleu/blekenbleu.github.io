@@ -50,7 +50,7 @@
 
 ### [Chromebook](ChromeBook/)
 
-### [Ender-3 V3 SE](Ender3V3SE/)
+### [Ender-3 V3 SE](../static/Ender3V3SE/)
 
 ### [GitHub Repositories](https://github.com/blekenbleu?tab=repositories)
 
