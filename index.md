@@ -61,7 +61,7 @@
 ## [MIDI](MIDI/) wireless, *including Android app* - [**SimHub plugin**](MIDI/plugin/)
  &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
 
-### [OnShape CAD](onshape/)
+### [OnShape CAD](../static/CAD/)
 
 ## [Sim driving](pedals/)
 - Logitech [G29 pedal mods](pedals/#pedals)
