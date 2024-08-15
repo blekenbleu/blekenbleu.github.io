@@ -9,7 +9,7 @@ table.my_table td { width:600px; }
 <meta name="color-scheme" content="light dark">
 <meta name="google" value="notranslate">
 
-<title>blekenbleu.github.io/SimHub/</title>
+<title>SimHub</title>
 </head>
 
 <body>
@@ -19,38 +19,42 @@ table.my_table td { width:600px; }
 <a href="../"<i>back</i></a>
 
 <h2><a href="https://www.simhubdash.com/">SimHub</a></h2>
-SimHub extracts telemetry as <i>properties</i> from driving <a href=../pedals/#DSC>sims</a>,<br>
-coordinating events, actions and properties among <a href="../../static/SimHub/"><b>plugins</b></a>.<br>
+SimHub extracts telemetry as <i>properties</i> from driving <a href=../pedals/index.htm#DSC>sims</a>,<br>
+coordinating events, actions and properties among <a href="../../static/SimHub/index.htm"><b>plugins</b></a>.<br>
 SimHub is popular for dashboards;<br>
 I use it for controls, fans, harness tensioning and tactile feedback.<br><br>
 
 <dl>
-<dt><b>controls</b>
-<dd><ul><li><a href=../pedals/#AC>Assetto Corsa</a> uses <a href=../Windows/HID/#DI>DirectInput</a> controllers,<br>
-which can be emulated using <a href=../Windows/HID/vJoy/>vJoy</a>.<ul>
+<dt><b>Sim Controls</b>
+<dd><ul><li><a href=../pedals/index.htm#AC>Assetto Corsa</a> uses <a href=../Windows/HID/index.htm#DI>DirectInput</a> controllers,<br>
+which can be emulated using <a href=../Windows/HID/vJoy/index.htm>vJoy</a>.</ul>
+<dd><b>Control plugins</b><ul>
 <li><a href=https://github.com/blekenbleu/MIDIio><b>MIDIio</b> SimHub plugin</a> converts among<ul>
-<li><a href=../MIDI/>MIDI<a> control surface change signals
+<li><a href=../MIDI/index.htm>MIDI<a> control surface change signals
 <li>vJoy emulated DirectInput signals
-<li>SimHub properties to/from other plugins<br> or derived from <i>game telemetry</i>.</ul></ul>
+<li>SimHub properties to/from other plugins<br> or derived from <i>game telemetry</i>.</ul>
 <li><a href=https://github.com/blekenbleu/Fake8><b>Fake8</b> SimHub plugin</a> converts between SimHub properties<br>
 	and (e.g. <a href=../pedals/STM32>STM32</a> or <a href=/static/ESP32/>ESP32</a>) <a href=../Arduino/>Arduino</a> module COM messages<br>
- via SimHub <a href=../Arduino/SimHubCustomSerial>Custom Serial</a> devices.
-<li><a href=https://github.com/blekenbleu/InterceptMouse><b>InterceptMouse</b></a> is an experiment for converting<br>
-	second mouse events to SimHub properties.
+ via <b>SimHub <a href=../Arduino/SimHubCustomSerial>Custom Serial</a></b> devices.
+<li><a href=https://github.com/blekenbleu/InterceptMouse><b>InterceptMouse</b></a> plugin converts<br>
+	a <i>second</i> mouse's events to SimHub properties.
 </ul>
-<dt><b>SimHub <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Effects-configuration">ShakeIt</a></b> profiles use properties to control:
+
+<dt><br><b>SimHub <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Effects-configuration">ShakeIt</a></b> profiles use properties to control:
 <dd><ul><li><b>fans</b> and <b>harness tensioning</b> via Arduino
 <li><b>tactile feedback</b>
 <ul><li>ShakeIt modulates tactile amplitudes and/or frequencies,<br> but <i>not independently</i>.
 <li><b>MIDIio</b> can independently modify tactile signals<br>
-<a href=../Windows/WinAudio.htm#VST>via MIDI VST</a>.
-<li>ShakeIt profiles can also export custom properties.</ul></ul>
+<a href=../Windows/WinAudio.htm#VST>via MIDI VST</a>.</ul>
+<li>ShakeIt profiles can also export custom properties.</ul>
 
 <a name=profiles>
-<dt></a><a href=https://github.com/blekenbleu/SimHub-Profiles><b>SimHub ShakeIt and Custom Serial profiles</b></a>
-<dd><ul>
+<dt></a><br><a href=https://github.com/blekenbleu/SimHub-Profiles><b>SimHub ShakeIt and Custom Serial profiles GitHub repository</b></a>
+<dd>
 <li><a href=../Arduino/shsds.htm>Custom Serial profile atlas</a>
-<li><a href=../pedals/shakeit.htm>ShakeIt profile descriptions</a></ul>
+<li><a href=../pedals/shakeit.htm>ShakeIt profile descriptions</a><ul>
+<li><a href=../pedals/Shakeit/index.htm>ShakeIt profile subroutines</a><ul>
+<li><a href=../pedals/Shakeit/JS.htm>Javascript code nuggets</a></ul></ul>
 </dl>
 
 </td></tr><tr><td align=center>
