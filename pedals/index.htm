@@ -567,84 +567,8 @@ then to <a href="https://github.com/blekenbleu/MIDIio">vJoy virtual switches</a>
 </ul></details>
 
 <dt><br><font color=#007700><b>tactile feedback</b></font>
-<dd><b>harness tensioning</b><ul>
-<li><a href="#accel">SimHub Acceleration properties</a>
-<li> <details> <summary> <b>SimHub 2DOF harness tensioning</b> </summary>
-<a name="SimHarness">
-One expedient for simulating sustained G forces is a G Harness.</a><br>
-SimXperience is a pioneer for that, with a <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a>,<br>
-typically sold as an accessory for their <a href="https://www.simxperience.com/en-us/products/motionsimulatorkits/gs-5g-seat.aspx">US$3K GS-5 G-Seat</a>.<br><br>
-For members of <a href="https://www.simhubdash.com">Wotever's SimHub Discord (see Live Support)</a><br>
-he has developed an <a href="https://discord.com/channels/299259397060689920/843488595062423553">#experimental-belt-tensioner</a>.<br>
-<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/7ao_srZlhNc"></iframe><br>
-.. for which he recently added a dedicated SimHub plugin:<br>
-<img width=640 src="image/SHtensionner.gif"><br clear=all>
-Issues with it:<ul><li>gear-drive stepper motors are both noisy and dangerously torquey
-<li>suboptimal physics linearly adds lateral and longitudinal acceleration,<br> instead of square root of sum of squares
-<li>however, adequate range of motion to allow slackening e.g. for acceleration</ul>
-<a href="https://lebois-racing.fr/seat-belt-tensioner">Lebois</a> built a
-<a href="https://www.flickr.com/photos/94602950@N04/sets/72157717763752498/">direct-drive
-tensioner using PWM drive of a (too powerful?) DC motor</a>.<br>
-<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe><br>
-<a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">Here</a>
-is another direct-drive tensioner for braking only on shoulder and lap belts.<br>
-<br>
-50mm diameter spools on 8.5Nm motors should provide adequate but safe tension and belt travel.<br>
-<pre>Torque (N.m) = 9.5488 x Power (kW) / Speed (RPM)</pre>
-For electric scooter motors, stall torque is approximately watts / unloaded RPS.<br>
-For example, a 350W 2750rpm motor might have about 7 N.m stall torque.<br>
-<br>
-<a href="https://www.racedepartment.com/members/racingmat.164315">RacingMat</a> developed a
-<a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF
-harness tensioning using a pair of 35kg.cm hobby servos</a>.<br><br>
-Parts budget (US$):<dl>
-<dt>41.40<dd><a href="https://www.ebay.com/itm/282250363739">RSD3235 servo pair</a>
-<dt>17.25<dd><a href="https://www.ebay.com/itm/264645806540">6x 100F super capacitors</a>
-<dt>10.00<dd><a href="https://www.amazon.com/gp/product/B08C594VNP">12VDC 5A power supply</a>
-<dt>6.95<dd><a href="https://www.amazon.com/gp/product/B07J9RQ8B6">5A constant current DC-DC buck regulator</a>
-<dt>7.26<dd><a href="https://www.amazon.com/dp/B000I1BWVW">wide bed casters</a>
-<dt>3.03<dd><a href="https://www.ebay.com/itm/143881049059">STM32F103C8T6 Blue Pill</a><br>
-to flash STM32 modules, a <a href="https://www.ebay.com/itm/352694692698"> ST-Link V2 clone</a> is wanted.<br>
-Beware of similar USB-TTL dongles <i>wrongly listed as</i> ST-LINK;<br>
-they are for more generic, but less convenient serial programming. 
-<dt>18.86<dd><a href="https://www.amazon.com/gp/product/B082FPRHGP">2-inch 4 point harness</a></dl>
-Modifications of RacingMat's design include:<ul>
-<li>suspending those servos between harness belt segments, reducing noise:<br>
-<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/KSJQ8uF8pIc"></iframe>
-<li>repurposing wide bed casters as harness pulleys:<br>
-<img src="https://www.racedepartment.com/attachments/bedcasters-jpg.437943/">
-<li>(optionally) adding super capacitors to the power supply for faster servo response:<ul>
-<li>+8VDC from regulator (and super caps) to servo red wires
-<li>-8VDC to servo black wires
-<li>Blue Pill is powered and controlled by USB.
-<li>Blue Pill ground pin to -8VDC
-<li>Blue Pill PWM pins to servo white wires
-<img width=640 src="https://www.racedepartment.com/attachments/glued-jpg.442520/">
-<li>super capacitors in series require balance circuitry;<br>
-a commodity 16V super capacitor bank with balancing is cheap;&nbsp cut it in half:<br>
-<img src="https://www.racedepartment.com/attachments/halved-jpg.442519/">
-<li>super capacitors effectively short-circuit supplies at power on, requiring current limiting.<br>
-Using an automotive headlamp bulb as a "dummy load",<br> the buck regulator was adjusted for maximum 8V and 4.5A:<br>
-<img src="https://www.racedepartment.com/attachments/controls-jpg.438828/"><ul>
-<li>Button left of LED digits turns LEDs (but not power) off/on.
-<li>Right pushbutton controls display mode: Vin, Vout, Aout, Pout, cycle.
-<li>Pots were received set fully clockwise, turning counterclockwise reduces values.
-<li>Left pot controls Vout, right pot controls Aout.
-<li>Upper blue LED chip illuminates while powered.
-<li>Another LED chip just left of that illuminates when current limited.
-<li>LED chip right of digits illuminates when displaying Vout;
-<li>LED chip left of digits illuminates when displaying Vin.</ul>
-
-</ul>
-<li>PWM servo control by Arduino code running in an STM32 "Blue Pill".<br>
-Here is the <a href="../Arduino">Arduino STM32 servo driver</a> for this solution.
-<li>harness tensioning signals from SimHub drive the USB-attached "Blue Pill":<br>
-<img width=640 src="../Arduino/SimHubCustomSerial.gif"><br clear=all>
-Here is the <a href="../Arduino/SimHubCustomSerial">SimHub Custom serial device harness tensioning control</a> description.<br>
-Here is the <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds.txt">SimHub Custom serial device profile</a>.
-</ul></details></ul></ul>
-
-<dd><font color=#007700><b>haptic transducers AKA exciters or shakers</b></font><ul>
+<a name=haptic>
+<dd></a><font color=#007700><b>haptic transducers AKA exciters or shakers</b></font><ul>
 <li><a href="ShakeIt/10cmShaker/">"super pucks" Low Frequency Bass Speaker Transducer 3.75"</a>
 <a name=SRS>
 <li><a href=PuckSeat.htm#shakeseat><b>SRS ShakeSeat</b></a> &nbsp &nbsp <a href="PuckSeat.htm#pad">padding</a>
@@ -852,11 +776,88 @@ a Custom serial device for <a href="#SimHarness">2DOF harness tensioning</a>.<br
 The complete SimHub profile is <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile">available here</a>
  along with a <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile.txt">revised version</a><br>
 After awhile, SimHub can accumulate too many profiles; <a href="shakeit.htm">here are mine</a>.</details>
+</ul><br>
+
+<dd><b>harness tensioning</b><ul>
+<li><a href="#accel">SimHub Acceleration properties</a>
+<li> <details> <summary> <b>SimHub 2DOF harness tensioning</b> </summary>
+<a name="SimHarness">
+One expedient for simulating sustained G forces is a G Harness.</a><br>
+SimXperience is a pioneer for that, with a <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a>,<br>
+typically sold as an accessory for their <a href="https://www.simxperience.com/en-us/products/motionsimulatorkits/gs-5g-seat.aspx">US$3K GS-5 G-Seat</a>.<br><br>
+For members of <a href="https://www.simhubdash.com">Wotever's SimHub Discord (see Live Support)</a><br>
+he has developed an <a href="https://discord.com/channels/299259397060689920/843488595062423553">#experimental-belt-tensioner</a>.<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/7ao_srZlhNc"></iframe><br>
+.. for which he recently added a dedicated SimHub plugin:<br>
+<img width=640 src="image/SHtensionner.gif"><br clear=all>
+Issues with it:<ul><li>gear-drive stepper motors are both noisy and dangerously torquey
+<li>suboptimal physics linearly adds lateral and longitudinal acceleration,<br> instead of square root of sum of squares
+<li>however, adequate range of motion to allow slackening e.g. for acceleration</ul>
+<a href="https://lebois-racing.fr/seat-belt-tensioner">Lebois</a> built a
+<a href="https://www.flickr.com/photos/94602950@N04/sets/72157717763752498/">direct-drive
+tensioner using PWM drive of a (too powerful?) DC motor</a>.<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe><br>
+<a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">Here</a>
+is another direct-drive tensioner for braking only on shoulder and lap belts.<br>
+<br>
+50mm diameter spools on 8.5Nm motors should provide adequate but safe tension and belt travel.<br>
+<pre>Torque (N.m) = 9.5488 x Power (kW) / Speed (RPM)</pre>
+For electric scooter motors, stall torque is approximately watts / unloaded RPS.<br>
+For example, a 350W 2750rpm motor might have about 7 N.m stall torque.<br>
+<br>
+<a href="https://www.racedepartment.com/members/racingmat.164315">RacingMat</a> developed a
+<a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF
+harness tensioning using a pair of 35kg.cm hobby servos</a>.<br><br>
+Parts budget (US$):<dl>
+<dt>41.40<dd><a href="https://www.ebay.com/itm/282250363739">RSD3235 servo pair</a>
+<dt>17.25<dd><a href="https://www.ebay.com/itm/264645806540">6x 100F super capacitors</a>
+<dt>10.00<dd><a href="https://www.amazon.com/gp/product/B08C594VNP">12VDC 5A power supply</a>
+<dt>6.95<dd><a href="https://www.amazon.com/gp/product/B07J9RQ8B6">5A constant current DC-DC buck regulator</a>
+<dt>7.26<dd><a href="https://www.amazon.com/dp/B000I1BWVW">wide bed casters</a>
+<dt>3.03<dd><a href="https://www.ebay.com/itm/143881049059">STM32F103C8T6 Blue Pill</a><br>
+to flash STM32 modules, a <a href="https://www.ebay.com/itm/352694692698"> ST-Link V2 clone</a> is wanted.<br>
+Beware of similar USB-TTL dongles <i>wrongly listed as</i> ST-LINK;<br>
+they are for more generic, but less convenient serial programming. 
+<dt>18.86<dd><a href="https://www.amazon.com/gp/product/B082FPRHGP">2-inch 4 point harness</a></dl>
+Modifications of RacingMat's design include:<ul>
+<li>suspending those servos between harness belt segments, reducing noise:<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/KSJQ8uF8pIc"></iframe>
+<li>repurposing wide bed casters as harness pulleys:<br>
+<img src="https://www.racedepartment.com/attachments/bedcasters-jpg.437943/">
+<li>(optionally) adding super capacitors to the power supply for faster servo response:<ul>
+<li>+8VDC from regulator (and super caps) to servo red wires
+<li>-8VDC to servo black wires
+<li>Blue Pill is powered and controlled by USB.
+<li>Blue Pill ground pin to -8VDC
+<li>Blue Pill PWM pins to servo white wires
+<img width=640 src="https://www.racedepartment.com/attachments/glued-jpg.442520/">
+<li>super capacitors in series require balance circuitry;<br>
+a commodity 16V super capacitor bank with balancing is cheap;&nbsp cut it in half:<br>
+<img src="https://www.racedepartment.com/attachments/halved-jpg.442519/">
+<li>super capacitors effectively short-circuit supplies at power on, requiring current limiting.<br>
+Using an automotive headlamp bulb as a "dummy load",<br> the buck regulator was adjusted for maximum 8V and 4.5A:<br>
+<img src="https://www.racedepartment.com/attachments/controls-jpg.438828/"><ul>
+<li>Button left of LED digits turns LEDs (but not power) off/on.
+<li>Right pushbutton controls display mode: Vin, Vout, Aout, Pout, cycle.
+<li>Pots were received set fully clockwise, turning counterclockwise reduces values.
+<li>Left pot controls Vout, right pot controls Aout.
+<li>Upper blue LED chip illuminates while powered.
+<li>Another LED chip just left of that illuminates when current limited.
+<li>LED chip right of digits illuminates when displaying Vout;
+<li>LED chip left of digits illuminates when displaying Vin.</ul>
+
 </ul>
+<li>PWM servo control by Arduino code running in an STM32 "Blue Pill".<br>
+Here is the <a href="../Arduino">Arduino STM32 servo driver</a> for this solution.
+<li>harness tensioning signals from SimHub drive the USB-attached "Blue Pill":<br>
+<img width=640 src="../Arduino/SimHubCustomSerial.gif"><br clear=all>
+Here is the <a href="../Arduino/SimHubCustomSerial">SimHub Custom serial device harness tensioning control</a> description.<br>
+Here is the <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds.txt">SimHub Custom serial device profile</a>.
+</ul></details></ul></ul><br>
 
-<dd><a href="../MIDI/plugin/">SimHub MIDI plugin</a>
+<dd><a href="../MIDI/plugin/index.htm"><b>SimHub MIDI plugin</b></a>
 
-<dd><details> <summary> <a href="https://www.simxperience.com/Products/SimVibe/SimVibeSoftware.aspx"><b>SimXperience SimVibe</b></a> </summary>
+<dd><br><details> <summary> <a href="https://www.simxperience.com/Products/SimVibe/SimVibeSoftware.aspx"><b>SimXperience SimVibe</b></a> </summary>
 A pioneer in converting sim telemetry to bass shaker audio,<br>
 that is now also available from (free) <a href=#ShakeIt>SimHub</a> as well as SRS' ShakeKit.<br>
 SimXperience has since integrated SimVibe with
@@ -938,7 +939,7 @@ After fiddling with Sim Commander 4 SimVibe
 SimHub <a href="#ShakeIt">ShakeIt Bass Shakers</a> is a better choice for me..<br>
 </details>
 
-<dd> <details><summary><b>Windows 10/11 sound</b></summary>
+<dd><br> <details><summary><b>Windows 10/11 sound</b></summary>
 <a name=R7>My Aurora R7</a> has 7.1 channel audio available on the motherboard.<br>
 To configure discrete surround channels:<br>
 Press Windows key + R to open a Run window and type <code>mmsys.cpl</code><br>

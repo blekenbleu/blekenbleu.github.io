@@ -1,6 +1,6 @@
 ---
 ---
-*14 Jan 2024*  
+*16 Aug 2024*  
 ![](Jan14stitch.jpg)  
 ## Signal Processing
   - [Aliasing and oversampling](../static/ImageProcessing/ao.html)
@@ -56,9 +56,9 @@
 
 ## [Microscopes and photomicography](microscope/)  
  &nbsp; **American Optical** [Series 10](microscope/#AO) / [Series 120](microscope/AO/) / [Reichert EPIStar](microscope/#EPIStar)  
- &nbsp; **Nikon** [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) [Metaphot](microscope/Nikon/Metaphot/)  
+ &nbsp; **Nikon** [Optiphot 150](microscope/Nikon/OptiphotInfinity/index.html#other) / [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) / [Metaphot](microscope/Nikon/Metaphot/)  
 
-## [MIDI](MIDI/) wireless, *including Android app* - [**SimHub plugin**](MIDI/plugin/)
+## [MIDI](MIDI/), *including Android app* - [**SimHub plugin**](MIDI/plugin/)
  &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
 
 ### [OnShape CAD](../static/CAD/)
@@ -74,8 +74,15 @@
 - [wheels for GT racing in VR](pedals/steering.htm)  
 
 ## [SimHub](SimHub/) sim driving telemetry processing
-- [Custom serial profiles](Arduino/shsds.htm)
-- [ShakeIt Bass Shaker Profiles](pedals/shakeit.htm)
+- [Bass Shaker Profiles](pedals/shakeit.htm) for [pedals](pedals/index.htm#haptic) and [ShakeSeat](pedals/index.htm#shakeseat)
+- [Custom serial profiles](Arduino/shsds.htm) e.g. for [harness tensioning](pedals/index.htm#SimHarness)  
+	- [corresponding Arduino sketches](Arduino/) for [STM32](pedals/STM32) 
+- [Plugins](../static/SimHub/index.htm) 
+	- [Fake8](https://github.com/blekenbleu/Fake8) properties and 8-bit serial data for [Custom serial profiles](Arduino/shsds.htm)  
+	- [JSONio](https://github.com/blekenbleu/JSONio) for per-car properties e.g. in [ShakeIt Bass Shaker Profiles](pedals/shakeit.htm)  
+	- [MIDIio](MIDI/plugin/index.htm) including [vJoy](https://github.com/blekenbleu/vJoySDK) and [Direct Input controllers](Windows/HID/index.htm#DI)  
+	- [OxyPlot](https://github.com/blekenbleu/OxyPlotPlugin) XY scatter plot plot one SimHub property vs another  
+	- [XtraMouse](https://github.com/blekenbleu/XtraMouse) use a second mouse to directly control SimHub properties, e.g. for MIDIio  
 
 ### [Two Factor Authentication](2fas/) - iOS and 2FAS
 
