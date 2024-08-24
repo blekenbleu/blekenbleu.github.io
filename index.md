@@ -46,7 +46,7 @@
  &nbsp; [**Thorens TD 160 MK II**](ThorensTD126MKII/README) with SME Series III  
  &nbsp; [Windows audio](Windows/WinAudio.htm)  
   
-### [Cameras &amp; lenses (Canon)](../static/Canon/) &nbsp; (Sony A7 II)(../static/A7II)  
+### [Cameras &amp; lenses (Canon)](../static/Canon/) &nbsp; [Sony A7 II](../static/A7II)  
 
 ### [Chromebook](ChromeBook/)
 
