@@ -104,6 +104,23 @@ should probably be proportional (piece-wise linear).
     <li>custom effect for under, oversteer properties (and outputs) from proxyS front-rear differences * AbsAcc
     <li>custom effect generates mixes of oversteer and loaded slips</ul></ul>
 
+<a name=rrrels><dt><br><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/RaceRoom%20Racing%20Experience%20-%20LoadedTireSlip.siprofile><b>RRRE LoadedTireSlip</b></a> 1 effect</a>
+<dd>Although I rarely play it, RaceRoom Racing Experience is "interesting" because it provides<ul>
+<li>NewRawData().TireLoad
+<li>$prop('GameRawData.TireGrip.RearLeft');</ul>
+This pair of properties may be what elsewhere are being estimated for loaded slip...<pre>
+	// approximate average tire load
+	root['load'] = NewRawData().TireLoad.RearLeft 
+
+	function load(tire)
+	{
+		root['load'] += (tire - root['load']) / 100; // smoothed tire load
+		return tire / root['load'];
+	}
+	//			 __________________slip ____________________
+	return 100 * (1 - $prop('GameRawData.TireGrip.RearLeft')) * load(NewRawData().TireLoad.RearLeft);
+</pre>
+
 <dt><br><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/NewLoaded4-chanWheelslipUndersteer.siprofile><b>NewLoaded4-chanWheelslipUndersteer.siprofile</b></a>
 <dd>from <a href=#rrrel>RRRELoaded4-chanWheelslipUndersteer</a>
 <dd>    same effects as above<ul>
@@ -280,6 +297,7 @@ and <a href=ShakeIt/index.htm#LWS>Loaded WheelSlip</a>),<br>
 
 <a name=rrrel><dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/RaceRoom%20Racing%20Experience%20-%20RRShakers.siprofile"><b>RRRELoaded4-chanWheelslipUndersteer</b></a> 6 effects</a>
 <dd>from <a href="https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/page-4#post-3427571">RangeyRover</a>
+<dd>hacked front left;
 
 <dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/SpeedShiftsGrp.siprofile"><b>speed shifts</b></a>
 <dd>Tactile effect for shifts should IMO reflect shift smoothness,<br>
