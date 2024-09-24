@@ -524,47 +524,47 @@ and tweaked connecting slots eliminated missed shifts.</details>
 <dd><details><summary><b>DCD WRC Shifter</b></summary>
 <a name=DCD><i>Ordered Sep 16; delivered Oct 2.</i><br></a>
 Windows 10 recognized and set it up.<br>
-SimHub Controls and events Controller status
+SimHub Controls and events Controller status<br>
 lists it as DCD_WRC_Shifter<br>
 and reports its inputs as B00 and B01<br>
-Lost motion is noted when slowly releasing pull,
-when occurs neither for push nor rapid releases.<br>
+Lost motion is noted when slowly releasing pull,<br>
+which occurs neither for push nor rapid releases.<br>
 <br>
 Included were a stack of spacers, screwed together,<br>
 2 shifter paddles and a nice braided micro USB cable.<br>
 All screws thread thru polymer to metal nuts,
 which are mostly recessed and captured in polymer,<br>
-except for 4 nuts that fasten wheel base flange to shifter body,
+except for 4 nuts that fasten wheel base flange to shifter body,<br>
 which protrude:<br>
 <img src="https://www.racedepartment.com/attachments/dcdnuts-jpg.507000/"><br clear=all>
-That was sorted for <a href="#DD">my AccuForce</a>
+That was sorted for <a href="#DD">my AccuForce</a><br>
 <a href="https://www.racedepartment.com/threads/any-other-interest-in-diy-t-slot-extrusion-8020-wheel-stands.204332/post-3404152">mounted</a>
 thru <a href="https://8020.net/40-8020.html">40-8020 T-slotted aluminum profile</a>,<br>
-using rubber gasket material already on order
-to fix another spacing issue.<br><br>
+by rubber gasket material already ordered.<br><br>
 
-<a name="Q1R">A second spacing issue: between the shifter body and clone Q1r lever:<br></a>
+<a name="Q1R">Another</a> spacing issue: between shifter body and clone Q1R lever:<br>
 
 <img width=100% src="https://www.racedepartment.com/attachments/q1r_wrc-jpg.508788/"><br clear=all>
-... addressed by bending the lever's tip inward a few mm.<ul>
-<li>Paddles flex;&nbsp particularly the larger of 2
-<li>shifter body wobbled in the wheel base flange;&nbsp addressed by shimming.
-<li>the micro-USB socket broke off its controller board;&nbsp
+... addressed by bending the lever's tip inward a few mm.<br><br><ul>
+
+<li>DCD WRC paddles flex;&nbsp particularly the larger of 2
+<li>shifter body wobbled in the wheel base flange;&nbsp shimmed.
+<li>the micro-USB socket broke off its controller board;<br>
 held on by only solder and hot glue;<br>
 <img width=40% src="image/MEGA32U4.jpg"> &nbsp <img width=40% src="image/microUSB.jpg"><br clear=all>
 ... before breaking off,
-the micro-USB cable connector stuck straight up with no support.<br>
+the micro-USB cable connector<br> stuck straight up, unsupported.<br>
 That board could be shifted lower on its 3-D printed housing,<br>
 leaving room for a "well" to support the USB cable connector.<br>
 <li><a href="https://www.instagram.com/p/Ci7_awUN8x-/">newer DCD paddle shifters</a>
-use USB C and a bolt to better anchor the shifter module,<br>
+use USB C<br> and a bolt to better anchor the shifter module,<br>
 but USB-C implementation still appears vulnerable:<br>
 <img src="image/DCD_USB-C.jpg">
-<li>Rather than repair that board, which consumes a USB port for only 2 switches,<br>
-add switch support to Arduino Blue Pill
+<li>Rather than repair that board,<br> which consumes a USB port for only 2 switches,<br>
+add switch support to Arduino Blue Pill<br>
 <a href="https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/PWM_FullConfiguration">PWM_FullConfiguration sketch</a>
 and <a href="https://github.com/blekenbleu/Fake8">Fake8 SimHub plugin</a>,<br>
-converting debounced switch changes from Arduino Blue Pill USB COM port<br> to corresponding SimHub property values,
+converting debounced switch changes<br> from Arduino Blue Pill USB COM port<br> to corresponding SimHub property values,<br>
 then to <a href="https://github.com/blekenbleu/MIDIio">vJoy virtual switches</a>.
 </ul></details>
 
