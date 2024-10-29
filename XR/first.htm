@@ -1,0 +1,45 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>First real world VR1 customers - hiccups and impressions</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href="./"><i>back</i></a></font><br>
+
+<font size=+1>
+<h2>First real world VR1 customers - hiccups and impressions</h2>
+<dl><dt>"VrgEyes -Could not initialize camera stream"
+<dd>Three 10gig (red) USB ports wanted
+<ul><li>MR cameras share one USB cable, but use 2 ports..!</ul>
+
+<dt><br>[vrg_eyes] [critical] [VrgEyesApi.cpp:274] VRG EYES API (StartIpdCalibrationUsingTool)<br>
+- camera error: EyeCamMediaFoundationStitched - BOTH: Failed to create video capture device.
+<dd>known bug in VR1 <i>SteamVR</i> driver eye tracking IPD measurement<ul>
+<li>should not interfere with usability
+<li>OpenXR eye tracking should work nominally</ul>
+
+<dt><br>some initial impressions
+<dd>"Sharpness is really good, colors and brightness also, weight is ok for me,<br>
+I will have to work a bit on comfort (but that was the case with every HMD I had so far)"
+
+<dt><br><a href=https://sourceforge.net/projects/nsis/>VR1 tool setup</a>
+<dd><img src=setup.jpg>
+
+<dt><br>Update to latest Nvidia driver before plugging in VR1;
+<dd>ignore message about downgrading that driver.
+
+<dt><br><a href=https://boll.itch.io/wimfov>WhatIsMyFieldOfView</a>
+
+<dt><br>First 2 customers reported nausea-inducing lags;&nbsp work-around:
+<dd><ul><li>PLUG VR1 INTO RTX 4090 "MAIN DISPLAY PORT" (nearest motherboard)
+<li>disable G-Sync and 12 bit in Nvidia resolution settings</ul>
+
+</dl>
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
