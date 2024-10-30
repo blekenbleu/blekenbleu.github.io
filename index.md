@@ -84,6 +84,7 @@
 	- [OxyPlot](https://github.com/blekenbleu/OxyPlotPlugin) XY scatter plot plot one SimHub property vs another  
 	- [XtraMouse](https://github.com/blekenbleu/XtraMouse) use a second mouse to directly control SimHub properties, e.g. for MIDIio  
 
+### [Somnium VR1](VR1) - premium PC XR headset
 ### [Two Factor Authentication](2fas/) - iOS and 2FAS
 
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
