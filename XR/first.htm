@@ -56,6 +56,9 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  then the application (especially with MSFS) the performance seems much better,<br>
  especially with head movement smoothness.
 
+<dt>OpenXR Toolkit
+<dd><a href=https://mbucchia.github.io/OpenXR-Toolkit/troubleshooting.html#try-the-legacy-menu-mode>'Legacy menu' option</a> in the Menu tab
+
 <dt><br>SteamVR IPD
 <dd>Open the developer console by first pressing the three-lined menu button at the top of SteamVR,<br>
  then decending into the Developer menu section, and finally selecting the Web Console.<br>
@@ -75,10 +78,11 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
 <dd>I will have to work a bit on comfort (but that was the case with every HMD I had so far)<br>
  Visonary weight (without headstrap but with anchorpoint) of 645g<br>
  Windows 11, AMD 5800x3d X570 msi motherboard<br>
- I don't have a 12 bit monitor, can only set 8bit (for monitor as VR1 doesn't show up in nvidia panel)<br>
+ I don't have a 12 bit monitor, can only set 8bit (monitor; VR1 now showing in nvidia panel)<br>
  Main monitor is already 1080p/60Hz<br>
- BTW about the USB issue with eye tracking;&nbsp I checked and I did already use USB3.2 gen 2<br>
- which should suffice. I'm using 5800x3d/X570, I know there has been some history with usb on amd and vr,<br>
+ BTW about the USB issue with eye tracking;<br>
+ I checked and I did already use USB3.2 gen 2 which should suffice.<br>
+ I'm using 5800x3d/X570, I know there has been some history with usb on amd and vr,<br>
  maybe there is som issue? Also, could it be related to the tracking/distortion issue?<br>
  I think eye relief change works real-time but the rendering needs some seconds to adjust<br>
  and the image freezes a few secs<br>
@@ -87,7 +91,8 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  Tried with version 555.99. No difference.<br>
  The version mentioned in installer (546.01) I cannot find at nvidia website<br>
  I tried now a few more apps (HL ALyx, MSFS2020, Eurotruck Sim2, automobilista 2,<br>
- a few UEVR (Talos Principle2, Ride5 with openXR). The delay issue seems to be more prominent in SteamVR.<br>
+ a few UEVR (Talos Principle2, Ride5 with openXR).<br>
+ The delay issue seems to be more prominent in SteamVR.<br>
  With openXR I did notice it less, but it still was noticable.<br>
  Of course it also depends on the content, with HL Alyx its probably most noticable<br>
  I think I can now see (with nvidia version 555.99) what was meant by the 'screen tearing'.<br>
@@ -99,22 +104,23 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
 <dt><br>"I am officially second 🥈 in the entire planet earth 😃☝️<br>
  <dd>Wonder if that line is intended or damaged xD<br>
  <img align=top src=line.jpg> &nbsp
- (<i>they print with layers. Sometimes it happens.</i>)<br>
+ (<i>printed in bands; sometimes it happens.</i>)<br>
  Omg Guys that custom cable is something else 🔥🔥🔥Literally the best cable I've seen<br> 
  While installing the driver I am looking at vr1,<br>
  a magnesium head strap would be more appropriate to such a super super high-end headset.<br>
  Okay picture is beyond phenomenal BUT, your brain needs to adjust<br>
- There is some kind of delay between head movement. Like 40ms perhaps which makes you a little bit dizzy<br>
- like remember guys when you mod the HTC Vive pro 1 with gear vr lenses.<br>
- You had that dizzy pressure feeling in the brain that something ain't right &nbsp
+ There is some kind of delay between head movement.<br>
+ Like 40ms perhaps which makes you a little bit dizzy<br>
+ ... that dizzy pressure feeling in the brain that something ain't right &nbsp
  (<i>lag from HDR setting</i>)<br>
  It's I guess aspherics I didn't use them for 3 years ...  But holy cow that fov 😱😍😍😍<br>
  Manual [IPD] works but the change doesn't apply in the software (<i>Known bug</i>)<br>
  <img src=800705aa.jpg><br>
  I got a 3500&euro; monitor with 12 bit that's why it didn't work with VR1<br>
  Yeah need a much thinner facial interface mask<br>
- So far I found out that the headset has to be at 90hz at 60% resolution so you have 3ms response time<br>
- otherwise you will have the feeling that it's sluggish. The LCD panels are slow in the vr1 as with varjo Aero.<br>
+ So far I found out that the headset has to be at 90hz at 60% resolution<br>
+ so you have 3ms response time otherwise you will have the feeling that it's sluggish.<br>
+ The LCD panels are slow in the vr1 as with varjo Aero.<br>
  It ain't HTC Vive pro 1 quickness. I think that's what we feel.<br>
  Hopefully 120hz next week that will reduce the latency.<br>
  (<i>tracking issues</i>) Had that too but restarted the PC and everything was fine.<br>
@@ -126,10 +132,10 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  Didn't the first time either BTW. Just installed steamVR drivers<br>
  I had some major tracking issues (jumping all over the place for no reason)<br>
  OK got the tracking working, Varjo Base was still installed, that probably messed with it<br>
- In WIMFOV, it loads (via steam VR) and I see the mirror. I also see base stations are tracking fine.<br>
- But the headset won't wake when I put it in, screens are off, LEDs are on..? &nbsp
+ In WIMFOV, it loads (via steam VR) and I see the mirror, and base stations are tracking fine.<br>
+ Headset won't wake when put on; screens are off, LEDs are on..? &nbsp
  (<i>SteamVR VS OpenXR</i>)<br>
- Has anyOne used OXRTK successfully yet? I disabled it earlier because it wasnt "in the right place".<br>
+ Has anyone used OXRTK successfully yet? I disabled it earlier because it wasn't "in the right place".<br>
  It was at a weird distance and angle to me so I couldn't even read the text.<br>
  It seemed to be functional but not usable due to the weird positioning<br>
  Will try again now<br>
@@ -137,7 +143,8 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  Not sure what causes this, but sometimes the resolution slide will display 0x0.<br>
  Moving the slider doesn't help.<br>
  <img src=resolution.jpg><br>
- Having said all this, the image sharpness and colors are absolutely STUNNING when it's working somewhat.<br>
+ Having said all this, the image sharpness and colors are absolutely STUNNING<br>
+ when it's working somewhat. &nbsp
  Crazy contrast too. And lenses also much better than Crystal Light<br>
  And comfort feels pretty great too, although I haven't worn it long.<br>
  Feels a lot like the Aero in many respects (also visually),<br>
@@ -150,13 +157,14 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  I dunno, details in the distance seem a lot more pixelated with this setting<br>
  than at equivalent resolutuons on PCL or Aero, maybe due to the larger FOV. BUt I'm still tweaking<br>
  Default FOV so far... just trying to establish basic operations..<br>
- I really want it to work but there is some weird issue where OXRTK menu moves to an inaccessible place<br>
- when not running it in safe mode. Not sure if this is a VR1 problem but I've never had it before.<br>
+ I really want it to work but there is some weird issue<br>
+ where OXRTK menu moves to an inaccessible place when not running it in safe mode.<br>
+ Not sure if this is a VR1 problem but I've never had it before.<br>
  And it does offer some things that the VR1 tool doesn't over<br>
  like turbo mode and CAS sharpening and in-VR fps display<br>
  you can disable steamVR and the tracking still works<br>
  (still via steamVR, but in background only. SteamVR app is not open)<br>
- I'm beginning to think that MSFS crashes if VR1 tool is open and VR1 is connected while MSFS loads.<br>
+ I'm beginning to think that <i><b>MSFS crashes if VR1 tool is open and VR1 is connected while MSFS loads</b></i>.<br>
  But if I let it load first and then connect the HMD it seems fine+<br>
  At least i got OXRTK working properly by activating Legacy Menu mode, thanks to whoever said that!<br><br>
 
@@ -216,8 +224,10 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  
 <dt><br>"what was the fix for tracking latency again? I'm feeling sick<br>
 <dd>everytime when i try to start SteamVR and I haven't just restarted the pc<br>
- it says it can't track the headset and in the headset it's just a one tone color across the whole screen<br>
- it only shows up the first time i open steamVR after i restart the pc,<br> when i close it and restart it it stops working<br>
+ it says it can't track the headset and in the headset<br>
+ it's just a one tone color across the whole screen<br>
+ it only shows up the first time i open steamVR after i restart the pc,<br>
+ when i close it and restart it it stops working<br>
  The image seen on display seems to be slightly delayed to my movements.<br>
  I disabled gsync, set my monitor to 8bit color,<br>
  made sure that I'm using the closest displayport to the mainboard, still the same.<br>
@@ -235,11 +245,11 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  Unfortunately, at the beginning I've also got some connection errors for the Mixed Reality Cameras,<br>
  but now they are also working. In my room it's a little bit dark,<br>
  but in Passthrough I was able to see everything and was able to read text on paper without issues.<br>
- Similar to Pico 4 passthrough,<br>
- mixed realized cameras got very blurry during head movement.&nbsp (<i>turn up the frame rate on the cameras</i>)<br>
+ Similar to Pico 4 passthrough, mixed realized cameras got very blurry<br>
+ during head movement.&nbsp (<i>turn up the frame rate on the cameras</i>)<br>
  If you stand still, amazing sharp camera picture!<br>
- Regarding Visual in SteamVR, yes, the picture is super sharp, if you stand still and not moving the head.<br>
- But yes, due to the current software issue, the VR1 and using VR experience is impossible in this state.<br>
+ Regarding Visual in SteamVR, yes, the picture is super sharp,<br> if you stand still and not moving the head.<br>
+ But yes, due to the current software issue,<br> the VR1 and using VR experience is impossible in this state.<br>
  Everything feels like you are moving in slowmotion, and you are getting dizzy after short time<br>
  So let's wait until the next software release,<br>
  to start the next first testing procedure and hopefully able to use VR in a normal way"
