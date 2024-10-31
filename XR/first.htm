@@ -37,6 +37,8 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
 <a href=https://sourceforge.net/projects/nsis/>setup build tool</a>
 <dd><img src=setup.jpg>
 
+<dt><br>If you have the default "Somnium VR1" profile selected, it will not allow you to change any of these settings.
+
 <dt><br>Update to latest Nvidia driver before plugging in VR1;
 <dd>ignore message about downgrading that driver.
 
@@ -54,6 +56,15 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  especially with head movement smoothness.
 
 <dt><br>late November update<dd>'huge performance boost for both [SteamVR, OpenXR] pipelines'
+
+<dt><br>SteamVR IPD
+<dd>Open the developer console by first pressing the three-lined menu button at the top of SteamVR,<br>
+ then decending into the Developer menu section, and finally selecting the Web Console.<br>
+ This will navigate your browser to a SteamVR served webpage that lets you access the console.<br>
+ Alternatively you can navigate to <a href=http://localhost:27062/console/index.html>this link (while SteamVR is running)</a>.<br>
+ From there, enter the command:&nbsp `settings steamvr.ipd`<br>
+ and that should return your IPD in meters. Eg. steamvr.ipd: 0.063 for an IPD of 63mm.
+
 </details>
 
 <dt><br><details><summary><b>Initial impressions</b></summary>
@@ -82,26 +93,6 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
   I see lag also in SteamVR home, in the 'virtual desktop' of the VR1 software, in testHmd,<br>
  basically everywhere so I'm pretty sure it doesn't depend on the app or an app specific setting"
 
-<dt><br>"No power button just like Aero? Oof. Good thing I already have smart plugs in place<br>
- <dd>I had some major tracking issues (jumping all over the place for no reason)<br>
- OK got the tracking working, Varjo Base was still installed, that probably messed with it<br>
- In WIMFOV, it loads (via steam VR) and I see the mirror. I also see base stations are tracking fine.<br>
- But the headset won't wake when I put it in, screens are off, LEDs are on..? &nbsp
- (<i>SteamVR VS OpenXR</i>)<br>
- ... seems my tracking issues was a problematic basestation<br>
- I just tried adding studioform counterweights and Pimax Crystal cushion<br>
- and this has improved comfort by a lot,<br>
- I'm lucky as I don't really plan on using steamVR much,<br>
- but it's completely unusable due to the 'delay' issue.<br>
- If i disable steamVR and use only openXR everything runs great<br>
- and BTW what is Brightness Correction?
- Even openXR via steamVR has the [lag] issue I think.<br>
- I can fix it by disabling steamVR in the VR1 tool and rebooting,<br>
- then running via Somnium OXR runtime only<br>
- 3D effect is great<br>
- I had 2 instances when entering VR where the left panel simply didn't switch on<br>
- Leaving and entering VR again fixed it both times &nbsp (<i>this is a software glitch</i>)"
-
 <dt><br>"I am officially second 🥈 in the entire planet earth 😃☝️<br>
  <dd>Wonder if that line is intended or damaged xD<br>
  <img align=top src=line.jpg> &nbsp
@@ -126,6 +117,77 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  (<i>tracking issues</i>) Had that too but restarted the PC and everything was fine.<br>
  First launch vr1 software then steam VR"
 
+<dt><br>"No power button just like Aero? Oof. Good thing I already have smart plugs in place<br>
+ <dd>Do the panels autonpower off and if yes can the timeout time be adjusted?<br>
+ Clicked through the wizard but it didn't trigger any tracking setup.<br>
+ Didn't the first time either BTW. Just installed steamVR drivers<br>
+ I had some major tracking issues (jumping all over the place for no reason)<br>
+ OK got the tracking working, Varjo Base was still installed, that probably messed with it<br>
+ In WIMFOV, it loads (via steam VR) and I see the mirror. I also see base stations are tracking fine.<br>
+ But the headset won't wake when I put it in, screens are off, LEDs are on..? &nbsp
+ (<i>SteamVR VS OpenXR</i>)<br>
+ Has anyOne used OXRTK successfully yet? I disabled it earlier because it wasnt "in the right place".<br>
+ It was at a weird distance and angle to me so I couldn't even read the text.<br>
+ It seemed to be functional but not usable due to the weird positioning<br>
+ Will try again now<br>
+ ... Aaand MSFS crashed when trying to enter VR. Never had as many MSFS crashes as today<br>
+ Not sure what causes this, but sometimes the resolution slide will display 0x0.<br>
+ Moving the slider doesn't help.<br>
+ <img src=resolution.jpg><br>
+ Having said all this, the image sharpness and colors are absolutely STUNNING when it's working somewhat.<br>
+ Crazy contrast too. And lenses also much better than Crystal Light<br>
+ And comfort feels pretty great too, although I haven't worn it long.<br>
+ Feels a lot like the Aero in many respects (also visually),<br>
+ which is NOT a bad thing from my perspective, was actually just what I wanted.<br>
+ Really hope all the kinks can be ironed out!<br>
+ Q3 and pro both have better e2e clarity, but that's expected. Or rather, their clarity extends further,<br>
+ right to the very edge of the lense. In V1 there is some blurryness at the edges<br>
+ I just cranked the resolution to 110% in MSFS and DAMN. now I see why we need 5090s. Nuts<br>
+ NICE I got OXRTK working, simply needed to start it in safe mode<br>
+ I dunno, details in the distance seem a lot more pixelated with this setting<br>
+ than at equivalent resolutuons on PCL or Aero, maybe due to the larger FOV. BUt I'm still tweaking<br>
+ Default FOV so far... just trying to establish basic operations..<br>
+ I really want it to work but there is some weird issue where OXRTK menu moves to an inaccessible place<br>
+ when not running it in safe mode. Not sure if this is a VR1 problem but I've never had it before.<br>
+ And it does offer some things that the VR1 tool doesn't over<br>
+ like turbo mode and CAS sharpening and in-VR fps display<br>
+ you can disable steamVR and the tracking still works<br>
+ (still via steamVR, but in background only. SteamVR app is not open)<br>
+ I'm beginning to think that MSFS crashes if VR1 tool is open and VR1 is connected while MSFS loads.<br>
+ But if I let it load first and then connect the HMD it seems fine+<br>
+ At least i got OXRTK working properly by activating Legacy Menu mode, thanks to whoever said that!<br><br>
+
+ ... seems my tracking issues was a problematic basestation<br>
+ I just tried adding studioform counterweights and Pimax Crystal cushion<br>
+ and this has improved comfort by a lot,<br>
+ I'm lucky as I don't really plan on using steamVR much,<br>
+ but it's completely unusable due to the 'delay' issue.<br>
+ If i disable steamVR and use only openXR everything runs great<br>
+ and BTW what is Brightness Correction?
+ Even openXR via steamVR has the [lag] issue I think.<br>
+ I can fix it by disabling steamVR in the VR1 tool and rebooting,<br>
+ then running via Somnium OXR runtime only<br>
+ 3D effect is great<br>
+ I had 2 instances when entering VR where the left panel simply didn't switch on<br>
+ Leaving and entering VR again fixed it both times &nbsp (<i>this is a software glitch</i>)<br>
+ How do you deal with the steamVR menu that appears within MSFS when using that runtime? I couldn't handle it lol<br>
+ just added the Apache strap on top of the counterweights and the Studioform Cushion<br>
+ and now it's comfortable as hell, better than Aero actually 👍<br>
+ But long test (1.5hrs+) still to be done<br>
+ Basically, when looking at a super stable "object" like a menu or a stationary plane in MSFS and moving head left to right,<br>
+ a "wave/ripple" like distortion moves through the field of view very near the center.<br>
+ There is even a point when what you are focusing on seems to "shift/materialize" a small distance from the left to the right.<br>
+ Once you see it you can't unsee it. <br>
+ In addition, I can't seem to fully focus on most of the screen, and this is not due to my eyesight.<br>
+ I don't have this issue in other headsets. <br>
+ Any idea why the eye relief is disabled for me? Does it only work in steamVR mode?<br>
+ <img src=relief.png><br>
+ Anyone who already has one, try this: Look at a menu text and close your left eye,<br>
+ then slowly move your head left to right and back and forth slowly. Is the text entirely stable?<br><br>
+
+ When I look through my left eye only, it's basically stable. When I look through my right eye only,<br>
+ I see very obvious warping/rippling and even see the text "telelport" a few milimetres."
+
 <dt><br>"DAS anchors♥️<dd><img src=DAS.jpg><br>
  Guess which cable is from VR1 and which index<br><img src=cables.jpg><br>
  Instead of a power brick I would have preferred one of those where all the weight is at the Socket<br>
@@ -133,24 +195,24 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
  <i><b>Feedback</b></i>: &nbsp at the ultraleap step it said 'drivers not installed',<br>
  &emsp; but didn't give me a button to install it, only a next.<br>
  &emsp; later in the software under the drivers tab could I click it<br>
-my extension cable might not be proper<br>
-for reference, the hd800s don't really fit. but these are gigantic headphones<br>
+ my extension cable might not be proper<br>
+ for reference, the hd800s don't really fit. but these are gigantic headphones<br>
  <div align=center><img width=300 src=hd800.jpg></div>
-I think I have 1 [base station] that behaves worse then the other 3.<br>
-I'll disable it and see if it makes a difference<br>
-Skyrim just gave me a black screen but I did hear sound<br>
-Pavlov is still completely broken.<br>
-Alyx is playable but I need to dial in some settings, and perhaps turn of my ultrawide screen.<br>
-Bladed and sorcery seemed to work mostly fine<br>
-Untill you fall as well.<br>
-I had all [Alyx] settings lowest, didn't see any resolution option though<br>
-I also don't know what the relation is between the resolution setting in steamvr vs in the vr1 app"
+ I think I have 1 [base station] that behaves worse then the other 3.<br>
+ I'll disable it and see if it makes a difference<br>
+ Skyrim just gave me a black screen but I did hear sound<br>
+ Pavlov is still completely broken.<br>
+ Alyx is playable but I need to dial in some settings, and perhaps turn of my ultrawide screen.<br>
+ Bladed and sorcery seemed to work mostly fine<br>
+ Untill you fall as well.<br>
+ I had all [Alyx] settings lowest, didn't see any resolution option though<br>
+ I also don't know what the relation is between the resolution setting in steamvr vs in the vr1 app"
  
 <dt><br>"what was the fix for tracking latency again? I'm feeling sick<br>
 <dd>everytime when i try to start SteamVR and I haven't just restarted the pc<br>
-it says it can't track the headset and in the headset it's just a one tone color across the whole screen<br>
-it only shows up the first time i open steamVR after i restart the pc,<br> when i close it and restart it it stops working<br>
-The image seen on display seems to be slightly delayed to my movements.<br>
+ it says it can't track the headset and in the headset it's just a one tone color across the whole screen<br>
+ it only shows up the first time i open steamVR after i restart the pc,<br> when i close it and restart it it stops working<br>
+ The image seen on display seems to be slightly delayed to my movements.<br>
  I disabled gsync, set my monitor to 8bit color,<br>
  made sure that I'm using the closest displayport to the mainboard, still the same.<br>
  I'm getting 20-30fps with 80% in vrc"
@@ -159,7 +221,7 @@ The image seen on display seems to be slightly delayed to my movements.<br>
 <dd> installing and using the VR1 Ultimate Edition 🙂<br>
   And oh, boy, it's a lot of USB cables 😂  And Artur,<br>
  you are crazy to make also the USB cable housing out of metal 😬<br>
-<img src=lot.jpg><br>
+ <img src=lot.jpg><br>
  I had not much time to test a lot of the functionality in much detail.<br>
  At the beginning, the Ultraleap Module was not recognized.<br>
  After plugging the power off and on again,<br>
