@@ -47,7 +47,7 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 
 <dt><br>Various artifacts, e.g. margin flicker, audio interference
 <dd><ul><li>install SteamVR beta<br><img width=480 src=Betas.png>
-<li><b>Somnium Space VR</b> discord `technical-support` channel<br> has more issues and workarounds</ul>
+<li><b>Somnium Space VR</b> <a href=https://discord.com/channels/494994753146847233/1300888031389155338>discord technical-support channel</a><br> has more issues and workarounds</ul>
 
 <dt><br>IPD measurement
 <dd>only available running OpenXR, not SteamVR
@@ -73,6 +73,10 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 
 <dt><br>OpenXR Toolkit
 <dd><a href=https://mbucchia.github.io/OpenXR-Toolkit/troubleshooting.html#try-the-legacy-menu-mode>'Legacy menu' option</a> in the Menu tab
+
+<dt><br><a href=https://github.com/maluoi/openxr-explorer>OpenXR Explorer</a>
+<dd>add the VR1 runtime by editing the list and adding this entry:<br>
+<code>windows VrEngineers C:\ProgramData\vrg\oxr\vrg_openxr.json</code>
 
 <dt><br>SteamVR IPD
 <dd>Open the developer console by first pressing the three-lined menu button at the top of SteamVR,<br>
@@ -280,6 +284,7 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 <li>disable G-Sync and 12 bit in Nvidia resolution settings
 <li>Varjo Base and other HMD software may interfere with VR1
 <li>Resolution slides shows 0x0 resolution when SteamVR is off
+<li>Pavlov rejects VR1 (VRG) OpenXR:<br><img src=Untrusted.png>
 </ul>
 </dl>
 </td></tr><tr><td align=center>
