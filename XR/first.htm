@@ -7,7 +7,7 @@
 <body>
 <div align=center><table class="my_table"><tr><td>
 
-<font size=-1><a href=./><i>back</i></a></font>
+<font size=-1><a href=VR1.html><i>back</i></a></font>
 <a href=https://www.gixen.com/index.php name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src=https://www.gixen.com/images/gixenlink.gif border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>
@@ -16,26 +16,40 @@
 <font size=+1>
 <h2>First VR1 customers - hints, software, impressions and hiccups</h2>
 <dl>
-<dt><br><b><i>Flash news</i></b>:&nbsp; <a href=https://www.youtube.com/watch?v=IDRlksSJLos>lag is caused by NVIDIA driver changes</a>.
-<dd>team is working on changes right now.<br>
-<i>First customer version of</i> VR1 tool <i>works only with new drivers</i><br>
-So after Friday [1 Nov] everything will work as intended, including <i>much</i> wider FoV etc.<br>
-FOV and warping will change, based on 'wrong warping' identified yesterday (30 Oct).
+<dt><br><a href=https://www.youtube.com/watch?v=IDRlksSJLos><b><i>Initial issues</i></b></a>.
+<dd><details><summary>fixed 1 Nov</summary>
+<ul><li>Fixed perceived delay of the VR movement vs physical movements.
+<li>Fixed low FOV problems to allow for the full FOV of the headset to be utilized.
+<li>Changed default rendering resolution to 80%.
+<li>Added option to set custom keyboard shortcut in the Buttons tab.
+<li>Updated algorithm for mixed reality latency compensation.
+<li>Fixed IPD values displayed in Connected Headset section and in the Eyes tab.
+<li>Added capability to switch FOV and resolution without restarting SteamVR.
+<li>Fixed FPS counter in Somnium VR1 Tool when using SteamVR.
+<li>Fixed measure IPD and eye tracking functionality in SteamVR.
+<li>Other minor improvements and fixes
+</ul>
+<b>Need to start SteamVR or OpenXR app for Calibrations to work...</b><br>
+<img src=https://www.overtake.gg/attachments/calibration-png.795431/><br>
+<b>Consensus:</b>&nbsp Lag, FoV, eye tracking calibration are fixed;<br>
+IPD measured value shows <i>only in OpenXR</i>.<br><br>
 
-<dt><br>'VrgEyes -Could not initialize camera stream'
-<dd>Three 10gig (red) USB ports wanted
-<ul><li>MR cameras share one USB cable, but use 2 ports..!</ul>
+<img src=https://www.overtake.gg/attachments/1730487181741-png.795455/>
+</details>
 
-<dt><br>[vrg_eyes] [critical] [VrgEyesApi.cpp:274] VRG EYES API (StartIpdCalibrationUsingTool)<br>
-- camera error: EyeCamMediaFoundationStitched - BOTH: Failed to create video capture device.
-<dd>known bug in VR1 <i>SteamVR</i> driver eye tracking IPD measurement<ul>
-<li>should not interfere with usability
-<li>OpenXR eye tracking should work nominally</ul>
+<dt><br>Three 10gig (red) USB ports wanted for mixed reality versions
+<dd><ul><li>MR cameras share one USB cable, but use 2 ports..!</ul>
 
-<dt><br><details><summary>Software</summary>
+<dt><br><details><summary>Software and hints</summary>
 <dt><br><a href=https://somniumspace.com/somniumvr1><b>VR1 Hub:&nbsp software</b></a> &nbsp
 <a href=https://sourceforge.net/projects/nsis/>setup build tool</a>
 <dd><img src=setup.jpg>
+
+<dt><br>Various artifacts, e.g. margin flicker, audio interference
+<dd>install SteamVR beta<br><b>Somnium Space VR</b> discord `technical-support` channel<br> has more issues and workarounds
+
+<dt><br>IPD measurement
+<dd>only available running OpenXR, not SteamVR
 
 <dt><br>If you have the default 'Somnium VR1' profile selected,<br>
  it will not allow you to change any of these settings.
@@ -71,9 +85,12 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
 
 <dt><br>late November update<dd>'huge performance boost for both [SteamVR, OpenXR] pipelines'
 
+<dt><br><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0>Somnium VR1 Tool overview video</a>
 </details>
 
 <dt><br><details><summary><font size=+1><b>Initial impressions</b></font></summary>
+ &emsp; <i>issues mostly addressed; &nbsp some pupil swim complaints</i><br><br>
+
 <a name=first><dt></a>"Sharpness is really good, colors and brightness also, weight is ok for me,<br>
 <dd>I will have to work a bit on comfort (but that was the case with every HMD I had so far)<br>
  Visonary weight (without headstrap but with anchorpoint) of 645g<br>
@@ -258,14 +275,11 @@ FOV and warping will change, based on 'wrong warping' identified yesterday (30 O
 </details>
 
 <dt><br><font size=+2><b>hiccups</b></font>
-<dt>First 2 customers reported nausea-inducing lags;&nbsp work-around:
 <dd><ul><li>PLUG VR1 INTO RTX 4090 'MAIN DISPLAY PORT' (nearest motherboard)
-<li>disable G-Sync and 12 bit in Nvidia resolution settings</ul>
-
-<dt><br>Varjo Base may interfere with VR1 tracking
-
-<dt><br>Resolution slides shows 0x0 resolution when SteamVR is off
-
+<li>disable G-Sync and 12 bit in Nvidia resolution settings
+<li>Varjo Base and other HMD software may interfere with VR1
+<li>Resolution slides shows 0x0 resolution when SteamVR is off
+</ul>
 </dl>
 </td></tr><tr><td align=center>
 maintained by <a href=https://github.com/blekenbleu>blekenbleu</a><br>
