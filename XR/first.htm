@@ -96,35 +96,103 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 <dt><br><details><summary><font size=+1><b>Initial impressions</b></font> - second thoughts, updated for 1 Nov fixes</summary>
  &emsp; <i>issues mostly addressed; &nbsp some pupil swim complaints</i><br><br>
 
-<a name=first><dt></a><details><summary>"Sharpness is really good, colors and brightness also,
- weight is ok for me,</summary>>
+<!-- cubex -->
+<a name=first><dt></a><details><summary>"Sharpness is really good, colors and brightness also;
+ weight (645g) is ok for me,</summary>>
 <dd>I will have to work a bit on comfort (but that was the case with every HMD I had so far)<br>
  Visonary weight (without headstrap but with anchorpoint) of 645g<br>
  Windows 11, AMD 5800x3d X570 msi motherboard<br>
- I don't have a 12 bit monitor, can only set 8bit (monitor; VR1 now showing in nvidia panel)<br>
- Main monitor is already 1080p/60Hz<br>
- BTW about the USB issue with eye tracking;<br>
- I checked and I did already use USB3.2 gen 2 which should suffice.<br>
- I'm using 5800x3d/X570, I know there has been some history with usb on amd and vr,<br>
- maybe there is som issue? Also, could it be related to the tracking/distortion issue?<br>
- I think eye relief change works real-time but the rendering needs some seconds to adjust<br>
- and the image freezes a few secs<br>
- I've now tried to alter settings in the 'tracking' tab and none of these seem to have any effect.<br>
- Also tried the 'motion compensation' with a vive tracker, also no effect<br>
- Tried with version 555.99. No difference.<br>
- The version mentioned in installer (546.01) I cannot find at nvidia website<br>
- I tried now a few more apps (HL ALyx, MSFS2020, Eurotruck Sim2, automobilista 2,<br>
- a few UEVR (Talos Principle2, Ride5 with openXR).<br>
- The delay issue seems to be more prominent in SteamVR.<br>
- With openXR I did notice it less, but it still was noticable.<br>
- Of course it also depends on the content, with HL Alyx its probably most noticable<br>
- I think I can now see (with nvidia version 555.99) what was meant by the 'screen tearing'.<br>
- I see a vertical line in the left eye at the right edge. Will upgrade to latest driver again<br>
- Just resetted the 3D settings in the nvidia driver panel, also didn't change anything<br>
-  I see lag also in SteamVR home, in the 'virtual desktop' of the VR1 software, in testHmd,<br>
- basically everywhere so I'm pretty sure it doesn't depend on the app or an app specific setting"
+<hr>
+ Btw, what is the canting angle of the VR1?
+ surprisingly I have seen no issues in MSFS2020 with openXR
+ I wouldn't be so sure about "no fan".
+ When you reset the hmd there is slight mechanical noise that sounds like a fan (rotation/blowing) to be heard.
+ But during normal operation I also can hear/feel none.
+ When I put my ear close to the hmd I can hear some noise, but its very faint.
+ Yes with the SteamVR OpenXR runtime it works correctly, only the VRG runtime has the view problem
+ Ok after update steamVR latency is gone, updated FOV is 128h, 95v
+ Well of course you have to "allow" it, i.e. setting the horizontal peripheral angle >65.
+ And I have already removed the gasket and replaced it by some cutomized foam structure,
+ so that is the absolut maximum for me I think
+ For IPD measurement I still have the same error
+ So I've now tried Hubris and HL:Alyx (both in steamVR) and both look great,
+ those elevator buttons and the resin really pop out,
+ great contrast and amount of detail and have very good performance (hFOV 120, 100% res no upscaling, Hubris with DLSS).
+ There is a visual glitch though (no show-stopper but annoying),
+ Have noticed a difference in some lightning in the left vs the right eye in HL:Alyx (the sun shafts).
+ Eye tracking not working - it was a windows camera setting, it is working now
+ Removed pimax installation and the Hubris issue is gone,
+ It was set to Vulkan API btw, with dx3d11 HL:Alyx issue disappears
+ How's the ipd measurement meant to work? I see the prple crystal
+ for a few seconds than it turns to green, but I can see no result?
+ (OpenXR runtime instead of SteamVR) works but the measured ipd values
+ are about -6mm off my real value (had it measured by optician)
+ I got also the "calibrate head pose" now to work (have it green)
+ All % sliders on (contrast) page snap (to fixed values)
+ Windows has only one "current runtime" setting (it's actually a registry setting)
+ which determines the used openXR runtime.
+ It can be seen in steamVR settings under OpenXR/Current OpenXR Runtime.
+ "SteamVR" is the steamvr openXR, "vrg_openxr" is VR1's own openXR runtme
+ <a href=https://github.com/maluoi/openxr-explorer>OpenXR Explorer</a> allows seeing and changing the active runtime
+ (quad views is not supported by "SteamVR" OpenXR)
+ As soon as you click on "Enable OpenXR" it will set VR1 runtime as actual one
+ And when you set the "Enable  OpenXR" to off it removes itself, but doesn't restore another,
+ so then you have none, steamVR shows "Error Finding Runtime" in that case
+ I can still start steamVR with "Enable steamVR" set to off
+ I think I have seen something like black bars in the right eye
+ Just tried DCS with VRG openXR (Thats how the VR1 openXR runtime is called),
+ it's very shaky, without any head movement.
+ I can see the "Quad View Foveated Rendering" at work though.
+ Tried DCS now with steamVR openXR runtime, and there is no shaking
+ (but of course also no quad views), I'm beginning to sense a pattern here,
+ I suspect to be something wrong with the VRG openXR
+ Tried "the 7th guest vr" and there is a fatal error with VRG openXR,
+ works well with steamVR openXR, same pattern
+ Same with Hubris, has view problems with VRG, works in Steam OpenXR
+ There seems to be now way right now to turn off the "XR_VARJO_quad_views" OXR extension,
+ it always shows up in my OXR explorer, there definitly should be a way to turn that off
+ <img src=oxr.png>
+ I have no problem with the included tool, just tried to loosen the anchor point, no problem whatsoever
+ Are there any plans to have the VRG OpenXR runtime certified by khronos, so that it would be "official"?
+ I'd say in the long run it would be good to have (Varjo has it, pimax not)
+ The peripheral area is the "normal" rendering setting
+ and the foveated section in vr1 tool is the focus area
+ The only thing I could get to work with VRG without major problems is UEVR in OpenXR mode
+ Ride 5 and Talos Principle 2 so far
+ For Crystal, "native" PimaxXR was almost always better than Steam OpenXR
+ The situation right now seems to be:
+ Quad View must use VRG,
+ but no QVFR games run correctly with VRG, only with Steam OpenXR
+
+ testHmd assumes a symmetrical vertical FOV. So if you don't have it symmetrical
+ (In my case upper is 92 and lower 98,
+ and I think it is expected to be asymmetrical by design of the VR1 lens [the upper cut])
+ you have to take the mean value, so in my case vFOV = (92 +98)/2 = 95.
+ Just taking the value where both red dots have dissapeared
+ while the upper disappears earlier than the lower is WRONG
+
+ I tried now a few racing games (Assetto Corsa, Assetto Corsa Competizione, Automobilista 2).
+ None of these worked with OpenComposite and VRGOXR
+ so I used steamVR. Tried a night race in AC in Quatar (Losail 2021) with a Ferrari F138,
+ and have never seen that Ferrari red look so good on a screen, really shiny red, amazing.
+ Also with this setting the black of the night looked really good,
+ because of the great contrast I guess,
+ the white lamps at the side of the track and the flashing green signs,
+ they really pop out, so for this I don't really feel the need of local dimming.
+ Details in cockpit are also very good, sharp, those rev indicator leds on the F1 wheel,
+ very flashy. ACC and AMS2 look also very sharp, colorful
+ (maybe a little too much in ACC, had to tone it down a bit) bright and detailed
+
+ (<b><i>put file openvr_api.dll in main folder of the game, don’t use OC</i></b>)
+ Ok, with per-game it is working now for AC
+ (I never did this because it worked without last time I tried with crystal),
+ but there is another problem: The whole view slowly rotates about some axis in my head,
+ I can even see the drivers helmet rotat when I change the camera to outside car view
+ Yes it (in general) works with VRG and OpenComposite, with file replacement (openvr_api.dll),
+ but view rotates in AC and ACC."
 </details>
 
+<!-- rain_274 -->
 <dt><br><details><summary>"I am officially second 🥈 in the entire planet earth 😃☝️</summary><br>
  <dd>Wonder if that line is intended or damaged xD<br>
  <img align=top src=line.jpg> &nbsp
@@ -148,7 +216,55 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  It ain't HTC Vive pro 1 quickness. I think that's what we feel.<br>
  Hopefully 120hz next week that will reduce the latency.<br>
  (<i>tracking issues</i>) Had that too but restarted the PC and everything was fine.<br>
- First launch vr1 software then steam VR"
+ First launch vr1 software then steam VR
+ The first thing I noticed when I maxed out IPD (square edges)
+ We will need your help activating dynamic foveated rendering for KayakVR
+ since there is apparently a huge performance boost
+ Aero Fov 100°h and 76°v
+<hr>
+ Looks like vr1 tool and after that probably firmware
+ Tracking fixed No latency Calibrate head pose crashes steam vr
+ Calibration isn't greyed out for me
+ Eye tracking calibration working
+ Restarting PC to get rov tool running ...
+ But I see what you have done here Artur 👀😃🔥 fov looks huge
+ <img src=HFOV126.jpg>
+ And may I say you THANK YOU for this freaking good distortion profile 😍
+ It's soo good I didn't though it's possible to get such a good distortion profile
+ AND having such big fov 😱
+ <img src=HMDtest130.jpg>
+ Yeah this is insane for a LCD.  I CANT WAIT FOR LOCAL DIMMING
+ would you agree the new distortion profile made NPCs a Little bit bigger in Alyx?
+ Nvidia pre rendering frames set to 1 I guess
+ 80% rendering resolution is too much for 4090 in Alyx
+ 1.5 years ago I knew this will be epic . Something clicked in my brain 😅👌
+ since then I have been telling everyone every day about this headset
+ Can't stop playing 😃  But rtx 5090 needed.
+ Currently running at 65% rendering with my 4090 to hold 90 fps in Hellsplit Arena 🙂
+ I was so immersed in the action that I didn't notice (wavyness) in gameplay
+ I want MORE smoothness 😅
+ Very tight (strap to get 120 FoV)
+ For me the (black flashing) artifacts went almost away when I reduced the Rendering to 65%
+ I have to enable VRG in steam VR add-ons, otherwise my headset is not detected.
+ (65% correspond to something like 4000x4500) I 'll post the exact number later.
+ But it's ideal for 4090 and 13900k for holding 90 fps at 95% of the time
+ ( alyx and hellsplit Arena tested) Alyx without dynamic res scale ofcourse
+ Trust me you really want one. This headset is a significant step up compared to others.
+ It makes you actually wanna use VR
+ The only reason I would return it are the blacks but that will be fixed hopefully.
+ I am used to oled blacks in Alyx
+
+ If I start steam VR without starting the software the headset isn't recognized.
+ Then I close steam VR and start the vr1 software.
+ Then I start steam VR, I enable 'vrg' and restart steam VR. Then it does see my hmd.
+ And then I have to hope the handshake was good
+ so I don't see those flashing vertical black artifacts in steam VR home
+ when starting steam VR home in the first couple of mins they don't show up.
+ After couple of mins suddenly they show up.
+ When I achieve good handshake between steam VR and VR1 software
+ and have no flickering black lines then it's awesome.
+ SteamVR home is super subsceptible to artifacts
+ <a href=https://community.openmr.com/t/somnium-vr-1-q3-2023/40807/272>I wrote I small review in the Open Mr Forum</a>"
 </details>
 
 <!-- bears.are.cool -->
