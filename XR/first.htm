@@ -93,10 +93,11 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 <dt><br><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0>Somnium VR1 Tool overview video</a>
 </details>
 
-<dt><br><details><summary><font size=+1><b>Initial impressions</b></font></summary>
+<dt><br><details><summary><font size=+1><b>Initial impressions</b></font> - second thoughts, updated for 1 Nov fixes</summary>
  &emsp; <i>issues mostly addressed; &nbsp some pupil swim complaints</i><br><br>
 
-<a name=first><dt></a>"Sharpness is really good, colors and brightness also, weight is ok for me,<br>
+<a name=first><dt></a><details><summary>"Sharpness is really good, colors and brightness also,
+ weight is ok for me,</summary>>
 <dd>I will have to work a bit on comfort (but that was the case with every HMD I had so far)<br>
  Visonary weight (without headstrap but with anchorpoint) of 645g<br>
  Windows 11, AMD 5800x3d X570 msi motherboard<br>
@@ -122,8 +123,9 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  Just resetted the 3D settings in the nvidia driver panel, also didn't change anything<br>
   I see lag also in SteamVR home, in the 'virtual desktop' of the VR1 software, in testHmd,<br>
  basically everywhere so I'm pretty sure it doesn't depend on the app or an app specific setting"
+</details>
 
-<dt><br>"I am officially second 🥈 in the entire planet earth 😃☝️<br>
+<dt><br><details><summary>"I am officially second 🥈 in the entire planet earth 😃☝️</summary><br>
  <dd>Wonder if that line is intended or damaged xD<br>
  <img align=top src=line.jpg> &nbsp
  (<i>printed in bands; sometimes it happens.</i>)<br>
@@ -147,8 +149,10 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  Hopefully 120hz next week that will reduce the latency.<br>
  (<i>tracking issues</i>) Had that too but restarted the PC and everything was fine.<br>
  First launch vr1 software then steam VR"
+</details>
 
-<dt><br>"No power button just like Aero? Oof. Good thing I already have smart plugs in place<br>
+<dt><br><details><summary>"No power button just like Aero?</summary>
+ Oof. Good thing I already have smart plugs in place<br>
  <dd>Do the panels autonpower off and if yes can the timeout time be adjusted?<br>
  Clicked through the wizard but it didn't trigger any tracking setup.<br>
  Didn't the first time either BTW. Just installed steamVR drivers<br>
@@ -224,8 +228,10 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 
  When I look through my left eye only, it's basically stable. When I look through my right eye only,<br>
  I see very obvious warping/rippling and even see the text "telelport" a few milimetres."
+</details>
 
-<dt><br>"DAS anchors♥️<dd><img src=DAS.jpg><br>
+<!-- Moortu -->
+<dt><br><details><a name=moortu><summary></a>DAS anchors♥️</summary><dd><img src=DAS.jpg><br>
  Guess which cable is from VR1 and which index<br><img src=cables.jpg><br>
  Instead of a power brick I would have preferred one of those where all the weight is at the Socket<br>
  and the cable is all light all the way &nbsp But its good enough<br>
@@ -241,11 +247,89 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  Pavlov is still completely broken.<br>
  Alyx is playable but I need to dial in some settings, and perhaps turn of my ultrawide screen.<br>
  Bladed and sorcery seemed to work mostly fine<br>
- Untill you fall as well.<br>
+ Until you fall as well.<br>
  I had all [Alyx] settings lowest, didn't see any resolution option though<br>
- I also don't know what the relation is between the resolution setting in steamvr vs in the vr1 app"
+ I also don't know what the relation is between the resolution setting in steamvr vs in the vr1 app<br>
+ With the SteamVR Beta I didn't have any black bars flickering, performance was solid.<br>
+ <img width=480 src=Betas.png><br>
+ When I looked left and right before it would be all be a bit weirdly moving. <br>
+ And the eye relief fixed that.. Try -2 or +2<br>
+ For the hand tracking:&nbsp In some games you want to turn it off.<br>
+ In pavlov i couldn't grab stuff because it was in some sort of quantum state<br>
+ of using both hand tracking and controlled and using neither for grabbing<br>
+ You to go to steamvr, settings, turn advanced settings off,<br>
+ and in the openxr tab disable hand tracking in thwt case.<br>
+ Or perhaps in the VR1 tool is easier?<br>
+ I now got good performance on 50% rendering on a 3080. But will depend on the application<br>
+ Sounds like we need a google doc with pc specs and the settings that reach certain stable fps levels<br>
+ Foveated rendering only works in openxr applications<br>
+ How to know which game needs which runtime?<br>
+ Wellz the VR1 tool needs some improvements to user friendliness<br>
+ It should probably be a toggle between steamVR and OpenXR<br>
+ some facescan to make the perfect fitting gasket + cushion would be amazing<br>
+ after reinstall I never touched hags<br>
+ I'll be adding the foveated rendering to pavlov to see if I can crank up the fps and then also the resolution<br>
+ and it needs to use openxr <br>
+ When using openXR explorer, you can add the VR1 runtime by editing the list and adding this entry:<br>
+ <code>windows VrEngineers C:\ProgramData\vrg\oxr\vrg_openxr.json</code><br>
+ Shodah wasn't using the VR1/vrengineers runtime, he was using the steamVr runtime.<br>
+ thus he never had any problems with EAC, but also wasn't using foveated rendering<br>
+ there were 3 screws I couldn't get loose, the screwdriver stripped and the screw a bit as well<br>
+ <img src=stripped.jpg><br><br>
+ I'm just saying, i'm at only 50% and it's already a night and day comparison<br>
+ I haven't been able to run ANY game with the VRG runtime<br>
+ the default face cushion is rather thiccc 2cm at it's thickest<br>
+ honestly the whole openxr runtime and stuch still confuses me<br>
+ let's put it like this, I have only been able to run the ROV tool through the VRG runtime.<br>
+ anything else I had to run through the steamvr runtime.<br>
+ I just played 2 hours of pavlov, and it was GLORIOUS.<br>
+ buttery smooth, and even at 50% it's crisper then the index<br>
+ Normally I'm on part with this one guy and I trounced him.  I defo have the hardware edge<br>
+ there is a good chance my friend will also buy one, too bad for him that the queue is loong <br>
+ my fov is a bit better with this thinner facecusion, no clue why you made such a thiccc boy<br><br>
  
-<dt><br>"what was the fix for tracking latency again? I'm feeling sick<br>
+ <b>My quick and dirty review</b><br>
+ You want my opinion? well it's slightly biased<br>
+ in the sense that I've never tried a pimax crystal or varjo aero.<br>
+ best I've tried ever was a pimax 5K?  Mostly I've used a quest 2 and valve index. but ow boy.<br>
+ There is no screen door effect, I think if I focus realllllly well I think I see a pixel,<br>
+ but can also be aliasing, can't tell. everything is crisp and sharp at 50% rendering and buttery smooth<br>
+ ( at least in pavlov) with a little room left to go to 60%.<br>
+ It's great that you can render at lower resolution and apply sharpening.<br>
+ My fov is larger then the valve indez and quest 2<br>
+ it really depends on face shape and especially, the face cushion, the included face cushion is a thicc boy.<br>
+ I also think the VR Optician lenses are too far from the actual lenses, robbing you off fov.<br>
+ I would not have any issue with long periods of time using it.<br>
+ after 2 hours there was no sweatiness inside, no hotness either<br>
+ and this was with a room temp of 22 degrees celcius .<br><br>
+
+ tracking is flawless.<br><br>
+
+ my headset specifically has the anchor screws too tight<br>
+ cause some issues with not being able to unscrew them, will give an update on this tomorrow.<br>
+ There are 2 OpenXR runtimes, steamVR and VREngineer. the VREngineer runtime basically... doesn't work. <br>
+ I've only had the ROV tool where it worked, everywhere else I tried it did not, and I've tried a few games.<br>
+ The cable is nice and small and smooth, i've had no tangling whatsoever,<br>
+ while I had it a bunch with the valve index.<br>
+ The software is still finicky. sometimes it takes a few tries to get the headset running.<br>
+ But It's literally the first public release and with some time and fixes<br>
+ and improvements it will be a good experience.<br><br>
+
+ 5800X3d, RTX 3080
+ <hr>
+ Could very well be I adjusted to the lenses<br>
+ I have not properly tested with VRO prescription lenses. I'll do that tomorrow to make sure<br>
+ I saw some distortion at outer lens edge in the ROV test,<br>
+ but it was literally on the last degrees of what I could see<br>
+ I find FoV an irrational number<br>
+ I don't think reinstalling Windows is needed. I just did it to prove that point.<br>
+ I still had issues after reinstalling until switching steamVR versions<br>
+ Sadly it sound easy. But the reality is that you'll need to play around with<br>
+ settings from windows, nvidia steamvr and somnium to get a working config for you<br>
+ I've had multiple times where it was like the software to change settings of the mouse and it's like.. why?"
+</details>
+ 
+<dt><br><details><summary>"what was the fix for tracking latency again? I'm feeling sick</summary>
 <dd>everytime when i try to start SteamVR and I haven't just restarted the pc<br>
  it says it can't track the headset and in the headset<br>
  it's just a one tone color across the whole screen<br>
@@ -255,8 +339,11 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  I disabled gsync, set my monitor to 8bit color,<br>
  made sure that I'm using the closest displayport to the mainboard, still the same.<br>
  I'm getting 20-30fps with 80% in vrc"
+</details>
 
-<dt><br>"So, after I came home today, for me it was now the first time,<br>
+<!-- nEuDy -->
+<dt><br><details><summary>Ultimate Edition</summary>
+"So, after I came home today, for me it was now the first time,<br>
 <dd> installing and using the VR1 Ultimate Edition 🙂<br>
   And oh, boy, it's a lot of USB cables 😂  And Artur,<br>
  you are crazy to make also the USB cable housing out of metal 😬<br>
@@ -269,22 +356,89 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  but now they are also working. In my room it's a little bit dark,<br>
  but in Passthrough I was able to see everything and was able to read text on paper without issues.<br>
  Similar to Pico 4 passthrough, mixed realized cameras got very blurry<br>
- during head movement.&nbsp (<i>turn up the frame rate on the cameras</i>)<br>
+ during head movement.&nbsp (<b><i>turn up the frame rate on the cameras</i></b>)<br>
  If you stand still, amazing sharp camera picture!<br>
  Regarding Visual in SteamVR, yes, the picture is super sharp,<br> if you stand still and not moving the head.<br>
- But yes, due to the current software issue,<br> the VR1 and using VR experience is impossible in this state.<br>
- Everything feels like you are moving in slowmotion, and you are getting dizzy after short time<br>
- So let's wait until the next software release,<br>
- to start the next first testing procedure and hopefully able to use VR in a normal way"
+ in my case, just start the VR1 tool will not turn on the displays for me.<br>
+ Only after starting steamvr, the display is on..  I also assume, the virtual desktop is an openxr application,<br>
+ right? Because it's starting in front of my steam vr menu environment<br>
+ each time I'm opening that amazing storage box, the air smells like a new car<br>
+ After more than 1 hour in VR with the VR1, it's a very interessting feeling with VR1.<br>
+  The picture quality is crazy good, and the VR1 Software is also crazy, how much option you have.<br>
+  But to be honest, a lot the software options I don't understand yet, or are not working yet for me<br>
+ (at a lot of settings, just nothing changes for me).<br>
+  Also the buttons seems to not work for me in the software.<br>
+ At least by trying to open Mixed Reality mode or the button for the Virtual Desktop, nothing happens.<br>
+ I've set one button for IPD measurement, and by clicking that button,<br>
+ it's at least trying to start (you see the overlay), but is of course failing due to the eyetracking bug.<br>
+ After about 30 minutes, the temperatur of the Headset is very warm.<br>
+ You feel it, if you don't have it on your head all the time,<br>
+ and after a few minutes you put it on, then it's very warm. So very good for the winter 😜 <br>
+ I'm using an older nVidia driver 565.90 and get tearing<br><br>
+ 
+ For brightness, my slider goes from 0% to 100%, and it's snapping at 25%, 50%, 75% etc<br>
+ And yes, by reducing the brightness and playing with contrast,<br>
+ you can get also very good "local dimmed" picture with good blacks 😛<br>
+ For thoses who are interested in the Cables and it's recognized devices:<dl>
+ <dt>Cable1:
+ <dd>Power<br>DisplayPort<br> USB for:<ul>
+ <li>Valve VR Radio - HID (Most probably controllers receiver)
+ <li>Valve LHR - 3× HID (most probably LightHouse receiver)
+ <li>Valve VR Radio - HID
+ <li>Somnium VR1 - COM3, Audio
+ <li>LEAP Motion Ultraleap Tracking Camera
+ <li>Somnium EyeCam - Camera</ul>
+ <dt>Cable2:
+ <dd>USB Cable1 for Somnium MRCam - COM4<br>
+ <dd>USB Cabel2 for Somnium MRCam - COM6</dl>
+ Enabling Windows camera software shows the EyeTracking camera feed 🙂<br>
+ Buttons on VR1 are also now working for me after the Update 👍<br>
+ after enabling eye tracking.. at least, heatmap shows something for me<br>
+ What exactly is "Calibrate Head pose" for?<br>
+ With first version of VR1 tool it not had any effect to me.<br>
+ Just measured IPD with 60% Render resolution, and getting 84° VFOV and about 98°-104°HFOV..<br>
+ But I am with 60mm IPD.. I have also a very unfavorable face 😅<br>
+ I've switched in the VR1 tool at Headset > Advanced to a custom profile,<br>
+ and moved all the sliders to it's minimum.<br>
+ Then I've closed one eye, started increasing the slider for "Horizontal Inner Angle",<br>
+ until I don't see any increase of picture anymore in the inner view.<br>
+ Then I did the same for Horizontal Peripheral Angle,<br>
+ until I stopped seeing any more of the picture view on the outer sides of the lenses.<br>
+ for me it's Innger Angle = 30° and Peripheral Angle = 48°<br>
+ With this settings, I've measure my FOV with HMDTestTool until the max I can see,<br>
+ and it matches the Steam VR view at it's max, which is then 96° HFOV for me<br>
+ <img width=640 src=VR1-max-FOV-neudy.jpg><br><br>
+
+ I just wanted to provide first feedback, after reinstalling my Windows 11,<br>
+ the flickering black bars are gone during regular use of the Headset 👍 <br>
+ Also the FOV got a little bit better for me with 90° VFOV and 104° with TestHMD tool<br>
+ and with WimFOV it's 88° VFOV and 109°.<br>
+ I've tried to max it out, by removing the FaceGasket Foam and look into the lenses with my eyes glued on,<br>
+ and yes, I can see much more from feeling 😜 <br>
+ The Foam I've finally replace with a VRCover 6mm foam, which I had laying around for my Quest2<br>
+ and this is very comfy and the visuals are much better. But unfortunately,<br>
+ now the Lens Housings are standing on my nose, which is not so comfortable, but OK<br>
+ <b><i>To be fair, I had already a lot of test Software running</b></i>,<br>
+ then all other software stuff for Vive, Aero, Pico, Meta Headsets etc.<br>
+ and I was running onto the latest nvidia driver bug with incompatibility with corsair iCue software along.<br>
+ Therefore, instead of investigating into which software could be the culprit,<br>
+ I've reinstalled windows and installed only minimal software to have a clean start,<br>
+ and nothing which might interfere otherwise.<br>
+ This can happen to all kind of software and is nothing to blame VR1 software..<br>
+ So nothing to worry about"</details>
 
 </details>
 
 <dt><br><font size=+2><b>hiccups</b></font>
 <dd><ul><li>PLUG VR1 INTO RTX 4090 'MAIN DISPLAY PORT' (nearest motherboard)
 <li>disable G-Sync and 12 bit in Nvidia resolution settings
+<li>start SteamVR <i>before</i> SteamVR game[s]
 <li>Varjo Base and other HMD software may interfere with VR1
 <li>Resolution slides shows 0x0 resolution when SteamVR is off
 <li>Pavlov rejects VR1 (VRG) OpenXR:<br><img src=Untrusted.png>
+<li>foveated rendering (OpenXR) seems problematic
+<li>SteamVR Beta removes some visual and audio artifacts
+<li>IPD <i>measurement display</i> only in OpenXR
 </ul>
 </dl>
 </td></tr><tr><td align=center>
