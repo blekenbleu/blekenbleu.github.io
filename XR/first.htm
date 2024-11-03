@@ -151,7 +151,8 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  First launch vr1 software then steam VR"
 </details>
 
-<dt><br><details><summary>"No power button just like Aero?</summary>
+<!-- bears.are.cool -->
+<dt><br><details><a name=bears><summary>"No power button just like Aero?</summary></a>
  Oof. Good thing I already have smart plugs in place<br>
  <dd>Do the panels autonpower off and if yes can the timeout time be adjusted?<br>
  Clicked through the wizard but it didn't trigger any tracking setup.<br>
@@ -227,7 +228,143 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  then slowly move your head left to right and back and forth slowly. Is the text entirely stable?<br><br>
 
  When I look through my left eye only, it's basically stable. When I look through my right eye only,<br>
- I see very obvious warping/rippling and even see the text "telelport" a few milimetres."
+ I see very obvious warping/rippling and even see the text "telelport" a few milimetres.<br>
+<hr>
+I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
+ NO FOGGING whatsoever,none, zilch. PCL fogged like a MF.<br>
+ Not even "noticeably" warm really. Warmer than when it's off, but that's expected<br>
+ I just tested my FOV after all just to be able to compare, via WIMFOV.<br>
+ I got 102H / 96V, but it felt a lot bigger (horizontally) in game, weird.<br>
+ And this is with a slightly thinner than stock gasket.<br>
+ Studioform cushion for Pimax Crytal, as recommended by VR flightsimguy. Really nice <br><br>
+
+ For reference, in Q3 I got 110/100 and Aero 104/83.<br>
+ It definitely felt bigger than both of these in game though,<br>
+ surely the bug only affects the measurement tools?<br>
+ I can't imagine the ACTUAL FOV getting bigger via the update. Hope I'm wrong though<br>
+ VR optician claims they take distance prescription and adjust it for focal distance.<br>
+ Didn't work out in my case it seems<br>
+ You can already disable rendering for one eye via OXRTK<br>
+ Warming is not an issue at all for me.<br>
+ OXRTK is no longer supported but still functional with VRChat<br>
+ <hr>
+ Mapping buttons to keyboard is great. I was gonna hand in a feature request for this<br>
+ IPD now working, nice<br>
+ What do I need to do to enable the ET calibration? It's greyed out.  Eye tracking also greyed out<br>
+ (<i><b>You need to start SteamVR or OpenXR compatible application first,<br>
+ then the buttons will be available.</b></i>)<br>
+ This is a bit counterintuitive<br>
+ "Measure IPD": it shows me the spinning diamond, then this disappears.<br>
+ But it doesn't tell me any values anywhere?<br>
+ I got 114/96 (vs 102/96 before update)<br>
+ ALthough I had the inserts in.. will try again without<br>
+ Even with maxed out FOV rendering I only get 114/96 in WIMFOV, weird<br>
+ Any tips on setting the inner angle FOV correctly?<br>
+ Yeah the steamVR delay is 100% gone<br>
+ still have the same wavyness as yesterday, more pronounced in right lense than left.<br>
+ I don't think it's a deal breaker anymore as I'll probably get used to it in-game<br>
+ but still not ideal. The effect can be lessened by moving the HMD further down<br>
+ than I would've expected it to sit, sweetspot wise. <br>
+ The virtual desktop function is AMAZING, it switches over so instantlya/seamlessly.<br>
+ Just amazing. But how can I change the distance to and position of the screens??<br>
+ I'm gonna have to get a 5090 cos 120% resolution in MSFS is blowing my socks off.<br>
+ Brightness insane too Wavyness could be better 😉<br>
+ But yeah there's always compromises. And I think I'll get used to it<br>
+ Varjo was a little wavy too<br>
+ I don't want two cables, or the extra weight (not that the Visionary is heavy).<br>
+ But yeah all in all, the more I get used to it, it's clearly the best PCVR (or other) HMD<br>
+ I've ever tried. As it should be for the price!<br>
+ But still a big THANK YOU for making it, I hope it's very successful.<br>
+ A much needed thing in the current market, at least for those who want the best.<br>
+ Comfort is also great, especially with counterweights<br>
+ The colors/contrast are truly out of this world though. Comes close to my OLED TV<br>
+ Are there any plans to make things like the IPD measurement and virtual desktop work<br>
+ without manually starting a separate application?<br>
+ I can only set the contrast slider to from 0 to 93% or to 100% or above.<br>
+ If I set it to 94%-99%, it instantly snaps back to 100%!<br>
+ I'm so impressed with how seamless and instant the transition from and to virtual desktop is! Insane.<br>
+ And mapping keys to buttons is so useful. You can bind windows key<br>
+ so that when you use VD it's easy to get your mouse pointer onto the second monitor<br>
+ (because usually the VR monitor has it captured)<br>
+ I only get black bars on periphery when FOV is set too small<br>
+ All FoV tools other than WIMFOV need controllers, right? I don't have hand tracking<br>
+ looking at the MSFS menu, which includes images of planes,<br>
+ focusing one one such photo with one eye and then moving back and forth left and right,<br>
+ a gentle ripple washes through the whole photo, everything morphs slightly<br>
+ When both are enabled and the game supports openXR,<br>
+ how does VR1 tool choose whether to use the VR1 openxr runtime or the steamVR openxr runtime?<br>
+ How does one even remove the gasket? Haven't tried, do you just yank it out?<br>
+ I already swapped put the cushion, didn't even notice the screws.<br>
+ But yeah thinner gasket would be cool. I guess the current one is big enough to accommodate glasses?<br>
+ <b>How does the system choose an OXR runtime when both steamVR and OpenXR are enabled?</b><br>
+ Some games can only use openXR. And there are 2 openxr runtimes possible for VR1,<br>
+ a Somnium one and a steamVR openxr runtime.<br>
+ I'm wondering how the VR1 tool decides between the two possible openxr runtimes.<br>
+ I would expect VR1 tool to also have a "current runtime" setting. But it doesn't have one right?<br>
+ OXRTK works when set to Legacy Menu mode. Otherwise it's completely in the wrong place, tiny,<br>
+ and rotates when you move your head lolol. At least when using VRG openXR runtime<br>
+ if I disable the openXR setting and run MSFS, it runs via steamVR openxr.<br>
+ So when both are on, how does it know which one to pick? Maybe it always prefers its own runtime?<br>
+ MSFS uses whatever is the ACTIVE openxr runtime.<br>
+ It should be clear in VR1 tool what is currently the active OXR runtime,<br>
+ the same way steam has that setting, as does Oculus desktop app<br><br>
+ 
+ I put on the thinnest cushion I have today (Kiwi 6mm for VIVE)<br>
+ and my FOV increased from 114/96 to 124/102 lol!<br>
+ BUT now I was also seeing black flashing on left and right periphery like you,<br>
+ only in steamVR probably.<br>
+ Guess it was there all along but my FOV wasn't wide enough to see it.<br>
+ What's the easiest way to install SteamVR Beta?<br>
+ When I was getting the low FOV values, I was using the Studioform cushion<br>
+ which VRFSG recommended and which I thought was thinner than stock.<br>
+ Looking at it more closely, it's actually a bit thicker, especially at the top.<br>
+ But I think the Kiwi is still slightly thinner than stock<br>
+ I've had HAGS off for years due to stutters in MSFS.<br>
+ So now I have a strange issue (assuming in steamVR only) where if I look to the left,<br>
+ I see some black flashing at the far right periphery and if I look to the right<br>
+ I see some flashing on the far left periphery. This also happens when I close one eye.<br>
+ Changing FOV rendering to max doesn't change it, actually made it worse I think <br>
+ I have 7800x3D btw. Also, the flashing issue doesn't occur via VRG runtime,<br>
+ only when using steamVR.<br>
+ 100% res at max FOV = 13759x7144, assuming an inner angle of 45 deg,<br>
+ which makes sense for this estimation<br>
+ it's the theoretical max. It's meaningless as no one can see it<br>
+ 100% res per eye at min FOV = 2426x2381, again with 45 deg inner angle<br>
+ <b>Weird issue in interaction with MSFS</b><br>
+ By process of elimination, I can now confidently say that MSFS (for me at least)<br>
+ will always crash one way or another on the first attempt. After simply launching it again,<br>
+ it loads fine with VR1 connected and I can renter VR without issues. It's then super stable.<br>
+ But something is going on here,<br>
+ what could be causing the crash on initial load but making the second load succeed?<br>
+ Unfortunately now that my FOV has increased to 124 via thinner cushion,<br>
+ I see more distortions in the periphery when moving head..<br>
+ very similar to the Aero distortions upon launch probably.<br>
+ But Varjo improved this via software, hope Somnnium can do the same.<br>
+ Although it's very possible that my brain will remove these after using it some more.<br>
+ Havent used the new cushion much yet <br>
+ I get worse FOV with the stock cushion vs Studioform pimax.<br>
+ And the latter is also amazingly comfortable.<br>
+ But the kiwi is very comfortable too considering how thin it is<br>
+ Compared to Aero, VR1 is pretty much better in every way,<br>
+ except the software doesn't have a "sync fps to half refresh rate" function.<br>
+ I don't think the Aero had the wavyness that I see in the middle of the right lens<br>
+ Going from 90 to 125% in MSFS adds insane amount of extra detail in the distance<br>
+ Ie building become actual buildings rather than a bunch of shimmering pixels<br>
+ I tried VR1 with OpenComposite and Dirt Rally 2,<br>
+ and there are major issues with recentering the VR view. It just puts you in random places.<br>
+ The same game works fine when running native steamVR.<br>
+ I think the stock strap is fine with counterweights, even better adding apache strap<br>
+ Aspherics are definite a whole lot more swimmy than something like the Q3 pancakes.<br>
+ Those are almost rock solid. My next HMD will definitely be pancake either way<br>
+ IPD measurement works while you are running an OXR app, not steamVR<br>
+ Can't say I've noticed (pupil swim change with temperature).<br>
+ But the HMD doesn't get very warm at all anyway, I doubt they change temp that much<br>
+ I couldn't get Dirt Rally 2 working properly via OpenComposite, only SteamVR.<br>
+ I sometimes see the flashing black stuff,<br>
+ but only when using steamVR runtime (and yes I have steam beta).<br>
+ But it only seems to happen in steamVR home. But I haven't tried many steamVR games"<br>
+ (<i><b>The flashing black lines is 100% software issue. Right from the monday morning<br>
+ our team will be conducting tests and we will issue a hotfix if needed.</b></i>)
 </details>
 
 <!-- Moortu -->
@@ -329,16 +466,11 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  I've had multiple times where it was like the software to change settings of the mouse and it's like.. why?"
 </details>
  
-<dt><br><details><summary>"what was the fix for tracking latency again? I'm feeling sick</summary>
-<dd>everytime when i try to start SteamVR and I haven't just restarted the pc<br>
- it says it can't track the headset and in the headset<br>
- it's just a one tone color across the whole screen<br>
- it only shows up the first time i open steamVR after i restart the pc,<br>
- when i close it and restart it it stops working<br>
- The image seen on display seems to be slightly delayed to my movements.<br>
- I disabled gsync, set my monitor to 8bit color,<br>
- made sure that I'm using the closest displayport to the mainboard, still the same.<br>
- I'm getting 20-30fps with 80% in vrc"
+<!-- Steve1734 -->
+<dt><br><details><summary>the ipd measurment doesn't seem to be working for me</summary>
+<dd>"i see the diamond in the middle an then it goes away without telling me any ipd,<br>
+ anyone else have that problem? (<i>It only works while you are running an OXR app, not steamVR </i>)<br>
+ bu im in vrc"
 </details>
 
 <!-- nEuDy -->
