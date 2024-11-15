@@ -1,0 +1,130 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>Assetto Corsa in VR/XR:&nbsp tips and tricks</title>
+</head>
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="width:950">
+
+<font size=-1><a href="index.htm#AC"><i>back</i></a></font>
+<a name=sim><h2>Assetto Corsa in VR/XR:&nbsp tips and tricks</h2></a>
+
+<dl>
+<dt>Open Composite + OpenXr Toolkit
+<dd>Only have problems with shimmering rails and fences, but the game runs very smooth
+<dt><br>100% resolution, very high graphic settings and post processing filters<br>
+ &emsp; and all the Custom Shaders Patch goodies
+<dd>constant 90 fps with the largest FOV. I don't like driving at night or with rain,
+<br> so I don't have to care too much about frame drops
+<dt><br>There's a web browser app in the <a href=https://www.youtube.com/watch?v=rV3z12q1HSc>App Shelf</a>
+<dt><br>When moving my head, textures come and disappear
+<dd>Switched off single pass stereo on CM - that worked<br>
+	Content manager > custom shaders patch > Mode tweaks : VR > Single pass stereo
+<dt><br>Does anyone have an idea of how to uncap my fps in vr in content manager
+<dd>I've just discovered a few mins ago that if i switch off post filters ie sol<br>
+ then i get a flat 90 fps with about 60% headroom,<br>
+ altho I haven't tried it yet I think the version of sol im using is old,<br>
+ because it also makes the screen appear dark until i manually reset it in game,<br>
+ I'll try installing a new sol<br>
+ which should allow me to utilize all that extra headroom for eye candy..<br>
+ I'd tried a newer version of content manager and nothing had changed<br>
+ without realizing it may be the sol im using which I hadn't updated separately,<br>
+ hope this helps anyone else who may have a similar issue
+<dt><br><a href=https://www.overtake.gg/downloads/neckfx-lua-script-vr-stabilize.65087/>NeckFx LUA script - VR-Stabilize 0.4</a>
+<dt><br><a href=https://www.youtube.com/watch?v=i8mbInyNVwo>Pimax Crystal VR Setting</a>
+<dt><br>Best mods for VR
+<dd>converted track from old games like GTL, RFc1 are in 90% of the case, crap.<br>
+ Full of low poly and 2D stuff . Same is counting for old tracks made before 2020,<br>
+ as here the quality is mostly below Kunos own.<br>
+For a starter I would try @Fat-Alfie @LilSki tracks
+
+<dt><br>Trying to fix the aliasing in vr. 
+<dd>Aliasing is particularly bad at midday on arnco,<br>
+ so adjust the time for less glaring issues there.<br>
+I use a combination of supersampling and fholger's <a href=https://github.com/fholger/vrperfkit>vrperfkit</a>.<br>
+ The contrast adaptive sharpening there seems to work well if used in moderation.<br>
+For vrperfkit i use these settings:<br>
+<pre>
+upscaling:
+
+enabled: true
+method: cas
+renderScale: 0.95
+sharpness: 0.55
+radius: 0.6
+applyMipBias: true
+
+
+fixedFoveated:
+
+enabled: true
+innerRadius: 0.6
+midRadius: 0.8
+outerRadius: 1.0
+favorHorizontal: true
+</pre>
+The 5% downres (renderscale setting) then sharpening seems to combat jaggies fairly effectively<br>
+ when combined with supersampling from your VR device software. I use SteamVR for my Index at 200%.<br><br>
+
+The fixed foveated section allows you to claw back some performance which enables higher supersampling.<br>
+ You may notice some artifacts at the edge of your vision such as on certain tracks<br>
+ things like trees won't be rendered at all in that outer edge. Its not a common thing to see though.<br><br>
+
+Disable Anisotropic Filtering in Content Manager<br>
+ and enable it (x16) in your nVidia driver panel<br>
+ in the game specific 3D settings section for Assetto Corsa.<br><br>
+
+If you have already tried my settings for vrperfkit and still want it sharper,<br>
+ you could raise the sharpening value there.<br>
+ You could try not using the 0.95 render scale<br>
+ and just using 1.0 but you're going to introduce shimmer.<br><br>
+
+You could also experiment with changing the LOD bias to a negative value.<br>
+ Set that in Content Manager "Settings>Assetto Corsa>Video>System:"<br>
+ Bear in mind this can cause more shimmering.<br><br>
+
+One thing you didn't mention as an issue but I think you'll probably end up noticing<br>
+ is the car LOD transition happens a little too soon when in VR - its more noticable.<br>
+ I like to bump up the car LOD distance slider to 125%.<br>
+ This will have an effect on performance if you like to race with large grids though so beware.<br>
+ That's under Settings>Custom Shader Patch>Graphic Adjustments>LOD Settings>Multiplier for car LOD
+
+<dt><br>VR How to stop looking though seat head support
+<dd>You'd want to adjust the clip planes<br>
+ Custom Shaders Patch -> Graphics Adjustments -> 'Adaptive clip planes'<br>
+Turned it off and now all is well. Still wondering what performance impact that setting has though..<br>
+<img src=https://www.overtake.gg/attachments/captura-de-pantalla-2023-10-13-111720-png.700546/>
+
+<dt><br><a href=https://www.overtake.gg/threads/ac-settings-for-vr-with-pimax-5k-super-i5-8600k-and-gtx1080ti.271292/><b>AC settings for VR</b></a>
+<dd>Nvidia Control Panel settings all standard except:<pre>
+FXAA : ON
+Low Latency : ON or ULTRA
+Shader Cache size : as large as you can</pre>
+
+<dt><br>tyres screeching
+<dd>In Content Manager, go to Settings > Assetto Corsa > Audio, and adjust the "Tyre Offset" setting.<br>
+ If set to 200%, you will hear the tyres screeching when you actually lose traction.<br>
+ Setting it any lower will activate the tyre screeching sound before your tyres are actually sliding.<br>
+ The default value is provides a misleading audio cue.<br>
+ You'll have to relearn to drive for awhile afterwards, as you adjust to the change.
+<dt><br>issues with picture quality
+<dd>I do hate the typical AC shimmers/jaggies lots more and want to keep the FPS at certain level.<br>
+ To achieve this, I have do a compromise, by; reducing shadows/reflections and other nice to have things, like rain.<br>
+ The red "!" from CM settings is in this case very helpfully to keep things low and see what effect they bring.<br>
+ Smart shadows great, but if not being notable as a realistic shadow by shimmers/jaggies.<br>
+I never noticed any real improvements in 3D depth by an PPfilter,<br>
+ but if missing a detailed view at a certain distance,<br>
+ may I suggest; set anisotropic filter to 0 in CM and to 16x in nVidia CP ACspecific.<br>
+<dt><br><a href=https://www.overtake.gg/threads/virtual-reality-at-its-best-bsu-assetto-corsa-vr-filter-attached.264805/>Virtual reality at its best; VR filter attached</a>
+<dt><br><a href=https://www.overtake.gg/threads/escape-key-not-working-in-vr.258855/>Escape key not working in VR</a>
+<dt><br>mirrors black in one eye, ok in other
+<dd>Try turning off 'high quality mirrors' (I think) in AC video settings
+<dt><br>headlights impact fps
+<dd>Go to LightingFX and set "Cars casting lights" to 0 cars
+</dl>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
