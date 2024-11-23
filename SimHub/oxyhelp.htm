@@ -5,32 +5,30 @@
 Controls:&nbsp <i>left to right. top to bottom</i>
 <dl>
 <dt>top row
-<dd>Threshold slider:&nbsp 1-99 (when <b>X Threshold</b> is enabled)<ul>
-<li>ignore X property values less than this slider setting</ul>
-<dd>Manual Replot<ul>
+<dd>Help - link to this page
+<dd><br>Current property <i>sample set</i> statistics, updated every 3 seconds;<br>
+	may not get plotted, depending on buttons to the right...
+<dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span> - enabled by the next button
+<dd><br><b>Manual / Auto Replot</b><ul>
 <li>when button displays <b>Manual Replot</b>,<br>
   displayed plot remains until red REPLOT is selected
 <li>when button displays <b>Auto Replot</b>, plots update as new samples are collected</ul>
-<dd><b>X Thresold</b> displays value, controled by slider, for collecting samples</ul>
-<dd><br><b>Disable</b> / <b>Enable Threshold</b><ul>
-<li><b>Disable</b> accepts all non-negative property values</ul>
-<dd><b>Linear Fit disabled</b> / <b>enabled</b><ul>
-<li><b>enabled</b> plots least squares regressions with and without forced origin</ul>
-<dt>second row
-<dd><b>X Below</b> slider<ul>
-<li>X and Y plot axes both auto-scale
-<li>slider values sets dynamic range, with minimum sample value < slider % of full scale</ul>
-<dd><b>REPLOT</b> button, when <b>Manual Replot</b> is selected in top row
-<dd><br><b>Y Below</b> slider:&nbsp as with <b>X Below</b>,
- 100% allows all non-negative samples
-<dt><br>third row: <b>Properties XY plot</b>
-<dd>X, Y sample pairs are plotted.<br>
-  Both paired values must satisfy critereon to be collected.
-<dt><br>row 4:&nbsp current status
+<dd><b>3 second refresh</b> / <b>Hold max X range</b><ul>
+<li><b>refresh</b>: sample set can be plotted
+<li><b>Hold</b>: only sample sets with greater range of X values will plot
+</ul>
+<dd><b>Linear Fit</b><ul>
+<li><b>Disable</b>:&nbsp only scatter plot
+<li><b>Enable</b>:&nbsp adds leasts square fit line,
+	also forced origin line for bipolar Y values</ul>
+<dt>row 2: <b>Properties XY plot</b>
+<dd>X, Y sample set pairs are plotted, when
+  X value range satisfies criteria.
+<dt><br>row 3:&nbsp Current <i>plot</i> statistics
 <dd>typically reports slopes for fitted lines and Y intercept for line not thru origin
-<dt><br>row 5:&nbsp Y and X properties being sample.
+<dt><br>row 4:&nbsp Y and X properties being sample.
 <dd>Copy names of interest from SimHub's <b>Available properties</b> window
-<dt><br>bottom row:&nbsp filters (1 -- no filtering)
+<dt><br>bottom row:&nbsp filters (1 == no filtering)
 <dd>Some properties depend on others, but with delayed effect.<br>
 Increasing filter for property <i>provoking</i> response may improve plotted correlation
 </dl>
