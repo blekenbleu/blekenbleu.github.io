@@ -4,16 +4,17 @@
 ![](Jan14stitch.jpg)  
 ## Signal Processing
   - [Aliasing and oversampling](../static/ImageProcessing/ao.html)
+  - [Apple AirPod Pro as lame hearing aid](Apple/)  
   - [DeltaWave vs Wave Corrector](../static/ImageProcessing/DeltaWave_WaveCorrector.html)
   - [dimg - visual difference utility](../static/ImageProcessing/dimg.html)
-  - [Hugin image alignment](microscope/objectives/Hugin.htm)  
-  - [Special Error Diffusion](../static/ImageProcessing/sped.html)
-  - [Neighborhood Mask Dithered Interpolation](../static/ImageProcessing/NMDI.html)
-  - [Harry Niquist was not wrong but is misunderstood](../static/ImageProcessing/Nyquist.html)
   - [dither:&nbsp; noise is not always bad](../static/ImageProcessing/dither.html)
-  - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](../static/ImageProcessing/TinyML.htm)  
+  - [Hugin image alignment](microscope/objectives/Hugin.htm)  
   - [LED color rendering meta-analaysis](../static/ColorRendering/)  
-  - [Apple AirPod Pro as lame hearing aid](Apple/)  
+  - [Monotone Cubic Fits over an interval](../static/ImageProcessing/MonotoneCubic.htm)
+  - [Neighborhood Mask Dithered Interpolation](../static/ImageProcessing/NMDI.html)
+  - [Niquist was not wrong but is misunderstood](../static/ImageProcessing/Nyquist.html)
+  - [Special Error Diffusion](../static/ImageProcessing/sped.html)
+  - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](../static/ImageProcessing/TinyML.htm)  
 
 ### [Arduino custom USB sketches](Arduino/)
 - e.g. for harness tensioning servos
