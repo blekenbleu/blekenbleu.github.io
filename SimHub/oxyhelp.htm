@@ -1,40 +1,58 @@
-<html>
-<body bgcolor=DDDDFF>
-<a href=https://github.com/blekenbleu/OxyScope><i>back</i></a>
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:800px; background-color:#DDDDFF; }
+</style>
+<title>Math.Net Monotone Cubic Fits over an interval</title>
+</head>
+
+<body bgcolor=666666>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50;padding-right:50">
+<font size=-1> <a href=https://github.com/blekenbleu/OxyScope><i>back</i></a> </font>
+
 <h2>OxyScope Help</h2><font size=+1>
-Controls:&nbsp <i>left to right. top to bottom</i>
+Controls:&nbsp <i>top to bottom</i>
+<hr>
 <dl>
-<dt>top row
-<dd>Help - link to this page
-<dd><br>Current property <i>sample set</i> statistics, updated every 3 seconds;<br>
-	may not get plotted, depending on buttons to the right...
-<dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span> - enabled by the next button
+<dt>top row:&nbsp left-to-right
+<dd><b>Help</b> - link to this page
+<dd><br><b>Current property <i>sample set</i> statistics</b>, updated every 3 seconds;<br>
+	&emsp; may not get plotted, depending on buttons to the right...
+<dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span> - enabled by the next button set to <b>Manual</b>
 <dd><br><b>Manual / Auto Replot</b><ul>
 <li>when button displays <b>Manual Replot</b>,<br>
-  displayed plot remains until red REPLOT is selected
-<li>when button displays <b>Auto Replot</b>, plots update as new samples are collected</ul>
-<dd><b>3 second refresh</b> / <b>Hold max X range</b><ul>
-<li><b>refresh</b>: sample set can be plotted
-<li><b>Hold</b>: only sample sets with greater range of X values will plot
+  displayed plot remains until <font color=red>REPLOT</font> is selected
+<li>when button displays <b>Auto Replot</b>,<br>
+ plots update as new samples are collected</ul>
+
+<dd><br><b>refresh:</b>&nbsp <b>3 second</b> / <b>Hold max X range</b> / <b>Hold max R-squared</b><ul>
+<li><b>3 second</b>: all sample sets can be plotted
+<li><b>Hold max X</b>: only sample sets with greater range of X values will plot
+<li><b>R-squared</b>: only sets with better correlation to linear solution
 </ul>
-<dd><b>Linear Fit</b><ul>
+<dd><br><b>Linear Fit</b><ul>
 <li><b>Disable</b>:&nbsp only scatter plot
-<li><b>Enable</b>:&nbsp adds leasts square fit line,
-	also forced origin line for bipolar Y values</ul>
-<dt>row 2: <b>Properties XY plot</b>
-<dd>X, Y sample set pairs are plotted, when
-  X value range satisfies criteria.
-<dt><br>row 3:&nbsp Current <i>plot</i> statistics
-<dd>typically reports slopes for fitted lines and Y intercept for line not thru origin
-<dt><br>row 4:&nbsp Y and X properties being sample.
+<li><b>Enable</b>:&nbsp adds leasts-squares fit line and
+<a href=https://blekenbleu.github.io/static/ImageProcessing/MonotoneCubic.htm>monotonic cubic curve</a>,<br>
+	also forced origin line for bipolar X,Y samples</ul>
+<dt><br>row 2: <b>Properties XY plot</b>
+<dd>X, Y sample set pairs are plotted, based on <b>refresh</b> setting
+<dt><br>row 3:&nbsp XY plot property names
 <dd>Copy names of interest from SimHub's <b>Available properties</b> window
+<dt><br>rows 4, 5:&nbsp Current <i>plotted</i> property statistics
+<dd>typically reports coefficients for fitted lines, cubic fits
 <dt><br>bottom row:&nbsp filters (1 == no filtering)
-<dd>Some properties depend on others, but with delayed effect.<br>
-Increasing filter for property <i>provoking</i> response may improve plotted correlation
+<dd>Some properties affect others, but with delay.<br>
+Increasing filter value for property <i>affecting</i> response<br> &emsp; may improve correlation..
 </dl>
 <hr>
  &emsp; &emsp;  
 </font>
+
+</td></tr><tr><td align=center>
 <i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
+</td></tr></table></div>
+
 </body>
 </html>
