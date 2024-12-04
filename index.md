@@ -89,6 +89,7 @@
 ### [Two Factor Authentication](2fas/) - iOS and 2FAS
 
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
+- [Glossary](XR/Glossary)  
 - [OpenVR vs OpenXR](XR/mbucchia.html)
 - [Samsung Odyssey+ and HP Reverb for Assetto Corsa](pedals/#hmd)  
   using [SteamVR](https://steamcommunity.com/app/250820)
