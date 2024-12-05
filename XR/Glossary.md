@@ -6,21 +6,22 @@
  Radeon's TAAA alternative  
 [Air Link](https://www.meta.com/help/quest/articles/headsets-and-accessories/oculus-link/connect-with-air-link/)
  Meta / Quest alternative to Virtual Desktop for PCVR streaming  
-[Aliasing](https://en.wikipedia.org/wiki/Aliasing) artifacts from sampling @ < ~ 3x content's highest frequencies  
+[Aliasing](https://en.wikipedia.org/wiki/Aliasing) artifacts from sampling `@ < ~ 3x` content's highest frequencies  
 [anti-aliasing](https://www.digitaltrends.com/computing/what-is-anti-aliasing/#dt-heading-how-to-turn-on-anti-aliasing-in-games) 
   **How to turn on anti-aliasing in games**  
 [ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens headset  
 [CA](https://en.wikipedia.org/wiki/Chromatic_aberration) Chromatic aberration, *axial (longitudinal) and transverse (lateral)*  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
+[DFR](https://www.tobii.com/blog/what-is-foveated-rendering) dynamic foveated rendering - key for optimizing VR performance  
 [DLDSR](https://www.techporn.ph/nvidia-dldsr-how-to-enable/) Deep learning dynamic super resolution  
  &emsp; Nvidia tech for rendering at resolution *higher than* displayed  
 [DLSS](https://en.wikipedia.org/wiki/Deep_learning_super_sampling) Deep learning super sampling - Nvidia itech for  
  &emsp; *reduced* resolution *rendering*, based on TAA, liable to artifacts  
 [EQAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) enhanced quality anti-aliasing - AMD's CSAA implementation  
 [eyebox](https://www.light-am.com/fileGXJZZ/journal/article/xjzz/2021/3/PDF/LAM2020120035.pdf)
- small regions in HMD where pupils must be located for optimal view  
-[eye tracking](https://en.wikipedia.org/wiki/Eye_tracking) required for dynamic foveated rendering  
+ small HMD regions for pupils to optimize viewing  
+[eye tracking](https://en.wikipedia.org/wiki/Eye_tracking) needed for DFR, wanted for social VR    
 [FFR](https://www.tomshardware.com/news/oculus-fixed-foveated-rendering-technology,36781.html) fixed foveated rendering  
 [FoV](https://en.wikipedia.org/wiki/Field_of_view) Field of view, angles from pupil to image edges  
 **FPS** First-person shooter (game) or Frames per second (display refresh rate)  
@@ -29,10 +30,10 @@
 [FXAA](https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing) Fast Approximate Anti-Aliasing tries to clean up jaggies *after* rendering  
 **HMD** head mounted display AKA headset  
 [HRM](https://www.reddit.com/r/ValveIndex/comments/i6jnfa/removing_the_lens_mesh_in_software_howto/) Hidden radial mask: don't render edge pixels not visible in HMD  
-  &emsp; [reportedly minimal impact in DCS](https://forum.dcs.world/topic/348555-vr-enable-hmd-mask-is-this-still-useful/)  
+  &emsp; reportedly [minimal impact in DCS](https://forum.dcs.world/topic/348555-vr-enable-hmd-mask-is-this-still-useful/)  
 [judder](https://www.howtogeek.com/753131/what-is-judder-and-why-do-tvs-have-this-problem/) aliasing between render and display frame rates  
 [LSFG](https://steamcommunity.com/app/993090/discussions/0/4418677017727367960/) Lossless Scaling FrameGen
- &emsp;	["no substitute for DLSS"](https://www.xda-developers.com/lossless-scaling-hands-on/)  
+	["no substitute for DLSS"](https://www.xda-developers.com/lossless-scaling-hands-on/)  
 [mbucchia](https://github.com/mbucchia)  XR software engineer Matthieu Bucchianeri  
 [MRTV](https://www.youtube.com/@mixedrealityTV/videos) MIXED REALITY TV - YouTuber and VR journalist Sebastial Ang's channel  
 [MSAA](https://en.wikipedia.org/wiki/Multisample_anti-aliasing) multi-sample antialiasing - operates along geometric edges.  
@@ -52,8 +53,8 @@
  &emsp; during large motion platform excursions  
 [OXRTK](https://mbucchia.github.io/OpenXR-Toolkit/) mbucchia's OpenXR Toolkit  
 [PCVR](https://www.roadtovr.com/how-to-tell-pc-virtual-reality-vr-oculus-rift-htc-vive-steam-vr-compatibility-tool/)
- Personal Computer Virtual Reality - VR rendering by personal computers,  
-	&emsp; vs "standalone" headsets  
+ Personal Computer Virtual Reality - VR rendering by personal computers  
+	&emsp; (vs standalone / wireless headsets)  
 [Pimax Crystal](https://pimax.com/pages/crystal) mini-LED aspheric lens headset  
 [pupil swim](https://ydcnanhe.github.io/assets/pdf/SID_Global_PS_v22.pdf) perception of
  discrepancies betweeen corrections  
