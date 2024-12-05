@@ -2,17 +2,20 @@
 ---  
 ## VR / XR Glossary 
 [Aliasing](https://en.wikipedia.org/wiki/Aliasing) artifacts from sampling at lower than
- about 3x highest frequencies in original content  
+ about 3x highest frequencies in sampled content  
 [adaptive anti-aliasing](https://www.amd.com/en/resources/support-articles/faqs/dh-012.html#DH-012-Aliasing%20)
  Radeon's TAAA alternative  
+[Air Link](https://www.meta.com/help/quest/articles/headsets-and-accessories/oculus-link/connect-with-air-link/)
+ Meta / Quest alternative to Virtual Desktop for PCVR streaming  
 [anti-aliasing](https://www.digitaltrends.com/computing/what-is-anti-aliasing/#dt-heading-how-to-turn-on-anti-aliasing-in-games) 
   **How to turn on anti-aliasing in games**  
+[ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens headset  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
-[DLDSR](https://www.techporn.ph/nvidia-dldsr-how-to-enable/) Deep learning dynamic super resolution - Nvidia tech
- for rendering at resolution *higher than* displayed  
-[DLSS](https://en.wikipedia.org/wiki/Deep_learning_super_sampling) Deep learning super sampling - Nvidia
- tech for *reduced* resolution *rendering*, based on TAA, liable to artifacts  
+[DLDSR](https://www.techporn.ph/nvidia-dldsr-how-to-enable/) Deep learning dynamic super resolution - Nvidia tech  
+ &emsp; for rendering at resolution *higher than* displayed  
+[DLSS](https://en.wikipedia.org/wiki/Deep_learning_super_sampling) Deep learning super sampling - Nvidia  
+ &emsp; tech for *reduced* resolution *rendering*, based on TAA, liable to artifacts  
 [EQAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) enhanced quality anti-aliasing - AMD's CSAA implementation  
 [eyebox](https://www.light-am.com/fileGXJZZ/journal/article/xjzz/2021/3/PDF/LAM2020120035.pdf)
  small regions in HMD where pupils must be located for optimal view  
@@ -24,34 +27,49 @@
 [FSR](https://gpuopen.com/fidelityfx-superresolution-2/) AMD FidelityFX Super Resolution alternative to DLSS  
 **HMD** head mounted display AKA headset  
 [judder](https://www.howtogeek.com/753131/what-is-judder-and-why-do-tvs-have-this-problem/) aliasing between render and display frame rates  
-[MSAA](https://en.wikipedia.org/wiki/Multisample_anti-aliasing) multi-sample antialiasing - operates along geometric edges.&nbsp;
-  Tom's Hardware considers
- [4x enough MSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-2.html)  
-[OpenXR](https://www.khronos.org/OpenXR/) alternative to SteamVR for [AR/MR/VR/XR API](mbucchia.html)  
-[OXRTK](https://mbucchia.github.io/OpenXR-Toolkit/)  OpenXR Toolkit  
+[mbucchia](https://github.com/mbucchia)  XR software engineer Matthieu Bucchianeri    
+[MRTV](https://www.youtube.com/@mixedrealityTV/videos) MIXED REALITY TV - YouTuber and VR journalist Sebastial Ang's channel  
+[MSAA](https://en.wikipedia.org/wiki/Multisample_anti-aliasing) multi-sample antialiasing - operates along geometric edges.  
+ &emsp;  Tom's Hardware suggests
+ [4x MSAA suffices](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-2.html)  
+[OpenKneeboard](https://openkneeboard.com/) 2D overlay for OpenXR and OpenVR, compatible with SimHub HTML dashboards  
+[OpenVR](https://en.wikipedia.org/wiki/OpenVR) SteamVR API since 2015  
+[OpenXR](https://www.khronos.org/OpenXR/) alternative to OpenVR for [AR/MR/VR/XR API](mbucchia.html) since 2017  
+[OXRTK](https://mbucchia.github.io/OpenXR-Toolkit/) mbucchia's OpenXR Toolkit  
+[PCVR](https://www.roadtovr.com/how-to-tell-pc-virtual-reality-vr-oculus-rift-htc-vive-steam-vr-compatibility-tool/)
+ Personal Computer Virtual Reality - VR rendering by personal computers, vs "standalone" headsets  
 [Pimax Crystal](https://pimax.com/pages/crystal) mini-LED aspheric lens headset  
 [pupil swim](https://ydcnanhe.github.io/assets/pdf/SID_Global_PS_v22.pdf) perception of
  discrepancies betweeen corrections and real lens geometric distortions  
 [QVFR](https://github-wiki-see.page/m/mbucchia/Quad-Views-Foveated/wiki) QuadView Foveated
  Rendering - technique for reduced resolution outside sweet spot  
+[RCHeliguy](https://www.youtube.com/@markkovalcson7243/videos) Mark Kovalcson  
 [rendering](https://gfxcourses.stanford.edu/cs248/winter21content/media/vr/12_vr_sm.pdf) generating (binocular) image samples  
 [RTSS](https://www.guru3d.com/page/rivatuner-rtss-homepage/) RivaTuner Statistics Server, includes FPS limiter, bad for OpenXR  
+[SimHub](https://www.simhubdash.com/) Windows sim telemetry utility for dashboards, haptics, motion, other hardware by plugins  
 [Social VR](https://www.interaction-design.org/literature/topics/social-virtual-reality-vr)
  e.g. [VRChat](https://hello.vrchat.com/),  [Somnium Space](https://www.somniumspace.com/)  
 [Somnium VR1](https://blekenbleu.github.io/VR1) mini-LED doublet aspheric lens headset  
 [SMAA](https://en.wikipedia.org/wiki/Morphological_antialiasing) Subpixel Morphological Anti-Aliasing,
  similar to FXAA, but less cost-effecting than TAA  
 [SSAA](https://www.tomshardware.com/reviews/anti-aliasing-performance,3065-18.html) Supersampling antialiasing - visual
- quality and performance cost higher than MSAA
+ quality and performance cost higher than MSAA  
+[SSW](https://www.youtube.com/watch?v=zH7qCsey2to) Virtual Desktop Synchronous Spacewarp reprojection (frame rate jitter reduction)  
 [stutter](https://www.howtogeek.com/874778/7-reasons-your-windows-pc-is-stuttering-and-how-to-fix-it/) inconsistent rendering time,
- causing some some rendered frames to be unavailable at frame display time  
+ with some frames unavailable at regular display intervals  
 [SteamVR](https://store.steampowered.com/steamvr) Valve's VR tools and services, e.g. OpenVR, Lighthouse Tracking  
+[strain](https://www.testdevices.com/spin-testing/optical-strain-measurement/) visible artifacts, moreso with polarized light, resulting from optical inhomogeneities,  
+ &emsp; often induced by mechanical stresses, AKA [Schlieren](https://en.wikipedia.org/wiki/Schlieren)  
 [sweet spot](https://vrlowdown.com/why-is-vr-blurry/) limited region near HMD lens centers with useful resolution and fewer artifacts  
 [TAA](https://en.wikipedia.org/wiki/Temporal_anti-aliasing) Temporal Anti-Aliasing blends pixels among frames  
 [TAAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-3.html)
  Nvidia transparency adaptive anti-aliasing for transparent textures in 2 flavors: TrSSAA, TrMSAA  
 [Ultraleap](https://www.ultraleap.com/) hand tracking cameras and software  
-[Valve Corporation](https://www.valvesoftware.com/) owner of Steam, dominant platform for Windows PC games  
+[Valve Corporation](https://www.valvesoftware.com/) owner of Steam, dominant Windows PC game platform  
+[Virtual Desktop](https://www.vrdesktop.net/) Guy Godin’s PCVR app.  A second version links to wireless (standalone) headsets  
+[VDXR](https://github.com/mbucchia/VirtualDesktop-OpenXR) OpenXR runtime for Virtual Desktop  
 [VRGOXR](https://portal.vrgineers.com/user-guide/software/openxr/) vrgineers' OpenXR runtime AKA VRG runtime  
+[VRFSG](https://www.youtube.com/channel/UCtr084FH7rX9rUKTAlZFKXA) VR Flight Sim Guy - Somnium VR1 beta tester and YouTuber's channel  
 [VRSS](https://developer.nvidia.com/blog/nvidia-vrss-a-zero-effort-way-to-improve-your-vr-image-quality/)
  Nvidia Variable Rate Supersampling  
+[xr-picker](https://github.com/rpavlik/xr-picker) cross-platform tool for OpenXR runtime selection  
