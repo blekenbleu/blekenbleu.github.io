@@ -74,12 +74,12 @@
  similar to FXAA,  
  &emsp; but less cost-effecting than TAA  
 [SSAA](https://www.tomshardware.com/reviews/anti-aliasing-performance,3065-18.html) Supersampling antialiasing - visual
- quality and performance cost higher than MSAA  
+ quality and performance cost > MSAA  
 [SSW](https://www.youtube.com/watch?v=zH7qCsey2to) Virtual Desktop Synchronous Spacewarp reprojection (frame rate jitter reduction)  
 [stutter](https://www.howtogeek.com/874778/7-reasons-your-windows-pc-is-stuttering-and-how-to-fix-it/) inconsistent rendering time,
- with some frames unavailable at regular display intervals  
+ missing some frames at regular display intervals  
 [SteamVR](https://store.steampowered.com/steamvr) Valve's VR tools and services, e.g. OpenVR, Lighthouse Tracking  
-[strain](https://www.testdevices.com/spin-testing/optical-strain-measurement/) visible artifacts, moreso with polarized light, resulting from optical inhomogeneities,  
+[strain](https://www.testdevices.com/spin-testing/optical-strain-measurement/) visible artifacts, often with polarized light, from optic inhomogeneities,  
  &emsp; often induced by mechanical stresses, AKA [Schlieren](https://en.wikipedia.org/wiki/Schlieren)  
 [sweet spot](https://vrlowdown.com/why-is-vr-blurry/) limited region near HMD lens centers with useful resolution, fewer artifacts  
 [TAA](https://en.wikipedia.org/wiki/Temporal_anti-aliasing) Temporal Anti-Aliasing blends pixels among frames  
