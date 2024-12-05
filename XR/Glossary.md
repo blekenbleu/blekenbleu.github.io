@@ -56,9 +56,10 @@
 [OpenXR](https://www.khronos.org/OpenXR/) alternative to OpenVR for [AR/MR/VR/XR API](mbucchia.html) since 2017  
 [OpenXR API Layers on Windows](https://fredemmott.com/blog/2024/11/25/best-practices-for-openxr-api-layers.html) - Best Practices, by Fred Emmott  
 [OpenXR API Layers GUI](https://github.com/fredemmott/OpenXR-API-Layers-GUI) Fred Emmott's tool tp inspect / tweak OpenXR API layers  
-[**OpenXR Explorer**](https://github.com/maluoi/openxr-explorer) switch runtimes, inspect properties, but hard-coded list;&nbsp; see xr-picker  
+[**OpenXR Explorer**](https://github.com/maluoi/openxr-explorer) switch runtimes, inspect properties, but hard-coded list;  
+ &emsp; see xr-picker  
 [OpenXR-Runtime-Switcher](https://github.com/WaGi-Coding/OpenXR-Runtime-Switcher) quickly switch System Default OpenXR Runtime  
-[Owl3D](https://www.owl3d.com/) for converting 2D video to 3D
+[Owl3D](https://www.owl3d.com/) for converting 2D video to 3D  
 [OXRMC](https://github.com/BuzzteeBear/OpenXR-MotionCompensation) motion compensation keeps VR views in cockpit  
  &emsp; during large motion platform excursions  
 [OXRTK](https://mbucchia.github.io/OpenXR-Toolkit/) mbucchia's OpenXR Toolkit  
