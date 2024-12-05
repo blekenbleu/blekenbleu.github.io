@@ -12,13 +12,14 @@
 [ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens headset  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
-[DLDSR](https://www.techporn.ph/nvidia-dldsr-how-to-enable/) Deep learning dynamic super resolution - Nvidia tech  
- &emsp; for rendering at resolution *higher than* displayed  
-[DLSS](https://en.wikipedia.org/wiki/Deep_learning_super_sampling) Deep learning super sampling - Nvidia  
- &emsp; tech for *reduced* resolution *rendering*, based on TAA, liable to artifacts  
+[DLDSR](https://www.techporn.ph/nvidia-dldsr-how-to-enable/) Deep learning dynamic super resolution  
+ &emsp; Nvidia tech for rendering at resolution *higher than* displayed  
+[DLSS](https://en.wikipedia.org/wiki/Deep_learning_super_sampling) Deep learning super sampling - Nvidia itech for  
+ &emsp; *reduced* resolution *rendering*, based on TAA, liable to artifacts  
 [EQAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) enhanced quality anti-aliasing - AMD's CSAA implementation  
 [eyebox](https://www.light-am.com/fileGXJZZ/journal/article/xjzz/2021/3/PDF/LAM2020120035.pdf)
  small regions in HMD where pupils must be located for optimal view  
+[FFR](https://www.tomshardware.com/news/oculus-fixed-foveated-rendering-technology,36781.html) fixed foveated rendering  
 [eye tracking](https://en.wikipedia.org/wiki/Eye_tracking) required for dynamic foveated rendering  
 [FoV](https://en.wikipedia.org/wiki/Field_of_view) Field of view, angles from pupil to image edges  
 **FPS** First-person shooter (game) or Frames per second (display refresh rate)  
@@ -26,15 +27,21 @@
 [FXAA](https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing) Fast Approximate Anti-Aliasing tries to clean up jaggies *after* rendering  
 [FSR](https://gpuopen.com/fidelityfx-superresolution-2/) AMD FidelityFX Super Resolution alternative to DLSS  
 **HMD** head mounted display AKA headset  
+[HRM](https://www.reddit.com/r/ValveIndex/comments/i6jnfa/removing_the_lens_mesh_in_software_howto/) Hidden radial mask: don't render edge pixels not visible in HMD
+ [reportedly minimal impact in DCS](https://forum.dcs.world/topic/348555-vr-enable-hmd-mask-is-this-still-useful/)  
 [judder](https://www.howtogeek.com/753131/what-is-judder-and-why-do-tvs-have-this-problem/) aliasing between render and display frame rates  
 [mbucchia](https://github.com/mbucchia)  XR software engineer Matthieu Bucchianeri    
 [MRTV](https://www.youtube.com/@mixedrealityTV/videos) MIXED REALITY TV - YouTuber and VR journalist Sebastial Ang's channel  
 [MSAA](https://en.wikipedia.org/wiki/Multisample_anti-aliasing) multi-sample antialiasing - operates along geometric edges.  
  &emsp;  Tom's Hardware suggests
  [4x MSAA suffices](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-2.html)  
+[NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
+  eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
+[OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, forwards calls to OpenXR runtime, bypassing OpenVR  
 [OpenKneeboard](https://openkneeboard.com/) 2D overlay for OpenXR and OpenVR, compatible with SimHub HTML dashboards  
 [OpenVR](https://en.wikipedia.org/wiki/OpenVR) SteamVR API since 2015  
 [OpenXR](https://www.khronos.org/OpenXR/) alternative to OpenVR for [AR/MR/VR/XR API](mbucchia.html) since 2017  
+[OpenXR-Runtime-Switcher](https://github.com/WaGi-Coding/OpenXR-Runtime-Switcher) quickly switch System Default OpenXR Runtime 
 [OXRTK](https://mbucchia.github.io/OpenXR-Toolkit/) mbucchia's OpenXR Toolkit  
 [PCVR](https://www.roadtovr.com/how-to-tell-pc-virtual-reality-vr-oculus-rift-htc-vive-steam-vr-compatibility-tool/)
  Personal Computer Virtual Reality - VR rendering by personal computers, vs "standalone" headsets  
@@ -68,8 +75,12 @@
 [Valve Corporation](https://www.valvesoftware.com/) owner of Steam, dominant Windows PC game platform  
 [Virtual Desktop](https://www.vrdesktop.net/) Guy Godin’s PCVR app.  A second version links to wireless (standalone) headsets  
 [VDXR](https://github.com/mbucchia/VirtualDesktop-OpenXR) OpenXR runtime for Virtual Desktop  
-[VRGOXR](https://portal.vrgineers.com/user-guide/software/openxr/) vrgineers' OpenXR runtime AKA VRG runtime  
 [VRFSG](https://www.youtube.com/channel/UCtr084FH7rX9rUKTAlZFKXA) VR Flight Sim Guy - Somnium VR1 beta tester and YouTuber's channel  
+[VRGOXR](https://portal.vrgineers.com/user-guide/software/openxr/) vrgineers' OpenXR runtime AKA VRG runtime  
+[vrperfkit](https://github.com/fholger/vrperfkit) fholger's VR Performance Toolkit to upscale after rendering, fixed foveated rendering option  
+[VRPerfKit_RSF](https://github.com/RavenSystem/VRPerfKit_RSF) RavenSystem's vrperfkit fork for dynamic FFR, HRM  
+[vrperfkit fixed foveated rendering by VRS](https://github.com/cedriclmenard/vrperfkit/releases) works with DCS, Assetto Corsa  
+[VRS](https://developer.nvidia.com/vrworks/graphics/variablerateshading) Nvidia Variable Rate Shading  
 [VRSS](https://developer.nvidia.com/blog/nvidia-vrss-a-zero-effort-way-to-improve-your-vr-image-quality/)
  Nvidia Variable Rate Supersampling  
 [xr-picker](https://github.com/rpavlik/xr-picker) cross-platform tool for OpenXR runtime selection  
