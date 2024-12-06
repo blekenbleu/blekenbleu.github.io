@@ -32,6 +32,8 @@
 [FFR](https://www.tomshardware.com/news/oculus-fixed-foveated-rendering-technology,36781.html) fixed foveated rendering  
 [FoV](https://en.wikipedia.org/wiki/Field_of_view) Field of view, angles from pupil to image edges  
 **FPS** First-person shooter (game) or Frames per second (display refresh rate)  
+[frame generation](https://blurbusters.com/frame-generation-essentials-interpolation-extrapolation-and-reprojection/) - interpolating or warping intermediate frames  
+ &emsp; when rendered frame rate is objectionable  
 [Fred Emmott](https://fredemmott.com/bio) OpenXR Invited Expert, OpenKneeboard and HTCC developer  
 [FSAA](https://en.wikipedia.org/wiki/Spatial_anti-aliasing#Super_sampling_/_full-scene_anti-aliasing) full-scene anti-aliasing AKA SSAA  
 [FSR](https://gpuopen.com/fidelityfx-superresolution-2/) AMD FidelityFX Super Resolution alternative to DLSS  
@@ -80,6 +82,8 @@
  Rendering - reducing resolution outside sweet spot  
 [RCHeliguy](https://www.youtube.com/@markkovalcson7243/videos) Mark Kovalcson  
 [rendering](https://gfxcourses.stanford.edu/cs248/winter21content/media/vr/12_vr_sm.pdf) generating (binocular) image samples  
+reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reprojection-explained/) or frame generation,  
+ &emsp; often associated with Windows Mixed Reality  
 [ROV Test FOV & Resolution](https://steamcommunity.com/sharedfiles/filedetails/?id=1359389601) Snellen text legibility, glare, FoV, distortions
 	 AKA [**testhmd**](https://knob2001.itch.io/testhmd)  
 [RTSS](https://www.guru3d.com/page/rivatuner-rtss-homepage/) RivaTuner Statistics Server, includes FPS limiter, bad for OpenXR  
