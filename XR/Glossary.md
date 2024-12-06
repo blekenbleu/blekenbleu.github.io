@@ -1,7 +1,8 @@
 ---
 ---  
 ## VR / XR Glossary
-[AC](https://www.youtube.com/watch?v=fHKKHImI7Dg) - [Assetto Corsa](https://www.overtake.gg/downloads/categories/assetto-corsa.1/), *why I care about VR / XR*  
+[AC](https://assettocorsa.gg/assetto-corsa/) - [Assetto Corsa](https://www.overtake.gg/downloads/categories/assetto-corsa.1/),
+	*why* [*I care about VR / XR*](https://blekenbleu.github.io/pedals/#AC)  
 [adaptive anti-aliasing](https://www.amd.com/en/resources/support-articles/faqs/dh-012.html#DH-012-Aliasing%20)
  Radeon's TAAA alternative  
 [Air Link](https://www.meta.com/help/quest/articles/headsets-and-accessories/oculus-link/connect-with-air-link/)
@@ -14,10 +15,15 @@
 [CA](https://en.wikipedia.org/wiki/Chromatic_aberration) Chromatic aberration, *axial (longitudinal) and transverse (lateral)*  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
 [DFR](https://www.tobii.com/blog/what-is-foveated-rendering) dynamic foveated rendering - key for optimizing VR performance  
+[DLAA](https://en.wikipedia.org/wiki/Deep_learning_anti-aliasing) Nvidia Deep learning anti-aliasing, similar to DLSS and TAA,  
+ &emsp; but image quality focus (full resolution)  
 [DLDSR](https://www.techporn.ph/nvidia-dldsr-how-to-enable/) Deep learning dynamic super resolution  
  &emsp; Nvidia tech for rendering at resolution *higher than* displayed  
 [DLSS](https://en.wikipedia.org/wiki/Deep_learning_super_sampling) Deep learning super sampling - Nvidia itech for  
  &emsp; *reduced* resolution *rendering*, based on TAA, liable to artifacts  
+[DLSS-G](https://github.com/NVIDIAGameWorks/Streamline/blob/main/docs/ProgrammingGuideDLSS_G.md) AKA DLSS-FG - Nvidia frame generation  
+[`driver_leap`](https://github.com/SDraw/driver_leap) SteamVR driver for [emulating controllers](https://www.youtube.com/watch?v=RdGnCV2g_oE)
+ by [Ultraleap handtracking](https://www.youtube.com/watch?v=21v4m3ATeqE)  
 [EQAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) enhanced quality anti-aliasing - AMD's CSAA implementation  
 [eyebox](https://www.light-am.com/fileGXJZZ/journal/article/xjzz/2021/3/PDF/LAM2020120035.pdf)
  small HMD regions for pupils that optimize viewing  
@@ -26,7 +32,7 @@
 [FFR](https://www.tomshardware.com/news/oculus-fixed-foveated-rendering-technology,36781.html) fixed foveated rendering  
 [FoV](https://en.wikipedia.org/wiki/Field_of_view) Field of view, angles from pupil to image edges  
 **FPS** First-person shooter (game) or Frames per second (display refresh rate)  
-[Fred Emmott](https://fredemmott.com/bio) XR Invited Expert, HTCC developer  
+[Fred Emmott](https://fredemmott.com/bio) OpenXR Invited Expert, OpenKneeboard and HTCC developer  
 [FSAA](https://en.wikipedia.org/wiki/Spatial_anti-aliasing#Super_sampling_/_full-scene_anti-aliasing) full-scene anti-aliasing AKA SSAA  
 [FSR](https://gpuopen.com/fidelityfx-superresolution-2/) AMD FidelityFX Super Resolution alternative to DLSS  
 [FXAA](https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing) Fast Approximate Anti-Aliasing tries to clean up jaggies *after* rendering  
@@ -48,10 +54,10 @@
  [4x MSAA suffices](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-2.html)  
 [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
-[OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`,  
- &emsp;	forwards calls to OpenXR runtime, bypassing OpenVR  
-[OpenKneeboard](https://openkneeboard.com/) 2D overlay for OpenXR and OpenVR,  
- &emsp;	compatible with SimHub HTML dashboards  
+[OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, often [speeding performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
+ &emsp;	by [forwarding calls](https://fredemmott.com/blog/2022/05/29/vr-software-components.html) to OpenXR runtime, bypassing OpenVR  
+[OpenKneeboard](https://openkneeboard.com/) Fred Emmott's 2D overlay for OpenXR and OpenVR,  
+ &emsp;	works with [**SimHub**](https://github.com/SHWotever/SimHub/wiki) dashboards  
 [OpenVR](https://en.wikipedia.org/wiki/OpenVR) SteamVR API since 2015  
 [OpenXR](https://www.khronos.org/OpenXR/) alternative to OpenVR for [AR/MR/VR/XR API](mbucchia.html) since 2017  
 [OpenXR API Layers on Windows](https://fredemmott.com/blog/2024/11/25/best-practices-for-openxr-api-layers.html) - Best Practices, by Fred Emmott  
