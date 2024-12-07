@@ -15,6 +15,8 @@
 [CA](https://en.wikipedia.org/wiki/Chromatic_aberration) Chromatic aberration, *axial (longitudinal) and transverse (lateral)*  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
 [DFR](https://www.tobii.com/blog/what-is-foveated-rendering) dynamic foveated rendering - key for optimizing VR performance  
+[Direct3D](https://learn.microsoft.com/en-us/windows/win32/direct3d) - drawing primitives and shading in Windows DirectX graphics and gaming API  
+ &emsp; D3DX12 AKA Direct3D 12 is the current version;&nbsp;  most games use 11 or earlier  
 [DLAA](https://en.wikipedia.org/wiki/Deep_learning_anti-aliasing) Nvidia Deep learning anti-aliasing, similar to DLSS and TAA,  
  &emsp; but image quality focus (full resolution)  
 [DLDSR](https://www.techporn.ph/nvidia-dldsr-how-to-enable/) Deep learning dynamic super resolution  
@@ -58,12 +60,15 @@
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
 [OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, often [speeding performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
  &emsp;	by [forwarding calls](https://fredemmott.com/blog/2022/05/29/vr-software-components.html) to OpenXR runtime, bypassing OpenVR  
+[OpenGL](https://en.wikipedia.org/wiki/OpenGL) - 2D and 3D graphics API, developed by Silicon Graphics  
 [OpenKneeboard](https://openkneeboard.com/) Fred Emmott's 2D overlay for OpenXR and OpenVR,  
  &emsp;	works with [**SimHub**](https://github.com/SHWotever/SimHub/wiki) dashboards  
 [OpenVR](https://en.wikipedia.org/wiki/OpenVR) SteamVR API since 2015  
 [OpenXR](https://www.khronos.org/OpenXR/) alternative to OpenVR for [AR/MR/VR/XR API](mbucchia.html) since 2017  
 [OpenXR API Layers on Windows](https://fredemmott.com/blog/2024/11/25/best-practices-for-openxr-api-layers.html) - Best Practices, by Fred Emmott  
 [OpenXR API Layers GUI](https://github.com/fredemmott/OpenXR-API-Layers-GUI) Fred Emmott's tool tp inspect / tweak OpenXR API layers  
+[OpenXR D3DX12](https://github.com/mbucchia/OpenXR-Vk-D3D12) - mbucchia' software enabling OpenXR Vulkan/OpenGL apps   
+ &emsp; to work with OpenXR runtimes supporting only Direct3D 12  
 [**OpenXR Explorer**](https://github.com/maluoi/openxr-explorer) switch runtimes, inspect properties, but hard-coded list;  
  &emsp; see xr-picker  
 [OpenXR-Runtime-Switcher](https://github.com/WaGi-Coding/OpenXR-Runtime-Switcher) quickly switch System Default OpenXR Runtime  
@@ -92,6 +97,8 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
 [Social VR](https://www.interaction-design.org/literature/topics/social-virtual-reality-vr)
  e.g. [VRChat](https://hello.vrchat.com/),  [Somnium Space](https://www.somniumspace.com/)  
 [Somnium VR1](https://blekenbleu.github.io/VR1) mini-LED doublet aspheric lens XR headset  
+[SpaceWarp](https://www.uploadvr.com/quest-2-application-spacewarp/) AKA ASW or Application SpaceWarp - Quest frame generation  
+ &emsp; extrapolation tech using game engine depth buffer and motion vectors  
 [SMAA](https://en.wikipedia.org/wiki/Morphological_antialiasing) Subpixel Morphological Anti-Aliasing,
  similar to FXAA,  
  &emsp; but less cost-effecting than TAA  
@@ -110,7 +117,7 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
  &emsp; in 2 flavors: TrSSAA, TrMSAA  
 [Ultraleap](https://www.ultraleap.com/) hand tracking cameras and software  
 [Valve Corporation](https://www.valvesoftware.com/) owner of Steam, dominant Windows PC game platform  
-[Virtual Desktop](https://www.vrdesktop.net/) Guy Godin’s PCVR app;  
+[Virtual Desktop](https://www.vrdesktop.net/) AKA VD, often Guy Godin’s PCVR app;  
  &emsp; a second version links to wireless (standalone) headsets  
 [VDXR](https://github.com/mbucchia/VirtualDesktop-OpenXR) OpenXR runtime for Virtual Desktop  
 [vorpX](https://www.vorpx.com/) VR support for 250+ DirectX 9-12 first person games  
@@ -123,4 +130,6 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
 [VRS](https://developer.nvidia.com/vrworks/graphics/variablerateshading) Nvidia Variable Rate Shading  
 [VRSS](https://developer.nvidia.com/blog/nvidia-vrss-a-zero-effort-way-to-improve-your-vr-image-quality/)
  Nvidia Variable Rate Supersampling  
+[Vulkan / OpenGL](https://en.wikipedia.org/wiki/Vulkan) intended OpenGL replacement  
+ &emsp; Vulcan is tuned for multiple CPU cores and modern GPUs  
 [xr-picker](https://github.com/rpavlik/xr-picker) cross-platform tool for OpenXR runtime selection;&nbsp; Fred Emmott recommends  
