@@ -8,6 +8,7 @@
 [Air Link](https://www.meta.com/help/quest/articles/headsets-and-accessories/oculus-link/connect-with-air-link/)
  Meta / Quest alternative to Virtual Desktop for PCVR streaming  
 [Aliasing](https://en.wikipedia.org/wiki/Aliasing) artifacts from sampling `@ < ~ 3x` content's highest frequencies  
+[ALVR][https://github.com/alvr-org/ALVR] Air Light VR streams PCVR to wireless headsets  
 [anti-aliasing](https://www.digitaltrends.com/computing/what-is-anti-aliasing/#dt-heading-how-to-turn-on-anti-aliasing-in-games) 
   **How to turn on anti-aliasing in games**  
 [ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
@@ -27,6 +28,7 @@
 [DLSSTweaks](https://github.com/emoose/DLSSTweaks) - force DLAA onto DLSS-supported titles  
 [`driver_leap`](https://github.com/SDraw/driver_leap) SteamVR driver for [emulating controllers](https://www.youtube.com/watch?v=RdGnCV2g_oE)
  by [Ultraleap handtracking](https://www.youtube.com/watch?v=21v4m3ATeqE)  
+[DSC](https://developer.nvidia.com/blog/dsc-higher-fidelity-vr/) Digital Stream Compression - *visually* lossless on DisplayPort 1.4a, HDMI 2.1  
 [EQAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) enhanced quality anti-aliasing - AMD's CSAA implementation  
 [eyebox](https://www.light-am.com/fileGXJZZ/journal/article/xjzz/2021/3/PDF/LAM2020120035.pdf)
  small HMD regions for pupils that optimize viewing  
@@ -46,6 +48,7 @@
 [HRM](https://www.reddit.com/r/ValveIndex/comments/i6jnfa/removing_the_lens_mesh_in_software_howto/) Hidden radial mask: don't render edge pixels not visible in HMD  
   &emsp; reportedly [minimal impact in DCS](https://forum.dcs.world/topic/348555-vr-enable-hmd-mask-is-this-still-useful/)  
 [HTCC](https://htcc.fredemmott.com/) - hand tracking OpenXR API layer for MSFS, DCS World, HelloXR  
+[iVRy](https://steamcommunity.com/app/992490) a commercial app for [streaming SteamVR](https://github.com/PhoneVR-Developers/PhoneVR) to wireless devices  
 [IW3](https://github.com/nagadomi/nunif/) MIT license 2D image/video to 3D conversion  
 [judder](https://www.howtogeek.com/753131/what-is-judder-and-why-do-tvs-have-this-problem/) aliasing between render and display frame rates  
 [LSFG](https://steamcommunity.com/app/993090/discussions/0/4418677017727367960/) Lossless Scaling FrameGen
@@ -122,6 +125,8 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
  &emsp; a second version links to wireless (standalone) headsets  
 [VDXR](https://github.com/mbucchia/VirtualDesktop-OpenXR) OpenXR runtime for Virtual Desktop  
 [vorpX](https://www.vorpx.com/) VR support for 250+ DirectX 9-12 first person games  
+[VR](http://www.lavalle.pl/vr/web.html) VIRTUAL REALITY (link to
+	[Steven LaValle's](https://www.youtube.com/playlist?list=PLbMVogVj5nJSyt80VRXYC-YrAvQuUb6dh) free book)
 [VRFSG](https://www.youtube.com/channel/UCtr084FH7rX9rUKTAlZFKXA) VR Flight Sim Guy - Somnium VR1 beta tester and YouTuber's channel  
 [VRGOXR](https://portal.vrgineers.com/user-guide/software/openxr/) vrgineers' OpenXR runtime AKA VRG runtime  
 [vrperfkit](https://github.com/fholger/vrperfkit) fholger's VR Performance Toolkit to upscale after rendering,  
