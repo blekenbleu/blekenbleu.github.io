@@ -48,6 +48,7 @@
 [HRM](https://www.reddit.com/r/ValveIndex/comments/i6jnfa/removing_the_lens_mesh_in_software_howto/) Hidden radial mask: don't render edge pixels not visible in HMD  
   &emsp; reportedly [minimal impact in DCS](https://forum.dcs.world/topic/348555-vr-enable-hmd-mask-is-this-still-useful/)  
 [HTCC](https://htcc.fredemmott.com/) - hand tracking OpenXR API layer for MSFS, DCS World, HelloXR  
+[iNFINITE](https://www.infinite.cz/projects/HMD-tester-virtual-reality-headset-database-utility) VR Headset FoV database and test utility  
 [iVRy](https://steamcommunity.com/app/992490) a commercial app for [streaming SteamVR](https://github.com/PhoneVR-Developers/PhoneVR) to wireless devices  
 [IW3](https://github.com/nagadomi/nunif/) MIT license 2D image/video to 3D conversion  
 [judder](https://www.howtogeek.com/753131/what-is-judder-and-why-do-tvs-have-this-problem/) aliasing between render and display frame rates  
