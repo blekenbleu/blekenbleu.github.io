@@ -24,6 +24,7 @@
 [DLSS](https://en.wikipedia.org/wiki/Deep_learning_super_sampling) Deep learning super sampling - Nvidia itech for  
  &emsp; *reduced* resolution *rendering*, based on TAA, liable to artifacts  
 [DLSS-G](https://github.com/NVIDIAGameWorks/Streamline/blob/main/docs/ProgrammingGuideDLSS_G.md) AKA DLSS-FG - Nvidia frame generation  
+[DLSSTweaks](https://github.com/emoose/DLSSTweaks) - force DLAA onto DLSS-supported titles  
 [`driver_leap`](https://github.com/SDraw/driver_leap) SteamVR driver for [emulating controllers](https://www.youtube.com/watch?v=RdGnCV2g_oE)
  by [Ultraleap handtracking](https://www.youtube.com/watch?v=21v4m3ATeqE)  
 [EQAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) enhanced quality anti-aliasing - AMD's CSAA implementation  
