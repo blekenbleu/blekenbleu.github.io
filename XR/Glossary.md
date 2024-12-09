@@ -14,6 +14,8 @@
 [ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens VR headset  
 [CA](https://en.wikipedia.org/wiki/Chromatic_aberration) Chromatic aberration, *axial (longitudinal) and transverse (lateral)*  
+[core parking](https://www.thewindowsclub.com/enable-disable-core-parking-windows) - disable some CPU cores, reducing power and heat  
+ &emsp; (Windows 11 often parks 18/20 of i5-13600K 6P + 8E cores)  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
 [DFR](https://www.tobii.com/blog/what-is-foveated-rendering) dynamic foveated rendering - key for optimizing VR performance  
 [Direct3D](https://learn.microsoft.com/en-us/windows/win32/direct3d) - drawing primitives and shading in Windows DirectX graphics and gaming API  
@@ -85,6 +87,7 @@
  Personal Computer Virtual Reality - VR rendering by personal computers  
 	&emsp; (vs standalone / wireless headsets)  
 [Pimax Crystal](https://pimax.com/pages/crystal) mini-LED aspheric lens headset  
+[Process Lasso](https://bitsum.com/server/features/) GUI to customize software process affinity to CPU cores  
 [pupil swim](https://ydcnanhe.github.io/assets/pdf/SID_Global_PS_v22.pdf) perception of
  discrepancies betweeen corrections  
  &emsp; and real lens geometric distortions  
