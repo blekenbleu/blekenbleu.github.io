@@ -14,6 +14,7 @@
 [ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens VR headset  
 [CA](https://en.wikipedia.org/wiki/Chromatic_aberration) Chromatic aberration, *axial (longitudinal) and transverse (lateral)*  
+[CAS](https://github.com/GPUOpen-Effects/FidelityFX) Contrast adaptive sharpening with optional up-scaling;&nbsp; Nvidia Freestyle  
 [core parking](https://www.thewindowsclub.com/enable-disable-core-parking-windows) - disable some CPU cores, reducing power and heat  
  &emsp; (Windows 11 often parks 18/20 of i5-13600K 6P + 8E cores)  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
@@ -43,6 +44,7 @@
  &emsp; when rendered frame rate is objectionable  
 [Fred Emmott](https://fredemmott.com/bio) OpenXR Invited Expert, OpenKneeboard and HTCC developer  
 [FSAA](https://en.wikipedia.org/wiki/Spatial_anti-aliasing#Super_sampling_/_full-scene_anti-aliasing) full-scene anti-aliasing AKA SSAA  
+[Freestyle](https://www.pcmag.com/how-to/how-to-improve-pc-graphics-and-add-filters-with-nvidia-freestyle) Nividia's CAS post-processing, supplanted by RTX Dynamic Vibrance  
 [FSR](https://gpuopen.com/fidelityfx-superresolution-2/) AMD FidelityFX Super Resolution alternative to DLSS  
 [FXAA](https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing) Fast Approximate Anti-Aliasing tries to clean up jaggies *after* rendering  
 [HelloXR](https://developer-docs.magicleap.cloud/docs/guides/openxr/getting-started/openxr-helloxr/) - Magic Leap 2 sample OpenXR application  
@@ -100,6 +102,8 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
 [ROV Test FOV & Resolution](https://steamcommunity.com/sharedfiles/filedetails/?id=1359389601) Snellen text legibility, glare, FoV, distortions
 	 AKA [**testhmd**](https://knob2001.itch.io/testhmd)  
 [RTSS](https://www.guru3d.com/page/rivatuner-rtss-homepage/) RivaTuner Statistics Server, includes FPS limiter, bad for OpenXR  
+[RTX Dynamic Vibrance](https://www.tweaktown.com/news/96343/rtx-hdr-and-dynamic-vibrance-use-ai-to-dramatically-improve-the-look-of-thousands-games/index.html) -
+ [**Nvidia app**](https://www.nvidia.com/en-us/geforce/news/nvidia-app-download-and-features/) SDR to HDR converter  
 [SimHub](https://www.simhubdash.com/) Windows sim telemetry utility for dashboards, haptics, motion,  
  &emsp; other hardware by plugins  
 [Social VR](https://www.interaction-design.org/literature/topics/social-virtual-reality-vr)
@@ -130,7 +134,8 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
 [VDXR](https://github.com/mbucchia/VirtualDesktop-OpenXR) OpenXR runtime for Virtual Desktop  
 [vorpX](https://www.vorpx.com/) VR support for 250+ DirectX 9-12 first person games  
 [VR](http://www.lavalle.pl/vr/web.html) VIRTUAL REALITY (link to
-	[Steven LaValle's](https://www.youtube.com/playlist?list=PLbMVogVj5nJSyt80VRXYC-YrAvQuUb6dh) free book)
+	[Steven LaValle's](https://www.youtube.com/playlist?list=PLbMVogVj5nJSyt80VRXYC-YrAvQuUb6dh) free book)  
+[VRC](https://hello.vrchat.com/) VRChat  
 [VRFSG](https://www.youtube.com/channel/UCtr084FH7rX9rUKTAlZFKXA) VR Flight Sim Guy - Somnium VR1 beta tester and YouTuber's channel  
 [VRGOXR](https://portal.vrgineers.com/user-guide/software/openxr/) vrgineers' OpenXR runtime AKA VRG runtime  
 [vrperfkit](https://github.com/fholger/vrperfkit) fholger's VR Performance Toolkit to upscale after rendering,  
