@@ -50,6 +50,11 @@
 [HelloXR](https://developer-docs.magicleap.cloud/docs/guides/openxr/getting-started/openxr-helloxr/) - Magic Leap 2 sample OpenXR application  
 [hello_xr](https://github.com/KhronosGroup/OpenXR-SDK-Source/blob/main/src/tests/hello_xr) - part of [OpenXR&trade; Software Development Kit (SDK) Sources Project](https://github.com/KhronosGroup/OpenXR-SDK-Source)  
  &emsp; "Handy as it's really basic, logs a lot, and supports pretty much every graphics API."  
+ &emsp; download [openxr_loader_windows-1.1.43.zip](https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/) and extract `x64` for Windows 11  
+ &emsp; [some documentation](https://www.mankier.com/package/openxr);&nbsp;
+ [about View, Local, Stage spaces](https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrSpace.html),
+ [Blend Mode](https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrEnvironmentBlendMode.html);
+ &nbsp;[specs](https://registry.khronos.org/OpenXR/specs/1.1/pdf/xrspec.pdf)    
 **HMD** head mounted display AKA headset  
 [HRM](https://www.reddit.com/r/ValveIndex/comments/i6jnfa/removing_the_lens_mesh_in_software_howto/) Hidden radial mask: don't render edge pixels not visible in HMD  
   &emsp; reportedly [minimal impact in DCS](https://forum.dcs.world/topic/348555-vr-enable-hmd-mask-is-this-still-useful/)  
