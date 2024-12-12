@@ -48,6 +48,8 @@
 [FSR](https://gpuopen.com/fidelityfx-superresolution-2/) AMD FidelityFX Super Resolution alternative to DLSS  
 [FXAA](https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing) Fast Approximate Anti-Aliasing tries to clean up jaggies *after* rendering  
 [HelloXR](https://developer-docs.magicleap.cloud/docs/guides/openxr/getting-started/openxr-helloxr/) - Magic Leap 2 sample OpenXR application  
+[hello_xr](https://github.com/KhronosGroup/OpenXR-SDK-Source/blob/main/src/tests/hello_xr) - part of [OpenXR&trade; Software Development Kit (SDK) Sources Project](https://github.com/KhronosGroup/OpenXR-SDK-Source)  
+ &emsp; "Handy as it's really basic, logs a lot, and supports pretty much every graphics API."  
 **HMD** head mounted display AKA headset  
 [HRM](https://www.reddit.com/r/ValveIndex/comments/i6jnfa/removing_the_lens_mesh_in_software_howto/) Hidden radial mask: don't render edge pixels not visible in HMD  
   &emsp; reportedly [minimal impact in DCS](https://forum.dcs.world/topic/348555-vr-enable-hmd-mask-is-this-still-useful/)  
