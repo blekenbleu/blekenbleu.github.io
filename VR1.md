@@ -3,6 +3,7 @@
 ## Somnium VR1
 ### premium PC XR headset
 - [First Customers](XR/first.htm)&nbsp; hints, software, impressions, hiccups
+- [December 2024](XR/Dec2024.htm)
 - [history, background](XR/VR1.html) blog
 - [other sources](XR/Somnium_VR1_sources.htm)
 - [SLAM:&nbsp; simultaneous localization and mapping](XR/SLAM.htm) *AKA outside-in tracking*
