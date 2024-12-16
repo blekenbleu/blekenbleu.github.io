@@ -63,7 +63,7 @@
 [iVRy](https://steamcommunity.com/app/992490) a commercial app for [streaming SteamVR](https://github.com/PhoneVR-Developers/PhoneVR) to wireless devices  
 [IW3](https://github.com/nagadomi/nunif/) MIT license 2D image/video to 3D conversion  
 [judder](https://www.howtogeek.com/753131/what-is-judder-and-why-do-tvs-have-this-problem/) aliasing between render and display frame rates  
-[Leap Motion Controller 2](https://leap2.ultraleap.com/products/leap-motion-controller-2/) by ultraleap  
+[Leap Motion Controller 2](https://leap2.ultraleap.com/products/leap-motion-controller-2/) by Ultraleap  
 [Leapify](https://github.com/Nyabsi/leapify) switches between controllers and Hand Tracking  
 [LSFG](https://steamcommunity.com/app/993090/discussions/0/4418677017727367960/) Lossless Scaling FrameGen
 	["no substitute for DLSS"](https://www.xda-developers.com/lossless-scaling-hands-on/)  
