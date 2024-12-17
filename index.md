@@ -81,7 +81,7 @@
 - [Plugins](../static/SimHub/index.htm) 
 	- [Fake8](https://github.com/blekenbleu/Fake8) properties and 8-bit serial data for [Custom serial profiles](Arduino/shsds.htm)  
 	- [JSONio](https://github.com/blekenbleu/JSONio) for per-car properties e.g. in [ShakeIt Bass Shaker Profiles](pedals/shakeit.htm)  
-	- [MIDIio](MIDI/plugin/index.htm) including [vJoy](https://github.com/blekenbleu/vJoySDK) and [Direct Input controllers](Windows/HID/index.htm#DI)  
+	- [MIDIio](MIDI/plugin/) including [vJoy](https://github.com/blekenbleu/vJoySDK) and [Direct Input controllers](Windows/HID/index.htm#DI)  
 	- [OxyPlot](https://github.com/blekenbleu/OxyPlotPlugin) XY scatter plot plot one SimHub property vs another  
 	- [XtraMouse](https://github.com/blekenbleu/XtraMouse) use a second mouse to directly control SimHub properties, e.g. for MIDIio  
 
@@ -105,7 +105,7 @@
   [**Somnium VR1**](XR/VR1.html).  
 
 ### **vJoy** [C# SDK](https://github.com/blekenbleu/vJoySDK)  
-  - [added to SimHub **MIDIio plugin**](MIDI/plugin)
+  - [added to SimHub **MIDIio plugin**](MIDI/plugin/)
   - [Windows Joystick HID](Windows/HID/) shared with SimHub
   - [Windows 10 vJoy installation](Windows/HID/vJoy/)
      - [Arduino VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
