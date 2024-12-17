@@ -90,6 +90,8 @@
 [**OpenXR Explorer**](https://github.com/maluoi/openxr-explorer) switch runtimes, inspect properties, but hard-coded list;  
  &emsp; see xr-picker  
 [OpenXR-Runtime-Switcher](https://github.com/WaGi-Coding/OpenXR-Runtime-Switcher) quickly switch System Default OpenXR Runtime  
+[OVR Lighthouse Manager](https://github.com/kurotu/OVR-Lighthouse-Manager) manage SteamVR base station power  
+ &emsp; without HTC Vive or Valve Index  
 [Owl3D](https://www.owl3d.com/) for converting 2D video to 3D  
 [OXRMC](https://github.com/BuzzteeBear/OpenXR-MotionCompensation) motion compensation keeps VR views in cockpit  
  &emsp; during large motion platform excursions  
@@ -156,4 +158,5 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
  Nvidia Variable Rate Supersampling  
 [Vulkan / OpenGL](https://en.wikipedia.org/wiki/Vulkan) intended OpenGL replacement  
  &emsp; Vulcan is tuned for multiple CPU cores and modern GPUs  
+[WIMFOV](https://boll.itch.io/wimfov) - **What is my Field of View?**  
 [xr-picker](https://github.com/rpavlik/xr-picker) cross-platform tool for OpenXR runtime selection;&nbsp; Fred Emmott recommends  
