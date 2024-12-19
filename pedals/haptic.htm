@@ -11,9 +11,21 @@
 <font size=-1><a href="index.htm"><i>back</i></a></font>
 <a name=sim><h2>Haptic engineering</h2></a>
 <font size=+1>
-<sl>
-<li><a href="#intro">Introduction</a>
-</sl>
+<h4>Background</h4>
+Tuning shakers is quite like tuning subwoofers,<br>
+in that the main goal is typically to dial down response peaks (resonances)<br>
+which helps avoid tactile signals mostly feeling the same.<br>
+In audio, that is called "one-note bass".<br><br>
+
+Advertised graphs for shaker and exciter frequency responses<br>
+are typically in <i>free air</i>, which differs <b>a lot</b> from responses when anchored to masses.<br><br>
+
+Some folks tune by trial and error. To tune methodically,<br>
+instead of audio microphones to measure sound pressure levels,<br>
+contact microphones or other accelerometers are glued to whatever is being shaken.<br>
+The same free software useful for subwoofers which does a good job for shakers<br> is
+<a href=https://www.roomeqwizard.com/>REW,
+Room Equalization Wizard</a>.<br><br>
 
 <a name=intro>
 <h4>Introduction</h4></a>
@@ -29,10 +41,10 @@ suggesting that linearity can be an important consideration in haptic systems.<b
 This corresponds to <i>resonance</i> e.g. of a mass and perfectly elastic spring<br>
  -or- capacitance and inductance without resistance;<br>
 resonances <i>strongly</i> influence haptics.&nbsp Inelasticity or resistance dampen resonances.
-<li><a href="https://www.sciencedirect.com/topics/engineering/transmission-line-theory">Transmission line</a> effects are also involved;&nbsp
-haptic tranducers drive into structures with <a href="https://en.wikipedia.org/wiki/Distributed_parameter_system">distributed parameters</a>.
+<li><a href="https://www.sciencedirect.com/topics/engineering/transmission-line-theory">Transmission line</a> effects are also involved;<br>
+ &emsp; haptic tranducers drive into structures with <a href="https://en.wikipedia.org/wiki/Distributed_parameter_system">distributed parameters</a>.
 </ul>
-Haptics here will be only those controlled by <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Bass-Shakers---Audio-Output-Configuration">SimHub ShakeIt Bass Shakers Audio Output</a>,<br>
+Haptics here will be those controlled by <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Bass-Shakers---Audio-Output-Configuration">SimHub ShakeIt Bass Shakers Audio Output</a>,<br>
 ... which only work for properly configured <a href="WindowsAudio.htm">Windows Audio</a>.
 <p>Before proceeding, haptics and Windows audio can be problematic,<br> even <i>without unreliable electrical connections</i>.<br>
 To that end, both a multimeter and <a href="https://www.ebay.com/itm/362924077798">DeoxIT connector treatments and fader lube</a> are wanted,<br>
@@ -94,6 +106,19 @@ but does not sync one generator to the other; frequency settings must be manuall
 </ul>
 </ul>
 </ul>
+
+<h3><a href=https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir74-597.pdf>NIST paper for calibrating piezo accelerometers by signal insertion</a></h3>
+The basic concept is that<br>
+ &emsp; piezos respond to AC voltage stimulation as well as mechanical vibration.<br>
+By stimulating a grounded piezo in series with a resistor,<br>
+ &emsp; driven from a signal generator.<br>
+the ratio of signal at the piezo to resistor junction<br>
+ &emsp; to that at the resistor to generator junction<br>
+should generally agree with more conventional calibration<br>
+ &emsp; by known mechanical vibration.<br>
+It should at least identify resonant frequencies for e.g. our mass-loaded piezos,<br>
+so that we avoid misplaced credibility for responses near those resonances.
+
 </font>
 
 </td></tr><tr><td align=center>
