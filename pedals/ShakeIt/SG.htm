@@ -9,33 +9,33 @@
 <font size=-1><a href="../shakeit.htm#S/G"><i>back</i></a></font><br>
 <h4>SimHub ShakeIt profile mechanics</h4>
 
-<a href=../tires.htm><i>slip/grip for tire haptics</i></a>
+ &emsp; <a href=../tires.htm><i>slip/grip for tire haptics</i></a><br><br>
 
-<p>I only recently discovered that SimHub considers imported profiles as duplicates NOT based on name;<br>
+Haptics here are about <i>driver aids</i>, rather than <i>immersion</i>.
+<p>SimHub considers imported profiles as duplicates NOT based on name;<br>
 enter <b>No</b> to have an imported profile considered unique.<br>
 I contemplate only 8 haptic transducers and 8 haptic signals, 4 of which are wheel slip.<br>
-Engine rumble on a dead pedal, where my left foot is pushing me back in seat, except when declutching.<br>
-I decline involvement with haptics for <i>immersion</i>;&nbsp  I'm about <i>driver aids</i>.
+Engine rumble on a dead pedal, where left foot is braced, except when declutching.<br>
 </p>
 
-<p>One reason that I began writing SimHub plugins instead of Custom Serial profiles is because<br>
-C# software engineering is relatively painless using conventional programming tools;<br>
-copying and pasting C# procedures among files and GitHub repositories is quite manageable,<br>
-but swapping ShakeIt effects among profiles exasperates me intensely.</p>
+<p>One reason for writing SimHub plugins instead of Custom Serial profiles is because<br>
+C# software engineering is relatively painless using Visual Studio and GitHub Desktop;<br>
+copying and pasting C# procedures among files and repositories is quite manageable,<br>
+while swapping ShakeIt effects among profiles is exasperating.</p>
 
-<p>SimHub updates now have JavaScript formulae being less relatively expensive than NCalc.<br>
+<p>SimHub ShakeIt updates now have JavaScript formulae being less expensive.<br>
 <b>Run once javascript code</b> section supports precalculation and encourages modularity.</p>
 
 <h4>SimHub ShakeIt Slip/Grip haptic discussion</h4>
 
-<p>SimHub's Forced frequency enhancement of CUSTOM ShakeIt effect saved me learning VST3 programming.<br>
-Forced frequency is unrelated to rpm unless explicit in CUSTOM Effect settings formulae.<br>
+<p>SimHub's ShakeIt CUSTOM effect Forced frequency enhancement<br>
+ enables independent volume and frequency control.<br>
 ShakeIt property values e.g. from <i>proxyS</i> are limited to 0-100 range.<br>
-My reactions are poor enough that early warning is valued,<br>
+Early warning by haptics helps compensate for poor reflexes,<br>
 with audible higher frequencies (approx 800Hz) tire squeal for slip onset warning.<br>
 Lacking real life experience with formula cars,<br>
-with (too?) many years since driving dedicated sports racers,<br>
-this feedback may lack credibility for drivers of those vehicles.<br>
+and with (too?) many years since driving dedicated sports racers,<br>
+this feedback may lack credibility for drivers of those vehicles with treadless tires.<br>
 If both audible or tactile onset are too soon, then reducing <i>proxyS</i> <b>Gain</b> may help.<br>
 Otherwise, if tactile gets too strong too soon, consider increasing <i>noisy</i> <b>Gamma</b>.</p>
 
@@ -43,16 +43,23 @@ Otherwise, if tactile gets too strong too soon, consider increasing <i>noisy</i>
 
 <p>My claim:&nbsp <i>ratio of tire slip to grip</i> is more useful feedback than <i>slip alone</i>.<br>
 This ratio usefully modulates haptic frequency, but also mutes output when ratio is small.<br>
-I was discussing with @RangeyRover about some custom SimHub plugin for longitudinal acceleration<br>
-when it struck me that the key to loss of control is when grip stops increasing with tire slip;<br>
+While discussing with @RangeyRover about a SimHub plugin for longitudinal acceleration<br>
+it struck me that the key to loss of control is when grip stops increasing with tire slip;<br>
 that ratio was simple and seemingly good enough.</p>
 
+<h4>Grip and Load</h4>
+<p>While SimHub provides slip, grip is more elusive.<br>
+Being the ratio of combined lateral and longitudinal acceleration (surge + sway) to wheel load,<br>
+wheel load is unavailable from most sims, but many provide suspension deflection telemetry.<br>
+Heave is one component of wheel load, with pitch and yaw changes affecting its distribution.<br>
+
+<h4>Haptics generation</h4>
 <p>To break up forced frequency pure tones, add <code>rand()</code> amount proportional to frequency,<br>
 e.g. <code>frequency + Math.rand()*frequency/3</code><br>
-I feel minimum Hz works best > 30Hz for Dayton pucks.<br>
-60Hz is too high for strongest feeling from pucks under my thighs.<br>
-I prefer max Hz > 800Hz to approximate tire squeal sound heard for beginning slip<br>
-in BMWs that were driven for most recent > 5 years of track days.<br>
+Minimum Hz >= 30Hz feels best for Dayton pucks.<br>
+60Hz is too high for strongest sensations from pucks under thighs.<br>
+Max Hz > 800Hz is preferred for approximating tire squeal heard with initial slip<br>
+in BMWs driven for most recent > 5 years of track days.<br>
 IMO, tire haptic frequency should vary continuously from high to low with increasing slip/grip.<br>
 As fate would have it, puck haptics feel stronger as frequencies drop from around 150 to 30Hz;<br>
 over 150Hz is mostly audible, as in real life.</p>
@@ -60,7 +67,7 @@ over 150Hz is mostly audible, as in real life.</p>
 For tuning, one could create *tweak* custom effect property values, to be tweaked during playback,<br>
 then modify *noisy* and *output* to calculate min and max Hz from those *tweak* property values.<br>
 
-<h4>2D grip (acceleration) modulated by heave</h4>
+<h4>2D grip (acceleration) modulated by load</h4>
 IMO, lateral and longitudinal values should be treated equivalently for both slip and grip.<br>
 <code>GlobalAccelerationG</code> turns out to be just rescaled absolute <code>AccelerationSurge</code>,<br>
  &emsp; <i>not</i> what is wanted in ratio with 2D slip.<br>
