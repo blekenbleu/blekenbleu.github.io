@@ -28,7 +28,7 @@ but actual weight transfer should be more nearly linear,<br>
 being leverage to pivot center of gravity w.r.t more loaded tires.<br>
 Front right corner gets more load for both positive roll and pitch,<br>
 with front-rear transfer probably about 2/3 left-right;&nbsp; wheelbase > track,<br>
-but actual coefficients want calibration by multiple regression:<pre>
+but actual coefficients want calibration e.g. by <a href=regression.htm>multiple regression</a>:<pre>
 Load_fr ~ 25 + AccelerationHeave + frp * OrientationPitch + frr * OrientationRoll
 Load_fl ~ 25 + AccelerationHeave + flp * OrientationPitch + flr * OrientationRoll
 Load_rr ~ 25 + AccelerationHeave + rrp * OrientationPitch + rrr * OrientationRoll
