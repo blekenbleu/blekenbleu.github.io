@@ -1,0 +1,76 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../../static/my.css'>
+
+<title>Tire load</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+<font size=-1><a href=SG.htm><i>back</i></a></font>
+<h3>Tire load</h3>
+Forces on rigid bodies can be considered at center of mass.<br>
+Imagine a car as a cube with unity coefficient of friction between bottom and pavement.<br>
+- a lateral force of 1G at center of mass would just begin to tip it<br>
+- but real cars with lower grip can get at least one wheel in the air<br>
+   with less than 1G grip and lateral G, because not rigid bodies,<br>
+   despite center of gravity being lower than half of track width.<br>
+- we want to approximate cars in sims at limits  - lateral Gs can fully unload inside tires<br>
+ &emsp; - longitudinal Gs are less likely to <i>fully</i> unload front or rear tires (no wheelies)<br>
+-  AccelerationSway goes positive for left turns<br>
+-  AccelerationSurge goes positive for braking<br>
+
+Emperically, SimHub negative <code>AccelerationHeave</code> peaks near -25;<br>
+100 would correspond to +4G or 5G including gravity.<br><br>
+
+proxyL() as used for tire squeal volume is non linear,<br>
+but actual weight transfer should be more nearly linear,<br>
+being leverage to pivot center of gravity w.r.t more loaded tires.<br>
+Front right corner gets more load for both positive roll and pitch,<br>
+with front-rear transfer probably about 2/3 left-right;&nbsp; wheelbase > track,<br>
+but actual coefficients want calibration by multiple regression:<pre>
+Load_fr ~ 25 + AccelerationHeave + frp * OrientationPitch + frr * OrientationRoll
+Load_fl ~ 25 + AccelerationHeave + flp * OrientationPitch + flr * OrientationRoll
+Load_rr ~ 25 + AccelerationHeave + rrp * OrientationPitch + rrr * OrientationRoll
+Load_rl ~ 25 + AccelerationHeave + rlp * OrientationPitch + rlr * OrientationRoll
+</pre>
+Assetto Corsa wheel load telemetry correlates well with suspension displacement<br>
+SimHub also has WheelLoad properties in ACC, but always 0...<br>
+Use AC to test wheel load proxies.<br>
+By observation, wheel suspension travel mostly follows wheel load.<br>
+<code>AccelerationHeave + 25</code> approximates average load<br>
+sum (average) of suspension travel should also correlate with average load or heave<br>
+ratio of <code>per-wheel travel / sum</code> applied to <code>AccelerationHeave + 25</code> should approximate loads..<br><br>
+
+Load modulates grip,<br>
+which enables velocity changes (surge and sway)<br><br>
+
+With actual roll and pitch influenced by center of gravity,<br>
+suspension geometry, spring and damper rates,<br>
+their correlations with suspension travels (and tire loads)<br>
+want calibrating for each vehicle.<br><br>
+
+Calibration wants multiple regression,<br>
+which will benefit from some graphical visualization.<br>
+With data available for 3D samples,<br>
+a color coded (Heat map) point cloud<br><br>
+
+- heave should correlate directly with total (4 corner) wheel load (suspension displacement)<br>
+- differences among wheel loads correlated with pitch and roll changes,<br>
+   but their influence is car specific (center of gravity, roll centers, spring and damper rates<br>
+- apply multiple regression, using games with wheel load telemetry to validate regression model<br>
+- this will yield best least squares fits for 3D (heave, pitch and roll change) coefficients<br>
+- since heave directly correlates with G force, use it to calibrate pitch and roll effects<br>
+- Start by capturing and visualizing 3D point cloud of wheel loads (one corner at a time)<br>
+   vs heave, changes in pitch and roll<br>
+- color code those points based on load (or suspension displacement)<br><br>
+
+<a href=https://miabellaai.net/>
+Here is a web-based <b>color coding 3D scatter plot visualizer</b></a><br>
+
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>

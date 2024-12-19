@@ -7,15 +7,15 @@
 <table class="my_table"><tr><td>
 
 <font size=-1><a href="../shakeit.htm#S/G"><i>back</i></a></font><br>
-<h4>SimHub ShakeIt profile mechanics</h4>
+<h4>SimHub ShakeIt loaded slip/grip</h4>
 
- &emsp; <a href=../tires.htm><i>slip/grip for tire haptics</i></a><br><br>
+ &emsp; <a href=../tires.htm><i>tire haptics for slip/grip</i></a><br><br>
 
 Haptics here are about <i>driver aids</i>, rather than <i>immersion</i>.
-<p>SimHub considers imported profiles as duplicates NOT based on name;<br>
+<p>SimHub considers imported ShakeIt profiles as duplicates NOT based on name;<br>
 enter <b>No</b> to have an imported profile considered unique.<br>
-I contemplate only 8 haptic transducers and 8 haptic signals, 4 of which are wheel slip.<br>
-Engine rumble on a dead pedal, where left foot is braced, except when declutching.<br>
+I contemplate only 8 haptic transducers and 8 haptic signals, 4 of which are tire slip.<br>
+Fifth:&nbsp; engine rumble on dead pedal, where left foot is braced except when declutching.<br>
 </p>
 
 <p>One reason for writing SimHub plugins instead of Custom Serial profiles is because<br>
@@ -41,34 +41,44 @@ Otherwise, if tactile gets too strong too soon, consider increasing <i>noisy</i>
 
 <p>SimHub Automatic calibration may not work well for WHEELS SLIP in AMS2.</p>
 
-<p>My claim:&nbsp <i>ratio of tire slip to grip</i> is more useful feedback than <i>slip alone</i>.<br>
+<p>My claim:&nbsp <i>tire slip/grip ratio</i> is more useful feedback than <i>slip alone</i>.<br>
 This ratio usefully modulates haptic frequency, but also mutes output when ratio is small.<br>
 While discussing with @RangeyRover about a SimHub plugin for longitudinal acceleration<br>
 it struck me that the key to loss of control is when grip stops increasing with tire slip;<br>
 that ratio was simple and seemingly good enough.</p>
 
-<h4>Grip and Load</h4>
-<p>While SimHub provides slip, grip is more elusive.<br>
-Being the ratio of combined lateral and longitudinal acceleration (surge + sway) to wheel load,<br>
-wheel load is unavailable from most sims, but many provide suspension deflection telemetry.<br>
-Heave is one component of wheel load, with pitch and yaw changes affecting its distribution.<br>
+<h4>Grip and <a href=load.htm>Load</a></h4>
+<p>SimHub provides slip, but more elusive is grip, the ratio of combined<br>
+ &emsp; lateral and longitudinal acceleration (surge + sway) to tire load,<br>
+ &emsp; where <a href=load.htm>tire load</a> is available from only few sims,<br>
+ &emsp; while many provide suspension deflection telemetry.<br>
+Heave is one component of tire load, with pitch and yaw changes affecting its distribution.<br>
+<ul><li>correlating suspension deflection to tire load wants per-car regression analyses
+<li>correlating suspension deflection to heave, pitch and yaw wants multiple regression
+<li><a href=https://github.com/blekenbleu/OxyScope>OxyScope</a>
+ and <a href=https://github.com/blekenbleu/Loaded>Loaded</a> plugins address this.</ul>
 
 <h4>Haptics generation</h4>
-<p>To break up forced frequency pure tones, add <code>rand()</code> amount proportional to frequency,<br>
+<p>
+IMO, tire haptic frequency should decrease with increasing slip/grip.<br>
+Luckily, puck haptics feel stronger as frequencies drop from around 150 to 30Hz;<br>
+vibration above 150Hz is mostly audible, as in real life.</p>
+To break up forced frequency pure tones, add <code>rand()</code> amount proportional to frequency,<br>
 e.g. <code>frequency + Math.rand()*frequency/3</code><br>
 Minimum Hz >= 30Hz feels best for Dayton pucks.<br>
 60Hz is too high for strongest sensations from pucks under thighs.<br>
 Max Hz > 800Hz is preferred for approximating tire squeal heard with initial slip<br>
 in BMWs driven for most recent > 5 years of track days.<br>
-IMO, tire haptic frequency should vary continuously from high to low with increasing slip/grip.<br>
-As fate would have it, puck haptics feel stronger as frequencies drop from around 150 to 30Hz;<br>
-over 150Hz is mostly audible, as in real life.</p>
 
-For tuning, one could create *tweak* custom effect property values, to be tweaked during playback,<br>
-then modify *noisy* and *output* to calculate min and max Hz from those *tweak* property values.<br>
+For tuning, one could create *tweak* custom effect property values,<br>
+ &emsp; to be tweaked during playback, then modify *noisy* and *output*<br>
+ &emsp; to calculate min and max Hz from those *tweak* property values.<br>
 
-<h4>2D grip (acceleration) modulated by load</h4>
-IMO, lateral and longitudinal values should be treated equivalently for both slip and grip.<br>
+<h4>2D grip (acceleration) modulated by <a href=load.htm>load</a></h4>
+Tire <a href=load.htm>load</a> values are wanted for slip/grip haptic intensity as well as grip estimation.<br>
+IMO, lateral and longitudinal components should be
+<a href=https://en.wikipedia.org/wiki/Circle_of_forces>combined as traction circle</a> values<br>
+ &emsp; for both slip and grip.<br>
 <code>GlobalAccelerationG</code> turns out to be just rescaled absolute <code>AccelerationSurge</code>,<br>
  &emsp; <i>not</i> what is wanted in ratio with 2D slip.<br>
 Approximate integration confirms that positive heave acceleration is upward.<br>
@@ -84,8 +94,8 @@ a fixed amount of slip becomes more concerning as estimated grip decreases,<br>
  &emsp; &emsp; &emsp; risking loss of control...</i>
 
 <h4>Shift haptic</h4>
-Shift haptics was originally a one-off, not something I expected to use.<br>
-Based on speed/rpm ratio, gated by property from SimHub SHIFT effect.<br>
+Originally a one-off, not something I expected to use.<br>
+Based on speed/rpm ratio, gated by property from SimHub ShakeIt SHIFT effect.<br>
 Forced frequency based on rpm... &nbsp forced freq seemed constant,<br>
 except for 4 corner effect; &nbsp a bug? &nbsp -&gt fixed!</p>
 
@@ -107,16 +117,16 @@ This is doomed for cars with torque converters or continuously variable transmis
 <h4>Wheel lock and force feedback vs tire lockup</h4>
 <p>Wheel lock usually means the amount of available steering rotation<br>
  or how abruptly resistance increases at rotation limits.<br>
-Based on slip, force feedback should decrease.<br>
-  For example, losing control on ice, force feedback should basically disappear.<br>
+With increasing slip, steering force feedback should decrease.<br>
+  For example, when losing steering control on ice, force feedback basically disappeared.<br>
 I do not recall feeling much tire judder thru steering while cornering on track.<br>
-On the other hand, locking up brakes could often create dramatic wheel judder.<br>
+On the other hand, locking up brakes could often create dramatic tire judder.<br>
 Similarly for too hard acceleration with limited slip differential on patchy damp pavement.</p>
 
-<p>I used to get complaints from driving school instructors that my driving scared their students,<br>
+<p>other driving school instructors complained that my driving scared their students,<br>
 but never crashed and was rarely passed when tracks were wet.<br>
-My only high speed spins were on snow and ice;<br>
-did a little ice racing in Canada with CASC during college.<br>
+My only high speed spins have been on snow and ice,<br>
+having done a little ice racing in Canada with CASC during college.<br>
 Being my own mechanic and usually driving to/from events discouraged overexuberance.<br>
 My sports racer had more grip than I ever got comfortable exploiting.<br>
 Nearly all my most recent track experience was in trailing arm BMWs, with plenty of oversteer.<br>
@@ -129,33 +139,34 @@ I suppose that aggressive use of hand brake affects things.
 </p>
 
 <p>Spin to me implies loss of yaw control, with tires past peak grip.<br>
-Lock for wheels means wheel rotation stopped, usually because of excessive braking.<br>
+Lock for tires means tire rotation stopped, usually because of excessive braking.<br>
 On track, much slip is lateral, associated with change in direction, yaw times speed.<br>
 Substantial (lateral) slip is possible with wheel speed equal to vehicle speed.<br>
-Except when coasting, driving wheels must slip slightly to generate force for maintaining speed.</p>
+Except when coasting, driving tires must slip slightly to generate force for maintaining speed.</p>
 
-<p>On track, one must learn to filter the overwhelming amount of inputs.<br>
-Meanwhile, e.g. lack of G forces in sims is only partly compensated by harness tensioning,<br>
-but I don't miss all the noise, windshield glare and expenses.</p>
+<h5>simulation</h5>
+<p>On track, one must learn to filter overwhelming amounts of stimuli.<br>
+In sims, lack of G force stimuli is only partly compensated by harness tensioning,<br>
+but I rarely miss real world risks, noise, windshield glare and expenses.</p>
 
 <p>I am no athlete;  it took me multiple weekends on each track to usefully remember corners<br>
 and skid pad sessions to sort car balance before having brain to spare<br>
 for noticing what feedback was reliable and helpful for improving driving.<br>
 Some other track junkies shared noticing how slowly and poorly I drove first sessions,<br>
 despite being in the advanced driver group, then gradually improved over weekends.<br>
-Car setup and practice were my compensations for lack of talent.</p>
+Car setup and practice were my compensations for lack of confidence and talent.</p>
 
 <p>To improve steering feedback, I changed physical steering in real cars<br>
 (smaller rims, faster ratios, less assist and more caster).<br>
-That is one example of how sim wheels are unrealistic<br>
+That is one example of how sim tires are unrealistic<br>
 by offering better feedback than most real cars in my experience.<br>
 In fact, my direct drive wheel base can deliver more feedback than I comfortably use,<br>
 which is a key motivation for my haptics to offload information from the wheel.</p>
 
 <p>I suppose that experience helps imagine what physics can subvert sim telemetry for feedbacks,<br>
 but some of these feedbacks are more useful than realistic.<br>
-I am impressed (but not surprised) by how fast some sim guys can be with only G27 or G29,<br>
-because athletic skills and practice.&nbsp  Meanwhile, I want all the help that I can invent...</p>
+While impressed (but not surprised) by how fast some can be with only G27 or G29,<br>
+because talent and practice, I want all the aids that I can gather...</p>
 
 <h4>Enhancements?</h4>
 <ul><li>User interface for adjusting formulae "constants"
