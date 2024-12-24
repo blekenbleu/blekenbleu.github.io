@@ -1,0 +1,54 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:600px; background-color:#CCCCFF; }
+</style>
+<title>MBAI 3D Scatter Plot Spatial Visualization</title>
+</head>
+
+<body bgcolor=444444>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50;padding-right:50">
+<font size=-1> <a href=oxyhelp.htm><i>back</i></a> </font>
+
+<h2><a href=https://miabellaai.net/>3D Scatter Plot Visualization</a></h2><font size=+1>
+<dl><dt>Data format:<ul>
+<li>First row:&nbsp graph title
+<li>Second row:&nbsp column labels
+<li>subsequent rows are 3D data points, each with<br>
+	 12 columns separated by <code>::</code> and ended by <code>;</code></ul>
+<dd><table><tr><td style="width:30%">Label</td><td>data point name</td></tr>
+<tr><td>X</td><td>coordinate value</td></tr>
+<tr><td>Y</td><td>coordinate value</td></tr>
+<tr><td>Z</td><td>coordinate value</td></tr>
+<tr><td>color</td><td>dependent value</td></tr>
+<tr><td>point size</td><td>1 to 50 (3 is good)</td></tr>
+<tr><td>group</td><td>1 of up to 6</td></tr>
+<tr><td>min opacity</td><td>0.0 t0 1.0, cycles to 1.0</td></tr>
+<tr><td>blink rate</td><td>0.0 (none) to 1.0</td></tr>
+<tr><td>shake</td><td>0.0 (none) to 1.0</td></tr>
+<tr><td>stripes</td><td>0 (solid color) or 1</td></tr>
+<tr><td>size change</td><td>0.0 (none) to 1.0</td></tr></table>
+<pre>
+Trivial Example;
+::X label::Y label::Z label;
+Point 1::-0.9886::-0.4497::-0.002::19465.17::3::A::1::0::0::0::0;
+Point 2::-0.9898::0.4063::-0.0044::31729.42::3::A::1::0::0::0::0;
+Point 3::-0.9847::0.4138::0.0058::44976.74::3::A::1::0::0::0::0;
+Point 4::-0.9815::0.4862::0.0018::57038.02::3::A::1::0::0::0::0;
+Point 5::-0.9797::-0.4092::0.0006::65659.62::3::A::1::0::0::0::0;
+Point 6::-0.9778::0.4665::-0.001::69254.52::3::A::1::0::0::0::0;
+Point 7::-0.9773::-0.5069::0.0007::67465.62::3::A::1::0::0::0::0;
+Point 8::-0.9763::-0.4099::0.0046::61291.54::3::A::1::0::0::0::0;
+Point 9::-0.974::0.5078::-0.0016::52717::3::A::1::0::0::0::0;
+Point 10::-0.9666::-0.5765::0.0039::44018.41::3::A::1::0::0::0::0;
+</pre>
+</dl>
+</font>
+
+</td></tr><tr><td align=center>
+<i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
+</td></tr></table></div>
+
+</body>
+</html>
