@@ -19,16 +19,15 @@ Controls:&nbsp <i>top to bottom</i>
 <dd><b>Help</b> - link to this page
 <dd><br><b>Current property <i>sample set</i> statistics</b>, updated every 3 seconds;<br>
 	&emsp; may not get plotted, depending on buttons to the right...
-<dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span> - enabled by the next button set to <b>Manual</b>
+<dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
+	- button enabled by the next button set to <b>Manual</b>
 <dd><br><b>Manual / Auto Replot</b><ul>
-<li>when button displays <b>Manual Replot</b>,<br>
-  displayed plot remains until <font color=red>REPLOT</font> is selected
-<li>when button displays <b>Auto Replot</b>,<br>
- plots update as new samples are collected</ul>
+<li><b>Manual</b>:&nbsp displayed plot remains until <font color=red>REPLOT</font> is selected
+<li><b>Auto</b>:&nbsp plots update as new samples are collected</ul>
 
 <dd><br><b>Refresh:</b>&nbsp <b>3 second</b> / <b>Cumulative X range</b> / <b>Hold max X range</b><ul>
-<li><b>3 second</b>: all sample sets can be plotted
-<li><b>Cumulative X range</b> collects samples with increasing variance,<br>
+<li><b>3 second</b>:&nbsp all sample sets can be plotted
+<li><b>Cumulative X range</b>:&nbsp collects samples with increasing variance,<br>
  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; based on X property selected by <b>Fit Curves</b>
 <li><b>Hold max X</b>: 3-second sample set with greater range of <i>all</i> X values
 </ul>
@@ -36,13 +35,17 @@ Controls:&nbsp <i>top to bottom</i>
 <li><b>Disable</b>:&nbsp display only scatter plots
 <li><b>Xprop[0-3]</b>:&nbsp adds leasts-squares fit line and
 <a href=https://blekenbleu.github.io/static/ImageProcessing/MonotoneCubic.htm>monotonic cubic curve</a>,<br>
-	for one of up to 3 X-axis properties</ul>
+ &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;	for one of up to 3 X-axis properties</ul>
 
 <dt><br>row 2: <b>Properties XY plot</b>
 <dd>Y, X sample set pairs are plotted, based on <b>refresh</b> setting
 <dt><br>row 3:&nbsp Y, Xprop0 plot property names
 <dt>rows 4:&nbsp <i>optional</i> Xprop1, Xprop2 plot property names
-<dd>Copy names of interest from SimHub's <b>Available properties</b> window
+<dd>Copy names of interest from SimHub's <b>Available properties</b> window<ul><li>
+<span style="background-color:green;"><font size=-1 color=white><b>&nbsp;3D&nbsp;</b></font></span>
+button enabled when 4 properties are plotted;<br>
+click to generate a file for <a href=MBAI.htm>color-coded 3D scatter plot visualization</a></ul>
+
 <dt><br>rows 5, 6:&nbsp Current <i>plotted</i> property statistics
 <dd>typically reports coefficients for fitted lines, cubic fits
 <dt><br>bottom row:&nbsp filters (1 == no filtering)
