@@ -11,8 +11,26 @@ table.my_table td { width:800px; background-color:#DDDDFF; }
 <table class="my_table"><tr><td style="padding-left:50;padding-right:50">
 <font size=-1> <a href=https://github.com/blekenbleu/OxyScope><i>back</i></a> </font>
 
-<h2>OxyScope Help</h2><font size=+1>
-Controls:&nbsp <i>top to bottom</i>
+<h2><a href=https://github.com/blekenbleu/OxyScope>OxyScope</a> Help</h2><font size=+1>
+<details><summary><i>discussion</i></summary><br>
+<a name=why><b>OxyScope</b></a> is about displaying and collecting samples<br> for up to 4 SimHub properties at a time.<br>
+Four can be visualized by color-coding based on values of one<br>
+and scatter plotting in 3D coordinates based on others.<br>
+Intuitively, this works best if color-coded property values <i>depend on</i> others.<br>
+Visualizing more than 4 properties is possible, but problematic.<br>
+Sample values for 3 nominally "independent" properties<br> are more likely to fill ellipsoids than boxes.<br>
+Supposing that 2% increments suffice for precision,<br>
+ that amounts to 51 samples along each "independent" property axis,<br>
+or a sphere with radius 25 and volume of about 65,500 samples.<br>
+Driving a sim car so as to collect so many uniformly distributed samples is unlikely.<br>
+Indeed, most samples collected in sequence at 60Hz are nearly redundant,<br> tracing trajectories.<br>
+This clustering issue is mitigated by:<ul>
+<li>ignoring successive samples with all "independent" values<br> differing by less than 2% of properties' current range.
+<li>at suitable intervals, calculate StdDev for each property,<br> then subsequently ignore samples not well beyond.
+<li>ideally, StdDev thresholding should based on radii...</ul>
+</details><br>
+
+<font color=green><b>Controls</b></font>:&nbsp <i>top to bottom</i>
 <hr>
 <dl>
 <dt>top row:&nbsp left-to-right
@@ -51,7 +69,7 @@ click to generate a file for <a href=MBAI.htm>color-coded 3D scatter plot visual
 <dt><br>bottom row:&nbsp filters (1 == no filtering)
 <dd>Some properties affect others, but with delay.<br>
 Increasing filter value for property <i>affecting</i> response<br> &emsp; may improve correlation..
-</dl>
+</dl><hr>
 <h4><a href=MBAI.htm>3D scatter plot visualization</a></h4>
 </font>
 
