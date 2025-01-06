@@ -4,7 +4,8 @@
 ### premium PC XR headset
 - [First Customers](XR/first.htm)&nbsp; hints, software, impressions, hiccups
 - [*December 2024*](XR/Dec2024.htm)
-- [*January 2025*](XR/AMA3Jan25.htm):&nbsp; now [3 consumer versions](https://store.somniumspace.com/)
+- [*January 2025*](XR/AMA3Jan25.htm):&nbsp; now [3 consumer versions](https://store.somniumspace.com/) - 
+	[**U.S. shipments begin**](https://www.roadtovr.com/somnium-begins-shipping-vr1-pc-vr-headset-in-the-us-announces-incoming-price-hike/)
 	- Visionary (eye tracking)
 	- Titan (eye and hand tracking)
 	- Ultimate(mixed reality, eye and hand tracking)
