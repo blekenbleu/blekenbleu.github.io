@@ -107,6 +107,7 @@
 [QVFR](https://github-wiki-see.page/m/mbucchia/Quad-Views-Foveated/wiki) QuadView Foveated
  Rendering - reducing resolution outside sweet spot  
 [RCHeliguy](https://www.youtube.com/@markkovalcson7243/videos) Mark Kovalcson  
+[Reflex 2](https://www.nvidia.com/en-us/geforce/news/reflex-2-even-lower-latency-gameplay-with-frame-warp/) - NVIDIA:&nbsp; updating camera perspective as late as possible.  
 [rendering](https://gfxcourses.stanford.edu/cs248/winter21content/media/vr/12_vr_sm.pdf) generating (binocular) image samples  
 reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reprojection-explained/) or frame generation,  
  &emsp; often associated with Windows Mixed Reality  
