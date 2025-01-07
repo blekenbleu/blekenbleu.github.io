@@ -70,6 +70,7 @@
 [mbucchia](https://github.com/mbucchia)  XR software engineer Matthieu Bucchianeri  
 [MeganeX superlight 8k](https://shop.shiftall.net/en-us/products/meganex8k-us) 2x 4k microOLED panel pancake lens VR headset,  
  &emsp; highly regarded by MRTV  
+[MFG](https://www.nvidia.com/en-eu/geforce/news/dlss4-multi-frame-generation-ai-innovations/) - Multi Frame Generation (NVIDIA) up to 3 fake between rendered  
 [MRTV](https://www.youtube.com/@mixedrealityTV/videos) MIXED REALITY TV - YouTuber and VR journalist Sebastial Ang's channel  
 [MSAA](https://en.wikipedia.org/wiki/Multisample_anti-aliasing) multi-sample antialiasing - operates along geometric edges.  
  &emsp;  Tom's Hardware suggests
