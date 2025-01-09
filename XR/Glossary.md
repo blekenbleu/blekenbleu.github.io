@@ -12,6 +12,7 @@
 [anti-aliasing](https://www.digitaltrends.com/computing/what-is-anti-aliasing/#dt-heading-how-to-turn-on-anti-aliasing-in-games) 
   **How to turn on anti-aliasing in games**  
 [ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
+[BMS](https://www.falcon-bms.com/) Falcon Benchmark Sim - flight  
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens VR headset  
 [CA](https://en.wikipedia.org/wiki/Chromatic_aberration) Chromatic aberration, *axial (longitudinal) and transverse (lateral)*  
 [CAS](https://github.com/GPUOpen-Effects/FidelityFX) Contrast adaptive sharpening with optional up-scaling;&nbsp; Nvidia Freestyle  
