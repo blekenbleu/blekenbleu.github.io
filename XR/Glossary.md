@@ -72,6 +72,9 @@
 [MeganeX superlight 8k](https://shop.shiftall.net/en-us/products/meganex8k-us) 2x 4k microOLED panel pancake lens VR headset,  
  &emsp; highly regarded by MRTV  
 [MFG](https://www.nvidia.com/en-eu/geforce/news/dlss4-multi-frame-generation-ai-innovations/) - Multi Frame Generation (NVIDIA) up to 3 fake between rendered  
+[motion reprojection](https://forums.flightsimulator.com/t/motion-reprojection-explained/548659) AKA SpaceWarp (SW)  
+  &emsp; differences between objects moving in a scene vs e.g. camera rotation,  
+  &emsp; by interpolation (adding latency) or extrapolation (guessing wrong)  
 [MRTV](https://www.youtube.com/@mixedrealityTV/videos) MIXED REALITY TV - YouTuber and VR journalist Sebastial Ang's channel  
 [MSAA](https://en.wikipedia.org/wiki/Multisample_anti-aliasing) multi-sample antialiasing - operates along geometric edges.  
  &emsp;  Tom's Hardware suggests
