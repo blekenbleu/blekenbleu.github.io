@@ -68,6 +68,7 @@
 [Leapify](https://github.com/Nyabsi/leapify) switches between controllers and Hand Tracking  
 [LSFG](https://steamcommunity.com/app/993090/discussions/0/4418677017727367960/) Lossless Scaling FrameGen
 	["no substitute for DLSS"](https://www.xda-developers.com/lossless-scaling-hands-on/)  
+	 &emsp; [LSFG 3](https://store.steampowered.com/news/app/993090/view/527583567913419235) 24% less latency, but generally not for VR  
 [mbucchia](https://github.com/mbucchia)  XR software engineer Matthieu Bucchianeri  
 [MeganeX superlight 8k](https://shop.shiftall.net/en-us/products/meganex8k-us) 2x 4k microOLED panel pancake lens VR headset,  
  &emsp; highly regarded by MRTV  
