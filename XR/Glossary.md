@@ -1,5 +1,6 @@
 ---
 ---  
+[*back*](FAQ.htm)  
 ## VR / XR Glossary
 [AC](https://assettocorsa.gg/assetto-corsa/) - [Assetto Corsa](https://www.overtake.gg/downloads/categories/assetto-corsa.1/),
 	*why* [*I care about VR / XR*](https://blekenbleu.github.io/pedals/#AC)  
@@ -124,6 +125,7 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
  [**Nvidia app**](https://www.nvidia.com/en-us/geforce/news/nvidia-app-download-and-features/) SDR to HDR converter  
 [SimHub](https://www.simhubdash.com/) Windows sim telemetry utility for dashboards, haptics, motion,  
  &emsp; other hardware by plugins  
+[SLAM](SLAM.htm) Simultaneous Localization And Mapping ([SteamVR Base Station](BaseStation/base_station.htm)) tracking)  
 [Social VR](https://www.interaction-design.org/literature/topics/social-virtual-reality-vr)
  e.g. [VRChat](https://hello.vrchat.com/),  [Somnium Space](https://www.somniumspace.com/)  
 [Somnium VR1](https://blekenbleu.github.io/VR1) mini-LED doublet aspheric lens XR headset  
