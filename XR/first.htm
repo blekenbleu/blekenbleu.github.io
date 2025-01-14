@@ -45,23 +45,30 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 <dt>Update to latest Nvidia driver before plugging in VR1;
 <dd>ignore any message about downgrading that driver.
 
+<dt>PLUG VR1 INTO RTX 4090 'MAIN DISPLAY PORT' (nearest motherboard)
+<dt>Disable G-Sync and 12 bit in Nvidia resolution settings
+<dt>Varjo Base and other HMD software may interfere with VR1
 <dt><br><a href=https://somniumspace.com/somniumvr1><b>VR1 Hub:&nbsp Tool Download</b></a> &nbsp
 <a href=https://sourceforge.net/projects/nsis/>setup build tool</a>
 <dd><img src=setup.jpg><ul>
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0>Somnium VR1 Tool overview video</a>
+<li><a href=Dec2024.htm#issues>Tool update issues</a>
 <li> IPD measurement only available running OpenXR, not SteamVR
 <li>Selecting default 'Somnium VR1' profile disables changing settings.
 <li>VR1 button remapping for Steam menus
 <br> &emsp; in VR1 tool in menu Buttons
 <br> &emsp; in SteamVR > Menu > Developer > Debug commands
+<li>Space warp (motion reprojection)<br>
+works only with OpenXR apps supporting spacewarp/depth map
+<li>Resolution slides shows 0x0 resolution when SteamVR is off
+
 </ul>
 
 <dt><br><b><font color=green>Start VR1 before SteamVR or other VR/XR app</font></b>
+<dt>start SteamVR <i>before</i> SteamVR game[s]
 
 <dt><br>Artifacts, e.g. margin flicker, audio interference
-<dd><ul><li>install SteamVR beta<br><img width=480 src=Betas.png>
-<li><b>Somnium Space VR</b> <a href=https://discord.com/channels/494994753146847233/1300888031389155338>discord technical-support channel</a><br> has more issues and workarounds</ul>
-
+<dd><ul><li>installing SteamVR beta removes some artifacts<br><img width=480 src=Betas.png></ul>
 <dt><br><a href=https://boll.itch.io/wimfov>WhatIsMyFieldOfView</a>
 
 <dt><br><a href=https://bytebitebit.com/cpu/how-to-calibrate-steam-vr/><b>Steam VR setup</b></a>
@@ -94,15 +101,12 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 
 <dt><br>late January 2025 update<dd>'huge performance boost' for OpenXR pipeline
 
-<dt><br>some folks want a shallower face cushion frame to exploit FoV
-<dd><img width=640 src=frame.png>
-
-<dt><br>Space warp (motion reprojection)
-<dd> applies only to OpenXR applications with spacewarp/depth map support
-
 <dt><hr>
 </details>
 
+
+<dt><br>some folks want a shallower face cushion frame for more FoV
+<dd><img width=640 src=frame.png>
 
 <dt><br><details><summary><font size=+1><b>Initial impressions</b></font> - second thoughts, updated for 1 Nov fixes</summary>
  &emsp; <i>issues mostly addressed; &nbsp some pupil swim complaints</i><br><br>
@@ -704,17 +708,13 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
 
 </details>
 
-<dt><br><font size=+2><b>hiccups</b></font>
-<dd><ul><li>PLUG VR1 INTO RTX 4090 'MAIN DISPLAY PORT' (nearest motherboard)
-<li>disable G-Sync and 12 bit in Nvidia resolution settings
-<li>start SteamVR <i>before</i> SteamVR game[s]
-<li>Varjo Base and other HMD software may interfere with VR1
-<li>Resolution slides shows 0x0 resolution when SteamVR is off
-<li>Pavlov rejects VR1 (VRG) OpenXR:<br><img src=Untrusted.png>
-<li>foveated rendering (OpenXR) seems problematic
-<li>SteamVR Beta removes some visual and audio artifacts
-<li>IPD <i>measurement display</i> only in OpenXR
+<dt><br><font size=+1><b>hiccups</b></font>
+<ul>
 <li>AMD GPU issues
+<li>foveated rendering (OpenXR) seems problematic
+<li>Pavlov rejects VR1 (VRG) OpenXR:<br><img src=Untrusted.png>
+<li><b>Somnium Space VR</b> <a href=https://discord.com/channels/494994753146847233/1300888031389155338>discord technical-support channel</a><br> has more issues and workarounds</ul>
+
 </ul>
 </dl>
 </td></tr><tr><td align=center>
