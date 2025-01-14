@@ -9,6 +9,7 @@
 	- Visionary (eye tracking)
 	- Titan (eye and hand tracking)
 	- Ultimate(mixed reality, eye and hand tracking)
+- [FAQ](XR/FAQ.htm)  
 - [history, background](XR/VR1.html) blog
 - [other sources](XR/Somnium_VR1_sources.htm)
 - [SLAM:&nbsp; simultaneous localization and mapping](XR/SLAM.htm) *AKA outside-in* SteamVR lighthouse tracking
