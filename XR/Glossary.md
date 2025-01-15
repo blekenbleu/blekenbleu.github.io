@@ -49,6 +49,7 @@
 [Freestyle](https://www.pcmag.com/how-to/how-to-improve-pc-graphics-and-add-filters-with-nvidia-freestyle) Nividia's CAS post-processing, supplanted by RTX Dynamic Vibrance  
 [FSR](https://gpuopen.com/fidelityfx-superresolution-2/) AMD FidelityFX Super Resolution alternative to DLSS  
 [FXAA](https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing) Fast Approximate Anti-Aliasing tries to clean up jaggies *after* rendering  
+[HAGS](https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/) Hardware Accelerated GPU Scheduling  
 [HelloXR](https://developer-docs.magicleap.cloud/docs/guides/openxr/getting-started/openxr-helloxr/) - Magic Leap 2 sample OpenXR application  
 [hello_xr](https://github.com/KhronosGroup/OpenXR-SDK-Source/blob/main/src/tests/hello_xr) - part of [OpenXR&trade; Software Development Kit (SDK) Sources Project](https://github.com/KhronosGroup/OpenXR-SDK-Source)  
  &emsp; "Handy as it's really basic, logs a lot, and supports pretty much every graphics API."  

@@ -16,7 +16,7 @@
 <font size=+1>
 <h2>VR1 customers - hints, software, impressions</h2>
 <dl>
-<dt><br><a href=https://www.youtube.com/watch?v=IDRlksSJLos><b><i>Initial issues</i></b></a>.
+<dt><a href=https://www.youtube.com/watch?v=IDRlksSJLos><b><i>Initial issues</i></b></a>.
 <dd><details><summary>fixed 1 Nov</summary>
 <ul><li>Fixed perceived delay of the VR movement vs physical movements.
 <li>Fixed low FOV problems to allow for the full FOV of the headset to be utilized.
@@ -46,6 +46,8 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 <dd>ignore any message about downgrading that driver.
 
 <dt>PLUG VR1 INTO RTX 4090 'MAIN DISPLAY PORT' (nearest motherboard)
+<dd><a href=https://www.evga.com/support/faq/FAQdetails.aspx?faqid=59560>GPU DisplayPort priority</a>
+
 <dt>Disable G-Sync and 12 bit in Nvidia resolution settings
 <dt>Varjo Base and other HMD software may interfere with VR1
 <dt><br><a href=https://somniumspace.com/somniumvr1><b>VR1 Hub:&nbsp Tool Download</b></a> &nbsp
@@ -53,43 +55,40 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 <dd><img src=setup.jpg><ul>
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0>Somnium VR1 Tool overview video</a>
 <li><a href=Dec2024.htm#issues>Tool update issues</a>
-<li> IPD measurement only available running OpenXR, not SteamVR
-<li>Selecting default 'Somnium VR1' profile disables changing settings.
+<li>VR1 Tool Horizontal Peripheral Angle<br>
+ &emsp; <b>slider snaps to coarse values</b><br>
+ &emsp; -> use arrow keys to increment
+<li><b>Only one eye at startup</b><br>
+ &emsp; VR1 software connection to PC failed<br>
+ &emsp; <img src=reset.png><br>
+ &emsp; or unplug VR1 at breakout box, then replug;<br> &emsp; no need to restart SteamVR etc 
+<li>VR1 app:&nbsp; SteamVR driver not installed (but works)<br>
+ &emsp; switch to SteamVR Beta
+<li> IPD measurement available <i>only</i> in OpenXR
+<li>Default 'Somnium VR1' profile disables changing settings.
 <li>VR1 button remapping for Steam menus
 <br> &emsp; in VR1 tool in menu Buttons
 <br> &emsp; in SteamVR > Menu > Developer > Debug commands
 <li>Space warp (motion reprojection)<br>
-works only with OpenXR apps supporting spacewarp/depth map
+<i>only</i> in OpenXR apps supporting spacewarp/depth map
 <li>Resolution slides shows 0x0 resolution when SteamVR is off
 
 </ul>
 
 <dt><br><b><font color=green>Start VR1 before SteamVR or other VR/XR app</font></b>
-<dt>start SteamVR <i>before</i> SteamVR game[s]
+<dt><br><b>SteamVR</b> apps:
+ &nbsp; <i>first</i> launch SteamVR,<dd>
+ <i>then</i> application (especially MSFS) performance seems better,<br>
+ e.g. head movement smoothness.
 
 <dt><br>Artifacts, e.g. margin flicker, audio interference
 <dd><ul><li>installing SteamVR beta removes some artifacts<br><img width=480 src=Betas.png></ul>
-<dt><br><a href=https://boll.itch.io/wimfov>WhatIsMyFieldOfView</a>
 
 <dt><br><a href=https://bytebitebit.com/cpu/how-to-calibrate-steam-vr/><b>Steam VR setup</b></a>
  &nbsp <a href=https://github.com/kurotu/OVR-Lighthouse-Manager>OVR Lighthouse Manager</a>
 
 <dt><br><a href=https://www.reddit.com/r/SteamVR/comments/118vlrl/fix_for_rtx_4090_and_vr_tracking_input_latency_lag/><b>SteamVR vsync_to_photons_increment</b></a>
  for RTX 4090 VR tracking input lag
-
-<dt><br>SteamVR games:
- &nbsp; first launch SteamVR,<dd>
- then application (especially MSFS) performance seems better,<br>
- e.g. head movement smoothness.
-
-<dt>fpsVR SteamVR app
-
-<dt><br>OpenXR Toolkit
-<dd><a href=https://mbucchia.github.io/OpenXR-Toolkit/troubleshooting.html#try-the-legacy-menu-mode>'Legacy menu' option</a> in the Menu tab
-
-<dt><br><a href=https://github.com/maluoi/openxr-explorer>OpenXR Explorer</a>
-<dd>add the VR1 runtime by editing the list and adding this entry:<br>
-<code>windows VrEngineers C:\ProgramData\vrg\oxr\vrg_openxr.json</code>
 
 <dt><br>SteamVR IPD
 <dd>Press three-lined menu button at SteamVR top for developer console,<br>
@@ -99,7 +98,23 @@ works only with OpenXR apps supporting spacewarp/depth map
  From there, the command:&nbsp <code>settings steamvr.ipd</code><br>
  should return IPD in meters. Eg. <code>steamvr.ipd: 0.063</code> for an IPD of 63mm.
 
-<dt><br><a href=https://www.evga.com/support/faq/FAQdetails.aspx?faqid=59560>GPU DisplayPort priority</a>
+<dt><br>fpsVR SteamVR app
+
+<dt><br><b>Foveated rendering</b>
+<dd><i>Only</i> in <b>OpenXR</b>, e.g.
+<a href=https://github.com/KhronosGroup/OpenXR-SDK-Source/tree/main/src/tests/hello_xr><code>hello_xr</code></a>
+
+<dt><br><b>OpenXR Toolkit</b>
+<dd><a href=https://mbucchia.github.io/OpenXR-Toolkit/troubleshooting.html#try-the-legacy-menu-mode>'Legacy menu' option</a> in the Menu tab
+
+<dt><br><a href=https://boll.itch.io/wimfov>WhatIsMyFieldOfView</a>
+
+<dt><br>Quad Views
+<dd>select option in DCS;<br>disable OpenXR toolkit
+
+<dt><br><a href=https://github.com/maluoi/openxr-explorer>OpenXR Explorer</a>
+<dd>add the VR1 runtime by editing the list and adding this entry:<br>
+<code>windows VrEngineers C:\ProgramData\vrg\oxr\vrg_openxr.json</code>
 
 <dt><br>late January 2025 update<dd>'huge performance boost' for OpenXR pipeline
 
@@ -110,9 +125,9 @@ works only with OpenXR apps supporting spacewarp/depth map
 <dt><br>some folks want a shallower face cushion frame for more FoV
 <dd><img width=640 src=frame.png>
 
-<dt><br><details><summary><font size=+1><b>Initial impressions</b></font> - second thoughts, updated for 1 Nov fixes</summary>
- &emsp; <i>issues mostly addressed; &nbsp some pupil swim complaints</i><br><br>
-
+<dt><br><details><summary><font size=+1><b>Initial impressions</b></font> - second thoughts, updated for 1 Nov fixes</summary><a name=initial> 
+ <ul></a><li> <i>issues mostly addressed; &nbsp some continuing pupil swim complaints</i><br><br>
+<dl>
 <!-- cubex -->
 <a name=first><dt></a><details><summary>"Sharpness is really good, colors and brightness also;
  weight (645g) is ok for me,</summary>
@@ -707,7 +722,7 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
  and nothing which might interfere otherwise.<br>
  This can happen to all kind of software and is nothing to blame VR1 software..<br>
  So nothing to worry about"</details>
-
+</dl></ul>
 </details>
 
 <dt><br><font size=+1><b>hiccups</b></font>
