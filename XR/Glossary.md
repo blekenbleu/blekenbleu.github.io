@@ -109,8 +109,7 @@
 	&emsp; (vs standalone / wireless headsets)  
 [Pimax Crystal](https://pimax.com/pages/crystal) mini-LED aspheric lens headset  
 [Process Lasso](https://bitsum.com/server/features/) GUI to customize software process affinity to CPU cores  
-[pupil swim](https://ydcnanhe.github.io/assets/pdf/SID_Global_PS_v22.pdf) perception of
- discrepancies betweeen corrections  
+[pupil swim](pupil_swim.htm) perception of discrepancies betweeen corrections  
  &emsp; and real lens geometric distortions  
 [QVFR](https://github-wiki-see.page/m/mbucchia/Quad-Views-Foveated/wiki) QuadView Foveated
  Rendering - reducing resolution outside sweet spot  
