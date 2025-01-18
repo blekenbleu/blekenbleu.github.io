@@ -111,6 +111,8 @@
 [Process Lasso](https://bitsum.com/server/features/) GUI to customize software process affinity to CPU cores  
 [pupil swim](pupil_swim.htm) perception of discrepancies betweeen corrections  
  &emsp; and real lens geometric distortions  
+[Quadviews Companion](https://github.com/TallyMouse/QuadViewsCompanion)
+	 utility to configure [mbucchia's QuadViews](https://github.com/mbucchia/Quad-Views-Foveated)  
 [QVFR](https://github-wiki-see.page/m/mbucchia/Quad-Views-Foveated/wiki) QuadView Foveated
  Rendering - reducing resolution outside sweet spot  
 [RCHeliguy](https://www.youtube.com/@markkovalcson7243/videos) Mark Kovalcson  

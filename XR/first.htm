@@ -86,6 +86,11 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
  <i>then</i> application (especially MSFS) performance seems better,<br>
  e.g. head movement smoothness.
 
+<dt><br>Eye tracking and virtual desktop work in both SteamVR and OpenXR
+<dd>These features work as soon as SteamVR itself is running;<br>
+OpenXR needs application running in VR mode and rendering into VR1.<br>
+Foveated rendering works only in OpenXR apps supporting it.
+
 <dt><br>Artifacts, e.g. margin flicker, audio interference
 <dd><ul><li>installing SteamVR beta removes some artifacts<br><img width=480 src=Betas.png></ul>
 
@@ -125,6 +130,14 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 <dt><br><a href=https://github.com/maluoi/openxr-explorer>OpenXR Explorer</a>
 <dd>add the VR1 runtime by editing the list and adding this entry:<br>
 <code>windows VrEngineers C:\ProgramData\vrg\oxr\vrg_openxr.json</code>
+
+<dt><br><a href=https://github.com/fredemmott/XRFrameTools>XRFrameTools</a>
+- live display of frame rate, interval, etc
+<dd><a href=https://github.com/fredemmott/XRFrameTools/blob/main/docs/screenshot.png?raw=true><img width=680 src=https://github.com/fredemmott/XRFrameTools/blob/main/docs/screenshot.png?raw=true><a>
+<dd>OpenXR toolkit is unsupported, causes crashes<br> and other issues with some modern games
+
+<dr><br><a href=https://github.com/fredemmott/OpenXR-API-Layers-GUI>OpenXR API Layers GUI</a> automatically detects common errors, fixes most
+<dd>OpenXR API Layers GUI shows API layers in their actual order.
 
 <dt><br>late January 2025 update<dd>'huge performance boost' for OpenXR pipeline
 
