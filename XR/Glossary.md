@@ -9,7 +9,7 @@
 [Air Link](https://www.meta.com/help/quest/articles/headsets-and-accessories/oculus-link/connect-with-air-link/)
  Meta / Quest alternative to Virtual Desktop for PCVR streaming  
 [Aliasing](https://en.wikipedia.org/wiki/Aliasing) artifacts from sampling `@ < ~ 3x` content's highest frequencies  
-[ALVR][https://github.com/alvr-org/ALVR] Air Light VR streams PCVR to wireless headsets  
+[ALVR](https://github.com/alvr-org/ALVR) Air Light VR streams PCVR to wireless headsets  
 [anti-aliasing](https://www.digitaltrends.com/computing/what-is-anti-aliasing/#dt-heading-how-to-turn-on-anti-aliasing-in-games) 
   **How to turn on anti-aliasing in games**  
 [ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
@@ -136,7 +136,8 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
 [SMAA](https://en.wikipedia.org/wiki/Morphological_antialiasing) Subpixel Morphological Anti-Aliasing,
  similar to FXAA,  
  &emsp; but less cost-effecting than TAA  
-SRS Sample Rate Shading:&nbsp; see VRS - or - [Sim Racing Studio](https://simracingstudio.freshdesk.com/support/solutions/articles/35000209894-richard-burns-rally-next-gen-physics-troubleshooting) (motion)  
+SRS Sample Rate Shading:&nbsp; see VRS - or -
+[Sim Racing Studio](https://simracingstudio.freshdesk.com/support/solutions/articles/35000209894-richard-burns-rally-next-gen-physics-troubleshooting) (motion)  
 [SSAA](https://www.tomshardware.com/reviews/anti-aliasing-performance,3065-18.html) Supersampling antialiasing - visual
  quality and performance cost > MSAA  
 [SSW](https://www.youtube.com/watch?v=zH7qCsey2to) Virtual Desktop Synchronous Spacewarp reprojection (frame rate jitter reduction)  
@@ -165,10 +166,12 @@ SRS Sample Rate Shading:&nbsp; see VRS - or - [Sim Racing Studio](https://simrac
  &emsp; fixed foveated rendering option  
 [VRPerfKit_RSF](https://github.com/RavenSystem/VRPerfKit_RSF) RavenSystem's vrperfkit fork for dynamic FFR, HRM  
 [vrperfkit fixed foveated rendering with VRS](https://github.com/cedriclmenard/vrperfkit/releases) - works for DCS, Assetto Corsa  
-[VRS](https://developer.nvidia.com/vrworks/graphics/variablerateshading) (Nvidia) [Variable Rate Shading](https://devblogs.microsoft.com/directx/variable-rate-shading-a-scalpel-in-a-world-of-sledgehammers/)  
+[VRS](https://developer.nvidia.com/vrworks/graphics/variablerateshading) (Nvidia)
+	[Variable Rate Shading](https://devblogs.microsoft.com/directx/variable-rate-shading-a-scalpel-in-a-world-of-sledgehammers/)  
 [VRSS](https://developer.nvidia.com/blog/nvidia-vrss-a-zero-effort-way-to-improve-your-vr-image-quality/)
  Nvidia Variable Rate Supersampling  
 [Vulkan / OpenGL](https://en.wikipedia.org/wiki/Vulkan) intended OpenGL replacement  
  &emsp; Vulcan is tuned for multiple CPU cores and modern GPUs  
-[WIMFOV](https://boll.itch.io/wimfov) - **What is my Field of View?**  
-[xr-picker](https://github.com/rpavlik/xr-picker) cross-platform tool for OpenXR runtime selection;&nbsp; Fred Emmott recommends  
+[WIMFOV](first.htm#WIMFOV) - **What is my Field of View?**  
+[xr-picker](https://github.com/rpavlik/xr-picker) cross-platform tool for OpenXR runtime selection;
+	&nbsp; Fred Emmott recommends  
