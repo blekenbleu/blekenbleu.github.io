@@ -92,6 +92,8 @@
 [OpenGL](https://en.wikipedia.org/wiki/OpenGL) - 2D and 3D graphics API, developed by Silicon Graphics  
 [OpenKneeboard](https://openkneeboard.com/) Fred Emmott's 2D overlay for OpenXR and OpenVR,  
  &emsp;	works with [**SimHub**](https://github.com/SHWotever/SimHub/wiki) dashboards  
+[openRBRVR](https://github.com/Detegr/openRBRVR)Open source VR plugin for Richard Burns Rally, *partly* replacing RBRVR  
+ &emsp; supports OpenVR and (32, but not 64-bit) OpenXR.&nbsp; [FAQ](https://github.com/Detegr/openRBRVR/blob/master/FAQ.md)  
 [OpenVR](https://en.wikipedia.org/wiki/OpenVR) SteamVR API since 2015  
 [OpenXR](https://www.khronos.org/OpenXR/) alternative to OpenVR for [AR/MR/VR/XR API](mbucchia.html) since 2017  
 [OpenXR API Layers on Windows](https://fredemmott.com/blog/2024/11/25/best-practices-for-openxr-api-layers.html) - Best Practices, by Fred Emmott  
