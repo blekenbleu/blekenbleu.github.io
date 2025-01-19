@@ -82,6 +82,7 @@
 [MSAA](https://en.wikipedia.org/wiki/Multisample_anti-aliasing) multi-sample antialiasing - operates along geometric edges.  
  &emsp;  Tom's Hardware suggests
  [4x MSAA suffices](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-2.html)  
+[mura](https://sensing.konicaminolta.asia/evaluating-display-mura/) fixed pattern display brightness nonuniformity, for which [SteamVR supports correction](https://steamcommunity.com/app/250820/discussions/0/1640912849406860288/)  
 [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
 [OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, often [speeding performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
