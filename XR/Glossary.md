@@ -59,6 +59,8 @@
  [Blend Mode](https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrEnvironmentBlendMode.html);
  &nbsp;[specs](https://registry.khronos.org/OpenXR/specs/1.1/pdf/xrspec.pdf)    
 **HMD** head mounted display AKA headset  
+[hmdq](https://github.com/risa2000/hmdq) two command line tools for OpenVR headsets,
+	 collecting data for [HMD Geometry Database](https://risa2000.github.io/hmdgdb/)  
 [HRM](https://www.reddit.com/r/ValveIndex/comments/i6jnfa/removing_the_lens_mesh_in_software_howto/) Hidden radial mask: don't render edge pixels not visible in HMD  
   &emsp; reportedly [minimal impact in DCS](https://forum.dcs.world/topic/348555-vr-enable-hmd-mask-is-this-still-useful/)  
 [HTCC](https://htcc.fredemmott.com/) - hand tracking OpenXR API layer for MSFS, DCS World, HelloXR  
