@@ -171,6 +171,7 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
  &emsp; fixed foveated rendering option  
 [VRPerfKit_RSF](https://github.com/RavenSystem/VRPerfKit_RSF) RavenSystem's vrperfkit fork for dynamic FFR, HRM  
 [vrperfkit fixed foveated rendering with VRS](https://github.com/cedriclmenard/vrperfkit/releases) - works for DCS, Assetto Corsa  
+[VRR](https://en.wikipedia.org/wiki/Variable_refresh_rate) Variable refresh rate, e.g. AMD FreeSync, Nvidia G-Sync (not in VR)  
 [VRS](https://developer.nvidia.com/vrworks/graphics/variablerateshading) (Nvidia)
 	[Variable Rate Shading](https://devblogs.microsoft.com/directx/variable-rate-shading-a-scalpel-in-a-world-of-sledgehammers/)  
 [VRSS](https://developer.nvidia.com/blog/nvidia-vrss-a-zero-effort-way-to-improve-your-vr-image-quality/)
