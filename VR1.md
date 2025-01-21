@@ -1,7 +1,7 @@
 ---
 ---
 ## Somnium VR1
-### premium PC XR headset - [specifications](https://vrgineers.com/somnium-vr1-mr/)
+### premium PC XR headset - [Ultimate specifications](https://vrgineers.com/somnium-vr1-mr/)
 - [First Customers](XR/first.htm) impressions, [hints, **software**](XR/first.htm#software), hiccups
 - [*January 2025*](XR/AMA3Jan25.htm):&nbsp; now [3 consumer versions](https://store.somniumspace.com/) - 
 	[**U.S. shipments begin**](https://www.roadtovr.com/somnium-begins-shipping-vr1-pc-vr-headset-in-the-us-announces-incoming-price-hike/)
