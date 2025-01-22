@@ -113,6 +113,8 @@
  Personal Computer Virtual Reality - VR rendering by personal computers  
 	&emsp; (vs standalone / wireless headsets)  
 [Pimax Crystal](https://pimax.com/pages/crystal) mini-LED aspheric lens headset  
+[PPD]() Pixels Per Degree - angle based pixel density, typically specified near center  
+	&emsp; falling roughly by cosine, e.g. to approx 50% by 60&deg;  
 [Process Lasso](https://bitsum.com/server/features/) GUI to customize software process affinity to CPU cores  
 [pupil swim](pupil_swim.htm) perception of discrepancies betweeen corrections  
  &emsp; and real lens geometric distortions  
@@ -151,7 +153,7 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
 [SteamVR](https://store.steampowered.com/steamvr) Valve's VR tools and services, e.g. OpenVR, Lighthouse Tracking  
 [strain](https://www.testdevices.com/spin-testing/optical-strain-measurement/) visible artifacts, often with polarized light, from optic inhomogeneities,  
  &emsp; often induced by mechanical stresses, AKA [Schlieren](https://en.wikipedia.org/wiki/Schlieren)  
-[sweet spot](https://vrlowdown.com/why-is-vr-blurry/) limited region near HMD lens centers with useful resolution, fewer artifacts  
+[sweet spot](https://vrlowdown.com/why-is-vr-blurry/) limited HMD region around lens centers with useful resolution and fewer aberrations  
 [TAA](https://en.wikipedia.org/wiki/Temporal_anti-aliasing) Temporal Anti-Aliasing blends pixels among frames  
 [TAAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-3.html)
  Nvidia transparency adaptive anti-aliasing for transparent textures  
