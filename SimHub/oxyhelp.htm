@@ -13,8 +13,13 @@ table.my_table td { width:800px; background-color:#DDDDFF; }
 
 <h2><a href=https://github.com/blekenbleu/OxyScope>OxyScope</a> Help</h2><font size=+1>
 <details><summary><i>discussion</i></summary><br>
-<a name=why><b>OxyScope</b></a> is about displaying and collecting samples<br> for up to 4 SimHub properties at a time.<br>
-Four can be visualized by color-coding based on values of one<br>
+<a name=why><b>OxyScope</b></a> is about displaying and collecting samples<br> for up to 4 SimHub properties at a time.<br><br>
+
+<i>At least for me, evaluating scatter plots <b>while driving</b> is NOT an option.<br>
+Instead, using the SimHub button at upper right: <img align=center src=record.png><br>
+first record some driving, then</i> <b>Replay</b>...<br><br>
+
+Four properties may be visualized by color-coding based on values of one<br>
 and scatter plotting in 3D coordinates based on others.<br>
 Intuitively, this works best if color-coded property values <i>depend on</i> others.<br>
 Visualizing more than 4 properties is possible, but problematic.<br>
@@ -41,14 +46,19 @@ This clustering issue is mitigated by:<ul>
 <dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
 	- button enabled by the next button set to <b>Manual</b>
 <dd><br><b>Manual / Auto Replot</b><ul>
-<li><b>Manual</b>:&nbsp displayed plot remains until <font color=red>REPLOT</font> is selected
+<li><b>Manual</b>:&nbsp displayed plot remains until
+<span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
+ is selected
 <li><b>Auto</b>:&nbsp plots update as new samples are collected</ul>
 
 <dd><br><b>Refresh:</b>&nbsp <b>3 second</b> / <b>Cumulative X range</b> / <b>Hold max X range</b><ul>
-<li><b>3 second</b>:&nbsp all sample sets can be plotted
-<li><b>Cumulative X range</b>:&nbsp collects samples with increasing variance,<br>
- &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; based on X property selected by <b>Fit Curves</b>
-<li><b>Hold max X</b>: 3-second sample set with greater range of <i>all</i> X values
+<li><b>3 second</b>:&nbsp all sample sets can be plotted<br>
+Use this e.g. with <b>Auto</b> to search <b>Replay</b> for <i>interesting</i> scatter plots.
+<li><b>Cumulative X range</b>:&nbsp collects sample values with increasing variance<br>
+ &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; of X property as selected by <b>Fit Curves</b><br>
+<i>Ignores nearly redundant successive samples,<br> collecting wider X property value range over longer intervals</i>.
+<li><b>Hold max X</b>: 3-second sample set with greater range of <i>all</i> X values<br>
+Captures a single 3 second sequence with largest X value range.
 </ul>
 <dd><br><b>Fit Curves</b><ul>
 <li><b>Disable</b>:&nbsp display only scatter plots
