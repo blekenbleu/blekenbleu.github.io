@@ -30,7 +30,7 @@
 [DLSS](https://en.wikipedia.org/wiki/Deep_learning_super_sampling) Deep learning super sampling - Nvidia itech for  
  &emsp; *reduced* resolution *rendering*, based on TAA, liable to artifacts  
 [DLSS-G](https://github.com/NVIDIAGameWorks/Streamline/blob/main/docs/ProgrammingGuideDLSS_G.md) AKA DLSS-FG - Nvidia frame generation  
-[DLSSTweaks](https://github.com/emoose/DLSSTweaks) - force DLAA onto DLSS-supported titles  
+[DLSSTweaks](https://github.com/emoose/DLSSTweaks) - change render resolution, force DLAA onto DLSS-supported titles  
 [`driver_leap`](https://github.com/SDraw/driver_leap) SteamVR driver for [emulating controllers](https://www.youtube.com/watch?v=RdGnCV2g_oE)
  by [Ultraleap handtracking](https://www.youtube.com/watch?v=21v4m3ATeqE)  
 [DSC](https://developer.nvidia.com/blog/dsc-higher-fidelity-vr/) Digital Stream Compression - *visually* lossless on DisplayPort 1.4a, HDMI 2.1  
@@ -109,7 +109,7 @@
 [Owl3D](https://www.owl3d.com/) for converting 2D video to 3D  
 [OXRMC](https://github.com/BuzzteeBear/OpenXR-MotionCompensation) motion compensation keeps VR views in cockpit  
  &emsp; during large motion platform excursions  
-[OXRTK](https://mbucchia.github.io/OpenXR-Toolkit/) mbucchia's OpenXR Toolkit  
+[OXRTK](https://mbucchia.github.io/OpenXR-Toolkit/) mbucchia's OpenXR Toolkit changes device, not render resolution  
 [PCVR](https://www.roadtovr.com/how-to-tell-pc-virtual-reality-vr-oculus-rift-htc-vive-steam-vr-compatibility-tool/)
  Personal Computer Virtual Reality - VR rendering by personal computers  
 	&emsp; (vs standalone / wireless headsets)  
