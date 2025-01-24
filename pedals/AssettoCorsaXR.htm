@@ -5,14 +5,33 @@
 </head>
 <body>
 <div align=center>
-<table class="my_table"><tr><td style="width:950">
+<table class="my_table"><tr><td style="width:800">
 
 <font size=-1><a href="index.htm#AC"><i>back</i></a></font>
 <a name=sim><h2>Assetto Corsa in VR/XR:&nbsp tips and tricks</h2></a>
 
 <dl>
+<dt>VR tuning
+<dd><a href=https://steamcommunity.com/app/244210/discussions/0/4843149663169077681/>Steam discussion</a>,
+	<a href=https://www.reddit.com/r/assettocorsa/comments/pqbjhj/i_dont_understand_how_yall_are_getting_90fps_in/>reddit</a>,
+	<a href=https://github.com/Raptyyy/rapty_ac_vr_guide>rapty_ac_vr_guide (GitHub)</a>, 
+	<a href=https://github.com/fholger/vrperfkit>vrperfkit</a>,
+	<a href=https://docs.google.com/document/d/1q-taJt5q9oKWPuCB63rbAC6ZzlZMxqjworgpc10ETDE/>CSOCSO's VR Guide</a>,<br>
+	<a href=https://www.overtake.gg/downloads/assetto-corsa-vr-guide.19037/>RaceDepartment</a>
+	<a href=https://www.overtake.gg/threads/ac-settings-for-vr-with-pimax-5k-super-i5-8600k-and-gtx1080ti.271292/>niterida's <b>AC settings for VR</b></a>,
+	<a href=https://steamcommunity.com/app/908520/discussions/0/3826413307981605407/>Steam VR Render Resolution explained</a>,<br>
+	<a href=https://www.overtake.gg/threads/assetto-corsa-optimizing-fps-starter-guide.207814/>AC CSP Optimizing FPS Starter Guide</a>,
+	<a href=https://www.drifted.com/assetto-corsa-content-manager/>AC+CM+CSP+..</a>
+	<br><code>Allow Asynchronous Reprojection - On, Allow Interleaved Reprojection - Off, <br>
+		Enable Always-on Reprojection - On // in games that regularly drops down to 45fps, otherwise off.</code>
+
+<dt>VR tuning video
+<dd><a href=https://www.youtube.com/watch?v=fHKKHImI7Dg>WanderSchikanenTV</a>,
+<a href=https://www.youtube.com/watch?v=HhLfU8OhI4E>F4CEpa1m SteamVR Super Sampling + Advanced Settings</a>,<br>
+	<a href=https://www.youtube.com/watch?v=tquRzEIiQXo>top 10 CSP + Content Manager Fixes</a>
+
 <dt>Open Composite + OpenXr Toolkit
-<dd>Only have problems with shimmering rails and fences, but the game runs very smooth
+<dd>Was good for WMR; but left shimmering rails and fences
 <dt><br>100% resolution, very high graphic settings and post processing filters<br>
  &emsp; and all the Custom Shaders Patch goodies
 <dd>constant 90 fps with the largest FOV. I don't like driving at night or with rain,
@@ -64,10 +83,10 @@ midRadius: 0.8
 outerRadius: 1.0
 favorHorizontal: true
 </pre>
-The 5% downres (renderscale setting) then sharpening seems to combat jaggies fairly effectively<br>
- when combined with supersampling from your VR device software. I use SteamVR for my Index at 200%.<br><br>
+ 5% downres (renderscale setting) then sharpening helps combat jaggies fairly effectively<br>
+ when combined with device supersampling (e.g. Index at 200%).<br><br>
 
-The fixed foveated section allows you to claw back some performance which enables higher supersampling.<br>
+ Fixed foveated section allows clawing back some performance, enabling higher supersampling.<br>
  You may notice some artifacts at the edge of your vision such as on certain tracks<br>
  things like trees won't be rendered at all in that outer edge. Its not a common thing to see though.<br><br>
 
@@ -88,13 +107,13 @@ One thing you didn't mention as an issue but I think you'll probably end up noti
  is the car LOD transition happens a little too soon when in VR - its more noticable.<br>
  I like to bump up the car LOD distance slider to 125%.<br>
  This will have an effect on performance if you like to race with large grids though so beware.<br>
- That's under Settings>Custom Shader Patch>Graphic Adjustments>LOD Settings>Multiplier for car LOD
+ Under Settings>Custom Shader Patch>Graphic Adjustments>LOD Settings>Multiplier for car LOD
 
 <dt><br>VR How to stop looking though seat head support
 <dd>You'd want to adjust the clip planes<br>
  Custom Shaders Patch -> Graphics Adjustments -> 'Adaptive clip planes'<br>
 Turned it off and now all is well. Still wondering what performance impact that setting has though..<br>
-<img src=https://www.overtake.gg/attachments/captura-de-pantalla-2023-10-13-111720-png.700546/>
+<img width=800 src=https://www.overtake.gg/attachments/captura-de-pantalla-2023-10-13-111720-png.700546/>
 
 <dt><br><a href=https://www.overtake.gg/threads/ac-settings-for-vr-with-pimax-5k-super-i5-8600k-and-gtx1080ti.271292/><b>AC settings for VR</b></a>
 <dd>Nvidia Control Panel settings all standard except:<pre>
@@ -110,8 +129,8 @@ Shader Cache size : as large as you can</pre>
  You'll have to relearn to drive for awhile afterwards, as you adjust to the change.
 <dt><br>issues with picture quality
 <dd>I do hate the typical AC shimmers/jaggies lots more and want to keep the FPS at certain level.<br>
- To achieve this, I have do a compromise, by; reducing shadows/reflections and other nice to have things, like rain.<br>
- The red "!" from CM settings is in this case very helpfully to keep things low and see what effect they bring.<br>
+ Achieve by compromise; reducing shadows/reflections and rain.<br>
+ CM settings red "!" helps keep things low and see what effect they bring.<br>
  Smart shadows great, but if not being notable as a realistic shadow by shimmers/jaggies.<br>
 I never noticed any real improvements in 3D depth by an PPfilter,<br>
  but if missing a detailed view at a certain distance,<br>
