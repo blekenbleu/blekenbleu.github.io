@@ -15,6 +15,7 @@
 [ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
 [BMS](https://www.falcon-bms.com/) Falcon Benchmark Sim - flight  
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens VR headset  
+[BTB](http://www.bobstrackbuilder.net/) Bob's Track Builder - stages with fewer features than original RBR rally     
 [CA](https://en.wikipedia.org/wiki/Chromatic_aberration) Chromatic aberration, *axial (longitudinal) and transverse (lateral)*  
 [CAS](https://github.com/GPUOpen-Effects/FidelityFX) Contrast adaptive sharpening with optional up-scaling;&nbsp; Nvidia Freestyle  
 [core parking](https://www.thewindowsclub.com/enable-disable-core-parking-windows) - disable some CPU cores, reducing power and heat  
@@ -84,6 +85,7 @@
 [MSAA](https://en.wikipedia.org/wiki/Multisample_anti-aliasing) multi-sample antialiasing - operates along geometric edges.  
  &emsp;  Tom's Hardware suggests
  [4x MSAA suffices](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-2.html)  
+[multiview rendering](https://developer.nvidia.com/vrworks/graphics/multiview) 4 instead of 2 non-coplanar views per rendering.  
 [mura](https://sensing.konicaminolta.asia/evaluating-display-mura/) fixed pattern display brightness nonuniformity, for which [SteamVR supports correction](https://steamcommunity.com/app/250820/discussions/0/1640912849406860288/)  
 [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
@@ -130,6 +132,7 @@ reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reproj
  &emsp; often associated with Windows Mixed Reality  
 [ROV Test FOV & Resolution](https://steamcommunity.com/sharedfiles/filedetails/?id=1359389601) Snellen text legibility, glare, FoV, distortions
 	 AKA [**testhmd**](https://knob2001.itch.io/testhmd)  
+[RSF](https://www.rallysimfans.hu/rbr/downloads/dokumentum/RBR_instructions_2024.pdf) RallySimFans version of Richard Burns Rally (RBR)  
 [RTSS](https://www.guru3d.com/page/rivatuner-rtss-homepage/) RivaTuner Statistics Server, includes FPS limiter, bad for OpenXR  
 [RTX Dynamic Vibrance](https://www.tweaktown.com/news/96343/rtx-hdr-and-dynamic-vibrance-use-ai-to-dramatically-improve-the-look-of-thousands-games/index.html) -
  [**Nvidia app**](https://www.nvidia.com/en-us/geforce/news/nvidia-app-download-and-features/) SDR to HDR converter  
