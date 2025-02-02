@@ -88,6 +88,8 @@
 ### [Somnium VR1](VR1) - premium PC XR headset
 ### [Two Factor Authentication](2fas/) - iOS and 2FAS
 
+### [USB](../static/USB.htm)
+
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
 - [Glossary](XR/Glossary)  
 - [OpenVR vs OpenXR](XR/mbucchia.html)
