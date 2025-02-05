@@ -1,6 +1,6 @@
 <html><head>
 <link rel='stylesheet' type='text/css' href='../../static/my.css'>
-<title>Somnium VR1 delivered 5 Feb 2025</title>
+<title>Somnium VR1 delivered 6 Feb 2025</title>
 </head>
 
 <body>
@@ -13,8 +13,8 @@
 <br>
 
 <font size=+1>
-<h2>Somnium VR1 delivered 5 Feb 2025</h2><dl>
-<dt>status and preparations
+<h2>Somnium VR1 <i>delivered 6 Feb 2025</i></h2><dl>
+<dt>PC status and preparations
 <dd><details><summary>System File Checker, drivers, hardware</summary>
 <ul>
 <li><a href=../Windows/PhantomVR.htm#PARTS>Intel i5-13600K 3.50 GHz, 32GB DDR5-6000 CL30, Galax GeForce RTX 4090 SG,<br>
@@ -37,7 +37,7 @@
 <li>2GB RAM drive
 </ul><br>
 </details>
-<dt>Somnium VR1 Tool - Full Walk-Through Tutorial
+<dt>Somnium VR1 Tool - Walk-Through Video
 <dd><iframe width=100% height="360" src="https://www.youtube.com/embed/2xkKfp5cYy0"></iframe>
 <ul><li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=17s>Initial setup wizard</a>
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=19s>Cable Connection</a>
@@ -60,11 +60,11 @@ with 25%/25% foveated size.
 </details>
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=191s>Screen</a> brightness, contrast
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=199s>Hand tracking</a>
-<li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=210s>Eye tracking</a> IPD, calibration
+<li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=210s>Eye tracking</a> IPD (63-5 for me), calibration
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=235s>Sound</a> mic, earphone levels, tester
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=245s>Firmware</a> version, update, VR1 serial number
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=254s>4 Button bindings</a>
-<li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=267s>Advanced</a> FoV, eye relief / world scale
+<li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=267s>Advanced</a> <a href=https://boll.itch.io/wimfov><b>FoV</b></a>, eye relief / world scale
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=307>Software</a> repair, IPD overlay
 <details><summary>enable/disable OpenXR, SteamVR</summary>
 - disabling VR1 OpenXR leaves SteamVR's OpenXR runtime,<br>
@@ -78,8 +78,8 @@ with 25%/25% foveated size.
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=467s>Masking mode</a> overlay(default), 3D mesh, chroma key,
 	 combo, <b>Cinema</b>:&nbsp; <i>mixed reality image on a virtual screen</i> 
 </ul>
-<li>If, <i>after some days</i>, VR1 image doesn't feel right with default settings,
-<details><summary>start tweaking</summary>
+<li>If, <i>after some days</i>, VR1 image doesn't feel right with defaults,
+<details><summary>tweak settings</summary>
  &emsp; warping profiles + rendered FOV + focal distance value<br>
  &emsp; HEAVILY change eyes' perceptions:<ol>
 <li>Measure <i>seen</i> FOV with any FOV tool. 
@@ -88,7 +88,9 @@ with 25%/25% foveated size.
 <a href=https://discord.com/channels/494994753146847233/1301858258902061056/1314650121023000669><b>warping profiles</b></a>
 <br>Close VR1 tool and vrg services <b>before</b> profile changes;<br>
 - ignore update message after warping profile changes.<br> &emsp; &emsp;
-<a href=https://discord.com/channels/494994753146847233/1301858258902061056/1312149169934307388><i>older profiles</i></a>
+<a href=https://discord.com/channels/494994753146847233/1301858258902061056/1312149169934307388><i>older profiles</i></a><br>
+- In folder:&nbsp <code>C:\ProgramData\vrg\warping\SomniumVR1\</code><br>
+   &emsp; replace files: <code>warping_left.bson</code> and <code>warping_right.bson</code>
 <li>Pick best focal distances between `-10` and `+10`.
 </ol></details>
 </ul>

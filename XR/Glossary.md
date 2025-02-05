@@ -91,12 +91,12 @@
 [mura](https://sensing.konicaminolta.asia/evaluating-display-mura/) fixed pattern display brightness nonuniformity, which [SteamVR can correct](https://steamcommunity.com/app/250820/discussions/0/1640912849406860288/)  
 [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
-[OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, often [speeding performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
+[OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, *may* [speed performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
  &emsp;	by [forwarding calls](https://fredemmott.com/blog/2022/05/29/vr-software-components.html) to OpenXR runtime, bypassing OpenVR  
 [OpenGL](https://en.wikipedia.org/wiki/OpenGL) - 2D and 3D graphics API, developed by Silicon Graphics  
 [OpenKneeboard](https://openkneeboard.com/) Fred Emmott's 2D overlay for OpenXR and OpenVR,  
  &emsp;	works with [**SimHub**](https://github.com/SHWotever/SimHub/wiki) dashboards  
-[openRBRVR](https://github.com/Detegr/openRBRVR)Open source VR plugin for Richard Burns Rally, *partly* replacing RBRVR  
+[openRBRVR](https://github.com/Detegr/openRBRVR)Open source Richard Burns Rally VR plugin, *partly* replacing RBRVR  
  &emsp; supports OpenVR and (32, but not 64-bit) OpenXR.&nbsp; [FAQ](https://github.com/Detegr/openRBRVR/blob/master/FAQ.md)  
 [OpenVR](https://en.wikipedia.org/wiki/OpenVR) SteamVR API since 2015  
 [OpenXR](https://www.khronos.org/OpenXR/) alternative to OpenVR for [AR/MR/VR/XR API](mbucchia.html) since 2017  
