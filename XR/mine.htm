@@ -65,7 +65,12 @@ with 25%/25% foveated size.
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=245s>Firmware</a> version, update, VR1 serial number
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=254s>4 Button bindings</a>
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=267s>Advanced</a> FoV, eye relief / world scale
-<li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=307>Software</a> repair;&nbsp; en/disable OpenVR, SteamVR, IPD overlay
+<li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=307>Software</a> repair, IPD overlay
+<details><summary>enable/disable OpenXR, SteamVR</summary>
+- disabling VR1 OpenXR leaves SteamVR's OpenXR runtime,<br>
+  &emsp; which then calls VR1 <b>OpenVR</b> for OpenXR apps.<br>
+- disabling <i>both</i> OpenXR and OpenVR <b>disables VR1</b>..
+</details>
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=322>VR view display on monitor
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=360s>Tracking Tab</a> OpenXR Origin;<br>
 	 &emsp; add VR1 IMU to SteamVR Lighthouse
@@ -73,8 +78,10 @@ with 25%/25% foveated size.
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=467s>Masking mode</a> overlay(default), 3D mesh, chroma key,
 	 combo, <b>Cinema</b>:&nbsp; <i>mixed reality image on a virtual screen</i> 
 </ul>
-<li>If VR1 image doesn't feel right with default settings, start tweaking;<br>
- &emsp; warping profiles + rendered FOV + focal distance value<br> &emsp; HEAVILY change eyes' perceptions:<ol>
+<li>If, <i>after some days</i>, VR1 image doesn't feel right with default settings,
+<details><summary>start tweaking</summary>
+ &emsp; warping profiles + rendered FOV + focal distance value<br>
+ &emsp; HEAVILY change eyes' perceptions:<ol>
 <li>Measure <i>seen</i> FOV with any FOV tool. 
 <li>Setup VR1 Tool values according to <i>seen</i> FoV. 
 <li>After that, try different
@@ -83,7 +90,7 @@ with 25%/25% foveated size.
 - ignore update message after warping profile changes.<br> &emsp; &emsp;
 <a href=https://discord.com/channels/494994753146847233/1301858258902061056/1312149169934307388><i>older profiles</i></a>
 <li>Pick best focal distances between `-10` and `+10`.
-</ol>
+</ol></details>
 </ul>
 </dl>
 </td></tr><tr><td align=center>

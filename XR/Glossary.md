@@ -18,11 +18,13 @@
 [BTB](http://www.bobstrackbuilder.net/) Bob's Track Builder - stages with fewer features than original RBR rally     
 [CA](https://en.wikipedia.org/wiki/Chromatic_aberration) Chromatic aberration, *axial (longitudinal) and transverse (lateral)*  
 [CAS](https://github.com/GPUOpen-Effects/FidelityFX) Contrast adaptive sharpening with optional up-scaling;&nbsp; Nvidia Freestyle  
+[CEF](https://github.com/chromiumembedded/cef) Chromium Embedded Framework embeds Chromium-based browsers in apps  
+	&emsp; [CefSharp](https://ourcodeworld.com/articles/read/173/how-to-use-cefsharp-chromium-embedded-framework-csharp-in-a-winforms-application) C# wrapper  
 [core parking](https://www.thewindowsclub.com/enable-disable-core-parking-windows) - disable some CPU cores, reducing power and heat  
  &emsp; (Windows 11 often parks 18/20 of i5-13600K 6P + 8E cores)  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
 [DFR](https://www.tobii.com/blog/what-is-foveated-rendering) dynamic foveated rendering - key for optimizing VR performance  
-[Direct3D](https://learn.microsoft.com/en-us/windows/win32/direct3d) - drawing primitives and shading in Windows DirectX graphics and gaming API  
+[Direct3D](https://learn.microsoft.com/en-us/windows/win32/direct3d) - drawing primitives, shading in Windows DirectX graphics, gaming API  
  &emsp; D3DX12 AKA Direct3D 12 is the current version;&nbsp;  most games use 11 or earlier  
 [DLAA](https://en.wikipedia.org/wiki/Deep_learning_anti-aliasing) Nvidia Deep learning anti-aliasing, similar to DLSS and TAA,  
  &emsp; but image quality focus (full resolution)  
@@ -60,8 +62,8 @@
  [Blend Mode](https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrEnvironmentBlendMode.html);
  &nbsp;[specs](https://registry.khronos.org/OpenXR/specs/1.1/pdf/xrspec.pdf)    
 **HMD** head mounted display AKA headset  
-[hmdq](https://github.com/risa2000/hmdq) two command line tools for OpenVR headsets,
-	 collecting data for [HMD Geometry Database](https://risa2000.github.io/hmdgdb/)  
+[hmdq](https://github.com/risa2000/hmdq) command line tools collect OpenVR headset data
+	 for [HMD Geometry Database](https://risa2000.github.io/hmdgdb/)  
 [HRM](https://www.reddit.com/r/ValveIndex/comments/i6jnfa/removing_the_lens_mesh_in_software_howto/) Hidden radial mask: don't render edge pixels not visible in HMD  
   &emsp; reportedly [minimal impact in DCS](https://forum.dcs.world/topic/348555-vr-enable-hmd-mask-is-this-still-useful/)  
 [HTCC](https://htcc.fredemmott.com/) - hand tracking OpenXR API layer for MSFS, DCS World, HelloXR  
@@ -86,7 +88,7 @@
  &emsp;  Tom's Hardware suggests
  [4x MSAA suffices](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-2.html)  
 [multiview rendering](https://developer.nvidia.com/vrworks/graphics/multiview) 4 instead of 2 non-coplanar views per rendering.  
-[mura](https://sensing.konicaminolta.asia/evaluating-display-mura/) fixed pattern display brightness nonuniformity, for which [SteamVR supports correction](https://steamcommunity.com/app/250820/discussions/0/1640912849406860288/)  
+[mura](https://sensing.konicaminolta.asia/evaluating-display-mura/) fixed pattern display brightness nonuniformity, which [SteamVR can correct](https://steamcommunity.com/app/250820/discussions/0/1640912849406860288/)  
 [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
 [OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, often [speeding performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
@@ -157,7 +159,7 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
 [SteamVR](https://store.steampowered.com/steamvr) Valve's VR tools and services, e.g. OpenVR, Lighthouse Tracking  
 [strain](https://www.testdevices.com/spin-testing/optical-strain-measurement/) visible artifacts, often with polarized light, from optic inhomogeneities,  
  &emsp; often induced by mechanical stresses, AKA [Schlieren](https://en.wikipedia.org/wiki/Schlieren)  
-[sweet spot](https://vrlowdown.com/why-is-vr-blurry/) limited HMD region around lens centers with useful resolution and fewer aberrations  
+[sweet spot](https://vrlowdown.com/why-is-vr-blurry/) HMD fields near lens centers with good resolution and fewer aberrations  
 [TAA](https://en.wikipedia.org/wiki/Temporal_anti-aliasing) Temporal Anti-Aliasing blends pixels among frames  
 [TAAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-3.html)
  Nvidia transparency adaptive anti-aliasing for transparent textures  
