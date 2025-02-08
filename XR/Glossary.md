@@ -91,6 +91,7 @@
 [mura](https://sensing.konicaminolta.asia/evaluating-display-mura/) fixed pattern display brightness nonuniformity, which [SteamVR can correct](https://steamcommunity.com/app/250820/discussions/0/1640912849406860288/)  
 [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
+[NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector) modify or add game profiles in Nvidia driver database  
 [OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, *may* [speed performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
  &emsp;	by [forwarding calls](https://fredemmott.com/blog/2022/05/29/vr-software-components.html) to OpenXR runtime, bypassing OpenVR  
 [OpenGL](https://en.wikipedia.org/wiki/OpenGL) - 2D and 3D graphics API, developed by Silicon Graphics  
