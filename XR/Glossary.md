@@ -92,6 +92,7 @@
 [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
 [NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector) modify or add game profiles in Nvidia driver database  
+[OBSC](https://github.com/benaclejames/OBSC) OBS-Studio plugin for OSC  
 [OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, *may* [speed performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
  &emsp;	by [forwarding calls](https://fredemmott.com/blog/2022/05/29/vr-software-components.html) to OpenXR runtime, bypassing OpenVR  
 [OpenGL](https://en.wikipedia.org/wiki/OpenGL) - 2D and 3D graphics API, developed by Silicon Graphics  
@@ -109,6 +110,8 @@
  &emsp; see xr-picker  
 [OpenXR-Runtime-Switcher](https://github.com/WaGi-Coding/OpenXR-Runtime-Switcher) quickly switch System Default OpenXR Runtime  
 [OPTIX](https://www.provideocoalition.com/optix-at-ces-2025-8k-pancake-module-rivals-apple-vision-pro/) 8K 115&deg; FoV module @ CES 2025  
+[OSC](https://opensoundcontrol.stanford.edu/) Open Sound Control - MIDI alternative  
+[OSP](https://ams-osram.com/innovation/technology/open-system-protocol) Open System Protocol for dynamic lighting applications  
 [OVR Lighthouse Manager](https://github.com/kurotu/OVR-Lighthouse-Manager) manage SteamVR base station power  
  &emsp; without HTC Vive or Valve Index  
 [Owl3D](https://www.owl3d.com/) for converting 2D video to 3D  
@@ -174,6 +177,7 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
 [VR](http://www.lavalle.pl/vr/web.html) VIRTUAL REALITY (link to
 	[Steven LaValle's](https://www.youtube.com/playlist?list=PLbMVogVj5nJSyt80VRXYC-YrAvQuUb6dh) free book)  
 [VRC](https://hello.vrchat.com/) VRChat  
+[VRCFT](https://github.com/benaclejames/VRCFaceTracking) VRChat eye and Face Tracking OSC App for avatars  
 [VRFSG](https://www.youtube.com/channel/UCtr084FH7rX9rUKTAlZFKXA) VR Flight Sim Guy - Somnium VR1 beta tester and YouTuber's channel  
 [VRGOXR](https://portal.vrgineers.com/user-guide/software/openxr/) vrgineers' OpenXR runtime AKA VRG runtime  
 [vrperfkit](https://github.com/fholger/vrperfkit) fholger's VR Performance Toolkit to upscale after rendering,  
