@@ -3,7 +3,8 @@
 [*VR1 FAQ*](FAQ.htm)  
 ## VR / XR Glossary
 [AC](https://assettocorsa.gg/assetto-corsa/) - [Assetto Corsa](https://www.overtake.gg/downloads/categories/assetto-corsa.1/),
-	*why* [*I care about VR / XR*](https://blekenbleu.github.io/pedals/#AC)  
+	*why* [*I care about VR / XR*](https://blekenbleu.github.io/pedals/#AC) - uses OpenVR  <br>
+ &emsp; VR JSONio dashboard via OpenKneeboard, SimHub "OBS browser address"  
 [adaptive anti-aliasing](https://www.amd.com/en/resources/support-articles/faqs/dh-012.html#DH-012-Aliasing%20)
  Radeon's TAAA alternative  
 [Air Link](https://www.meta.com/help/quest/articles/headsets-and-accessories/oculus-link/connect-with-air-link/)
@@ -97,7 +98,7 @@
  &emsp;	by [forwarding calls](https://fredemmott.com/blog/2022/05/29/vr-software-components.html) to OpenXR runtime, bypassing OpenVR  
 [OpenGL](https://en.wikipedia.org/wiki/OpenGL) - 2D and 3D graphics API, developed by Silicon Graphics  
 [OpenKneeboard](https://openkneeboard.com/) Fred Emmott's 2D overlay for OpenXR and OpenVR,  
- &emsp;	works with [**SimHub**](https://github.com/SHWotever/SimHub/wiki) dashboards  
+ &emsp;	works with [**SimHub**](https://github.com/SHWotever/SimHub/wiki) dashboardsi by SimHub "OBS browser address"  
 [openRBRVR](https://github.com/Detegr/openRBRVR)Open source Richard Burns Rally VR plugin, *partly* replacing RBRVR  
  &emsp; supports OpenVR and (32, but not 64-bit) OpenXR.&nbsp; [FAQ](https://github.com/Detegr/openRBRVR/blob/master/FAQ.md)  
 [OpenVR](https://en.wikipedia.org/wiki/OpenVR) SteamVR API since 2015  
@@ -192,6 +193,6 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
 [Vulkan / OpenGL](https://en.wikipedia.org/wiki/Vulkan) intended OpenGL replacement  
  &emsp; Vulcan is tuned for multiple CPU cores and modern GPUs  
 [WIMFOV](first.htm#WIMFOV) - **What is my Field of View?**  
-[XRFrameTools](https://github.com/fredemmott/XRFrameTools) Fred Emmott's OpenXR performance measurement tool  
+[XRFT](https://github.com/fredemmott/XRFrameTools) XRFrameTools - Fred Emmott's OpenXR performance measurement tool  
 [xr-picker](https://github.com/rpavlik/xr-picker) cross-platform tool for OpenXR runtime selection;
 	&nbsp; Fred Emmott recommends  
