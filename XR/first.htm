@@ -165,14 +165,32 @@ Foveated rendering works only in OpenXR supporting apps (<a href=VR1DFR.pdf>Artu
 <dr><br><a href=https://github.com/fredemmott/OpenXR-API-Layers-GUI>OpenXR API Layers GUI</a> automatically detects common errors, fixes most
 <dd>OpenXR API Layers GUI shows API layers in their actual order.
 
-<dt><br>late January 2025 update<dd>'huge performance boost' for OpenXR pipeline
+<dt><br>planned February 2025 update<dd>'huge performance boost' for OpenXR pipeline
 
+<dt><br><details><summary>Artur's <b>How to Use Somnium VR Headset with OpenXR and SteamVR</b></summary>
+<a name=OpenXR-Steamvr><dl></a>
+<dt>To avoid issues, ensure only the correct runtime is enabled in Somnium Tool
+<dd>then restart the VR application.
+<dt><br><b>Running OpenXR Applications</b>
+<dd>Turn off SteamVR - OpenXR applications don’t require SteamVR.<br> &emsp; - make sure it’s not running.
+<br>Disable Somnium SteamVR driver<br> &emsp; - Open Somnium Tool, turn off SteamVR driver to prevent conflicts.
+<br>Enable Somnium OpenXR runtime<br> &emsp; - In Somnium Tool, switch to OpenXR runtime.
+<br>This ensures VR1 correctly communicates by OpenXR.
+<br>Launch OpenXR game or application, for VR1 to now run it directly.
+
+<dt><br><b>Running SteamVR Applications</b>
+<dd> Enable the Somnium SteamVR driver<br> &emsp; - Open the Somnium Tool and activate the SteamVR driver.
+<br>Ensure no other VR applications are running<br> &emsp; - Conflicts may occur if another VR process is active.
+<br>Start SteamVR - Launch SteamVR to establish the connection.
+<br>Run any SteamVR-compatible game<br> &emsp; - Your headset should now function with SteamVR titles.
+
+<dt><br>Follow these steps to reliably switch between OpenXR and SteamVR.
+</dl></details>
 <dt><hr>
 </details>
 
 
-<dt><br>some folks want a shallower <a href=https://ai-space.fra1.cdn.digitaloceanspaces.com/website/files/Somnium_VR1_October_2024.zip>facemask frame</a> for more FoV
-<dd><img width=640 src=frame.png>
+<dt><br>Some folks want a shallower <a href=mask.htm><b>facemask frame</b></a>.
 
 <dt><br><details><summary><font size=+1><b>Initial impressions</b></font> - second thoughts, updated for 1 Nov fixes</summary><a name=initial> 
  <ul></a><li> <i>issues mostly addressed; &nbsp some continuing <a href=pupil_swim.htm>pupil swim</a> complaints</i><br><br>
