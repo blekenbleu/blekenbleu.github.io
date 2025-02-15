@@ -15,6 +15,7 @@
 
 <font size=+1>
 <h2>VR1 customers - hints, software, impressions</h2>
+[<b>Hint</b>:&nbsp; as with <a href=Glossary>Glossary</a>, <i>use browser search with term of interest</i>]
 <dl>
 <dt><a href=https://www.youtube.com/watch?v=IDRlksSJLos><b><i>Initial issues</i></b></a>.
 <dd><details><summary>fixed 1 Nov</summary>
@@ -42,6 +43,8 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 
 <dt><br><details><summary><b>software</b> and hints</summary>
 <a name=software><hr></a>
+<dt><br>planned February 2025 update<dd>'huge performance boost' for OpenXR pipeline
+
 <dt>Update to latest Nvidia driver before plugging in VR1;
 <dd>ignore any message about downgrading that driver.
 
@@ -83,38 +86,36 @@ IPD measured value shows <i>only in OpenXR</i>.<br><br>
 <li>VR1 app:&nbsp; SteamVR driver not installed (but works)<br>
  &emsp; switch to SteamVR Beta
 <li> IPD measurement available <i>only</i> in OpenXR
-<li>Default 'Somnium VR1' profile disables changing settings.
-<li>VR1 button remapping for Steam menus
+<li>Default 'Somnium VR1' profile disables changing settings.</ul>
+<dt><br><b><font color=green>Start VR1 <i>before</i> SteamVR or OpenXR app</font></b>
+<dt><br>Eye tracking and virtual desktop work in both SteamVR and OpenXR
+<dd>These features work as soon as SteamVR itself is running;<br>
+OpenXR needs application running in VR mode and rendering into VR1.<br>
+Foveated rendering works only in OpenXR supporting apps (<a href=VR1DFR.pdf>Artur's PDF</a>)
+<dt><br><a href=https://github.com/CXWorld/CapFrameX/releases>CapFrameX</a> Frametime capture and analysis tool
+<dd> based on Intel's PresentMon. Overlay by Rivatuner Statistics Server<br>
+<a href=https://www.avsim.com/forums/topic/593383-vr-benchmarks-for-nvidia-drivers/page/2/><b>VR Benchmarks for nVidia Drivers</b></a>
+
+<dt><br><details><summary><b>SteamVR</b></summary>
+<ul><li>VR1 button remapping for Steam menus
 <br> &emsp; in VR1 tool in menu Buttons
 <br> &emsp; in SteamVR > Menu > Developer > Debug commands
 <li>Space warp (motion reprojection)<br>
 <i>only</i> in OpenXR apps supporting spacewarp/depth map
 <li>Resolution slides shows 0x0 resolution when SteamVR is off
-
 </ul>
-
-<dt><br><b><font color=green>Start VR1 <i>before</i> SteamVR or OpenXR app</font></b>
 
 <dt><br><a href=https://bytebitebit.com/cpu/how-to-calibrate-steam-vr/><b>Steam VR setup</b></a>
  &nbsp <a href=https://github.com/kurotu/OVR-Lighthouse-Manager>OVR Lighthouse Manager</a> -
 	<a href=BaseStation/base_station.htm>Base station</a>
-
 <dt><br><b>SteamVR</b> apps:
  &nbsp; <i>first</i> launch SteamVR,<dd>
  <i>then</i> application (especially MSFS) performance seems better,<br>
  e.g. head movement smoothness.
-
-<dt><br>Eye tracking and virtual desktop work in both SteamVR and OpenXR
-<dd>These features work as soon as SteamVR itself is running;<br>
-OpenXR needs application running in VR mode and rendering into VR1.<br>
-Foveated rendering works only in OpenXR supporting apps (<a href=VR1DFR.pdf>Artur's PDF</a>)
-
 <dt><br>Artifacts, e.g. margin flicker, audio interference
 <dd><ul><li>installing SteamVR beta removes some artifacts<br><img width=480 src=Betas.png></ul>
-
 <dt><br><a href=https://www.reddit.com/r/SteamVR/comments/118vlrl/fix_for_rtx_4090_and_vr_tracking_input_latency_lag/><b>SteamVR vsync_to_photons_increment</b></a>
  for RTX 4090 VR tracking lag
-
 <dt><br>SteamVR IPD
 <dd>Press three-lined menu button at SteamVR top for developer console,<br>
  in Developer menu section and finally selecting the Web Console.<br>
@@ -122,40 +123,33 @@ Foveated rendering works only in OpenXR supporting apps (<a href=VR1DFR.pdf>Artu
  Alternatively navigate to <a href=http://localhost:27062/console/index.html>this link (while SteamVR is running)</a>.<br>
  From there, the command:&nbsp <code>settings steamvr.ipd</code><br>
  should return IPD in meters. Eg. <code>steamvr.ipd: 0.063</code> for an IPD of 63mm.
-
-<dt><br><a href=https://www.ultraleap.com/company/news/blog/software-apps-leap-2/>ultraleap 2 desktop software</a>
- - <a href=https://leap2.ultraleap.com/demos/widgets/>Widgets</a>
 <dt><br><a href=https://store.steampowered.com/app/908520/fpsVR/>fpsVR SteamVR app</a>
 <dd>SteamVR developer settings "show GPU performance graph in headset"
+</details>
+
+<dt><br><a href=https://www.ultraleap.com/company/news/blog/software-apps-leap-2/>Ultraleap 2 desktop software</a>
+ - <a href=https://leap2.ultraleap.com/demos/widgets/>Widgets</a>
+<dt><br><a href=https://github.com/SDraw/driver_leap><b>Hand tracking</b> - Ultraleap</a>
+<dd>fork of Leap Motion controller SteamVR driver with updated vendor libraries<br>
+<img src=https://github.com/SDraw/driver_leap/raw/master/.github/img_01.png>
+
 
 <dt><br><b>Foveated rendering</b>
 <dd><i>Only</i> in <b>OpenXR</b>, e.g.
 <a href=https://github.com/KhronosGroup/OpenXR-SDK-Source/tree/main/src/tests/hello_xr><code>hello_xr</code></a>
 
-<dt><br><a href=https://github.com/SDraw/driver_leap><b>Hand tracking</b> - Ultraleap</a>
-<dd>fork of Leap Motion controller SteamVR driver with updated vendor libraries<br>
-<img src=https://github.com/SDraw/driver_leap/raw/master/.github/img_01.png>
-
 <dt><br><a href=https://github.com/aashishvasu/OpenComposite/>OpenComposite Runtime Switcher</a>
 <dd>issues when using VRGOXR;&nbsp; instead, try SteamVR OpenXR runtime
-
-<dt><br><a href=https://github.com/CXWorld/CapFrameX/releases>CapFrameX</a> Frametime capture and analysis tool
-<dd> based on Intel's PresentMon. Overlay by Rivatuner Statistics Server<br>
-<a href=https://www.avsim.com/forums/topic/593383-vr-benchmarks-for-nvidia-drivers/page/2/><b>VR Benchmarks for nVidia Drivers</b></a>
-
-<dt><br><b>OpenXR Toolkit</b>
-<dd><a href=https://mbucchia.github.io/OpenXR-Toolkit/troubleshooting.html#try-the-legacy-menu-mode>'Legacy menu' option</a> in the Menu tab
-
-<a name=WIMFOV>
-<dt></a><br><a href=https://boll.itch.io/wimfov>WhatIsMyFieldOfView</a> AKA WIMFOV<dd><img width=680 src=WIMFOV.png>
-<dd>other FoV tools are paid and/or reportedly need controllers
-
-<dt><br>Quad Views
-<dd>select option in DCS;<br>disable OpenXR toolkit
 
 <dt><br><a href=https://github.com/maluoi/openxr-explorer>OpenXR Explorer</a>
 <dd>add the VR1 runtime by editing the list and adding this entry:<br>
 <code>windows VrEngineers C:\ProgramData\vrg\oxr\vrg_openxr.json</code>
+
+<dt><br><b>OpenXR Toolkit</b>
+<dd><a href=https://mbucchia.github.io/OpenXR-Toolkit/troubleshooting.html#try-the-legacy-menu-mode>'Legacy menu' option</a> in the Menu tab
+
+<dt><br>Quad Views
+<dd>select option in DCS;<br>disable OpenXR toolkit
 
 <dt><br><a href=https://github.com/fredemmott/XRFrameTools>XRFrameTools</a>
 - live display of frame rate, interval, etc
@@ -165,7 +159,9 @@ Foveated rendering works only in OpenXR supporting apps (<a href=VR1DFR.pdf>Artu
 <dr><br><a href=https://github.com/fredemmott/OpenXR-API-Layers-GUI>OpenXR API Layers GUI</a> automatically detects common errors, fixes most
 <dd>OpenXR API Layers GUI shows API layers in their actual order.
 
-<dt><br>planned February 2025 update<dd>'huge performance boost' for OpenXR pipeline
+<a name=WIMFOV>
+<dt></a><br><a href=https://boll.itch.io/wimfov>WhatIsMyFieldOfView</a> AKA WIMFOV<dd><img width=680 src=WIMFOV.png>
+<dd>other FoV tools are paid and/or reportedly need controllers
 
 <dt><br><details><summary>Artur's <b>How to Use Somnium VR Headset with OpenXR and SteamVR</b></summary>
 <a name=OpenXR-Steamvr><dl></a>
@@ -177,18 +173,36 @@ Foveated rendering works only in OpenXR supporting apps (<a href=VR1DFR.pdf>Artu
 <br>Enable Somnium OpenXR runtime<br> &emsp; - In Somnium Tool, switch to OpenXR runtime.
 <br>This ensures VR1 correctly communicates by OpenXR.
 <br>Launch OpenXR game or application, for VR1 to now run it directly.
-
 <dt><br><b>Running SteamVR Applications</b>
 <dd> Enable the Somnium SteamVR driver<br> &emsp; - Open the Somnium Tool and activate the SteamVR driver.
 <br>Ensure no other VR applications are running<br> &emsp; - Conflicts may occur if another VR process is active.
 <br>Start SteamVR - Launch SteamVR to establish the connection.
 <br>Run any SteamVR-compatible game<br> &emsp; - Your headset should now function with SteamVR titles.
-
 <dt><br>Follow these steps to reliably switch between OpenXR and SteamVR.
 </dl></details>
-<dt><hr>
+
+<dt><br><details><summary>Shodah's basic hardware checks</summary><dl>
+<dt>I go full ADHD clicking of buttons all the time during my extensive testing
+<br>and I've only ever experienced one crash of MR due to using upscaling on old GPU drivers.
+<br>This is on a peasant 5800x3D, 3080ti, 32gb 3600mhz, system.<br><br><ul>
+<li>If you're on an X3D CPU, please make sure resizeable BAR and above 4G decoding
+<br> are enabled (might as well disable SMT if you don't use virtual machines)
+<li>Triple check you've got XMP/EXPO enabled for your RAM
+<li>VR1 experience was sluggish with these settings disabled after fresh Windows 11 install.
+<li>Try disabling Windows Game mode and GPU scheduling,
+<br> it might not do anything, but that'll rule out Windows being Windows.
+<li>Disable Nvidia overlay, disgusting amount of issues from that in VR overall.
+<li>While you're in there just make sure there's no other wanky settings turned on.
+<li>Go to Nvidia control panel, 3D settings and hit default button
+<li>Now set default 3D profile power to "prefer maximum performance"
+<br>and while you're in there for a cheeky 5%-10% frame-time boost,
+<br> find a setting called Texture filtering, set that to performance.
+<li>Don't be offended, but check your power profile,
+<br> make sure it's on highest performance.</ul>
+</dl></details>
 </details>
 
+<dt><br><hr>
 
 <dt><br>Some folks want a shallower <a href=mask.htm><b>facemask frame</b></a>.
 
@@ -733,7 +747,7 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
   Also the buttons seems to not work for me in the software.<br>
  At least by trying to open Mixed Reality mode or the button for the Virtual Desktop, nothing happens.<br>
  I've set one button for IPD measurement, and by clicking that button,<br>
- it's at least trying to start (you see the overlay), but is of course failing due to the eyetracking bug.<br>
+ it's at least trying to start (you see the overlay), but is of course failing due to the eye tracking bug.<br>
  After about 30 minutes, the temperatur of the Headset is very warm.<br>
  You feel it, if you don't have it on your head all the time,<br>
  and after a few minutes you put it on, then it's very warm. So very good for the winter 😜 <br>
