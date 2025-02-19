@@ -191,6 +191,7 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
 	[Variable Rate Shading](https://devblogs.microsoft.com/directx/variable-rate-shading-a-scalpel-in-a-world-of-sledgehammers/)  
 [VRSS](https://developer.nvidia.com/blog/nvidia-vrss-a-zero-effort-way-to-improve-your-vr-image-quality/)
  Nvidia Variable Rate Supersampling - always centered  
+[VRto3D](https://github.com/oneup03/VRto3D) OpenVR Driver for e.g. 3D TVs or AR Glasses (Rokid, Xreal, Viture, RayNeo)  
 [Vulkan / OpenGL](https://en.wikipedia.org/wiki/Vulkan) intended OpenGL replacement  
  &emsp; Vulcan is tuned for multiple CPU cores and modern GPUs  
 [WIMFOV](first.htm#WIMFOV) - **What is my Field of View?**  
