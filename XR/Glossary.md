@@ -197,5 +197,5 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
  &emsp; Vulcan is tuned for multiple CPU cores and modern GPUs  
 [WIMFOV](first.htm#WIMFOV) - **What is my Field of View?**  
 [XRFT](https://github.com/fredemmott/XRFrameTools) XRFrameTools - Fred Emmott's OpenXR performance measurement tool  
-[xr-picker](https://github.com/rpavlik/xr-picker) cross-platform tool for OpenXR runtime selection;
+[xr-picker](first.htm#xr-picker) cross-platform tool for OpenXR runtime selection;
 	&nbsp; Fred Emmott recommends  
