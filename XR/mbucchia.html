@@ -13,6 +13,12 @@
 <h2>SteamVR, OpenXR &amp OpenVR</h2>
 
 <dl>
+<dt>Who's on first?
+<dd>SteamVR will not access headsets' OpenXR runtimes
+<dd>Use OpenComposite to run a SteamVR application<br>  &emsp; on headsets having only OpenXR runtimes
+<br> &emsp; - using OpenComposite with VR1 OpenXR runtime<br> &emsp; &nbsp; seemingly offers no benefit
+<dd>SteamVR provides an OpenXR runtime<br>  &emsp; for OpenXR applications to run on OpenVR headsets
+<br> &emsp; - enabling both OpenVR and OpenXR runtimes<br> &emsp; &nbsp; simultaneously for VR1 is seemingly problematic
 <dt><details><summary><b>Foveated Rendering</b></summary>
 	<a name=FR><dd><ul> <li></a><a href="https://github.com/mbucchia/Quad-Views-Foveated"><b>Eye-TrackedFoveated Rendering via Quad Views</b></a><br>
 	for <b>OpenXR</b> games, e.g. DCS and Pavlov VR
@@ -31,8 +37,6 @@
 	 through <a href="#OC">OpenComposite</a>.
 	<li><a href="https://www.racedepartment.com/threads/single-pass-stereo.255509/#post-3676336">Content Manager interactions with OpenXR toolkit</a>
 	</ul></details>
-
-<dt><a href="https://steamcommunity.com/app/1012790/discussions/0/3824162050996037250/">Graphics Settings Guide</a><dd>from Into the Radius VR
 
 <dt>image sharpening (impacts performance)
 <dd><a href="https://www.reddit.com/r/hoggit/comments/11omwxn/for_openxr_reverb_g2_which_should_i_use_nis_fsr/">CAS
