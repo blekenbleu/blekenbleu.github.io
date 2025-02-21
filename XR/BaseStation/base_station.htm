@@ -10,7 +10,7 @@
 <font size=-1><a href="./"><i>back</i></a></font><br>
 
 <font size=+1>
-<h2>Steam VR outside-in tracking base stations</h2>
+<h2>Steam VR "outside-in" tracking base stations</h2>
 One of either suffices for seated VR.
 <dl><dt><b>Version 1.0 vs 2.0</b>
 <dd>2.0:&nbsp up to 4 lighthouses can be used,<br> optical sync by swept laser
@@ -21,14 +21,78 @@ instead of separate area flash.<br>
 <ul><li>first with an irregular layout of 15 LEDs
    <li>second with a square 3x3 grid of 9 LEDs</ul>
 <img src=flashing.jpg>
-<br>
-V 1.0 controllers work only with V1.0 lighthouses.
+<br>V 1.0 controllers work only with V1.0 lighthouses.
+<br>V2.0 controllers are backward compatible with V1.0 lighthouses.
+<dd><details><a name=joyless><summary></a><b><i>no joy</i></b></summary>
+At best, SteamVR reports:<br><img src=NotTracking.jpg>
+<br>My impression is that something, somehow is supposed to
+<br> synchronize a sweeping IR beam from it to VR1, and something
+<br>(VR1?) communicates detected sweeps to SteamVR software.
+
+<br><br>On my Windows 11 PC, Bluetooth did not detect the base station
+<br>until after <a href=https://github.com/kurotu/OVR-Lighthouse-Manager>OVR Lighthouse Manager</a> installation,
+<br>which also did not detect the base station until after typing in its ID.
+<br>Windows <i>still</i> did not detect it
+<br>before several base station <code>Power On</code> and <code>Sleep</code> cycles. 
+<br>Windows Bluetooth Settings report base station <code>Not connected</code>
+<br>except briefly while OVR Lighthouse Manager cycles it.
+
+<br><br><b>How does SteamVR determine whether base station is tracking devices?</b>
+<br>Without tracking, VR1 displays only <b>Virtual Desktop</b> and <b>Mixed Reality</b>.
+
+<br><br>How to wake up VR1 for SteamVR???
+<br>What is <code>Mode A</code>?&nbsp;  (seemingly channel A)
+
+<br><br>Smartphone cameras reportedly show base station IR beams.
+<br>This is what my iPhone SE 2020 camera shows:<br><img src=smartphone.jpg>
+
+<br><br>Base station instructions have <i>nothing</i> about "mode a",
+<br>only Channel button and Channel indicator, which displays <b>A</b>.
+<br>The SteamVR message has NOTHING about setting mode A,
+<br>simply displaying in the corner:&nbsp; <img align=middle src=ModeA.jpg>
+
+<br><br>Setting base station channel to <b>b</b> yields these SteamVR message boxes:
+<br><img src=ModeB.jpg>
+<br>Something gets communicated between the base station and SteamVR..
+<br><img src=T.jpg>
+<br>As I have come to expect with SteamVR,
+<br><code>More info</code> means only <i>more drivel</i>, irrelevant to base stations...
+<br><img src=wake.jpg>
+<br>VR1 still displays Somnium Tool Virtual Desktop and Mixed Reality
+<br>otherwise only light gray...
+
+<br><br>How to get <b>somnium</b> listed in SteamVR <b>Manage SteamVR Add-Ons</b>?
+<br>I went thru the ordeal of uninstalling and reinstalling Somnium VR1 Tool
+<br>which required rebooting and was interrupted by Windows installing 24H2...
+<br>but <b>Add-Ons</b> still does not show <b>somnium</b>:
+<br><img src=Add-Ons.jpg>
+
+<br><br>Where is VR1 Tool tracking test option?
+<br>- I have no idea how to check or update base station firmware
+<br>&emsp; blindly connecting its USB port to a PC seems doomed;
+<br>&emsp; powering base station on with channel button pressed
+<br>&emsp; reportedly puts it in firmware update mode,
+<br>&emsp; but no indication <b>how to recover if/when that fails</b>,
+<br>&emsp; as often as VR1 and SteamVR for me <i>already have, multiple times</i>.
+<br>&emsp; <img src=bluetooth.jpg>
+<br><br>&emsp; <img src=update.jpg>
+<br>- Having previously used only WMR headsets,
+<br>&emsp; I have never seen <i>any base station work</i>.
+<br>- I can feel this base station housing slightly vibrate when on,
+<br>&emsp; then stop when OVR Lighthouse Manager Sleeps it...
+
+
+<dd><br>
+</details>
+
 <dt>Version 2.0:&nbsp two curved face revisions with 150 degree FoV, 5.5m max separation
 <dd><ul><li> built by Valve for Vive Pro, slightly more compact.<br>
  HTC provided power adapter,
   port for syncing to V1.0, but never developed.
 <li>second built by Valve for Index;&nbsp slight appearance but no functional difference.</ul>
-V2.0 controllers are backward compatible with V1.0 lighthouses.<br><br>
+&emsp; <img src=shipping.jpg>
+
+<br><br>
 <dt>SadlyItsBradley video
 <dd><iframe width=96% height="480" src="https://www.youtube.com/embed/w1bN372A4Ls"></iframe><br>
 <dt><br>Hackaday Supercon 2016 video
