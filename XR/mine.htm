@@ -52,7 +52,11 @@
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=72s>Home screen</a> &nbsp; <i>firmware and software</i> - <b>quick actions</b>
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=101s>Settings</a><ul>
 <li><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=108s>Rendering</a>
-<li><details><summary><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=140s>Foveated Rendering</a></summary><pre>
+<li><details><a name=foveated><summary></a><a href=https://www.youtube.com/watch?v=2xkKfp5cYy0&t=140s>Foveated Rendering</a></summary>
+&nbsp; - <a href=VR1DFR.pdf>Enabling dynamic foveated rendering</a> (Artur's PDF)
+<br>Dynamic foveated rendering works only in OpenXR apps
+<br> &emsp; that support it, e.g.
+<a href=https://github.com/KhronosGroup/OpenXR-SDK-Source/tree/main/src/tests/hello_xr>hello_xr</a><pre>
 VR1 OpenXR is fully compatible with DCS quad views.
 If FPS drops when using quad views,
 lower VR1 Tool main resolution setting to about 40%.
@@ -83,19 +87,39 @@ with 25%/25% foveated size.
 </ul>
 <li>If, <i>after some days</i>, VR1 image doesn't feel right with defaults,
 <details><summary>tweak settings</summary>
- &emsp; warping profiles + rendered FOV + focal distance value<br>
+ &emsp; <a name=warping><b>Warping profiles</b></a> + rendered FOV + focal distance value<br>
  &emsp; HEAVILY change eyes' perceptions:<ol>
 <li>Measure <i>seen</i> FOV with any FOV tool. 
-<li>Setup VR1 Tool values according to <i>seen</i> FoV. 
+<li>Set VR1 Tool values according to <i>seen</i> FoV. 
+<li>Pick best focal distances between `-10` and `+10`.
 <li>After that, try different
 <a href=https://discord.com/channels/494994753146847233/1301858258902061056/1314650121023000669><b>warping profiles</b></a>
+&emsp; - &emsp;
+<a href=https://discord.com/channels/494994753146847233/1301858258902061056/1312149169934307388><i>older profiles</i></a>
+</ol>
+
 <br>Close VR1 tool and vrg services <b>before</b> profile changes;<br>
-- ignore update message after warping profile changes.<br> &emsp; &emsp;
-<a href=https://discord.com/channels/494994753146847233/1301858258902061056/1312149169934307388><i>older profiles</i></a><br>
-- In folder:&nbsp <code>C:\ProgramData\vrg\warping\SomniumVR1\</code><br>
+- ignore update message after warping profile changes.
+<br> - In folder:&nbsp <code>C:\ProgramData\vrg\warping\SomniumVR1\</code><br>
    &emsp; replace files: <code>warping_left.bson</code> and <code>warping_right.bson</code>
-<li>Pick best focal distances between `-10` and `+10`.
-</ol></details>
+<br> - best results may employ mixing different left and right profiles.
+<pre>There always will be slight warping in aspheric lenses.
+In case of VR1 you can’t see it in vast majority of use cases
+ unless you artificially look for it.
+
+Our aspheric lenses are laser tested for an incredible precision
+ with maximum tight tolerances.
+
+People do need to adapt to aspheric lenses
+ and 99.9% do adapt and love it!
+
+Good aspheric lenses (like in VR1) in bring a lot of advantages
+ over any other lenses on the market so far.
+Clarity, brightness, sharpness, sweet spot and FOV among other things.
+
+- Artur | Founder & CEO
+</pre> 
+</details>
 </ul>
 </ul>
 <dt><a name=SteamVR><h4>SteamVR</h4></a>
