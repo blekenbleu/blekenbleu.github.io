@@ -15,6 +15,5 @@
 	- [*December 2024*](XR/Dec2024.htm)  
 - [other information sources](XR/Somnium_VR1_sources.htm) - [XR / VR Glossary](XR/Glossary)  
 	- [SteamVR, OpenXR & OpenVR](XR/mbucchia.html) - *Matthieu Bucchianeri, Fred Emmott*  
-
- &emsp; <img width=480 src=https://store.somniumspace.com/cdn/shop/files/VR1_0006_VR_ET_MR_HT_2_1500x_crop_center.jpg><br>  
+	![](XR/VR1_Ultimate.jpg)
 - 20+ people `x` 3 years `=` millions of euros invested
