@@ -42,8 +42,7 @@
  by [Ultraleap handtracking](https://www.youtube.com/watch?v=21v4m3ATeqE)  
 [DSC](https://developer.nvidia.com/blog/dsc-higher-fidelity-vr/) Digital Stream Compression - *visually* lossless on DisplayPort 1.4a, HDMI 2.1  
 [EQAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) enhanced quality anti-aliasing - AMD's CSAA implementation  
-[eyebox](https://www.light-am.com/fileGXJZZ/journal/article/xjzz/2021/3/PDF/LAM2020120035.pdf)
- small HMD regions for pupils that optimize viewing  
+[eyebox and sweet spot](eyespot.htm) small HMD regions for pupils that optimize viewing  
 [eye relief](https://en.wikipedia.org/wiki/Eye_relief) - for HMDs, eye relief `tolerance` is one eyebox dimension  
 [eye tracking](https://en.wikipedia.org/wiki/Eye_tracking) needed for DFR, wanted for social VR    
 [FFR](https://www.tomshardware.com/news/oculus-fixed-foveated-rendering-technology,36781.html) fixed foveated rendering  
@@ -168,7 +167,7 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
 [SteamVR](https://store.steampowered.com/steamvr) Valve's VR tools and services, e.g. OpenVR, Lighthouse Tracking  
 [strain](https://www.testdevices.com/spin-testing/optical-strain-measurement/) visible artifacts, often with polarized light, from optic inhomogeneities,  
  &emsp; often induced by mechanical stresses, AKA [Schlieren](https://en.wikipedia.org/wiki/Schlieren)  
-[sweet spot](https://vrlowdown.com/why-is-vr-blurry/) HMD fields near lens centers with good resolution and fewer aberrations  
+[sweet spot](eyespot.htm) viewing field near lens centers with better resolution and fewer aberrations  
 [TAA](https://en.wikipedia.org/wiki/Temporal_anti-aliasing) Temporal Anti-Aliasing blends pixels among frames  
 [TAAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-3.html)
  Nvidia transparency adaptive anti-aliasing for transparent textures  
