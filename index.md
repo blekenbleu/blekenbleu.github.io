@@ -16,7 +16,7 @@
   - [Special Error Diffusion](../static/ImageProcessing/sped.html)
   - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](../static/ImageProcessing/TinyML.htm)  
 
-### [Arduino custom USB sketches](Arduino/)
+### Arduino [custom STM32 USB sketches](Arduino/)
 - e.g. for harness tensioning servos
     - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
     - COM ports work from SimHub, but most sim games expect <a href="Windows/HID/#DI">DirectInput</a>
@@ -24,16 +24,15 @@
         but can drive *any* COM port by **SimHub Custom Serial devices**  
         Some ESP32 / STM32 may appear as Arduino USB COM ports
 
-  - **Arduino IDE Alternatives**
-    - There are [*many*](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html).
-    - [**Visual Micro**](https://www.visualmicro.com/) supports debugging in Visual Studio  
-      (which I use e.g. for [**SimHub plugins**](../static/SimHub/))
-      - in [VisualStudio **Marketplace**](https://www.visualmicro.com/)  
-      - [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
-      - Options using Visual Studio **Code**, *a confusingly named editor*,  
-        are discounted;&nbsp; I prefer [**GVim**](https://www.vim.org/download.php)
-    - [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/0.31/)
-      - interesting, because [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
+#### Arduino IDE [Alternatives](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html)
+- [**Visual Micro**](https://www.visualmicro.com/) supports debugging in
+  - [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)  (as used e.g. for [**SimHub plugins**](../static/SimHub/))
+  - [Visual Micro in VisualStudio **Marketplace**](https://www.visualmicro.com/)  
+	- [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
+- Discounted:&nbsp; options using Visual Studio **Code**, *a confusingly named editor*  
+	- I prefer [**GVim**](https://www.vim.org/download.php)
+- [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/0.31/)
+	- interesting, because [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
   - [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black)
   - [**ESP32-S[2-3]**](../static/ESP32/) for **composite USB** and wireless Arduino devices  
 
@@ -130,7 +129,7 @@
 - **[Sound and VoiceMeeter](Windows/WinAudio.htm), [VST hosts](Windows/VSThost.htm) and [VST3 plugins](Windows/steinberg/)**  
 - Storage shortage:&nbsp;  [Dell Inspiron 13 7000 2-in-1 Windows 10 NVMe SSD](Windows/NVMe/Inspiron13.htm)  
 - [Vim and X-Mouse](VimTXmouse)
-- Visual Studio Community 2017 *abuse*:&nbsp; [shared installation](VSC2017)
+- Visual Studio Community *abuse*:&nbsp; [shared installation](VSC2017)
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](Windows/NVMe/)  
 
 ### HVAC
