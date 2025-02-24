@@ -25,6 +25,8 @@
  &emsp; (Windows 11 often parks 18/20 of i5-13600K 6P + 8E cores)  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
 [CTS](https://github.com/KhronosGroup/OpenXR-CTS) OpenXR™ Conformance Test Suite (OpenXR-CTS)  
+[DCS](https://store.steampowered.com/app/223750/DCS_World_Steam_Edition/) OpenXR sim supporting DFR &nbsp; -
+[graphics settings video](https://www.youtube.com/watch?v=SxQhOgDyIlQ)  
 [DFR](https://www.tobii.com/blog/what-is-foveated-rendering) dynamic foveated rendering - key for optimizing VR performance  
 [Direct3D](https://learn.microsoft.com/en-us/windows/win32/direct3d) - drawing primitives, shading in Windows DirectX graphics, gaming API  
  &emsp; D3DX12 AKA Direct3D 12 is the current version;&nbsp;  most games use 11 or earlier  
