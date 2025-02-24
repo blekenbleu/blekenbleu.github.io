@@ -116,6 +116,7 @@
 [OPTIX](https://www.provideocoalition.com/optix-at-ces-2025-8k-pancake-module-rivals-apple-vision-pro/) 8K 115&deg; FoV module @ CES 2025  
 [OSC](https://opensoundcontrol.stanford.edu/) Open Sound Control - MIDI alternative  
 [OSP](https://ams-osram.com/innovation/technology/open-system-protocol) Open System Protocol for dynamic lighting applications  
+[overlay](ovr.htm) 2D content on 3D view  
 [OVR Lighthouse Manager](https://github.com/kurotu/OVR-Lighthouse-Manager) manage SteamVR base station power  
  &emsp; without HTC Vive or Valve Index  
 [Owl3D](https://www.owl3d.com/) for converting 2D video to 3D  
