@@ -38,8 +38,7 @@
  &emsp; *reduced* resolution *rendering*, based on TAA, liable to artifacts  
 [DLSS-G](https://github.com/NVIDIAGameWorks/Streamline/blob/main/docs/ProgrammingGuideDLSS_G.md) AKA DLSS-FG - Nvidia frame generation  
 [DLSSTweaks](https://github.com/emoose/DLSSTweaks) - change render resolution, force DLAA onto DLSS-supported titles  
-[`driver_leap`](https://github.com/SDraw/driver_leap) SteamVR driver for [emulating controllers](https://www.youtube.com/watch?v=RdGnCV2g_oE)
- by [Ultraleap handtracking](https://www.youtube.com/watch?v=21v4m3ATeqE)  
+[`driver_leap`](Ultraleap.htm#driver) SteamVR driver for emulating controllers by Ultraleap handtracking  
 [DSC](https://developer.nvidia.com/blog/dsc-higher-fidelity-vr/) Digital Stream Compression - *visually* lossless on DisplayPort 1.4a, HDMI 2.1  
 [EQAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) enhanced quality anti-aliasing - AMD's CSAA implementation  
 [eyebox and sweet spot](eyespot.htm) small HMD regions for pupils that optimize viewing  
@@ -56,7 +55,7 @@
 [FSR](https://gpuopen.com/fidelityfx-superresolution-2/) AMD FidelityFX Super Resolution alternative to DLSS  
 [FXAA](https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing) Fast Approximate Anti-Aliasing tries to clean up jaggies *after* rendering  
 [HAGS](https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/) Hardware Accelerated GPU Scheduling  
-[HAM](https://steamcommunity.com/app/250820/discussions/0/4293692546853177054/)Hidden Area Mask / stencil
+[HAM](https://steamcommunity.com/app/250820/discussions/0/4293692546853177054/) Hidden Area Mask / stencil  
 [HelloXR](https://developer-docs.magicleap.cloud/docs/guides/openxr/getting-started/openxr-helloxr/) - Magic Leap 2 sample OpenXR application  
 [hello_xr](https://github.com/KhronosGroup/OpenXR-SDK-Source/blob/main/src/tests/hello_xr) - part of [OpenXR&trade; Software Development Kit (SDK) Sources Project](https://github.com/KhronosGroup/OpenXR-SDK-Source)  
  &emsp; "Handy as it's really basic, logs a lot, and supports pretty much every graphics API."  
@@ -75,7 +74,7 @@
 [iVRy](https://steamcommunity.com/app/992490) a commercial app for [streaming SteamVR](https://github.com/PhoneVR-Developers/PhoneVR) to wireless devices  
 [IW3](https://github.com/nagadomi/nunif/) MIT license 2D image/video to 3D conversion  
 [judder](https://www.howtogeek.com/753131/what-is-judder-and-why-do-tvs-have-this-problem/) aliasing between render and display frame rates  
-[Leap Motion Controller 2](https://leap2.ultraleap.com/products/leap-motion-controller-2/) by Ultraleap  
+[Leap Motion Controller 2](Ultraleap.htm#controller) by Ultraleap  
 [Leapify](https://github.com/Nyabsi/leapify) switches between controllers and Hand Tracking  
 [LSFG](https://steamcommunity.com/app/993090/discussions/0/4418677017727367960/) Lossless Scaling FrameGen
 	["no substitute for DLSS"](https://www.xda-developers.com/lossless-scaling-hands-on/)  
@@ -173,7 +172,7 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
 [TAAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-3.html)
  Nvidia transparency adaptive anti-aliasing for transparent textures  
  &emsp; in 2 flavors: TrSSAA, TrMSAA  
-[Ultraleap](https://www.ultraleap.com/) hand tracking cameras and software  
+[Ultraleap](Ultraleap.htm) hand tracking cameras and software  
 [Valve Corporation](https://www.valvesoftware.com/) owner of Steam, dominant Windows PC game platform  
 [Virtual Desktop](https://www.vrdesktop.net/) AKA VD, often Guy Godin’s PCVR app;  
  &emsp; a second version links to wireless (standalone) headsets  
