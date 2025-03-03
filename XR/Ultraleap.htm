@@ -15,7 +15,7 @@
 <font size=+1>
 <h2>Somnium VR1 Ultraleap</font></h2><dl>
 <a name=controller>
-<dt></a><a href=https://leap2.ultraleap.com/products/leap-motion-controller-2>Leap Motion Controller 2</a> by Ultraleap
+<dt></a><a href=https://leap2.ultraleap.com/products/leap-motion-controller-2>Leap Motion Controller 2</a> by Ultraleap AKA Stereo IR170
 <dd><a href=https://www.ultraleap.com>Ultraleap</a> hand tracking cameras and software
 <br> - VR Gaming - Controller & Hands <a href=https://docs.ultraleap.com/ultralab/vr-gaming-controllers-and-hands.html>discussion</a>
 <dt>Not Yet Installed
@@ -44,13 +44,15 @@ ul::LicenseManagerCache::load_licenses()#462:  {
   "license_type": "Somnium OEM"
 }</pre>
 <a href=https://leap2.ultraleap.com/downloads/leap-motion-controller-2/>Hyperion version at ultraleap.com</a>:  v6.1.0.1 03/09/2024
+<br><a href=https://docs.ultraleap.com/hand-tracking/getting-started.html">Getting Started</a>
 
-<a name=plan><dt></a><font size=+2><b>Plan of attack</b></font>
+<a name=plan><dt><br></a><font size=+2><b>Plan of attack</b></font>
 <br>- since VR1 is already Hyperion, I will try Nyabsi's <a href=><b>Leapify</b></a> fork of <code>SDraw/driver_leap</code>,
 <dd>- <b>Leapify</b> appears to be at least somewhat Hyperion-aware
 <dd><a href=https://www.youtube.com/watch?v=3ZB1rpr6EA8>Atom Bomb Body's video</a> seems less awful than first supposed
-<br> - it demos Ultraleap's <a href=https://store.steampowered.com/app/2537360/Aurora/>Auroa SteamVR app</a>
-
+<br> - it demos Ultraleap's <a href=https://store.steampowered.com/app/2537360/Aurora/>Aurora SteamVR app</a>
+<dt>- since VR1 Ultraleap installation presumably includes VR1-specific configuration,
+<br> &emsp; updating to Ultraleap website Hyperion version could be problematic.
 <a name=driver>
 <dt><br></a><a href=https://github.com/SDraw/driver_leap>driver_leap</a> SteamVR Hand tracking <b><i>driver</i></b>
 <br>- <a href=https://forums.leapmotion.com/t/official-steamvr-and-leap-motion-integration/7806/5>Sep 2020 pointer from forums.leapmotion.com</a>
@@ -65,6 +67,7 @@ ul::LicenseManagerCache::load_licenses()#462:  {
 
 <dt><a href=https://developer-docs.magicleap.cloud/docs/guides/openxr/getting-started/openxr-helloxr/>HelloXR</a>
 <dd>Magic Leap 2 sample OpenXR application
+<dt><a href=https://support.ultraleap.com/hc/en-us/articles/18545021423389-Hyperion-Troubleshooting-Guide>Hyperion Troubleshooting Guide</a>
 
 <dt><a href=https://github.com/Nyabsi/leapify>Leapify</a>
 <dd>driver_leap fork switches between controllers and Hand Tracking
@@ -74,20 +77,18 @@ ul::LicenseManagerCache::load_licenses()#462:  {
 <dd>Reports confidence values for gestures matched
 
 <dt><a href=https://leap2.ultraleap.com/downloads/leap-motion-controller/>Software Downloads</a>
-<dd><a href=https://store.steampowered.com/app/2627140/Ultraleap_Gemini/>Ultraleap Gemini on Steam</a>
-<br> - Blocks, Paint, Cat Explorer
-
-<dd><a href=https://store.steampowered.com/app/2705560/Ultraleap_Hyperion/>Ultraleap Hyperion on Steam</a>
-<br> - Microgestures, Barista, Launcher
+<dd><a href=https://store.steampowered.com/app/2705560/Ultraleap_Hyperion/>Ultraleap Hyperion app on Steam</a>
+<br> - Microgestures, Barista, <a href=https://store.steampowered.com/app/3097820/Ultraleap_Hyperion__Launcher/>Launcher<a>
 
 <dt>YouTube
 <dd><a href="https://www.youtube.com/watch?v=jgCPd5ieL4Y">OpenXR
  Toolkit with UltraLeap</a>
 <br><a href=https://www.youtube.com/watch?v=21v4m3ATeqE>Ultraleap handtracking</a>
-<br><a href=https://www.youtube.com/watch?v=RdGnCV2g_oE>SDraw driver_leap SteamVR Leap Motion driver. Overlay input</a>
 <br><a href=https://www.youtube.com/watch?v=_0MuKjFxxw4>Assetto Corsa Handtracking (Leap motion)</a>
 <br> - Works with CSP preview 1.79.1 ( and later)
 <br> &nbsp; and SDraw driver_leap from GitHub.
+<dd><a href=https://www.youtube.com/watch?v=21v4m3ATeqE>Hand Tracking on ANY VR Headset Just Got BETTER</a> Gemini <i>Jul 2023</i> YouTube
+<br><a href=https://www.youtube.com/watch?v=RdGnCV2g_oE>SDraw driver_leap SteamVR Leap Motion driver. Overlay input</a>
 </dl>
 </td></tr><tr><td align=center>
 
