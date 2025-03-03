@@ -17,6 +17,7 @@
 <a name=controller>
 <dt></a><a href=https://leap2.ultraleap.com/products/leap-motion-controller-2>Leap Motion Controller 2</a> by Ultraleap
 <dd><a href=https://www.ultraleap.com>Ultraleap</a> hand tracking cameras and software
+<br> - VR Gaming - Controller & Hands <a href=https://docs.ultraleap.com/ultralab/vr-gaming-controllers-and-hands.html>discussion</a>
 <dt>Not Yet Installed
 <dd><img width=360 src=ultraleap.jpg>
 <pre>Don't worry..
@@ -26,23 +27,43 @@ or unplug and replug USB, <font color=red><b>then rerun wizard</b></font>..
 Alternatively, manually run the Ultraleap installer
 inside the program files folder
 or via the software tab.. So much options      - nEuDy</pre>
-<dt>Currently Gemini
-<dd> will be updated to Hyperion
-<br>"We were promised that
-<br> &nbsp; Somnium VR1 hand tracking
-<br> &nbsp; will work with Hyperion update"
+<dt>VR1 Ultraleap installation log:
+<dd><pre>Starting C:\Program Files\Ultraleap\TrackingService\bin\LeapSvc.exe
+ Version: 6.0.1.96 - df83ef54
+
+[2025-02-19 11:10:38.023] [console] [info]
+ul::LicenseManagerCache::load_licenses()#462:  {
+  "issue_date": "2024-07-04T15:07:50",
+  "license_expiry_date": "2027-01-01T00:00:00Z",
+  "license_feature_flags": [
+    "Offline",
+    "Hyperion",
+    "SIR170"
+  ],
+  "license_key": "HYPM0-CKHURG7QWXMXZT",
+  "license_type": "Somnium OEM"
+}</pre>
+<a href=https://leap2.ultraleap.com/downloads/leap-motion-controller-2/>Hyperion version at ultraleap.com</a>:  v6.1.0.1 03/09/2024
+
 <a name=driver>
-<dt></a><a href=https://github.com/SDraw/driver_leap>SteamVR Hand tracking <b><i>driver</i></b></a> -
-<a href=https://docs.ultraleap.com/ultralab/vr-gaming-controllers-and-hands.html>discussion</a>
+<dt><br></a><a href=https://github.com/SDraw/driver_leap>driver_leap</a> SteamVR Hand tracking <b><i>driver</i></b>
+<br>- <a href=https://forums.leapmotion.com/t/official-steamvr-and-leap-motion-integration/7806/5>Sep 2020 pointer from forums.leapmotion.com</a>
+<br>- <a href=https://www.ultraleap.com/company/news/blog/software-apps-leap-2/#_row_41_>described at ultraleap.com</a>
+<br>- Shodah:
 <dd>"using it a lot to emulate the Index controllers,<br>
 &nbsp; best to download the driver and have a play.<br>
 &nbsp; Takes some time getting used to it,<br>
 &nbsp; but works in every SteamVR game just fine"
 
+<dt><br><a href=https://www.ultraleap.com/company/news/blog/software-apps-leap-2/>Handy applications for Leap Motion Controller 2</a>
+
 <dt><a href=https://developer-docs.magicleap.cloud/docs/guides/openxr/getting-started/openxr-helloxr/>HelloXR</a>
 <dd>Magic Leap 2 sample OpenXR application
+
 <dt><a href=https://github.com/Nyabsi/leapify>Leapify</a>
-<dd>switches between controllers and Hand Tracking
+<dd>driver_leap fork switches between controllers and Hand Tracking
+<dd><a href=https://steamcommunity.com/sharedfiles/filedetails/?id=3388657607>enables Leapmotion handtracking in games like VRChat and Maestro</a>
+
 <dt><a href=https://github.com/ShootingKing-AM/Leap-Gesture-Checker>Leap-Gesture-Checker</a>
 <dd>Reports confidence values for gestures matched
 
@@ -50,11 +71,14 @@ or via the software tab.. So much options      - nEuDy</pre>
 <dd><a href=https://store.steampowered.com/app/2627140/Ultraleap_Gemini/>Ultraleap Gemini on Steam</a>
 <br> - Blocks, Paint, Cat Explorer
 
+<dd><a href=https://store.steampowered.com/app/2705560/Ultraleap_Hyperion/>Ultraleap Hyperion on Steam</a>
+<br> - Microgestures, Barista, Launcher
+
 <dt>YouTube
 <dd><a href="https://www.youtube.com/watch?v=jgCPd5ieL4Y">OpenXR
  Toolkit with UltraLeap</a>
 <br><a href=https://www.youtube.com/watch?v=21v4m3ATeqE>Ultraleap handtracking</a>
-<br><a href=https://www.youtube.com/watch?v=RdGnCV2g_oE>emulating controllers</a>
+<br><a href=https://www.youtube.com/watch?v=RdGnCV2g_oE>SDraw driver_leap SteamVR Leap Motion driver. Overlay input</a>
 <br><a href=https://www.youtube.com/watch?v=_0MuKjFxxw4>Assetto Corsa Handtracking (Leap motion)</a>
 <br> - Works with CSP preview 1.79.1 ( and later)
 <br> &nbsp; and SDraw driver_leap from GitHub.
