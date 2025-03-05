@@ -1,0 +1,90 @@
+# extracted from /c/ProgramData/Ultraleap/HandTracker/Logs
+[2025-03-05 02:38:14.124] [console] [info] ServiceInterface::Main()#204:  Starting F:\Steam\steamapps\common\Ultraleap Hyperion\TrackingService\bin\LeapSvc.exe Version: 6.1.0.1 - 93265045
+...
+[2025-03-05 02:38:14.146] [console] [info] leap::ServerMain::ServerMain()#269:  Server Listening Settings: IP 127.0.0.1 Base Port 12345 Range 10 Pipe Name "Leap Gemini"
+[2025-03-05 02:38:14.149] [console] [info] leap::ClientConfig::ClientConfig()#46:  Config Loaded, allow pause-resume true, allow images true, paused false, autoexposure enabled for mode: HMD false, Desktop true, Screentop false
+[2025-03-05 02:38:14.149] [console] [info] leap::ClientConfig::ClientConfig()#160:  Camera LE3100040000005D45-3610-693E822C98: camera orientation fixed-normal, tracking mode Hmd, masks 0 0 0 0 grey 0, fps Device Default (unaltered)
+[2025-03-05 02:38:14.149] [console] [info] leap::ClientConnectionManager::ClientConnectionManager()#25:  ClientConnectionManager started (6.1.0.1 - 93265045)
+[2025-03-05 02:38:14.151] [console] [info] ServiceInterface::BeginProcessing()#95:  Starting Server^
+...
+[2025-03-05 02:54:29.309] [console] [info] checkClientCompatibility()#81:  Client info, protocol 3.1.0 software version 5.16.0
+[2025-03-05 02:54:29.310] [console] [info] leap::ClientConnection::handleAuthenticateRequest()#513:  Starting 'ClientConnection' event
+[2025-03-05 02:54:29.310] [console] [error] ul::Analytics::MakeClientConnectionEvent()#153:  The platform must be initialized (ul::Analytics::Init()) before creating a client connection event.
+
+# VR1 not detected at power on; restarted in VR1 tool...
+[2025-03-05 03:10:39.534] [console] [info] leap::DeviceLayer::OnDeviceChange()#458:  On device change called
+[2025-03-05 03:10:39.539] [console] [info] leap::uvc::create_capture_device()#44:  SIR170 type device detected
+[2025-03-05 03:10:39.541] [console] [info] leap::update_uvc_firmware()#228:  Opening capture device with ID 1
+[2025-03-05 03:10:39.630] [console] [info] leap::uvc::OV580CaptureDevice::authenticate()#992:  Device signature has been authenticated!
+[2025-03-05 03:10:39.632] [console] [info] leap::uvc::RigelCaptureDevice::set_resolution_by_usb_speed()#234:  USB Speed from driver: 3
+[2025-03-05 03:10:39.632] [console] [info] leap::uvc::RigelCaptureDevice::set_resolution_by_usb_speed()#254:  set_resolution::CAP_PROP_LEAP_XU_RESOLUTION_CONFIGS (USB 3): 384x384x90 
+[2025-03-05 03:10:39.633] [console] [info] leap::uvc::RigelCaptureDevice::open()#150:  Minimum LED pulse width : 20
+[2025-03-05 03:10:39.633] [console] [info] leap::uvc::RigelCaptureDevice::open()#151:  Maximum LED pulse width : 75
+[2025-03-05 03:10:39.717] [console] [info] leap::uvc::RigelCaptureDevice::optimised_ir_alignment_off()#514:  requesting strobe_shift: 0
+[2025-03-05 03:10:39.717] [console] [info] leap::uvc::RigelCaptureDevice::optimised_ir_alignment_off()#524:  requesting pulse_delay: 0
+[2025-03-05 03:10:39.720] [console] [info] leap::update_uvc_firmware()#327:  Device Type: SIR170, Firmware: 3.8.6, Serial Number: LE3100040000005D45-3610-693E822C98
+...
+[2025-03-05 03:10:39.730] [console] [info] leap::TrackingRunner::TrackingRunner()#274:  Created TrackingRunner, default mode Desktop
+[2025-03-05 03:10:39.732] [console] [info] leap::HandTrackerImpl::HandTrackerImpl()#99:  Constructing HandTrackerImpl
+[2025-03-05 03:10:39.732] [console] [info] leap::HandTrackerImpl::HandTrackerImpl()#128:  Enabling Auto-Exposure
+[2025-03-05 03:10:39.734] [console] [warning] ul::AnalyticsEventTrackingRunning::Stop()#100:  AnalyticsEventTrackingRunning::Stop() called without Start().
+[2025-03-05 03:10:39.734] [console] [info] leap::ModelManager::ModelManager()#63:  Found 14 LDATS in F:\Steam\steamapps\common\Ultraleap Hyperion\TrackingService\bin
+...
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#97:  Looking for cal: leap cams: 2 tracking mode: Hmd
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#207:  model 429278 in ldat-429279.ldat is viable
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#122:  Model 429454 does not support calibration leap
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#122:  Model 429494 does not support calibration leap
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#122:  Model 430150 does not support calibration leap
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#122:  Model 432358 does not support calibration leap
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#122:  Model 432356 does not support calibration leap
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#122:  Model 436251 does not support calibration leap
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#149:  Model 436922 contains licensed feature: hand-on-object
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#207:  model 436922 in ldat-436931.ldat is viable
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#149:  Model 436925 contains licensed feature: microgestures
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#207:  model 436925 in ldat-436932.ldat is viable
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#122:  Model 436962 does not support calibration leap
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#149:  Model 436995 contains licensed feature: ui_mode
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#207:  model 436995 in ldat-436996.ldat is viable
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#149:  Model 437013 contains licensed feature: ultra_performance_mode
+[2025-03-05 03:10:39.794] [console] [info] leap::ModelManager::getPlatformModels()#207:  model 437013 in ldat-437014.ldat is viable
+[2025-03-05 03:10:39.794] [console] [info] ul::resolveHints()#116:  Camera resolution: 384x384
+[2025-03-05 03:10:39.794] [console] [info] ul::resolveHints()#212:  HintResolver did not accept any hints
+[2025-03-05 03:10:39.794] [console] [info] ul::tiebreakModelSelection()#98:  Tiebreak selected model ldat-429279.ldat with cost 64
+[2025-03-05 03:10:39.794] [console] [info] leap::Evaluator::create()#841:  Setting model: 429278 from ldat-429279.ldat
+[2025-03-05 03:10:40.090] [console] [info] leap::Evaluator::setCameraCalibration()#1311:  Override Raw Calibration not required, actual Raw Calibration:
+[2025-03-05 03:10:40.090] [console] [info] `anonymous-namespace'::pretty_print_calibration()#96:
+        0.0000000, 67.1197128, 0.5000000, -391.5000000, -377.5000000, 244.9336548,
+        0.0000000, 0.0000000, 0.0000000, 0.0000000, 0.0000000, -8.0570335,
+        5.8900275, 1.0072310, 48.2147713, -10.6455450, 0.9269640, 48.8194542,
+        -17.3737621, -0.0019997, 0.0009036, 8.0000000, 0.0000000, 0.0000000,
+        0.0000000, 8.0000000, 0.0000000, 0.0000000, 0.0000000, 0.0000000,
+        340282346638528859811704183484516925440.0000000, 6.8177462, -0.0597908, 0.6276884, 6.5478950, -0.7597258,
+        1.0087572, -383.5000000, -369.5000000, 243.9560242, 0.0000000, 0.0000000,
+        0.0000000, 0.0000000, 0.0000000, 3.8511407, 14.1089993, 1.0072310,
+        48.2147713, -10.6455450, 0.9269640, 48.8194542, -17.3737621, 0.0007060,
+        -0.0010516, 8.0000000, 0.0000000, 0.0000000, 0.0000000, 8.0000000,
+        0.0000000, 0.0000000, 0.0000000, 0.0000000, 340282346638528859811704183484516925440.0000000, 6.8177462,
+        -0.0597908, 0.6276884, 6.5478950, -0.7597258, 1.0087572,
+[2025-03-05 03:10:40.107] [console] [info] leap::uvc::RigelCaptureDevice::set_fps()#323:  Setting hardware frame interval: 111111 (90 fps)
+[2025-03-05 03:10:40.108] [console] [info] leap::uvc::RigelCaptureDevice::optimised_ir_alignment_off()#514:  requesting strobe_shift: 0
+[2025-03-05 03:10:40.109] [console] [info] leap::uvc::RigelCaptureDevice::optimised_ir_alignment_off()#524:  requesting pulse_delay: 0
+...
+# launched SteamVR, fiddled with hand controls
+[2025-03-05 03:21:37.099] [console] [info] checkClientCompatibility()#81:  Client info, protocol 3.1.0 software version 5.13.2
+[2025-03-05 03:21:37.099] [console] [info] leap::ClientConnection::handleAuthenticateRequest()#513:  Starting 'ClientConnection' event
+[2025-03-05 03:21:37.099] [console] [error] ul::Analytics::MakeClientConnectionEvent()#153:  The platform must be initialized (ul::Analytics::Init()) before creating a client connection event.
+[2025-03-05 03:21:37.218] [console] [info] leap::ClientConnection::handlePolicyRequest()#554:  PolicyFlagUpdate (tracking mode), client id: 2, set: 4, clear: 256
+[2025-03-05 03:21:37.391] [console] [info] checkClientCompatibility()#81:  Client info, protocol 3.1.0 software version 5.20.0
+[2025-03-05 03:21:37.391] [console] [info] leap::TrackingRunner::processQueue()#643:  ImageStreaming has been Disabled
+[2025-03-05 03:21:37.391] [console] [warning] leap::TrackingRunner::trackingLoop()#948:  run_device_tracker receiving video frames
+[2025-03-05 03:21:37.392] [console] [info] leap::ClientConnection::handleAuthenticateRequest()#513:  Starting 'ClientConnection' event
+[2025-03-05 03:21:37.392] [console] [error] ul::Analytics::MakeClientConnectionEvent()#153:  The platform must be initialized (ul::Analytics::Init()) before creating a client connection event.
+[2025-03-05 03:21:37.451] [console] [info] leap::ClientConnection::handlePolicyRequest()#554:  PolicyFlagUpdate (tracking mode), client id: 3, set: 4, clear: 256
+[2025-03-05 03:21:37.451] [console] [info] leap::ClientConnection::handlePolicyRequest()#554:  PolicyFlagUpdate (tracking mode), client id: 3, set: 4, clear: 256
+[2025-03-05 03:21:37.618] [console] [info] checkClientCompatibility()#81:  Client info, protocol 3.1.0 software version 5.20.0
+[2025-03-05 03:21:37.618] [console] [info] leap::ClientConnection::handleAuthenticateRequest()#513:  Starting 'ClientConnection' event
+[2025-03-05 03:21:37.618] [console] [error] ul::Analytics::MakeClientConnectionEvent()#153:  The platform must be initialized (ul::Analytics::Init()) before creating a client connection event.
+[2025-03-05 03:21:45.673] [console] [info] checkClientCompatibility()#81:  Client info, protocol 3.1.0 software version 5.13.2
+[2025-03-05 03:21:45.673] [console] [info] leap::ClientConnection::handleAuthenticateRequest()#513:  Starting 'ClientConnection' event
+[2025-03-05 03:21:45.673] [console] [error] ul::Analytics::MakeClientConnectionEvent()#153:  The platform must be initialized (ul::Analytics::Init()) before creating a client connection event.
+[2025-03-05 03:21:45.702] [console] [info] leap::ClientConnection::handlePolicyRequest()#554:  PolicyFlagUpdate (tracking mode), client id: 5, set: 4, clear: 256
