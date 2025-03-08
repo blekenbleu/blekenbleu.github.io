@@ -50,7 +50,7 @@ ul::LicenseManagerCache::load_licenses()#462:  {
 
 <a name=plan><dt><br></a><font size=+2><b>Plan of attack</b></font>
 <br>- since VR1 is already (sort of) Hyperion,
-<br> &emsp; I will try Nyabsi's <a href=><b>Leapify</b></a> fork of <code>SDraw/driver_leap</code>,
+<br> &emsp; I will try Nyabsi's <a href=><b>Leapify</b></a> fork of <a href=SDrawLeap.htm><code>SDraw/driver_leap</code></a>,
 <dd>- <b>Leapify</b> appears to be at least somewhat Hyperion-aware
 <dd><a href=https://www.youtube.com/watch?v=3ZB1rpr6EA8>Atom Bomb Body's video</a> seems less awful than first supposed
 <br> - it demos Ultraleap's <a href=https://store.steampowered.com/app/2537360/Aurora/>Aurora SteamVR app</a>
@@ -67,14 +67,14 @@ ul::LicenseManagerCache::load_licenses()#462:  {
 <br><img src=UltraleapOpen.jpg><br><br>
 <li>Ultraleap Control Panel display works with or without SteamVR:
 <br><img width=640 src=UltraleapCP.jpg><br><br>
-<li>Launching VR1 tool with Ultraleap Control Panel display open<br> makes <b>Mixed Reality</b> unhappy:
+<li>Launching VR1 tool with VR1's Ultraleap Control Panel display open<br> makes <b>Mixed Reality</b> unhappy:
 <br><img src=Mixed_Reality!.jpg>
 <br>- but headset button still works;
 <br> &nbsp; starting Ultraleap Control Panel <i>after</i> VR1 tool is ok
 <a name=steam>
 <li><b>Installing <a href=https://store.steampowered.com/app/2705560/Ultraleap_Hyperion/>Steam
 	 ultraleap hyperion</a></b></a> <i>did</i> disable VR1 <b>Mixed Reality</b>.
-<br>That Steam installation seemingly replaced VR1's Ultraleap runtime.
+<br>That Steam installation replaced VR1's Ultraleap runtime.
 <br>- Steam ultraleap hyperion displayed Ultraleap Control Panel in headset.
 <br>- Neither Ultraleap Hyperion's <a href=https://store.steampowered.com/app/3097800/Ultraleap_Hyperion__Microgestures/>Microgestures</a>
  nor <a href=https://store.steampowered.com/app/3097820/Ultraleap_Hyperion__Launcher/>Launcher</a> app ran.
@@ -82,9 +82,12 @@ ul::LicenseManagerCache::load_licenses()#462:  {
 restored Mixed Reality function
 <li>Restoring compatible Ultraleap Control Panel function
 <br> required <i>uninstalling</i> SteamVR ultraleap hyperion
-<li><a href=https://store.steampowered.com/app/2537360/Aurora/>Ultraleap's Aurora game</a> loads and plays with VR1's runtime,
+<li><a href=https://store.steampowered.com/app/2537360/Aurora/>Ultraleap's Aurora game</a> eventually loads and plays
+<br> with SteamVR's ultraleap hyperion runtime,
 <br>but if representative of Ultraleap hand tracking,
 <br>then it for me was a hateful waste of money and effort.
+</ul>
+<h3>hand tracking VR controller emulation</h3><dl>
 <br><a name=leapify>
 <li></a><a href=https://github.com/Nyabsi/driver_leapify?tab=readme-ov-file><b>Leapify</b></a>
 <br>- downloaded <code>leapify-rc4.zip</code> from <a href=https://github.com/Nyabsi/driver_leapify/releases/>Releases</a>
@@ -95,17 +98,9 @@ restored Mixed Reality function
 <br> &emsp; their orientations and positions follow hands,
 <br> &emsp; but finger gesture attempts seemingly <b>do nothing</b><br>
  &emsp; <img width=320 src=LeapifyController.jpg>
+<a name=driver><li></a><a href=SDrawLeap.htm>SDraw driver_leap</a> Gemini Hand tracking driver
 </ul>
 <dt><br></a><font size=+2><b>References</b></font>
-<a name=driver>
-<dt></a><a href=https://github.com/SDraw/driver_leap>driver_leap</a> SteamVR Gemini Hand tracking <b><i>driver</i></b>
-<br>- <a href=https://forums.leapmotion.com/t/official-steamvr-and-leap-motion-integration/7806/5>Sep 2020 pointer from forums.leapmotion.com</a>
-<br>- <a href=https://www.ultraleap.com/company/news/blog/software-apps-leap-2/#_row_41_>described at ultraleap.com</a>
-<br>- Shodah:
-<dd>"using it a lot to emulate the Index controllers,<br>
-&nbsp; best to download the driver and have a play.<br>
-&nbsp; Takes some time getting used to it,<br>
-&nbsp; but works in every SteamVR game just fine"
 
 <dt><br><a href=https://www.ultraleap.com/company/news/blog/software-apps-leap-2/>Handy applications for Leap Motion Controller 2</a>
 
