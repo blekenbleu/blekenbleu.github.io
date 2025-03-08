@@ -1,0 +1,57 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<title>driver_ultraleap</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href=Ultraleap.htm><i>Ultraleap</i></a></font>
+<a href=https://www.gixen.com/index.php name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src=https://www.gixen.com/images/gixenlink.gif border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<br>
+
+<h2><href=https://github.com/ultraleap/driver_ultraleap/releases>Ultraleap SteamVR driver for Windows</a></h2>
+<ul>
+<li>Alpha release
+<li>SteamVR skeletal tracking API, to allow full hand articulation.
+<li>A simple hand interaction profile for basic interaction with SteamVR.
+<li>Debug API to allow an external application/overlay to trigger inputs from this driver with external inputs.
+<li>Optional elbow-tracking support (Disabled by default).
+<li>Optional extended hand interaction profile mode compatible with a Valve Knuckles controller (Disabled by default)
+<li><b>known issues</b>:<ul><li> Skeletal hand-tracking bone-lengths can vary during use.
+<li>SteamVR "Test Controller" should show the same controller image as the Rebinding UI</ul>
+</ul>
+<h3>Installation</h3><ul>
+<li>Install the latest version of the Ultraleap Tracking Service.
+<li>Download the <a href=https://github.com/ultraleap/driver_ultraleap/releases/download/v0.1.0-alpha.2/driver_ultraleap.zip>Ultraleap SteamVR Driver</a>.
+<li>Extract the build to a well known path you can reference in a later step.
+<li>Navigate to <code>${SteamInstallFolder}/steamapps/common/SteamVR/bin/win64</code> and open a console in this folder.
+<li>In the console type the command <code>vrpathreg.exe adddriver "{PathToExtractedBuild}"</code>.
+<li>Now when you type <code>vrpathreg.exe show</code> you should see ultraleap under External Drivers
+</ul>
+
+<h3>Configuration</h3>
+The SteamVR driver supports a number of configuration options
+which are details in the <a href=https://github.com/ultraleap/driver_ultraleap/blob/main/doc/Configuration.md>configuration guide</a>.
+
+<h3>Uninstallation</h3>
+To remove the driver:<ul>
+
+<li>Navigate to <code>${SteamInstallFolder}/steamapps/common/SteamVR/bin/win64</code> and open a console in this folder.
+<li>In the console type the command <code>vrpathreg.exe removedriverswithname ultraleap</code>.
+<li>The driver will now be removed from your SteamVR install.
+</ul>
+<h3>Advanced Topics</h3>
+This driver allows supports <a href=https://github.com/ultraleap/driver_ultraleap/blob/main/doc/DebugRequestAPI.md>external
+ input triggering via the OpenVR Debug Request API</a>.
+<br> This allows other applications or support programs to drive the inputs through this driver,
+<br> allowing for novel interactions and overlays.
+</td></tr><tr><td align=center>
+
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+
+</td></tr></table>
+</div>
+</body></html>
