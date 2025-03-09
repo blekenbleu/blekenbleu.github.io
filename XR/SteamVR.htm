@@ -14,18 +14,41 @@
 
 <font size=+1>
 <h2>SteamVR</h2>
+<h4>Controllers</h4>
+SteamVR supports a variety of controllers, which can be subdivided:<ul>
+<li>nonVR controllers that employ headset gaze to control a cyan dot cursor.
+<li>VR controllers with pointing capability, mapped to virtual laser pointer
+</ul>
+<br><li><a href=https://www.youtube.com/watch?v=jM_OD3zeIic&t=64s>SteamVR Dashboard video</a>
+<br> &emsp; - dashboard navigation based on virtual laser pointer from VR controller
+<br>While some drivers attempt to emulate VR controllers by hand tracking;
+<br>pointing while mapping gestures to buttons <b>does not work</b> <i>for me</i>.<br><br>
+
+<li>cyan dot cursor based on <b>headset gaze</b> <i>with non-VR controllers</i> may work:
+<br> &emsp; <img src=headsetPointer.jpg>
+
 <h3>non-VR controllers</h3><ul>
 <li>SteamVR basically supports Xbox controllers
 <li>Other controllers get mapped to Xbox controls
-<li>Such controller use a cyan dot cursor based on <b>headset gaze</b>
-<br> and <i><b>one of the shoulder buttons to click</b></i>.
+<li>Such controller use <i><b>one of the shoulder buttons to click</b></i>.
 <li>Home button toggles the dashboard.
-<br><li><a href=https://www.youtube.com/watch?v=jM_OD3zeIic&t=64s>SteamVR Dashboard video</a>
-<br> &emsp; - navigated based on virtual laser pointer from controller
-<br> &emsp; - virtual controller laser pointer based on hand tracking is IMO doomed
-<li>cyan dot cursor based on <b>headset gaze</b> <i>with non-VR controllers</i> may work:
-<br> &emsp; <img src=headsetPointer.jpg>
 </ul>
+<br>Non-VR controllers are configured in Steam (<i>NOT SteamVR</i>) menu:
+<br><code>Steam->Settings->Controller</code>:&nbsp; (<i>select controller, e.g.</i> <b>SIDEWINDER</b>)
+<br><b>Test Device Inputs</b> &emsp; <code>[Begin Test]</code>
+<br><img src=ControllerLayout.png>
+<br><b>[Setup Device Inputs]</b>
+<br><b>Controls wanted:</b><dl>
+<dt><b>A</b>, <b>B</b> buttons
+<dd>to navigate Device Setup
+<dt>Trigger, Joysticks
+<dd>I set SIDEWINDER joystick twist and throttle as second joystick
+<dt>left bumper
+<dd>wanted to select in dashboard
+<dt>Home/guide
+<dd>toggles dashboard
+</dl>
+Sadly, these are not working in VR...
 
 <a name=map><h3><i>nEuDy</i>:&nbsp; SteamVR dashboard button</h3></a>
 You can remap one of the VR1 buttons to execute a batch file.
