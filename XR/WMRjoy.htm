@@ -1,0 +1,93 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>joystick controller in WMR</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href="./joy.htm"><i>back</i></a></font><br>
+
+<font size=+1>
+<h2>Joystick as controller in WMR (2021)</h2>
+
+<dl>
+<dt><strong><a href="https://steamcommunity.com/app/275850/discussions/0/1636418037465132951/">Hand-On Throttle-And-Stick (HOTAS) as VR controller</a></strong>
+<dd><i><b>This worked in 2021</b>;&nbsp; Steam now handles game controllers separately from<br>
+so-called non-Game controllers, which are not recognized by SteamVR.</i>
+
+<ul><br><a name=HOTAS>Assetto Corsa in Odyssey+ involved both Windows Mixed Reality Portal and SteamVR</a>,<br>
+which support VR controllers that I find intolerable
+and make no sense in driving sims.<br>
+In VR without a controller, 2-D apps (e.g. Content Manager) become problematic,<br>
+except perhaps in a virtual desktop.<br>
+For than a couple of controller buttons, a flight joystick (HOTAS) may be wanted.<br>
+<br>
+        <li>In Steam &gt; Settings (SteamVR must be turned off)<br> &gt; Controller, General controller settings.<br>
+        Uncheck all but Xbox Configuration Support<br>
+		 and Xbox Extended Feature Support.
+        <li>Go to detected controllers, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1839832921">customize
+		 HOTAS layout</a>.&nbsp Save.
+        <li>Open SteamVR;  a gamepad icon should appear.<br> If not, be sure to open SteamVR by clicking VR button in Steam.</li>
+        <li>Make applicable mappings from virtual gamepad in SteamVR app.<dl>
+        <dt>TIPS:<br />
+     <dd>- If HOTAS Throttle doesn’t work or is mapped upside down,<br />
+     &nbsp; clear the input and map it to <b>W</b> and <b>S</b> keys with a joystick profiler.<br />
+    - Make sure no keys are pressed while launching the game.</dl>
+<li>Microsoft <a href="https://en.wikipedia.org/wiki/Microsoft_SideWinder#Precision_2">SideWinder Precision 2</a>
+USB Controller Joystick
+<a href="https://www.amazon.com/Microsoft-Sidewinder-Precision-2-Joystick/dp/B00005NIMA#customerReviews">works</a>
+as a <a href="https://forums.flightsimulator.com/t/sidewinder-precision-2-joystick/129996">HOTAS</a>.
+<li><a href="https://github.com/Snoothy/UCR#device-support">Universal Control Remapper</a>
+<a name=UCR>AKA UCR</a> allows remapping inputs from devices<br>
+such as second mice (using <a href="https://github.com/oblitum/Interception"> interception</a>)
+and joysticks to <a href="../Windows/HID">virtual HID game controllers</a>.<ul>
+<li><a href="https://steamcommunity.com/app/502500/discussions/0/1777135944133825024/"><b>remap HOTAS using UCR and ViGEm</b></a>
+<li><a href="https://github.com/Snoothy/UCR/wiki">UCR Wiki</a>
+<li><a href="https://www.xsimulator.net/community/threads/feeding-multiple-controllers-into-the-joystick-plugin.15343/">join multiple controllers</a>
+</ul>
+<li>Steam's Big Picture interface has to be told <i>not to use the gamepad</i> for its own interface.<br>
+<a href="https://steamcommunity.com/app/992490/discussions/4/2646360608728224193/">
+    Big Picture and SteamVR are 2 competing interfaces to Steam content,<br>
+    and only one can "own" the controller.</a><br>
+<br>
+At least "xbox" and "start" buttons are needed on Xbox controller..<br>
+<a href="https://www.reddit.com/r/Vive/comments/4lfksg/cant_access_the_steamvr_menu_with_xbox_360/">
+Press Win key + G, go to settings, and disable "use xbox button to open game bar"</a><br>
+
+<br>
+Windows Mixed Reality added Win32 app native support
+<a href="https://www.reddit.com/r/WindowsMR/comments/ezlq19/when_i_launch_the_mixed_reality_portal_windows/<br>">
+with Windows 10 Version 1903</a>.<br>
+I do not know how they get launched:<br>
+"Access the feature by bringing up Pins Panel via the windows button on your controller,<br>
+ then go to all apps, where you will find a folder named 'Classic Apps'.<br>
+ In this folder, you will be able to select and launch any Desktop (Win32) applications."<br>
+<a href="https://www.tenforums.com/tutorials/126514-run-desktop-win32-apps-windows-mixed-reality-windows-10-a.html">
+Run Desktop (Win32) apps in WMR</a><br>
+<br>
+<a href=https://www.techradar.com/news/gaming/consoles/side-by-side-xbox-one-gamepad-vs-xbox-360-gamepad-1158091>XBox
+ 360 and XBox One controllers differ</a>; &nbsp perhaps only
+<a href="https://www.windowscentral.com/how-use-xbox-one-controller-windows-mixed-reality">
+XBox One works for WMR</a>..<br>
+<br>
+Windows Mixed Reality "will work with a wireless Xbox adapter (no Bluetooth required)."<br>
+This wireless Xbox seems special:<br>
+<a href="https://docs.microsoft.com/en-us/windows/mixed-reality/hardware-accessories">
+Xbox Wireless Controller accessories for Xbox One S feature Bluetooth connectivity<br>
+ enabling use with HoloLens and immersive headsets</a><br>
+<br>
+re-run
+<a href="https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/learn-mixed-reality#how-do-i-re-run-the-learning-experience">
+the WMR learning experience</a><br>
+<br>
+Play icon at the bottom of the Mixed Reality Portal app will throw HMD preview to screen.<br>
+</ul>
+</dl>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
