@@ -13,16 +13,19 @@
 <h2>joystick controller in SteamVR</h2>
 
 <h4>Four kinds of controllers</h4><ul>
-<li> MIDI
-<li> 6DoF VR AKA motion:&nbsp;  sense position and angle, support virtual laser pointing
+<li> <a href=../MIDI/index.htm>MIDI</a>
+<li> motion (6 DoF VR):&nbsp;  sense position and angle for virtual laser pointing
 <li> gamepad (PlayStation, <a href=https://en.wikipedia.org/wiki/DirectInput#XInput><b>XBox 360</b> (XInput)</a>, etc)
 <br><img src=360_controller.png>
-<li> <a href=https://www.howtogeek.com/792984/directinput-vs.-xinput-for-game-controllers-whats-the-difference/>non-game (AKA DirectInput)</a> e.g. joysticks, button boxes.</ul>
+<li> <a href=https://www.howtogeek.com/792984/directinput-vs.-xinput-for-game-controllers-whats-the-difference/>non-game (AKA DirectInput)</a> e.g. HOTAS (joysticks), button boxes.</ul>
 
 <h4>SteamVR <a href=WMRjoy.htm><i>used to</i> support DirectInput</a> and XInput,<br> &emsp; but now seemingly <i>only XInput</i>.</h4>
 <ul>
-<li> SteamVR supports XInput controllers, using HMD gaze for pointing.
-<li> This is IMO far easier than emulating VR controllers by hand gestures.
+<li>Specifically, <a href=https://www.reddit.com/r/NoMansSkyTheGame/comments/siyqmo/no_mans_sky_vr_and_hotas_guide/>this HOTAS HOW-TO</a> described
+<br>"7. On the popup, give the controller an easy label like "My NMS Joystick";<br>&nbsp; select "Xbox One Controller" for the type"
+<br>... but neither popup nor option to select type now exists.
+<li> SteamVR 2.9.6 does still support XInput controllers, using HMD gaze for pointing.
+<li> HOTAS is IMO far easier than emulating motion controllers by hand gestures.
 <LI><a href="https://steamcommunity.com/app/992490/discussions/4/2646360608728224193/">HOWTO: Make a gamepad work with SteamVR</a>
 </ul>
 
@@ -63,6 +66,7 @@ and joysticks to <a href="../Windows/HID">virtual HID game controllers</a>.<ul>
 
 <dt><a href="https://github.com/csutorasa/XOutput">XOutput</a> convert DirectInput into XInput
 <dd>archived Dec 3, 2024. It is now read-only;&nbsp; deprecated as ViGEm was deprecated
+<br><a href=https://www.youtube.com/watch?v=iORUGl_oYf0>9 Mar 2024 video for using with Logitech X-56 HOTAS</a>
 
 <dt><a href=https://www.worldofjoysticks.com/>World of Joysticks (WoJ)</a>
 <dd> Last updated in 2022;&nbsp; employs SCPVirtualBus,  Microsoft Xbox360Controller drivers
