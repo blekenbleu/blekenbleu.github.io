@@ -26,9 +26,10 @@ Steam->Settings->Controller recognizes <b>PS3 CONTROLLER</b>,
 <li>dashboard bindings, not so much</ul>
 
 <h4>Aircar bindings</h4>
+Depend on game controller trigger analog axes, not switches...<br>
 <img width=720 src=Aircar.png><br>
 <table width=720 border=1><tr><td>A - Menu confirm</td>
-<td>X - Turbp</td>
+<td>X - Turbo</td>
 <td>L stick - vert yaw</td>
 <td>R stick - pitch, roll</td>
 </tr><tr>
@@ -41,16 +42,20 @@ Steam->Settings->Controller recognizes <b>PS3 CONTROLLER</b>,
 <h4>Binding controls</h4>
 <dl>
 <dt><br><img src=XBoxButtonsAxes.jpg>
-<dd>Totally sucks, nobody explains binding adequately;&nbsp;  SteamVR must be running...
-<br>URL for web browser access:&nbsp> <a href=http://127.0.0.1:8998/dashboard/controllerbinding.html>http://127.0.0.1:8998/dashboard/controllerbinding.html</a>
-<br>
-At least "xbox" and "start" buttons are needed on Xbox controller..<br>
+<br>At least "xbox" and "start" buttons are needed on Xbox controller..
+<dd>Totally sucks, nobody explains binding adequately;&nbsp;  most desriptions are obsolete<br>
+SteamVR must be running...&nbsp; with all bindings removed, some Xbox buttons are <i>still</i> active.
+<br><b><i>obsolete</i></b> browser URL:&nbsp> <a href=http://127.0.0.1:8998/dashboard/controllerbinding.html>http://127.0.0.1:8998/dashboard/controllerbinding.html</a>
+<dt><a href=https://wiki.vrchat.com/wiki/Guides:SteamVR_Bindings>VRChat Wiki SteamVR bindings guide</a>
+<dt><a href=https://github.com/OpenVR-Advanced-Settings/OpenVR-AdvancedSettings/blob/master/docs/SteamVRInputGuide.md>OpenVR-AdvancedSettings
+ SteamVR Input Guide</a> - <a href=https://www.youtube.com/watch?v=VLJe8Tb9fC8>video</a>
+<dt><a href=https://steamsolo.com/guide/steamvr-input-binding-rolling-line/>Steam Solo SteamVR input binding</a>
+<dt><a href=https://steamcommunity.com/sharedfiles/filedetails/?id=2029205314>Rolling Line SteamVR input binding</a>
 
-<dt><br><b>Control binding for <a href="./#AIRCAR">AirCar</a></b>
-<dt><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1545634111"><b>Rebinding "Legacy" games for new controllers</b></a>
+<dt><br><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1545634111"><b>Rebinding "Legacy" games for new controllers</b></a>
 <dt><br><a href="https://partner.steamgames.com/doc/features/steam_controller/device"><b>Steam Input Devices</b></a>
 	- typically different from SteamVR controllers
-<br>
+<ul>
         <li>In Steam -&gt; Settings (SteamVR must be turned off)<br> -&gt; Controller, General controller settings.<br>
         Uncheck all but Xbox Configuration Support<br>
 		 and Xbox Extended Feature Support.
@@ -62,14 +67,15 @@ At least "xbox" and "start" buttons are needed on Xbox controller..<br>
 		<li>SteamVR->Settings->Controllers->TEST CONTROLLERS->GAMEPAD
 		<br>click <b>#/USER/HEAD</b>, then click <b>GAMEPAD</b>
 		<br><img src=TestingGAMEPAD.png>
-        <li>Make applicable mappings from virtual gamepad in SteamVR app.<dl>
+        <li>Make applicable mappings from virtual gamepad in SteamVR app.</ul>
+<dl>
         <dt>TIPS:<br />
 <ul>
-	<li>Messing with bindings generated many binding_config.json files in Steam/userdata/870060982/
+	<li>Messing with bindings generated many binding_config.json files in <code>Steam/userdata/870060982/</code>
      <li>If HOTAS Throttle doesn’t work or is mapped upside down,<br />
      clear the input and map it to W and S keys with a joystick profiler.<br />
     Make sure no keys are pressed while launching the game.
-<li>Set Steam's Big Picture interface to <i>not to use the gamepad</i> for its own interface.<br>
+<li>Set Steam's Big Picture interface <i>to not to use the gamepad</i> for its own interface.<br>
     Big Picture and SteamVR compete for Steam control,<br>
     and only one can "own" the controller.
 </ul>
