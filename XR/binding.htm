@@ -1,0 +1,81 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>SteamVR Xbox360 controller binding</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href="./"><i>back</i></a></font><br>
+<a href=https://www.gixen.com/index.php name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src=https://www.gixen.com/images/gixenlink.gif border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<br>
+
+<font size=+1>
+<h2>SteamVR controller binding</h2>
+
+<h3>PS3 Controller</h3>
+Steam->Settings->Controller recognizes <b>PS3 CONTROLLER</b>,
+<br>but <b>Begin Test</b> does not detect controls.
+<br><a href=https://github.com/nefarius/DsHidMini><b>DsHidMini</b></a> installed and configured it as Steam <b>XINPUT CONTROLLER #1</b>
+<br>and also detect as SteamVR GAMEPAD controller<ul>
+<li>default button assignments match
+<li>default home bindings work
+<li>dashboard bindings, not so much</ul>
+
+<h4>Aircar bindings</h4>
+<img width=720 src=Aircar.png><br>
+<table width=720 border=1><tr><td>A - Menu confirm</td>
+<td>X - Turbp</td>
+<td>L stick - vert yaw</td>
+<td>R stick - pitch, roll</td>
+</tr><tr>
+<td>L trig - reverse</td>
+<td>R trig - thrust</td>
+<td>Select - menu</td>
+<td>Y - Music</td>
+</tr></table>
+
+<h4>Binding controls</h4>
+<dl>
+<dt><br><img src=XBoxButtonsAxes.jpg>
+<dd>Totally sucks, nobody explains binding adequately;&nbsp;  SteamVR must be running...
+<br>URL for web browser access:&nbsp> <a href=http://127.0.0.1:8998/dashboard/controllerbinding.html>http://127.0.0.1:8998/dashboard/controllerbinding.html</a>
+<br>
+At least "xbox" and "start" buttons are needed on Xbox controller..<br>
+
+<dt><br><b>Control binding for <a href="./#AIRCAR">AirCar</a></b>
+<dt><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1545634111"><b>Rebinding "Legacy" games for new controllers</b></a>
+<dt><br><a href="https://partner.steamgames.com/doc/features/steam_controller/device"><b>Steam Input Devices</b></a>
+	- typically different from SteamVR controllers
+<br>
+        <li>In Steam -&gt; Settings (SteamVR must be turned off)<br> -&gt; Controller, General controller settings.<br>
+        Uncheck all but Xbox Configuration Support<br>
+		 and Xbox Extended Feature Support.
+        <li>Go to detected controllers, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1839832921">customize
+		 HOTAS layout</a>.&nbsp Save.
+		<li>SteamVR->Settings->Startup/Shutdown->MANAGE ADD-ONS
+		<br><img src=Add-Ons.png>
+        <li>Open SteamVR;  a gamepad icon should appear.<br> If not, be sure to open SteamVR by clicking VR button in Steam.</li>
+		<li>SteamVR->Settings->Controllers->TEST CONTROLLERS->GAMEPAD
+		<br>click <b>#/USER/HEAD</b>, then click <b>GAMEPAD</b>
+		<br><img src=TestingGAMEPAD.png>
+        <li>Make applicable mappings from virtual gamepad in SteamVR app.<dl>
+        <dt>TIPS:<br />
+<ul>
+	<li>Messing with bindings generated many binding_config.json files in Steam/userdata/870060982/
+     <li>If HOTAS Throttle doesn’t work or is mapped upside down,<br />
+     clear the input and map it to W and S keys with a joystick profiler.<br />
+    Make sure no keys are pressed while launching the game.
+<li>Set Steam's Big Picture interface to <i>not to use the gamepad</i> for its own interface.<br>
+    Big Picture and SteamVR compete for Steam control,<br>
+    and only one can "own" the controller.
+</ul>
+</dl>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>

@@ -81,48 +81,17 @@ and joysticks to <a href="../Windows/HID">virtual HID game controllers</a>.<ul>
 <dd><a href=https://steamcommunity.com/groups/worldofjoysticks>Listed in Steam</a>, but no matches for using it with SteamVR;
 <br>- supports more than one DirectInput device in a single emulated XBox 360
 <br>- haptic feedback can be redirected to bass shakers
-
-</dl><h4>Binding controls</h4><dl>
-<dt><br><img src=XBoxButtonsAxes.jpg>
-<dd>Totally sucks, nobody explains binding adequately;&nbsp;  SteamVR must be running...
-<br>URL for web browser access:&nbsp> <a href=http://127.0.0.1:8998/dashboard/controllerbinding.html>http://127.0.0.1:8998/dashboard/controllerbinding.html</a>
-<br>
-At least "xbox" and "start" buttons are needed on Xbox controller..<br>
-
-<dt><br><b>Control binding for <a href="./#AIRCAR">AirCar</a></b>
-<dt><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1545634111"><b>Rebinding "Legacy" games for new controllers</b></a>
-<dt><br><a href="https://partner.steamgames.com/doc/features/steam_controller/device"><b>Steam Input Devices</b></a>
-	- typically different from SteamVR controllers
-<br>
-        <li>In Steam -&gt; Settings (SteamVR must be turned off)<br> -&gt; Controller, General controller settings.<br>
-        Uncheck all but Xbox Configuration Support<br>
-		 and Xbox Extended Feature Support.
-        <li>Go to detected controllers, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1839832921">customize
-		 HOTAS layout</a>.&nbsp Save.
-		<li>SteamVR->Settings->Startup/Shutdown->MANAGE ADD-ONS
-		<br><img src=Add-Ons.png>
-        <li>Open SteamVR;  a gamepad icon should appear.<br> If not, be sure to open SteamVR by clicking VR button in Steam.</li>
-		<li>SteamVR->Settings->Controllers->TEST CONTROLLERS->GAMEPAD
-		<br>click <b>#/USER/HEAD</b>, then click <b>GAMEPAD</b>
-		<br><img src=TestingGAMEPAD.png>
-        <li>Make applicable mappings from virtual gamepad in SteamVR app.<dl>
-        <dt>TIPS:<br />
-<ul>
-	<li>Messing with bindings generated many binding_config.json files in Steam/userdata/870060982/
-     <li>If HOTAS Throttle doesn’t work or is mapped upside down,<br />
-     clear the input and map it to W and S keys with a joystick profiler.<br />
-    Make sure no keys are pressed while launching the game.
-<li>Set Steam's Big Picture interface to <i>not to use the gamepad</i> for its own interface.<br>
-    Big Picture and SteamVR compete for Steam control,<br>
-    and only one can "own" the controller.
-</ul>
 </dl>
 
-<hr><ul>
-<li>Microsoft has <a href=https://forums.flightsimulator.com/t/wmr-needs-an-update/709226>dropped
- WMR support in both Windows 10 and 11</a>;
-<br><a href=WMRjoy.htm>this worked</a> for Windows Mixed Reality and SteamVR in 2021...
+<h4><a href=binding.htm>Xbox360 Controller Binding</h4></a>
+After SteamVR recognizes an Xbox 360 controller, usefully binding controls is a fiasco.
+
+<ul><li>Microsoft <a href=https://forums.flightsimulator.com/t/wmr-needs-an-update/709226>dropped
+ WMR support in Windows 11</a>;
+<br><a href=WMRjoy.htm>HOTAS worked in 2021</a> for Windows Mixed Reality and SteamVR...
 </ul>
+
+<br><hr>
 <dt><br><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3035381763"><b>Autostarting VR Tools on Steam VR Start</b></a>
 <dt><br><a href=https://github.com/nefarius/Legacinator>Legacinator</a> removes known outdated controller emulator device drivers.
 <dt><br><a href=https://www.xinput.org/>XInput</a> app enables using keyboard instead of XBox controller buttons.
