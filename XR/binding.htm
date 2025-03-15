@@ -18,14 +18,18 @@
 
 <h3>PS3 Controller</h3>
 Steam->Settings->Controller recognizes <b>PS3 CONTROLLER</b>,
-<br>but <b>Begin Test</b> does not detect controls.
-<br><a href=https://github.com/nefarius/DsHidMini><b>DsHidMini</b></a> installed and configured it as Steam <b>XINPUT CONTROLLER #1</b>,
-<br>which was also detected as a SteamVR GAMEPAD controller<ul>
+<br> &emsp; but <b>Begin Test</b> does not detect controls.
+<a name=DsHidMini>
+<br></a><a href=https://github.com/nefarius/DsHidMini><b>DsHidMini</b></a> was
+ <a href=https://docs.nefarius.at/projects/DsHidMini/v2/How-to-Install/>installed</a>
+ and configured as Steam <b>XINPUT CONTROLLER #1</b>,
+<br> &emsp; then also detected as a SteamVR GAMEPAD controller
+<br> &emsp; <img src=SteamVRx360ce.png><ul>
 <li>default button assignments match
-<li>default home bindings work
+<li>default <i>home</i> bindings work
 <li>dashboard bindings, not so much</ul>
 
-<h4>Aircar bindings</h4>
+<h4>Aircar SteamVR bindings</h4>
 Depend on game controller trigger analog axes, not switches...<br>
 <img width=720 src=Aircar.png><br>
 <table width=720 border=1><tr><td>A - Menu confirm</td>
@@ -39,12 +43,12 @@ Depend on game controller trigger analog axes, not switches...<br>
 <td>Y - Music</td>
 </tr></table>
 
-<h4>Binding controls</h4>
+<h4>XInput Binding controls</h4>
 <dl>
 <dt><br><img width=720 src=XBoxButtonsAxes.jpg>
 <br>At least "xbox" and "start" buttons are needed on Xbox controller..
 <dd>SteamVR must be running...
-<br>with all bindings removed, some Xinput buttons are <i>still</i> active.
+<br>with all bindings removed, some XInput buttons are <i>still</i> active.
 <dt><b><i>dashboard URL is blank</i></b>
 <dd> <a href=http://localhost:27062/dashboard/controllerbinding.html>http://localhost:27062/dashboard/controllerbinding.html</a>
 <dt>Most binding guides are obsolete<br>
@@ -62,7 +66,8 @@ Depend on game controller trigger analog axes, not switches...<br>
         Uncheck all but Xbox Configuration Support<br>
 		 and Xbox Extended Feature Support.
         <li>Go to detected controllers, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1839832921">customize
-		 HOTAS layout</a>.&nbsp Save.
+		 HOTAS layout</a>.&nbsp Save.</ul>
+<dt><br><b>SteamVR Input Devices</b><ul>
 		<li>SteamVR->Settings->Startup/Shutdown->MANAGE ADD-ONS
 		<br><img src=Add-Ons.png>
         <li>Open SteamVR;  a gamepad icon should appear.<br> If not, be sure to open SteamVR by clicking VR button in Steam.</li>

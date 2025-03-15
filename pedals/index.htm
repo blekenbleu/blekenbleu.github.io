@@ -356,7 +356,6 @@ Assetto Corsa (or Content Manager or SimHub) UI in a virtual desktop</a><br>
 <iframe align=center width="640" height="480" src="https://www.youtube.com/embed/-Gy15BEm8UQ"></iframe></details>
 <li><a href="https://www.assettocorsa.net/forum/index.php?threads/crew-chief-for-assetto-corsa.36440/">CrewChief</a>
 <li><a href="RunDDU.htm">DDU for clean graphics driver installation</a>
-<li><a href="#Driver4VR">Driver4VR</a>
 <li><a href="https://store.steampowered.com/app/586210/OVRdrop/"><b>OVRdrop</b></a>
 <a name=OVRdrop>also works by mouse</a>.<br>
 Unlike BigScreen, OVRdrop desktop displays during AC OpenVR,<br>
@@ -365,9 +364,11 @@ Unlike BigScreen, OVRdrop desktop displays during AC OpenVR,<br>
 to display, in a web browser tab, enter:&nbsp
 <code>steam://open/console</code><br>
 .. then, in that console window, enter:&nbsp <code>user_info</code>
+<li><a href=../XR/SteamVR.htm>SteamVR</a>
+</ul>
 
 
-<li><details><summary><b>Force Feedback controls</b></summary>
+<dt><br><details><summary><b>Force Feedback controls</b></summary>
 <a name="FFB"></a>
 <a href="https://www.racedepartment.com/threads/ffb-real-time-monitoring-now-possible.159219/">SimHub Force feedback utility</a><br>
 <a href="https://boxthislap.org/thrustmaster-ts-pc-ts-xw-assetto-corsa-settings/">AC FFB percentage directly in game</a><br>
@@ -378,11 +379,12 @@ to display, in a web browser tab, enter:&nbsp
 <iframe align=center width="640" height="480" src="https://www.youtube.com/embed/4qkP77ikMG0"></iframe><br><br>
 SingleRacer made a video for<br> 
 <a href="https://www.youtube.com/watch?v=PyX-IdYco4s">taming G29 with FFBclip, Wheel Check and LUT generator</a></details>
-</ul>
 
 <dt><br><font color=#007700><b>hand controllers</b></font>
-<dd>Hand-On Throttle-And-Stick (<a href=../XR/joy.htm><b>HOTAS</b></a>) in SteamVR
-<dd>Mouse intercepted for SimHub (<a href-"">SHmouse</a>
+<dd>Hand On Throttle And Stick (<a href=../XR/joy.htm><b>HOTAS</b>, AKA joystick</a>) in SteamVR
+<dd><a href=../XR/HandTrack.htm>hand tracking</a> (UltraLeap)
+<dd>second mouse interception for SimHub (<a href="https://github.com/blekenbleu/XtraMouse">XtraMouse</a>)
+<br> &emsp; ... based on this <a href=https://github.com/blekenbleu/WPF_XAML>learning exercise</a>
 
 <dt><br><font color=#007700><b>harness tensioning</b></font><ul>
 <li><a href="#accel">SimHub Acceleration properties</a>
@@ -462,6 +464,8 @@ Here is the <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/pro
 </ul></details>
 </ul>
 
+<dt><br><a href="../MIDI/plugin/index.htm"><b>MIDIio SimHub plugin</b></a>
+
 <dt><br><font color=#007700><b>pedals</b></font>
 <dd><details><summary><font color=#0000FF><b>G29 pedal mods</b></font></summary>
 <a name=pedals>
@@ -517,8 +521,7 @@ Mount will be cleaned with Windex and wiped dry to promote bonding to Thruster's
 <br>
 Properly applied, hot glue bonds well enough to peel piezo off their metal discs; ask how I know. &nbsp <img src="image/piezo_damage.jpg"><br clear=all>
 Obtaining that bond consistently is difficult, and hot glue's resilience is not ideal for capturing vibration energy,<br>
-Consequently, two-part epoxy is a better choice for bonding piezo pairs and mass-loading.</details>(<i>subsequently replaced by</i>
-	 <a href=PT2.htm>ProtoSimTech PT2 pedals</a>)
+Consequently, two-part epoxy is a better choice for bonding piezo pairs and mass-loading.</details>
 
 <dd> <details><summary><b> Logitech pedal attachment to AccuForce Controller </b></summary>
 <table><tr><td width=60%>
@@ -550,11 +553,12 @@ The AccuForce Controller
 Ricmotech's <a href="https://www.ricmotech.com/Ricmotech_Mini_Mite_Direct_Drive_Steering_System_p/rmt-mm-base.htm">Mini-mite</a>
 <img align=center src="image/Mini-Mite.jpg">
 is <a href="https://www.racedepartment.com/threads/accuforce-mounting-help.171738/post-3021710">an AccuForce clone</a>.
-</details><br>
+</details>
 
-<dd><a href=PT2.htm><b>ProtoSimTech PT2 pedals</b></a> &nbsp <a href=zombie.htm><font color=#000077><b>zombie pedal</b></font></a>
-
-	<br> &emsp; <a href="https://www.racedepartment.com/threads/worth-upgrading-sim-hardware-to-be-more-competitive-online.179966/page-2#post-3440329">on RaceDepartment</a>
+<dd><i>replaced by</i>:
+<br> &emsp; <a href=PT2.htm><b>ProtoSimTech PT2 pedals</b></a>
+ &nbsp <i>with</i> <a href=zombie.htm><font color=#000077><b>zombie pedal</b></font></a>
+<br> &emsp; &emsp; <a href="https://www.racedepartment.com/threads/worth-upgrading-sim-hardware-to-be-more-competitive-online.179966/page-2#post-3440329">on RaceDepartment</a>
 
 
 
@@ -647,8 +651,6 @@ and <a href="https://github.com/blekenbleu/Fake8">Fake8 SimHub plugin</a>,<br>
 converting debounced switch changes<br> from Arduino Blue Pill USB COM port<br> to corresponding SimHub property values,<br>
 then to <a href="https://github.com/blekenbleu/MIDIio">vJoy virtual switches</a>.
 </ul></details>
-
-<dt><br><a href="../MIDI/plugin/index.htm"><b>SimHub MIDI plugin</b></a>
 
 <dt><br><font color=#007700><b>tactile feedback</b></font>
 <a name=haptic>
@@ -1002,7 +1004,7 @@ These were eventually addressed for GTX 1080Ti by reverting to Nvidia 456.55 dri
 <a name=DDU><h4>Nvidia graphics driver crashes</h4></a>
 Many recommend <a href="RunDDU.htm">removing all traces of Nvidia driver installation, using DDU</a></details>
 
-<dd><a href="../XR/VR1.html"><b>Somnium VR1</b></a>
+<dd><a href="../XR/VR1.html"><font color=red size=+2><b>Somnium VR1</b></font></a>
 
 <dt><br><details><summary><font color=#007700><b>wheel base (AccuForce DIY model no longer available)</b></font></summary>
 <a name=DD>
