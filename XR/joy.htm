@@ -25,32 +25,35 @@
 <br>"7. On the popup, give the controller an easy label like "My NMS Joystick";<br>&nbsp; select "Xbox One Controller" for the type"
 <br>... but neither popup nor option to select type now exists.
 <li> SteamVR 2.9.6 does still support XInput controllers, using HMD gaze for pointing.
-<li> HOTAS is IMO far easier than emulating motion controllers by hand gestures.
+<li> HOTAS is IMO far easier than <a href=Ultraleap.htm#leapify>emulating motion controllers by hand gestures</a>.
 <LI><a href="https://steamcommunity.com/app/992490/discussions/4/2646360608728224193/">HOWTO: Make a gamepad work with SteamVR</a>
 </ul>
 
 <h4><a href=>XInput emulation</a></h4>
 Several XInput emulators employ <a href=https://github.com/nefarius/ViGEmBus>ViGEm</a> kernel-mode driver
-<br> that obsoleted <a href=https://github.com/nefarius/ScpVBus>SCP Virtual Bus Driver</a>.
+<br> &nbsp; that obsoleted <a href=https://github.com/nefarius/ScpVBus>SCP Virtual Bus Driver</a>.
 
 <h4><strong><a href="https://steamcommunity.com/app/275850/discussions/0/1636418037465132951/">Hand-On Throttle-And-Stick (HOTAS) as VR controller</a></strong> <ul></h4>
 <dl><dt><a name=HOTAS>Assetto Corsa unavoidably involves SteamVR</a>,<br>
-but I find VR controllers intolerable, particularly in driving sims.
+ &nbsp; but I find VR controllers intolerable, particularly in driving sims.
 <dd>2D apps such as <a href=https://acstuff.ru/app/>Content Manager</a> are seemingly unusable in VR,<br>
 without <i>some</i> controller, except perhaps in a virtual desktop.
 <br>- <a href="https://github.com/BOLL7708/OpenVR2Key"><b>Simulate key presses to Windows desktop from SteamVR input</b></a>
 <br>For more than a few controller buttons, a flight joystick (HOTAS) is wanted.
-<dt>Microsoft <a href="https://en.wikipedia.org/wiki/Microsoft_SideWinder#Precision_2">SideWinder Precision 2</a>
+
+<dt><br>Microsoft <a href="https://en.wikipedia.org/wiki/Microsoft_SideWinder#Precision_2">SideWinder Precision 2</a>
 USB Controller Joystick
 <a href="https://www.amazon.com/Microsoft-Sidewinder-Precision-2-Joystick/dp/B00005NIMA#customerReviews">works</a>
 as a <a href="https://forums.flightsimulator.com/t/sidewinder-precision-2-joystick/129996">HOTAS</a>.
 <dd><img src=Sidewinder.jpg>
-<dt>Also <a href=https://www.vkbcontrollers.com/products/gladiator-nxt-evo-space-combat-edition-right-hand>VKB NXT EVO SCE</a>
+
+<dt><br>Also <a href=https://www.vkbcontrollers.com/products/gladiator-nxt-evo-space-combat-edition-right-hand><b>VKB NXT EVO SCE</b></a>,
+	with more controls than an XBox 360 gamepad
 <dd><embed width=720 height=540 src=RightConfig1.pdf>
 <dd><a href=https://www.vkbcontrollers.com/pages/downloads>Downloads</a>,
  including <a href=https://cdn.shopify.com/s/files/1/0551/4739/7238/files/Njoy32_2_19_En.pdf>Software user guide</a>
 <dd><a href=https://www.youtube.com/@VKBSim/search?query=gladiator%20nxt%20evo>Videos</a>:&nbsp; <a href=https://www.youtube.com/watch?v=HRC5uPpFPzk>Quick Guide</a>
-<DT>Or <a href=https://us.winwingsim.com/view/goods-details.html?id=557>WINWING URSA MINOR Fighter</a>
+<DT><br>...or <a href=https://us.winwingsim.com/view/goods-details.html?id=557>WINWING URSA MINOR Fighter</a>
  - <a href=https://winwingsim.com/static/download/QmZUADmfHkCRtwFRSRA9ftvaSJT7dRMaY8msEGEAwgoj89?filename=URSA%20MINOR-Fighter-Joystick%20R-User%20Manual%20EN%20V1.0.pdf>manual</a>
 <dd>29 buttons and mini joystick (34) on the grip<br><img width=640 src=UrsaMinor.jpg>
 </dl>
@@ -63,8 +66,9 @@ supports Sony DualShock 3 Controllers to SteamVR as XInput
 <dt><a href=https://www.x360ce.com/#Help><font color=red><b>x360ce</b></font></a> bundles ViGEm
 <br><div align=center><img src=SteamVRx360ce.png></div>
 
-<dt><a href="https://github.com/Snoothy/UCR#device-support">Universal Control Remapper</a> uses ViGEm
-<dd><a name=UCR>AKA UCR</a> allows remapping inputs from devices<br>
+<a name=UCR>
+<dt></a><a href="https://github.com/Snoothy/UCR#device-support">Universal Control Remapper</a> AKA UCR
+<dd>uses ViGEm, allows remapping inputs from devices<br>
 such as second mice (using <a href="https://github.com/oblitum/Interception"> interception</a>)
 and joysticks to <a href="../Windows/HID">virtual HID game controllers</a>.<ul>
 <li><a href="https://steamcommunity.com/app/502500/discussions/0/1777135944133825024/"><b>remap HOTAS using UCR and ViGEm</b></a>
@@ -98,7 +102,7 @@ After SteamVR recognizes an XInput controller, binding controls is another hassl
 <dd>Basic use of <a href=https://github.com/ViGEm/ViGEm.NET>ViGem .NET SDK</a> to send emulated XBox controller values
 <dt><br><a href=https://github.com/speps/XInputDotNet>XInputDotNet</a> handle XInput controls in C#
 <dd><a href=https://lcmccauley.wordpress.com/2015/04/20/x360-input-tutorial-unity-p1/>Unity tutorial</a>
-<dt><a href=https://github.com/AderitoSilva/XInputium>XInputium</a> is another .NET library for XInput integration
+<dt><br><a href=https://github.com/AderitoSilva/XInputium>XInputium</a> is another .NET library for XInput integration
 </dl>
 
 </td></tr><tr><td align=center>

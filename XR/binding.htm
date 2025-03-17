@@ -1,29 +1,45 @@
 <html><head>
 <link rel='stylesheet' type='text/css' href='../../static/my.css'>
 
-<title>SteamVR Xbox360 controller binding</title>
+<title>SteamVR XInput controller binding</title>
 </head>
 
 <body>
 <div align=center><table class="my_table"><tr><td>
 
-<font size=-1><a href=joy.htm><i>back</i></a></font><br>
+<font size=-1><a href=joy.htm><i>back</i></a></font>
 <a href=https://www.gixen.com/index.php name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src=https://www.gixen.com/images/gixenlink.gif border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>
-<br>
 
 <font size=+1>
-<h2>SteamVR controller binding</h2>
+<h2>SteamVR XInput controller binding</h2>
+<p>SteamVR uses
+ <a href=https://github.com/ValveSoftware/openvr/wiki/Input-Profiles>Input
+ Profiles</a> for application action binding.
+<br>For XInput gamepads, <code>gamepad_profile.json</code> is in:
+<br> &nbsp; <code>Steam\steamapps\common\SteamVR\gamepad\resources\input\</code>
+<br>... and enumerates 2 triggers + 2 joysticks + 13 buttons</p>
 
-<h3>PS3 Controller</h3>
+<p>SteamVR stores custom <a href=https://github.com/ValveSoftware/openvr/blob/ae46a8dd0172580648c8922658a100439115d3eb/samples/drivers/drivers/tutorial/README.md#bindings><b>Bindings</b></a> in <code>~\Documents\steamvr\input\</code>
+<br>"You must bind all required bindings,
+<br> &nbsp; or you won't be able to save the bindings profile."
+<br>Whether those bindings are currently used is another question...</p>
+
+<p>Settings can be changed from within a VR headset
+<br>by <i>VR motion controllers'</i> laser pointer,
+<br>but this page is about configuring <i>without</i> such controllers</p>
+
+<h4><a href=https://steamcommunity.com/app/250820/discussions/2/2950377478182625392/>Debugging bindings</a></h4>
+
+<h3>PS3 Controller AKA DualShock 3</h3>
 Steam->Settings->Controller recognizes <b>PS3 CONTROLLER</b>,
-<br> &emsp; but <b>Begin Test</b> does not detect controls.
+<br> &emsp; but <b>Begin Test</b> did not detect controls.
 <a name=DsHidMini>
 <br></a><a href=https://github.com/nefarius/DsHidMini><b>DsHidMini</b></a> was
  <a href=https://docs.nefarius.at/projects/DsHidMini/v2/How-to-Install/>installed</a>
- and configured as Steam <b>XINPUT CONTROLLER #1</b>,
-<br> &emsp; then also detected as a SteamVR GAMEPAD controller
+ as Steam <b>XINPUT CONTROLLER #1</b>,
+<br> &emsp; then PS3 is also detected as a SteamVR GAMEPAD controller
 <br> &emsp; <img src=SteamVRx360ce.png><ul>
 <li>default button assignments match
 <li>default <i>home</i> bindings work
@@ -49,6 +65,7 @@ Depend on game controller trigger analog axes, not switches...<br>
 <br>At least "xbox" and "start" buttons are needed on Xbox controller..
 <dd>SteamVR must be running...
 <br>with all bindings removed, some XInput buttons are <i>still</i> active.
+<br>This may be a consequence of <a href=https://github.com/ValveSoftware/openvr/blob/master/docs/Driver_API_Documentation.md#automatic-rebinding>Automatic Controller Rebinding</a>.
 <dt><b><i>dashboard URL is blank</i></b>
 <dd> <a href=http://localhost:27062/dashboard/controllerbinding.html>http://localhost:27062/dashboard/controllerbinding.html</a>
 <dt>Most binding guides are obsolete<br>
@@ -78,7 +95,7 @@ Depend on game controller trigger analog axes, not switches...<br>
 <dl>
         <dt>TIPS:<br />
 <ul>
-	<li>Bindings generated <i>many</i> <code>binding_config.json</code> files in <code>Steam/userdata/870060982/</code>
+	<li><i>Many</i> <code>binding_config.json</code> files generated in <code>Steam/userdata/870060982/</code>
      <li>If HOTAS Throttle doesn’t work or is <u>mapped upside down</u>,<br />
      clear the input and map it to W and S keys with a joystick profiler.<br />
     Make sure no keys are pressed while launching the game.
