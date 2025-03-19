@@ -94,30 +94,46 @@ At best, SteamVR reports:<br><img src=NotTracking.jpg>
 <br>slight appearance but no functional difference.</ul>
 &emsp; <img src=shipping.jpg>
 
-<dt><br><a href=https://www.youtube.com/watch?v=w1bN372A4Ls>SadlyItsBradley video</a>
-<dt><a href=https://www.youtube.com/watch?v=75ZytcYANTA>Hackaday Supercon 2016 video</a>
-<dt><a href=https://www.youtube.com/watch?v=6vbBYb4pciQ>Lighthouse 2.0 Testing video</a>
-<dt>Base stations must be set to different channels.
-<dd>Use a paper clip to press button in tiny hole in base station 2.0 back
-<dt><a href=https://forum.htc.com/topic/7656-10-vs-20-base-stations-whats-the-real-difference/>1.0 vs 2.0 base stations primary differences</a>
-<dd><a href=https://skarredghost.com/2017/06/07/need-know-steamvr-tracking-2-0-will-foundation-vive-2/>base stations 2.0 have 16 channels, taking 5-10 seconds to register.
-<br>For 4 you currently want S0,S1, S2, S3 (S4-S15 are ghost channels for firmware expansion)
-<dt><a href=https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/functional-areas/lighthouse/>Lighthouse positioning system</a>
-<dt><a href=https://www.valvesoftware.com/en/index/base-stations>Base Station 2.0 - Valve</a>
-<dd>Now with a single coded laser sweep and no omnidirectional blinker,
-<br>base stations co-exist with your other IR devices and have better immunity from depth cameras and motion capture systems.
+<dt><br><a href=https://arxiv.org/pdf/2104.11523>Lighthouse Positioning System</a> (for UAV research)
+<dd>Version 2.0 (Fig. 1b) has one rotating drum with two planes
+<br>each at a different angle (Fig. 1e and f).
+<br>Drum rotates at a slightly different rate,
+<br>depending on channel number.
+<br>Thus, light planes of
+different base stations may periodically collide
+<br><img src=Fig.1.jpg>
+
+<dt><br><a href=https://www.valvesoftware.com/en/index/base-stations>Base Station 2.0 - Valve</a>
+<dd>A single coded laser sweep and no omnidirectional blinker,
+<br>base stations co-exist with your other IR devices
+<br> and have better immunity from depth cameras
+<br> and motion capture systems.
 <dt><a href=https://www.vive.com/us/support/vive-pro/category_howto/about-the-base-stations.html>About SteamVR Base Station 2.0 - Vive</a>
 <dd><a href=https://www.vive.com/us/support/vive-pro/category_howto/how-to-check-which-base-stations-are-in-use.html>which base stations are currently in use?</a>
-<dt><a href=https://www.reddit.com/r/SteamVR/comments/q9z2ob/10_lighthouse_vs_20/>2.0 lighthouses have fewer moving parts, don't need line of sight because they spin at different rates</a>
-<dd> and that tells the device which base station sent the sweep.</a>
-<br>I believe they spin faster on higher channels.
+
 <dt><a href=https://www.reddit.com/r/Vive/comments/8yhc30/base_station_20_wiresync_connection_question/>Base Station 2.0 serious jittering</a>
-<dd>Hovering over SteamVR base station icon reports base stations 5.6 meters apart;
+<dd>Hovering over SteamVR base station icon
+<br> reports base stations 5.6 meters apart;
 <br> they need to be 5.5 meters apart to work properly
 
 <dt><a href=https://www.dropbox.com/scl/fi/axcr337uc49ykc3z6b5px/JitterTester1.1.zip?rlkey=mcz21mav4qqaimvxdnpf5l06z&e=1&dl=0>JitterTester1.1</a> -
 <a href=https://www.reddit.com/r/Vive/comments/4f9h4i/very_very_rudimentary_program_for_testing_your/>owner</a>
 <dd><a href=https://steamcommunity.com/app/250820/discussions/2/3202617741914433761/>discussion</a>
+
+<dt><br><a href=https://www.youtube.com/watch?v=w1bN372A4Ls>SadlyItsBradley video</a>
+<dt><a href=https://www.youtube.com/watch?v=75ZytcYANTA>Hackaday Supercon 2016 video</a>
+<dt><a href=https://www.youtube.com/watch?v=6vbBYb4pciQ>Lighthouse 2.0 Testing video</a>
+
+<dt><br>Base stations must be set to different channels.
+<dd>Use a paper clip to press button in tiny hole in base station 2.0 back
+
+<dt><a href=https://forum.htc.com/topic/7656-10-vs-20-base-stations-whats-the-real-difference/>1.0 vs 2.0 base stations primary differences</a>
+<dt><a href=https://skarredghost.com/2017/06/07/need-know-steamvr-tracking-2-0-will-foundation-vive-2/>Base stations 2.0 have 16 channels, taking 5-10 seconds to register.</a>
+<dd>For 4, use S0,S1, S2, S3
+<br> (S4-S15 are ghost channels for firmware expansion)
+
+<dt><a href=https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/functional-areas/lighthouse/>Lighthouse positioning system</a>
+
 </dl>
 
 </td></tr><tr><td align=center>
