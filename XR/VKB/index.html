@@ -1,0 +1,62 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<title>VKB Gladiator EVO R HOTAS | blekenbleu.github.io</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href="../joy.htm"><i>back</i></a></font><br>
+
+<font size=+1>
+<h2><a href=https://www.vkbcontrollers.com/products/gladiator-nxt-evo-space-combat-edition-right-hand>VKB Gladiator NXT EVO SCE R</a> HOTAS</h2>
+<dl>
+<dt>mostly to use as SteamVR controller by XInput emulation
+<dd><embed width=720 height=540 src=RightConfig1.pdf>
+<dd><a href=https://www.vkbcontrollers.com/pages/downloads>Downloads</a>,
+ including <a href=https://cdn.shopify.com/s/files/1/0551/4739/7238/files/Njoy32_2_19_En.pdf>Software user guide</a>
+<dd><a href=https://www.youtube.com/@VKBSim/search?query=gladiator%20nxt%20evo>Videos</a>:&nbsp; <a href=https://www.youtube.com/watch?v=HRC5uPpFPzk>Quick Guide</a>
+
+<dt><br><b>simulate XInput analog triggers</b>
+<dd>by so-called trim switches...
+<dt>"physical" axes 7 and 8 are not associated with physical controls, so <code>Virtual</code> (not logical?) inputs
+<dd>Trimmer must be enabled to control them from buttons...
+<dd>Trimmer with buttons is 4.3.19 (pg 84) in PDF
+
+<dt><a href=http://forum.vkb-sim.pro/viewtopic.php?t=8372>Button to axis</a>
+<dd>TRIMMER SET 2 in Button Mapping Wizard may be necessary, but does not suffice;
+<br>probably something involving <i>logical</i> is wanted.
+
+<dt>logical axis
+<dd>Single physical axis can bind to several logical axes.
+<pre>
+Trimming is fine tuning a rotation axis without using the joystick.
+It's used to adjust pitch, yaw or/and roll
+so during flight you could just release the joystick (or hold it at rest)
+and maintain course (or climb, descent, turn etc) by trimming.
+</pre>
+<dt>Axes trimming
+<dd><a href=https://www.youtube.com/watch?v=kfxYCqUgU7E>VKB video</a>
+<dd><a href=https://forum.dcs.world/topic/295735-trim-trim-reset-with-vkb-joysticks-alternativeworkaround/#comment-4919205>DCS trimmer discussion</a>
+<dd><a href=http://forum.vkb-sim.pro/viewtopic.php?t=2184>VKB forum - How to Use Trimmer Buttons to Reset Axis?</a>
+<dd><a href=https://www.youtube.com/watch?v=q7VoI_sMmyQ>DCS video - Understanding Helicopter Trim</a>
+<dd><a href=https://www.reddit.com/r/hotas/comments/p9gykp/vkb_software_tutorials_axes_trimming/>r/hotas - VKB Software tutorials - Axes trimming</a>
+
+<dt><pre>Technically, the trimmer reset function works exactly that way
+...just sets the axis value to 0 (50%) instead of any other value.
+Trimmer Set and Set2 will trim the center to an arbitrary value
+Fix Axes > FA3 will freeze the (logical I believe) axis in  place
+at an arbitrary value set on the profile > axes page
+</pre>
+<dt><br>Trigger has 2 switches
+<dd>full squeeze turns on both
+<br>for trim use, probably want second switch to disable first
+</dl>
+</td></tr><tr><td align=center>
+
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+
+</td></tr></table>
+
+    </div>
+</body></html>
