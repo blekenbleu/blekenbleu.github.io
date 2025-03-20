@@ -17,24 +17,44 @@
  including <a href=https://cdn.shopify.com/s/files/1/0551/4739/7238/files/Njoy32_2_19_En.pdf>Software user guide</a>
 <dd><a href=https://www.youtube.com/@VKBSim/search?query=gladiator%20nxt%20evo>Videos</a>:&nbsp; <a href=https://www.youtube.com/watch?v=HRC5uPpFPzk>Quick Guide</a>
 
+<dt><br><b>Not great onboarding</b>
+<dd>Much essential information is by crappy YouTube videos.
+<br> - <a href=https://www.youtube.com/watch?v=HRC5uPpFPzk><b>Gladiator NXT EVO Quick Guide 2024</b></a> screen view is too low resolution
+<br> - <a href=https://www.youtube.com/watch?v=HRC5uPpFPzk&t=180s>plugging the grip connector into the base at 3:00/9:42</a> is very unclear
+<dd> - pausing and resuming <a href=https://www.youtube.com/watch?v=NTZNUT8wmOA><b>Gladiator NXT and NXT EVO flashing and calibrating</b> video</a>
+<br> &emsp; is a lousy way to follow that convoluted procedure
+<dd><br><a href=https://cdn.shopify.com/s/files/1/0551/4739/7238/files/Njoy32_2_19_En.pdf><b>NJoy32 Family Controllers Configuration Utility</b> User guide</a>
+<br> - mostly a poorly organized <i>specification</i>, sometimes unreadable and oftem inscruitable.
+<br> - rarely does it actually <i>guide readers</i> to accomplish anything useful.
+<dd> - "Logical", "physical" and "virtual" terms are sprinkled thru the PDF without ever being defined,
+<br> &emsp; much less how elements with those attributes interact.
+<dd> - floundering in horrid <a href=https://cdn.shopify.com/s/files/1/0551/4739/7238/files/VKBDevCfg-C_v0.93.26.zip>VKBDevCfg Device Configurator</a>
+app occastionally provokes <font color = red>RTFM</font> dialog box,
+<br> &emsp;  so VKB is at least aware that theirs is just another <font color = red>FM</font>, not really <font color = green><b>user guide</b></font>...
+<dd> - Example of <i>useless</i> specification: &nbsp; Page 102 <b>Access from Physical layer tab</b>
+<pre>   In order to apply logical function click logical function sign as shown on a picture.</pre>
+&emsp; No idea what a "logical function sign" looks like...
+<dd> - Example of <i>doomed</i> specification:&nbsp firmware upgrade (2.2, pages 20-22)
+<br> &emsp; failed, leaving HOTAS not updated and unuseable until unplugging and replugging its USB
+
 <dt><br><b>simulate XInput analog triggers</b>
 <dd>by so-called trim switches...
-<dt>"physical" axes 7 and 8 are not associated with physical controls, so <code>Virtual</code> (not logical?) inputs
-<dd>Trimmer must be enabled to control them from buttons...
-<dd>Trimmer with buttons is 4.3.19 (pg 84) in PDF
-
-<dt><a href=http://forum.vkb-sim.pro/viewtopic.php?t=8372>Button to axis</a>
-<dd>TRIMMER SET 2 in Button Mapping Wizard may be necessary, but does not suffice;
-<br>probably something involving <i>logical</i> is wanted.
-
-<dt>logical axis
-<dd>Single physical axis can bind to several logical axes.
 <pre>
 Trimming is fine tuning a rotation axis without using the joystick.
 It's used to adjust pitch, yaw or/and roll
 so during flight you could just release the joystick (or hold it at rest)
 and maintain course (or climb, descent, turn etc) by trimming.
 </pre>
+<dt>"physical" axes 7 and 8 are not associated with physical controls, so <code>Virtual</code> (not logical?) inputs
+<dd>Trimmer must be enabled to control them from buttons...
+<dd>Trimmer by buttons is at 4.3.19 (pg 84) in PDF
+
+<dt><a href=http://forum.vkb-sim.pro/viewtopic.php?t=8372>Button to axis</a> (VKB forum)
+<dd>TRIMMER SET 2 in Button Mapping Wizard may be necessary, but does not suffice;
+<br>perhaps something involving <i>logical</i> is wantedr?
+
+<dt>logical axis
+<dd>Single physical axis can bind to several logical axes.
 <dt>Axes trimming
 <dd><a href=https://www.youtube.com/watch?v=kfxYCqUgU7E>VKB video</a>
 <dd><a href=https://forum.dcs.world/topic/295735-trim-trim-reset-with-vkb-joysticks-alternativeworkaround/#comment-4919205>DCS trimmer discussion</a>
@@ -42,17 +62,17 @@ and maintain course (or climb, descent, turn etc) by trimming.
 <dd><a href=https://www.youtube.com/watch?v=q7VoI_sMmyQ>DCS video - Understanding Helicopter Trim</a>
 <dd><a href=https://www.reddit.com/r/hotas/comments/p9gykp/vkb_software_tutorials_axes_trimming/>r/hotas - VKB Software tutorials - Axes trimming</a>
 
-<dt><pre>Technically, the trimmer reset function works exactly that way
+<pre>Technically, the trimmer reset function works exactly that way
 ...just sets the axis value to 0 (50%) instead of any other value.
 Trimmer Set and Set2 will trim the center to an arbitrary value
 Fix Axes > FA3 will freeze the (logical I believe) axis in  place
 at an arbitrary value set on the profile > axes page
 </pre>
-<dt><br>Trigger has 2 switches
+<dt>Trigger has 2 switches
 <dd>full squeeze turns on both
 <br>for trim use, probably want second switch to disable first
 </dl>
-</td></tr><tr><td align=center>
+</td></tr><tr><td align=center><hr>
 
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 
