@@ -96,6 +96,8 @@
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
 [NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector) modify or add game profiles in Nvidia driver database  
 [OBSC](https://github.com/benaclejames/OBSC) OBS-Studio plugin for OSC  
+[Ohne Speed OpenXR toolkit mod **reduces FoV, increases FpS**](https://www.youtube.com/watch?v=CieIQ7cE4CU) -
+  [toolkit configurator](https://www.youtube.com/watch?v=JBf6IIIrK4A)  
 [OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, *may* [speed performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
  &emsp;	by [forwarding calls](https://fredemmott.com/blog/2022/05/29/vr-software-components.html) to OpenXR runtime, bypassing OpenVR  
 [OpenGL](https://en.wikipedia.org/wiki/OpenGL) - 2D and 3D graphics API, developed by Silicon Graphics  
