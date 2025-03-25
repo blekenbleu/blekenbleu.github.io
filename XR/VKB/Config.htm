@@ -1,0 +1,79 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../../static/my.css'>
+<title>VKB Device Config</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href="index.htm"><i>back</i></a></font>
+<a href=https://www.gixen.com/index.php name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src=https://www.gixen.com/images/gixenlink.gif border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+
+<h2>VKB Device Config</h2>
+In addition to a <a href=https://cdn.shopify.com/s/files/1/0551/4739/7238/files/Njoy32_2_19_En.pdf>PDF</a>,
+<a href=https://www-njoy32-vkb--sim-pro.translate.goog/home/configurator?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp>VKB has online  Help Center</a>
+
+<br><br><code>VKBDevCfg-C.exe</code> has random GUI elements for (mis)configuring VKB USB HID devices.
+<br>The top box should list VKB devices detected.&nbsp; <b>Select one</b>...
+<br>The next section, about the same height, displays
+<br> based on selecting among 3 tabs:&nbsp <code> Action | Tools | Settings | </code>
+<br>The bottom (2/3 window) section changes based on selection among 5 <i>bottom</i> tabs.
+
+<br><br>With <code>Action, Global, Common</code> selected, my version displays this:
+<br><img width=640 src=ActionGlobalCommon.jpg>
+
+<br><br>For <code>Tools | Settings</code>, second section displays:
+<br><img width=640 src=Tools.jpg>
+<hr>
+<img width=640 src=Settings.jpg>
+
+<h4>Action</h4>
+<code> Get | Set </code> move settings from | to the device.
+<br><code> Load | Save </code> move settings from | to PC files.
+
+<h4>Tools</h4>
+<code>Default</code> is wanted for a new device or recovering from (mis)configuration.
+<br><code> Start Calibr | End Calibr </code> are wanted to determine axes limits after <code>Default</code>.
+<br>Other "Tools" should be considered nearer <i>weapons</i> and avoided.
+
+<h4>Settings</h4>
+Options other than <code> Auto Read Parameters, Short Device List </code>
+<br> are presumably for bored or masochistic folks.
+
+<H3>The bottom section</h3>
+mostly about configuring VKB device control behaviors (e.g., for me) <code>EVO R XT2</code>
+<br>Terms and acronyms employed are not literally meaningful,
+<br>with <i>actual</i> significances rarely explained in single VKB PDF paragraphs
+<br>and too often never.&nbsp; Some terms (dynamic, logical, virtual) are context-dependent...
+
+<h4>Global | Common</h4>
+Set <code>SN:</code> to other than <code>0000</code> for Windows to enumerate it consistently.
+
+<h4>Global | External</h4>
+Ignored for now...
+
+<a name=triggers>
+<h4>Profile | Axes</h4></a>
+NXT EVO lacks real axes 7 and 8
+<br>Configure them as Axes <i>without center</i> to emulate XBox triggers
+<br> (uncheck <code>Cn</code> column):
+<br><img width=640 src=AxesProfile.jpg>
+
+<br><br>Axis 8 Trimmer Options are similar:
+<br><img src=Axis7.jpg>
+
+<h4>Profile | Buttons</h4>
+Reconfigure two buttons (in yellow) as Trim Auto Axes 7 and 8.
+<br>64x is (quick) speed at which values ramp from 0 to 100% and back
+<br> <img width=640 src=PhysTrigAxes.jpg>
+
+<br><br>Red button for axis 7 is configured similarly to Trigger:
+<br><img src=TriggerMap.jpg>
+
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
