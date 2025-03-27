@@ -8,12 +8,12 @@
 
 <font size=-1><a href="index.htm"><i>back</i></a></font>
 <a href=https://www.gixen.com/index.php name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
-<img align=right src=https://www.gixen.com/images/gixenlink.gif border="0" alt="Auction Sniper" title="Auction Sniper">
-</a>
+<img align=right src=https://www.gixen.com/images/gixenlink.gif
+ border="0" alt="Auction Sniper" title="Auction Sniper"></a>
 
 <h2>VKB Device Config</h2>
 In addition to a <a href=https://cdn.shopify.com/s/files/1/0551/4739/7238/files/Njoy32_2_19_En.pdf>PDF</a>,
-<a href=https://www-njoy32-vkb--sim-pro.translate.goog/home/configurator?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp>VKB has online  Help Center</a>
+<a href=https://sites.google.com/view/njoy-32/home?authuser=0>VKB has online  Help Center</a>
 
 <br><br><code>VKBDevCfg-C.exe</code> has random GUI elements for (mis)configuring VKB USB HID devices.
 <br>The top box should list VKB devices detected.&nbsp; <b>Select one</b>...
@@ -54,16 +54,17 @@ Set <code>SN:</code> to other than <code>0000</code> for Windows to enumerate it
 <h4>Global | External</h4>
 Ignored for now...
 
-<a name=triggers>
-<h4>Profile | Axes</h4></a>
+<a name=triggers><h3></a>Analog triggers for <a href=../joy.htm#X360CE>X360CE</a></h3>
+<h4>Profile | Axes</h4>
 NXT EVO lacks real axes 7 and 8
 <br>Configure them as Axes <i>without center</i> to emulate XBox triggers
 <br> (uncheck <code>Cn</code> column):
 <br><img width=640 src=AxesProfile.jpg>
 
-<br><br>Axis #8 Trimmer Options are similar:
+<br><br>Axis #8 Trimmer Options match:
 <br><img src=Axis7.jpg>
-<br> &emsp; Source <code>AUX</code> <i>breaks X-axis link</i>
+<br>Source <code>AUX</code> trims an Axis using buttons or encoder
+<br>as opposed to trimming via another axis, physical or logical.
 
 <h4>Profile | Buttons</h4>
 Reconfigure two buttons (in yellow) as Trim Auto Axes 7 and 8.
