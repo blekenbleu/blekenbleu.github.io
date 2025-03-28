@@ -36,13 +36,13 @@
 </ul>
 
 <h4><strong><a href="https://steamcommunity.com/app/275850/discussions/0/1636418037465132951/">Hand-On Throttle-And-Stick (HOTAS) as VR controller</a></strong> <ul></h4>
-<li> HOTAS is IMO far easier than <a href=Ultraleap.htm#leapify>emulating motion controllers by hand gestures</a>.
+<li> HOTAS IMO beats <a href=Ultraleap.htm#leapify>emulating motion controllers by hand gestures</a>.
 <dl><dt><a name=HOTAS>Assetto Corsa unavoidably involves SteamVR</a>,<br>
  &nbsp; but VR motion controllers are hateful, IMO particularly in driving sims.
 <dd>2D apps such as <a href=https://acstuff.ru/app/>Content Manager</a> are seemingly unusable in VR,<br>
 without <i>some</i> controller, except perhaps in a virtual desktop.
 <br>- <a href="https://github.com/BOLL7708/OpenVR2Key"><b>Simulate key presses to Windows desktop from SteamVR input</b></a>
-<br>For more than a few controller buttons, a flight joystick (HOTAS) is wanted.
+<br>For more than a few buttons, a flight joystick (HOTAS) is wanted.
 
 <dt><br>Microsoft <a href="https://en.wikipedia.org/wiki/Microsoft_SideWinder#Precision_2">SideWinder Precision 2</a>
 USB Controller Joystick
@@ -60,14 +60,24 @@ as a <a href="https://forums.flightsimulator.com/t/sidewinder-precision-2-joysti
 <h3><a href=>XInput emulation</a></h3>
 Several XInput emulators employ <a href=https://github.com/nefarius/ViGEmBus>ViGEm</a> kernel-mode driver
 <br> &nbsp; that obsoleted <a href=https://github.com/nefarius/ScpVBus>SCP Virtual Bus Driver</a>.
-<br>Windows->Settings->Gaming->Game Bar-><code>Allow your controller to open Game Bar</code>
+<br><code>Windows->Settings->Gaming->Game Bar->Allow your controller to open Game Bar</code>
 <dl>
+<a name=XOutput>
+<dt><br></a><a href="https://github.com/csutorasa/XOutput"><font color=red><b>XOutput</b></font></a> converts and maps DirectInput into XInput
+<dd><i>Very</i> straight-forward to configure,
+ works well for <a href=VKB/Config.htm>VKB EVO NXT</a>
+<dd>archived Dec 3, 2024, now read-only;&nbsp; deprecated with ViGEm
+<details><summary>configuration</summary>
+<img src=img/XOutput.png>
+<br><img src=img/XController.png></details>
+
+<dt><details><summary>alternatives</summary>
 <dt><br><a href=binding.htm#DsHidMini><b>DsHidMini</b></a>
 supports Sony DualShock 3 Controllers to SteamVR as XInput
 <dd>Fumbling around for a game controller during VR sim driving is not ideal...
 
 <dt><details><summary><a href=https://www.x360ce.com/#Help>X360CE</a> bundles
-<a href=https://github.com/nefarius/ViGEmBus>ViGEm</a>, works for <a href=VKB/Config.htm>VKB EVO NXT</a></summary>
+<a href=https://github.com/nefarius/ViGEmBus>ViGEm</a></summary>
 <a name=X360CE>X360CE has tons of underdocumented configuration options...
 <br></a><img src=img/X360CE-SteamVR.jpg>
 <br><br>Except for Guide button, this works for VKB EVO NXT:
@@ -84,27 +94,23 @@ and joysticks to <a href="../Windows/HID">virtual HID game controllers</a>.<ul>
 <li><a href="https://www.xsimulator.net/community/threads/feeding-multiple-controllers-into-the-joystick-plugin.15343/">join multiple controllers</a>
 </ul>
 
-<dt><a href="https://github.com/csutorasa/XOutput">XOutput</a> converts and maps DirectInput into XInput
-<dd>archived Dec 3, 2024. It is now read-only;&nbsp; deprecated as ViGEm was deprecated
-<br><a href=https://www.youtube.com/watch?v=Sj6NxAQISlA&t=70s>5 Aug 2024 video for mapping any controller using XOutput and HidHide</a>
-<br><a href=https://www.youtube.com/watch?v=iORUGl_oYf0>9 Mar 2024 video for using with Logitech X-56 HOTAS</a>
-
 <dt><a href=https://www.worldofjoysticks.com/>World of Joysticks (WoJ)</a>
 <dd> Last updated in 2022;&nbsp; employs SCPVirtualBus,  Microsoft Xbox360Controller drivers
 <dd><a href=https://steamcommunity.com/groups/worldofjoysticks>Listed in Steam</a>, but no matches for using it with SteamVR;
 <br>- supports more than one DirectInput device in a single emulated XBox 360
 <br>- haptic feedback can be redirected to bass shakers
-<dt><a href=https://whitemagic.github.io/JoystickGremlin/>Joystick Gremlin</a> reported emulates XInput
+<dt><a href=https://whitemagic.github.io/JoystickGremlin/>Joystick Gremlin</a> reportedly emulates XInput
 <dd>- merges multiple devices to a single virtual device
 <dd>- depends on vJoy
 </dl>
+</details>
 
 <h3><a href=binding.htm>Xbox360 Controller Binding in SteamVR</h3></a>
-&emsp; After SteamVR recognizes an XInput controller, binding controls is another hassle.
+&emsp; SteamVR recognizes XInput gamepads;&nbsp; binding controls is another hassle.
 
 <br><br><hr><dl>
 <dt><br><a href=https://github.com/nefarius/Legacinator>Legacinator</a> removes known outdated controller emulator device drivers.
-<dt><br><a href=https://www.xinput.org/>XInput</a> app enables using keyboard instead of XBox controller buttons.
+<dt><br><a href=https://www.xinput.org/>XInput</a> app enables using keyboard instead of XBox buttons.
 <dt><br><a href=https://github.com/kmcnaught/vigem-example-dotnet>vigem-example-dotnet</a>
 <dd>Basic use of <a href=https://github.com/ViGEm/ViGEm.NET>ViGem .NET SDK</a> to send emulated XBox controller values
 <dt><br><a href=https://github.com/speps/XInputDotNet>XInputDotNet</a> handle XInput controls in C#
