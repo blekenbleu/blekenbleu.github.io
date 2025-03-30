@@ -57,9 +57,9 @@ as a <a href="https://forums.flightsimulator.com/t/sidewinder-precision-2-joysti
 <dd>29 buttons and mini joystick (34) on the grip<br><img width=640 src=img/UrsaMinor.jpg>
 </dl>
 
-<h3><a href=>XInput emulation</a></h3>
-Several XInput emulators employ <a href=https://github.com/nefarius/ViGEmBus>ViGEm</a> kernel-mode driver
-<br> &nbsp; that obsoleted <a href=https://github.com/nefarius/ScpVBus>SCP Virtual Bus Driver</a>.
+<h3>XInput emulation</h3>
+Several XInput emulators employ nefarius' <a href=https://github.com/nefarius/ViGEmBus><b>ViGEm</b></a> kernel-mode driver,
+<br> &nbsp; which obsoleted <a href=https://github.com/nefarius/ScpVBus>SCP Virtual Bus Driver</a>.
 <br><code>Windows->Settings->Gaming->Game Bar->Allow your controller to open Game Bar</code>
 <dl>
 <a name=XOutput>
@@ -68,8 +68,24 @@ Several XInput emulators employ <a href=https://github.com/nefarius/ViGEmBus>ViG
  works well for <a href=VKB/Config.htm>VKB EVO NXT</a>
 <dd>archived Dec 3, 2024, now read-only;&nbsp; deprecated with ViGEm
 <details><summary>configuration</summary>
-<img src=img/XOutput.png>
-<br><img src=img/XController.png></details>
+In my case, ViGEm had already been installed
+<br>(by X360CE, which has a Guide button bug and confusing interface).
+<br>On opening, upper window pane enumerates detected DirectInput devices;
+<br>bottom half will be empty.
+<br><img src=img/XOutput.png>
+<br>Click <code>Add controller</code>, then <code>Edit</code> for Controller window:
+<br><img src=img/XController.png>
+<br>For each XInput control to emulate,<ul><li> click corresponding <code>Configure</code>,
+<li> then DirectInput device control to be mapped.</ul>
+<br>After mapping all controls,<ul><li> close the Controller window, and
+<li> click <code>Start</code> to enable emulation and
+<li><code>Save configuration</code> to write <code>settings.json</code>.</ul>
+<br><code>File->Game Controllers</code> will launch Windows' control panel:
+<br><img src=img/ControlPanel.png>
+<br>to verify control emulations: <ul>
+<li>select <code>Controller (XBOX 360 for Windows)</code>,
+<li> then <code>Properties</code></ul>
+</details>
 
 <dt><details><summary>alternatives</summary>
 <dt><br><a href=binding.htm#DsHidMini><b>DsHidMini</b></a>
