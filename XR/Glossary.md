@@ -83,6 +83,7 @@
 [MeganeX superlight 8k](https://shop.shiftall.net/en-us/products/meganex8k-us) 2x 4k microOLED panel pancake lens VR headset,  
  &emsp; highly regarded by MRTV  
 [MFG](https://www.nvidia.com/en-eu/geforce/news/dlss4-multi-frame-generation-ai-innovations/) - Multi Frame Generation (NVIDIA) up to 3 fake between rendered  
+[mixed reality](ovr.htm) (MR) binocular camera video overlay added virtual reality  
 [motion reprojection](https://forums.flightsimulator.com/t/motion-reprojection-explained/548659) AKA SpaceWarp (SW)  
   &emsp; differences between objects moving in a scene vs e.g. camera rotation,  
   &emsp; by interpolation (adding latency) or extrapolation (guessing wrong)  

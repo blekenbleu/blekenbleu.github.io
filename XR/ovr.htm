@@ -19,11 +19,12 @@
 <dd><a href="https://blogs.igalia.com/ifernandez/2021/01/webxr-webkit/">WebXR implementation in WebKit targeting the OpenXR API</a>
 <dd><a href="https://www.reddit.com/r/OpenXR/comments/rk0eg2/does_openxr_support_overlay_apps_the_way_steamvr/">OpenXR overlay support via Monado XR_EXTX_overlay</a>
 <dd><a href="https://gitlab.freedesktop.org/monado/demos/openxr-see-through-overlay">Monado video see-through overlay projection layer for OpenXR</a>
-<dt><b>MR</b>
+<dt><b>MR</b> (Mixed Reality:&nbsp; binocular video overlay)
 <dd><a href="https://www.youtube.com/watch?v=ictAwtppv9Y">OpenBrush</a>
 <dd><a href="https://www.youtube.com/watch?v=hm63tUWUK8M">Mixed Reality Passthrough with Hand tracking</a>
 <dd><a href="https://www.youtube.com/watch?v=Iq39cL1ViqE">enable/disable WMR OpenXR service</a>
 <dd><a href="https://www.youtube.com/watch?v=Wv0aJjedDbQ">OpenXR MSFS Reverb G2 settings</a>
+<dt><b>Hand tracking</b>
 <dd><a href="https://www.youtube.com/watch?v=dwJLUOj27eI">Monado's Mercury OpenXR optical hand tracking ready for use</a>
 <dd><a href="https://www.youtube.com/watch?v=jgCPd5ieL4Y">OpenXR Toolkit with UltraLeap</a>
 <dt><b>Assetto Corsa and HP Reverb</b>
@@ -33,6 +34,39 @@
 <dd><a href="https://www.youtube.com/watch?v=TE-mPeur_s8">2023 ASSETTO CORSA VR ANTI-ALIASING FIX GUIDE FOR HP REVERB G2</a>
 <dd><a href="https://www.youtube.com/watch?v=fHKKHImI7Dg">AC VR OpenXR OpenComposite High-clarity settings for HP Reverb G2</a>
 <dd><a href="https://www.youtube.com/watch?v=-MupO9pM6p8">Dirt Rally 2 Optimized HP Reverb G2 Settings</a> OpenXR / OpenComposite
+<dt><b>Somnium VR1 mixed reality cameras</b>
+<dd>The VR1 tool has features to integrate mixed reality camera video
+<br> &emsp; through chromakey, 3D meshes, and more
+<dd><details><summary><a href=https://www.autohotkey.com>AutoHotkey</a> script to toggle full vs masked mixed reality</summary>
+<pre>#Requires AutoHotkey v2.0
+#SingleInstance
+
+ToggleFile := EnvGet("TEMP") . "\VR1MODE"
+SetTitleMatchMode(1)
+if (WinWait("Somnium VR1 Tool")) {
+   MinMax := WinGetMinMax()
+   if (MinMax == -1)
+      WinRestore()
+   WinActivate()
+   WinGetClientPos(,,&Width)
+   Click(460, 25)
+   Click(520, 100)
+   Click(150, 340)
+   Click(Width - 660, 240)
+   if (FileExist(ToggleFile)) {
+      Send("Overlay{Enter}")
+      FileDelete(ToggleFile)
+      }
+   else {
+      Send("3D mesh with chroma key{Enter}")
+      FileAppend("x", ToggleFile)
+      }
+   if (MinMax == -1) {
+      sleep(100)
+      WinMinimize()
+      }
+   }</pre>
+</details>
 </dl>
 
 </td></tr><tr><td align=center>
