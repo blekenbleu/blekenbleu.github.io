@@ -133,7 +133,7 @@
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](Windows/NVMe/)  
 
 ### HVAC
-- [Air filtration](hvac/)  
+- [Air filtration](../static/hvac/index.htm)  
 
 ---
 
