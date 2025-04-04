@@ -18,7 +18,7 @@
 <i>Specifically optical, using (typically IR) video cameras</i><br><br>
 <dl>
 <dt>Working systems
-<dd>Ultralink, Meta Quest, Apple Vision Pro, Rokid
+<dd>Ultralink, <a href=https://www.meta.com/en-gb/blog/introducing-hand-tracking-on-oculus-quest-bringing-your-real-hands-into-vr/>Meta Quest</a>, Apple Vision Pro, Rokid
 <dt>APIs
 <dd>- OpenXR
 <br>- <a href=https://github.com/ValveSoftware/openvr/wiki/Creating-a-Skeletal-Input-Driver>SteamVR Skeletal Input</a>
@@ -27,17 +27,24 @@
 <br>- visionOS/ARKit
 <br>- xreal NRSDK
 <dt>Implementations
+<dd>- <a href=https://github.com/alvr-org/ALVR/wiki/Hand-tracking-controller-bindings>ALVR</a> (Rust source)
 <dd>- AVP
+<dd>- <a href=https://github.com/fredemmott/HTCC>HTCC</a> Hand tracking for flight simulators
 <dd>- <a href=https://monado.pages.freedesktop.org/monado/ulv2__driver_8cpp.html>Monado OpenXR optical hand tracking</a>
-<br> &emsp; Is Monado's Ultralink driver an OpenXR layer or compiled into their OpenXR run time?
+<br> &emsp; Is Monado's Ultralink driver an OpenXR layer
+<br> &emsp; or compiled into their OpenXR run time?
 <dd>- OpenXR (unity, unreal, OpenXR Toolkit)
 <dd> &emsp; - <a href=https://github.com/godotengine/godot-demo-projects/tree/master/xr/openxr_hand_tracking_demo>godot</a>
-<dd>- <a href=https://www.uploadvr.com/steam-link-quest-hand-tracking-openxr-steamvr-input/>SteamLink</a>
- (Quest to OpenXR/Skeletal Input)
-<br> &emsp; passes hand tracking to any PC VR app
+
+<dd>- <a href=https://www.uploadvr.com/steam-link-quest-hand-tracking-openxr-steamvr-input/><b>Steam Link</b></a>
+ (<a href=https://medium.com/sidequestvr/use-meta-quest-hand-tracking-with-pcvr-f3e9da9b6343>Quest</a> to OpenXR/Skeletal Input)
+<br> &emsp; <i>the most complete Windows and SteamVR implementation?</i>
+<br> &emsp; Passes hand tracking to any PC VR app
 <br> &emsp;  using OpenXR hand tracking or SteamVR Skeletal Input;
-<br> &emsp; <i>also</i> supported in SteamVR's interface:
-<br> &emsp; - You see only a pointer, not your hands;
+<br> &emsp; <i>also</i> <a href=https://www.youtube.com/watch?v=0f6_NPnl0A0>supported in SteamVR's interface</a>:
+<br> &emsp; <img src=img/HandTrackingController.jpg>
+<br> &emsp; <i>SteamVR detects a </i> Hand Tracking Controller
+<br> &emsp; <img src=img/AvatarHands.jpg>
 <br> &emsp; - point and pinch to select and scroll menu items.
 <br> &emsp; - Bring up the SteamVR Dashboard at any time
 <br> &emsp; &emsp; by pinching left thumb to left index finger.
@@ -49,7 +56,7 @@
 <br> &emsp; Uses <a href=https://help.steampowered.com/en/faqs/view/0E2C-406B-9135-38A4>Steam Link For Meta Quest</a>
 <details><summary> &emsp; <b>speculations</b></summary>
 Since SteamVR supports only OpenVR runtimes,
-<br> then Steam Link must emulate that.
+<br> then Steam Link must emulate that (back to <a href=https://epicvr.pl/en/hand-tracking-2-0-od-meta-how-does-one-of-the-biggest-vr-headset-upgrades-in-oculus-quest-history-work/>Quest</a>).
 <br>Supposing Quest employs a flavor of OpenXR hand tracking
 <br> while SteamVR runs non-OpenXR games,
 <br>then Steam Link For Meta Quest presumably is an ADD-ON
@@ -69,6 +76,10 @@ Since SteamVR supports only OpenVR runtimes,
 <dt>Input device emulations
 <dd>- touchscreen (<a href=https://support.apple.com/en-us/117741>similar to visionOS</a>?)
 <dd>- mouse/laser pointer (IMO <a href=Ultraleap.htm#sucks>doomed</a>)
+
+<dt>Compromise?
+<dd>- SteamVR seems addicted to laser pointer..
+<dd>- point using left hand, input by HOTAS with right?
 </dl>
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
