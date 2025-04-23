@@ -1,7 +1,7 @@
 <html><head>
 <link rel='stylesheet' type='text/css' href='../../static/my.css'>
 
-<title>VR1 beta3 release plan</title>
+<title>VR1 beta3 release</title>
 </head>
 
 <body>
@@ -14,40 +14,46 @@
 <br>
 
 <font size=+1>
-<h2>beta3 release plan 23 Apr</h2>
-<i>A few smaller bugs found in final testing</i>
-<br>What's included<ul>
-<li><b>Eye tracking quick guide documentation</b>
+<h2>beta3 release 23 Apr</h2>
+still focused mainly on native OpenXR.
+<br><a href=https://1drv.ms/f/c/ba6e3a7bede4bcef/EjFWlXdN_2JLv-OlXbE3AW4B8hxpmF7Wg_mANtzWJpaNbw?e=hQRe4w>Link
+to new Beta 3 VR1 Tool 1.0.3.93 + firmware</a>
+<br> &emsp; Beta (multi-EDID) firmware for 72 and 120 Hz modes
+<br>- use stable firmware from live tool otherwise
+
+<p><b>Eye tracking quick guide documentation</b>
 <br> ready for release
  <a href=VR1OpenXR_EyeTrackingImplementation.pdf>(document attached)</a>
 <br><a href=openxr-eye-track-demo.cpp><code>openxr-eye-track-demo.cpp</code></a>
+</p>1.0.3.93 Changelog:<ul>
 
-<li><b>Foveated rendering</b> general improvements
-
-<li><b>iRacing</b> problems fixed
-
-<li><b>DCS</b> experience vastly improved + improved eye tracking
-
-<li><b>Physical Buttons</b> will fully work + potential solution:
-<br> &emsp; Somnium Space VRr support multiple 3d mesh
-
-<li><a href=https://www.autodesk.com/products/vred/overview><b>Autodesk VRED</b></a> support added including Mixed Reality
-
-<li><b>OpenGL</b> improvements and fixes
-
-<li><b>OpenXR</b> full support for Unity 6 & Unreal 4-5.5
-
-<li><b>Warping & visuals</b> implementation improved,
-<br> &emsp; F profile set as default with further improvements
-
-<li>Other minor fixes and improvements
+<li>iRacing OpenXR compatibility fix
+<li>Mixed Reality color & image improvements.
+<li>Improved image warping
+<li>Eye tracking functionality added
+<br> (only advanced calibration is available for now).
+<li>Foveated rendering functionality added (both static + dynamic).
+<br> Tested in DCS (requires enabling Quad Views option in DCS VR settings)
+<br> and Unreal Engine.
+<li>New button actions available:
+<br>- separate action for passthrough and masked mixed reality
+<br>- separate action for eye tracking calibration
+<li>Stability & performance improvements
+</ul>
+<b>Known issues</b>:<ul>
+<li>120 Hz firmware might still have some artifacts
+<li>Only advanced eye calibration is available atm
+<li>VR Controllers in native OpenXR are not tracked.
+<li>Motion cancellation is not yet available.
+<li>iRacing doesn't load when MR USB cable is connected (soon will be fixed)
 </ul>
 <p>Beta 3 should be the last before a full VR1 Tool release
 <br> &nbsp; &nbsp; with all run time improvements and implementations
 <br> + many VR1 Tool improvements, planned for May 2025.
 </p>
 
-CURRENT VR1 tool 1.0.3.43 remains fully operational 
+<a href=https://ai-space.fra1.cdn.digitaloceanspaces.com/website/files/Somnium_VR1_Tool_1.0.2.41.exe>CURRENT VR1 Tool 1.0.3.43</a> remains fully operational
+<br> &emsp; (updates automatically from 1.0.2.41) 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table></div>
