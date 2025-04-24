@@ -7,7 +7,7 @@
 <body>
 <div align=center><table class="my_table"><tr><td>
 
-<font size=-1><a href="./"><i>back</i></a></font><br>
+<font size=-1><a href="./"><i>back</i></a></font>
 <a href=https://www.gixen.com/index.php name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src=https://www.gixen.com/images/gixenlink.gif border="0" alt="Auction Sniper" title="Auction Sniper">
 </a>
@@ -18,7 +18,7 @@
 still focused mainly on native OpenXR.
 <br><a href=https://1drv.ms/f/c/ba6e3a7bede4bcef/EjFWlXdN_2JLv-OlXbE3AW4B8hxpmF7Wg_mANtzWJpaNbw?e=hQRe4w>Link
 to new Beta 3 VR1 Tool 1.0.3.93 + firmware</a>
-<br> &emsp; Beta (multi-EDID) firmware for 72 and 120 Hz modes
+<br> &emsp; Beta (multi-EDID) firmware adds 72 and 120 Hz modes
 <br>- use stable firmware from live tool otherwise
 
 <p><b>Eye tracking quick guide documentation</b>
@@ -32,9 +32,9 @@ to new Beta 3 VR1 Tool 1.0.3.93 + firmware</a>
 <li>Improved image warping
 <li>Eye tracking functionality added
 <br> (only advanced calibration is available for now).
-<li>Foveated rendering functionality added (both static + dynamic).
-<br> Tested in DCS (requires enabling Quad Views option in DCS VR settings)
-<br> and Unreal Engine.
+<li>Foveated rendering added (both static + dynamic).
+<br> Tested in Unreal Engine and DCS
+<br> (enable Quad Views in DCS VR settings)
 <li>New button actions available:
 <br>- separate action for passthrough and masked mixed reality
 <br>- separate action for eye tracking calibration
@@ -45,7 +45,8 @@ to new Beta 3 VR1 Tool 1.0.3.93 + firmware</a>
 <li>Only advanced eye calibration is available atm
 <li>VR Controllers in native OpenXR are not tracked.
 <li>Motion cancellation is not yet available.
-<li>iRacing doesn't load when MR USB cable is connected (soon will be fixed)
+<li>iRacing doesn't load when MR USB cable is connected
+<br>(to be fixed soon)
 </ul>
 <p>Beta 3 should be the last before a full VR1 Tool release
 <br> &nbsp; &nbsp; with all run time improvements and implementations
@@ -53,7 +54,23 @@ to new Beta 3 VR1 Tool 1.0.3.93 + firmware</a>
 </p>
 
 <a href=https://ai-space.fra1.cdn.digitaloceanspaces.com/website/files/Somnium_VR1_Tool_1.0.2.41.exe>CURRENT VR1 Tool 1.0.3.43</a> remains fully operational
-<br> &emsp; (updates automatically from 1.0.2.41) 
+<br> &emsp; (updates automatically from 1.0.2.41)
+
+<p><b>Beta feedback</b>:<ul>
+<li>(@nEuDy) VR1 tool installation sets <code>driver_vrg</code>
+<br> &nbsp; instead of <code>driver_somnium</code> in <code>steamvr.vrsettings</code> file,
+<br>but Beta VR1 Tool installs <code>somnium</code> instead of <code>vrg</code>
+<br> &nbsp; in <code>Steam\steamapps\common\SteamVR\drivers\</code>
+<br>then VR1 Tool reporting "SteamVR Driver: Not installed".
+<li>(@nEuDy) run e.g. <code>hello_xr.exe</code> to perform eye calibration
+<br> <i>before</i> starting a game.
+<li>(@Artur) only grey displayed in VR1 means SteamVR is rendering,
+<br> which should not happen when running VR1 OpenXR runtime
+<br>- in SteamVR main menu - Startup / Shutdown - Manage Add-Ons:
+<br> &emsp; - turn off both <code>somnium</code> and <code>vrg</code> add-ons
+</ul></p>
+
+
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table></div>
