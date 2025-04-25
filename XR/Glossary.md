@@ -14,6 +14,7 @@
 [anti-aliasing](https://www.digitaltrends.com/computing/what-is-anti-aliasing/#dt-heading-how-to-turn-on-anti-aliasing-in-games) 
   **How to turn on anti-aliasing in games**  
 [ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
+[BMR](https://www.valvesoftware.com/en/index/deep-dive/ear-speakers) Valve Index <b>B</b>alanced <b>M</b>ode <b>R</b>adiator (earspeaker)  
 [BMS](https://www.falcon-bms.com/) Falcon Benchmark Sim - flight  
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens VR headset  
 [BTB](http://www.bobstrackbuilder.net/) Bob's Track Builder - stages with fewer features than original RBR rally     
