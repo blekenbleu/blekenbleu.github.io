@@ -94,6 +94,7 @@
  [4x MSAA suffices](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-2.html)  
 [multiview rendering](https://developer.nvidia.com/vrworks/graphics/multiview) 4 instead of 2 non-coplanar views per rendering.  
 [mura](https://sensing.konicaminolta.asia/evaluating-display-mura/) fixed pattern display brightness nonuniformity, which [SteamVR can correct](https://steamcommunity.com/app/250820/discussions/0/1640912849406860288/)  
+[NIS](https://developer.nvidia.com/rtx/image-scaling) Nvidia Image Scaling - [SteamVR video](https://www.youtube.com/watch?v=drjN_2j2M6M)  
 [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
 [NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector) modify or add game profiles in Nvidia driver database  
