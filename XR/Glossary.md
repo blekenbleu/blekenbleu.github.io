@@ -138,8 +138,9 @@
  &emsp; and real lens geometric distortions  
 [Quadviews Companion](https://github.com/TallyMouse/QuadViewsCompanion)
 	 utility to configure [mbucchia's QuadViews](https://github.com/mbucchia/Quad-Views-Foveated)  
-[QVFR](https://github-wiki-see.page/m/mbucchia/Quad-Views-Foveated/wiki) QuadView Foveated
+[QVFR](https://github-wiki-see.page/m/mbucchia/Quad-Views-Foveated/wiki) Quad Views Foveated
  Rendering - reducing resolution outside sweet spot  
+ &emsp; [**NOT** *supported by OpenXR ToolKit*](mbucchia.html#FR)  
 [RCHeliguy](https://www.youtube.com/@markkovalcson7243/videos) Mark Kovalcson  
 [Reflex 2](https://www.nvidia.com/en-us/geforce/news/reflex-2-even-lower-latency-gameplay-with-frame-warp/) - NVIDIA:&nbsp; updating camera perspective as late as possible.  
 [rendering](https://gfxcourses.stanford.edu/cs248/winter21content/media/vr/12_vr_sm.pdf) generating (binocular) image samples  
