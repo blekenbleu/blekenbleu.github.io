@@ -23,6 +23,7 @@
       - SimHub *directly* supports *real* Arduinos,  
         but can drive *any* COM port by **SimHub Custom Serial devices**  
         Some ESP32 / STM32 may appear as Arduino USB COM ports
+- [Direct Drive harness tension](https://github.com/blekenbleu/Direct-Drive-harness-tension-tester)  
 - [ESP32-S2](../static/ESP32/index.htm)  
 - [**mi-360** Xbox360 controller emulation](Arduino/mi360)
 - [pedal sketches](Arduino/) for [STM32](pedals/STM32) 
