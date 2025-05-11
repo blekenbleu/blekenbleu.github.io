@@ -16,13 +16,18 @@
   - [Special Error Diffusion](../static/ImageProcessing/sped.html)
   - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](../static/ImageProcessing/TinyML.htm)  
 
-### Arduino [custom STM32 USB sketches](Arduino/)
+### [Arduino custom ESP32 / STM32 USB sketches](Arduino/)
 - e.g. for [harness tensioning](pedals/index.htm#hartens) servos
     - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
     - COM ports work from SimHub, but most sim games expect <a href="Windows/HID/#DI">DirectInput</a>
       - SimHub *directly* supports *real* Arduinos,  
         but can drive *any* COM port by **SimHub Custom Serial devices**  
         Some ESP32 / STM32 may appear as Arduino USB COM ports
+- [ESP32-S2](../static/ESP32/index.htm)  
+- [**mi-360** Xbox360 controller emulation](Arduino/mi360)
+- [pedal sketches](Arduino/) for [STM32](pedals/STM32) 
+- SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
+- [VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
 
 #### Arduino IDE [Alternatives](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html)
 - [**Visual Micro**](https://www.visualmicro.com/) supports debugging in
