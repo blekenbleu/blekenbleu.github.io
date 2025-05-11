@@ -83,7 +83,7 @@ For example, neither brutally stiff brake pedals nor massive steering effort.
 <dt>other controls adjusting feedback
 <dd><ul><li>visual (<a href=#hmd>VR</a>) with <a href=#VRC>controls</a>
 <li>tactile<ul><li><a href=#DD>steering force feedback</a>
-<li>harness tensioning
+<li><a href=#hartens>harness tensioning</a>
 <li>wheel slip
 <li>traction loss
 <li>brake engagement and ABS
@@ -386,36 +386,37 @@ SingleRacer made a video for<br>
 <dd>second mouse interception for SimHub (<a href="https://github.com/blekenbleu/XtraMouse">XtraMouse</a>)
 <br> &emsp; ... based on this <a href=https://github.com/blekenbleu/WPF_XAML>learning exercise</a>
 
-<dt><br><font color=#007700><b>harness tensioning</b></font><ul>
+<a name=hartens>
+<dt><br></a><font color=#007700><b>harness tensioning</b></font><ul>
 <li><a href="#accel">SimHub Acceleration properties</a>
 <li> <details> <summary> <b>SimHub 2DOF harness tensioning</b> </summary>
 <a name="SimHarness">
-One expedient for simulating sustained G forces is a G Harness.</a><br>
-SimXperience is a pioneer for that, with a <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a>,<br>
+Harness tensioning usefully simulates cornering and braking forces.</a><br>
+SimXperience <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a> pioneered harness tensioning,<br>
 typically sold as an accessory for their <a href="https://www.simxperience.com/en-us/products/motionsimulatorkits/gs-5g-seat.aspx">US$3K GS-5 G-Seat</a>.<br><br>
-For members of <a href="https://www.simhubdash.com">Wotever's SimHub Discord (see Live Support)</a><br>
-he has developed an <a href="https://discord.com/channels/299259397060689920/843488595062423553">#experimental-belt-tensioner</a>.<br>
+Wotever's <a href="https://www.simhubdash.com">SimHub</a> supports harness tensioning<br>
+with an <a href="https://discord.com/channels/299259397060689920/843488595062423553">#experimental-belt-tensioner</a>.<br>
 <iframe align=center width="640" height="360" src="https://www.youtube.com/embed/7ao_srZlhNc"></iframe><br>
-.. for which he recently added a dedicated SimHub plugin:<br>
+.. and dedicated SimHub plugin:<br>
 <img width=640 src="image/SHtensionner.gif"><br clear=all>
 Issues with it:<ul><li>gear-drive stepper motors are both noisy and dangerously torquey
-<li>suboptimal physics linearly adds lateral and longitudinal acceleration,<br> instead of square root of sum of squares
-<li>however, adequate range of motion to allow slackening e.g. for acceleration</ul>
-<a href="https://lebois-racing.fr/seat-belt-tensioner">Lebois</a> built a
+<li>suboptimal physics linearly adds lateral and longitudinal acceleration,<br> instead of square root of sum of squares</ul>
+... but range of motion allows slackening e.g. for acceleration</ul>
+<p><a href="https://lebois-racing.fr/seat-belt-tensioner">Lebois'</a>
 <a href="https://www.flickr.com/photos/94602950@N04/sets/72157717763752498/">direct-drive
-tensioner using PWM drive of a (too powerful?) DC motor</a>.<br>
-<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe><br>
-<a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">Here</a>
-is another direct-drive tensioner for braking only on shoulder and lap belts.<br>
+tensioner uses PWM drive of a (too powerful?) DC motor</a>.<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe></p>
+<a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">
+Another direct-drive tensioner</a> for braking only on shoulder and lap belts.<br>
 <br>
-50mm diameter spools on 8.5Nm motors should provide adequate but safe tension and belt travel.<br>
+50mm diameter spools on 8.5Nm motors should provide<br> adequate but safe tension and belt travel.<br>
 <pre>Torque (N.m) = 9.5488 x Power (kW) / Speed (RPM)</pre>
-For electric scooter motors, stall torque is approximately watts / unloaded RPS.<br>
+Electric scooter motors <i>stall</i> torque is approximately watts / unloaded RPS.<br>
 For example, a 350W 2750rpm motor might have about 7 N.m stall torque.<br>
 <br>
-<a href="https://www.racedepartment.com/members/racingmat.164315">RacingMat</a> developed a
+<a href="https://www.racedepartment.com/members/racingmat.164315"><b>RacingMat</a>'s
 <a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF
-harness tensioning using a pair of 35kg.cm hobby servos</a>.<br><br>
+harness tensioning uses 35kg.cm hobby servos</b></a>.<br>
 Parts budget (US$):<dl>
 <dt>41.40<dd><a href="https://www.ebay.com/itm/282250363739">RSD3235 servo pair</a>
 <dt>17.25<dd><a href="https://www.ebay.com/itm/264645806540">6x 100F super capacitors</a>
@@ -427,12 +428,12 @@ to flash STM32 modules, a <a href="https://www.ebay.com/itm/352694692698"> ST-Li
 Beware of similar USB-TTL dongles <i>wrongly listed as</i> ST-LINK;<br>
 they are for more generic, but less convenient serial programming. 
 <dt>18.86<dd><a href="https://www.amazon.com/gp/product/B082FPRHGP">2-inch 4 point harness</a></dl>
-Modifications of RacingMat's design include:<ul>
+<p><b>Modifications to RacingMat's design</b> include:<ul>
 <li>suspending those servos between harness belt segments, reducing noise:<br>
 <iframe align=center width="640" height="360" src="https://www.youtube.com/embed/KSJQ8uF8pIc"></iframe>
 <li>repurposing wide bed casters as harness pulleys:<br>
 <img src="https://www.racedepartment.com/attachments/bedcasters-jpg.437943/">
-<li>(optionally) adding super capacitors to the power supply for faster servo response:<ul>
+<li>(optionally) super capacitors for faster servo response:<ul>
 <li>+8VDC from regulator (and super caps) to servo red wires
 <li>-8VDC to servo black wires
 <li>Blue Pill is powered and controlled by USB.
@@ -440,9 +441,9 @@ Modifications of RacingMat's design include:<ul>
 <li>Blue Pill PWM pins to servo white wires
 <img width=640 src="https://www.racedepartment.com/attachments/glued-jpg.442520/">
 <li>super capacitors in series require balance circuitry;<br>
-a commodity 16V super capacitor bank with balancing is cheap;&nbsp cut it in half:<br>
+cut in half a commodity 16V super capacitor bank with balancing:<br>
 <img src="https://www.racedepartment.com/attachments/halved-jpg.442519/">
-<li>super capacitors effectively short-circuit supplies at power on, requiring current limiting.<br>
+<li>super capacitors effectively short-circuit supplies at power on, wanting current limiting.<br>
 Using an automotive headlamp bulb as a "dummy load",<br> the buck regulator was adjusted for maximum 8V and 4.5A:<br>
 <img src="https://www.racedepartment.com/attachments/controls-jpg.438828/"><ul>
 <li>Button left of LED digits turns LEDs (but not power) off/on.
@@ -457,12 +458,12 @@ Using an automotive headlamp bulb as a "dummy load",<br> the buck regulator was 
 </ul>
 <li>PWM servo control by Arduino code running in an STM32 "Blue Pill".<br>
 Here is the <a href="../Arduino">Arduino STM32 servo driver</a> for this solution.
-<li>harness tensioning signals from SimHub drive the USB-attached "Blue Pill":<br>
+<li>SimHub harness tensioning signals drive a USB-attached "Blue Pill":<br>
 <img width=640 src="../Arduino/SimHubCustomSerial.gif"><br clear=all>
-Here is the <a href="../Arduino/SimHubCustomSerial">SimHub Custom serial device harness tensioning control</a> description.<br>
+<a href="../Arduino/SimHubCustomSerial">SimHub Custom serial device harness tensioning control</a> description.<br>
 Here is the <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds.txt">SimHub Custom serial device profile</a>.
 </ul></details>
-</ul>
+</ul></p>
 
 <a name=hmd> &nbsp; </a>
 <dt><b>headsets</b><br>

@@ -17,7 +17,7 @@
   - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](../static/ImageProcessing/TinyML.htm)  
 
 ### Arduino [custom STM32 USB sketches](Arduino/)
-- e.g. for harness tensioning servos
+- e.g. for [harness tensioning](pedals/index.htm#hartens) servos
     - ESP8266 **WeMos D1 UNO R1** [(*background*)](Arduino/ESPDuino) is a COM device  
     - COM ports work from SimHub, but most sim games expect <a href="Windows/HID/#DI">DirectInput</a>
       - SimHub *directly* supports *real* Arduinos,  
@@ -75,7 +75,7 @@
 
 ## [SimHub](SimHub/) sim driving telemetry processing
 - [Bass Shaker Profiles](pedals/shakeit.htm) for [pedals](pedals/index.htm#haptic) and [ShakeSeat](pedals/index.htm#shakeseat)
-- [Custom serial profiles](Arduino/shsds.htm) e.g. for [harness tensioning](pedals/index.htm#SimHarness)  
+- [Custom serial profiles](Arduino/shsds.htm) e.g. for [harness tensioning](pedals/index.htm#hartens)  
 	- [corresponding Arduino sketches](Arduino/) for [STM32](pedals/STM32) 
 - [Plugins](../static/SimHub/index.htm) 
 	- [Fake8](https://github.com/blekenbleu/Fake8) properties and 8-bit serial data for [Custom serial profiles](Arduino/shsds.htm)  
