@@ -2,20 +2,20 @@
 ---
 ### Arduino content
 - [Arduino for Black Pill](black.md)
-- about [Blue ASCII Servo](Blue_ASCII_Servo/README.md)
+- about [Blue ASCII Servo](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_ASCII_Servo)
 	- [Arduino git repository](https://github.com/blekenbleu/Arduino-Blue-Pill/) example sketches, libraries
-	- [BlueLUT_Servo.ino](BlueLUT_Servo/BlueLUT_Servo.ino)
-	- [Blue_ASCII.ino](Blue_ASCII/Blue_ASCII.ino)
-	- [Blue_Servo.ino](Blue_Servo/Blue_Servo.ino)
+	- [BlueLUT_Servo.ino](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/BlueLUT_Servo)
+	- [Blue_ASCII.ino](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_ASCII)
+	- [Blue_Servo.ino](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_Servo)
 	- [Blue Pill PWM fans for SimHub](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/SimHubPWMfans) git repository
-	- [BluePWMfan.ino](BluePWMfan/BluePWMfan.ino)
+	- [BluePWMfan.ino](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/BluePWMfan)
 	- [WeMos D1 UNO R1 ESP8266 Arduino UNO-R3 Clone](ESPDuino.md)
 	- [D1 UNO USB (serial) as HID game controller based on mi-360](mi360.md)
 - [related SimHub Custom Serial profiles](https://github.com/blekenbleu/SimHub-Profiles)
 - [HID gamepad by vJoySerialFeeder](VJoySerialFeeder.md)
  &nbsp; [*Installation*](vJoySFinstall.md)
-- [multi-character control for SimHub Custom serial devices](blek2char/README.md) *adds real Arduinos*
-- [multi-character control for SimHub Custom serial devices](Blue2charServo/README.md)
+- [multi-character control for SimHub Custom serial devices](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/blek2char) *adds real Arduinos*
+- [multi-character control for SimHub Custom serial devices](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue2charServo)
 - [SimHub plugin JavaScripts](messages)
 - [SimHub Custom serial profile **atlas**](shsds.htm)
 - [SimHub Custom serial device for Blue Pill](SimHubCustomSerial.md)
