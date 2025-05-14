@@ -1,6 +1,6 @@
 ---
 ---
-## Somnium VR1
+## [Somnium VR1](XR/VR1.html)
 ### premium PC XR headset - [Ultimate specifications](https://vrgineers.com/somnium-vr1-mr/)
 - 125° horizontal and 100° vertical FoV  
 	- less than 55°x50° per-eye high resolution "sweet spot"  
