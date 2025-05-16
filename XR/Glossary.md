@@ -13,7 +13,7 @@
 [ALVR](https://github.com/alvr-org/ALVR) Air Light VR streams PCVR to wireless headsets  
 [anti-aliasing](https://www.digitaltrends.com/computing/what-is-anti-aliasing/#dt-heading-how-to-turn-on-anti-aliasing-in-games) 
   **How to turn on anti-aliasing in games**  
-[ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous Spacewarp for frame rate jitter reduction  
+[ASW](https://developers.meta.com/horizon/blog/asynchronous-spacewarp/) Oculus' Asynchronous SpaceWarp for frame rate jitter reduction  
 [BMR](https://www.valvesoftware.com/en/index/deep-dive/ear-speakers) Valve Index <b>B</b>alanced <b>M</b>ode <b>R</b>adiator (earspeaker)  
 [BMS](https://www.falcon-bms.com/) Falcon Benchmark Sim - flight  
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens VR headset  
@@ -49,7 +49,7 @@
 [FoV](https://en.wikipedia.org/wiki/Field_of_view) Field of view, angles from pupil to image edges  
 **FPS** First-person shooter (game) or Frames per second (display refresh rate)  
 [frame generation](https://blurbusters.com/frame-generation-essentials-interpolation-extrapolation-and-reprojection/) - interpolating or warping intermediate frames  
- &emsp; when rendered frame rate is objectionable  
+ &emsp; when rendered frame rate and/or latency is objectionable  
 [Fred Emmott](https://fredemmott.com/bio) OpenXR Invited Expert, OpenKneeboard and HTCC developer  
 [FSAA](https://en.wikipedia.org/wiki/Spatial_anti-aliasing#Super_sampling_/_full-scene_anti-aliasing) full-scene anti-aliasing AKA SSAA  
 [Freestyle](https://www.pcmag.com/how-to/how-to-improve-pc-graphics-and-add-filters-with-nvidia-freestyle) Nividia's CAS post-processing, supplanted by RTX Dynamic Vibrance  
@@ -144,7 +144,7 @@
 [RCHeliguy](https://www.youtube.com/@markkovalcson7243/videos) Mark Kovalcson  
 [Reflex 2](https://www.nvidia.com/en-us/geforce/news/reflex-2-even-lower-latency-gameplay-with-frame-warp/) - NVIDIA:&nbsp; updating camera perspective as late as possible.  
 [rendering](https://gfxcourses.stanford.edu/cs248/winter21content/media/vr/12_vr_sm.pdf) generating (binocular) image samples  
-reprojection - alternative to [motion smoothing](https://www.uploadvr.com/reprojection-explained/) or frame generation,  
+reprojection - alternative to [Timewarp, SpaceWarp, and motion smoothing](https://www.uploadvr.com/reprojection-explained/) or frame generation,  
  &emsp; often associated with Windows Mixed Reality  
 [ROV Test FOV & Resolution](https://steamcommunity.com/sharedfiles/filedetails/?id=1359389601) Snellen text legibility, glare, FoV, distortions
 	 AKA [**testhmd**](https://knob2001.itch.io/testhmd)  
@@ -167,7 +167,7 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
 [Sim Racing Studio](https://simracingstudio.freshdesk.com/support/solutions/articles/35000209894-richard-burns-rally-next-gen-physics-troubleshooting) (motion)  
 [SSAA](https://www.tomshardware.com/reviews/anti-aliasing-performance,3065-18.html) Supersampling antialiasing - visual
  quality and performance cost > MSAA  
-[SSW](https://www.youtube.com/watch?v=zH7qCsey2to) Virtual Desktop Synchronous Spacewarp reprojection (frame rate jitter reduction)  
+[SSW](https://www.youtube.com/watch?v=zH7qCsey2to) Virtual Desktop Synchronous SpaceWarp reprojection (frame rate jitter reduction)  
 [stutter](https://www.howtogeek.com/874778/7-reasons-your-windows-pc-is-stuttering-and-how-to-fix-it/) inconsistent rendering time,
  missing some frames at regular display intervals  
 [SteamVR](https://store.steampowered.com/steamvr) Valve's VR tools and services, e.g. OpenVR, Lighthouse Tracking  
