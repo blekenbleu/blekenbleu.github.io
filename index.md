@@ -60,6 +60,10 @@
 
 ### [GitHub Repositories](https://github.com/blekenbleu?tab=repositories)
 
+### [HVAC](../static/hvac/index.htm)
+- [Air filtration. REME](../static/hvac/index.htm)  
+- [Air mover 34VAC control wiring, troubleshooting](../static/hvac/Fuse24VAC.htm)  
+
 ## [Microscopes and photomicography](microscope/)  
  &nbsp; **American Optical** [Series 10](microscope/#AO) / [Series 120](microscope/AO/) / [Reichert EPIStar](microscope/#EPIStar)  
  &nbsp; **Nikon** [Optiphot 150](microscope/Nikon/OptiphotInfinity/index.html#other) / [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) / [Metaphot](microscope/Nikon/Metaphot/)  
@@ -68,6 +72,7 @@
  &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
 
 ### [OnShape CAD](../static/CAD/)
+### [RainMachine irrigation](../static/RainMachine/) and weather  
 
 ## [Sim driving](pedals/)
 - Logitech [G29 pedal mods](pedals/#pedals)
@@ -137,9 +142,6 @@
 - [Vim and X-Mouse](VimTXmouse)
 - Visual Studio Community *abuse*:&nbsp; [shared installation](VSC2017)
 - [Windows 10 boot from NVMe on PCIe PCs without NVMe BIOS](Windows/NVMe/)  
-
-### HVAC
-- [Air filtration](../static/hvac/index.htm)  
 
 ---
 
