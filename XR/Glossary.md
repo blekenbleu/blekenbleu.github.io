@@ -41,6 +41,7 @@
 [DLSSTweaks](https://github.com/emoose/DLSSTweaks) - change render resolution, force DLAA onto DLSS-supported titles  
 [`driver_leap`](Ultraleap.htm#driver) SteamVR driver for emulating controllers by Ultraleap handtracking  
 [DSC](https://developer.nvidia.com/blog/dsc-higher-fidelity-vr/) Digital Stream Compression - *visually* lossless on DisplayPort 1.4a, HDMI 2.1  
+[DXCpl / D3DConfig](https://devblogs.microsoft.com/directx/d3dconfig-a-new-tool-to-manage-directx-control-panel-settings/) DirectX Control Panel [*usage*](https://nvidia.custhelp.com/app/answers/detail/a_id/5604/~/how-to-capture-d3d-debug-layer-logs-to-detect-application-or-runtime-bugs)  
 [EQAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) enhanced quality anti-aliasing - AMD's CSAA implementation  
 [eyebox and sweet spot](eyespot.htm) small HMD regions for pupils that optimize viewing  
 [eye relief](https://en.wikipedia.org/wiki/Eye_relief) - for HMDs, eye relief `tolerance` is one eyebox dimension  
