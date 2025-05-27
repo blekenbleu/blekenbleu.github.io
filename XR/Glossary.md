@@ -19,6 +19,7 @@
 [BSB](https://www.bigscreenvr.com/) Bigscreen Beyond microOLED pancake lens VR headset  
 [BTB](http://www.bobstrackbuilder.net/) Bob's Track Builder - stages with fewer features than original RBR rally     
 [CA](https://en.wikipedia.org/wiki/Chromatic_aberration) Chromatic aberration, *axial (longitudinal) and transverse (lateral)*  
+[CapFrameX](https://github.com/CXWorld/CapFrameX) Frametimes capture and analysis tool based on Intel's PresentMon  
 [CAS](https://github.com/GPUOpen-Effects/FidelityFX) Contrast adaptive sharpening with optional up-scaling;&nbsp; Nvidia Freestyle  
 [CEF](https://github.com/chromiumembedded/cef) Chromium Embedded Framework embeds Chromium-based browsers in apps  
 	&emsp; [CefSharp](https://ourcodeworld.com/articles/read/173/how-to-use-cefsharp-chromium-embedded-framework-csharp-in-a-winforms-application) C# wrapper  
