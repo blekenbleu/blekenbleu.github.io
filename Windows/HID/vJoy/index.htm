@@ -1,7 +1,7 @@
 <html><head>
 <link rel='stylesheet' type='text/css' href='../../../../static/my.css'>
 
-<title>Windows 10 vJoy v2.2.1.1 install</title>
+<title>Windows 10-11 vJoy signed driver installation</title>
 </head>
 
 <body>
@@ -12,10 +12,24 @@
 <a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
 <img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper"></a><br clear=all>
 
+<hr>
+<h4><i>7 Jun 2025</i>:&nbsp; News</h4><ul>
+<li>SimHub now includes vJoy DLL 222
+    that still works for me with <a href=https://github.com/jshafer817/vJoy/releases>signed vJoy driver 219</a>
+<li>A <b>signed vJoy driver 222</b> <a href=https://github.com/BrunnerInnovation/vJoy/releases>is available</a>
+<li>The vJoy Official Site is archived to <a href=https://web.archive.org/web/20150731001845/http://vjoystick.sourceforge.net/joomla256.02/index.php/forum/5-Discussion>waybackmachine</a>;
+	&nbsp; another support forum <a href=https://vjoy.freeforums.net/board/1/general-discussion>here</a>
+<li>troubleshooting hints in the <a href=https://github.com/shauleiz/vJoy/issues/20>original author's GitHub issues</a>
+<li>Installing a newer vJoy version over an older can be problematic<br>
+	<a href=https://umatechnology.org/fix-vjoy-failed-to-install/><b>[FIX] vJoy Failed to Install</b></a>
+<li>vJoy driver appears to be in <code>C:\\Windows\System32\DriverStor\FileRepository\vjy.inf_amd64_*.ini</code>
+<li>vJoy configuration is not in a single human-legible file;<br>may be spread in Windows registry;&nbsp; uninstalling old vJoy may wipe that...
+</ul>
+<hr>
 <h3>Windows 10 vJoy v2.2.1.1, then v2.1.6.2 installation:<br> not scary (not previously installed)</h3>
-The latest version with signed driver:
-<a href="https://github.com/njz3/vJoy/releases/tag/v2.2.1.1">
-<code>https://github.com/njz3/vJoy/releases/tag/v2.2.1.1</code></a>  9.5MB<br>
+signed driver:
+<a href="https://github.com/njz3/vJoy/releases/">
+<code>https://github.com/njz3/vJoy/releases/</code></a>  9.5MB<br>
 <br>
 <a href="https://sourceforge.net/projects/vjoystick/"><b>vJoy from SourceForge</b></a> is v2.1.9.1 and 11MB<br>
 <p>
@@ -28,7 +42,7 @@ Replacing those with v2.2.1.1 DLLs throws this Exception:<br>
 <p>SimHub was seemingly built with vJoy v2.1.6 DLLs, which report:
 <pre> INFOVersion of Driver (221) does NOT match DLL Version (216)
  INFOAcquired: vJoy device number 1.</pre>
-.. then the 2.2.1.1 driver does not respond to `joystick.SetAxis()` nor `joystick.SetBtn()`,<br>
+.. then the 2.2.1.1 driver does not respond to <code>joystick.SetAxis()</code> nor <code>joystick.SetBtn()</code>,<br>
 presumably because of incompatibity between <code>v2.1.6</code> structures sent by SimHub-compatible DLLs<br>
 and those expected by vJoy driver <code>v2.2.1.1</code>.&nbsp
 Sadly, <a href="https://github.com/njz3/vJoy/releases">njz3/vJoy</a> has only v2.2.0.0 and v2.2.1.1</p>
