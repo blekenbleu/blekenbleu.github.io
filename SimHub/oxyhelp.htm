@@ -13,69 +13,91 @@ table.my_table td { width:800px; background-color:#DDDDFF; }
 
 <h2><a href=https://github.com/blekenbleu/OxyScope>OxyScope</a> Help</h2><font size=+1>
 <details><summary><i>discussion</i></summary><br>
-<a name=why><b>OxyScope</b></a> is about displaying and collecting samples<br> for up to 4 SimHub properties at a time.<br><br>
+<a href=https://github.com/SHWotever/SimHub/wiki>SimHub</a> supports plotting property values over time:<ul>
+<img width=650 src=TimePlot.jpg><ul>
+<li>select <b>Properties</b> in left margin
+<li>enter search term
+<li>right-click property, select <code>Plot value</code></ul>
+<p>
+<a name=why><b>OxyScope</b></a> plugin collects samples for plotting <i>relationships</i> <br> among up to 4 SimHub properties.</p>
 
-<i>At least for me, evaluating scatter plots <b>while driving</b> is NOT an option.<br>
-Instead, using the SimHub button at upper right: <img align=center src=record.png><br>
-first record some driving, then</i> <b>Replay</b>...<br><br>
+<i>At least for me, evaluating scatter plots <b>while driving</b> is NOT productive.<br>
+Instead, using SimHub's <img align=center src=record.png> button at the upper right,<br>
+first record some driving, then analyze during</i> <b>Replay</b>...
 
-Four properties may be visualized by color-coding based on values of one<br>
-and scatter plotting in 3D coordinates based on others.<br>
-Intuitively, this works best if color-coded property values <i>depend on</i> others.<br>
-Visualizing more than 4 properties is possible, but problematic.<br>
-Sample values for 3 nominally "independent" properties<br> are more likely to fill ellipsoids than boxes.<br>
+<p>Color-coded samples for up to 3 properties may be plotted vs values of another.<br>
+These may subsequently be scatter plotted in 3D.<br>
+Intuitively, this works when color-coded property values <i>are correlated</i>.</p>
+
+3D plots of sample values for nominally "dependent" properties<br> more likely fill ellipsoids than boxes.<br>
 Supposing that 2% increments suffice for precision,<br>
- that amounts to 51 samples along each "independent" property axis,<br>
+ that amounts to 51 samples along each "dependent" property axis,<br>
 or a sphere with radius 25 and volume of about 65,500 samples.<br>
-Driving a sim car so as to collect so many uniformly distributed samples is unlikely.<br>
-Indeed, most samples collected in sequence at 60Hz are nearly redundant,<br> tracing trajectories.<br>
-This clustering issue is mitigated by:<ul>
-<li>ignoring successive samples with all "independent" values<br> differing by less than 2% of properties' current range.
+Sim racing property sample value distributions are unlikely to be uniform.<br>
+Indeed, most sample sequences collected at 60Hz are nearly redundant,<br> tracing trajectories.
+
+<p>OxyScope <b>Cumulative range</b> mode mitigates data clustering by:<ul>
+<li>ignoring successive samples with all "dependent" values<br> differing by less than 2% of properties' current range.
 <li>at suitable intervals, calculate StdDev for each property,<br> then subsequently ignore samples not well beyond.
 <li>ideally, StdDev thresholding should based on radii...</ul>
-<img src=load.png>
-</details><br>
+<img src=load.png></p>
+</details>
 
-<font color=green><b>Controls</b></font>:&nbsp <i>top to bottom</i>
-<hr>
+<p><font color=green><b>Modes</b></font>:<dl>
+<dt><b>Cumulative range</b>
+<dd>OxyScope continually <i>supplements</i> an initial collection<br> &emsp; with samples having different values.
+<br>Works better with more tightly clustered initial collections.
+<br>Updates become less frequent as usefully different samples become rarer.
+<dt>Snapshots:
+<dd><ul><li><b>3 second refresh</b> - plots <i>replaceable</i> by each new collection
+<li><b>Increasing range</b> - plots <i>replaceable</i> by collections with increasing value ranges
+</ul></dl>
+
+<font color=green><b>User Interface</b></font>:&nbsp <i>top to bottom</i>
 <dl>
-<dt>top row:&nbsp left-to-right
-<dd><b>Help</b> - link to this page
+<dt>top row:&nbsp <font color=green><b>Controls</b></font> left-to-right
+<dd>
+<hr>
+<b>Help</b> - link to this page
 <dd><br><b>Current property <i>sample set</i> statistics</b>, updated every 3 seconds;<br>
 	&emsp; may not get plotted, depending on buttons to the right...
-<dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
-	- button enabled by the next button set to <b>Manual</b>
-<dd><br><b>Manual / Auto Replot</b><ul>
+
+<dd><br><b>Fit Curves</b><ul>
+<li><b>Disable</b>:&nbsp display only scatter plots
+<li><b>Yprop[0-3]</b>:&nbsp adds leasts-squares fit line and
+<a href=https://blekenbleu.github.io/static/ImageProcessing/MonotoneCubic.htm>monotonic cubic curve</a>,<br>
+ &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;	for a selected property</ul>
+
+<dd><br><b>Refresh</b> mode:&nbsp <b>3 second</b> / <b>Cumulative range</b> / <b>Hold max range</b><ul>
+<li><b>3 second</b>:&nbsp all sample sets can be plotted<br>
+Use e.g. with <b>Auto</b> to watch for <i>interesting</i> scatter plots in <a href=#why><b>Replay</b></a>.
+<li><b>Cumulative range</b>:&nbsp collects sample values with increasing variance<br>
+ &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; of property selected by <b>Fit Curves</b><br>
+<i>Ignores nearly redundant successive samples,<br> collecting wider property value range over longer intervals</i>.
+<li><b>Hold max</b>:&nbsp; Updates to 3 second snapshots with increasing value ranges.
+</ul>
+
+<dd><br><b>Manual / Auto Replot</b> - available only for Snapshots<ul>
+<li><b>Auto</b>:&nbsp plots update new collections become available
 <li><b>Manual</b>:&nbsp displayed plot remains until
 <span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
  is selected
-<li><b>Auto</b>:&nbsp plots update as new samples are collected</ul>
-
-<dd><br><b>Refresh:</b>&nbsp <b>3 second</b> / <b>Cumulative X range</b> / <b>Hold max X range</b><ul>
-<li><b>3 second</b>:&nbsp all sample sets can be plotted<br>
-Use this e.g. with <b>Auto</b> to search <a href=#why><b>Replay</b></a> for <i>interesting</i> scatter plots.
-<li><b>Cumulative X range</b>:&nbsp collects sample values with increasing variance<br>
- &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; of X property as selected by <b>Fit Curves</b><br>
-<i>Ignores nearly redundant successive samples,<br> collecting wider X property value range over longer intervals</i>.
-<li><b>Hold max X</b>: 3-second sample set with greater range of <i>all</i> X values<br>
-Captures a single 3 second sequence with largest X value range.
 </ul>
-<dd><br><b>Fit Curves</b><ul>
-<li><b>Disable</b>:&nbsp display only scatter plots
-<li><b>Xprop[0-3]</b>:&nbsp adds leasts-squares fit line and
-<a href=https://blekenbleu.github.io/static/ImageProcessing/MonotoneCubic.htm>monotonic cubic curve</a>,<br>
- &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;	for one of up to 3 X-axis properties</ul>
+<dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
+	- button enabled as appropriate for <b>Manual</b> snapshots
+</ul>
+<hr>
 
-<dt><br>row 2: <b>Properties XY plot</b>
-<dd>Y, X sample set pairs are plotted, based on <b>refresh</b> setting
-<dt><br>row 3:&nbsp Y, Xprop0 plot property names
-<dt>rows 4:&nbsp <i>optional</i> Xprop1, Xprop2 plot property names
+<dt>row 2: <b>Properties XY plot</b>
+<dd><a href=https://github.com/oxyplot/oxyplot>OxyPlot</a>s of X, Y sample set pairs, based on <b>Refresh</b> setting
+<dt><br>rows 3:&nbsp two <i>optional</i> Y property names
+<dt>row 4:&nbsp Y, X plot property names
 <dd>Copy names of interest from SimHub's <b>Available properties</b> window<ul><li>
 <span style="background-color:green;"><font size=-1 color=white><b>&nbsp;3D&nbsp;</b></font></span>
 button enabled when 4 properties are plotted;<br>
 click to generate a file for <a href=MBAI.htm>color-coded 3D scatter plot visualization</a></ul>
 
-<dt><br>rows 5, 6:&nbsp Current <i>plotted</i> property statistics
+<dt><br>rows 5, 6:&nbsp Current <i>plotted</i> property notes and statistics
 <dd>typically reports coefficients for fitted lines, cubic fits
 <dt><br>bottom row:&nbsp filters (1 == no filtering)
 <dd>Some properties affect others, but with delay.<br>
