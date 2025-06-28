@@ -21,14 +21,15 @@ table.my_table td { width:600px; }
 <h2><a href="https://www.simhubdash.com/">SimHub</a></h2>
 SimHub extracts telemetry as <i>properties</i> from driving <a href=../pedals/index.htm#DSC>sims</a>,<br>
 coordinating events, actions and properties among <a href="../../static/SimHub/index.htm"><b>plugins</b></a>.<br>
-SimHub is popular for dashboards;<br>
+SimHub is popular for dashboards, haptics and motion;<br>
 I use it for controls, fans, harness tensioning and tactile feedback.<br><br>
 
 <dl>
 <dt><b>Sim Controls</b>
 <dd><ul><li><a href=../pedals/index.htm#AC>Assetto Corsa</a> uses <a href=../Windows/HID/index.htm#DI>DirectInput</a> controllers,<br>
 which can be emulated using <a href=../Windows/HID/vJoy/index.htm>vJoy</a>.</ul>
-<dd><b>Control plugins</b><ul>
+
+<dt><br><b>My SimHub Control plugins</b> &emsp; <a href=https://github.com/blekenbleu?tab=repositories><i>repository</i></a><ul>
 <li><a href=https://github.com/blekenbleu/MIDIio><b>MIDIio</b> SimHub plugin</a> converts among<ul>
 <li><a href=../MIDI/index.htm>MIDI<a> control surface change signals
 <li>vJoy emulated DirectInput signals
@@ -36,21 +37,26 @@ which can be emulated using <a href=../Windows/HID/vJoy/index.htm>vJoy</a>.</ul>
 <li><a href=https://github.com/blekenbleu/Fake8><b>Fake8</b> SimHub plugin</a> converts between SimHub properties<br>
 	and (e.g. <a href=../pedals/STM32>STM32</a> or <a href=/static/ESP32/>ESP32</a>) <a href=../Arduino/>Arduino</a> module COM messages<br>
  via <b>SimHub <a href=../Arduino/SimHubCustomSerial>Custom Serial</a></b> devices.
-<li><a href=https://github.com/blekenbleu/InterceptMouse><b>InterceptMouse</b></a> plugin converts<br>
+<li><a href=https://github.com/blekenbleu/InterceptMouse><b>InterceptMouse</b></a> plugin dedicates<br>
 	a <i>second</i> mouse's events to SimHub properties.
+<li><a href=https://github.com/blekenbleu/OxyScope><b>OxyScope</b></a> <b><i>XY plots</i></b> SimHub property value sample sets
+	<br>while SimHub can plot each property values vs time </ul>
+<dd> <a href=oxyhelp.htm><i>Help</i></a>
+
+<dt><br><b>SimHub <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Effects-configuration">ShakeIt</a></b> profiles use properties to control
+<ul>
+<li><b>tactile feedback</b>
+<ul><li>modulating tactile amplitudes and/or frequencies.</ul>
+<li>ShakeIt profiles can also export custom properties
+<li>custom properties can control e.g. <b>fans</b> and <b>harness tensioning</b>
+	<br>via Custom Serial profiles and STM32 Arduino
+<li><b>MIDIio</b> can separately route property values<br>
+e.g. via vJoy and/or <a href=../Windows/WinAudio.htm#VST>MIDI VST</a>.</ul>
 </ul>
 
-<dt><br><b>SimHub <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Effects-configuration">ShakeIt</a></b> profiles use properties to control:
-<dd><ul><li><b>fans</b> and <b>harness tensioning</b> via Arduino
-<li><b>tactile feedback</b>
-<ul><li>ShakeIt modulates tactile amplitudes and/or frequencies,<br> but <i>not independently</i>.
-<li><b>MIDIio</b> can independently modify tactile signals<br>
-<a href=../Windows/WinAudio.htm#VST>via MIDI VST</a>.</ul>
-<li>ShakeIt profiles can also export custom properties.</ul>
 
-<dt></a><br><a href=https://github.com/blekenbleu/OxyScope><b>OxyScope</b></a> &nbsp <a href=oxyhelp.htm><i>Help</i></a>
 <a name=profiles>
-<dt></a><br><a href=https://github.com/blekenbleu/SimHub-Profiles><b>SimHub ShakeIt and Custom Serial profiles GitHub repository</b></a>
+<dt></a><br>My <a href=https://github.com/blekenbleu/SimHub-Profiles><b>SimHub profile repository</b></a>
 <dd>
 <li><a href=../Arduino/shsds.htm>Custom Serial profile atlas</a>
 <li><a href=../pedals/shakeit.htm>ShakeIt profile descriptions</a><ul>
