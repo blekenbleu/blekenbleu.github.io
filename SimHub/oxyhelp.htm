@@ -34,7 +34,7 @@ Supposing that 2% increments suffice for precision,<br>
  that amounts to 51 samples along each "dependent" property axis,<br>
 or a sphere with radius 25 and volume of about 65,500 samples.<br>
 Sim racing property sample value distributions are unlikely to be uniform.<br>
-Indeed, most sample sequences collected at 60Hz are nearly redundant,<br> tracing trajectories.
+Indeed, many sample sequences collected at 60Hz are nearly redundant,<br> tracing trajectories.
 
 <p>OxyScope <b>Cumulative range</b> mode mitigates data clustering by:<ul>
 <li>ignoring successive samples with all "dependent" values<br> differing by less than 2% of properties' current range.
@@ -43,14 +43,20 @@ Indeed, most sample sequences collected at 60Hz are nearly redundant,<br> tracin
 <img src=load.png></p>
 </details>
 
-<p><font color=green><b>Modes</b></font>:<dl>
-<dt><b>Cumulative range</b>
-<dd>OxyScope continually <i>supplements</i> an initial collection<br> &emsp; with samples having different values.
-<br>Works better with more tightly clustered initial collections.
-<br>Updates become less frequent as usefully different samples become rarer.
-<dt>Snapshots:
-<dd><ul><li><b>3 second refresh</b> - plots <i>replaceable</i> by each new collection
-<li><b>Increasing range</b> - plots <i>replaceable</i> by collections with increasing value ranges
+<p><dl>
+<dt><font color=green><b>Refresh Modes</b></font>
+<dd>OxyScope collects 180 (nominally 3 second) property value sample sets,
+<br>discarding duplicates and those at very slow speed.
+<dt><ul>
+<li><b>3 second refresh</b> - plots <i>always replaced</i> by more recently collected sets
+<li><b>Increasing range</b> - <i>replaceable</i> by sets with greater range of selected property
+<li><b>Cumulative range</b> - continues <i>supplementing</i> an initial sample set collection<br> &emsp;
+ initially with samples having larger value variances of selected property,
+ <br> &emsp; as the sample buffer fills.
+<br>This works better with more tightly clustered initial collections.
+<br>Delays between updates increase as samples with greater variances become rarer.
+<br>Accumulation may eventually switch to histogram mode,
+<br>backfilling gaps until the buffer is full.
 </ul></dl>
 
 <font color=green><b>User Interface</b></font>:&nbsp <i>top to bottom</i>
@@ -59,49 +65,43 @@ Indeed, most sample sequences collected at 60Hz are nearly redundant,<br> tracin
 <dd>
 <hr>
 <b>Help</b> - link to this page
-<dd><br><b>Current property <i>sample set</i> statistics</b>, updated every 3 seconds;<br>
+<dd><br><b>Current property <i>sample set</i> statistics</b>, updated every 180 samples;<br>
 	&emsp; may not get plotted, depending on buttons to the right...
 
-<dd><br><b>Fit Curves</b><ul>
-<li><b>Disable</b>:&nbsp display only scatter plots
-<li><b>Fit Curves</b> Y property[0-2]</b>:&nbsp fit leasts-squares line,
-<a href=https://blekenbleu.github.io/static/ImageProcessing/MonotoneCubic.htm>monotonic cubic curve</a><br>
- &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;	to selected property samples</ul>
-
-<dd><br><b>Refresh</b> mode:&nbsp <b>3 second</b> / <b>Cumulative range</b> / <b>Hold max range</b><ul>
-<li><b>3 second</b>:&nbsp all sample sets can be plotted<br>
-Use e.g. with <b>Auto</b> to watch for <i>interesting</i> scatter plots in <a href=#why><b>Replay</b></a>.
-<li><b>Cumulative range</b>:&nbsp collects sample values with increasing variance<br>
- &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; of property selected by <b>Fit Curves</b><br>
-<i>Ignores nearly redundant successive samples,<br> collecting wider property value range over longer intervals</i>.
-<li><b>Hold max</b>:&nbsp; Updates to 3 second snapshots with increasing value ranges.
+<dd><br><b>Refresh</b> mode button:&nbsp <b>3 second</b> / <b>Cumulative range</b> / <b>Hold max range</b>
+<dd><br><b>Property</b> selection button<ul>
+<li>For <b>3 second refresh</b> mode, just selects which Y property
+<br> to least-square fit line and
+<a href=https://blekenbleu.github.io/static/ImageProcessing/MonotoneCubic.htm>monotonic cubic curve</a>.
+<li>for <b>Increasing</b> and <b>Cumulative</b> refresh modes,
+<br> also selects the property controlling sample set collection.
 </ul>
 
-<dd><br><b>Manual / Auto Replot</b> - available only for Snapshots<ul>
-<li><b>Auto</b>:&nbsp plots update new collections become available
-<li><b>Manual</b>:&nbsp displayed plot remains until
+
+<dd><br><b>Manual / Auto Replot</b> button:&nbsp; for <b>3 second</b>
+ and <b>Increasing range</b> snapshots<ul>
+<li><b>Auto</b>:&nbsp OxyScope updates plots as new collections are available
+<li><b>Manual</b>:&nbsp currently displayed plot remains until selecting
 <span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
- is selected
 </ul>
 <dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
-	- button enabled as appropriate for <b>Manual</b> snapshots
+	button:&nbsp; appears when appropriate for <b>Manual</b> snapshots
 </ul>
 <hr>
 
-<dt>row 2: <b>Properties XY plot</b>
-<dd><a href=https://github.com/oxyplot/oxyplot>OxyPlot</a>s of X, Y sample set pairs, based on <b>Refresh</b> setting
-<dt><br>rows 3:&nbsp two <i>optional</i> Y property names
-<dt>row 4:&nbsp Y, X plot property names
-<dd>Copy names of interest from SimHub's <b>Available properties</b> window<ul><li>
+<dt>row 2: <b>Properties XY plot</b>:&nbsp; <a href=https://github.com/oxyplot/oxyplot>OxyPlot</a>s of X, Y property sample sets
+<dt><br>row 3:&nbsp two <i>optional</i> Y property names
+<dt>row 4:&nbsp Y, X plot <i>required</i> property names
+<dd>&emsp; Copy property names of interest from SimHub's <b>Available properties</b> window<ul><li>
 <span style="background-color:green;"><font size=-1 color=white><b>&nbsp;3D&nbsp;</b></font></span>
-button enabled when 4 properties are plotted;<br>
-click to generate a file for <a href=MBAI.htm>color-coded 3D scatter plot visualization</a></ul>
+button enabled when 3 or 4 properties are plotted;<br>
+click to generate files for <a href=MBAI.htm>color-coded 3D scatter plot visualizations</a></ul>
 
 <dt><br>rows 5, 6:&nbsp Current <i>plotted</i> property notes and statistics
 <dd>typically reports coefficients for fitted lines, cubic fits
 <dt><br>bottom row:&nbsp filters (1 == no filtering)
 <dd>Some properties affect others, but with delay.<br>
-Increasing filter value for property <i>affecting</i> response<br> &emsp; may improve correlation..
+Increasing filter value for property <i>affecting</i> another<br> &emsp; may improve correlation visibility..
 </dl><hr>
 <h4><a href=MBAI.htm>3D scatter plot visualization</a></h4>
 </font>
