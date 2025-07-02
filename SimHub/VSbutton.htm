@@ -1,0 +1,46 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:600px; background-color:#CCCCFF; }
+</style>
+<title>OxyScope property axis rotation</title>
+</head>
+
+<body bgcolor=404848>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50;padding-right:50">
+<font size=-1> <a href=oxyhelp.htm><i>back</i></a> </font>
+
+<h2>OxyScope property axis rotation</h2>
+After collecting sample sets,<br>
+OxyScope.DataUpdate() submits parameters to control plotting<br>
+<code>View.Replot(VM.start[work], (ushort)(Sample - 1), VM.min[work], VM.max[work]));</code><p>
+In addition to these explicit parameters, implicitly shared are<ul>
+<li>samples <code>O.x[,]</code>
+<li>populated property booleans <code>M.axis[]</code>
+<li>property names <code>M.Xprop, Y0prop, Y1prop, Y2prop, M.PropName[]</code>
+</ul></p>
+<code>M.Xprop, Y0prop, Y1prop, Y2prop</code> are SimHub property names,<br>
+pasted into the UI and saved over restarts.<br>
+Temporarily changing those would be problematic.<br>
+<p>Implementing property plot rotation requires indirection<ul>
+<li>instead of directly indexing e.g. <code>M.PropName[3]</code> for plot X axis title,<br>
+use <code>M.PropName[xmap]</code>
+<li>similarly, instead of directly using scalar <code>Xmin</code> and <code>Xmax</code>,
+<br>implement <code>Xmin[0]</code> and <code>Xmax[0]</code> for <code>M.Xprop</code> and <code>O.x[,3]</code>,
+<br>using <code>Xmin[1]</code> and <code>Xmax[1]</code> when a Y-axis property rotates into X-axis...
+<li>Instead of using <code>M.axis[]</code> to sort currently valid Y axis properties,
+generate a currently valid Y property index list.<pre>
+PlotModel model = ScopeModel(currentX);		// 0 for Xmin,max or 1 Ymin,max
+for (iy = 0; iy < Ylist.Count; iy++)
+	model.Series.Add(Scatter(Ylist[iy]));</pre>
+<li>Indirect indexing also impacts curve fitting..
+</ul>
+</pre>
+
+</td></tr><tr><td align=center>
+<i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
+</td></tr></table></div>
+
+</body>
+</html>
