@@ -45,10 +45,10 @@ Indeed, many sample sequences collected at 60Hz are nearly redundant,<br> tracin
 
 <p><dl>
 <dt><font color=green><b>Refresh Modes</b></font>
-<dd>OxyScope collects 180 (nominally 3 second) property value sample sets,
+<dd>OxyScope collects property value sample sets,
 <br>discarding duplicates and those at very slow speed.
 <dt><ul>
-<li><b>3 second refresh</b> - plots <i>always replaced</i> by more recently collected sets
+<li><b>snapshot</b> - plots <i>always replaced</i> by more recently collected sets
 <li><b>Increasing range</b> - <i>replaceable</i> by sets with greater range of selected property
 <li><b>Cumulative range</b> - continues <i>supplementing</i> an initial sample set collection<br> &emsp;
  initially with samples having larger value variances of selected property,
@@ -65,12 +65,12 @@ Indeed, many sample sequences collected at 60Hz are nearly redundant,<br> tracin
 <dd>
 <hr>
 <b>Help</b> - link to this page
-<dd><br><b>Current property <i>sample set</i> statistics</b>, updated every 180 samples;<br>
+<dd><br><b>Current property <i>sample set</i> statistics</b>, updated at snapshot rate;<br>
 	&emsp; may not get plotted, depending on buttons to the right...
 
-<dd><br><b>Refresh</b> mode button:&nbsp <b>3 second</b> / <b>Cumulative range</b> / <b>Hold max range</b>
+<dd><br><b>Refresh</b> mode button:&nbsp <b>snapshot</b> / <b>Cumulative range</b> / <b>Hold max range</b>
 <dd><br><b>Property</b> selection button<ul>
-<li>For <b>3 second refresh</b> mode, just selects which Y property
+<li>For <b>snapshot</b> refreshes, selects which Y property
 <br> to least-square fit line and
 <a href=https://blekenbleu.github.io/static/ImageProcessing/MonotoneCubic.htm>monotonic cubic curve</a>.
 <li>for <b>Increasing</b> and <b>Cumulative</b> refresh modes,
@@ -78,7 +78,7 @@ Indeed, many sample sequences collected at 60Hz are nearly redundant,<br> tracin
 </ul>
 
 
-<dd><br><b>Manual / Auto Replot</b> button:&nbsp; for <b>3 second</b>
+<dd><br><b>Manual / Auto Replot</b> button:&nbsp; for <b>snapshot</b>
  and <b>Increasing range</b> snapshots<ul>
 <li><b>Auto</b>:&nbsp OxyScope updates plots as new collections are available
 <li><b>Manual</b>:&nbsp currently displayed plot remains until selecting
