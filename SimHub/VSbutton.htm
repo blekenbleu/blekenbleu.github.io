@@ -25,15 +25,15 @@ pasted into the UI and saved over restarts.<br>
 Temporarily changing those would be problematic.<br>
 <p>Implementing property plot rotation requires indirection<ul>
 <li>instead of directly indexing e.g. <code>M.PropName[3]</code> for plot X axis title,<br>
-use <code>M.PropName[xmap]</code>
+use <code>M.PropName[xmap]</code>, where <code>xmap[0]</code> is the X-axis property index
 <li>similarly, instead of directly using scalar <code>Xmin</code> and <code>Xmax</code>,
-<br>implement <code>Xmin[0]</code> and <code>Xmax[0]</code> for <code>M.Xprop</code> and <code>O.x[,3]</code>,
+<br>implement <code>Xmin[0]</code> and <code>Xmax[0]</code> for <code>M.Xprop</code> and <code>O.x[,xmap[0]]</code>,
 <br>using <code>Xmin[1]</code> and <code>Xmax[1]</code> when a Y-axis property rotates into X-axis...
 <li>Instead of using <code>M.axis[]</code> to sort currently valid Y axis properties,
 generate a currently valid Y property index list.<pre>
 PlotModel model = ScopeModel(currentX);		// 0 for Xmin,max or 1 Ymin,max
-for (iy = 0; iy < Ylist.Count; iy++)
-	model.Series.Add(Scatter(Ylist[iy]));</pre>
+for (iy = 1; iy < xmap.Count; iy++)
+	model.Series.Add(Scatter(xmap[iy]));</pre>
 <li>Indirect indexing also impacts curve fitting..
 </ul>
 </pre>
