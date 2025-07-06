@@ -36,7 +36,7 @@ or a sphere with radius 25 and volume of about 65,500 samples.<br>
 Sim racing property sample value distributions are unlikely to be uniform.<br>
 Indeed, many sample sequences collected at 60Hz are nearly redundant,<br> tracing trajectories.
 
-<p>OxyScope <b>Cumulative range</b> mode mitigates data clustering by:<ul>
+<p>OxyScope <b>grow range</b> mode mitigates data clustering by:<ul>
 <li>ignoring successive samples with all "dependent" values<br> differing by less than 2% of properties' current range.
 <li>at suitable intervals, calculate StdDev for each property,<br> then subsequently ignore samples not well beyond.
 <li>ideally, StdDev thresholding should based on radii...</ul>
@@ -48,15 +48,13 @@ Indeed, many sample sequences collected at 60Hz are nearly redundant,<br> tracin
 <dd>OxyScope collects property value sample sets,
 <br>discarding duplicates and those at very slow speed.
 <dt><ul>
-<li><b>snapshot</b> - plots <i>always replaced</i> by more recently collected sets
-<li><b>Increasing range</b> - <i>replaceable</i> by sets with greater range of selected property
-<li><b>Cumulative range</b> - continues <i>supplementing</i> an initial sample set collection<br> &emsp;
- initially with samples having larger value variances of selected property,
- <br> &emsp; as the sample buffer fills.
+<li><b>one shot</b> - plots <i>will be replaced</i> by new sample collections
+<li><b>more range</b> - <i>replaceable</i> only by shots<br>with greater range of selected property
+<li><b>grow range</b> - <i>supplement and enlarge</i> an initial shot,<br> &emsp;
+ initially with samples having larger variances<br> &emsp; of selected property, as the sample buffer fills.
 <br>This works better with more tightly clustered initial collections.
-<br>Delays between updates increase as samples with greater variances become rarer.
-<br>Accumulation may eventually switch to histogram mode,
-<br>backfilling gaps until the buffer is full.
+<br>Buffer filling delays increase<br> &emsp; as samples with greater variances become rarer.
+<br>Accrual eventually backfills histogram gaps to fill the buffer.
 </ul></dl>
 
 <font color=green><b>User Interface</b></font>:&nbsp <i>top to bottom</i>
@@ -65,27 +63,26 @@ Indeed, many sample sequences collected at 60Hz are nearly redundant,<br> tracin
 <dd>
 <hr>
 <b>Help</b> - link to this page
-<dd><br><b>Current property <i>sample set</i> statistics</b>, updated at snapshot rate;<br>
+<dd><br><b>Current property <i>sample set</i> statistics</b>,<br> &emsp; updated at one shot rate;<br>
 	&emsp; may not get plotted, depending on buttons to the right...
 
-<dd><br><b>Refresh</b> mode button:&nbsp <b>snapshot</b> / <b>Cumulative range</b> / <b>Hold max range</b>
+<dd><br><b>Refresh</b> button:&nbsp <b>one shot</b> / <b>grow range</b> / <b>Hold max range</b>
 <dd><br><b>Property</b> selection button<ul>
-<li>For <b>snapshot</b> refreshes, selects which Y property
+<li>For <b>one shot</b> refreshes or <b>Hold</b>, selects Y property
 <br> to least-square fit line and
 <a href=https://blekenbleu.github.io/static/ImageProcessing/MonotoneCubic.htm>monotonic cubic curve</a>.
-<li>for <b>Increasing</b> and <b>Cumulative</b> refresh modes,
-<br> also selects the property controlling sample set collection.
+<li>for <b>more</b> and <b>grow</b> refresh modes with <b>Auto Replot</b>,
+<br>select the property affecting sample set collection.
 </ul>
 
 
-<dd><br><b>Manual / Auto Replot</b> button:&nbsp; for <b>snapshot</b>
- and <b>Increasing range</b> snapshots<ul>
-<li><b>Auto</b>:&nbsp OxyScope updates plots as new collections are available
-<li><b>Manual</b>:&nbsp currently displayed plot remains until selecting
+<dd><br><b>Hold Plot / Auto Replot</b> button:<ul>
+<li><b>Auto</b>:&nbsp update plots as new data are available
+<li><b>Hold</b>:&nbsp displayed plot remains<br>until switching to <b>Auto</b> or selecting
 <span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
 </ul>
 <dd><br><span style="background-color:red;"><font size=-1 color=white><b>&nbsp;REPLOT&nbsp;</b></font></span>
-	button:&nbsp; appears when appropriate for <b>Manual</b> snapshots
+	button:&nbsp; for <b>Hold</b>, refresh <b>one shot</b> or <b>more range</b>
 </ul>
 <hr>
 
