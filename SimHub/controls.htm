@@ -1,0 +1,35 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:600px; background-color:#BBBBBB; }
+</style>
+<title>OxyScope control interactions</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50;padding-right:50">
+<font size=-1> <a href=oxyhelp.htm><i>back</i></a> </font>
+
+<h2>OxyScope control interactions</h2>
+Some controls change behavior based on other controls and data refresh state.
+<dl><dt><b>refresh</b>
+<dd><b>more</b> and <b>grow</b> may remain indefinitely in data collection state,
+<br>but are <i>paused</i> by changing <b>Auto</b> to <b>Hold</b>.
+<dt><b>Hold</b> does not pause <b>one shot</b> until <b>samples per shot</b> slider count,
+<dd>Instead, <b>REPLOT</b> appears when current <b>one shot</b> completes.
+<dt><b>property selected</b>
+<dd>affects <b>grow</b> or <b>more</b> while running (<b>Auto</b>),
+<br>but is inapplicable to <b>one shot</b> data collection.
+<dt><b>fit</b> sets least squares line and monotonic cubic curve property
+<DD>when paused (<b>Hold</b> for <b>more</b> or <b>grow</b>), or halted (<b>REPLOT</b>),
+<dt><b>3D</b> and <b>VS</b> are ignored while data collection is neither paused nor halted.
+</dl>
+
+</td></tr><tr><td align=center>
+<i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
+</td></tr></table></div>
+
+</body>
+</html>
+
