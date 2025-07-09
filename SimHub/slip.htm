@@ -1,0 +1,52 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:600px; background-color:#BBDDCB; }
+</style>
+<title>SimHub slip</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50;padding-right:50">
+<font size=-1> <a href=oxyhelp.htm><i>back</i></a> </font>
+
+<h2>SimHub slip</h2>
+Minimizing time around circuits wants maximizing lateral accelerations.
+<br>In real life, kinesthesia helps drivers accomplish that.
+<br>Motion rigs, harness tensioning and haptics can help in sim racing.
+<p>Lateral grip is optimized by managing tire slip:
+<br><a href=https://racingcardynamics.com/racing-tires-lateral-force/><img src=http://racingcardynamics.com/wp-content/uploads/2014/10/Figure4.jpg></a>
+<br><i>About 6 degrees of slip angle maximizes lateral grip</i>
+</p>Assetto Corsa is unusual in providing slip properties:
+<br><img src=wheelslip.jpg>
+<br>These presumably include both lateral and logitudinal slip.
+<h4>tire <a href=https://vtechworks.lib.vt.edu/server/api/core/bitstreams/fe6d4ca1-514b-4e2b-b1ac-6561824a9de1/content>slip angle</a></h4><dl>
+<dt>front:
+<dd><code>steering_angle - (a * yaw_velocity + lateral_velocity) / longitudinal_velocity</code>
+<dt>rear:
+<dd><code>(b * yaw_velocity + lateral_velocity) / longitudinal_velocity</code>
+<dt>.. where <code>a</code> and <code>b</code> are vehicle-specific center-of-gravity location constants
+</dl>
+Lacking those vehicle-specific constants for any cars in various sims,
+make a simplifying assumption:<ul>
+<li>for low lateral accelerations, slip angles should be nearly zero:
+<br><code>(b * yaw_velocity + lateral_velocity) = 0</code>
+<li><code>b = - lateral_velocity / yaw_velocity</code>
+<li><code>a = (steering_angle * longitudinal_velocity - lateral_velocity) / yaw_velocity</code>
+</ul>
+<p>Division by <code>yaw_velocity</code> will be problematic near zero.
+<br><a href=https://github.com/blekenbleu/OxyScope><b>OxyScope</b></a> data plots show problematic ratios
+<br> &emsp; for steering angles smaller than 1/4 degree<ul>
+<li>Collect <code>a</code> and <code>b</code> estimation data for <code>steering_angle > 0.25</code>
+<br>and <code>slip angles < 2</code>, staying within low noise linear slip angle region.
+<li>Since <code>slip angles</code> depend on as yet unknown <code>a</code> and <code>b</code>,
+<br>instead limit based on <code>steering_angle < 2</code> and low lateral accelerations.
+</ul>
+<h4>Next step:&nbsp; understanding relevant SimHub properties</h4>
+</td></tr><tr><td align=center>
+<i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
+</td></tr></table></div>
+
+</body>
+</html>
