@@ -5,7 +5,7 @@ Whatever it is, let us agree that understeer is its opposite.
 Wikipedia:&nbsp; ["Understeer Angle is the amount of additional steering (at road wheels)  
  &emsp; that must be added in any given steady-state maneuver beyond the Ackermann steer angle"](https://en.wikipedia.org/wiki/Understeer_and_oversteer)  
 
-[![](Properties/oversteer.jpg)](https://kogarahtyrepower.com.au/news/1944-tyrepower-kogarah-explains-oversteering-and-understeering)  
+[![](oversteer.jpg)](https://kogarahtyrepower.com.au/news/1944-tyrepower-kogarah-explains-oversteering-and-understeering)  
  &emsp; *by that definition, B and D  would represent understeer*  
 
 ## [lateral velocity = tangential speed × yaw velocity](https://boltflight.com/understanding-yaw-the-crucial-axis-of-rotational-motion-in-vehicles-and-aircraft/)
@@ -99,7 +99,7 @@ Plugin derivative of RangeRover slip angle calculator
 - sway **acceleration** would zero when steering stops increasing
 - some games have local velocity X and local acceleration X properties...  
 	- but acceleration plot does not zero when velocity plot has zero slope:  
-    ![](Properties/sway.jpg)  
+    ![](sway.jpg)  
 	 &emsp; &emsp;  *local acceleration plots match `AccelerationSway`*
 
 ### slip angle properties - mostly from Load.cs SlipAngle()
