@@ -18,6 +18,7 @@ Minimizing time around circuits wants maximizing lateral accelerations.
 <p>Lateral grip is optimized by managing tire slip:
 <br><a href=https://racingcardynamics.com/racing-tires-lateral-force/><img src=http://racingcardynamics.com/wp-content/uploads/2014/10/Figure4.jpg></a>
 <br><i>About 6 degrees of slip angle maximizes lateral grip</i>
+<br><a href=Oversteer.md><b>Oversteer and understeer</b></a> are front to rear slip angle differences.
 </p>Assetto Corsa is unusual in providing slip properties:
 <br><img src=wheelslip.jpg>
 <br>These presumably include both lateral and logitudinal slip.
@@ -44,6 +45,42 @@ make a simplifying assumption:<ul>
 <br>instead limit based on <code>steering_angle < 2</code> and low lateral accelerations.
 </ul>
 <h4>Next step:&nbsp; understanding relevant SimHub properties</h4>
+<h5>relevant SimHub properties</h5><ul>
+<li> AccelerationHeave, AccelerationSurge, AccelerationSway,
+<br>GlobalAccelerationG, OrientationPitchAcceleration,
+<br>OrientationRollAcceleration, OrientationYawAcceleration,
+<br>OrientationYawVelocity, SpeedKmh
+<li>GlobalAccelerationG is just negative AccelerationSurge</ul>
+
+<a name=formulae><h4></a>motion formulae</h4><font size=-1><ul>
+<li>AccelerationSway = SpeedKmh * SpeedKmh / CurveRadius
+<br><i>Calculate CurveRadius from SimHub AccelerationSway and SpeedKmh</i>
+<li>SideSlipAngle = SwayVelocity / SpeedKmh
+<br>(SwayVelocity aka lateral velocity)
+<li>Circular velocity = OrientationYawVelocity * CurveRadius
+<br>Since Circular velocity is basically SpeedKmh,
+<br> SpeedKmh = OrientationYawVelocity * CurveRadius
+<br>or OrientationYawVelocity = SpeedKmh / CurveRadius;
+<li>by substitution, AccelerationSway = SpeedKmh * OrientationYawVelocity
+<li><a href=https://www.reddit.com/r/FSAE/comments/125moie/comment/je6it6q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button>side slip rate = AccelerationSway - SpeedKmh * OrientationYawVelocity</a>
+<br>integrate side slip rate to obtain SideSlipAngle
+<li><a href=https://www.racetechlab.com/basics-of-cornering/#lateral-acceleration-the-key-metric>AccelerationSway = SpeedKmh * (OrientationYawVelocity + side slip rate)</a></ul>
+<h3>Per-wheel Slip angle equations <a href=https://optimumg.com/wp-content/uploads/2019/09/RCE3.pdf><i>from OptimumG’s seminars</i></a></h3><ul>
+<li><code>SlipAngleLf = (LateralVelocity + YawVelocity * Df) / (SpeedKmh - YawVelocity * Axf/2) - SteeringAngleL</code>
+<li><code>SlipAngleRf = (LateralVelocity + YawVelocity * Df) / (SpeedKmh + YawVelocity * Axf/2) - SteeringAngleR</code>
+<li><code>SlipAngleLr = (LateralVelocity - YawVelocity * Dr) / (SpeedKmh - YawVelocity * Axr/2)</code>
+<li><code>SlipAngleRr = (LateralVelocity - YawVelocity * Dr) / (SpeedKmh + YawVelocity * Axr/2)</code>
+<br>...where:
+<li><code>Df</code> and <code>Dr</code> are distances from center of gravity to front and rear axles, respectively
+<li><code>Axf</code> and <code>Axr</code> are front and rear axle lengths, respectively
+<li>note sign changes front-to-rear (<code>Df</code> vs <code>Dr</code>) and left-to-right (<code>Axf</code> or <code>Axr</code>)</ul></font>
+
+<h3>Approximations</h3><ul>
+<li>Tire slip angles less than 6 degrees are most useful.
+<br>don't bother applying tan or arctan for angles < 6 degrees
+<li>calculating slip angles for all 4 tires is wasteful;
+<br>slip angles mostly matter when large on heavily loaded side.</ul>
+
 </td></tr><tr><td align=center>
 <i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
 </td></tr></table></div>
