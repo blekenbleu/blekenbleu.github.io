@@ -26,29 +26,38 @@ I use it for controls, fans, harness tensioning and tactile feedback.<br><br>
 
 <dl>
 <dt><b>Sim Controls</b>
-<dd><ul><li><a href=../pedals/index.htm#AC>Assetto Corsa</a> uses <a href=../Windows/HID/index.htm#DI>DirectInput</a> controllers,<br>
+<ul><li><a href=../pedals/index.htm#AC>Assetto Corsa</a> uses <a href=../Windows/HID/index.htm#DI>DirectInput</a> controllers,<br>
 which can be emulated using <a href=../Windows/HID/vJoy/index.htm>vJoy</a>.</ul>
 
-<dt><br><b>My SimHub Control plugins</b> &emsp; <a href=https://github.com/blekenbleu?tab=repositories><i>repository</i></a><ul>
-<li><a href=https://github.com/blekenbleu/MIDIio><b>MIDIio</b> SimHub plugin</a> converts among<ul>
-<li><a href=../MIDI/index.htm>MIDI<a> control surface change signals
-<li>vJoy emulated DirectInput signals
-<li>SimHub properties to/from other plugins<br> or derived from <i>game telemetry</i>.</ul>
+<dt><br><b>My SimHub plugins</b> &emsp; <a href=https://github.com/blekenbleu?tab=repositories><i>repository</i></a><ul>
+<li>@viper4gh's <a href=https://github.com/blekenbleu/CalcLngWheelSlip>CalcLngWheelSlip</a>
+<li><a href=https://github.com/blekenbleu/Direct-Drive-harness-tension-tester><b>Direct-Drive-harness-tension-tester</b></a>
 <li><a href=https://github.com/blekenbleu/Fake8><b>Fake8</b> SimHub plugin</a> converts between SimHub properties<br>
 	and (e.g. <a href=../pedals/STM32>STM32</a> or <a href=/static/ESP32/>ESP32</a>) <a href=../Arduino/>Arduino</a> module COM messages<br>
  via <b>SimHub <a href=../Arduino/SimHubCustomSerial>Custom Serial</a></b> devices.
 <li><a href=https://github.com/blekenbleu/InterceptMouse><b>InterceptMouse</b></a> plugin dedicates<br>
 	a <i>second</i> mouse's events to SimHub properties.
+<li><a href=https://github.com/blekenbleu/JSONio><b>JSONio</b></a> manages multiple custom per-car property profiles,<br> which can be shared.
+<li> <a href=https://github.com/blekenbleu/Loaded><b>Loaded</b></a> experiments with suspension deflection vs tire load,<br>
+ <a href=slip.htm>slip</a>, <a href=Oversteer>oversteer</a>
+<li><a href=https://github.com/blekenbleu/MIDIio><b>MIDIio</b> SimHub plugin</a> converts among<ul>
+<li><a href=../MIDI/index.htm>MIDI<a> control surface change signals
+<li>vJoy emulated DirectInput signals
+<li>SimHub properties to/from other plugins<br> or derived from <i>game telemetry</i>.</ul>
 <li><a href=https://github.com/blekenbleu/OxyScope><b>OxyScope</b></a> <b><i>XY plots</i></b> SimHub property value sample sets
-	<br>while SimHub can plot each property values vs time </ul>
-<dd> <a href=oxyhelp.htm><i>Help</i></a>
+	<br>while SimHub can plot each property values vs time
+<br> <a href=oxyhelp.htm><i>Help</i></a> &emsp; <a href=MBAI.htm>3D Scatter Plot Visualization</a>
+<li>@sierses' <a href=https://github.com/blekenbleu/SimHap><b>SimHaptics</b></a> with some bug fixes
+<li><a href=https://github.com/blekenbleu/XtraMouse><b>XtraMouse</b></a> dedicates a second (or third) mouse to SimHub
+</ul>
+
 
 <dt><br><b>SimHub <a href="https://github.com/SHWotever/SimHub/wiki/ShakeIt-V3-Effects-configuration">ShakeIt</a></b> profiles use properties to control
 <ul>
 <li><b>tactile feedback</b>
 <ul><li>modulating tactile amplitudes and/or frequencies.</ul>
 <li>ShakeIt profiles can also export custom properties
-<li>custom properties can control e.g. <b>fans</b> and <b>harness tensioning</b>
+<br>that can control e.g. <b>fans</b> and <b>harness tensioning</b>
 	<br>via Custom Serial profiles and STM32 Arduino
 <li><b>MIDIio</b> can separately route property values<br>
 e.g. via vJoy and/or <a href=../Windows/WinAudio.htm#VST>MIDI VST</a>.</ul>
