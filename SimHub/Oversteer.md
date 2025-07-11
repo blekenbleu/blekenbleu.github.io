@@ -6,22 +6,28 @@ Wikipedia:&nbsp; ["Understeer Angle is the amount of additional steering (at roa
  &emsp; that must be added in any given steady-state maneuver beyond the Ackermann steer angle"](https://en.wikipedia.org/wiki/Understeer_and_oversteer)  
 
 [![](oversteer.jpg)](https://kogarahtyrepower.com.au/news/1944-tyrepower-kogarah-explains-oversteering-and-understeering)  
- &emsp; *by that definition, B and D  would represent understeer*  
+ &emsp; *by Wikipedia definition, B and D would represent understeer*  
 
-## [lateral velocity = tangential speed × yaw velocity](https://boltflight.com/understanding-yaw-the-crucial-axis-of-rotational-motion-in-vehicles-and-aircraft/)
-- yaw velocity (SimHub `OrientationYawVelocity`) is already *vehicle attitude* angular velocity;  
-  lateral velocity (SimHub `AccelerationSway`) / vehicle speed becomes *vehicle trajectory* angular velocity  
-- attitude and trajectory angular velocities' difference represents (rear wheel) slip angle
-- steering angle with attitude minus trajectory angle becomes front wheel slip angle
+## [tangential speed v](https://en.wikipedia.org/wiki/Tangential_speed) vs [yaw velocity &omega;](https://boltflight.com/understanding-yaw-the-crucial-axis-of-rotational-motion-in-vehicles-and-aircraft/)
+- straight line speed is tangential speed with infinite radius and zero yaw velocity
+- yaw velocity &omega; (SimHub `OrientationYawVelocity`) is already *vehicle center of gravity* angular velocity;&nbsp; v = &omega;*R  
+- SimHub `AccelerationSway` is lateral acceleration required to follow a curve of some radius R:&nbsp; v*v/R  
+- vehicles lack perfect grip for generating lateral acceleration to follow ideal curves
+- *side slip rate* is the difference between `AccelerationSway` and v*&omega;  
+- *lateral velocity* is time integral of *side slip rate*  
+- *center of gravity (body) slip angle* is ratio of *lateral velocity* / tangential speed 
+- rear wheel slip angles sum vehicle yaws relative to trajectories and *body slip angles*
+- front wheel slip angles sum steering angles, vehicle yaws relative to trajectories, and *center of gravity slip angles* 
 
-[**Front tire slip = (steering angle + yaw velocity) - (radial velocity / tangential speed))**](https://vtechworks.lib.vt.edu/server/api/core/bitstreams/fe6d4ca1-514b-4e2b-b1ac-6561824a9de1/content)  
-**Rear tire Slip  = yaw velocity - (radial velocity / tangential speed)**
+## *lateral velocity* wants numerical integration;&nbsp; simplifying approximations?
+[**Front tire slip ~ (steering angle + yaw velocity) - (*side slip rate* / tangential speed))**](https://vtechworks.lib.vt.edu/server/api/core/bitstreams/fe6d4ca1-514b-4e2b-b1ac-6561824a9de1/content)  
+**Rear tire Slip  ~ yaw velocity - (*side slip rate* / tangential speed)**
 
 - alternative (1) for oversteer:&nbsp; more slip at rear tires than front  
 - alternative (2):&nbsp; vehicle yaw relative to vehicle direction (B, C, D, E)
-- alternative (3):&nbsp; vehicle *yaw rate* relative to lateral velocity
+- alternative (3):&nbsp; vehicle *side slip rate* with *steering changes*
 
-## Assetto Corsa provides wheel slip telemetry for alternative (1):
+## Assetto Corsa wheel slip telemetry for alternative (1):
 `DataCorePlugin.GameRawData.Physics.WheelSlip04 + DataCorePlugin.GameRawData.Physics.WheelSlip03 -
 (DataCorePlugin.GameRawData.Physics.WheelSlip02 + DataCorePlugin.GameRawData.Physics.WheelSlip01)`  
 At least one issue:&nbsp; locked brakes in a straight line presents as massive over- or  understeer,  
@@ -94,9 +100,8 @@ Plugin derivative of RangeRover slip angle calculator
 - arctan only of 1000 * (game-independent) `AccelerationSway` divided by `SpeedKmh`
 	- steering and yaw are already angles
 
-## SimHub `AccelerationSway` is a *velocity*, not *acceleration*
+## SimHub `AccelerationSway`
 - By observation, does not change sign while steering stays one side of center
-- sway **acceleration** would zero when steering stops increasing
 - some games have local velocity X and local acceleration X properties...  
 	- but acceleration plot does not zero when velocity plot has zero slope:  
     ![](sway.jpg)  
