@@ -21,6 +21,7 @@ Minimizing time around circuits wants maximizing lateral accelerations.
 <br><a href=Oversteer><b>Oversteer and understeer</b></a> are front to rear slip angle differences.
 </p>Assetto Corsa is unusual in providing slip properties:
 <br><img src=wheelslip.jpg>
+
 <br>These presumably include both lateral and logitudinal slip.
 <h4>tire <a href=https://vtechworks.lib.vt.edu/server/api/core/bitstreams/fe6d4ca1-514b-4e2b-b1ac-6561824a9de1/content>slip angle</a></h4><dl>
 <dt>front:
@@ -55,16 +56,17 @@ make a simplifying assumption:<ul>
 <a name=formulae><h4></a>motion formulae</h4><font size=-1><ul>
 <li>AccelerationSway = SpeedKmh * SpeedKmh / CurveRadius
 <br><i>Calculate CurveRadius from SimHub AccelerationSway and SpeedKmh</i>
-<li>SideSlipAngle = SwayVelocity / SpeedKmh
+<li>SideSlip = SwayVelocity / SpeedKmh
 <br>(SwayVelocity aka lateral velocity)
-<li>Circular velocity = OrientationYawVelocity * CurveRadius
-<br>Since Circular velocity is basically SpeedKmh,
+<li>Tangential velocity = OrientationYawVelocity * CurveRadius
+<br>Since Tangential velocity is basically SpeedKmh,
 <br> SpeedKmh = OrientationYawVelocity * CurveRadius
 <br>or OrientationYawVelocity = SpeedKmh / CurveRadius;
-<li>by substitution, AccelerationSway = SpeedKmh * OrientationYawVelocity
-<li><a href=https://www.reddit.com/r/FSAE/comments/125moie/comment/je6it6q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button>side slip rate = AccelerationSway - SpeedKmh * OrientationYawVelocity</a>
-<br>integrate side slip rate to obtain SideSlipAngle
-<li><a href=https://www.racetechlab.com/basics-of-cornering/#lateral-acceleration-the-key-metric>AccelerationSway = SpeedKmh * (OrientationYawVelocity + side slip rate)</a></ul>
+<li><a href=https://www.racetechlab.com/basics-of-cornering/#lateral-acceleration-the-key-metric>AccelerationSway = SpeedKmh * (OrientationYawVelocity + side slip rate)</a>
+<a name=SSR>
+<li></a><a href=https://www.reddit.com/r/FSAE/comments/125moie/comment/je6it6q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button>side slip rate = AccelerationSway - SpeedKmh * OrientationYawVelocity</a>;
+<br> &emsp; <a href=sideslip.htm>integrate side slip rate to obtain SideSlip</a> [AKA lateral velocity]
+</ul>
 <h3>Per-wheel Slip angle equations <a href=https://optimumg.com/wp-content/uploads/2019/09/RCE3.pdf><i>from OptimumG’s seminars</i></a></h3><ul>
 <li><code>SlipAngleLf = (LateralVelocity + YawVelocity * Df) / (SpeedKmh - YawVelocity * Axf/2) - SteeringAngleL</code>
 <li><code>SlipAngleRf = (LateralVelocity + YawVelocity * Df) / (SpeedKmh + YawVelocity * Axf/2) - SteeringAngleR</code>
