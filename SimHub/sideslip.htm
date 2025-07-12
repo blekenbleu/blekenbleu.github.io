@@ -15,10 +15,11 @@ table.my_table td { width:600px; background-color:#BBDDCB; }
 There is a lateral acceleration required to follow a curve = V*V/R,
 <br>where V is speed and R is curve's radius
 <br>and then there is lateral acceleration actually currently being developed.
-<br>Some call the difference "side slip rate" and its time integral "lateral velocity".
+<br>Some call the difference "SideSlip rate",<br>
+which integrated over time yields "lateral velocity".
 
-<p>SideSlip or lateral velocity is
-<a href=https://www.reddit.com/r/FSAE/comments/125moie/comment/je6it6q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button>calculated by integrating SideSlipRate</a>,
+<p>Calculate SideSlip or lateral velocity by
+<a href=https://www.reddit.com/r/FSAE/comments/125moie/comment/je6it6q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button>integrating SideSlipRate</a>,
 <br>which in turn is calculated by
 <br>&emsp; <code>AccelerationSway - SpeedKmh * OrientationYawVelocity</code>.
 </p>Numerical integration is problematic in that errors can accumulate.
@@ -33,12 +34,11 @@ There is a lateral acceleration required to follow a curve = V*V/R,
 <br>as steering angles and lateral accelerations approach zero.</p>
 
 <h3>Simplifying Approximation</h3>
-<a href=https://www.suspensionsetup.info/>"Most drivers are acutely sensitive to <b>the rate of change of body slip angle</b>."</a> [the Body Slip Angle Rate]
+<a href=https://www.suspensionsetup.info/>"Most drivers are acutely sensitive to <b>the rate of change of body slip angle</b>."</a> [the SideSlip Angle Rate]
 <br> - Damian Harty, Vehicle Dynamics Engineer and Author
 <br><i>in which case, do not bother with numerical integration...
-<h4>Body Slip Angle Rate</h4>
-Factor out speed:
-<br>&emsp; <code>AccelerationSway/SpeedKmh - OrientationYawVelocity</code>.
+<p><b>SideSlip <i>Angle</i> Rate</b> factors speed out of SideSlip rate:
+<br>&emsp; <a href=https://students.optimumg.com/wp-content/uploads/2017/05/Gettingtogrips.pdf><code>AccelerationSway/SpeedKmh - OrientationYawVelocity</code></a>.</p>
 
 </td></tr><tr><td align=center>
 <i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
