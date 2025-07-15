@@ -101,6 +101,8 @@
 [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/) replaces [GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/),
 	eventually [NVIDIA Control Panel](https://www.nvidia.com/en-us/drivers/control-panel/)  
 [NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector) modify or add game profiles in Nvidia driver database  
+[NVIDIA Smooth Motion](https://nvidia.custhelp.com/app/answers/detail/a_id/5621/~/enabling-smooth-motion-in-nvidia-app) driver-based AI model inferring frames between rendered frames  
+ &emsp; similar to AMD's [Fluid Motion Frames](https://www.amd.com/en/products/software/adrenalin/afmf.html)  
 [OBSC](https://github.com/benaclejames/OBSC) OBS-Studio plugin for OSC  
 [Ohne Speed OpenXR toolkit mod **reduces FoV, increases FpS**](https://www.youtube.com/watch?v=CieIQ7cE4CU) -
   [toolkit configurator](https://www.youtube.com/watch?v=JBf6IIIrK4A)  
