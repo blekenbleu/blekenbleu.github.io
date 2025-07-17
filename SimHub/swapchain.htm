@@ -1,0 +1,61 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:600px; background-color:#BBBBBB; }
+</style>
+<title>OxyScope buffering</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50;padding-right:50">
+<font size=-1> <a href=oxyhelp.htm><i>back</i></a> </font>
+
+<h2>OxyScope (swap chain) buffering</h2>
+OxyScope has 3 modes for collecting SimHub property values:
+<dl><dt><b>grow range</b>
+<dd>starts with a capture, based on <b>samples per shot</b>,
+<br>then appends samples different from those previously captured,
+<br>up to the total buffer limit.
+<br>This single buffer is shared for plotting;
+<br>capturing may be <i>paused</i> by changing <b>Auto</b> to <b>Hold</b>.
+<br>then resumed or restarted.
+
+<dt><b>one shot</b>
+<dd>Captures of length <b>samples per shot</b> can be plotted,
+while  capture continues.&nbsp;  This wants at least ping-pong buffering,
+<br>to avoid data changes during plot by subsequent capture.
+<br>However, a chain of 3 buffers would enable
+<br>plotting <i>another</i> buffer immediately after a plot is dismissed.
+<br>Currently, with only two buffers,
+<br>the unplotted buffer is likely incomplete when refresh is wanted.
+
+<dt><b>more range</b>
+<dd>OxyScope searches for capture of length <b>samples per shot</b>
+<br>with wider range of values for some selected properties.
+<br>This wants a chain of at least 3 buffers, allowing
+<br>OxyScope to continue searching for a larger range
+<br>than one currently held, but not yet displayed,
+<br>while reprocessing and replotting a third buffer.
+</dl>
+
+<h3>I feel the need</h3>
+<br>While 3 swap chain buffer benefits were recognized early in OxyScope development,
+<br>it did not become so important until <b>VS</b> and <b>rescale</b> options,
+<br>which want to manipulate and replot currently buffered data.
+<br>Before, capture could resume modifying second swap buffer as soon as its data had been plotted.
+
+<p>Sadly, C# examples for swap-chain buffering are all about display buffering
+and tied to specifics of some display rendering architecture</p>
+
+<h3>handshaking</h3>
+Plotting and user interactions are handled on a thread
+<br>separate from that used for processing SimHub properties.
+
+</td></tr><tr><td align=center>
+<i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
+</td></tr></table></div>
+
+</body>
+</html>
+
