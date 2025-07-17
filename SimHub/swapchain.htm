@@ -51,6 +51,54 @@ and tied to specifics of some display rendering architecture</p>
 <h3>handshaking</h3>
 Plotting and user interactions are handled on a thread
 <br>separate from that used for processing SimHub properties.
+<dl><dt><b>grow range</b>
+<dd>Because a single buffer, <code>DataUpdate()</code> simply does nothing if <code>!AutoPlot</code>
+<dt><b>one shot</b>
+<dd>With multiple buffers, <code>DataUpdate()</code> continues collecting...
+<br><code>Replot()</code> may become <code>!busy</code> at any time.
+<br>- if a newer (<b>one shot</b>) or bigger <b>more range</b> buffer is <code>available</code>,
+<br>then call <code>Replot()</code> before the current <code>work</code> buffer completes.
+<br>when current <code>work</code> buffer completes,
+<br>mark buffer <code>available</code> and switch to other buffer.
+<dt><b>more range</b>
+<dd>similar to <b>one shot</b>, except <code>available</code> wants buffer with larger value range.
+</dl>
+<h4><code>available</code> handling</h4>
+New variables:&nbsp; <code>bool available</code>; <code>byte VM.plot, other</code>	// buffer indices
+<dl>
+<dt>Invoke `Replot()` asynchronusly:
+<dd><pre>if (available && !VM.busy)
+{
+    available = false;
+    VM.busy = true;
+    VM.plot = other;						// buffer index for Replot()
+    other = (byte)(3 - (VM.plot + work));
+    View.Dispatcher.Invoke(() => View.Replot(VM.Slength));
+}
+</pre>
+
+<dt><b>one shot</b> or <b>more range</b> buffer complete
+<dd><pre>if ((++Sample - VM.start[work]) >= VM.Slength) // filled?
+{
+    // swap chain buffer:  buffer setup in Control.xaml.cs Control() and Model.Slength
+    // https://blekenbleu.github.io/SimHub/swapchain.htm
+    double work_range = Drange(work, VM.property);
+
+    VM.Current = $"{VM.min[work][clf]:#0.000} <= Y <= {VM.max[work][clf]:#0.000};  "
+               + ((1 == VM.Refresh) ? $"{VM.min[work][3]:#0.000} <= X <= {VM.max[work][3]:#0.000}"
+                                    : $"{VM.PropName[VM.property]} range {work_range}");
+
+    // Refresh: 0 = greater range, 1 = snapshot, 2 = grow range (not handled here)
+    // property: 3 == no curve fitting; 0-2 correspond to Y0-Y2
+    if (1 == VM.Refresh || Drange(other, VM.property) < work_range)
+    {
+        other = work;
+        work = (byte)(3 - (other + VM.plot));
+    }
+    available = 1 == VM.Refresh || Drange(VM.plot, VM.property) < Drange(other, VM.property);
+    Sample = VM.start[work];
+}</pre>
+</dl>
 
 </td></tr><tr><td align=center>
 <i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
