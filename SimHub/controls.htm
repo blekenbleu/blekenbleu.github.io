@@ -24,6 +24,18 @@ Some controls change behavior based on other controls and data refresh state.
 <dt><b>fit</b> sets least squares line and monotonic cubic curve property
 <DD>when paused (<b>Hold</b> for <b>more</b> or <b>grow</b>), or halted (<b>REPLOT</b>),
 <dt><b>3D</b> and <b>VS</b> are ignored while data collection is neither paused nor halted.
+<dt><b>Restart</b>
+<dd>Implicit control, set by<ul>
+<li>Slength change
+<li>Title (CarID) change
+<li>Xprop, Y[0-2]prop change
+</ul>reset by DataUpdate()
+<br>Restart causes (in DataUpdate())<ul>
+<li>ValidateProp() invalid property warnings
+<li>ButtonUpdate()
+<li>ends looping for (2 == VM.Refresh && !VM.AutoPlot)
+<li>resets VM.Bfull, initializes IIR[], restarts data collection
+</ul>
 </dl>
 
 </td></tr><tr><td align=center>
