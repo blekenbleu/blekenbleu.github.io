@@ -13,7 +13,7 @@ Wikipedia:&nbsp; ["Understeer Angle is the amount of additional steering (at roa
 - yaw velocity &omega; (SimHub `OrientationYawVelocity`) is already *vehicle center of gravity* angular velocity;&nbsp; v = &omega;*R  
 - SimHub `AccelerationSway` is lateral acceleration required to follow a curve of some radius R:&nbsp; v*v/R  
 - vehicles lack perfect grip for generating lateral acceleration to follow ideal curves
-- *side slip rate* is the difference between `AccelerationSway` and v*&omega;  
+- *side [slip rate](sliprate)* is the difference between `AccelerationSway` and v*&omega;  
 - *lateral velocity* is time integral of *side slip rate*  
 - *center of gravity (body) slip angle* is ratio of *lateral velocity* / tangential speed 
 - rear wheel slip angles sum vehicle yaws relative to trajectories and *body slip angles*

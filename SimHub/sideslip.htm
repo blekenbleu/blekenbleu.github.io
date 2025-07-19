@@ -3,7 +3,7 @@
 <style>
 table.my_table td { width:600px; background-color:#BBDDCB; }
 </style>
-<title>SideSlip - numerical integration</title>
+<title>Side Slip - numerical integration</title>
 </head>
 
 <body>
@@ -11,15 +11,15 @@ table.my_table td { width:600px; background-color:#BBDDCB; }
 <table class="my_table"><tr><td style="padding-left:50;padding-right:50">
 <font size=-1> <a href=slip.htm#SSR><i>back</i></a> </font>
 
-<h2>SideSlip (AKA lateral velocity) and numerical integration</h2>
+<h2>Side Slip (AKA lateral velocity) and numerical integration</h2>
 There is a lateral acceleration required to follow a curve = V*V/R,
 <br>where V is speed and R is curve's radius
 <br>and then there is lateral acceleration actually currently being developed.
-<br>Some call the difference "SideSlip rate",<br>
+<br>Some call the difference "side <a href=sliprate>slip rate</a>",<br>
 which integrated over time yields "lateral velocity".
 
-<p>Calculate SideSlip or lateral velocity by
-<a href=https://www.reddit.com/r/FSAE/comments/125moie/comment/je6it6q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button>integrating SideSlipRate</a>,
+<p>Calculate side slip or lateral velocity by
+<a href=https://www.reddit.com/r/FSAE/comments/125moie/comment/je6it6q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button>integrating side slip rate</a>,
 <br>which in turn is calculated by
 <br>&emsp; <code>AccelerationSway - SpeedKmh * OrientationYawVelocity</code>.
 </p>Numerical integration is problematic in that errors can accumulate.
@@ -27,17 +27,17 @@ which integrated over time yields "lateral velocity".
 <br>wanting information about future samples.
 <br>Lacking those, perform simple-minded accumulation.
 <br>To minimize error accumulation,
-<br>note that <i><b>SideSlip should approach zero</b></i>
+<br>note that <i><b>side slip should approach zero</b></i>
 <br>for small steering angles and lateral accelerations.
 <br>Consequently, apply lowpass filtering to accumulation,
 <br>introducing zero values with time constant decreasing
 <br>as steering angles and lateral accelerations approach zero.</p>
 
 <h3>Simplifying Approximation</h3>
-<a href=https://www.suspensionsetup.info/>"Most drivers are acutely sensitive to <b>the rate of change of body slip angle</b>."</a> [the SideSlip Angle Rate]
+<a href=https://www.suspensionsetup.info/>"Most drivers are acutely sensitive to <b>the rate of change of body slip angle</b>."</a> [the side <a href=sideslip>slip angle rate</a>]
 <br> - Damian Harty, Vehicle Dynamics Engineer and Author
 <br><i>in which case, do not bother with numerical integration...
-<p><b>SideSlip <i>Angle</i> Rate</b> factors speed out of SideSlip rate:
+<p><b>Side Slip <i>Angle</i> Rate</b> factors speed out of side <a href=sliprate>slip rate</a>:
 <br>&emsp; <a href=https://students.optimumg.com/wp-content/uploads/2017/05/Gettingtogrips.pdf><code>AccelerationSway/SpeedKmh - OrientationYawVelocity</code></a>.</p>
 
 </td></tr><tr><td align=center>
