@@ -78,13 +78,18 @@ First data byte values 70-83, 85-95 are for LSB-only second data bytes
  and <a href="https://github.com/blekenbleu/MIDIio/blob/3d5f2d1122350a73517ae439085aacddc8254d1d/docs/nanoKONTROL2_MIDIimp.txt">KORG nanoKONTROL2</a>.
 </b></font><br><font size=-1>
 <dd><i>MIDI control of <a href=../SimHub/>SimHub</a> and <a href=../Windows/WinAudio.htm#VM>VoiceMeeter</a>
-initially by Wi-Fi e.g. from smartphone or ESP32.</i></font><br><br>
+initially by Wi-Fi e.g. from smartphone or ESP32.</i></font>
 
-<dt><font color=red><a href="/static/ESP32/midi.htm">ESP32-S2 USB MIDI</a> does not composite well with other devices (CDC, HID gamepad)</font>
+<dt><br><b><a href=https://midi.org/basic-of-usb>Basics of USB-MIDI</a>
+
+<dt><br><b><a href=STM32MIDI.htm>STM32MIDI USB</a>
+
+<dt><br><font color=red><a href="/static/ESP32/midi.htm">ESP32-S2 USB MIDI</a> does not composite well with other devices (CDC, HID gamepad)</font>
 <dd>Instead, send MIDI over Wi-Fi, preferably by WebSocket
-<dt><b>Wireless MIDI flavors</b><ul>
 
-<li><a href="#DSMI">DSMI</a> - old <a href="DS_MIDI_WiFi">protocol for Nintendo DS</a>
+<dt><br><b>Wireless MIDI flavors</b><ul>
+
+<li><a href="#DSMI">DSMI</a> - old <a href="DS_MIDI_WiFi.htm">protocol for Nintendo DS</a>
 
 <li><a href="https://www.nerds.de/en/ipmidi.html">ipMIDI</a> - proprietary $79 (60 min. free trial)<br>
 One of two MIDI-over-UDP protocols, uses "well-known" port;
@@ -114,7 +119,7 @@ One of two MIDI-over-UDP protocols, uses "well-known" port;
 <a name=DSMI>
 <dt>Android <b>Wireless Mixer</b> app using <a href="https://forum.gbadev.org/viewtopic.php?t=11811">DSMI</a>
 <dd><a href="https://trajkovski.net/support.html">Trajkovski Labs support page</a><br>
-<a href="DS_MIDI_WiFi">Installation</a></a>
+<a href="DS_MIDI_WiFi.htm">Installation</a></a>
 <details><summary>Wireless Mixer MIDI map (CC numbers, decimal)</summary>
   &nbsp  &nbsp Master volume = 7<br>
   &nbsp  &nbsp Play = 118<br>

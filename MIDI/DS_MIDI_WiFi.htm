@@ -1,0 +1,89 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>DSWiFiMIDI Server for Android Wireless Mixer</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<a href="index.htm"><font size=-1><i>back</i></font></a>
+
+<h2><a href=https://trajkovski.net/dsmidiwifi-v1.01.zip>DSWiFiMIDI Server</a> for
+<a href=https://play.google.com/store/apps/details?id=com.bti.wirelessMixer>Android Wireless Mixer</a></h2> by 0xtob
+
+<h3 id="whats-this">What’s this?</h3>
+
+<p>DSMIDIWiFi forwards MIDI messages on the local network<br />
+  between PC MIDI applications and handheld MIDI controller apps.<br />
+  For more information, visit:
+<a href="https://forum.gbadev.org/viewtopic.php?t=11811">DSMI - Wireless and Wired MIDI for the DS</a></p>
+
+<h3 id="usage">Usage</h3>
+
+<ul>
+  <li>On Windows, install <a href="https://www.tobias-erichsen.de/software/loopmidi.html">LoopMIDI</a>
+    <ul>
+      <li><a href="http://www.midicontrol.net/server">configure it</a><br />
+<img src="loopMIDIcfg.png" alt="configure" /><br />
+Use unambiguous names:<br />
+<img src="loopMIDI.png" alt="name ports" /></li>
+    </ul>
+  </li>
+  <li>Install and configure <a href="https://trajkovski.net/dsmidiwifi-v1.01.zip">DSWiFiMIDI</a><br />
+<img src="DSWifiMIDI.png" alt="Input and Output port" />
+    <ul>
+      <li><i><b>Minimize it to the taskbar</b></i>.
+        <ul>
+          <li>Unlike LoopMIDI, closing DSWifiMIDI’s window kills its service.</li>
+          <li>Restarting DSWifiMIDI will fail until after rebooting.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Reboot Windows to clear any <code class="language-plaintext highlighter-rouge">Error initing</code> reported during DSWiFiMIDI startup.</li>
+  <li>Install <a href="http://play.google.com/store/apps/details?id=com.bti.wirelessMixer">Wireless Mixer - MIDI</a> on your Android device.
+    <ul>
+      <li><a href="https://trajkovski.net/support.html">support</a></li>
+    </ul>
+  </li>
+  <li>Start mixing!</li>
+</ul>
+
+<h3 id="troubleshooting">Troubleshooting</h3>
+
+<p>Normally, the server should just work(TM).
+  For hints, refer <a href="https://forum.gbadev.org/viewtopic.php?t=11811">the forum</a>.</p>
+
+<h3 id="compiling">Compiling</h3>
+
+<p>Linux:</p>
+
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight">
+<code>- Get the Qt4 and ALSA development packages
+- Type "make" in the source folder
+</code></pre></div></div>
+
+<p>MacOS X:</p>
+
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight"><code>- Make sure you have the latest version of XCode
+- Install the Qt 4 Open Source Edition
+- Open the XCode project and push the build button
+</code></pre></div></div>
+
+<p>Windows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight">
+<pre class="highlight"><code>- Install the Qt 4 Open Source Edition (with mingw)
+- Open a command window
+- Type "make" in the source folder
+</code></pre></div></div>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
