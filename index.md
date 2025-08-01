@@ -145,6 +145,7 @@
 
 ---
 
+#### [Anker PowerCore Fusion 10000 20W USB-C Portable Charger](../microscope/Anker.htm)
 #### [COVID-19 plots](../static/covid)
 
 ---
