@@ -30,9 +30,10 @@ which require [an older Windows driver](https://github.com/SHWotever/FakeCH340Dr
 ### STM32duino:&nbsp;  who's on first?  
 - [History](https://www.stm32duino.com/viewtopic.php?t=301)  
 	- originally by Leaflabs for Maple, then [Roger Clark for STM32F1/F4](https://github.com/rogerclarkmelbourne/Arduino_STM32)   
-- ["Official" STMicrosystems support](https://github.com/stm32duino/Arduino_Core_STM32) for *many* STM32 chips and boards   
-	- Since core release 2.8.0, only Arduino IDE 2 is supported...  
+- ["Official" STMicrosystems `stm32duino`](https://github.com/stm32duino/Arduino_Core_STM32) supports *many* STM32 chips and boards  
+	- `stm32duino` since core release 2.8.0, supports *only* [**Arduino IDE 2**](https://blekenbleu.github.io/static/Arduino2/index.htm)    
 	- **I use Arduino 1.8 for Blue Pill and Black Pill**
+		- [Getting Started for Arduino IDE 1.8.x](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Getting-Started_V1)
 
 Many STM32 chips' hardware and ROM bootloaders support (DFU) USB directly,  
 but Blue Pill's chip lacks ROM USB bootloader support.  
@@ -43,7 +44,7 @@ STM32F103C chips officially have 64K flash, but
 There are at least 4 ways to flash STM32 chips:  
 1) [SWD via ST-LINK](#blue-pill-swd-pins-for-st-link)  
    **Use this to install an HID bootloader on Blue Pills**  
-   Unlike Black Pills, new Blue Pills lack a USB bootloader. 
+   Unlike Black Pills, new Blue Pills lack a ROM USB bootloader. 
 2) (Arduino) USB bootloader[s] <- there have been several:  
    * [STM32duino Bootloader](https://github.com/Serasidis/STM32_HID_Bootloader)
      AKA bootloader 2.0 AKA **HID bootloader**  
@@ -67,7 +68,7 @@ There are at least 4 ways to flash STM32 chips:
 
 STM32duino for Blue Pill expects a USB HID bootloader,  
 which gets launched by Blue Pill's ROM bootloader,  
-then that USB HID bootloader installs sketches above it in flash.  
+then Arduino uses that USB HID bootloader to install sketches above it in flash.  
 
 A clone ST-LINK V2 costs no more than a USB COM dongle,  
 connects to dedicated [SWD pins](#blue-pill-swd-pins-for-st-link) on e.g. Black or Blue Pills for code load and debug.  
@@ -75,9 +76,9 @@ Clone USB COM dongles *may not* support 3.3V to Blue Pill serial boot pins..
 Blue Pill boot jumpers *need not be changed* when flashing by ST-LINK or HID bootloader.  
 
 #### STM32duino
-Although many STM32 Arduino projects still use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader AKA Maple,  
+Although many STM32 Arduino projects still use [Roger Clark's core](https://github.com/rogerclarkmelbourne/Arduino_STM32) and bootloader (AKA Maple),  
 Arduino now gets an **ST Microelectronics-supported** [core and board manager](https://github.com/stm32duino/Arduino_Core_STM32/releases)  
-for which there is an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
+for which Blue Pill gets an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
 as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).  
 That video installs the Blue Pill HID bootloader via USB COM dongle,  
 but we here use an [ST-LINK V2 clone](https://www.ebay.com/itm/183320329257).  
@@ -85,10 +86,12 @@ My clone ST-Link happens to have the *correct pinout* printed on its cover;
 **Verify ST-LINK clone pin artwork** by sliding that cover partly open (along the USB plug):
 ![ST-LINK pin artwork](ST-Link.jpg)  
 
-[Here is the **Arduino for STM32** forum](https://www.stm32duino.com).  It replaced an earlier one.  
-[Here is the Arduino software page](https://www.arduino.cc/en/software).  Use the Legacy IDE (1.8.X) version for [portability](https://docs.arduino.cc/software/ide-v1/tutorials/PortableIDE).  
+[Here is the **Arduino for STM32** forum](https://www.stm32duino.com).&nbsp;  It mostly replaced older Maple.  
+[Here is the Arduino software page](https://www.arduino.cc/en/software).&nbsp;  Use Legacy IDE (Arduino 1.8.X) for [portability](https://docs.arduino.cc/software/ide-v1/tutorials/PortableIDE).  
 
-#### ["Marine portable" Arduino 2 IDE hack](https://forum.seeedstudio.com/t/portable-arduino-ide/274046)
+- [Arduino IDE 2 version and STM32 core 2.8.x. **supports debugging**](https://blekenbleu.github.io/static/Arduino2/index.htm), but NOT portability  
+	- switching Arduino 2 e.g. between ESP32 and STM32 would require hacking each time `C:\Users\%username%\arduino\arduino-cli-yaml`  
+	- Instead, continue using *portable* Arduino 1.8 for ESP32...
 
 ### Blue Pill SWD pins for ST-LINK
 [This video](https://www.youtube.com/watch?v=KgR3uM21y7o) programs a Blue Pill using [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html).  
@@ -270,6 +273,8 @@ By changing from Blue Pill-specific PWM pin and LED assignments,
 this sketch should work for other Arduino-supported modules with PWM-capable pins.
 
 Corresponding [SimHub Custom serial hacking is described here](SimHubCustomSerial).
+
+[Handle serial input by callback](https://wokwi.com/projects/316669619542688320)  
 
 ### Blue Pill firmware generations
 - As described above, **first generation** use the least signficant bit of each USB byte  
