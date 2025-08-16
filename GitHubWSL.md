@@ -236,7 +236,6 @@ Changes not staged for commit:
         modified:   README.md
         modified:   Welcome.md
         modified:   _config.yml
-        modified:   pedals/STM32.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```

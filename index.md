@@ -27,7 +27,7 @@
 - [ESP32-S2](../static/ESP32/index.htm)  
 - [**STM32 MIDI**](MIDI/STM32MIDI.htm)
 - [**mi-360** Xbox360 controller emulation](Arduino/mi360)
-- [pedal sketches](Arduino/) for [STM32](pedals/STM32) 
+- [pedal sketches](Arduino/) for [STM32](pedals/STM32/) 
 - SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
 - [VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
 
@@ -77,7 +77,7 @@
 
 ## [Sim driving](pedals/)
 - Logitech [G29 pedal mods](pedals/#pedals)
-  - [STM32](pedals/STM32) - programmable USB dongle can be configured as [HID gamepad](Windows/HID/)
+  - [STM32](pedals/STM32/) - programmable USB dongle can be configured as [HID gamepad](Windows/HID/)
   - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
   - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
 - [ShakeSeat](pedals/#shakeseat)  
@@ -88,7 +88,7 @@
 ## [SimHub](SimHub/) sim driving telemetry processing
 - [Bass Shaker Profiles](pedals/shakeit.htm) for [pedals](pedals/index.htm#haptic) and [ShakeSeat](pedals/index.htm#shakeseat)
 - [Custom serial profiles](Arduino/shsds.htm) e.g. for [harness tensioning](pedals/index.htm#hartens)  
-	- [corresponding Arduino sketches](Arduino/) for [STM32](pedals/STM32) 
+	- [corresponding Arduino sketches](Arduino/) for [STM32](pedals/STM32/) 
 - [Plugins](../static/SimHub/index.htm) 
 	- [Fake8](https://github.com/blekenbleu/Fake8) properties and 8-bit serial data for [Custom serial profiles](Arduino/shsds.htm)  
 	- [JSONio](https://github.com/blekenbleu/JSONio) for per-car properties e.g. in [ShakeIt Bass Shaker Profiles](pedals/shakeit.htm)  
@@ -99,7 +99,7 @@
 ### [Somnium VR1](VR1) - premium PC XR headset
 ### [Two Factor Authentication](2fas/) - iOS and 2FAS
 
-### [USB](../static/USB.htm)
+### [USB](../static/USB/index.htm)
 
 ## [Virtual Reality (VR) and Mixed Reality (MR)](XR/)  
 - [Glossary](XR/Glossary)  

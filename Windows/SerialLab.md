@@ -11,7 +11,7 @@ e.g. [Form1.Designer.cs](https://github.com/blekenbleu/Serial-Lab/blob/devel/Ser
  where `rx_data_event` is an instance of [System.IO.Ports.SerialPort](
 https://docs.microsoft.com/en-us/dotnet/api/system.io.ports.serialport?view=netframework-4.7.2),
 
-### [STM32 pedals](../pedals/STM32)
+### [STM32 pedals](../pedals/STM32/)
 ### [ESP8266 pedals](../pedals/ESP8266) 
 ### [WeMos D1 UNO R1 ESP8266](../Arduino/ESPDuino) hardware and Arduino background
 ### [VJoySerialFeeder](../Arduino/VJoySerialFeeder) COM port to gaming HID device filter

@@ -1,0 +1,153 @@
+<html lang="en-US">
+  <head>
+<title>Logitech G29 brake mods | blekenbleu</title>
+</head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Logitech G29 brake mods</h1>
+          <h2>signal processing, XR, sims, microscopes, STM32, ESP32</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <h3 id="logitech-g29-brake-mods">Logitech G29 brake mods</h3>
+<p><em>25 October 2018</em></p>
+
+<h4 id="background">Background</h4>
+<p>Having poor coordination always and no depth perception until vision fused in my 40s,
+driving and bicycling were as nearly athletic as I cared to get.
+My copilot got a BMW E21 320i when her old Toyota Corolla died in the early 1990s.
+The best BMW garage in town offered discounts to BMW CCA members, so we joined.
+This led, in 1995, to a 5-speed <a href="https://drive-my.com/en/test-drive/item/2201-road-test-1985-bmw-735i-e23.html">1985 BMW E23 735i</a>,
+which I wanted to own since reading the September 1985 Road &amp; Track review.
+By 1997, I was driving it at BMW CCA driving schools on Watkins Glen, Mont-Tremblant,
+Road Atlanta, Mid Ohio, Sebring, Summit Point and Putnam Park.<br />
+Driving schools mostly ended for us around 2003, owing to increasing expenses<br />
+and likelihood of non-trivial track offs as my confidence grew. <br />
+The <a href="http://www.unixnerd.demon.co.uk/m30.html">Motronic DME</a> had also became unreliable.<br />
+Meanwhile, I still ride bicycles…</p>
+
+<p>Nostalgia being what it is, <em>VIRTUALLY</em> revisiting driver schools seems attractive.
+Many cars and tracks driven are available with sim racing program Assetto Corsa
+and can be played using relatively cheap <a href="https://www.amazon.com/dp/B00Z0UWWYC">Logitech G29</a> pedals and steering wheel.
+Playing Assetto Corsa on conventional PC monitors limits field-of-view;
+A Samsung Odyssey VR headset has since been replaced by HP Reverb G1.</p>
+
+<h2 id="problems">Problems</h2>
+<p>By lacking inertial cues from velocity changes, sim racing seems harder than real.
+Although Logitech improved pedal feel with their G29, braking remains problematic:,</p>
+<ul>
+  <li>signal to sim software is based on pedal movement distance, not pressure.</li>
+  <li>feedback for tires losing grip during braking currently comes thru the steering wheel, instead of the brake pedal.</li>
+</ul>
+
+<h2 id="project">Project</h2>
+<p>Those 2 brake simulation shortcomings can be mitigated, respectively, by:</p>
+
+<ul>
+  <li>replacing brake potentiometer with a load cell, e.g
+<a href="https://imgur.com/gallery/gOjAf">Logitec G27 Load cell brake modification</a>
+    <ul>
+      <li>That mod used analog conversion, but <a href="https://github.com/robotsrulz/SP_Adapter">SP_Adapter</a> separates pedals from wheel.</li>
+      <li>since AccuForce controller supports analog pedals, instrumentation amplifier model is less bother than ADC + USB HID module.</li>
+    </ul>
+  </li>
+  <li>simulating ABS feedback at the brake pedal
+    <ul>
+      <li>ABS is relatively distracting; consider instead simulating disk runout and road noise.</li>
+      <li>e.g. @ 3:47/10:56 of this video: <a href="https://www.youtube.com/watch?v=8aLqqcEaUVk">DIY RUMBLE PEDALS SIM RACING</a></li>
+      <li>Get tire slip data from Assetto Corsa via UDP socket or <a href="https://gist.github.com/robertcedwards/2f7a061af8ccc987aab2">Python</a></li>
+      <li><a href="https://www.assettocorsa.net/forum/index.php?threads/protyres-v1-0-0-it%E2%80%99s-all-about-the-tyre.43361/">proTyres app</a> [<em>requires registration</em>]
+includes indicator for Tyre slip during braking</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="assetto-corsa-software-development">Assetto Corsa software development</h2>
+<ul>
+  <li>SimHub already solved this…</li>
+  <li><a href="https://www.assettocorsa.net/forum/index.php?forums/programming-language-apps-gui-themes.22/">Assetto Corsa Programming</a></li>
+  <li><a href="https://github.com/minolin/acplugins">acplugins</a></li>
+  <li><a href="https://www.assettocorsa.net/forum/index.php?attachments/acpythondocumentation-pdf.110364/">Python reference doc</a></li>
+  <li><a href="https://github.com/ckendell/ACAppTutorial/blob/master/ACAppTutorial.md">Getting started</a>
+    <ul>
+      <li>“I have developed an app with <code class="language-plaintext highlighter-rouge">import socket</code> and it works fine for me and a few other guys, but there are some other users where the socket cannot be loaded”<br />
+you can fix it by embed import *.pyd files into environment</li>
+    </ul>
+  </li>
+  <li>download python 3.3 and extract it.</li>
+  <li>copy file socket.pyd from python /Dlls/ to your game folder \Steam\steamapps\common\assettocorsa\apps\python\yourapp\DLLs
+    <ul>
+      <li>and modify the script that cause error, insert follow code after you import socket
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sys.path.insert(0,os.path.join(os.path.dirname(__file__),"DLLs"))
+os.environ['path'] = os.environ['PATH'] + ";," 
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>A “complete” <a href="https://github.com/cv256/CVJoy">hardware car sim slaved to Assetto Corsa</a></p>
+
+<p>Monitor app for more or less the complete AC API
+(might useful for App developers). See the screenshot in the attachments.</p>
+<ul>
+  <li>AC values: download <a href="https://www.assettocorsa.net/forum/index.php?attachments/ac_values-zip.57504/">zip</a></li>
+  <li>AC API: download <a href="https://www.assettocorsa.net/forum/index.php?attachments/aci_api_1-1_full-zip.57505/">zip</a></li>
+</ul>
+
+<h2 id="stm32-hid-adapter-for-g29-pedals-with-load-cell-brake">STM32 <a href="../Windows/HID">HID</a> adapter for G29 pedals with load cell brake</h2>
+<ul>
+  <li>AccuForce controller supports analog pedals; interface load cell using instrumentation amplifier module</li>
+  <li>Unlike <a href="ESP8266">ESP8266</a>, STM32 supports custom native USB</li>
+  <li>Prototype using a $2 <a href="http://wiki.stm32duino.com/index.php?title=Blue_Pill">Blue Pill</a></li>
+  <li>Blue Pill uses <a href="https://www.st.com/en/microcontrollers/stm32f103c8.html">STM32F103C8T6</a>
+with 128Kbytes of Flash and 20 Kbytes SRAM</li>
+  <li>Blue Pill STM32F103 <a href="http://www.stm32duino.com/viewtopic.php?t=76&amp;start=20">~49 VAX (integer) MIPS + 9 Whetstone (floating point) MIPS</a>
+    <ul>
+      <li>1994 Pentium PCs rated <a href="http://www.roylongbottom.org.uk/whetstone.htm">~ 71 VAX MIPS and 12 Whetstone MIPS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Clone code from <a href="https://github.com/robotsrulz/SP_Adapter">SP_Adapter</a> - Logitech pedals as separate <a href="../Windows/HID">USB game controller</a></p>
+<ul>
+  <li><a href="http://www.stm32duino.com/viewtopic.php?f=9&amp;t=3994&amp;start=20">Arduino USB Composite library</a></li>
+</ul>
+
+<h4 id="hx711-support">HX711 support</h4>
+<ul>
+  <li><a href="https://www.stm32duino.com/viewtopic.php?t=1613">STM32duino HX711 lib</a></li>
+  <li><a href="http://wiki.stm32duino.com/index.php?title=API">STM32duino API</a></li>
+  <li><a href="https://github.com/bogde/HX711/blob/master/HX711.cpp">Arduino HX711.cpp</a></li>
+  <li><a href="http://www.stm32duino.com/viewtopic.php?f=2&amp;t=2222#p30232">HX711 Arduino UNO code to stm32f103 blue pill board</a></li>
+</ul>
+
+<p>Black Magic Probe bootloader expects/requires <a href="http://dfu-util.sourceforge.net/">dfu-util</a> to load second stage</p>
+
+<p>BMP bootloader can be installed by ST-Link..</p>
+
+<p>17 Feb 2021</p>
+
+<h2 id="black-pill"><a href="https://www.ebay.com/sch/i.html?_nkw=stm32+black+pill">Black Pill</a></h2>
+<p>   <strong>512KB Flash 128KB RAM STM32F411CEU6 module</strong></p>
+
+
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+  </body>
+</html>
