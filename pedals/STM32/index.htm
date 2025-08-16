@@ -20,7 +20,7 @@
           <h3 id="logitech-g29-brake-mods">Logitech G29 brake mods</h3>
 <p><em>25 October 2018</em></p>
 
-<h4 id="background">Background</h4>
+<details><summary><b>Background</b></summary>
 <p>Having poor coordination always and no depth perception until vision fused in my 40s,
 driving and bicycling were as nearly athletic as I cared to get.
 My copilot got a BMW E21 320i when her old Toyota Corolla died in the early 1990s.
@@ -38,11 +38,11 @@ Meanwhile, I still ride bicycles…</p>
 Many cars and tracks driven are available with sim racing program Assetto Corsa
 and can be played using relatively cheap <a href="https://www.amazon.com/dp/B00Z0UWWYC">Logitech G29</a> pedals and steering wheel.
 Playing Assetto Corsa on conventional PC monitors limits field-of-view;
-A Samsung Odyssey VR headset has since been replaced by HP Reverb G1.</p>
+A Samsung Odyssey VR headset has since been replaced by HP Reverb G1.</p></details>
 
 <h2 id="problems">Problems</h2>
 <p>By lacking inertial cues from velocity changes, sim racing seems harder than real.
-Although Logitech improved pedal feel with their G29, braking remains problematic:,</p>
+<br>Although Logitech improved pedal feel with their G29, braking remains problematic:,</p>
 <ul>
   <li>signal to sim software is based on pedal movement distance, not pressure.</li>
   <li>feedback for tires losing grip during braking currently comes thru the steering wheel, instead of the brake pedal.</li>
@@ -56,7 +56,8 @@ Although Logitech improved pedal feel with their G29, braking remains problemati
 <a href="https://imgur.com/gallery/gOjAf">Logitec G27 Load cell brake modification</a>
     <ul>
       <li>That mod used analog conversion, but <a href="https://github.com/robotsrulz/SP_Adapter">SP_Adapter</a> separates pedals from wheel.</li>
-      <li>since AccuForce controller supports analog pedals, instrumentation amplifier model is less bother than ADC + USB HID module.</li>
+      <li>since AccuForce controller supports analog pedals,
+		<br> instrumentation amplifier model is less bother than ADC + USB HID module.</li>
     </ul>
   </li>
   <li>simulating ABS feedback at the brake pedal
@@ -72,13 +73,14 @@ includes indicator for Tyre slip during braking</li>
 
 <h2 id="assetto-corsa-software-development">Assetto Corsa software development</h2>
 <ul>
-  <li>SimHub already solved this…</li>
+  <li>SimHub already solved this:</li>
   <li><a href="https://www.assettocorsa.net/forum/index.php?forums/programming-language-apps-gui-themes.22/">Assetto Corsa Programming</a></li>
   <li><a href="https://github.com/minolin/acplugins">acplugins</a></li>
   <li><a href="https://www.assettocorsa.net/forum/index.php?attachments/acpythondocumentation-pdf.110364/">Python reference doc</a></li>
   <li><a href="https://github.com/ckendell/ACAppTutorial/blob/master/ACAppTutorial.md">Getting started</a>
     <ul>
-      <li>“I have developed an app with <code class="language-plaintext highlighter-rouge">import socket</code> and it works fine for me and a few other guys, but there are some other users where the socket cannot be loaded”<br />
+      <li>"I have developed an app with <code class="language-plaintext highlighter-rouge">import socket</code> and it works fine for me and a few other guys,
+	<br> but there are some other users where the socket cannot be loaded"<br />
 you can fix it by embed import *.pyd files into environment</li>
     </ul>
   </li>
@@ -103,7 +105,8 @@ os.environ['path'] = os.environ['PATH'] + ";,"
   <li>AC API: download <a href="https://www.assettocorsa.net/forum/index.php?attachments/aci_api_1-1_full-zip.57505/">zip</a></li>
 </ul>
 
-<h2 id="stm32-hid-adapter-for-g29-pedals-with-load-cell-brake">STM32 <a href="../Windows/HID">HID</a> adapter for G29 pedals with load cell brake</h2>
+<a name=HID>
+<h2></a>STM32 <a href="../Windows/HID">HID</a> adapter for G29 pedals with load cell brake</h2>
 <ul>
   <li>AccuForce controller supports analog pedals; interface load cell using instrumentation amplifier module</li>
   <li>Unlike <a href="ESP8266">ESP8266</a>, STM32 supports custom native USB</li>
@@ -117,10 +120,7 @@ with 128Kbytes of Flash and 20 Kbytes SRAM</li>
   </li>
 </ul>
 
-<p>Clone code from <a href="https://github.com/robotsrulz/SP_Adapter">SP_Adapter</a> - Logitech pedals as separate <a href="../Windows/HID">USB game controller</a></p>
-<ul>
-  <li><a href="http://www.stm32duino.com/viewtopic.php?f=9&amp;t=3994&amp;start=20">Arduino USB Composite library</a></li>
-</ul>
+<p>Clone code from <a href="https://github.com/robotsrulz/SP_Adapter">SP_Adapter</a> - Logitech pedals as separate <a href="../../Windows/HID">USB game controller</a></p>
 
 <h4 id="hx711-support">HX711 support</h4>
 <ul>
@@ -130,22 +130,9 @@ with 128Kbytes of Flash and 20 Kbytes SRAM</li>
   <li><a href="http://www.stm32duino.com/viewtopic.php?f=2&amp;t=2222#p30232">HX711 Arduino UNO code to stm32f103 blue pill board</a></li>
 </ul>
 
-<p>Black Magic Probe bootloader expects/requires <a href="http://dfu-util.sourceforge.net/">dfu-util</a> to load second stage</p>
+<p>Black Magic Probe bootloader expects/requires <a href="http://dfu-util.sourceforge.net/">dfu-util</a> to load second stage
 
-<p>BMP bootloader can be installed by ST-Link..</p>
-
-<p>17 Feb 2021</p>
-
-<h2 id="black-pill"><a href="https://www.ebay.com/sch/i.html?_nkw=stm32+black+pill">Black Pill</a></h2>
-<p>   <strong>512KB Flash 128KB RAM STM32F411CEU6 module</strong></p>
-
-
-        </section>
-
-        <footer>
-        
-          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
-        </footer>
+<br>&emsp; BMP bootloader can be installed by ST-Link..</p>
 
       </div>
     </div>
