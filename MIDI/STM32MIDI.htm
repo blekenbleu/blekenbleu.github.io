@@ -10,15 +10,22 @@
 
 <a href="index.htm"><font size=-1><i>back</i></font></a>
 
-<p>For Arduino, refer to <a href=https://blekenbleu.github.io/static/ESP32/midi.htm>ESP32 MIDI</a><ul>
+<p>Alternatively, see <a href=https://blekenbleu.github.io/static/ESP32/midi.htm>ESP32 MIDI</a><ul>
 <li> Arduino by default assumes traditional serial MIDI
 <li> <a href=https://github.com/adafruit/Adafruit_TinyUSB_Arduino>Adafruit TinyUSB Library for Arduino</a> supports MIDI, but not for STM32</ul></p>
-<li> insert <a href=https://github.com/lathoub/Arduino-USBMIDI>USB-MIDI transport layer</a>, which depends on <a href=https://github.com/arduino-libraries/MIDIUSB>MIDIUSB Library for Arduino</a>
-<li> <a href=https://hackaday.io/project/186417-usb-midi-driver-for-stm32cubemx-stm32cubeide>STM32 MIDI Device Class Middleware driver</a>
-<li> <a href=https://docs.arduino.cc/libraries/midiusb/>MIDIUSB Arduino Library doc</a>
 
+Insert <a href=https://github.com/lathoub/Arduino-USBMIDI>USB-MIDI transport layer</a>,
+	which depends on <a href=https://github.com/arduino-libraries/MIDIUSB>MIDIUSB Library for Arduino</a>,
+<br>&emsp; to use regular (serial hardware) MIDI Arduino sketches with <i>native</i> Arduino USB.
+<ul><li><a href=https://docs.arduino.cc/libraries/midiusb/>MIDIUSB Arduino Library doc</a></ul>
 
-<h2><a href=https://electronics.stackexchange.com/a/546927>STM32MIDI USB</a></h2>
+<p><a href=https://github.com/Levi--G/USBLibrarySTM32><font color=green size=+2>PlatformIO USBLibrary for STM32</font></a>
+	<ul><li>Compatible with *native* AVR USB library
+	<li>Use with <a href=https://github.com/arduino-libraries/MIDIUSB>MIDIUSB Library</a> for regular (serial hardware) MIDI Arduino sketches.
+	<li><a href=../../static/Arduino2/MIDIUSB.htm#USBLibrarySTM32><font color=green size=+2><b>Port to Arduino</b></font></a></ul>
+</p>
+
+<h3><a href=https://electronics.stackexchange.com/a/546927>STM32MIDI USB</a></h3>
 The MIDI class is not supported by the STMCube HAL but it is well known and implemented
 <ul>
 <li><a href=https://github.com/spectran/stm32f103-usb-midi>stm32f103-usb-midi</a>
@@ -31,6 +38,7 @@ It works in a stm32f411CE (Blackpill board)<br>
 with cont.trol configuring first the project as USB Audio class,<br>
 then later adding the MIDI class and initializing MIDI class Instead of AUDIO.<br>
 
+<h4> <a href=https://hackaday.io/project/186417-usb-midi-driver-for-stm32cubemx-stm32cubeide>STM32 MIDI Device Class Middleware driver</a></h4>
 <h4><a href=https://github.com/MrBlueXav/Dekrispator_v2>STM32F4 synth with USB MIDI Host function</a></h4>
 
 <h4><a href=https://forum.arduino.cc/t/how-do-i-get-my-stm32f103c-to-read-midi-signals/497323>stm32f103c reading serial midi</a></h4>
@@ -41,11 +49,7 @@ then later adding the MIDI class and initializing MIDI class Instead of AUDIO.<b
 
 <h4><a href=https://community.st.com/t5/stm32-mcus-embedded-software/how-to-create-usb-fs-device-with-dfu-audio-midi-and-cdc-using/m-p/55798/highlight/true#M439>@SloBlo</a>:&nbsp
 	 USB MIDI using <code>usbd_composite_builder</code></h4>
-<a href=https://github.com/SloBloLabs/LivSynth/blob/05fe46ecb0d63baefeb5dbcab216d2aaa066af91/USB_DEVICE/App/usbd_midi_if.c><code>USB_DEVICE/App/usbd_midi_if.c<code></a>
-
-<h4><a href=https://github.com/Levi--G/USBLibrarySTM32>platformio USBLibrary for stm32</a></h4><ul>
-<li>Use any AVR USB compatible library
-<li>Use the MIDIUSB library to act as MIDI device</ul>
+<a href=https://github.com/SloBloLabs/LivSynth/blob/05fe46ecb0d63baefeb5dbcab216d2aaa066af91/USB_DEVICE/App/usbd_midi_if.c><code>USB_DEVICE/App/usbd_midi_if.c</code></a>
 
 <h4><a href=https://github.com/hathach/tinyusb/blob/master/examples/device/midi_test/src/main.c><code>tinyusb/examples/device/midi_test/src/main.c</code></a></h4>
 

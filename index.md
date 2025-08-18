@@ -31,17 +31,21 @@
 - SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
 - [VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
 
-#### Arduino IDE [Alternatives](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html)
-- [**Visual Micro**](https://www.visualmicro.com/) supports debugging in
+### Arduino IDE [Alternatives](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html)
+Arduino 2 IDE (which adds debugging) [**is broken for me**](../static/Arduino2/install.htm#oopsie)
+
+- [**VSCode**](../static/VSCodeArduino/index.htm), AKA Visual Studio **Code**, *a confusingly named editor/IDE wannabe*  
+	- I use [**GVim**](https://www.vim.org/download.php) for source code edits  
+	- [**VSCode-Arduino** extensions](../static/VSCodeArduino/index.htm) employ
+		- [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/),  
+	  which has [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
+  - [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black)
+  - [**ESP32-S[2-3]**](../static/ESP32/) for **composite USB** and wireless Arduino devices  
+
+- [**Visual Micro**](https://www.visualmicro.com/) ($65; free 45 day trial) supports debugging in
   - [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)  (as used e.g. for [**SimHub plugins**](../static/SimHub/))
   - [Visual Micro in VisualStudio **Marketplace**](https://www.visualmicro.com/)  
 	- [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
-- Discounted:&nbsp; options using Visual Studio **Code**, *a confusingly named editor*  
-	- I prefer [**GVim**](https://www.vim.org/download.php)
-- [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/0.31/)
-	- interesting, because [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
-  - [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black)
-  - [**ESP32-S[2-3]**](../static/ESP32/) for **composite USB** and wireless Arduino devices  
 
 ## Audio  
  &nbsp; [**Audio-Technica AT-LP140XP**](../static/AT-LP140XP/) microphonics  
