@@ -39,7 +39,7 @@ Arduino 2 IDE (which adds debugging) [**is broken for me**](../static/Arduino2/i
 	- [**VSCode-Arduino** extensions](../static/VSCodeArduino/index.htm) employ
 		- [Arduino Command Line Interface (*Arduino-cli*)](https://arduino.github.io/arduino-cli/),  
 	  which has [configuration file options per folder or root folder](https://arduino.github.io/arduino-cli/0.31/commands/arduino-cli_config_init/)
-  - [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black)
+  - [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black.htm)
   - [**ESP32-S[2-3]**](../static/ESP32/) for **composite USB** and wireless Arduino devices  
 
 - [**Visual Micro**](https://www.visualmicro.com/) ($65; free 45 day trial) supports debugging in
