@@ -7,7 +7,7 @@
   <body>
     <div id="container">
       <div class="inner" align=center>
-<table class="my_table"><tr><td>
+<table class="my_table"><tr><td width=860>
 
 <a href="index.htm"><font size=-1><i>back</i></font></a>
 	
@@ -28,16 +28,14 @@ and ST Microelectronics now supports many STM32 chips and boards.</p>
       <li>Setup package in USB1TB\Windows</li>
     </ul>
   </li>
-</ul>
 
-<p>Here is a Black Pill pinout reference:
-<img src="https://raw.githubusercontent.com/WeActTC/MiniSTM32F4x1/master/images/STM32F4x1_PinoutDiagram_RichardBalint.png" alt="Generic STM32F4x1 board pinout" /></p>
-<ul>
+<p>Black Pill pinout:<br>
+<img src="https://scruss.com/wordpress/wp-content/uploads/2020/07/STM32F4x1_PinoutDiagram_RichardBalint-768x580.png" alt="WeAct STM32F4x1 board pinout"></p>
   <li>5V tolerant PWM pins are wanted for driving hobby servos
-or <a href="SimHubfans">4-wire PC fans</a>.</li>
+	or <a href="SimHubfans">4-wire PC fans</a>.</li>
   <li>Unlike Blue Pills, nearly all F401 Black Pill pins are 5V tolerant,<br> but not <code>PA0</code> and <code>PB5</code> on STM32F411.</li>
   <li><a href="https://hackaday.com/2021/01/20/blue-pill-vs-black-pill-transitioning-from-stm32f103-to-stm32f411/">Other Black (STM32F411) vs Blue (STM32F103) differences</a></li>
-  <li><a href="https://stm32-base.org/boards/STM32F411CEU6-WeAct-Black-Pill-V2.0.html">Black Pill <code class="language-plaintext highlighter-rouge">KEY</code> button pulls PA0 LOW</a></li>
+  <li><a href="https://stm32-base.org/boards/STM32F411CEU6-WeAct-Black-Pill-V2.0.html">Black Pill <code>KEY</code> button pulls PA0 LOW</a></li>
   <li>USB-C takes more pins; 14 remaining 5V-tolerant PWM pins:
 <pre>PA15,PB3  PB6-9    PB0,1    PB 10  PA6,7    PA1-3
 T2 CH1,2  T4 CH1-4 T3 CH3,4 T2 CH3 T3 CH1,2 T5 CH2-4</pre>
@@ -51,58 +49,66 @@ T2 CH1,2  T4 CH1-4 T3 CH3,4 T2 CH3 T3 CH1,2 T5 CH2-4</pre>
 <li> DFU (device firmware update) using DfuSe utility,<br />
     using the <a href="https://www.st.com/en/development-tools/stsw-stm32080.html">STM32 system memory bootloader in ROM</a>,<br />
     using the <a href="https://www.sgbotic.com/index.php?dispatch=pages.view&amp;page_id=49">Black Pill’s DFU bootloader with Arduino</a><br />
-    By default, must force Black Pill into DFU using buttons on board<br>
-    <a href="https://arduino.github.io/arduino-cli/latest/platform-specification">Arduino <code class="language-plaintext highlighter-rouge">use_1200bps_touch</code> sketch code</a> jumps to
-<a href="https://github.com/arduino/tooling-rfcs/pull/2#issuecomment-825908911">STM32 ROM DFU bootloader</a>.<br />
-    <a href="https://github.com/stm32duino/Arduino_Core_STM32/pull/710">Beta enhancement</a><br />
-    <a href="https://github.com/arduino/arduino-cli/issues/1083">Seemingly already supported for Arduino STM32 modules</a><br />
-    <a href="https://stackoverflow.com/questions/26891432/jump-to-bootloader-in-stm32-through-application-i-e-using-boot-0-and-boot-1-pins#26958578">May require a resistor and capacitor</a><br />
+    By default, must force Black Pill into DFU using buttons on board..?<br>
+	Reportedly,
+    <a href="https://arduino.github.io/arduino-cli/latest/platform-specification">Arduino <code>use_1200bps_touch</code></a> jumps STM32 to
+	<a href="https://github.com/arduino/tooling-rfcs/pull/2#issuecomment-825908911">STM32 ROM DFU bootloader</a>.<br />
+    <a href="https://github.com/stm32duino/Arduino_Core_STM32/pull/710">STM32duino Beta enhancement</a>,
+    <a href="https://github.com/arduino/arduino-cli/issues/1083">seemingly already supported for Arduino STM32 modules</a><br />
+    <a href="https://stackoverflow.com/questions/26891432/jump-to-bootloader-in-stm32-through-application-i-e-using-boot-0-and-boot-1-pins#26958578">
+			May require a resistor and capacitor</a>
+<br><a href=https://www.youtube.com/watch?v=b1123kz_3MM>Caleb Marting's Black Pill DFU video</a>
 <li> SWD via ST-LINK<br />
    This can be used for any STM32 chip.
 <li> (Arduino) USB bootloader[s] &lt;- at least one <a href=https://github.com/Serasidis/STM32_HID_Bootloader>Arduino Black Pill bootloader</a> exists.
 <br><a href=https://mischianti.org/stm32-programming-stm32f1-stm32f4-via-usb-with-hid-boot-loader-3/>discussion</a><br />
    <a href="https://hardwareliberopinerolo.github.io/site/blackpill/">WeAct HID bootloader on Black Pill</a><br />
-<li> STM serial bootloader <a href="https://www.etechpath.com/how-to-flash-usb-bootloader-in-stm32-black-pill-board-to-program-it-with-arduino-ide/">for use with Arduino</a></ol>
+<li> STM serial bootloader
+	<a href="https://www.etechpath.com/how-to-flash-usb-bootloader-in-stm32-black-pill-board-to-program-it-with-arduino-ide/">
+	for use with Arduino</a></ol>
 
 <p>A clone ST-LINK V2 costs no more than a USB COM dongle,<br />
 connects to dedicated pins and supports debug.</p>
 
 <h4 id="stm32duino">STM32duino</h4>
-<p>Arduino now has an ST Microelectronics-supported <a href="https://github.com/stm32duino/Arduino_Core_STM32/releases">core and board manager</a><br />
+<p>Arduino now has an ST Microelectronics-supported
+	<a href="https://github.com/stm32duino/Arduino_Core_STM32/releases">core and board manager</a><br />
 My clone ST-Link happens to have the <em>correct pinout</em> printed on its cover;<br />
-<strong>Verify ST-LINK clone pin artwork</strong> by sliding that cover partly open (along the USB plug):
-<img src="/Arduino/ST-Link.jpg" alt="ST-LINK pin artwork" /></p>
+<b>Verify ST-LINK clone pin artwork</b> by sliding that cover partly open (along the USB plug):<br>
+ &emsp; <img src="ST-Link.jpg" alt="ST-LINK pin artwork" /></p>
 
 <p><a href="https://www.arduino.cc/en/software">Here is the Arduino software page</a>.<br />
-<a href="https://www.stm32duino.com">Here is the <strong>Arduino for STM32</strong> forum</a>.
+<a href="https://www.stm32duino.com">Here is the <b>Arduino for STM32</b> forum</a>.
 It replaced an earlier one, mostly for Maple/Roger Clark libraries.<br />
 <a href="https://stm32duinoforum.com/forum/index_php.html">Here is the READ-ONLY version of that earlier Arduino for STM32 forum</a>.</p>
 
-<h3 id="stm32f411xce-reference-manual"><a href="https://www.st.com/resource/en/reference_manual/dm00119316-stm32f411xc-e-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf">STM32F411xC/E Reference manual</a></h3>
+<h3><a href="https://www.st.com/resource/en/reference_manual/dm00119316-stm32f411xc-e-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf">
+	STM32F411xC/E Reference manual</a></h3>
 
 <h3 id="st-link-and-black-pill">ST-LINK and Black Pill</h3>
 <p>Wiring Black Pill to ST-LINK V2 clone:
 <img width=840 src="https://jorgegarciadev.gitlab.io/images/bmp.jpg" alt="wiring Black Pill to ST-LINK V2 clone" /><br />
-Connect 3.3V from ST-LINK to Black Pill <strong>only when Black Pill has no other connections</strong><br />
+Connect 3.3V from ST-LINK to Black Pill <b>only when Black Pill has no other connections</b><br />
 Put another way, when using ST-LINK to debug Black Pill e.g. plugged to USB,<br />
-  <strong>do NOT connect 3.3V to Black Pill from ST-LINK</strong>.</p>
+  <b>do NOT connect 3.3V to Black Pill from ST-LINK</b>.</p>
 
 <h3 id="installing-stm32duino-support">Installing STM32duino support</h3>
-<p>Since SimHub already includes an <em>older version</em> of Arduino,<br />
-install the portable (ZIP file) version for STM32;<br />
-no need to install Arduino-specific driver[s]...<br>
+<p>SimHub bundles an <em>older version</em> of Arduino;&nbsp;
+install a <a href=https://docs.arduino.cc/software/ide-v1/tutorials/PortableIDE/><b>portable</b></a> (ZIP file) Arduino for STM32;<br />
+ &emsp; no need to install Arduino-specific driver[s]...<br>
 1) Download, unzip, and run <a href="https://www.arduino.cc/en/software">Arduino</a><br />
-   in my case, to <code class="language-plaintext highlighter-rouge">E:\my\Arduino\</code><br />
-   <em>much of the following is thanks to <a href="https://www.sgbotic.com/index.php?dispatch=pages.view&amp;page_id=48">sgbotic</a></em>
-2) Go to <strong><code class="language-plaintext highlighter-rouge">File</code> &gt; <code class="language-plaintext highlighter-rouge">Preferences</code></strong>, add to <strong><code class="language-plaintext highlighter-rouge">Additional Board Manager URLs</code></strong> text box:
-   <a href="https://github.com/stm32duino/BoardManagerFiles/raw/master/package_stmicroelectronics_index.json">https://github.com/stm32duino/BoardManagerFiles/raw/master/package_stmicroelectronics_index.json</a><br />
-3) Go to <strong><code class="language-plaintext highlighter-rouge">Tools</code> &gt; <code class="language-plaintext highlighter-rouge">Board</code> &gt; <code class="language-plaintext highlighter-rouge">Boards Manager</code></strong>, enter search for <strong><code class="language-plaintext highlighter-rouge">STM32</code></strong>:<br />
+&emsp; in my case, to <code>E:\my\Arduino\</code><br />
+&emsp; <em>much of the following is thanks to <a href="https://www.sgbotic.com/index.php?dispatch=pages.view&amp;page_id=48">sgbotic</a></em>
+<br>2) Go to <b><code>File</code> &gt; <code>Preferences</code></b>;&nbsp; add to <b><code>Additional Board Manager URLs</code></b> text box:
+   <a href="https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json">
+	https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json</a><br />
+3) Go to <b><code>Tools</code> &gt; <code>Board</code> &gt; <code>Boards Manager</code></b>;&nbsp; enter search for <b><code>STM32</code></b>:<br />
    <img src="https://www.sgbotic.com/images/companies/1/learn/F103_Arduino/board_manager_install.png?1596271243306" alt="Boards Manager STM32 search" /><br />
-   click <strong><code class="language-plaintext highlighter-rouge">STM32 Cores</code></strong>, then <strong><code class="language-plaintext highlighter-rouge">Install</code></strong>  (<em>takes quite awhile</em>)<br />
+&emsp;  click <b><code>STM32 Cores</code></b>, then <b><code>Install</code></b>  (<em>takes quite awhile</em>)<br />
 4) Quit and restart Arduino; then<br />
-   from <strong><code class="language-plaintext highlighter-rouge">Tools</code> &gt; <code class="language-plaintext highlighter-rouge">Board:</code> &gt; <code class="language-plaintext highlighter-rouge">STM32 Boards</code></strong>, select [<code class="language-plaintext highlighter-rouge">Generic STM32F4 series</code>].<br />
-   From <strong><code class="language-plaintext highlighter-rouge">Tools</code> &gt; <code class="language-plaintext highlighter-rouge">Board Part Number:</code></strong>, select [<code class="language-plaintext highlighter-rouge">BlackPill F411CE</code>].<br />
-   From <strong><code class="language-plaintext highlighter-rouge">Tools</code> &gt; <code class="language-plaintext highlighter-rouge">Upload method:</code></strong>, select [<code class="language-plaintext highlighter-rouge">STM32CubeProgrammer (DFU)</code>].</p>
+&emsp; from <b><code>Tools &gt; Board: &gt; STM32 Boards</code></b>, select [<code>Generic STM32F4 series</code>].<br />
+&emsp; From <b><code>Tools &gt; Board Part Number:</code></b>, select [<code>BlackPill F411CE</code>].<br />
+&emsp; From <b><code>Tools &gt; Upload method:</code></b>, select [<code>STM32CubeProgrammer (DFU)</code>].</p>
 
 <p>A simple next step uploads an Arduino blink loop sketch.</p>
 

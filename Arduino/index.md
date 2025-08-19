@@ -62,7 +62,7 @@ There are at least 4 ways to flash STM32 chips:
    `Boot0 HIGH`  
    `Boot1 LOW`  
   ... then resetting MCU
-4) DFU (device firmware update) using DfuSe utility, e.g. **for [Black Pills](black)**  
+4) DFU (device firmware update) using DfuSe utility, e.g. **for [Black Pills](black.htm)**  
     using its [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
     but, *again* USB is **NOT** supported by Blue Pill's ROM bootloader.  
 

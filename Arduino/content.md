@@ -1,7 +1,7 @@
 ---
 ---
 ### Arduino content
-- [Arduino for Black Pill](black.md)
+- [Arduino for Black Pill](black.htm)
 - about [Blue ASCII Servo](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/Blue_ASCII_Servo)
 	- [Arduino git repository](https://github.com/blekenbleu/Arduino-Blue-Pill/) example sketches, libraries
 	- [BlueLUT_Servo.ino](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/BlueLUT_Servo)
