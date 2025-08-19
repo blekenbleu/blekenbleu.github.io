@@ -25,7 +25,45 @@ and ST Microelectronics now supports many STM32 chips and boards.</p>
   <li>Arduino wants <code>STM32CubeProgrammer</code> for Black Pill DFU;&nbsp; (<i>installed in</i> <code>D:\my</code>)
     <ul>
       <li>added to path</li>
-      <li>Setup package in USB1TB\Windows</li>
+      <li><details>
+	<a name=STM32CubeProgrammer>
+	<summary></a>DFU failed in Arduino 2</summary><pre>Selected interface: dfu
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.6.0                  
+      -------------------------------------------------------------------
+
+Warning: Wrong connect parameter:</pre>
+<b>This may be <a href=https://arduino.stackexchange.com/questions/93017/stm32-black-pill-wont-enter-dfu-mode-reliably>floating A10</a> issue</b><br>
+Trying something slightly different:<pre>C:\Users\bleke>STM32_Programmer_CLI -l
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.6.0
+      -------------------------------------------------------------------
+
+=====  DFU Interface   =====
+
+No STM32 device in DFU mode connected
+
+===== STLink Interface =====
+Error: No ST-Link detected!</pre>
+.. despite <code>UDBDeview</code> reporting:
+<pre>Port_#0002.Hub_#0015 STM32 BOOTLOADER 100 mA USB\VID_0483&PID_DF11\3785389D3030 Removable, UniqueID</pre>
+Installing STM32CubeProgrammer v2.20.0 did not discover the Black Pill;
+<br>it does see my ST-Link V2 clone:<pre>===== STLink Interface =====
+
+-------- Connected ST-LINK Probes List --------
+
+ST-Link Probe 0 :
+   ST-LINK SN  : 49FF72067566515033531081
+   ST-LINK FW  : V2J37S7
+   Access Port Number  : 0
+   Board Name  :
+-----------------------------------------------</pre></details>
+.. so will solder pins to the Black Pill for SWD connection
+<li>Dupont Wire color coding at ST-Link:<ul compact>
+<li>GND (6) Black 
+<li>SWDIO (4) Gray
+<li>SWCLK (2) White
+    </ul>
     </ul>
   </li>
 
@@ -70,13 +108,15 @@ T2 CH1,2  T4 CH1-4 T3 CH3,4 T2 CH3 T3 CH1,2 T5 CH2-4</pre>
 <p>A clone ST-LINK V2 costs no more than a USB COM dongle,<br />
 connects to dedicated pins and supports debug.</p>
 
-<h4 id="stm32duino">STM32duino</h4>
-<p>Arduino now has an ST Microelectronics-supported
-	<a href="https://github.com/stm32duino/Arduino_Core_STM32/releases">core and board manager</a><br />
 My clone ST-Link happens to have the <em>correct pinout</em> printed on its cover;<br />
 <b>Verify ST-LINK clone pin artwork</b> by sliding that cover partly open (along the USB plug):<br>
  &emsp; <img src="ST-Link.jpg" alt="ST-LINK pin artwork" /></p>
 
+<h3 id="stm32duino">STM32duino</h3>
+<p>Arduino now has an ST Microelectronics-supported
+	<a href="https://github.com/stm32duino/Arduino_Core_STM32/releases">core and board manager</a><br />
+<p><a href=../../static/Arduino2>Arduino 2 supports debugging</a>, but does not run correctly with RAM Disk installed.
+<br>Alternatively, try <a href=../../static/VSCodeArduino/index.htm><b>VSCode-Arduino</b></a>
 <p><a href="https://www.arduino.cc/en/software">Here is the Arduino software page</a>.<br />
 <a href="https://www.stm32duino.com">Here is the <b>Arduino for STM32</b> forum</a>.
 It replaced an earlier one, mostly for Maple/Roger Clark libraries.<br />
