@@ -33,8 +33,10 @@ and ST Microelectronics now supports many STM32 chips and boards.</p>
       -------------------------------------------------------------------
 
 Warning: Wrong connect parameter:</pre>
-<b>This may be <a href=https://arduino.stackexchange.com/questions/93017/stm32-black-pill-wont-enter-dfu-mode-reliably>floating A10</a> issue</b><br>
-Trying something slightly different:<pre>C:\Users\bleke>STM32_Programmer_CLI -l
+<b>This was <a href=https://arduino.stackexchange.com/questions/93017/stm32-black-pill-wont-enter-dfu-mode-reliably>floating A10</a> issue</b>;<br>
+soldering pins later to the board and jumpering A10 to ground<br> &emsp; enabled DFU by BOOT + RST buttons.
+
+<p>Trying something slightly different:<pre>C:\Users\bleke>STM32_Programmer_CLI -l
       -------------------------------------------------------------------
                        STM32CubeProgrammer v2.6.0
       -------------------------------------------------------------------
@@ -47,6 +49,7 @@ No STM32 device in DFU mode connected
 Error: No ST-Link detected!</pre>
 .. despite <code>UDBDeview</code> reporting:
 <pre>Port_#0002.Hub_#0015 STM32 BOOTLOADER 100 mA USB\VID_0483&PID_DF11\3785389D3030 Removable, UniqueID</pre>
+
 Installing STM32CubeProgrammer v2.20.0 did not discover the Black Pill;
 <br>it does see my ST-Link V2 clone:<pre>===== STLink Interface =====
 
@@ -84,7 +87,7 @@ T2 CH1,2  T4 CH1-4 T3 CH3,4 T2 CH3 T3 CH1,2 T5 CH2-4</pre>
 <p>Two more complementary PWM: PB13,15: T1 CH 1,3</p>
 
 <p>There are at least 4 ways to flash STM32 chips:<ol>
-<li> DFU (device firmware update) using DfuSe utility,<br />
+<li> DFU (device firmware update) using DfuSe utility or STM32_Programmer_CLI,<br />
     using the <a href="https://www.st.com/en/development-tools/stsw-stm32080.html">STM32 system memory bootloader in ROM</a>,<br />
     using the <a href="https://www.sgbotic.com/index.php?dispatch=pages.view&amp;page_id=49">Black Pill’s DFU bootloader with Arduino</a><br />
     By default, must force Black Pill into DFU using buttons on board..?<br>
@@ -97,7 +100,7 @@ T2 CH1,2  T4 CH1-4 T3 CH3,4 T2 CH3 T3 CH1,2 T5 CH2-4</pre>
 			May require a resistor and capacitor</a>
 <br><a href=https://www.youtube.com/watch?v=b1123kz_3MM>Caleb Marting's Black Pill DFU video</a>
 <li> SWD via ST-LINK<br />
-   This can be used for any STM32 chip.
+   ST-LINK SWD can be used for any STM32 chip.
 <li> (Arduino) USB bootloader[s] &lt;- at least one <a href=https://github.com/Serasidis/STM32_HID_Bootloader>Arduino Black Pill bootloader</a> exists.
 <br><a href=https://mischianti.org/stm32-programming-stm32f1-stm32f4-via-usb-with-hid-boot-loader-3/>discussion</a><br />
    <a href="https://hardwareliberopinerolo.github.io/site/blackpill/">WeAct HID bootloader on Black Pill</a><br />
@@ -152,14 +155,18 @@ install a <a href=https://docs.arduino.cc/software/ide-v1/tutorials/PortableIDE/
 
 <p>A simple next step uploads an Arduino blink loop sketch.</p>
 
+<h3>Black Pill pin soldering</h3>
+I use a <a href=https://www.amazon.com/dp/B000AS28UC>40W Weller WLC100</a> with a fine point, which works well,
+<br> &emsp; except on ground pins, for which solder does not flow into thru holes,
+<br> &emsp; presumably being cooled too much by the board's ground plane.
+<br>To make solid ground solder joints, pull heated pins partially out, drawing solder into thru holes. 
+
 <p><a href="SimHubCustomSerial">SimHub Custom serial hacking is described here</a>.</p>
 
         </section>
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
-</td></tr></table></div>
-</body></html>
-
+</td></tr></table>
       </div>
     </div>
   </body>
