@@ -13,7 +13,7 @@ I first used Arduino Blue Pills with [SimHub's Custom Serial devices plugin](htt
 While highly useful, that plugin IMO has limitations:
 - SimHub Javascript is relatively inefficient, hard to debug and maintain.
 - Serial data can use only 7 bits per byte
-- Custom serial plugin can log but not process received serial messages from e.g. Arduino.  
+- Custom serial plugin can log but not process received serial messages.  
 ([Fake8](https://github.com/blekenbleu/Fake8/) addresses those limitations.)
 
 [Arduino originally employed Atmel microcontrollers](https://store.arduino.cc/collections/boards-modules?filter.p.vendor=Arduino&sort_by=created-ascending) lacking native USB support.  
@@ -21,9 +21,8 @@ Their workaround involves boards with USB-to-serial converter chips,
 usually configured as USB COM (CDC) devices for serial IO,  
 which microcontrollers traditionally support.
   
-While not official targets, Arduino IDE also works for ESP8266, ESP32 and STM32 microcontrollers.    
-[WeMos D1 UNO R1](ESPDuino) is a supported ESP8266 board,
-communicating via CH340 USB-to-serial chip.  
+Arduino IDE also works for ESP8266, ESP32 and STM32 microcontrollers.    
+[WeMos D1 UNO R1](ESPDuino) ESP8266 board communicates via CH340 USB-to-serial chip.  
 **Note** that there are now [fake CH340 chips](https://github.com/SHWotever/SimHub/wiki/Arduino---Counterfeit-Fake-CH340G-chips-driver-issues)
 which require [an older Windows driver](https://github.com/SHWotever/FakeCH340DriverFixer/).  
  
@@ -32,7 +31,7 @@ which require [an older Windows driver](https://github.com/SHWotever/FakeCH340Dr
 	- originally by Leaflabs for Maple, then [Roger Clark for STM32F1/F4](https://github.com/rogerclarkmelbourne/Arduino_STM32)   
 - ["Official" STMicrosystems `stm32duino`](https://github.com/stm32duino/Arduino_Core_STM32) supports *many* STM32 chips and boards  
 	- `stm32duino` since core release 2.8.0, supports *only* [**Arduino IDE 2**](https://blekenbleu.github.io/static/Arduino2/index.htm)    
-	- **I use Arduino 1.8 for Blue Pill and Black Pill**
+	- **I use Arduino 1.8 for Blue Pill and [Arduino 2.3.6 for Black Pill](../../static/Arduino2/index.htm)**
 		- [Getting Started for Arduino IDE 1.8.x](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Getting-Started_V1)
 
 Many STM32 chips' hardware and ROM bootloaders support (DFU) USB directly,  
@@ -48,16 +47,16 @@ There are at least 4 ways to flash STM32 chips:
 2) (Arduino) USB bootloader[s] <- there have been several:  
    * [STM32duino Bootloader](https://github.com/Serasidis/STM32_HID_Bootloader)
      AKA bootloader 2.0 AKA **HID bootloader**  
-     **Arduino uses this to download Blue Pill sketches using [ST Microelectronics-supported libraries](https://github.com/stm32duino)**  
-     A USB bootloader in Blue Pill flash reduces storage available for Arduino sketches.
+     **For downloading Blue Pill sketches using [ST Microelectronics-supported libraries](https://github.com/stm32duino)**  
+     USB bootloader in Blue Pill flash reduces storage available for Arduino sketches.
    * other bootloaders are IMO obsolete:
      - [Maple-derivative bootloaders](https://github.com/jonatanolofsson/maple-bootloader)  
      - Maple boards had USB reset hardware to force re-enumeration  
      - [Roger Clark's 8k bootloader](https://github.com/rogerclarkmelbourne/STM32duino-bootloader)  
        Be aware that some of Roger Clark core code is *also* called Stm32duino..
      - Not sure which core (libmaple or stm32duino) [this bootloader supports, but is 4k](https://github.com/davidgfnet/stm32-dfu-bootloader)  
-3) STM serial bootloader - **not recommended for frequent reprogramming**   
-   Blue Pills have only a serial bootloader in ROM;&nbsp; a USB bootloader gets installed in flash memory.  
+3) STM serial bootloader - **tedious for frequent reprogramming**   
+   Blue Pills have only a serial bootloader in ROM;&nbsp; a USB bootloader gets installed in flash.  
    *Load firmware via USART1 by first jumpering*:  
    `Boot0 HIGH`  
    `Boot1 LOW`  
@@ -81,7 +80,7 @@ Arduino now gets an **ST Microelectronics-supported** [core and board manager](h
 for which Blue Pill gets an [HID bootloader](https://github.com/Serasidis/STM32_HID_Bootloader),
 as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).  
 That video installs the Blue Pill HID bootloader via USB COM dongle,  
-but we here use an [ST-LINK V2 clone](https://www.ebay.com/itm/183320329257).  
+ &emsp; but we here use an [ST-LINK V2 clone](https://www.ebay.com/sch/i.html?_nkw=ST-Link+V2&_sacat=0).  
 My clone ST-Link happens to have the *correct pinout* printed on its cover;  
 **Verify ST-LINK clone pin artwork** by sliding that cover partly open (along the USB plug):
 ![ST-LINK pin artwork](ST-Link.jpg)  
@@ -301,4 +300,4 @@ Available 6 lsb of second characters are 6 lsb of *channel data values*.
 
 [**PWM fan**](https://github.com/blekenbleu/Arduino-Blue-Pill/tree/main/SimHubPWMfans)  
 [ESP32 MIDI](https://blekenbleu.github.io/static/ESP32/midi.htm) seemingly doomed...  
-[STM32 MIDI](../MIDI/STM32MIDI)  
+[STM32 MIDI](../../static/USB/STM32MIDI.htm)  
