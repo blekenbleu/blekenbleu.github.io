@@ -43,7 +43,7 @@ STM32F103C chips officially have 64K flash, but
 There are at least 4 ways to flash STM32 chips:  
 1) [SWD via ST-LINK](#blue-pill-swd-pins-for-st-link)  
    **Use this to install an HID bootloader on Blue Pills**  
-   Unlike Black Pills, new Blue Pills lack a ROM USB bootloader. 
+   Unlike Black Pills, new Blue Pills lack a ROM USB bootloader.  
 2) (Arduino) USB bootloader[s] <- there have been several:  
    * [STM32duino Bootloader](https://github.com/Serasidis/STM32_HID_Bootloader)
      AKA bootloader 2.0 AKA **HID bootloader**  
@@ -60,7 +60,7 @@ There are at least 4 ways to flash STM32 chips:
    *Load firmware via USART1 by first jumpering*:  
    `Boot0 HIGH`  
    `Boot1 LOW`  
-  ... then resetting MCU
+  ... then resetting MCU  
 4) DFU (device firmware update) using DfuSe utility, e.g. **for [Black Pills](black.htm)**  
     using its [STM32 system memory bootloader in ROM](https://www.st.com/en/development-tools/stsw-stm32080.html),  
     but, *again* USB is **NOT** supported by Blue Pill's ROM bootloader.  
@@ -82,14 +82,16 @@ as described [on YouTube](https://www.youtube.com/watch?v=Myon8H111PQ).
 That video installs the Blue Pill HID bootloader via USB COM dongle,  
  &emsp; but we here use an [ST-LINK V2 clone](https://www.ebay.com/sch/i.html?_nkw=ST-Link+V2&_sacat=0).  
 My clone ST-Link happens to have the *correct pinout* printed on its cover;  
-**Verify ST-LINK clone pin artwork** by sliding that cover partly open (along the USB plug):
+**Verify ST-LINK clone pin artwork**;&nbsp; slide cover partly open (along the USB plug):
 ![ST-LINK pin artwork](ST-Link.jpg)  
 
 [Here is the **Arduino for STM32** forum](https://www.stm32duino.com).&nbsp;  It mostly replaced older Maple.  
 [Here is the Arduino software page](https://www.arduino.cc/en/software).&nbsp;  Use Legacy IDE (Arduino 1.8.X) for [portability](https://docs.arduino.cc/software/ide-v1/tutorials/PortableIDE).  
 
-- [Arduino IDE 2 version and STM32 core 2.8.x. **supports debugging**](https://blekenbleu.github.io/static/Arduino2/index.htm), but NOT portability  
-	- switching Arduino 2 e.g. between ESP32 and STM32 would require hacking each time `C:\Users\%username%\arduino\arduino-cli-yaml`  
+- [Arduino IDE 2 version and STM32 core 2.8.x. **support debugging**](https://blekenbleu.github.io/static/Arduino2/index.htm),  
+    but NOT portability...  
+	- switching Arduino 2 between ESP32 and STM32 requires hacking each time  
+       `C:\Users\%username%\arduino\arduino-cli-yaml`  
 	- Instead, continue using *portable* Arduino 1.8 for ESP32...
 
 ### Blue Pill SWD pins for ST-LINK
@@ -97,7 +99,9 @@ My clone ST-Link happens to have the *correct pinout* printed on its cover;
 Wiring Blue Pill to ST-LINK V2 clone:
 ![wiring Blue Pill to ST-LINK V2 clone](https://miro.medium.com/max/875/1*pFNIcoAq2s3l4lwsM0gj8w.jpeg)  
 ![wiring chart](https://miro.medium.com/max/533/1*NwPYrVoPUbciDWzvGsTavQ.png)  
-Connect 3.3V from ST-LINK to Blue Pill **only when Blue Pill has no other connections**  
+Connect 3.3V from ST-LINK to Blue Pill  
+- **only when Blue Pill has no other connections**.
+  
 Put another way, when using ST-LINK to debug Blue Pill e.g. plugged to USB,  
   **do NOT connect 3.3V to Blue Pill from ST-LINK**.  
 Here is my ST-LINK connected to my harness tensioning Blue Pill:
@@ -108,32 +112,35 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
    bundled with [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html),  
    which utility was *also* wanted for updating clone ST-LINK firmware.  
  - *Also* use [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html) to install HID bootloader.
-#### These instructions apply *specifically* for 64-bit Windows, ST-LINK clone,  HID-bootloader, Blue Pill and STM core.  
+
+**These instructions apply *specifically* for 64-bit Windows, ST-LINK clone,**  
+**HID-bootloader, Blue Pill and STM core.**  
 
 1) Download and install [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html)  
-   in my case, to `D:\packages\STM32\`
+   in my case, to `D:\packages\STM32\`  
 2) Plug bare ST-LINK clone into USB.  
    If it shows up in **`Device Manager`** under **`Other devices`** (*with a yellow warning*),  
    then drivers *were not* installed; see 1)  
-   else it should appear under **`Universal Serial Bus Devices`**.
+   else it should appear under **`Universal Serial Bus Devices`**.  
 3) Launch **`STM32 ST-LINK Utility.exe`**  
    in my case,  
-`D:\packages\STM32\ST-LINK Utility\STM32 ST-LINK Utility.exe`
+`D:\packages\STM32\ST-LINK Utility\STM32 ST-LINK Utility.exe`  
 4) Select `ST-LINK` > `Firmware update`  
    click `Device Connect`
-   click `Yes>>>>`
-5) Unplug ST-LINK clone from USB and wire it to Blue Pill as shown above.
+   click `Yes>>>>`  
+5) Unplug ST-LINK clone from USB and wire it to Blue Pill as shown above.  
 6) Connect Blue Pill `BOOT-0` and `BOOT-1` pins (or on-board jumpers) to `0`  
    ** *and leave them*! **  
    Disconnect everything except ST-LINK from Blue Pill, and plug ST-LINK to USB.  
 7) Download `stm32_binaries.zip` from [the latest HID Bootloader release](https://github.com/Serasidis/STM32_HID_Bootloader/releases)  
    From it, extract:  `hid_generic_pc13.bin`  
    (*Blue Pill on-board LED is connected to pin `PC13`*)  
-   in my case, to `D:\packages\STM32\`
+   in my case, to `D:\packages\STM32\`  
 8) To flash HID Bootloader to a Blue Pill, in STM32 ST-LINK Utility:  
    `File` > `Open File...` > `hid_generic_pc13.bin`  
    `Target` > `Erase Chip`  
-   `Target` > `Program...` > **`Start address`** `0x8000000` **`File path`** `D:\packages\STM32\hid_generic_pc13.bin`  
+   `Target` > `Program...` > **`Start address`** `0x8000000`  
+   **`File path`** `D:\packages\STM32\hid_generic_pc13.bin`  
    ![Download](Download.gif)  
    click **`Start`** (*that should complete quickly*)  
    (*Blue Pill red LED on for power, green LED flickers quickly*)  
@@ -154,7 +161,8 @@ Here is my ST-LINK connected to my harness tensioning Blue Pill:
    - Does the blink sketch actually blink the LED as expected?  
      If not, something similar happened to me when compiling and loading a sketch  
      with an incorrect board selected.  
-     To check whether the correct board is selected, build and load an example sketch  
+     To check whether the correct board is selected,  
+     build and load an example sketch  
      *specific to the selected board*:  
      `File -> Examples -> (examples for selected board type)`:  
      ![](examples.png)  
