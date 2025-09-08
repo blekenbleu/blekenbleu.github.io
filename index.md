@@ -25,7 +25,7 @@
         Some ESP32 / STM32 may appear as Arduino USB COM ports
 - [Direct Drive harness tension](https://github.com/blekenbleu/Direct-Drive-harness-tension-tester)  
 - [ESP32-S2](../static/ESP32/index.htm)  
-- [**STM32 MIDI**](MIDI/STM32MIDI.htm)
+- [**STM32 MIDI**](../static/USB/STM32MIDI.htm)
 - [**mi-360** Xbox360 controller emulation](Arduino/mi360)
 - [pedal sketches](Arduino/) for [STM32](pedals/STM32/) 
 - SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
@@ -42,10 +42,7 @@ Arduino 2 IDE (which adds debugging) [**is broken for me**](../static/Arduino2/i
   - [**STM32 Black Pill** for *more capable* custom USB Arduino devices](Arduino/black.htm)
   - [**ESP32-S[2-3]**](../static/ESP32/) for **composite USB** and wireless Arduino devices  
 
-- [**Visual Micro**](https://www.visualmicro.com/) ($65; free 45 day trial) supports debugging in
-  - [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)  (as used e.g. for [**SimHub plugins**](../static/SimHub/))
-  - [Visual Micro in VisualStudio **Marketplace**](https://www.visualmicro.com/)  
-	- [*reviewed*](https://maker.pro/arduino/tutorial/how-to-use-visual-studio-for-arduino-development)  
+### [Arduino USB](../static/ArduinoUSB/index.htm)  
 
 ## Audio  
  &nbsp; [**Audio-Technica AT-LP140XP**](../static/AT-LP140XP/) microphonics  
