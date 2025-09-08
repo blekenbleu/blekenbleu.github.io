@@ -18,8 +18,8 @@
 
 <h4 id="background">Background</h4>
 <p>Arduino originally employed microcontrollers lacking USB support.<br />
-Arduino now offers a few STM32 modules with integrated USB,<br />
-and ST Microelectronics now supports many STM32 chips and boards.</p>
+Newer Arduino have embedded USB and additional function via <a href=../../static/ArduinoUSB/index.htm>Pluggable USB API</a>,<br />
+and ST Microelectronics now supports Arduino for many STM32 chips and boards.</p>
 <ul>
   <li>Black and <a href="index">Blue Pill</a> modules use the same Arduino board manager.</li>
   <li>Arduino wants <code>STM32CubeProgrammer</code> for Black Pill DFU;&nbsp; (<i>installed in</i> <code>D:\my</code>)
@@ -61,7 +61,7 @@ ST-Link Probe 0 :
    Access Port Number  : 0
    Board Name  :
 -----------------------------------------------</pre></details>
-.. so will solder pins to the Black Pill for SWD connection
+.. so soldered pins to the Black Pill for SWD connection and DFU jumper.
 <li>Dupont Wire color coding at ST-Link:<ul compact>
 <li>GND (6) Black 
 <li>SWDIO (4) Gray
