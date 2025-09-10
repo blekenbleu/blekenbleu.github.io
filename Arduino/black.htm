@@ -22,7 +22,8 @@ Newer Arduino have embedded USB and additional function via <a href=../../static
 and ST Microelectronics now supports Arduino for many STM32 chips and boards.</p>
 <ul>
   <li>Black and <a href="index">Blue Pill</a> modules use the same Arduino board manager.</li>
-  <li>Arduino wants <code>STM32CubeProgrammer</code> for Black Pill DFU;&nbsp; (<i>installed in</i> <code>D:\my</code>)
+  <li>Arduino wants <code>STM32CubeProgrammer</code> (<i>installed in</i> <code>D:\my</code>)
+ for SWD or Black Pill DFU;
     <ul>
       <li>added to path</li>
       <li><details>
@@ -162,8 +163,20 @@ I use a <a href=https://www.amazon.com/dp/B000AS28UC>40W Weller WLC100</a> with 
 <br>To make solid ground solder joints, pull heated pins partially out, drawing solder into thru holes. 
 
 <p><a href="SimHubCustomSerial">SimHub Custom serial hacking is described here</a>.</p>
+</section>
 
-        </section>
+<h3>Black Pill TTL <a href=https://forum.arduino.cc/t/stm32f411ce-black-pill-serial-port-pin-mapping/907459><code>HardwareSerial</code> pin mapping</a></h3>
+<pre>// separate USB COM port dongle e.g. for serial trace
+HardwareSerial Serial2(PA3, PA2);   // RX2, TX2
+
+void setup()
+{
+  Serial2.begin(9600);
+  Serial2.print("USBSerial USB_EP_SIZE = ");
+  Serial2.println(USB_EP_SIZE);
+</pre>
+<img width=840 src=ST-LINK_TTL.jpg>
+
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
 </td></tr></table>

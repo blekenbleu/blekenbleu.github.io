@@ -3,7 +3,7 @@
 [*back*](../#arduino-custom-usb-stm32-blue-pill-sketches)  
 
 *updated 8 Sep 2023*  
-## Arduino for STM32 Black 'n Blue Pills, ESP32-S[2,3]
+## Arduino for STM32 [Black](black.htm) 'n Blue Pills, ESP32-S[2,3]
 
 [sketches](https://github.com/blekenbleu/Arduino-Blue-Pill)  
 [other content](content)
@@ -31,7 +31,7 @@ which require [an older Windows driver](https://github.com/SHWotever/FakeCH340Dr
 	- originally by Leaflabs for Maple, then [Roger Clark for STM32F1/F4](https://github.com/rogerclarkmelbourne/Arduino_STM32)   
 - ["Official" STMicrosystems `stm32duino`](https://github.com/stm32duino/Arduino_Core_STM32) supports *many* STM32 chips and boards  
 	- `stm32duino` since core release 2.8.0, supports *only* [**Arduino IDE 2**](https://blekenbleu.github.io/static/Arduino2/index.htm)    
-	- **I use Arduino 1.8 for Blue Pill and [Arduino 2.3.6 for Black Pill](../../static/Arduino2/index.htm)**
+	- **I use Arduino 1.8 for Blue Pill and [Arduino 2.3.6](../../static/Arduino2/index.htm) for [Black Pill](black.htm)**
 		- [Getting Started for Arduino IDE 1.8.x](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Getting-Started_V1)
 
 Many STM32 chips' hardware and ROM bootloaders support (DFU) USB directly,  
@@ -69,7 +69,7 @@ STM32duino for Blue Pill expects a USB HID bootloader,
 which gets launched by Blue Pill's ROM bootloader,  
 then Arduino uses that USB HID bootloader to install sketches above it in flash.  
 
-A clone ST-LINK V2 costs no more than a USB COM dongle,  
+A [clone ST-LINK V2 costs no more than a USB COM dongle](ST-LINK_TTL.jpg),  
 connects to dedicated [SWD pins](#blue-pill-swd-pins-for-st-link) on e.g. Black or Blue Pills for code load and debug.  
 Clone USB COM dongles *may not* support 3.3V to Blue Pill serial boot pins..  
 Blue Pill boot jumpers *need not be changed* when flashing by ST-LINK or HID bootloader.  
