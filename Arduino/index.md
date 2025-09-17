@@ -222,7 +222,7 @@ no need to install Arduino-specific driver[s]...
 ### Blue Pill pinout
 ![Generic STM32F103 board pinout](https://www.electronicshub.org/wp-content/uploads/2020/02/STM32F103C8T6-Blue-Pill-Pin-Layout.gif)  
 - 5V tolerant PWM wanted for driving hobby servos, e.g. `PA8-10` and `PB6-9`.  
-- `PA3, PA2` RX2, TX2 work also for [Black Pill](black.htm) `HardwareSerial`  
+- `PA3, PA2` RX2, TX2 work also for [Black Pill](black.htm#TTL) `HardwareSerial`  
 - 5V tolerant CAN BUS pins `PB8,9` **work for me**.
 - In addition to seven 5V tolerant PWM pins, up to 7 more can be available by level-shifting:  
   ![Blue pill w/level-shifting module](BlueLevel.jpg)  
