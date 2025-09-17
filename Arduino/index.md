@@ -31,8 +31,11 @@ which require [an older Windows driver](https://github.com/SHWotever/FakeCH340Dr
 	- originally by Leaflabs for Maple, then [Roger Clark for STM32F1/F4](https://github.com/rogerclarkmelbourne/Arduino_STM32)   
 - ["Official" STMicrosystems `stm32duino`](https://github.com/stm32duino/Arduino_Core_STM32) supports *many* STM32 chips and boards  
 	- `stm32duino` since core release 2.8.0, supports *only* [**Arduino IDE 2**](https://blekenbleu.github.io/static/Arduino2/index.htm)    
-	- **I use Arduino 1.8 for Blue Pill and [Arduino 2.3.6](../../static/Arduino2/index.htm) for [Black Pill](black.htm)**
+	- **I used Arduino 1.8 for Blue Pill, then [Arduino 2.3.6](../../static/Arduino2/index.htm) for [Black Pill](black.htm)**
 		- [Getting Started for Arduino IDE 1.8.x](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Getting-Started_V1)
+
+## Blue Pill
+Unlike Black Pill's OTG USB, Blue Pills support 8 endpoints, thus [composite USB devices](../../static/USB/index.htm#composite).
 
 Many STM32 chips' hardware and ROM bootloaders support (DFU) USB directly,  
 but Blue Pill's chip lacks ROM USB bootloader support.  
