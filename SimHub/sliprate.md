@@ -33,12 +33,12 @@ their actual lateral acceleration differing from `Speed * YawVelocity`.
 Difference between Speed * YawVelocity and actual lateral acceleration is called body *slip rate*;  
 body slip rate divided by Speed is body *slip angle rate*.  
 SimHub properties from which to calculate body slip angle rate:  
-- AccelerationHeave (AKA lateral acceleration)
+- AccelerationSway (AKA lateral acceleration)
 - OrientationYawVelocity
 - SpeedKmh  
 
-Then SimHub slip rate = `ff * SpeedKmh * OrientationYawVelocity - AccelerationHeave`  
-... and slip angle rate = `ff * OrientationYawVelocity - AccelerationHeave / SpeedKmh`  
+Then SimHub slip rate = `ff * SpeedKmh * OrientationYawVelocity - AccelerationSway`  
+... and slip angle rate = `ff * OrientationYawVelocity - AccelerationSway / SpeedKmh`  
 ... where fudge factor `ff = 1` for property values with *compatible units of measure*.  
 For games and cars tested in SimHub, fudge factor `ff ~ 0.00485`:  
-`SlipAngleRate = 0.00485 * OrientationYawVelocity - AccelerationHeave / SpeedKmh`  
+`SlipAngleRate = 0.00485 * OrientationYawVelocity - AccelerationSway / SpeedKmh`  
