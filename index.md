@@ -142,7 +142,6 @@ Arduino 2 IDE (which adds debugging) [**is broken for me**](../static/Arduino2/i
   - [Spectrum modem and router regressions](../static/network/Spectrum.htm)  
   - [**Synology DiskStation DS920+**](../static/network/DS920.htm)  
   - [**Synology Active Backup**](../static/network/ActiveBackup.htm)  
-- [RTX3090](Windows/RTX3090)  
 - [Serial ports](../static/SerialPorts/index.htm)  
 - **[Sound and VoiceMeeter](Windows/WinAudio.htm), [VST hosts](Windows/VSThost.htm) and [VST3 plugins](Windows/steinberg/)**  
 - Storage shortage:&nbsp;  [Dell Inspiron 13 7000 2-in-1 Windows 10 NVMe SSD](Windows/NVMe/Inspiron13.htm)  
