@@ -21,29 +21,30 @@ table.my_table td { width:670px; }
 <a name=sim><h2>sim driving</h2></a>
 
 <img width=640 src=image/SebringE23.jpg><br>
- &emsp; <i>While real life track time is more exciting,
-sims <b>rule</b> for cost effectiveness.</i><br><br>
+ &emsp; <i>While real life track time is more exciting, sims <b>rule</b> for cost effectiveness.</i><br><br>
 
-<b><b>background</b></b><br>
+<dl><dt><b>background</b><br>
 Some drivers quickly turn competitive times in cars and on circuits new to them.<br>
 Even less like me, some folks seemingly launch new apps<br>
-and comfortably master controls with minimal instruction and tweaking.<br>
-What follows is less for them than tweakers and incrementalists..<br><br>
+and comfortably master controls with minimal instruction and tweaking.<br><br>
 
-<details><summary><i>your mileage may vary</i> <code>[click for details]</code></summary>
-Niels Heusinkveld, <a href="https://heusinkveld.com/">sim pedal company</a> owner,<br>
-described his first <i>real</i> track experience:<br>
-<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/ExJEGp9itHE"></iframe><br>
+This is instead more for tweakers and incrementalists..
+
+<dd><details><summary><i>your mileage may vary</i> <code>[click for details]</code></summary>
+Niels Heusinkveld, <a href="https://heusinkveld.com/">sim pedal developer</a>,
+on his first <i>real</i> track experience:<br>
+<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/ExJEGp9itHE"></iframe><br><br>
+
 I was struck by his lack of appreciation for inertial forces,<br>
 although he certainly noted tail-wagging<br> from too much throttle out of wet corners.<br>
 A 20-year sim racer, Niels mostly depends on visual cues,<br>
 with less precision in real pedals than his sim pedal products<br>
 and lack of weight and feedback from real power steering.<br>
 He reported a somewhat sore neck from roughly 1-G lateral acceleration,<br>
-while depending mostly on visual cues and control feedback, rather than G-forces.<br>
-He was surprised about understeer with relatively small <a href=../SimHub/slip.htm>slip and steering angles</a>.<br>
+depending more on visual cues and control feedback than G-forces.<br>
+Understeer with relatively small <a href=../SimHub/slip.htm>slip and steering angles</a> surprised him.<br>
 He was unaware where he looked on track,<br> in contrast to awareness of triple screen bezels.<br>
-Awareness of e.g. the rear stepping out (<a href=../SimHub/Oversteer>oversteer</a>) seemed mostly from change of view.<br>
+Rear stepping out (<a href=../SimHub/Oversteer>oversteer</a>) noted mostly from change of view.<br>
 Compared to sim, "real life was wrong".<ul>
 <li>Tired synchros made real shifts notably slower
 <li>Feeling buttock G forces was not a revelation
@@ -62,37 +63,39 @@ I need <i>more practice</i> to learn feedback from controls and ShakeSeat.<br>
 Odyssey+ image sharpness seems not enough to instill real confidence</a>,<br>
 particularly with Fresnel lens VR resolution poor away from center.<br><br>
 
-This video by another sim driver with previous track experience and consequential<br>
-G-force unlearning / relearning issues: 4:15/15:48 &nbsp
+This video by another sim driver with previous track experience<br>
+and G-force unlearning / relearning issues: 4:15/15:48 &nbsp
 <iframe align=center width="640" height="480" src="https://www.youtube.com/embed/XjcW3qzWTyE"></iframe><br>
 <br>
 FWIW, professional and advanced amateur drivers<br> probably adapt more quickly between sim and real racing,<br>
 since G-forces differ so much between street and many race cars.<br>
 <br>
-What follows is biased towards streetable BMWs with power steering and brakes,<br>
+What follows is based on streetable BMWs with power steering and brakes,<br>
 minimal aero and enough mods for track fun, but far from full racing cars.<br>
-For example, neither brutally stiff brake pedals nor massive steering effort.
-</details><br>
+For example, neither brutally stiff brake pedals nor heavy steering effort.
+</details></dl>
 
 <details><summary><b>Intro and Context</b></summary>
-<a name=DSC><h4>Driving simulation components</h4></a>
+<a name=DSC><h4>Driving sim components</h4></a>
 <dl>
 <dt>Controls
 <dd>wheel, pedals, shifter to control the car in game,<br>
  perhaps enhanced by e.g. launch control<br>
-<dt>other controls adjusting feedback
-<dd><ul><li>visual (<a href=#hmd>VR</a>) with <a href=#VRC>controls</a>
-<li>tactile<ul><li><a href=#DD>steering force feedback</a>
+<dt>feedback
+<dd><ul>
+<li>audio:&nbsp game output to speakers or headphones
+<li>tactile
+(e.g. via SimHub, perhaps with MIDI)
+<ul><li><a href=#DD>steering force feedback</a>
 <li><a href=#hartens>harness tensioning</a>
 <li>wheel slip
 <li>traction loss
 <li>brake engagement and ABS
 <li>clutch engagement and autoclutch</ul>
+<li>visual (e.g. <a href=#hmd>VR</a>) with <a href=#VRC>controls</a>
 </ul>
-<dt>Tactile feedback via SimHub, probably with MIDI.
-<dd>audio:&nbsp game output to speakers or headphones
 <a name=AC>
-<dt>A sim game:&nbspAssetto Corsa</a><br>
+<dt>Sim software:&nbspAssetto Corsa</a><br>
 </dl>
 </details>
 
@@ -389,7 +392,22 @@ SingleRacer made a video for<br>
 <a name=hartens>
 <dt><br></a><font color=#007700><b>harness tensioning</b></font><ul>
 <li><a href="#accel">SimHub Acceleration properties</a>
-<li> <details> <summary> <b>SimHub 2DOF stepper motor harness tensioning</b> </summary>
+
+<li><details><summary>direct drive</summary><ul>
+<li><a href="https://lebois-racing.fr/seat-belt-tensioner">Lebois'</a>
+<a href="https://www.flickr.com/photos/94602950@N04/sets/72157717763752498/">direct-drive
+tensioner uses PWM drive of a (too powerful?) DC motor</a>.<br>
+<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe>
+<li><a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">
+Another direct-drive tensioner</a> for braking only</ul><br>
+50mm diameter spools on 8.5Nm motors should provide<br> adequate but safe tension and belt travel.<br>
+<pre>Torque (N.m) = 9.5488 x Power (kW) / Speed (RPM)</pre>
+<a href=https://www.overtake.gg/threads/2dof-harness-tensionner-with-fly-ptmover.194331/page-9#post-3531954>Electric scooter motor</a> <i>stall</i> torque is approximately watts / unloaded RPS.<br>
+<ul><li>350W 2750rpm might have about 7 N.m stall torque.
+<li><a href=https://www.overtake.gg/threads/2dof-harness-tensionner-with-fly-ptmover.194331/post-3544264><b>sierses declares success</b></a>
+</ul><br></details>
+
+<li> <details> <summary> <b>SimHub 2DOF stepper motors</b> </summary>
 <a name="SimHarness">
 Harness tensioning usefully simulates cornering and braking forces.</a><br>
 SimXperience <a href="https://www.simxperience.com/en-us/products/accessories/g-beltactivebelttensioners/g-belt.aspx">US$1K G-Belt</a> pioneered harness tensioning,<br>
@@ -401,22 +419,13 @@ with an <a href="https://discord.com/channels/299259397060689920/843488595062423
 <img width=640 src="image/SHtensionner.gif"><br clear=all>
 Issues with it:<ul><li>gear-drive stepper motors are both noisy and dangerously torquey
 <li>suboptimal physics linearly adds lateral and longitudinal acceleration,<br> instead of square root of sum of squares</ul>
-... but range of motion allows slackening e.g. for acceleration</ul>
-<p><a href="https://lebois-racing.fr/seat-belt-tensioner">Lebois'</a>
-<a href="https://www.flickr.com/photos/94602950@N04/sets/72157717763752498/">direct-drive
-tensioner uses PWM drive of a (too powerful?) DC motor</a>.<br>
-<iframe align=center width="640" height="360" src="https://www.youtube.com/embed/cu6TLIG1tIk"></iframe></p>
-<a href="https://www.racedepartment.com/threads/sfx100-direct-drive-belt-tensioner.185199">
-Another direct-drive tensioner</a> for braking only on shoulder and lap belts.<br>
-<br>
-50mm diameter spools on 8.5Nm motors should provide<br> adequate but safe tension and belt travel.<br>
-<pre>Torque (N.m) = 9.5488 x Power (kW) / Speed (RPM)</pre>
-Electric scooter motors <i>stall</i> torque is approximately watts / unloaded RPS.<br>
-For example, a 350W 2750rpm motor might have about 7 N.m stall torque.<br>
-<a name=servo><br></a>
+... but range of motion allows slackening e.g. for acceleration<br><br></details>
+
+<a name=servo><li></a><details><summary>
 <a href="https://www.racedepartment.com/members/racingmat.164315"><b>RacingMat</a>'s
-<a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF
-harness tensioning uses 35kg.cm hobby servos</b></a>.<br>
+<a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">low cost 2DOF
+hobby servos</a></b></summary><br>
+ uses 35kg.cm hobby servos.<br>
 Parts budget (US$):<dl>
 <dt>41.40<dd><a href="https://www.ebay.com/itm/282250363739">RSD3235 servo pair</a>
 <dt>17.25<dd><a href="https://www.ebay.com/itm/264645806540">6x 100F super capacitors</a>
@@ -462,11 +471,11 @@ Here is the <a href="../Arduino">Arduino STM32 servo driver</a> for this solutio
 <img width=640 src="../Arduino/SimHubCustomSerial.gif"><br clear=all>
 <a href="../Arduino/SimHubCustomSerial">SimHub Custom serial device harness tensioning control</a> description.<br>
 Here is the <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/proxy_G.shsds.txt">SimHub Custom serial device profile</a>.
-</ul></details>
-</ul></p>
+</details>
+</ul>
 
 <a name=hmd> &nbsp; </a>
-<dt><b>headsets</b><br>
+<dt><b>headsets (VR)</b><br>
 <dd><details><summary> <font color=#007700> WMR HMD</font>
 (deprecated)</summary>
 <a name=WMR>
@@ -641,14 +650,11 @@ Ricmotech's <a href="https://www.ricmotech.com/Ricmotech_Mini_Mite_Direct_Drive_
 is <a href="https://www.racedepartment.com/threads/accuforce-mounting-help.171738/post-3021710">an AccuForce clone</a>.
 </details>
 
-<dd><i>replaced by</i>:
-<br> &emsp; <a href=PT2.htm><b>ProtoSimTech PT2 pedals</b></a>
- &nbsp <i>with</i> <a href=zombie.htm><font color=#000077><b>zombie pedal</b></font></a>
+<dd><i>replaced by</i>:&nbsp; <a href=PT2.htm><b>ProtoSimTech PT2 pedals</b></a>
+	<i>with</i> <a href=zombie.htm><font color=#000077><b>zombie pedal</b></font></a>
 <br> &emsp; &emsp; <a href="https://www.racedepartment.com/threads/worth-upgrading-sim-hardware-to-be-more-competitive-online.179966/page-2#post-3440329">on RaceDepartment</a>
 
-
-
-<dt><br><font color=#007700><b>shifters</b></font>
+<dt><font color=#007700><b>shifters</b></font>
 <dd><details><summary><b>Thrustmaster TH8A shifter mods</b></summary>
 <a name=TH8A><h5>$15 fixes</h5></a>
 <dl>
@@ -738,6 +744,212 @@ converting debounced switch changes<br> from Arduino Blue Pill USB COM port<br> 
 then to <a href="https://github.com/blekenbleu/MIDIio">vJoy virtual switches</a>.
 </ul></details>
 
+<dt><br><font color=#007700><b>steering</b></font>
+<dd><a href="#OG14">Original 14mm wheel adapter</a> (doomed)
+<dd><a href="DDclamp.htm">DIY DD steering shaft clamp</a> and <a href=DDclamp.htm#Q1r>Q1r quick release</a>
+<dd><details><summary><font color=#007700><b>wheel base (AccuForce DIY model no longer available)</b></font></summary>
+<a name=DD>
+Sim driving by VR HMD without video passthru means not seeing physical controls</a>,<br>
+unless video capture of controls is reinserted in 3D view,<br>
+without which controls on steering wheel are IMO useless, simplifying direct drive options.<br>
+<a href="https://www.simxperience.com/en-us/products/accessories/accuforcesteering.aspx">AccuForce</a> has a good reputation, with $599
+<a href="https://simxperience.azurewebsites.net/en-us/products/accessories/accuforcesteering/accuforcewheeldiykit.aspx">DIY details here</a><br>
+and Assetto Corsa force feedback tuning <a href="https://www.racedepartment.com/threads/ffb-vibration-noise-in-direct-drive-accuforce-wheels.168730">here</a>,<br>
+where consensus seems to be programming Device (Accuforce controller) settings,<br>
+then NOT running Sim Commander, just tuning in AC:<br>
+<a href="https://selah.ca/secrets-of-the-simxperience-accuforce-pro/#Force_Feedback_Settings">Secrets of the SimXperience AccuForce Pro</a><br>
+Accuforce <a href="https://www.orientalmotor.com/stepper-motors/technology/hybrid-stepper-motors-v-hybrid-control.html">Hybrid Stepper Motor</a>: &nbsp
+<img align=center src="https://www.orientalmotor.com/images/stepper-motors/hybrid-stepper-motor-rotor.jpg"><br clear=all>
+
+DIY non-standard 14mm shaft (shared with <a href="http://www.gerit.it/pdf/Servomotori_Lenze_MCS_en.pdf">Lenze MCS 09</a>)
+
+<img align=center width=95% src="https://www.simxperience.com/web/image/product.product/727/image_1024/AccuForce%20DIY%20Simulation%20Steering%20Kit?unique=8789346">
+<br clear=all><br>
+
+Similarly priced Simagic M10 also used hybrid stepper motor<br>
+with better signal connection design,
+but is no longer available from <a href="https://us.sim-motion.com/collections/simagic-alpha">authorized U.S. source</a>,<br>
+having been replaced by also compact <a href="https://shop.simagic.com/products/alpha-mini">Alpha Mini</a>.<br><br>
+
+70mm steering wheel adapter @ $27 from
+<a href="https://www.ascher-racing.com/shop/clamping-set/">Ascher Racing</a> is no longer available.<br>
+Installation: &nbsp
+<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/Sk_NCV-8R5w"></iframe><br><br>
+
+<!-- Motor dimensions are <a href="https://www.simxperience.com/Portals/0/Files/AccuForce/DIY_SimXperience_Motor.PDF">in this PDF diagram</a>.<br> -->
+14mm diameter shaft extends 55.4mm from motor case,<br>
+ which has 69.5mm center square spacing of mounting holes (6mm??)<br>
+AccuForce DIY motor appears to be NEMA 34:<br>
+<img align=center src="https://www.ato.com/Content/Images/uploaded/nema-34-stepper-motor-dimension.jpg"><br clear=all>
+.. for which <a href="https://www.amazon.com/dp/B079R8W1BH">$10 brackets are available</a>: &nbsp
+<img align=center src="https://images-na.ssl-images-amazon.com/images/I/41XuxzH4sWL._AC_.jpg"><br clear=all>
+With DIY model no longer available, consider instead
+<a href="https://www.simxperience.com/shop/accuforce-your-way-v2-steering-system-869#attr=12,8,10">Your Way</a>,<br>
+ which includes a 14mm-to-70mm PCD hub, then remove its bulky case.<br>
+<img width=95% src="https://www.simxperience.com/web/image/product.product/898/image_1024/AccuForce%20Your%20Way%20V2%20Steering%20System%20%28None%2C%20None%2C%20None%29?unique=fe26a1f"><br clear=all>
+<br>
+<a name=OG14><h5>Doomed first attempted 14mm wheel adapter</h5></a>
+
+<table><tr>
+<td width=50%>
+<a href="https://www.amazon.com/gp/product/B07MNT9VXW/">14mm flange</a> and <a href="https://www.amazon.com/gp/product/B07YLMNGNG">70mm hub adapter</a><br>
+from Amazon for less than $25,<br> along with cheap but doomed
+<a href="https://www.amazon.com/gp/product/B07GWGGF8V">MASO</a> quick release,<br>
+which fit 320mm steering wheel with lower profile than overall superior <a href=DDclamp.htm#Q1r>Q1r</a>:<br><br>
+
+Improvised an undersize blue set screw,<br>
+drilled hub adapter for 14mm flange<br> and assembled:<br>
+ &nbsp <img src="image/OG14.jpg"><br clear=all>
+Enlarged 6 MASO holes for 70mm hub screws.
+</td><td width=50%><img width=100% src="image/QR320mm.jpg"></td>
+</tr></table><br>
+
+MASO quick releases initially <i>seemed</i> OK;<br>  Sim Racing Garage liked one adapted for Thrustmaster:<br>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/9ZNrmjJzFd4"></iframe>
+<br> .. but elastomer buttons eventually compress and rattle.</details>
+
+<dd><details><summary><font color=#007700><b>wheel rims</b></font></summary>
+<dd>320mm round:&nbsp; <img align=top src="image/QR320mm.jpg">
+<p>375mm wood:&nbsp;
+<iframe align=top width="480" height="480" src="https://www.youtube.com/embed/VYwewSeIUG0"></iframe></p>
+
+<dd><a href="steering.htm#GT300"><b>Conspit 300 GT</b></a>
+<dd><a href="steering.htm#F-PRO"><b>Cube Controls F-PRO</b></a>
+<dd><details><summary> Logitech G29 </summary>
+<a name=G29>Refurbished Logitech G29 <i>arrived April 2018</i><br></a>
+seemingly unblemished with original contents and dividers in unoriginal plain brown box.<br>
+Single sheet of instructions (one side) of inaccurate diagrams<br>
+and URL: www.logitech.com/support/g29<br>
+.. wildly contrasts to TH8A book (8 pages x 18 languages).<br>
+Actual URL:<br>
+http://support.logitech.com/en_us/product/g29-driving-force<br>
+<br>
+Downloaded &amp Installed seemingly generic gaming software,<br>
+which launched and added itself to Taskbar notifications after reboot.<br>
+Launching it was completely uninformative and confusing until after plugging in G29;<br>
+before that it seemed to assume there was some backlit keyboard...<br>
+Firmware 89.0.25 is up to date.<br>
+Set Assetto Corsa profile to be default but not persistent (application can change).<br>
+<br>
+NOT in instructions:<br>
+"You must select your gaming platform before you connect<br>
+the G29 racing wheel to PlayStation 4, PlayStation 3, or PC.<br>
+PC: Set the mode switch to PS4.<br>
+NOTE: You must install Logitech Gaming Software (LGS) 8.70 or later<br>
+on the PC for full functionality. Once you've installed LGS,<br>
+all buttons and accessories will function in the games that support them."<ul>
+<li> Logitech's Gaming Software (LGS) nowhere admits its version,<br>
+but filename includes it: <code>LGS_8.98.234X64_Logitech.exe</code><br>
+<li> Undocumented icon for Overwolf, which evidently 
+<a href="https://www.overwolf.com/about-overwolf/">defies explanation</a><br>
+<li> <a href="https://www.logitech.com/assets/51813/3/lgs-guide.pdf">LGS documentation</a>
+avoids device-specific information;<br>
+ends up being mostly useless..
+</ul>
+<a href="https://www.racedepartment.com/threads/logitech-g29-setup.140831/">
+Relevant (but inconsistent) G29 discussion for Assetto Corsa</a><br>
+<br>
+<br>
+Bottom line:<br>
+Settings icon has Profile tab (which I set to default Assetto Corsa),<br>
+G29 tab (which I allowed Game to adjust force settings),<br>
+<br>
+<a href="https://support.logi.com/hc/en-gb/articles/360023349273-Adjust-sensitivity-on-the-G29-and-G920-racing-wheels-with-Logitech-Gaming-Software">
+Must double-click relevant control in Profile tab</a><br>
+<br>
+<a href="https://support.logi.com/hc/en-us/articles/360023349553-Create-and-edit-racing-wheel-profiles-using-Logitech-Gaming-Software">
+Create/edit/delete G29 profiles</a><br>
+<br>
+Someone consolidated Logitech LGS &amp G29 info
+<a href="https://images-na.ssl-images-amazon.com/images/I/B1wg1noyQ7S.pdf">in one PDF</a><br>
+<br>
+Video:&nbsp <a href="https://www.youtube.com/watch?time_continue=2&v=vPyAs2UBEXc">
+Assetto Corsa G29 steering configuration</a><br>
+Advanced: Gain 100, Filter 0, min Force 20, Kerb 12, Road 35,<br>
+Slip 13, Gamma 1.00 Filter 0.00 Speed Sens 0.00, Brake Gamma 2.40<br>
+Enhanced Understeer &amp Combine checked; Half FFB unchecked.<br>
+<br>
+*** G29 completely not detected by Assetto Corsa<br>
+Run <code>joy.cpl</code><br>
+Game Controllers Advanced - Select the device you want to use with older programs<br>
+G29 dominates; TH8 works when G29 is unplugged<br>
+<br>
+Typically get to <code>joy.cpl</code> on Windows 10 by <i>old</i> Control Panel<br>
+(Not Windows Settings) > Hardware and Sound > Devices and Printers<br>
+TH8 is under Multimedia Devices > right-clock icon and<br>
+select Game Controller Settings > Properties to test input<br>
+<br>
+When G29 USB is connected without running Logitech Gaming Software (LGS),<br>
+G29 is under Unspecified in Windows Devices control panel
+
+<ul>
+<li><a href="https://support.logi.com/hc/en-my/articles/360023349533-Program-buttons-on-the-G29-and-G920-racing-wheels-with-Logitech-Gaming-Software">Logitech
+Gaming Software (LGS) G29 button mapping</a>
+<li>LGS includes a <a href="https://support.logi.com/hc/en-my/articles/360023181494">G29 AC button profile</a>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1958400217">G29 wheel LUTs</a><br>
+<li>Alternatively,
+<a href="https://www.racedepartment.com/downloads/rasmusps-lut-guide-for-g27-29-and-dfgt.16799/">RasmusP's LUT Guide for G27/29</a>
+refers to Logitech Profiler,<br> which seemingly is replaced by <code>LGS</code>,<br>
+which seems worthwhile for G29 mainly to set rotation degrees and
+<a href="https://www.softwarert.com/change-sensitivity-clutch-brake-accelerator-logitech-g29/">'sensitivity'</a>.<br>
+Not sure what is meant by <a href="https://www.softwarert.com/change-sensitivity-clutch-brake-accelerator-logitech-g29/">sensitivity</a>,
+except nominal clutch engagement point.<br>
+for which a shortcut was added to <code>Desktop\more\Sim\</code>
+<li><a href="https://www.youtube.com/watch?v=iZMxHrFoUwg">Mauro Ciacchi</a> Logitech G29 force feedback settings tutorial for Assetto Corsa and Content Manager<br>
+ Updated May 2020 (no cc) 3:53
+<li>Checking buttons, pedals and wheels wants <code>joy.cpl</code>,<br>
+for which a shortcut was added to <code>Desktop\more\Sim\</code><br>
+<li>Map G29 buttons to AC keystrokes: <a href="https://github.com/AntiMicro/antimicro">antimicro</a><br>
+"you can unlock the D pad and assign any other action<br>
+with Content Manager/Install Custom Shaders Patch<br>
+... then check 'Stop AC from using POV in Pit App'<br>
+under Custom Shaders Patch/General Settings..."<br>
+You will thereafter need to assign the look left/right etc under the controls section...
+
+</ul>
+Completely lost control of wheel, pedals and shifter;<br>
+AC "Start Configuration Wizard" greyed out:<br>
+<a href="https://steamcommunity.com/app/244210/discussions/0/135514649161570875/">
+"Problem solved. In Steam Big Picture controller settings, generic controller support was checked. "</a><br>
+<br>
+After installing figure 8 track mod and switching E30M3 to it, lost TH8A manual shifting..?<br>
+Automatic shift is hidden in Content Manager under "Tire Blanker" on "Drive" page<br>
+Thanks to <a href="https://steamcommunity.com/app/244210/discussions/0/1780514838720506804/">Phil Mabole</a> for that tip.<br>
+<br>
+Two G29 wheel issues:<br>
+1) small diameter<br>
+ &nbsp - probably reasonable for single seater racers...<br>
+&nbsp - $25 320mm eBay wheel rotational inertia would likely overwhelm its motors<br>
+2) weird feedback, occasional cogging, arbitrary excessive resistance,<br>
+&nbsp goes 'molasses' and unresponsive when cornering limits exceeded.</details>
+
+<dd><a href="steering.htm">Other GT sim rims for VR</a>
+<dd><a href="DDclamp.htm#Q1r">Q1R steering wheel quick release</a>
+</details>
+
+<dd><details><summary><font color=#007700><b>wheel stand</b></font></summary>
+<dd><a name=wheelstand>Clamping G29 wheel to computer cart compromises computing</a>;<br>
+ pivoting desk chair to wheel stand makes more sense.<br>
+Harbor Freight clamping work bench:<br>
+<img width=640 src="image/Workbench.jpg"><br clear=all>
+ ...can be repurposed as a wheel stand.<br>
+Ratchet strap secures desk chair to improvised wheel stand. &nbsp
+<img align=center src="image/ratchet.png"><br clear=all>
+<br>
+5/4 yellow pine scraps salvaged from beach house rennovation clamped to work bench legs<br>
+ mount G29 wheelbase and TH8A shifter;<br>
+<img src="image/sidestand.jpg"><br clear=all>
+fan and Odyssey+ HMD perch on top: &nbsp
+<img align=center src="image/wheelstand.jpg"><br clear=all><br>
+Repurposed Adcom ACE-515 distributes power to sim equipment,<br>
+including amplifiers for <a href="PuckSeat.htm#shakeseat">ShakeSeat cushion</a> controlled by
+<a href="https://github.com/SHWotever/SimHub/wiki/Shake-It-for-bass-shakers">SimHub</a>.<br>
+<a href="#TH8A">TH8A shifter plate</a> is rotated slightly ccw to reduce missed shifts.<br><br></details>
+
+<dd><a name=EXT><a href="https://www.racedepartment.com/threads/any-other-interest-in-diy-t-slot-extrusion-8020-wheel-stands.204332/">converted to extrusions</a></a> for <a href="#DD">AccuForce</a>:<br>
+<img align=left width=95% src="image/extruded.jpg"><br clear=all>
+
+
 <dt><br><font color=#007700><b>tactile feedback</b></font>
 <a name=haptic>
 <dd></a><font color=#007700><b>haptic transducers AKA exciters or shakers</b></font><ul>
@@ -745,6 +957,7 @@ then to <a href="https://github.com/blekenbleu/MIDIio">vJoy virtual switches</a>
 <a name=SRS>
 <li><a href=PuckSeat.htm#shakeseat><b>SRS ShakeSeat</b></a> &nbsp &nbsp <a href="PuckSeat.htm#pad">padding</a>
 <li><i>4 years later</i>:&nbsp <a href=PuckSeat.htm>ShakeSeat cushion -&gt <b>PuckSeat</b></a> modifications
+
 <li><details> <summary> <b><a href="https://www.simhubdash.com/download-2/">SimHub</a> ShakeIt Bass Shakers</b> </summary>
 <a name=ShakeIt>(confusingly,</a> one less K than
 <a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">SRS
@@ -1031,210 +1244,6 @@ After fiddling with Sim Commander 4 SimVibe
 SimHub <a href="#ShakeIt">ShakeIt Bass Shakers</a> is a better choice for me..<br>
 </details>
 </ul>
-
-<dt><br><details><summary><font color=#007700><b>wheel base (AccuForce DIY model no longer available)</b></font></summary>
-<a name=DD>
-Sim driving by VR HMD without video passthru means not seeing physical controls</a>,<br>
-unless video capture of controls is reinserted in 3D view,<br>
-without which controls on steering wheel are IMO useless, simplifying direct drive options.<br>
-<a href="https://www.simxperience.com/en-us/products/accessories/accuforcesteering.aspx">AccuForce</a> has a good reputation, with $599
-<a href="https://simxperience.azurewebsites.net/en-us/products/accessories/accuforcesteering/accuforcewheeldiykit.aspx">DIY details here</a><br>
-and Assetto Corsa force feedback tuning <a href="https://www.racedepartment.com/threads/ffb-vibration-noise-in-direct-drive-accuforce-wheels.168730">here</a>,<br>
-where consensus seems to be programming Device (Accuforce controller) settings,<br>
-then NOT running Sim Commander, just tuning in AC:<br>
-<a href="https://selah.ca/secrets-of-the-simxperience-accuforce-pro/#Force_Feedback_Settings">Secrets of the SimXperience AccuForce Pro</a><br>
-Accuforce <a href="https://www.orientalmotor.com/stepper-motors/technology/hybrid-stepper-motors-v-hybrid-control.html">Hybrid Stepper Motor</a>: &nbsp
-<img align=center src="https://www.orientalmotor.com/images/stepper-motors/hybrid-stepper-motor-rotor.jpg"><br clear=all>
-
-DIY non-standard 14mm shaft (shared with <a href="http://www.gerit.it/pdf/Servomotori_Lenze_MCS_en.pdf">Lenze MCS 09</a>)
-
-<img align=center width=95% src="https://www.simxperience.com/web/image/product.product/727/image_1024/AccuForce%20DIY%20Simulation%20Steering%20Kit?unique=8789346">
-<br clear=all><br>
-
-Similarly priced Simagic M10 also used hybrid stepper motor<br>
-with better signal connection design,
-but is no longer available from <a href="https://us.sim-motion.com/collections/simagic-alpha">authorized U.S. source</a>,<br>
-having been replaced by also compact <a href="https://shop.simagic.com/products/alpha-mini">Alpha Mini</a>.<br><br>
-
-70mm steering wheel adapter @ $27 from
-<a href="https://www.ascher-racing.com/shop/clamping-set/">Ascher Racing</a> is no longer available.<br>
-Installation: &nbsp
-<iframe align=center width="640" height="480" src="https://www.youtube.com/embed/Sk_NCV-8R5w"></iframe><br><br>
-
-<!-- Motor dimensions are <a href="https://www.simxperience.com/Portals/0/Files/AccuForce/DIY_SimXperience_Motor.PDF">in this PDF diagram</a>.<br> -->
-14mm diameter shaft extends 55.4mm from motor case,<br>
- which has 69.5mm center square spacing of mounting holes (6mm??)<br>
-AccuForce DIY motor appears to be NEMA 34:<br>
-<img align=center src="https://www.ato.com/Content/Images/uploaded/nema-34-stepper-motor-dimension.jpg"><br clear=all>
-.. for which <a href="https://www.amazon.com/dp/B079R8W1BH">$10 brackets are available</a>: &nbsp
-<img align=center src="https://images-na.ssl-images-amazon.com/images/I/41XuxzH4sWL._AC_.jpg"><br clear=all>
-With DIY model no longer available, consider instead
-<a href="https://www.simxperience.com/shop/accuforce-your-way-v2-steering-system-869#attr=12,8,10">Your Way</a>,<br>
- which includes a 14mm-to-70mm PCD hub, then remove its bulky case.<br>
-<img width=95% src="https://www.simxperience.com/web/image/product.product/898/image_1024/AccuForce%20Your%20Way%20V2%20Steering%20System%20%28None%2C%20None%2C%20None%29?unique=fe26a1f"><br clear=all>
-<br>
-<a name=OG14><h5>Doomed first attempted 14mm wheel adapter</h5></a>
-
-<table><tr>
-<td width=50%>
-<a href="https://www.amazon.com/gp/product/B07MNT9VXW/">14mm flange</a> and <a href="https://www.amazon.com/gp/product/B07YLMNGNG">70mm hub adapter</a><br>
-from Amazon for less than $25,<br> along with cheap but doomed
-<a href="https://www.amazon.com/gp/product/B07GWGGF8V">MASO</a> quick release,<br>
-which fit 320mm steering wheel with lower profile than overall superior <a href=DDclamp.htm#Q1r>Q1r</a>:<br><br>
-
-Improvised an undersize blue set screw,<br>
-drilled hub adapter for 14mm flange<br> and assembled:<br>
- &nbsp <img src="image/OG14.jpg"><br clear=all>
-Enlarged 6 MASO holes for 70mm hub screws.
-</td><td width=50%><img width=100% src="image/QR320mm.jpg"></td>
-</tr></table><br>
-
-MASO quick releases initially <i>seemed</i> OK;<br>  Sim Racing Garage liked one adapted for Thrustmaster:<br>
-<iframe width="640" height="480" src="https://www.youtube.com/embed/9ZNrmjJzFd4"></iframe>
-<br> .. but elastomer buttons eventually compress and rattle.</details>
-<dd><a href="#OG14">Original 14mm wheel adapter</a> (doomed)
-<dd><a href="DDclamp.htm">DIY DD steering shaft clamp</a> and <a href=DDclamp.htm#Q1r>Q1r quick release</a>
-
-<dt><br><details><summary><font color=#007700><b>wheels</b></font></summary>
-<dd>320mm round:&nbsp; <img align=top src="image/QR320mm.jpg">
-<p>375mm wood:&nbsp;
-<iframe align=top width="480" height="480" src="https://www.youtube.com/embed/VYwewSeIUG0"></iframe></p>
-
-<dd><a href="steering.htm#GT300"><b>Conspit 300 GT</b></a>
-<dd><a href="steering.htm#F-PRO"><b>Cube Controls F-PRO</b></a>
-<dd><details><summary> Logitech G29 </summary>
-<a name=G29>Refurbished Logitech G29 <i>arrived April 2018</i><br></a>
-seemingly unblemished with original contents and dividers in unoriginal plain brown box.<br>
-Single sheet of instructions (one side) of inaccurate diagrams<br>
-and URL: www.logitech.com/support/g29<br>
-.. wildly contrasts to TH8A book (8 pages x 18 languages).<br>
-Actual URL:<br>
-http://support.logitech.com/en_us/product/g29-driving-force<br>
-<br>
-Downloaded &amp Installed seemingly generic gaming software,<br>
-which launched and added itself to Taskbar notifications after reboot.<br>
-Launching it was completely uninformative and confusing until after plugging in G29;<br>
-before that it seemed to assume there was some backlit keyboard...<br>
-Firmware 89.0.25 is up to date.<br>
-Set Assetto Corsa profile to be default but not persistent (application can change).<br>
-<br>
-NOT in instructions:<br>
-"You must select your gaming platform before you connect<br>
-the G29 racing wheel to PlayStation 4, PlayStation 3, or PC.<br>
-PC: Set the mode switch to PS4.<br>
-NOTE: You must install Logitech Gaming Software (LGS) 8.70 or later<br>
-on the PC for full functionality. Once you've installed LGS,<br>
-all buttons and accessories will function in the games that support them."<ul>
-<li> Logitech's Gaming Software (LGS) nowhere admits its version,<br>
-but filename includes it: <code>LGS_8.98.234X64_Logitech.exe</code><br>
-<li> Undocumented icon for Overwolf, which evidently 
-<a href="https://www.overwolf.com/about-overwolf/">defies explanation</a><br>
-<li> <a href="https://www.logitech.com/assets/51813/3/lgs-guide.pdf">LGS documentation</a>
-avoids device-specific information;<br>
-ends up being mostly useless..
-</ul>
-<a href="https://www.racedepartment.com/threads/logitech-g29-setup.140831/">
-Relevant (but inconsistent) G29 discussion for Assetto Corsa</a><br>
-<br>
-<br>
-Bottom line:<br>
-Settings icon has Profile tab (which I set to default Assetto Corsa),<br>
-G29 tab (which I allowed Game to adjust force settings),<br>
-<br>
-<a href="https://support.logi.com/hc/en-gb/articles/360023349273-Adjust-sensitivity-on-the-G29-and-G920-racing-wheels-with-Logitech-Gaming-Software">
-Must double-click relevant control in Profile tab</a><br>
-<br>
-<a href="https://support.logi.com/hc/en-us/articles/360023349553-Create-and-edit-racing-wheel-profiles-using-Logitech-Gaming-Software">
-Create/edit/delete G29 profiles</a><br>
-<br>
-Someone consolidated Logitech LGS &amp G29 info
-<a href="https://images-na.ssl-images-amazon.com/images/I/B1wg1noyQ7S.pdf">in one PDF</a><br>
-<br>
-Video:&nbsp <a href="https://www.youtube.com/watch?time_continue=2&v=vPyAs2UBEXc">
-Assetto Corsa G29 steering configuration</a><br>
-Advanced: Gain 100, Filter 0, min Force 20, Kerb 12, Road 35,<br>
-Slip 13, Gamma 1.00 Filter 0.00 Speed Sens 0.00, Brake Gamma 2.40<br>
-Enhanced Understeer &amp Combine checked; Half FFB unchecked.<br>
-<br>
-*** G29 completely not detected by Assetto Corsa<br>
-Run <code>joy.cpl</code><br>
-Game Controllers Advanced - Select the device you want to use with older programs<br>
-G29 dominates; TH8 works when G29 is unplugged<br>
-<br>
-Typically get to <code>joy.cpl</code> on Windows 10 by <i>old</i> Control Panel<br>
-(Not Windows Settings) > Hardware and Sound > Devices and Printers<br>
-TH8 is under Multimedia Devices > right-clock icon and<br>
-select Game Controller Settings > Properties to test input<br>
-<br>
-When G29 USB is connected without running Logitech Gaming Software (LGS),<br>
-G29 is under Unspecified in Windows Devices control panel
-
-<ul>
-<li><a href="https://support.logi.com/hc/en-my/articles/360023349533-Program-buttons-on-the-G29-and-G920-racing-wheels-with-Logitech-Gaming-Software">Logitech
-Gaming Software (LGS) G29 button mapping</a>
-<li>LGS includes a <a href="https://support.logi.com/hc/en-my/articles/360023181494">G29 AC button profile</a>
-<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1958400217">G29 wheel LUTs</a><br>
-<li>Alternatively,
-<a href="https://www.racedepartment.com/downloads/rasmusps-lut-guide-for-g27-29-and-dfgt.16799/">RasmusP's LUT Guide for G27/29</a>
-refers to Logitech Profiler,<br> which seemingly is replaced by <code>LGS</code>,<br>
-which seems worthwhile for G29 mainly to set rotation degrees and
-<a href="https://www.softwarert.com/change-sensitivity-clutch-brake-accelerator-logitech-g29/">'sensitivity'</a>.<br>
-Not sure what is meant by <a href="https://www.softwarert.com/change-sensitivity-clutch-brake-accelerator-logitech-g29/">sensitivity</a>,
-except nominal clutch engagement point.<br>
-for which a shortcut was added to <code>Desktop\more\Sim\</code>
-<li><a href="https://www.youtube.com/watch?v=iZMxHrFoUwg">Mauro Ciacchi</a> Logitech G29 force feedback settings tutorial for Assetto Corsa and Content Manager<br>
- Updated May 2020 (no cc) 3:53
-<li>Checking buttons, pedals and wheels wants <code>joy.cpl</code>,<br>
-for which a shortcut was added to <code>Desktop\more\Sim\</code><br>
-<li>Map G29 buttons to AC keystrokes: <a href="https://github.com/AntiMicro/antimicro">antimicro</a><br>
-"you can unlock the D pad and assign any other action<br>
-with Content Manager/Install Custom Shaders Patch<br>
-... then check 'Stop AC from using POV in Pit App'<br>
-under Custom Shaders Patch/General Settings..."<br>
-You will thereafter need to assign the look left/right etc under the controls section...
-
-</ul>
-Completely lost control of wheel, pedals and shifter;<br>
-AC "Start Configuration Wizard" greyed out:<br>
-<a href="https://steamcommunity.com/app/244210/discussions/0/135514649161570875/">
-"Problem solved. In Steam Big Picture controller settings, generic controller support was checked. "</a><br>
-<br>
-After installing figure 8 track mod and switching E30M3 to it, lost TH8A manual shifting..?<br>
-Automatic shift is hidden in Content Manager under "Tire Blanker" on "Drive" page<br>
-Thanks to <a href="https://steamcommunity.com/app/244210/discussions/0/1780514838720506804/">Phil Mabole</a> for that tip.<br>
-<br>
-Two G29 wheel issues:<br>
-1) small diameter<br>
- &nbsp - probably reasonable for single seater racers...<br>
-&nbsp - $25 320mm eBay wheel rotational inertia would likely overwhelm its motors<br>
-2) weird feedback, occasional cogging, arbitrary excessive resistance,<br>
-&nbsp goes 'molasses' and unresponsive when cornering limits exceeded.</details>
-
-<dd><a href="steering.htm">Other GT sim rims for VR</a>
-<dd><a href="DDclamp.htm#Q1r">Q1R steering wheel quick release</a>
-</details>
-
-<dt><br><details><summary><font color=#007700><b>wheel stand</b></font></summary>
-<dd><a name=wheelstand>Clamping G29 wheel to computer cart compromises computing</a>;<br>
- pivoting desk chair to wheel stand makes more sense.<br>
-Harbor Freight clamping work bench:<br>
-<img width=640 src="image/Workbench.jpg"><br clear=all>
- ...can be repurposed as a wheel stand.<br>
-Ratchet strap secures desk chair to improvised wheel stand. &nbsp
-<img align=center src="image/ratchet.png"><br clear=all>
-<br>
-5/4 yellow pine scraps salvaged from beach house rennovation clamped to work bench legs<br>
- mount G29 wheelbase and TH8A shifter;<br>
-<img src="image/sidestand.jpg"><br clear=all>
-fan and Odyssey+ HMD perch on top: &nbsp
-<img align=center src="image/wheelstand.jpg"><br clear=all><br>
-Repurposed Adcom ACE-515 distributes power to sim equipment,<br>
-including amplifiers for <a href="PuckSeat.htm#shakeseat">ShakeSeat cushion</a> controlled by
-<a href="https://github.com/SHWotever/SimHub/wiki/Shake-It-for-bass-shakers">SimHub</a>.<br>
-<a href="#TH8A">TH8A shifter plate</a> is rotated slightly ccw to reduce missed shifts.<br><br></details>
-
-<dd><a name=EXT><a href="https://www.racedepartment.com/threads/any-other-interest-in-diy-t-slot-extrusion-8020-wheel-stands.204332/">converted to extrusions</a></a> for <a href="#DD">AccuForce</a>:<br>
-<img align=left width=95% src="image/extruded.jpg"><br clear=all>
 
 <dt><br><details><summary><font color=#007700><b>Windows 10/11 sound</b></font></summary>
 <a name=R7>My Aurora R7</a> has 7.1 channel audio available on the motherboard.<br>
