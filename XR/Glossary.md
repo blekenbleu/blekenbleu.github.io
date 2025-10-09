@@ -149,8 +149,9 @@
 [RCHeliguy](https://www.youtube.com/@markkovalcson7243/videos) Mark Kovalcson  
 [Reflex 2](https://www.nvidia.com/en-us/geforce/news/reflex-2-even-lower-latency-gameplay-with-frame-warp/) - NVIDIA:&nbsp; updating camera perspective as late as possible.  
 [rendering](https://gfxcourses.stanford.edu/cs248/winter21content/media/vr/12_vr_sm.pdf) generating (binocular) image samples  
-reprojection - alternative to [Timewarp, SpaceWarp, and motion smoothing](https://www.uploadvr.com/reprojection-explained/) or frame generation,  
+reprojection - alternative to [Timewarp, SpaceWarp, motion smoothing](https://www.uploadvr.com/reprojection-explained/) or frame generation,  
  &emsp; often associated with Windows Mixed Reality  
+[ReShade](https://github.com/crosire/reshade) post-processing injector - **incompatible with Somnium VR1 eye tracking**  
 [ROV Test FOV & Resolution](https://steamcommunity.com/sharedfiles/filedetails/?id=1359389601) Snellen text legibility, glare, FoV, distortions
 	 AKA [**testhmd**](https://knob2001.itch.io/testhmd)  
 [RSF](https://www.rallysimfans.hu/rbr/downloads/dokumentum/RBR_instructions_2024.pdf) RallySimFans version of Richard Burns Rally (RBR)  
