@@ -38,7 +38,122 @@ Sorting which drive is/was actually C: is not trivial.
 <tr><td>6</td><td>empty</td></tr>
 <tr><td>USB-C</td><td>empty</td></tr>
 <tr><td>7</td><td>microscope<br>tp-link hub</td></tr>
-</table></tr></table>
+</table></tr></table><hr>
+
+<h4>3 hard drives</h4>
+CrystalDiskInfo requires <code>Function > Rescan</code> to see new drive
+<ul>
+<li>Samsung 2.5 SATA SSD 860 EVO 1TB
+<br><img src=image/SamsungSATA860EVO1TB.png>
+<li>WDC WD10EZEX-75WN4A0 : 1000.2 GB
+<br><img src=image/WD10EZEX1TB.png>
+<br><i>power was unplugged??</i>
+<pre>total 906028
+drwxr-xr-x 1 bleke None         0 Oct  9 10:11 '$RECYCLE.BIN'
+drwxr-xr-x 1 bleke None         0 Feb  2  2021  Backupper
+drwxr-xr-x 1 bleke None         0 Aug 22 10:26  Config.Msi
+-rw-r--r-- 1 bleke None 926120918 Jul  8  2024  Ender-3V3SE.zip
+drwxr-xr-x 1 bleke None         0 Oct 26  2018  GitHub
+drwxr-xr-x 1 bleke None         0 Dec  3  2021  JS
+drwxr-xr-x 1 bleke None         0 Aug 22 10:26  NodeJS
+drwxr-xr-x 1 bleke None         0 Sep  5  2019 'Program Files'
+drwxr-xr-x 1 bleke None         0 May 31  2018  Recovery
+drwxr-xr-x 1 bleke None         0 Apr 12  2022  Ruby27-x64
+drwxr-xr-x 1 bleke None         0 Oct  6 09:33 'System Volume Information'
+drwxr-xr-x 1 bleke None         0 Apr 19  2024  WUDownloadCache
+drwxr-xr-x 1 bleke None         0 Apr 19  2024  WindowsApps
+drwxr-xr-x 1 bleke None         0 Jun  1  2018  WpSystem
+drwxr-xr-x 1 bleke None         0 Aug 22 11:05  backup
+-rw-r--r-- 1 bleke None   1618693 Jul  8  2024  microSDHC.7z
+drwxr-xr-x 1 bleke None         0 Feb 19  2023  msys64
+drwxr-xr-x 1 bleke None         0 Jun  9  2023  my
+drwxr-xr-x 1 bleke None         0 Aug 22 10:55  packages
+</pre>
+<li>NVMe drive (probably C:)
+<br><img src=image/NVMeSKhynix256GB.png>
+<br>While CrystalDiskInfo reported <b>Good</b> health,
+<br>(but note <code>Media and Data Integrity Errors</code>)
+<br> <code>chkdsk</code> found plenty wrong.
+<details><summary>details</summary>
+<pre> Volume in drive J is OS
+ Volume Serial Number is 70F2-F259
+
+               1 File(s)            354 bytes
+              13 Dir(s)  103,660,883,968 bytes free
+$ ls -l /j
+total 2506881
+drwxr-xr-x 1 bleke None          0 Jan 25  2020 '$Recycle.Bin'
+drwxr-xr-x 1 bleke None          0 Feb 19  2022 '$WINDOWS.~BT'
+drwxr-xr-x 1 bleke None          0 Jul 10  2024 '$WinREAgent'
+drwxr-xr-x 1 bleke None          0 Jun 10  2023 '$Windows.~WS'
+drwxr-xr-x 1 bleke None          0 May 25  2018  Apps
+drwxr-xr-x 1 bleke None          0 Mar 29  2021  Dell
+lrwxrwxrwx 1 bleke None          8 May 31  2018 'Documents and Settings' -> /c/Users
+-rw-r--r-- 1 bleke None       8192 Aug 26  2023  DumpStack.log
+-rw-r--r-- 1 bleke None       8192 Oct  6 12:37  DumpStack.log.tmp
+drwxr-xr-x 1 bleke None          0 Jun 10  2023  ESD
+drwxr-xr-x 1 bleke None          0 Oct  6 12:37  Intel
+drwxr-xr-x 1 bleke None          0 Dec  7  2019  PerfLogs
+drwxr-xr-x 1 bleke None          0 Jul  8  2024 'Program Files'
+drwxr-xr-x 1 bleke None          0 Oct  6 09:36 'Program Files (x86)'
+drwxr-xr-x 1 bleke None          0 Jul  8  2024  ProgramData
+drwxr-xr-x 1 bleke None          0 Jul 15  2023  Recovery
+-rw-r--r-- 1 bleke None       1024 Jun 11  2023  SYSTAG.BIN
+drwxr-xr-x 1 bleke None          0 Oct 23  2023 'System Repair'
+drwxr-xr-x 1 bleke None          0 Oct  6 09:42 'System Volume Information'
+drwxr-xr-x 1 bleke None          0 May 17  2021  Users
+drwxr-xr-x 1 bleke None          0 Dec 31  2018  WCH.CN
+drwxr-xr-x 1 bleke None          0 Aug 22 09:37  Windows
+-rw-r--r-- 1 bleke None        354 Mar  5  2022  am_pe_log.txt
+drwxr-xr-x 1 bleke None          0 Aug 21 18:43  inetpub
+-r--r--r-- 1 bleke None      24983 May 25  2018  mfg.sdr
+-rw-r--r-- 1 bleke None 2550136832 Oct  6 12:37  pagefile.sys
+-rw-r--r-- 1 bleke None   16777216 Oct  6 12:37  swapfile.sys
+drwxr-xr-x 1 bleke None          0 Feb 22  2022  temp
+</pre><pre>
+
+</pre><pre>
+C:\Windows\System32>chkdsk J:
+The type of the file system is NTFS.
+The shadow copy provider had an error. Check the System and Application event logs for more information.
+
+Volume label is OS.
+
+WARNING!  /F parameter not specified.
+Running CHKDSK in read-only mode.
+
+Stage 1: Examining basic file system structure ...
+Deleted corrupt attribute list entry
+with type code A0 in file 9.
+Attribute record (A0, $SII) from file record segment 9
+is corrupt.
+Attribute record (80, "") from file record segment 14B
+is corrupt.
+Attribute record (80, "") from file record segment 680A
+is corrupt.
+Attribute record (80, "") from file record segment 9BFF
+is corrupt.
+Attribute record (80, "") from file record segment E71D
+is corrupt.
+Attribute record (80, "") from file record segment 17436
+is corrupt.
+Deleted corrupt attribute list entry
+with type code 80 in file 45435.
+Attribute record (80, "") from file record segment 6326
+is corrupt.
+  1173504 file records processed.
+File verification completed.
+ Phase duration (File record verification): 5.88 seconds.
+File record segment 6326 is an orphan.
+  12986 large file records processed.
+ Phase duration (Orphan file record recovery): 4.68 milliseconds.
+
+Errors found.  CHKDSK cannot continue in read-only mode.</pre>
+</details>
+<br>Since Antec was using nothing on that drive, exitted CrystalDiskInfo and ran <code>chkdsk /x /r</code>
+<br>... which eventually hung:<pre>Stage 5: Looking for bad, free clusters ...
+Progress: 1796293 of 25333346 done; Stage:  7%; Total: 60%; ETA:   0:07:29</pre>
+</ul>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
