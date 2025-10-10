@@ -47,7 +47,8 @@ CrystalDiskInfo requires <code>Function > Rescan</code> to see new drive
 <br><img src=image/SamsungSATA860EVO1TB.png>
 <li>WDC WD10EZEX-75WN4A0 : 1000.2 GB
 <br><img src=image/WD10EZEX1TB.png>
-<br><i>power was unplugged??</i>
+<br><b><i>power was unplugged</i></b>
+<details><summary><code>ls -lt</code></summary>
 <pre>total 906028
 drwxr-xr-x 1 bleke None         0 Oct  9 10:11 '$RECYCLE.BIN'
 drwxr-xr-x 1 bleke None         0 Feb  2  2021  Backupper
@@ -68,7 +69,7 @@ drwxr-xr-x 1 bleke None         0 Aug 22 11:05  backup
 drwxr-xr-x 1 bleke None         0 Feb 19  2023  msys64
 drwxr-xr-x 1 bleke None         0 Jun  9  2023  my
 drwxr-xr-x 1 bleke None         0 Aug 22 10:55  packages
-</pre>
+</pre></details>
 <li>NVMe drive (probably C:)
 <br><img src=image/NVMeSKhynix256GB.png>
 <br>While CrystalDiskInfo reported <b>Good</b> health,
@@ -153,6 +154,45 @@ Errors found.  CHKDSK cannot continue in read-only mode.</pre>
 <br>Since Antec was using nothing on that drive, exitted CrystalDiskInfo and ran <code>chkdsk /x /r</code>
 <br>... which eventually hung:<pre>Stage 5: Looking for bad, free clusters ...
 Progress: 1796293 of 25333346 done; Stage:  7%; Total: 60%; ETA:   0:07:29</pre>
+<li>1TB NVMe on PCIe card
+<br><img src=image/CT1000P1SSD8.png>
+<br><code>chkdsk</code> <i>found no problems</i>
+<details><summary><code>ls -lt</code></summary><pre>total 3273
+drwxr-xr-x 1 bleke None       0 Oct 10 08:00 '$RECYCLE.BIN'
+drwxr-xr-x 1 bleke None       0 Oct  6 09:33 'System Volume Information'
+drwxr-xr-x 1 bleke None       0 Aug 21 19:07  VSCode
+drwxr-xr-x 1 bleke None       0 Jun  6  2021  VScommunity
+drwxr-xr-x 1 bleke None       0 Jun  6  2021  c903786baaf790151540
+drwxr-xr-x 1 bleke None       0 Jun  6  2021  cdb6fe5fe2011f678dbbce8adc7a
+drwxr-xr-x 1 bleke None       0 Feb 14  2020 'Windows Kits'
+drwxr-xr-x 1 bleke None       0 Feb 14  2020  VS
+-rw-r--r-- 1 bleke None  232960 Dec 16  2019  VC_RED.MSI
+-rw-r--r-- 1 bleke None 1442522 Dec 16  2019  VC_RED.cab
+-rw-r--r-- 1 bleke None   17734 Dec 16  2019  eula.1028.txt
+-rw-r--r-- 1 bleke None   17734 Dec 16  2019  eula.1031.txt
+-rw-r--r-- 1 bleke None   10134 Dec 16  2019  eula.1033.txt
+-rw-r--r-- 1 bleke None   17734 Dec 16  2019  eula.1036.txt
+-rw-r--r-- 1 bleke None   17734 Dec 16  2019  eula.1040.txt
+-rw-r--r-- 1 bleke None     118 Dec 16  2019  eula.1041.txt
+-rw-r--r-- 1 bleke None   17734 Dec 16  2019  eula.1042.txt
+-rw-r--r-- 1 bleke None   17734 Dec 16  2019  eula.2052.txt
+-rw-r--r-- 1 bleke None   17734 Dec 16  2019  eula.3082.txt
+-rwxr-xr-x 1 bleke None   93200 Apr 11  2008  install.res.1049.dll
+-rw-r--r-- 1 bleke None   10134 Apr 11  2008  eula.1049.txt
+-rw-r--r-- 1 bleke None    1110 Apr 11  2008  globdata.ini
+-rw-r--r-- 1 bleke None     843 Apr 11  2008  install.ini
+-rw-r--r-- 1 bleke None    5686 Apr 11  2008  vcredist.bmp
+-rwxr-xr-x 1 bleke None  562688 Apr 11  2008  install.exe
+-rwxr-xr-x 1 bleke None   76304 Apr 11  2008  install.res.1028.dll
+-rwxr-xr-x 1 bleke None   96272 Apr 11  2008  install.res.1031.dll
+-rwxr-xr-x 1 bleke None   91152 Apr 11  2008  install.res.1033.dll
+-rwxr-xr-x 1 bleke None   97296 Apr 11  2008  install.res.1036.dll
+-rwxr-xr-x 1 bleke None   95248 Apr 11  2008  install.res.1040.dll
+-rwxr-xr-x 1 bleke None   81424 Apr 11  2008  install.res.1041.dll
+-rwxr-xr-x 1 bleke None   79888 Apr 11  2008  install.res.1042.dll
+-rwxr-xr-x 1 bleke None   75792 Apr 11  2008  install.res.2052.dll
+-rwxr-xr-x 1 bleke None   96272 Apr 11  2008  install.res.3082.dll
+</details>
 </ul>
 
 </td></tr><tr><td align=center>
