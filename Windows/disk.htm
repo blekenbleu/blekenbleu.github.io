@@ -21,21 +21,30 @@
 
 <h3>Drive <font color=red>Data</font> Health from File Explorer</h3><ul>
 <li>In left column, click right mouse button a drive to check:
-<br><img src=image/FileExplorer.png>
-<br><img src=image/check.png>
-&nbsp; <img src=image/scanned.png>
-
+<br><img width=700 src=image/FileExplorer.png>
+<br><img align=top src=image/check.png>
+&nbsp; <img src=image/scanned.png></ul>
 
 <h2>Hard Disk wiping</h2>
 <p>Drive from unreliable Buffalo NAS<ul>
 <li>disk management - Create and format hard disk partitions
 <li><a href=https://www.thewindowsclub.com/how-to-dismount-a-volume-in-windows>a dismount volumes</a>
 <li>for that disk, remove partitions:
-<br><img src=image/partitions.png>
+<br><img width=700 src=image/partitions.png>
 <li>for that disk, remove volumes:
 <br><img src=image/volumes.png>
 <li>format as simple volume, uncheck fast format (takes awhile to wipe all data)
-<br>
+<br> - for this <i><b>defective</b></i> Seagate drive, <code>format</code> hung at 1%
+</ul>
+
+<h3>Seagate SeaTools</h3>
+<img  width=740 src=image/SeaTools.jpg><ul>
+<li><a href=https://www.seagate.com/content/dam/seagate/migrated-assets/www-content/support-content/downloads/seatools/_shared/downloads/100869623_B.pdf>manual</a>
+<li><a href=https://www.seagate.com/support/downloads/seatools/>download (scroll down)</a>
+<li>works for non-Seagate drives;&nbsp; worked badly with Buffalo NAS' defective drive;
+<br><b><i>I guess</i></b> that SeaTools must use Windows 11's "secure" disk access API,
+<br> &ensp; which is probably not robust against non-trivial drive errors...
+</ul>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>

@@ -21,7 +21,8 @@ table.my_table td { width:960px; background-color:#DDFFDD; }
 <h2>Alienware Aurora R7 no boot <i>8 Aug 2025</i></h2>
 Celebrating its 7th anniversary, the Aurora R7 stopped booting,<br>
 reporting bad C: drive.<br>
-Sorting which drive is/was actually C: is not trivial.
+Sorting which drive is/was actually C: was not trivial.<br>
+<a href=disk.htm>CrystalDiskInfo is insufficient for monitoring drive and data health</a>.
 
 <h4><a href=https://www.dell.com/community/en/categories/desktops>Dell desktop community</a></h4>
 <h3><a href=https://lindseyshoots.com/2024/08/02/how-to-enter-bios-on-alienware-aurora/>F2 for BIOS boot</a></h3>
@@ -45,10 +46,24 @@ CrystalDiskInfo requires <code>Function > Rescan</code> to see new drive
 <ul>
 <li>Samsung 2.5 SATA SSD 860 EVO 1TB
 <br><img src=image/SamsungSATA860EVO1TB.png>
+<br><code>chkdsk</code> found no problem
+<details><summary><code>ls -lt</code></summary>
+<pre>total 12
+drwxr-xr-x 1 bleke None 0 Oct  6 09:33 'System Volume Information'
+drwxr-xr-x 1 bleke None 0 Aug 22 11:02  my
+drwxr-xr-x 1 bleke None 0 Aug 22 09:19  MapData
+drwxr-xr-x 1 bleke None 0 Apr 19  2024  WindowsApps
+drwxr-xr-x 1 bleke None 0 Apr 19  2024  WUDownloadCache
+drwxr-xr-x 1 bleke None 0 Jan 15  2022  bleke
+drwxr-xr-x 1 bleke None 0 May 17  2021 '$RECYCLE.BIN'
+drwxr-xr-x 1 bleke None 0 Jan 25  2020  WpSystem
+drwxr-xr-x 1 bleke None 0 Sep  5  2019 'Program Files'
+drwxr-xr-x 1 bleke None 0 Oct  6  2018  EPSON
+drwxr-xr-x 1 bleke None 0 Jun  8  2018  DeliveryOptimization</pre></details>
+
 <li>WDC WD10EZEX-75WN4A0 : 1000.2 GB
 <br><img src=image/WD10EZEX1TB.png>
-<br><b><i>power was unplugged</i></b>;&nbsp; <cide>chkdsk</code> found no problem
-
+<br><b><i>power was unplugged</i></b>;&nbsp; <code>chkdsk</code> found no problem
 <details><summary><code>ls -lt</code></summary>
 <pre>total 906028
 drwxr-xr-x 1 bleke None         0 Oct  9 10:11 '$RECYCLE.BIN'
@@ -71,19 +86,11 @@ drwxr-xr-x 1 bleke None         0 Feb 19  2023  msys64
 drwxr-xr-x 1 bleke None         0 Jun  9  2023  my
 drwxr-xr-x 1 bleke None         0 Aug 22 10:55  packages
 </pre></details>
+
 <li>NVMe drive (probably C:)
 <br><img src=image/NVMeSKhynix256GB.png>
-<br>While CrystalDiskInfo reported <b>Good</b> health,
-<br>(but note <code>Media and Data Integrity Errors</code>)
-<br> <code>chkdsk</code> found plenty wrong.
-<details><summary>details</summary>
-<pre> Volume in drive J is OS
- Volume Serial Number is 70F2-F259
-
-               1 File(s)            354 bytes
-              13 Dir(s)  103,660,883,968 bytes free
-$ ls -l /j
-total 2506881
+<details><summary><code>ls -l</code></summary>
+<pre>total 2506881
 drwxr-xr-x 1 bleke None          0 Jan 25  2020 '$Recycle.Bin'
 drwxr-xr-x 1 bleke None          0 Feb 19  2022 '$WINDOWS.~BT'
 drwxr-xr-x 1 bleke None          0 Jul 10  2024 '$WinREAgent'
@@ -112,9 +119,17 @@ drwxr-xr-x 1 bleke None          0 Aug 21 18:43  inetpub
 -rw-r--r-- 1 bleke None 2550136832 Oct  6 12:37  pagefile.sys
 -rw-r--r-- 1 bleke None   16777216 Oct  6 12:37  swapfile.sys
 drwxr-xr-x 1 bleke None          0 Feb 22  2022  temp
-</pre><pre>
+</pre></details>
+While CrystalDiskInfo reported <b>Good</b> health
+	(but note <code>Media and Data Integrity Errors</code>),
+<br> &emsp; <code>chkdsk</code> found plenty wrong.
+<details><summary>details</summary>
+<pre> Volume in drive J is OS
+ Volume Serial Number is 70F2-F259
 
-</pre><pre>
+               1 File(s)            354 bytes
+              13 Dir(s)  103,660,883,968 bytes free
+
 C:\Windows\System32>chkdsk J:
 The type of the file system is NTFS.
 The shadow copy provider had an error. Check the System and Application event logs for more information.
@@ -152,7 +167,7 @@ File record segment 6326 is an orphan.
 
 Errors found.  CHKDSK cannot continue in read-only mode.</pre>
 </details>
-<br>Since Antec was using nothing on that drive, exitted CrystalDiskInfo and ran <code>chkdsk /x /r</code>
+<br>Since Antec was using nothing on that drive, exited CrystalDiskInfo and ran <code>chkdsk /x /r</code>
 <br>... which eventually hung:<pre>Stage 5: Looking for bad, free clusters ...
 Progress: 1796293 of 25333346 done; Stage:  7%; Total: 60%; ETA:   0:07:29</pre>
 <li>1TB NVMe on PCIe card
