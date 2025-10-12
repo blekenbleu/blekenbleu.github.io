@@ -1,5 +1,7 @@
 ---
 ---
+[*back*](../index.htm)  
+### [Dell Inspiron 13 7373 2-in-1 - NVMe SSD upgrade](Inspiron13.htm)  
 ## NVMe for 2013 - 2017 Windows PCs
 *updated 21 Feb 2022*
 

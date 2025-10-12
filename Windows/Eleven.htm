@@ -1,0 +1,47 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>Alienware Aurora R7 - Windows 11</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href=index.htm><i>back</i></a></font>
+<a href=https://www.gixen.com/index.php name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src=https://www.gixen.com/images/gixenlink.gif border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+
+<font size=+1>
+<h2><a href=R7.htm>Alienware Aurora R7</a> - Windows 11</h2>
+<p>After <a href=R7broke8Aug2025.htm>256GB Hynix SSD failure</a>:<ul>
+<li><a href=https://dl.dell.com/content/manual36556979-aurora-r7-setup-and-specifications.pdf?language=en-us>
+Aurora R7 User Guide (Setup and Specifications)</a>
+
+<li><a href=https://github.com/pbatard/rufus/releases/tag/v4.11>Download rufus-4.11p.exe from GitHub</a>
+<li><a href=https://www.microsoft.com/en-us/software-download/windows11>Download Win11_25H2_English_x64.iso</a>
+<li>In PowerShell, confirm ISO file hash value:
+<br><code>Get-FileHash Win11_25H2_English_x64.iso</code>
+<li>plug in 8GB USB thumb drive
+<li>run <code>rufus-4.11p.exe</code>
+<br><img src=image/Rufus.png>
+<li>In <code>START</code>, select all options
+<br><img src=image/WUE.png>
+<br> &emsp; <a href=https://hothardware.com/news/windows-11-25h2-rufus-update><i>"Windows CA 2023" explanation</i></a>
+<li><b>In BIOS (F2) disable <code>secure boot</code></b>
+<br><i>Rufus thumb drive is not secure enough for Dell BIOS</i>
+<br>Windows 11 install still prompts for e.g. US keyboard,<br> offers option to install on thumb drive..!!
+<li><b>In BIOS (F2). re-enable <code>secure boot</code></b>
+<li>Windows configuration customization is exhausting
+<br><a href=https://learn.microsoft.com/en-us/answers/questions/1349232/clone-everything-to-other-desktop-(-windows-11-)>
+	<i>using</i> <code>Sysprep</code> to prepare desktop image for cloning</i></a>...?
+</ul></p>
+
+<h3>Windows 11 tweaks</h3><ul>
+<li><a href=https://www.overtake.gg/news/comments/123482/>Empty DirectX Shader Cache</a>
+</ul>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
