@@ -140,7 +140,7 @@ Arduino 2 IDE (which adds debugging) [**is broken for me**](../static/Arduino2/i
   - [Buffalo LinkStation 210](../static/network/LinkStation.htm)  
   - [Sagemcom F@st 5260, FreshTomato and Linksys EA6500v2](../static/network/FreshTomato.htm)  
   - [Spectrum modem and router regressions](../static/network/Spectrum.htm)  
-  - [**Synology DiskStation DS920+**](../static/network/DS920.htm)  
+  - [**Synology DiskStation DS920 NAS+**](../static/network/DS920.htm)  
   - [**Synology Active Backup**](../static/network/ActiveBackup.htm)  
 - [Serial ports](../static/SerialPorts/index.htm)  
 - **[Sound and VoiceMeeter](Windows/WinAudio.htm), [VST hosts](Windows/VSThost.htm) and [VST3 plugins](Windows/steinberg/)**  
