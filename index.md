@@ -128,8 +128,9 @@ Arduino 2 IDE (which adds debugging) [**is broken for me**](../static/Arduino2/i
      - [Arduino **mi-360** Xbox360 controller emulation](Arduino/mi360)
 
 ## [Windows](Windows/)
-- [Alienware Aurora R7 crashing and overheating](Windows/R7.htm)  
+- [Alienware Aurora R7 crashing and overheating](Windows/R7.htm) - [Windows 11](Windows/Eleven.htm)
 - [**Antec Phantom VR build** &nbsp; i5-13600, Galax RTX 4090](Windows/PhantomVR.htm)  
+- [Gateway DX4870-UB318 i5-3330](Windows/Gateway.htm)
 - [HID game controllers and SimHub](Windows/HID/)  &nbsp; [Serial-Lab](Windows/SerialLab)
 - [MSYS2](Windows/MSYS2/)
 - [PC misguided buying - January 2022](Windows/PC)  

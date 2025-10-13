@@ -1,0 +1,172 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>Gateway DX4870-UB318</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href=index.htm><i>back</i></a></font>
+<a href=https://www.gixen.com/index.php name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src=https://www.gixen.com/images/gixenlink.gif border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+
+<font size=+1>
+<h2>Gateway DX4870-UB318</h2><ul>
+<li><a href=https://www.manualslib.com/manual/370411/Acer-Predator-G3620.html?page=22#manual><code>Delete</code> to enter CMOS setup during boot</a>
+<li><a href=https://www.manualslib.com/manual/370411/Acer-Predator-G3620.html?page=101#manual>motherboard</a> has one blue SATA Gen3 connector
+<br>and 5 black SATA Gen2 connectors
+<li>SSD migration;  GTX 650 Ti upgrade?
+<pre>
+Seagate tools cannot handle Sabrent USB3 SATA correctly -
+sees 4TB seagate drive as two
+1. SCSI-FC-SAS s/n 32118 with no model number
+2.  USB-1394 with Jmicron model number and no serial number
+
+Sabrent dock sucks on Windows with 4GB drives
+* partitions and formatting via eSATA are not recognized via Sabrent USB 3.0
+and vice versa.
+
+Windows 8.1 Device Manager sees it as Jmicron SCSI Disk Device
+Windows 8.1 sees 4 Recovery partitions on the internal 1TB ST31000524AS
+AOEMEI Partition Assistant labels only the first as Recovery,
+  but all 4 have the same flags (GPT, WRE=Windows Recovery Environment)
+  MSR=Microsoft Reserved partition
+
+In Windows 8.1, ran sfc /scannow
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>sfc /scannow
+
+Beginning system scan.  This process will take some time.
+
+Beginning verification phase of system scan.
+Verification 100% complete.
+
+Windows Resource Protection found corrupt files but was unable to fix some
+of them. Details are included in the CBS.Log windir\Logs\CBS\CBS.log. For
+example C:\Windows\Logs\CBS\CBS.log. Note that logging is currently not
+supported in offline servicing scenarios.
+
+C:\Windows\system32>
+----=---
+Ran System Maintenance Troubleshooting; "no changes or updates were necessary"
+https://answers.microsoft.com/en-us/windows/forum/windows_8-performance/hash-mismatch/08ef49a6-84e8-47ad-bd69-48b829d495c9
+
+Evidently sfc can generate false positives....
+
+AOMEI Backupper made a bad image backup of newgate's 1TB drive on 4TB Seagate
+but mounted the backup image partitions to explore as J:-R:
+J: appears to be the OEM restore partition (probably Windows 8)
+K:ESP\EFI still contains an ubuntu folder from 2014;
+    Boot and Microsoft folders both have 7/2017 content
+L: was the 4TB seagate
+M: is the Win 8.1 C: drive
+N: is a recovery partition from 8/2015 2015; directory contents not visible
+O: is NewWin10
+P is a recovery partition with 7/18/2017 folder timestamp
+Q has no Recovery folder; Sys Vol is dated 2/4/2015
+R is Gateway_20GB with VBoxShared folder from 9/25/2014 Hello from Mint
+
+AOMEI Backuppper updated to 4.04 still would not write to internal SATA DVD drive
+but will write to USB-attached Sony drive, although it hangs at the end.
+ Neither version 3 nor 4 could create bootable Dell 500MB flash,
+but succeeded on second try (fter Windows format) on SanDisk cruzer 4GB
+Gateway would not boot UEFI CD, did not recognized BIOS CD as bootable
+After failing UEFI CD boot (internal or Sony USB), Gateway will not boot hard drive
+until after recovery boot e.g. from Windows 10 install USB flash.
+
+Removed Steven\Videos folder from C: drive, freeing much space.
+Disk Cleanup pause for a long time for setup log files, system error logs, windows update cleanup.
+
+Could not reboot after deleting empty recovery partition; booted using Insider USB Flash
+
+AOMEI Backupper failed to restore Win 8.1 system to replacement SanDisk 500GB via Sabrent;
+succeeded via eSATA..  Rebooted, stopping in BIOS to change boot disk priority to eSATA SanDisk also succeeded in booting restored Win8.  Rebooting again and selecting Windows 10
+booted it from primary (but lower boot priority) 1TB drive.
+
+---=---
+
+Corsair CX430 (430 Watts) has two SATA power cables with 2 connectors each plus five 5-pin peripheral connectors:  http://www2.corsair.com/training/psu_cable_lengths.pdf
+
+Current processor i5-3330 3.0 gHz
+
+Acer Predator AG3620 uses the same IPIMB-AR motherboard
+https://www.manualslib.com/manual/370411/Acer-Predator-G3620.html?page=101#manual
+
+1 SATA III port + 5 SATA II ports
+1 USB3 +2 USB2 front panel ports
+
+wmic bios get smbiosbiosversion
+P11-A0
+
+Available update:  P11-B1
+
+ipimb-ar mainboard specs
+-----------------------------------
+Micro-ATX  Intel B75 Express chipset
+Intel Socket: LGA 1155. (95W max) (Ivy Bridge, Sandy Bridge)
+* Core i7 3770 (K), 2700, 2600 (K)
+* Core i5 3570 (K), 3450, 3330, 2500, 2400, 2300
+* Core i3 3240, 3225, 3220
+
+Integrated Graphics Intel HD
+4 x 240-pin DDR3 DIMM slots Dual Channel DDR3 1333 non-ECC , unbuffered 16GB max
+Expansion Slots
+1 x PCI Express x16 (3.0 Ivy Bridge), (2.0 Sandy Bridge)
+3 x PCI Express x1 (2.0)
+Storage
+1 x SATA III 6Gb/s connectors
+5 x SATA II 3Gb/s connectors
+Supports HDDs, Internal Solid State Drive (SSD)
+AudioRealtek – High Definition
+Network AdapterIntel (Gigabit) – 10/100/1000Mb/s
+Rear Panel
+1 x PS/2 for mouse (color green)
+1 x PS/2 for keyboard (color purple)
+1 x Audio I/O (Headphone /Microphone jack)
+1 x RJ45 LAN port
+4 x USB 2.0 ports
+2 x USB 3.0 ports
+1 x VGA port
+1 x HDMI port
+
+Internal
+1 x 4-pin CPU Fan connector
+1 x 3-pin SYS Rear Fan connector
+1 x 4-pin ATX 12V Power connector
+1 x 24-pin ATX Power connector
+1 x Front Audio header
+1 x Front Panel header
+2 x USB headers
+1 x Battery socket (3V)
+1 x Clear CMOS jumper
+
+GTX 650 Ti has a pair of dual-DVI + mini-HDMI, but no DisplayPort ( DP )
+CX430 ( 430 Watt) power supply should work for
+GTX 650 Ti Boost, 660, 660 Ti, 960, 970, 1070?
+https://video-nvidia.com/en-us/energy-nvidia-geforce
+
+For DisplayPort, GTX 1050 Ti uses less power (75 vs 110W)
+and 7720/4390 performance
+https://video-nvidia.com/en-us/sravnenie-videokart-nvidia
+https://gpu.userbenchmark.com/Compare/Nvidia-GTX-650-Ti-vs-Nvidia-GTX-1050-Ti/2189vs3649
+http://www.hwcompare.com/33248/geforce-gtx-1050-ti-vs-geforce-gtx-650-ti/
+http://hwbench.com/vgas/geforce-gtx-1050-ti-vs-geforce-gtx-650-ti
+
+GTX 1650 same 75W, but faster
+Some not DisplayPort? Some not Windows 8.1?
+DVI not dual-link?
+
+Get a DP GPU for Gateway and a second DisplayPort-to-dual-link DVI adapter  for
+ Alienware Aurora R7 below GTX 1080 TI?
+
+</pre>
+</ul>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+</body></html>
