@@ -103,6 +103,7 @@
 [NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector) modify or add game profiles in Nvidia driver database  
 [NVIDIA Smooth Motion](https://nvidia.custhelp.com/app/answers/detail/a_id/5621/~/enabling-smooth-motion-in-nvidia-app) driver-based AI model inferring frames between rendered frames  
  &emsp; similar to AMD's [Fluid Motion Frames](https://www.amd.com/en/products/software/adrenalin/afmf.html)  
+[Oasis](https://github.com/mbucchia/Oasis-Driver-for-Windows-Mixed-Reality/wiki) SteamVR driver for WMR headsets  
 [OBSC](https://github.com/benaclejames/OBSC) OBS-Studio plugin for OSC  
 [Ohne Speed OpenXR toolkit mod **reduces FoV, increases FpS**](https://www.youtube.com/watch?v=CieIQ7cE4CU) -
   [toolkit configurator](https://www.youtube.com/watch?v=JBf6IIIrK4A)  
