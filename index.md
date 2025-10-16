@@ -81,7 +81,7 @@ Arduino 2 IDE (which adds debugging) [**is broken for me**](../static/Arduino2/i
   - [STM32](pedals/STM32/) - programmable USB dongle can be configured as [HID gamepad](Windows/HID/)
   - [ESP8266](pedals/ESP8266) - CH340 USB chip can appear *only* as a COM port to Windows
   - [**analog pedals**](pedals/#pedals) plugged into [SimXperience AccuForce controller](pedals/#analog)  
-- [ShakeSeat](pedals/#shakeseat)  
+- [ShakeSeat](pedals/PuckSeat.htm#shakeseat)  
 - SimHub USB-attached [PWM PC fans](Arduino/SimHubPWMfans/)
 - [TH8A](pedals/#TH8A) Thrustmaster shifter mods
 - [wheels for GT racing in VR](pedals/steering.htm)  
