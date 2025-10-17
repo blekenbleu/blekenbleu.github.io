@@ -195,6 +195,7 @@ SRS Sample Rate Shading:&nbsp; see VRS - or -
 	[Steven LaValle's](https://www.youtube.com/playlist?list=PLbMVogVj5nJSyt80VRXYC-YrAvQuUb6dh) free book)  
 [VRC](https://hello.vrchat.com/) VRChat  
 [VRCFT](https://github.com/benaclejames/VRCFaceTracking) VRChat eye and Face Tracking OSC App for avatars  
+&emsp; [docs](https://docs.vrcft.io/) -  [EyeTrackVR Docs](https://docs.eyetrackvr.dev/) - [EyeTrackVR GitHub](https://github.com/EyeTrackVR/EyeTrackVR)  
 [VRFSG](https://www.youtube.com/channel/UCtr084FH7rX9rUKTAlZFKXA) VR Flight Sim Guy - Somnium VR1 beta tester and YouTuber's channel  
 [VRGOXR](https://portal.vrgineers.com/user-guide/software/openxr/) vrgineers' OpenXR runtime AKA VRG runtime  
 [vrperfkit](https://github.com/fholger/vrperfkit) fholger's VR Performance Toolkit to upscale after rendering,  
