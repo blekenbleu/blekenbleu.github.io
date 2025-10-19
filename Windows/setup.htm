@@ -14,6 +14,17 @@
 
 <font size=+1>
 <h2>Windows 11 Setup</h2><ul>
+<li><details><summary><a href=https://www.partitionwizard.com/free-partition-manager.html>MiniTool Partition Wizard Free</a></summary>
+While MiniTool want folks to pay for <i>something</i>,<br>
+Their free <code>pw-free-online.exe</code> download works,<br>
+with UI like Windows' Disk Management,<br>
+and can remove e.g. all GPT partitions.<p>
+Partition Wizard Free can expand data partitions<br>
+into space freed.
+</p>Alternatively, one can use<br>
+<a href=https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart>
+Windows' <code>diskpart</code> command line utility</a>.<br><br>
+</details>
 <li>Admin Cmd:&nbsp <code>powercfg.exe /hibernate off</code>
 <br> &emsp; avoid pointless SSD thrashing
 <li><a href=https://learn.microsoft.com/en-us/answers/questions/4147155/how-do-i-bypass-or-turn-off-windows-welcome-screen>disable splash screen (RegEdit)</a>
@@ -33,10 +44,10 @@
 <img src=image/View2.png><br>
 <img src=image/Search.png></details></ul>
 
-<li><code>NAS/packages/</code>
+<li><a href=https://www.pcguide.com/windows-11/how-to/disable-widgets/>turn off widgets</a>
 <li><a href=http://ultraramdisk.com/?mid=en_download&l=en>Ultra RAMDisk Lite</a>,
-<br> since much downloading to do;
 <br>avoid gratuitous SSD thrashing.
+<br>save downloads to <code>NAS/packages/</code>
 <li>NAS &nbsp <a href=../../static/network/ActiveBackup.htm>backup</a> configured
 <br>by PC agent installation
 
@@ -50,8 +61,8 @@
 <br>path to git binary for bash
 <br><code>NAS/packages/bleke</code>
 <li><a href=https://www.msys2.org/><code>msys2-x86_64</code></a> bash
-<br><code>NAS/packages/bleke</code>
-<li><a href=https://www.7-zip.org/>7-Zip</a>&nbsp; path to <code>7z.exe</code>
+<br><code>NAS/packages/bleke/.bash_profile</code>
+<li><a href=https://www.7-zip.org/>7-Zip</a>&nbsp; <i>add Path to</i> <code>7z.exe</code>
 <li><a href=https://crystalmark.info/en/software/crystaldiskinfo/>CrystalDiskInfo</a>
 <li><a href=https://www.glarysoft.com/glary-utilities/>Glary Utilities Free</a> on NAS
 <br><i>Its Context Menu Manager is weak</i>
@@ -59,31 +70,40 @@
 <li><a href=https://support.google.com/earth/topic/4363014>Google Earth Pro</a>
 <li><a href=https://www.intel.com/content/www/us/en/download-center/home.html>Intel drivers</a>
 <li><a href=https://www.malwarebytes.com/mwb-download>Malwarebytes Free</a>
-<li><details><summary><a href=https://www.partitionwizard.com/free-partition-manager.html>MiniTool Partition Wizard Free</a></summary>
-While MiniTool want folks to pay for <i>something</i>,<br>
-Their free <code>pw-free-online.exe</code> download works,<br>
-with UI like Windows' Disk Management,<br>
-and can remove e.g. all GPT partitions.<p>
-Partition Wizard Free can expand data partitions<br>
-into space freed.
-</p>Alternatively, one can use<br>
-<a href=https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart>
-Windows' <code>diskpart</code> command line utility</a>.
-</details>
 <li><a href=https://www.nirsoft.net/utils/usb_devices_view.html>USBDeview</a>
 <li><a href=https://www.uwe-sieber.de/usbtreeview_e.html>USB Device Tree Viewer</a>
 <li><a href=https://www.videolan.org/>VLC</a>
 <li><a href=https://windirstat.net/>WinDirStat</a>
-<li><a href=https://hub.tcno.co/windows/optimization/context-menu-cleanup/>Windows Context Menu Manager</a>
-<br>For Context Menu changes to work:
+<li><a href=https://hub.tcno.co/windows/optimization/context-menu-cleanup/><b>Windows Context Menu Manager</b></a>
+<br><i>For Context Menu changes to work</i>:
 <br><a href=https://www.elevenforum.com/t/disable-show-more-options-context-menu-in-windows-11.1589/#Two>Disable "Show more options" context menu</a><br> &emsp; <a href=image/Disable_Show_more_options_context_menu.bat><code>Disable_Show_more_options_context_menu.bat</code></a>
 <ul><li>cannot create shortcut to file in .zip
 <li>shortcut to admin executable on NAS fails
-<li>Activate context menu changes:&nbsp; <a href=image/RestartExplorer.bat><code>RestartExplorer.bat</code></a>
+<li>Activate changes:&nbsp; <a href=image/RestartExplorer.bat><code>RestartExplorer.bat</code></a>
 </ul>
 <li><code>System Properties > Performance [ Settings... ]</code>
 <br><img src=image/PerformanceOptions.png>
 </ul>
+
+<details><summary><b>Other Windows 11 tweaks considered</b></summary><ul>
+<li>Windows customization gets exhausting
+<br><a href=https://learn.microsoft.com/en-us/answers/questions/1349232/clone-everything-to-other-desktop-(-windows-11-)>
+	<code>Sysprep</code> <i>desktop image to clone</i></a>...?
+<li><a href=https://www.overtake.gg/news/comments/123482/>Empty DirectX Shader Cache</a>
+<li><a href=https://support.microsoft.com/en-us/windows/options-to-optimize-gaming-performance-in-windows-11-a255f612-2949-4373-a566-ff6f3f474613>
+	optimize gaming performance</a>
+<li><a href=https://github.com/valinet/ExplorerPatcher>ExplorerPatcher</a>
+<br> &emsp; <a href=https://www.pcworld.com/article/1786965/bring-back-windows-11s-missing-features-for-free-with-explorer-patcher.html>PCWorld</a>
+<br> &emsp; <a href=https://windowsreport.com/explorerpatcher-windows-11/>5 customizations</a>
+<br> &emsp; <a href=https://www.techbloat.com/how-to-install-and-use-explorerpatcher-on-windows-11.html>HowTo</a>
+<br> &emsp; <a href=https://www.askvg.com/download-explorerpatcher-for-windows-10-and-11/>Detailed HowTo</a>
+<br> &emsp; <a href=https://windowsforum.com/threads/restore-windows-10-productivity-in-windows-11-with-explorerpatcher.382151/><b>Backup first</b></a>
+<li><a href=https://www.overtake.gg/threads/windows-11-upgrade.218503/post-3657904>Durge Driven bare-metal installation</a>
+<br> &emsp; + reinstallation of drivers/apps
+<li><a href=https://www.overtake.gg/threads/windows-11-upgrade.218503/post-3855992>sticky keys (Accessibility)</a>
+<li><a href=https://www.overtake.gg/threads/windows-11-upgrade.218503/post-3862923>Nvida Inspector</a>
+<li><a href=https://store.steampowered.com/app/3824490/Oasis_Driver_for_Windows_Mixed_Reality/>Oasis SteamVR driver for WMR headsets</a>
+</ul></details>
 
 </td></tr><tr><td align=center>
 maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
