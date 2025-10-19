@@ -15,7 +15,9 @@
 <font size=+1>
 <h2>Windows 11 Setup</h2><ul>
 <li>Admin Cmd:&nbsp <code>powercfg.exe /hibernate off</code>
+<br> &emsp; avoid pointless SSD thrashing
 <li><a href=https://learn.microsoft.com/en-us/answers/questions/4147155/how-do-i-bypass-or-turn-off-windows-welcome-screen>disable splash screen (RegEdit)</a>
+<br> &emsp; <a href=image/DisableLockScreen.bat><code>DisableLockScreen.bat</code></a>
 <li><a href=https://www.google.com/chrome/>Google Chrome browser</a><ul>
 <li><i>restore <b>bookmarks</b>, passwords</i>
 <li>Settings > On Startup > Continue</ul>
@@ -73,10 +75,12 @@ Windows' <code>diskpart</code> command line utility</a>.
 <li><a href=https://www.videolan.org/>VLC</a>
 <li><a href=https://windirstat.net/>WinDirStat</a>
 <li><a href=https://hub.tcno.co/windows/optimization/context-menu-cleanup/>Windows Context Menu Manager</a>
-<br>For Context Menu changes to work:<details><summary><a href=https://www.elevenforum.com/t/disable-show-more-options-context-menu-in-windows-11.1589/#Two>Disable "Show more options" context menu</a></summary><br><code>
-reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve</code></details>
+<br>For Context Menu changes to work:
+<br><a href=https://www.elevenforum.com/t/disable-show-more-options-context-menu-in-windows-11.1589/#Two>Disable "Show more options" context menu</a><br> &emsp; <a href=image/Disable_Show_more_options_context_menu.bat><code>Disable_Show_more_options_context_menu.bat</code></a>
 <ul><li>cannot create shortcut to file in .zip
-<li>shortcut to admin executable on NAS fails</ul>
+<li>shortcut to admin executable on NAS fails
+<li>Activate context menu changes:&nbsp; <a href=image/RestartExplorer.bat><code>RestartExplorer.bat</code></a>
+</ul>
 <li><code>System Properties > Performance [ Settings... ]</code>
 <br><img src=image/PerformanceOptions.png>
 </ul>
