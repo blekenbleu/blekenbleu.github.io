@@ -1,0 +1,125 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>23 Oct 2025 Somnium VR1 Software 1 Year Update</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href="./"><i>back</i></a></font><br>
+
+<font size=+1>
+<h2><font color=green size=-1><i>23 Oct 2025</i></font> Somnium VR1 Software 1 Year Update</h2>
+Delete Beta or legacy components before installing VR1 Tool <code>1.1.0.45</code>.
+<ul>
+<details><summary>Somnium VR1 Tool <code>1.1.0.45</code> - Release Notes</summary>
+Firmware required for display frequency switching: <code>1.1.5.128</code><br>
+Somnium software components replace legacy VRG components;
+<dl>
+<dt>Core Updates
+<dd>
+ Updated Somnium Service → <code>v2.8.0</code><br>
+Somnium software components replace legacy VRG components<br>
+Somnium config files & folder structure<br>
+ &emsp;  Incompatible with legacy configs - reapply settings manually in VR1 Tool.<br>
+ &emsp;  If currently using Beta, delete and install new VR1 Tool;  settings are the same<br>
+Updated payloads and dependencies<br>
+   Added New Somnium VR1 Demo App inside VR1 Tool<br>
+   - Test & Try all VR1 functionalities in one place! 
+
+<dt>Performance & Runtime
+<dd>
+ Updated Somnium OpenXR Runtime → <code>v1.0.0</code><br>
+  30-40% performance boost in most OpenXR apps<br>
+Added support for 72Hz / 90Hz / 120Hz (experimental)<br>
+  → Requires firmware <code>1.1.5.128</code><br>
+ Added compatibility fixes for NVIDIA RTX 50xx GPUs
+
+<dt>Mixed Reality
+<dd>
+Improved image quality, auto exposure, and color profiles<br>
+Added ultrawide MR camera mode → <code>3968×2352 @ 75 FPS</code><br>
+Added new compensation options (<code>Mixed Reality → General</code> page)
+
+<dt>Eye Tracking
+<dd>
+Improved algorithms → better calibration & precision<br>
+Added special calibration mode for VROptician lenses<br>
+  → Enable "Lens Inserts" in <code>Headset → Eyes</code> before calibrating<br>
+Added extra info messages to <code>in-headset overlay</code>
+
+<dt>OpenXR Runtime Status & Installation
+<dd>
+Improved installation process<br>
+Added active Runtime info to <code>Software → Drivers</code> page<br>
+Added periodic runtime check to reflect external OpenXR changes
+
+<dt>Software Compatibility
+<dd>
+Fixes for Unreal Engine 5.2+ and OpenKneeBoard<br>
+Added dynamic foveated rendering for MSFS 2024<br>
+Improved compatibility with:<br>
+&emsp; DCS, iRacing, LMU, Falcon BMS, Autodesk VRED, (and others)<br>
+
+Vastly Improved motion-platform cancellation<br>
+Updated Somnium SteamVR Driver → <code>v3.5.0</code>
+
+<dt>SteamVR Driver Improvements
+<dd>
+Re-engineered rendering pipeline<br>
+SteamVR now controls full rendering process<br>
+Higher-resolution lens warping mesh<br>
+Support for 72Hz / 90Hz / 120Hz (experimental)<br>
+  → Adjustable directly in SteamVR → Settings → General<br>
+Disabled non-functional UI in VR1 Tool when SteamVR Driver active<br>
+Added native SteamVR overlays:<br>
+ &emsp; Virtual Desktop Eye Tracking, Mixed Reality<br>
+→ Visible in SteamVR VR View and Overlay Viewer,
+
+<dt>Updated Ultraleap Runtime → <code>v6.1.0.1</code>
+
+<dt>Somnium VR1 Tool UI
+<dd>
+Added Custom Fan Speed options <code>(Headset → Power)</code><br>
+Improved Setup Wizard text & visuals<br>
+Added new hardware button functions:<br>
+
+  
+Eye Tracking toggle<br>
+Simple / Advanced Eye Calibration,<br>
+Passthrough / Masked MR actions,<br>
+
+Added separate top & bottom vertical FOV settings <code>(Headset → Advanced)</code><br>
+Added total vertical + horizontal FOV display<br>
+Added advanced log option <code>(Software → Drivers)</code><br>
+
+</dl></details>
+
+<hr>
+<li><b><i>Known Issues</i></b><br>
+ 120Hz may cause image artifacts on some PCs.<br>
+ Somnium OpenXR Runtime currently does not support VR controllers.<br>
+ OpenXR Spacewarp is experimental, may not work on all setups.<br>
+ → (SteamVR reprojection is entirely separate.)<br>
+ MSFS 2024: repeated switching between Desktop and VR may drop FPS;<br>
+ → restart MSFS 2024 if this happens<br>
+ VR1 upscaling and sharpening no longer work in SteamVR, except in overlays.<br>
+ Leftover/active legacy <code>VRG</code> device services conflict with Somnium components;<br>
+ → stop and uninstall
+<hr>
+
+<li><a href=https://somniumspace.com/somniumvr1>Download VR1 Tool, FAQ, Games Setup</a>
+<li><a href=https://www.youtube.com/watch?v=RcC9wU2SHQw>video</a>
+<li>SteamVR Driver switch changes value in <code>stemvr.vrsettings</code> configuration file.
+<br>Works only if "driver_somnium" exists in SteamVR configuration,
+<br>as created by driver installation or driver check;&nbsp; reset by:
+<br> &nbsp; Somnium VR1 Tool - Settings - Software - Drivers - "Check Installation" button
+
+</ul>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
