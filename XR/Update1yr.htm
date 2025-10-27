@@ -12,7 +12,9 @@
 <font size=+1>
 <h2><font color=green size=-1><i>23 Oct 2025</i></font> Somnium VR1 Software 1 Year Update</h2>
 Delete Beta or legacy components before installing VR1 Tool <code>1.1.0.45</code>.
+
 <ul>
+<br>
 <details><summary>Somnium VR1 Tool <code>1.1.0.45</code> - Release Notes</summary>
 Firmware required for display frequency switching: <code>1.1.5.128</code><br>
 Somnium software components replace legacy VRG components;
@@ -100,6 +102,11 @@ Added advanced log option <code>(Software → Drivers)</code><br>
 
 <hr>
 <li><b><i>Known Issues</i></b><br>
+ (<i>thanks, bkdc</i>) To avoid conflicts:&nbsp; before installing VR1 Tools,<br>
+	&emsp; launch any other apps that also use COM ports (e.g. SimHub)<br>
+ Many VR1 Tool functions do not work until VR1 is driven by SteamVR<br>
+	&emsp; or some OpenXR app (e.g. demo)<br>
+ Large FoV demands more from your PC;<br> &emsp; reducing those settings improves performance.<br>
  120Hz may cause image artifacts on some PCs.<br>
  Somnium OpenXR Runtime currently does not support VR controllers.<br>
  OpenXR Spacewarp is experimental, may not work on all setups.<br>

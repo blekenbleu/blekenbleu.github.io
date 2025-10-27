@@ -19,8 +19,8 @@
  &emsp; <i>VR1 usage tips</i>
 
 <dl>
-<dt><br><a href=Update1yr.htm><b>1 Year Software update</b></a>
-<dt><br>Audio
+<dt><br><a href=Update1yr.htm><font color=red><b>1 Year Software update</b></font></a>
+<dt><br>Audio out
 <dd><a href=logiChorus.htm>logi Chorus</a>
 <dd><a href=https://t.co/CCdLB6AyLs>Valve Index BMR (ear speakers)</a>
  - <a href=https://mmimodular.myshopify.com/products/valve-index-bmr-adapters>contact PCBs</a>
@@ -30,6 +30,44 @@
 
 <dt><a href=BaseStation/base_station.htm>base stations</a>
 <dt><a href=VR1beta3.htm>beta3 released 23 Apr</a>
+<dt><details><summary>beta software removal</summary><i>thanks to <font color=green>nEuDy</font></i><pre>
+Preparation steps:
+(optional) Save your "user.config" file at
+C:\Users<username>\AppData\Local\Vrgineers_Inc\Somnium_VR1_Tool_Url_xafvawsk4qahexnro0luybdbbszblizh\1.0.4.109\
+(use the file only for the same beta tool,
+not older or newer versions, as it might not be compatible)
+Start SteamVR (HMD does not need to be plugged in) and go on PC to the Menu > Settings:
+at "Start/Stop" > manage extensions > disable Somnium
+at "OpenXR" > OpenXR API Layers > disable Somnium
+set SteamVR as default runtime, if the runtime is Somnium one
+optional, but I would recommend to unplug the VR1 Headset from USB
+
+Removal:
+Uninstall the VR1 Tool (beta) via Control Panel > Apps
+Restart PC (important to fully uninstall the running services)
+Folders to delete (after the PC restart)
+"C:\Program Files\SomniumSpace" (without space between Somnium Space)
+"C:\ProgramData\vrg"
+"C:\ProgramData\somnium"
+"%appdata%\VRG" (which is equal to "C:\Users<username>\AppData\Roaming\VRG)
+"%localappdata%\Vrgineers_Inc" (which is equal to C:\Users<username>\AppData\Local\Vrgineers_Inc)
+Steam related folders (depending where you have installed Steam and your SteamApps)
+"C:\Program Files (x86)\Steam\config\somnium"
+"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\somnium"
+Next step, only do it, if you are familiar with JSON files
+and you know what you are doing. Backup the file.
+Open in an Editor the streamvr.vrsettings of
+"C:\Program Files (x86)\Steam\config\steamvr.vrsettings" and delete the JSON object for:
+   "driver_somnium" : {
+      "enable" : true
+   },
+
+if exist, also remove
+   "driver_vrg" : {
+      "enable" : false
+   },
+</pre></details>
+
 <dt><a href=strap.htm#bottom>bottom anchor point
 <dt><a href=https://store.somniumspace.com/>Buy</a> (also FAQ)
 <dt><a href=first.htm#initial>customers</a> initial impressions
@@ -62,10 +100,18 @@
 <dd><a href=driver_ultraleap.htm>Ultraleap SteamVR skeletal tracking driver</a>
 <dt><a href=strap.htm>Head strap options</a>
 <dd> <a href=mask.htm>Face mask options</a>
+<dt><a href=https://www.computerhope.com/issues/ch000516.htm>hidden folders</a> with VR1 files<br>
+<dd>e.g. <code>C:\ProgramData\vrg\</code>
 <dt><a href=wtf/index.htm><b>Initial damage check</b>, impressions, buyer be awares</a>
 <dt><a href=eyeTrack.htm#IPD>interpupillary distance (IPD)</a>
 <dt><a href=joy.htm>joystick as SteamVR controller</a>
-<dt><a href=https://docs.google.com/document/d/1QS2aswT4qPD0zlo09KsqRZbh4U21dV91Dm2392Gr8eQ>microphone "robot voice"</a>
+<dt><a href=https://discord.com/channels/494994753146847233/1432313719043657768/1432314887564165150>microphone "robot voice"</a>
+<dd>typically too much processing/too little buffering
+<dt>micro-stutter mitigation
+<dd><a href=https://www.reddit.com/r/pcgaming/comments/yfpmqd/fix_for_pc_stuttering_micro_freezing_with_high_fps/>audio devices</a>
+<br><a href=https://graphicscardhub.com/fix-game-stutter/>Causes and Top Solutions</a>
+<br><a href=https://10scopes.com/fix-micro-stuttering-in-games/>15 ways to fix</a>
+<br><a href=https://www.positioniseverything.net/fix-micro-stuttering-in-games/>Essential Tips</a>
 <dt><a href=ovr.htm>mixed reality binocular cameras</a>
 <dt>OpenXR - Somnium claims support,<dd>but
 <a href=https://x.com/ASychov/status/1978920657724363124/photo/1>is not in Adopter Program</a>
