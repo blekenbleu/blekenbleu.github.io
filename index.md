@@ -13,6 +13,7 @@
   - [Monotone Cubic Fits over an interval](../static/ImageProcessing/MonotoneCubic.htm)
   - [Neighborhood Mask Dithered Interpolation](../static/ImageProcessing/NMDI.html)
   - [Niquist was not wrong but is misunderstood](../static/ImageProcessing/Nyquist.html)
+  - [Spatially-Varying Autofocus](../static/ImageProcessing/spatial.htm)
   - [Special Error Diffusion](../static/ImageProcessing/sped.html)
   - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](../static/ImageProcessing/TinyML.htm)  
 
