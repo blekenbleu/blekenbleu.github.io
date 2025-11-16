@@ -946,13 +946,12 @@ including amplifiers for <a href="PuckSeat.htm#shakeseat">ShakeSeat cushion</a> 
 <a href="https://github.com/SHWotever/SimHub/wiki/Shake-It-for-bass-shakers">SimHub</a>.<br>
 <a href="#TH8A">TH8A shifter plate</a> is rotated slightly ccw to reduce missed shifts.<br><br></details>
 
-<dd><a name=EXT><a href="https://www.racedepartment.com/threads/any-other-interest-in-diy-t-slot-extrusion-8020-wheel-stands.204332/">converted to extrusions</a></a> for <a href="#DD">AccuForce</a>:<br>
+<dd> &emsp; <a name=EXT><a href="https://www.racedepartment.com/threads/any-other-interest-in-diy-t-slot-extrusion-8020-wheel-stands.204332/">converted to extrusions</a></a> for <a href="#DD">AccuForce</a>:<br>
 <img align=left width=95% src="image/extruded.jpg"><br clear=all>
 
 
-<dt><br><font color=#007700><b>tactile feedback</b></font>
-<a name=haptic>
-<dd></a><font color=#007700><b>haptic transducers AKA exciters or shakers</b></font><ul>
+<dt><br><font color=#007700><b>tactile feedback</b></font>:&nbsp;
+<a name=haptic><font color=#007700><b>haptic transducers AKA exciters or shakers</b></font></a><ul>
 <li><a href="ShakeIt/10cmShaker/">"super pucks" Low Frequency Bass Speaker Transducer 3.75"</a>
 <a name=SRS>
 <li><a href=PuckSeat.htm#shakeseat><b>SRS ShakeSeat</b></a> &nbsp &nbsp <a href="PuckSeat.htm#pad">padding</a>
@@ -960,197 +959,9 @@ including amplifiers for <a href="PuckSeat.htm#shakeseat">ShakeSeat cushion</a> 
 
 <li><a href=ShakeItBassShakers.htm>SimHub ShakeIt Bass Shakers</a> <a href=shakeit.htm>profiles</a>
 
-<li><details><summary><b>G-force modulated 4 corner tire slip</b></summary>
-<a name="Simshakeseat"><i>Background and disclaimers</i></a><br>
-My sim driving experience is with an office chair, wheel stand and mostly Assetto Corsa.<br>
-I have no experience with the
-<a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">full SRS ShakeKit</a>,
-which may offer a superior experience.<br>
-Without a harness to keep one's back contacting them,<br>
-back transducers in <a href="https://www.simracingstudio.com/product-page/srs-shakekit-plus-includes-srs-license-for-bass-shaker">ShakeKit Plus</a>
-seem of debatable benefit.<br>
-<br>
-Already using SimHub with available motherboard 7.1 sound<br>
-and obsolete Denon surround receiver,<br>
- a ShakeSeat pad was ordered because:<br>
-* <a href="https://www.youtube.com/watch?v=mlJfIFhdk1c&t=306s">Sim Racing Garage review</a><br>
-* Dayton TT25-16 pucks were, at the time, in short supply elsewhere<br>
-An equivalent <a href="#pad">can be made</a> using Dayton pucks with e.g.<br>
-<a href="https://www.amazon.com/dp/B07GZFJ1CN">40cm square zippered cushion covers</a>
-and <a href="https://www.amazon.com/dp/B012TWTUMU">EVA foam floor tiles</a><br>
+<li><a href=GforceSlip.htm>G-force modulated 4 corner tire slip</a>
 
-Standard SimHub ShakeIt tire slip does not consider tire loading.<br>
-For example, an inside tire may be fully unloaded during cornering,<br>
-so very high slippage, but no perceived sensation in actual driving.<br>
-<br>
-This attempts to approximate track sensations from street tires,<br>
-when securely harnessed in a fitted racing seat.<br>
-Usefulness of such haptic feedback may vary widely among users<br>
-* e.g.
-<a href="https://www.youtube.com/watch?v=ExJEGp9itHE&t=3550s">Niels Heusinkveld indicated that seat feel is overrated</a><br>
-&nbsp .. and he cued more visually off horizon movement.<br>
-IMO, this feedback is less compelling than that from
-<a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioners</a>,<br>
-but reduces a sense of "something missing".<br>
-<br>
-Unambiguously directional haptic cues seemingly involve substantially direct stimulation of<br>
-body parts, e.g. left and right thighs, lumbars and/or sit bones.<br>
-<img src="image/SRS_EVA.jpg"><br clear=all>
-Sensations to be simulated here:<br>
-squeal for small slippage, transitioning to moaning with more slippage,<br>
-then shuddering near breakaway,<br>
-with much less feeling from lightly loaded tires
-(rear when braking, inside when cornering).<br>
-<br>
-Implementation embellishes SimHub Wheels slip effect using Custom Effects<br>
-1. latitudinal and longitudinal acceleration properties<br>
-2. loaded tire slips, products of tire slip properties times accelerations<br>
-<br>
-Recent SimHub versions provide <a name=accel>Acceleration</a> properties<br>
-that had been estimated from changes in speed and yaw samples to proxy G force.<br>
-Earlier SimHub versions sampled speed and yaw slower than Assetto Corsa sample updates,<br>
-resulting in some changes 2x others, which code here detects and mitigates.<br>
-<br>
-Left channel <b>Lateral G-force proxy</b>:<pre><code>// lateral acceleration proxy
-var y = $prop('OrientationYaw');
-const tc = 3;  // IIR smoothing factor
-const noise = 0.01 // non-linear filter threshold
-
-// initialize IIR filter history
-if(null==root["yaw"]) {
-   root["yaw"] = $prop('OrientationYaw');
-   root["delta_y"] = 0.2;
-}
-if (null==root["Gyb4"])
-  root["Gyb4"] = 0.5;
-
-var dy = y - root["yaw"];       // change between sample intervals
-
-// yaw flips at +/- 180
-if (Math.abs(dy) > 180) {  // yaw went +/- 180
-  if (Math.abs(root["yaw"]) > 150)
-    dy = -(y + root["yaw"]);
-}
-
-root["yaw"] = y;
-y = root["delta_y"];    // previous sample change
-
-// mitigate delta spikes from missed samples
-var my = 1;     // sample interval
-if ((Math.abs(dy * y) > noise)  // missed sample?
- && (Math.abs(dy) > Math.abs(1.8 * y)))
-  dy /= (my = 2);
-
-root["delta_y"] = dy;
-
-// IIR low-pass filter
-var Gyb4 = root["Gyb4"];        // IIR output
-Gyb4 += my * (dy - Gyb4) / tc;  // low-pass IIR
-root["Gyb4"] = Gyb4;
-return 50 + (50 * Gyb4);  // range 0-100
-// 50 corresponds to no G force</code></pre>
-<b>Longitudinal acceleration</b> (right channel) is similar, substituting speed for yaw<br>
-<br>
-<b>Loaded tire slip corner effects</b> use products of tire slips and G force proxies:
-<pre><code>return .01*$prop('GameRawData.Physics.WheelSlip01')
-    *($prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))
-// since this multiplies two properties with 0-100 ranges,
-// results must be reduced by 100 to return the same range
-// left vs right G-force distributions are applied to wheel slips
-//  by (proxy_G.Left) and (100-proxy_G.Left),
-// while front-to-rear G-force distributions are by
-//  ( proxy_G.Right-10) vs (90- proxy_G.Right)
-// to reflect that, while inner wheels may become fully unloaded in corners,
-// track cars are expected to fully unload neither nor rear wheels
-</code></pre>
-These two CUSTOM EFFECTS could be combined,<br>
-except that G-force proxy properties are also used by<br>
-a Custom serial device for <a href="#SimHarness">2DOF harness tensioning</a>.<br>
-The complete SimHub profile is <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile">available here</a>
- along with a <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile.txt">revised version</a><br>
-After awhile, SimHub can accumulate too many profiles; <a href="shakeit.htm">here are mine</a>.</details>
-
-<li><details> <summary> <a href="https://www.simxperience.com/Products/SimVibe/SimVibeSoftware.aspx"><b>SimXperience SimVibe</b></a> </summary>
-A pioneer in converting sim telemetry to bass shaker audio,<br>
-that is now also available from (free) <a href=ShakeItBassShakers.htm>SimHub</a> as well as SRS' ShakeKit.<br>
-SimXperience has since integrated SimVibe with
-<a href="https://www.simxperience.com/en-us/products/software/simcommander4.aspx">Sim Commander 4</a>,<br>
-which also drives their <a href="#DD">AccuForce direct drive steering wheel</a> (<i>acquired</i>).<br>
-<br>
-SimXperience warns that multiple identical sound adapters can be problematic.<br>
-Both Aurora motherboard and Samsung Odyssey+ sound identify as Realtek:<br>
-Intel and NVIDIA audio are presumably about HDMI. &nbsp Despite nomenclature,<br>
-Windows 10 Sound Blaster X-Fi support appears to be only stereo.<br>
-Realtek motherboard audio is enabled only after plugging into 1/8 phone jacks.<br>
-Realtek USB2.0 device disappears when Odyssey+ HMD sleeps,<br>
-reportedly confusing SimVibe/Sim Commander 4 (SC4),<br>
-which evidently keys off sequence in list of available devices.<br>
-Since Assetto Corsa already loses access to G29 and TH8A<br>
-unless launched <b>after</b> Steam and Content Manager,<br>
-inserting SC4 launch may also be problematic.<br>
-<img src="image/AudioDevices.png"><br clear=all>
-<br>
-"You have to select the audio-source in SC4 while the Odyssey is running."<br>
-Then launch SC4 after SteamVR and activate the profile last, so don't launch games with SC4.<br>
-I would prefer a fix, but once you got used to it, it's not a game-breaker,<br>
-because in window-mode you can launch SC4 while the game is loading.<br>
-If the headset falls to sleep mode, the output in SC4 is dead and
-<a href="https://simxperience.com/Default.aspx?tabid=742&g=posts&m=24721#post24721">
-you need to re-launch it the next time</a>.<br>
-<br>
-The first bullet for Sim Commander 4: "Simple To Use"<br>
-https://simxperience.com/en-us/products/software/simcommander4.aspx<br>
-* if true, users would notice without it being pointed out.<br>
-* as is nearly always the case, emphatically untrue,<br>
-if "use" means anything other than launching a default<br>
-or something useful [but painfully] configured and debugged..<br>
-* Consider it a fair warning that, on the same page, Tutorials require Flash.<br>
-- first (for installation) should be skipped - applied to SC3 and is flat misleading<br>
-- second may be still somewhat relevant, but requires much homework to correctly fill blanks<br>
-- last SimVibe could be valuable, if still accurate<br>
-<br>
-At least on my Windows 10 64-bit Home PC,<br>
-pop-up windows essential to Sim Commander 4 installation were hidden beneath<br>
-the main setup window, resulting in no progress until raised from the taskbar.<br>
-<br>
-Sim Commander license code displayed online was truncated;<br>
-fortunately, gif was fully visible after download (to USB1TB/Sim).<br>
-After initial setup, Sim Commander splash window plays obnoxious drum solo,<br>
-which can be stifled by clearing Background Music in Control Center.<br>
-<br>
-Rerunning Auto Search found Assetto Corsa, but not games in <code>E:\my\SteamLibrary\steamapps\common</code><br>
-.. which were added manually, but still do not show up on SC4 splash screen.<br>
-REALLY need to find getting started documentation!!<br>
-<br>
-Configuring SC2 launch by Content Manager was doomed;<br>
-no Output Mixer and seemingly no ShakeSeat output.<br>
-<br>
-This was cured by adding a fresh Sim Commander profile<br>
-(using big + at bottom of main screen) and selecting Assetto Corsa,<br>
-then duplicating and changing game to Content Manager.<br>
-After that, even the original Content Manager profile has an Output Mixer...<br>
-<br>
-SimVibe Tuning guide https://simxperience.com/Portals/0/Files/SimVibe/SimVibe%20Tuning%20Guide.pdf<br>
-<br>
-SimVibe chassis appears to support neither traction loss nor ABS,<br>
-but has estimated wheel lockup (mono), oversteer and "custom simvibe effect"<br>
-<br>
-Good news: switching from single screen to openvr in Content Manager<br>
-launched from SC4 did not lose SimVib, but did lose remapped mouse buttons<br>
-until logging out and back in, then launching CM from steam,<br>
-THEN launching (really, just attaching) CM/AC from SC4,<br>
-at which point SimVib and mouse buttons both worked.<br>
-<br>
-Somehow overnight, SC4 loses all profilesexcept Forza 7 and AC from scratch..?<br>
-<br>
-SC4 still launches a useless black abomination that is presumably its so-called Dashboard<br>
-<br>
-After fiddling with Sim Commander 4 SimVibe
-<li> it is more about simulating road feel than haptics feedback to help drive
-<li> documentation sucks and effect names are unhelpful
-
-SimHub <a href="ShakeItBassShakers.htm">ShakeIt Bass Shakers</a> is a better choice for me..<br>
-</details>
+<li><a href="SimVibe.htm">SimXperience SimVibe</a>
 </ul>
 
 <dt><br><details><summary><font color=#007700><b>Windows 10/11 sound</b></font></summary>

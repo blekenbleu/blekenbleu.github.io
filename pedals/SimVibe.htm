@@ -1,0 +1,102 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>SimXperience SimVibe</title>
+<!-- for text wrap around images:  https://www.homeandlearn.co.uk/WD/wds4p6.html -->
+<style>
+table.my_table td { width:670px; }
+</style>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<font size=-1><a href="index.htm"><i>back</i></a></font>
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<br>
+
+<h2><a href="https://www.simxperience.com/Products/SimVibe/SimVibeSoftware.aspx">SimXperience SimVibe</a> </h2>
+A pioneer in converting sim telemetry to bass shaker audio,<br>
+that is now also available from (free) <a href=ShakeItBassShakers.htm>SimHub</a> as well as SRS' ShakeKit.<br>
+SimXperience has since integrated SimVibe with
+<a href="https://www.simxperience.com/en-us/products/software/simcommander4.aspx">Sim Commander 4</a>,<br>
+which also drives their <a href="#DD">AccuForce direct drive steering wheel</a> (<i>acquired</i>).<br>
+<br>
+SimXperience warns that multiple identical sound adapters can be problematic.<br>
+Both Aurora motherboard and Samsung Odyssey+ sound identify as Realtek:<br>
+Intel and NVIDIA audio are presumably about HDMI. &nbsp Despite nomenclature,<br>
+Windows 10 Sound Blaster X-Fi support appears to be only stereo.<br>
+Realtek motherboard audio is enabled only after plugging into 1/8 phone jacks.<br>
+Realtek USB2.0 device disappears when Odyssey+ HMD sleeps,<br>
+reportedly confusing SimVibe/Sim Commander 4 (SC4),<br>
+which evidently keys off sequence in list of available devices.<br>
+Since Assetto Corsa already loses access to G29 and TH8A<br>
+unless launched <b>after</b> Steam and Content Manager,<br>
+inserting SC4 launch may also be problematic.<br>
+<img src="image/AudioDevices.png"><br clear=all>
+<br>
+"You have to select the audio-source in SC4 while the Odyssey is running."<br>
+Then launch SC4 after SteamVR and activate the profile last,<br>&emsp; so don't launch games with SC4.<br>
+I would prefer a fix, but once you got used to it, it's not a game-breaker,<br>
+because in window-mode you can launch SC4 while the game is loading.<br>
+If the headset falls to sleep mode, the output in SC4 is dead<br> &emsp; and
+<a href="https://simxperience.com/Default.aspx?tabid=742&g=posts&m=24721#post24721">
+you need to re-launch it the next time</a>.<br>
+<br>
+<a href=https://www.simxperience.com/slides/slide/sim-commander-4-5-quick-start-guide-78#scrollTop=0>Sim Commander 4 Guide</a><br>
+IMO, hard to use,
+if "use" means anything other than launching a default<br>
+or something useful [but painfully] configured and debugged..<br>
+Documentation and software have both evolved since I tried it.
+<br>
+At least on my Windows 10 64-bit Home PC,<br>
+pop-up windows essential to Sim Commander 4 installation were hidden beneath<br>
+the main setup window, resulting in no progress until raised from the taskbar.<br>
+<br>
+Sim Commander license code displayed online was truncated;<br>
+fortunately, gif was fully visible after download (to USB1TB/Sim).<br>
+After initial setup, Sim Commander splash window plays obnoxious drum solo,<br>
+which can be stifled by clearing Background Music in Control Center.<br>
+<br>
+Rerunning Auto Search found Assetto Corsa, but not games in <code>E:\my\SteamLibrary\steamapps\common</code><br>
+.. which were added manually, but still do not show up on SC4 splash screen.<br>
+<br>
+Configuring SC4 launch by Content Manager was doomed;<br>
+no Output Mixer and seemingly no ShakeSeat output.<br>
+<br>
+This was cured by adding a fresh Sim Commander profile<br>
+(using big + at bottom of main screen) and selecting Assetto Corsa,<br>
+then duplicating and changing game to Content Manager.<br>
+After that, even the original Content Manager profile has an Output Mixer...<br>
+<br>
+<a href=https://www.simxperience.com/slides/slide/simvibe-tuning-guide-29>SimVibe Tuning guide</a><br>
+<br>
+SimVibe chassis appears to support neither traction loss nor ABS,<br>
+but has estimated wheel lockup (mono), oversteer and "custom simvibe effect"<br>
+<br>
+Good news: switching from single screen to openvr in Content Manager<br>
+launched from SC4 did not lose SimVib, but did lose remapped mouse buttons<br>
+until logging out and back in, then launching CM from steam,<br>
+THEN launching (really, just attaching) CM/AC from SC4,<br>
+at which point SimVib and mouse buttons both worked.<br>
+<br>
+Somehow overnight, SC4 lost all profiles except Forza 7 and AC from scratch..?<br>
+<br>
+SC4 still launches a useless black abomination that is presumably its so-called Dashboard<br>
+<br>
+After fiddling with Sim Commander 4 SimVibe<ul>
+<li> it is more about simulating road feel than haptics feedback to help drive
+<li> documentation sucked and effect names were unhelpful<ul>
+
+SimHub <a href="ShakeItBassShakers.htm">ShakeIt Bass Shakers</a> is a better choice for me..
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body>
+</html>

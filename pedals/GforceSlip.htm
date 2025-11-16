@@ -1,0 +1,140 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+
+<title>G-force modulated 4 corner tire slip</title>
+<!-- for text wrap around images:  https://www.homeandlearn.co.uk/WD/wds4p6.html -->
+<style>
+table.my_table td { width:670px; }
+</style>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td>
+
+<font size=-1><a href=index.htm><i>back</i></a></font>
+<a href="https://www.gixen.com/index.php" name="9e092736783d0da1dfd8413d57d10faf" target="_blank" >
+<img align=right src="https://www.gixen.com/images/gixenlink.gif" border="0" alt="Auction Sniper" title="Auction Sniper">
+</a>
+<br>
+<h2>G-force modulated 4 corner tire slip</h2>
+<i>Background and disclaimers</i><br>
+My sim driving experience is with an office chair, wheel stand and mostly Assetto Corsa.<br>
+I have no experience with the
+<a href="https://www.simracingstudio.com/product-page/srs-shakekit-shakeseat-integrated-with-shakebox-lite">full SRS ShakeKit</a>,
+which may offer a superior experience.<br>
+Without a harness to keep one's back contacting them,<br>
+back transducers in <a href="https://www.simracingstudio.com/product-page/srs-shakekit-plus-includes-srs-license-for-bass-shaker">ShakeKit Plus</a>
+seem of debatable benefit.
+
+<p><b>Haptics based on tire slip are not ideal</b>;&nbsp;
+instead, consider <a href=../SimHub/sliprate.htm><font color = green><b>slip angle rate</b></font></a></p>
+
+Already using SimHub with available motherboard 7.1 sound<br>
+and obsolete Denon surround receiver,<br>
+ a ShakeSeat pad was ordered because:<ul>
+<li><a href="https://www.youtube.com/watch?v=mlJfIFhdk1c&t=306s">Sim Racing Garage review</a><br>
+<li>Dayton TT25-16 pucks were, at the time, in short supply elsewhere</ul>
+An equivalent <a href="#pad">can be made</a> using Dayton pucks with e.g.<br>
+<a href="https://www.amazon.com/dp/B07GZFJ1CN">40cm square zippered cushion covers</a>
+and <a href="https://www.amazon.com/dp/B012TWTUMU">EVA foam floor tiles</a><br>
+
+Standard SimHub ShakeIt tire slip does not consider tire loading.<br>
+For example, an inside tire may be fully unloaded during cornering,<br>
+so very high slippage, but no perceived sensation in actual driving.<br>
+<br>
+This attempts to approximate track sensations from street tires,<br>
+when securely harnessed in a fitted racing seat.<br>
+Usefulness of such haptic feedback may vary widely among users<ul>
+<li>e.g.
+<a href="https://www.youtube.com/watch?v=ExJEGp9itHE&t=3550s">Niels Heusinkveld indicated that seat feel is overrated</a><br>
+.. and he cued more visually off horizon movement.</ul>
+
+IMO, this feedback is for me less compelling than that from
+<a href="https://www.racedepartment.com/threads/2dof-harness-tensionner-with-fly-ptmover.194331/">2DOF harness tensioners</a>,<br>
+but reduces a sense of "something missing".<br>
+<br>
+Unambiguously directional haptic cues seemingly want substantially direct stimulation of<br>
+body parts, e.g. left and right thighs, lumbars and/or sit bones.<br>
+<img src="image/SRS_EVA.jpg"><br clear=all>
+Sensations to be simulated here:<br>
+squeal for small slippage, transitioning to moaning with more slippage,<br>
+then shuddering near breakaway,<br>
+with much less feeling from lightly loaded tires
+(rear when braking, inside when cornering).<br>
+<br>
+Implementation embellishes SimHub Wheels slip effect using Custom Effects<br>
+1. latitudinal and longitudinal acceleration properties<br>
+2. loaded tire slips, products of tire slip properties times accelerations<br>
+<br>
+Newer SimHub versions provide <a name=accel>Acceleration</a> properties<br>
+that had been estimated from changes in speed and yaw samples to proxy G force.<br>
+Earlier SimHub versions sampled speed and yaw slower than Assetto Corsa sample updates,<br>
+resulting in some changes 2x others, which code here detects and mitigates.<br>
+<br>
+Left channel <b>Lateral G-force proxy</b>:<pre><code>// lateral acceleration proxy
+var y = $prop('OrientationYaw');
+const tc = 3;  // IIR smoothing factor
+const noise = 0.01 // non-linear filter threshold
+
+// initialize IIR filter history
+if(null==root["yaw"]) {
+   root["yaw"] = $prop('OrientationYaw');
+   root["delta_y"] = 0.2;
+}
+if (null==root["Gyb4"])
+  root["Gyb4"] = 0.5;
+
+var dy = y - root["yaw"];       // change between sample intervals
+
+// yaw flips at +/- 180
+if (Math.abs(dy) > 180) {  // yaw went +/- 180
+  if (Math.abs(root["yaw"]) > 150)
+    dy = -(y + root["yaw"]);
+}
+
+root["yaw"] = y;
+y = root["delta_y"];    // previous sample change
+
+// mitigate delta spikes from missed samples
+var my = 1;     // sample interval
+if ((Math.abs(dy * y) > noise)  // missed sample?
+ && (Math.abs(dy) > Math.abs(1.8 * y)))
+  dy /= (my = 2);
+
+root["delta_y"] = dy;
+
+// IIR low-pass filter
+var Gyb4 = root["Gyb4"];        // IIR output
+Gyb4 += my * (dy - Gyb4) / tc;  // low-pass IIR
+root["Gyb4"] = Gyb4;
+return 50 + (50 * Gyb4);  // range 0-100
+// 50 corresponds to no G force</code></pre>
+<b>Longitudinal acceleration</b> (right channel) is similar, substituting speed for yaw<br>
+<br>
+<b>Loaded tire slip corner effects</b> use products of tire slips and G force proxies:
+<pre><code>return .01*$prop('GameRawData.Physics.WheelSlip01')
+    *($prop('ShakeITBSV3Plugin.Export.proxy_G.Left'))*(90-$prop('ShakeITBSV3Plugin.Export.proxy_G.Right'))
+// since this multiplies two properties with 0-100 ranges,
+// results must be reduced by 100 to return the same range
+// left vs right G-force distributions are applied to wheel slips
+//  by (proxy_G.Left) and (100-proxy_G.Left),
+// while front-to-rear G-force distributions are by
+//  ( proxy_G.Right-10) vs (90- proxy_G.Right)
+// to reflect that, while inner wheels may become fully unloaded in corners,
+// track cars are expected to fully unload neither nor rear wheels
+</code></pre>
+These two CUSTOM EFFECTS could be combined,<br>
+except that G-force proxy properties are also used by<br>
+a Custom serial device for <a href="#SimHarness">2DOF harness tensioning</a>.<br>
+The complete SimHub profile is <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile">available here</a>
+ along with a <a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile.txt">revised version</a><br>
+After awhile, SimHub can accumulate too many profiles; <a href="shakeit.htm">here are mine</a>.</details>
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body>
+</html>
