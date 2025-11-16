@@ -1,0 +1,155 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:600px; background-color:#CFDAD4; }
+</style>
+<title>Oversteer</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td style="padding-left:50;padding-right:50">
+<font size=-1> <a href=slip.htm#SSR><i>back</i></a> </font>
+
+<h1 id="oversteer">Oversteer</h1>
+<p>Whatever it is, let us agree that understeer is its opposite.<br />
+Wikipedia:  <a href="https://en.wikipedia.org/wiki/Understeer_and_oversteer">"Understeer Angle is the amount of additional steering (at road wheels)<br />
+ that must be added in any given steady-state maneuver beyond the Ackermann steer angle"</a></p>
+
+<p><a href="https://kogarahtyrepower.com.au/news/1944-tyrepower-kogarah-explains-oversteering-and-understeering"><img width=820 src="oversteer.jpg" alt="" /></a><br />
+  <em>by Wikipedia definition, B and D would represent understeer</em></p>
+
+<h2 id="tangential-speed-v-vs-yaw-velocity"><a href="https://en.wikipedia.org/wiki/Tangential_speed">tangential speed v</a> vs <a href="https://boltflight.com/understanding-yaw-the-crucial-axis-of-rotational-motion-in-vehicles-and-aircraft/">yaw velocity</a></h2>
+<ul>
+  <li>straight line speed is tangential speed with infinite radius and zero yaw velocity</li>
+  <li>yaw velocity &omega; (SimHub <code>OrientationYawVelocity</code>) is already <em>vehicle center of gravity</em> angular velocity;
+  <br><code>v = &omega;*R</code>
+  <li>SimHub <code>AccelerationSway</code> is lateral acceleration required to follow a curve of some radius R:
+  <br><code>AccelerationSway = v*v/R</code>
+  <li>vehicles lack perfect grip for generating lateral acceleration to follow ideal curves</li>
+  <li><em>side <a href="../sliprate.htm">slip rate</a></em> is the difference between <code>AccelerationSway</code> and v*&omega;</li>
+  <li><em>lateral velocity</em> is time integral of <em>side slip rate</em></li>
+  <li><em>center of gravity (body) slip angle</em> is ratio of <em>lateral velocity</em> / tangential speed</li>
+  <li>rear wheel slip angles sum vehicle yaws relative to trajectories and <em>body slip angles</em></li>
+  <li>front wheel slip angles sum steering angles, vehicle yaws relative to trajectories, and <em>center of gravity slip angles</em></li>
+</ul>
+
+<h2 id="lateral-velocity-wants-numerical-integration-simplifying-approximations"><em>lateral velocity</em> wants numerical integration;  simplifying approximations?</h2>
+<p><a href="https://vtechworks.lib.vt.edu/server/api/core/bitstreams/fe6d4ca1-514b-4e2b-b1ac-6561824a9de1/content"><strong>Front tire slip ~ (steering angle + yaw velocity) - (<em>side slip rate</em> / tangential speed))</strong></a><br />
+<strong>Rear tire Slip  ~ yaw velocity - (<em>side slip rate</em> / tangential speed)</strong></p>
+
+<ul>
+  <li>alternative (1) for oversteer:  more slip at rear tires than front</li>
+  <li>alternative (2):  vehicle yaw relative to vehicle direction (B, C, D, E)</li>
+  <li>alternative (3):  vehicle <em>side slip rate</em> with <em>steering changes</em></li>
+</ul>
+
+<h2 id="assetto-corsa-wheel-slip-telemetry-for-alternative-1">Assetto Corsa wheel slip telemetry for alternative (1):</h2>
+<p><code>DataCorePlugin.GameRawData.Physics.WheelSlip04 + DataCorePlugin.GameRawData.Physics.WheelSlip03 -
+(DataCorePlugin.GameRawData.Physics.WheelSlip02 + DataCorePlugin.GameRawData.Physics.WheelSlip01)</code><br />
+At least one issue:  locked brakes in a straight line presents as massive over- or  understeer,<br />
+ &emsp; &emsp; depending on which end locks up first/most.</p>
+
+<h2 id="simhub-telemetry-for-alternative-3">SimHub telemetry for alternative (3):</h2>
+<p><code class="language-plaintext highlighter-rouge">AccelerationSway - rescale * OrientationYawVelocity</code><br />
+… <em>where</em> <code class="language-plaintext highlighter-rouge">rescale</code> zeroes average differences for small <code class="language-plaintext highlighter-rouge">AccelerationSway</code> values.</p>
+
+<h2 id="rangerover-estimates-wikipedias-oversteer"><a href="https://www.youtube.com/watch?v=R90_3tEO5t4">@rangerover estimates Wikipedia’s oversteer</a></h2>
+<ul>
+  <li><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Automobilista%202%20-%20Rangey%20Under_Over%20Steer%20Front%20%26%20Rear%20Slip%20with%20Brake%20surge%2004-05-25.siprofile">Automobilista 2 - Rangey Under_Over Steer Front &amp; Rear Slip with Brake surge 04-05-25</a></li>
+  <li><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/IRacing%20-%20Rangey%20Over%20%26%20Under%20Steer%20%26%20Slip%2012-08-24.siprofile">IRacing - Rangey Over &amp; Under Steer &amp; Slip 12-08-24.</a><br />
+ RangeyRover’s JavaScript:
+<pre>// Don't waste processing time if in pits or in pit lane or is less than 5kph$prop(‘SpeedKmh’)
+// if ($prop(‘IsInPit’)==1 || $prop(‘IsInPitLane’)==1 || $prop(‘SpeedKmh’)&lt;=5){return 0;}
+var degreeRad = Math.PI/180; // 360 degrees to radians, which is 2&pi; radians</pre>
+</ul>
+
+<p>// Angular velocities in radians per second
+<pre>var angle1 = $prop(‘GameRawData.mAngularVelocity01’); // [ UNITS = Radians per-second ] (roll rate)
+var angle2 = $prop(‘GameRawData.mAngularVelocity02’); // [ UNITS = Radians per-second ] (yaw rate)
+var angle3 = $prop(‘GameRawData.mAngularVelocity03’); // [ UNITS = Radians per-second ] (pitch rate)</pre></p>
+
+<p>// Normalized steering input
+<br><code>var steeringInput = $prop(‘GameRawData.mSteering’);</code> // [ RANGE = -1.0f-&gt;1.0f ]
+<br><code>var steeringAngleDeg = steeringInput * 24;</code> //Typical steering angle 24 degrees, match to what is set in game</p>
+
+<p>// Convert normalized steering input to actual steering angle in radians
+<br><code>var steeringAngleRad = steeringAngleDeg * degreeRad;</code></p>
+
+<p>// Local velocities in metres per second
+<pre>var local1 = $prop(‘GameRawData.mLocalVelocity01’); // [ UNITS = Metres per-second ] (Lateral velocity)
+var local2 = $prop(‘GameRawData.mLocalVelocity02’); // [ UNITS = Metres per-second ] (Vertical velocity, not used in slip angle calculations)
+var local3 = $prop(‘GameRawData.mLocalVelocity03’); // [ UNITS = Metres per-second ] (Longitudinal velocity)</pre></p>
+
+<p>// Assumed distances to front and rear axles in meters not available in game
+<pre>var L_f = 1.2; // Distance to front axle [ UNITS = Metres ]
+var L_r = 1.6; // Distance to rear axle [ UNITS = Metres ]</pre></p>
+
+<p>// Extract yaw rate, lateral and longitudinal velocities
+<pre>var yaw_rate = angle2; // Yaw rate in rad/s
+var v_y = local1; // Lateral velocity in m/s
+var v_x = local3; // Longitudinal velocity in m/s</pre></p>
+
+<p>// Calculate front slip angle in radians from simplified equation
+<br><code>var alpha_f = steeringAngleRad - Math.atan((v_y + L_f * yaw_rate) / v_x);</code></p>
+
+<p>// Calculate rear slip angle in radians from simplified equation
+<br><code>var alpha_r = -Math.atan((v_y - L_r * yaw_rate) / v_x);</code></p>
+
+<p>// Convert slip angles from radians to degrees
+<pre>var alpha_f_deg = alpha_f * (180 / Math.PI);
+var alpha_r_deg = alpha_r * (180 / Math.PI);</pre></p>
+
+<p>//Output Oversteer in degrees
+<pre>var over =  Math.abs(alpha_r_deg) - Math.abs(alpha_f_deg); // Oversteer
+if(over &lt;= 0) {
+  over = 0;
+}
+var pit = $prop(‘IsInPit’);
+var game =  NewRawData().mGameState;
+if(pit !=1 &amp;&amp; game!=4 ){
+  return Math.abs(over) * 10;
+}
+return 0</pre></p>
+
+Plugin derivative of RangeRover slip angle calculator
+<ul compact>
+  <li>ignores center of gravity</li>
+  <li>arctan only of <code>1000 * (game-independent) AccelerationSway</code> divided by <code>SpeedKmh</code>
+    <ul>
+      <li>steering and yaw are already angles</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="simhub-accelerationsway">SimHub <code class="language-plaintext highlighter-rouge">AccelerationSway</code></h2>
+<ul>
+  <li>By observation, does not change sign while steering stays one side of center</li>
+  <li>some games have local velocity X and local acceleration X properties…
+    <ul>
+      <li>but acceleration plot does not zero when velocity plot has zero slope:<br />
+  <img src="sway.jpg" alt="" /><br />
+   &emsp; &emsp;  <em>local acceleration plots match <code class="language-plaintext highlighter-rouge">AccelerationSway</code></em></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="slip-angle-properties---mostly-from-loadcs-slipangle">slip angle properties - mostly from Load.cs SlipAngle()</h3>
+<ul>
+  <li>YawRate:  <code class="language-plaintext highlighter-rouge">OrientationYawVelocity</code> <em>radians per second</em></li>
+  <li>LPdiff:  <code class="language-plaintext highlighter-rouge">LPyaw - View.Model.SlipGain * LPsway</code></li>
+  <li>RangeRover:  <em>slip angle including steering</em></li>
+  <li>SlipAngle:  *slip angle without steering <code class="language-plaintext highlighter-rouge">ayaw - View.Model.SlipGain * asway</code></li>
+  <li>SwayAcc:  <code class="language-plaintext highlighter-rouge">AccelerationSway</code> <em>really, lateral velocity</em></li>
+  <li>Steering:  <em>game0dependent steering wheel telemetry converted to radians</em></li>
+  <li>SwayRate:  <code class="language-plaintext highlighter-rouge">Math.Atan(1000 * SwayAcc / SpeedKmh)</code></li>
+  <li>Vsway:  <em>game-dependent lateral velocity</em></li>
+  <li>YawRate:  <code class="language-plaintext highlighter-rouge">OrientationYawVelocity</code> <em>vehicle angle relative to trajectory</em></li>
+</ul>
+
+</td></tr><tr><td align=center>
+<i>maintained by <a href=https://github.com/blekenbleu>blekenbleu</a>
+</td></tr></table></div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<style>
+table.my_table td { width:800px; }
+</style>
+
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta name="google" value="notranslate">
+
+<title>slip rate</title>
+</head>
+
+<body>
+<div align=center>
+<table class="my_table"><tr><td width=100%>
+
+<a href="sideslip.htm"<i>back</i></a>
+
+<h1 id="slip-rate">slip rate</h1>
+<ul>
+  <li>sims rarely provide tire slip telemetry</li>
+  <li>deducing slip from generally available SimHub properties is problematic.</li>
+</ul>
+
+<p>Denying access to tire slip information makes sense for online competitions,<br />
+since it enables cheating by stability control, which is a well-explored,<br />
+thanks to e.g. <a href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter-V/part-571/subpart-B/section-571.126">FMVSS 126</a>.</p>
+
+<p>Arguably, the bible and evangelist for computational vehicle dynamics are<br />
+"The Multibody Systems Approach to Vehicle Dynamics" and Damian Harty,<br />
+whose widely repeated quote took me far too long to appreciate:<br />
+"Most drivers are acutely sensitive to the rate of change of body slip angle."</p>
+<ul>
+  <li>while tire slip angle directly influences grip, drivers do not directly sense it</li>
+  <li>better to provide proxy feedback for sensed body slip angle rate</li>
+  <li>SlipAngleRate calculation relatively is simple...</li>
+</ul>
+
+<h3 id="small-angle-approximation">Small angle approximation</h3>
+<p><b><i>On pavement</i></b>, tire slip angles greater than about 6 degrees are doomed.<br />
+For angles less than 6 degrees, <code class="language-plaintext highlighter-rouge">tan(y/x)</code> is nearly <code class="language-plaintext highlighter-rouge">y/x</code> in radians.</p>
+
+<h3 id="basics">Basics:</h3>
+<p>A rail car rounding a curve has no side slip:<br />
+ &emsp; <img src="rail_car.png" alt="" /></p>
+<ul>
+  <li>its lateral acceleration <code class="language-plaintext highlighter-rouge">LA = Speed * Speed / R</code></li>
+  <li>it also has a yaw rate (change in yaw with time) <code class="language-plaintext highlighter-rouge">YawRate = Speed / R</code></li>
+  <li>then required lateral acceleration <code class="language-plaintext highlighter-rouge">LA = Speed * YawRate</code></li>
+</ul>
+
+<p>Vehicles circulate skid pads typically with some slip,<br />
+their actual lateral acceleration differing from <code class="language-plaintext highlighter-rouge">Speed * YawVelocity</code>.</p>
+
+<p>Difference between Speed * YawVelocity and actual lateral acceleration is called body <em>slip rate</em>;<br />
+body slip rate divided by Speed is body <em>slip angle rate</em>.<br />
+SimHub properties from which to calculate body slip angle rate:</p>
+<ul>
+  <li>AccelerationSway (AKA lateral acceleration)</li>
+  <li>OrientationYawVelocity</li>
+  <li>SpeedKmh</li>
+</ul>
+
+<p>Then SimHub slip rate = <code class="language-plaintext highlighter-rouge">ff * SpeedKmh * OrientationYawVelocity - AccelerationSway</code><br />
+... and slip angle rate = <code class="language-plaintext highlighter-rouge">ff * OrientationYawVelocity - AccelerationSway / SpeedKmh</code><br />
+... where fudge factor <code class="language-plaintext highlighter-rouge">ff = 1</code> for property values with <em>compatible units of measure</em>.<br />
+For games and cars tested in SimHub, fudge factor <code class="language-plaintext highlighter-rouge">ff ~ 0.00485</code>:<br />
+<code class="language-plaintext highlighter-rouge">SlipAngleRate = 0.00485 * OrientationYawVelocity - AccelerationSway / SpeedKmh</code></p>
+
+
+</td></tr><tr><td align=center>
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+</td></tr></table></div>
+
+</body></html>
