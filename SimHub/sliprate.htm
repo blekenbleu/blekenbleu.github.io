@@ -9,7 +9,7 @@ table.my_table td { width:800px; }
 <meta name="color-scheme" content="light dark">
 <meta name="google" value="notranslate">
 
-<title>slip rate</title>
+<title>slip angle rate</title>
 </head>
 
 <body>
@@ -18,14 +18,14 @@ table.my_table td { width:800px; }
 
 <a href="sideslip.htm"<i>back</i></a>
 
-<h1 id="slip-rate">slip rate</h1>
+<h1 id="slip-rate">slip angle rate</h1>
 <ul>
   <li>sims rarely provide tire slip telemetry</li>
   <li>deducing slip from generally available SimHub properties is problematic.</li>
 </ul>
 
 <p>Denying access to tire slip information makes sense for online competitions,<br />
-since it enables cheating by stability control, which is a well-explored,<br />
+since tire slip telemetry facilitates cheating by stability control, which is a well-explored,<br />
 thanks to e.g. <a href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter-V/part-571/subpart-B/section-571.126">FMVSS 126</a>.</p>
 
 <p>Arguably, the bible and evangelist for computational vehicle dynamics are<br />
@@ -33,7 +33,8 @@ thanks to e.g. <a href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter
 whose widely repeated quote took me far too long to appreciate:<br />
 "Most drivers are acutely sensitive to the rate of change of body slip angle."</p>
 <ul>
-  <li>while tire slip angle directly influences grip, drivers do not directly sense it</li>
+  <li>while tire slip angle directly influences grip, drivers do not directly sense it
+  <li>what drivers sense is called understeer or <a href=Oversteer/index.htm><b>oversteer</b></a>
   <li>better to provide proxy feedback for sensed body slip angle rate</li>
   <li>SlipAngleRate calculation relatively is simple...</li>
 </ul>

@@ -19,9 +19,8 @@ Lateral acceleration required to follow a curve = V*V/R,
 <br>&emsp; <code>AccelerationSway - SpeedKmh * OrientationYawVelocity</code>,
 <br>which integrated over time yields "lateral velocity".
 
-<p>That
-<a href=https://www.reddit.com/r/FSAE/comments/125moie/comment/je6it6q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button>side slip rate</a>
-calculation by numerical integration is problematic<br> in that errors can accumulate.
+<p>That numerical integration of
+<a href=https://www.reddit.com/r/FSAE/comments/125moie/comment/je6it6q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button>side slip rate</a> is problematic<br> in that errors can accumulate.
 <br>Most traditional numerical integration techniques fail for near real time,
 <br>wanting information about future samples.
 <br>Lacking those, perform simple-minded accumulation.

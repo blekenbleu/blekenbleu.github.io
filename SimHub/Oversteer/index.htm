@@ -9,7 +9,7 @@ table.my_table td { width:600px; background-color:#CFDAD4; }
 <body>
 <div align=center>
 <table class="my_table"><tr><td style="padding-left:50;padding-right:50">
-<font size=-1> <a href=slip.htm#SSR><i>back</i></a> </font>
+<font size=-1> <a href=../slip.htm#SSR><i>back</i></a> </font>
 
 <h1 id="oversteer">Oversteer</h1>
 <p>Whatever it is, let us agree that understeer is its opposite.<br />
@@ -27,14 +27,16 @@ Wikipedia:  <a href="https://en.wikipedia.org/wiki/Understeer_and_oversteer">"Un
   <li>SimHub <code>AccelerationSway</code> is lateral acceleration required to follow a curve of some radius R:
   <br><code>AccelerationSway = v*v/R</code>
   <li>vehicles lack perfect grip for generating lateral acceleration to follow ideal curves</li>
-  <li><em>side <a href="../sliprate.htm">slip rate</a></em> is the difference between <code>AccelerationSway</code> and v*&omega;</li>
-  <li><em>lateral velocity</em> is time integral of <em>side slip rate</em></li>
+  <li><b><font color=red size=+1><em>side <a href="../sliprate.htm">slip angle rate</a></em>, <code>AccelerationSway - v*&omega;</code>,
+  is arguably most important</font></b>.
+  <li><a href=../sideslip.htm><em>lateral velocity</em></a> is time integral of <em>side slip rate</em></li>
   <li><em>center of gravity (body) slip angle</em> is ratio of <em>lateral velocity</em> / tangential speed</li>
   <li>rear wheel slip angles sum vehicle yaws relative to trajectories and <em>body slip angles</em></li>
   <li>front wheel slip angles sum steering angles, vehicle yaws relative to trajectories, and <em>center of gravity slip angles</em></li>
 </ul>
 
-<h2 id="lateral-velocity-wants-numerical-integration-simplifying-approximations"><em>lateral velocity</em> wants numerical integration;  simplifying approximations?</h2>
+<h2 id="lateral-velocity-wants-numerical-integration-simplifying-approximations"><a href=../sideslip.htm><em>lateral velocity</em></a> wants numerical integration;  simplifying approximations?</h2>
+ &emsp; <i>Don't bother approximating integration;&nbsp <a href=../sliprate.htm>side slip angle <b>rate</b></a> is already useful...</i>
 <p><a href="https://vtechworks.lib.vt.edu/server/api/core/bitstreams/fe6d4ca1-514b-4e2b-b1ac-6561824a9de1/content"><strong>Front tire slip ~ (steering angle + yaw velocity) - (<em>side slip rate</em> / tangential speed))</strong></a><br />
 <strong>Rear tire Slip  ~ yaw velocity - (<em>side slip rate</em> / tangential speed)</strong></p>
 

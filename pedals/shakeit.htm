@@ -11,7 +11,7 @@ table.my_table td { width:880px; }
 <div align=center>
 <table class="my_table"><tr><td>
 
-<font size=-1><a href="index.htm#ShakeIt"><i>back</i></a></font>
+<font size=-1><a href="ShakeItBassShakers.htm"><i>back</i></a></font>
 <h2>SimHub ShakeIt Bass Shaker profiles</h2>
 <font size=+1>
 <sl>
@@ -56,7 +56,7 @@ which would likely want substantially different (e.g. frequency) settings.
 
 <a name=prof>
 <h3>Profiles</h3></a>
-Many of these are based on obsolete SimHub versions which lack many current properties.<br>
+Many of these are based on obsolete SimHub versions which lacked many current properties.<br>
 For example, ProxyS effects <i>should</i> disappear.
 <dl>
 <dt><br><b>Default profile</b> 17 effects (then, 22 as of 14 Mar 2024)
@@ -65,14 +65,6 @@ That feeds a small shaker attached to dead pedal (foot rest left of clutch).
 
 <dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/AC1.siprofile"><b>AC1</b></a> 2 effects
 <dd>prune of provided Default, leaving only WHEELS SLIPS and RPMS
-
-<a name=u4ssc><dt><br>AC-specific <b>(un)Loaded 4-Wheel Slips with Speed Curving</b> (no longer available)</a>
-<dd><font size=-2><i>Uses some proprietary Assetto Corsa properties</i><br></font>
-<a href=ShakeIt/index.htm#ACproxyL>ACproxyL</a>,<br>
-<a href=ShakeIt/index.htm#ACproxyS>ACproxyS</a>,<br>
-<a href="ShakeIt/index.htm#LWS"<i>loaded wheel slips</i></a> haptic effect,<br>
-<a href=ShakeIt/index.htm#OS><i>trailing oversteer</i></a> haptic effect,<br>
-generic SPEED WITH CURVING exports <code>SpeedCurv</code> property to custom serial PWM fan.
 
 <dt><br><b>Brake Runout, Road Noise</b> 2 output effects for mixing to a single haptic channel
 <dd>While <i>real</i> ABS helps, SimHub's effect activates IMO too late to aid a braking.<br>
@@ -87,12 +79,15 @@ should probably be proportional (piece-wise linear).
 
 <dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Assetto%20Corsa%20-%20Loaded_WheelSlip9.1.20.siprofile"><b>Assetto Corsa - Loaded_WheelSlip9.1.20</b></a>
   discussed <a href=https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/post-3739847>here</a><br>
-<dd>SimHub 9.1.20 added <code>Forced Frequencies</code> to CUSTOM EFFECT, and AC has <code>GameRawData.Physics.WheelLoad0x</code> telemetry properties,<br>
+<dd>SimHub 9.1.20 added <code>Forced Frequencies</code> to CUSTOM EFFECT,<br>
+ and AC has <code>GameRawData.Physics.WheelLoad0x</code> telemetry properties,<br>
     allowing this a simple low overhead profile for loaded wheel slip simulating tire squeal<br> to shudder based on increasing slip, with amplitude based on tire load (no load = no tactile)
+<dd><br><b>Note</b>:&nbsp; <i>AC is exceptional in providing slip telemetry, which must be guestimated elsewhere.</i>
+<br>Drivers sense "balance" AKA <a href=../SimHub/sliprate.htm><b><font color=red>body slip angle change rate</font></b></a> more than <a href=../SimHub/slip.htm>tire slip angles</a>.
 <dt><br> <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile.txt><b>SimHub ShakeIt Bass Shakers custom 4 corner tire slip</b></a>
 <dd> <i>updated to</i> <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%204-channel%20wheelslip%20-%20CUSTOM%20Forced%20Frequency.siprofile><code>Forced Frequencies</code></a>
-   AKA <a href=https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/>GmodulatedWheelSlip.siprofile.txt</a>
-   and <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile>the orginal</a>, as described <a href=./#Simshakeseat>here</a>.
+<br>&emsp; AKA <a href=https://www.racedepartment.com/threads/simhub-shakeit-bass-shakers-custom-4-corner-tire-slip.198455/>GmodulatedWheelSlip.siprofile.txt</a>
+<br>&emsp; and <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/GmodulatedWheelSlip.siprofile>the orginal</a>, as described <a href=./#Simshakeseat>here</a>.
 <a name=sierses>
 <dt></a><br><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/sierses_4-channel_wheelslip.siprofile><b>sierses_4-channel_wheelslip.siprofile</b></a>
 <dd> - <i>updated to</i>: <a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/Any%20Game%20-%204-channel%20wheelslip%20mix%20-%20CUSTOM%20Forced%20Frequency.siprofile>Forced Frequency squeal-shudder</a>
@@ -125,7 +120,7 @@ This pair of properties may be what elsewhere are being estimated for loaded sli
 <dt><br><a href=https://github.com/blekenbleu/SimHub-Profiles/blob/main/NewLoaded4-chanWheelslipUndersteer.siprofile><b>NewLoaded4-chanWheelslipUndersteer.siprofile</b></a>
 <dd>from <a href=#rrrel>RRRELoaded4-chanWheelslipUndersteer</a>
 <dd>    same effects as above<ul>
-<li> <i>14 Aug 2021</i> accelerations applied to slip differences for under/oversteer<br> were all wrong
+<li> <i>14 Aug 2021</i> accelerations applied to slip differences for under/<a href=../SimHub/Oversteer/index.htm>oversteer</a><br> were all wrong
 <li> <b>to do</b>: replace AbsAcc custom effect with G-Forces effects</ul>
 
 <dt><br><a href="https://github.com/blekenbleu/SimHub-Profiles/blob/main/Aug14Loaded4-chanWheelslipUndersteer.siprofile"><b>Aug14Loaded4-chanWheelslipUndersteer</b></a> 6 effects
@@ -203,7 +198,7 @@ This profile generates CUSTOM effect with 2D horizontal acceleration,<br> to bet
 
 <li>CUSTOM EFFECT <i>output:&nbsp loaded wheel slips</i> haptic signals:<ul>
 <li><code>proxyL()</code> wheel load calculations are now integrated here<br>
-<li><code>SlipGate() mutes output for low slip<br>
+<li><code>SlipGate()</code> mutes output for low slip<br>
  &nbsp <img width=80% src=image/figure8_loads.png><br>
   &nbsp  &nbsp estimated wheel load examples on
  <a href="https://www.racedepartment.com/downloads/clarksville-indiana_sportsdome-speedway_figure-8-oval.28318/">figure 8 track</a></i><br><br>
@@ -240,7 +235,7 @@ This profile generates CUSTOM effect with 2D horizontal acceleration,<br> to bet
  &nbsp <img width=80% src=image/figure8_loads.png><br>
   &nbsp  &nbsp <i>estimated wheel load examples on
  <a href="https://www.racedepartment.com/downloads/clarksville-indiana_sportsdome-speedway_figure-8-oval.28318/">figure 8 track</a></i><br><br>
- - <code>noisy(<i>slip/grip</i>)</code>, rescaled by <code>Min</code> and <code>10 *Max/10</code>, frequency modulates tire squeal-&gt;moan-&gt;judder.<br>
+ - <code>noisy(<i>slip/grip</i>)</code>, rescaled by <code>Min</code> and <code>10 *Max/10</code>,<br> &emsp; frequency modulates tire squeal-&gt;moan-&gt;judder.<br>
 </ul>
 <details><summary><b>Adjustments</b></summary>
 <i>ProxyS</i> and <i>noisy</i> are properties, constrained by SimHub to be >= 0 and <= 100<ul>
@@ -340,6 +335,14 @@ was then also applied to <code>Rear right</code>.</details>
 <li><code>long shift</code> from <code>GameRawData.Telemetry.LongAccel</code>
 <li><i>4-Corner Slip output</i> from <code>wslip</code>, <code>sideways</code> and <code>long shift</code>
 </ul>
+
+<a name=u4ssc><dt><br>AC-specific <b>(un)Loaded 4-Wheel Slips with Speed Curving</b> (no longer available)</a>
+<dd><font size=-2><i>Uses some proprietary Assetto Corsa properties</i><br></font>
+<a href=ShakeIt/index.htm#ACproxyL>ACproxyL</a>,<br>
+<a href=ShakeIt/index.htm#ACproxyS>ACproxyS</a>,<br>
+<a href="ShakeIt/index.htm#LWS"<i>loaded wheel slips</i></a> haptic effect,<br>
+<a href=ShakeIt/index.htm#OS><i>trailing oversteer</i></a> haptic effect,<br>
+generic SPEED WITH CURVING exports <code>SpeedCurv</code> property to custom serial PWM fan.
 
 </dl>
 </font>
