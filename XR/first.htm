@@ -29,12 +29,12 @@
 <dt><br><details><summary><a href=https://www.youtube.com/watch?v=IDRlksSJLos><b>Initial
  issues</b></a> <i>fixed 1 Nov 2024</i></summary>
 <ul><li>Fixed perceived delay of the VR movement vs physical movements.
-<li>Fixed low FOV problems to allow for the full FOV of the headset to be utilized.
+<li>Fixed low <a href=#WIMFOV>FoV</a> problems to allow for the full FoV of the headset to be utilized.
 <li>Changed default rendering resolution to 80%.
 <li>Added option to set custom keyboard shortcut in the Buttons tab.
 <li>Updated algorithm for mixed reality latency compensation.
 <li>Fixed IPD values displayed in Connected Headset section and in the Eyes tab.
-<li>Added capability to switch FOV and resolution without restarting SteamVR.
+<li>Added capability to switch FoV and resolution without restarting SteamVR.
 <li>Fixed FPS counter in Somnium VR1 Tool when using SteamVR.
 <li>Fixed measure IPD and eye tracking functionality in SteamVR.
 <li>Other minor improvements and fixes
@@ -75,7 +75,7 @@
 <li><details><summary><b>basic initial settings for SteamVR</b></summary><ul>
 	<li>top render slider to 80% (do not change any SteamVR settings)
 	<li>"Advance" tab at the bottom left.
-	<li>Vertical Angle - Changes vertical FoV
+	<li>Vertical Angle - Changes vertical <a href=#WIMFOV>FoV</a>
 	<li>Horizontal Inner Angle - Changes binocular overlap
 	<li>Horizontal Peripheral Angle - Changes horizontal FoV
 	<li>Eye Relief Offset - Changes the world scale</ul><br></details></ul>
@@ -159,7 +159,9 @@
 
 <a name=WIMFOV>
 <dt></a><br><a href=https://boll.itch.io/wimfov>WhatIsMyFieldOfView</a> AKA WIMFOV<dd><img width=680 src=img/WIMFOV.png>
-<dd>other FoV tools are paid and/or reportedly need controllers
+<dd>Other FoV tools are paid and/or reportedly need controllers.
+<br><i>FWIW, my real world in-focus FoV with eyeglasses is</i> <code>&lt; 110&deg;</code>,
+<br> &emsp; with about</i> <code>82&deg;</code> <i>stereo overlap</i>
 
 <dt><br><details><summary>Artur's <b>VR1 FoV slider settings</b></summary>
 <a name=FoV><img width=720 src=img/FoVsliders.webp></a>
@@ -169,7 +171,7 @@
 <br> for needed performance based on your system and game.
 <br> <b><i>I run 75 - 85% <code>Render Resolution</code> most of the time with RTX 4090</i></b>.
 <ol>
-<li>Vertical FOV - keep 98 degrees just for the beginning.
+<li>Vertical FoV - keep 98 degrees just for the beginning.
 <br> Headset can render up to 110 degrees,
 <br> so you CAN increase this value in the future.
 <li>This is binocular overlap.
@@ -177,7 +179,7 @@
 <br> and depending on your IPD you might see even more.
 <br> CAUTION: This has a big impact on performance so I recommend
 <br> NOT touching this and keep default value of 45 in the beginning.
-<li>This is horizontal FOV. Default is 124 degrees (62 degrees per eye).
+<li>This is horizontal FoV. Default is 124 degrees (62 degrees per eye).
 <br> VR1 is capable of up to 140 degrees, with ideal physical eye relief.
 <li>Eye Relief Offset changes digital world scale (apparent distance).
 <br> Change this ONLY if default value feels strange after few days of use.
@@ -246,7 +248,7 @@
  When I put my ear close to the hmd I can hear some noise, but its very faint.<br>
  Yes with the SteamVR OpenXR runtime it works correctly,<br>
  only the VRG runtime has the view problem<br>
- Ok after update steamVR latency is gone, updated FOV is 128h, 95v<br>
+ Ok after update steamVR latency is gone, updated FoV is 128h, 95v<br>
  Well of course you have to "allow" it, i.e. setting the horizontal peripheral angle >65.<br>
  And I have already removed the gasket and replaced it by some cutomized foam structure,<br>
  so that is the absolut maximum for me I think<br>
@@ -254,7 +256,7 @@
  So I've now tried Hubris and HL:Alyx (both in steamVR) and both look great,<br>
  those elevator buttons and the resin really pop out,<br>
  great contrast and amount of detail and have very good performance<br>
- (hFOV 120, 100% res no upscaling, Hubris with DLSS).<br>
+ (hFoV 120, 100% res no upscaling, Hubris with DLSS).<br>
  There is a visual glitch though (no show-stopper but annoying),<br>
  Have noticed a difference in some lightning in the left vs the right eye in HL:Alyx (the sun shafts).<br>
  Eye tracking not working - it was a windows camera setting, it is working now<br>
@@ -303,10 +305,10 @@
  Quad View must use VRG,<br>
  but no QVFR games run correctly with VRG, only with Steam OpenXR<br><br>
 
- testHmd assumes a symmetrical vertical FOV. So if you don't have it symmetrical<br>
+ testHmd assumes a symmetrical vertical FoV. So if you don't have it symmetrical<br>
  (In my case upper is 92 and lower 98,<br>
  and I think it is expected to be asymmetrical by design of the VR1 lens [the upper cut])<br>
- you have to take the mean value, so in my case vFOV = (92 +98)/2 = 95.<br>
+ you have to take the mean value, so in my case vFoV = (92 +98)/2 = 95.<br>
  Just taking the value where both red dots have dissapeared<br>
  while the upper disappears earlier than the lower is WRONG<br><br>
 
@@ -440,8 +442,8 @@
  NICE I got OXRTK working, simply needed to start it in safe mode<br>
  I dunno, details in the distance seem a lot more pixelated with this setting<br>
  than at equivalent resolutuons on PCL or Aero,<br>
- maybe due to the larger FOV, but I'm still tweaking<br>
- Default FOV so far... just trying to establish basic operations..<br>
+ maybe due to the larger FoV, but I'm still tweaking<br>
+ Default FoV so far... just trying to establish basic operations..<br>
  I really want it to work but there is some weird issue<br>
  where OXRTK menu moves to an inaccessible place when not running it in safe mode.<br>
  Not sure if this is a VR1 problem but I've never had it before.<br>
@@ -493,7 +495,7 @@
 I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
  NO FOGGING whatsoever,none, zilch. PCL fogged like a MF.<br>
  Not even "noticeably" warm really. Warmer than when it's off, but that's expected<br>
- I just tested my FOV after all just to be able to compare, via WIMFOV.<br>
+ I just tested my FoV after all just to be able to compare, via WIMFOV.<br>
  I got 102H / 96V, but it felt a lot bigger (horizontally) in game, weird.<br>
  And this is with a slightly thinner than stock gasket.<br>
  Studioform cushion for Pimax Crytal, as recommended by VR flightsimguy. Really nice <br><br>
@@ -501,7 +503,7 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
  For reference, in Q3 I got 110/100 and Aero 104/83.<br>
  It definitely felt bigger than both of these in game though,<br>
  surely the bug only affects the measurement tools?<br>
- I can't imagine the ACTUAL FOV getting bigger via the update. Hope I'm wrong though<br>
+ I can't imagine the ACTUAL FoV getting bigger via the update. Hope I'm wrong though<br>
  VR optician claims they take distance prescription and adjust it for focal distance.<br>
  Didn't work out in my case it seems<br>
  You can already disable rendering for one eye via OXRTK<br>
@@ -518,8 +520,8 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
  But it doesn't tell me any values anywhere?<br>
  I got 114/96 (vs 102/96 before update)<br>
  ALthough I had the inserts in.. will try again without<br>
- Even with maxed out FOV rendering I only get 114/96 in WIMFOV, weird<br>
- Any tips on setting the inner angle FOV correctly?<br>
+ Even with maxed out FoV rendering I only get 114/96 in WIMFOV, weird<br>
+ Any tips on setting the inner angle FoV correctly?<br>
  Yeah the steamVR delay is 100% gone<br>
  still have the same wavyness as yesterday, more pronounced in right lense than left.<br>
  I don't think it's a deal breaker anymore as I'll probably get used to it in-game<br>
@@ -547,7 +549,7 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
  And mapping keys to buttons is so useful. You can bind windows key<br>
  so that when you use VD it's easy to get your mouse pointer onto the second monitor<br>
  (because usually the VR monitor has it captured)<br>
- I only get black bars on periphery when FOV is set too small<br>
+ I only get black bars on periphery when FoV is set too small<br>
  All FoV tools other than WIMFOV need controllers, right? I don't have hand tracking<br>
  looking at the MSFS menu, which includes images of planes,<br>
  focusing one one such photo with one eye and then moving back and forth left and right,<br>
@@ -575,12 +577,12 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
  the same way steam has that setting, as does Oculus desktop app<br><br>
  
  I put on the thinnest cushion I have today (Kiwi 6mm for VIVE)<br>
- and my FOV increased from 114/96 to 124/102 lol!<br>
+ and my FoV increased from 114/96 to 124/102 lol!<br>
  BUT now I was also seeing black flashing on left and right periphery like you,<br>
  only in steamVR probably.<br>
- Guess it was there all along but my FOV wasn't wide enough to see it.<br>
+ Guess it was there all along but my FoV wasn't wide enough to see it.<br>
  What's the easiest way to install SteamVR Beta?<br>
- When I was getting the low FOV values, I was using the Studioform cushion<br>
+ When I was getting the low FoV values, I was using the Studioform cushion<br>
  which VRFSG recommended and which I thought was thinner than stock.<br>
  Looking at it more closely, it's actually a bit thicker, especially at the top.<br>
  But I think the Kiwi is still slightly thinner than stock<br>
@@ -588,26 +590,26 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
  So now I have a strange issue (assuming in steamVR only) where if I look to the left,<br>
  I see some black flashing at the far right periphery and if I look to the right<br>
  I see some flashing on the far left periphery. This also happens when I close one eye.<br>
- Changing FOV rendering to max doesn't change it, actually made it worse I think <br>
+ Changing FoV rendering to max doesn't change it, actually made it worse I think <br>
  I have 7800x3D btw. Also, the flashing issue doesn't occur via VRG runtime,<br>
  only when using steamVR.<br>
- 100% res at max FOV = 13759x7144, assuming an inner angle of 45 deg,<br>
+ 100% res at max FoV = 13759x7144, assuming an inner angle of 45 deg,<br>
  which makes sense for this estimation<br>
  it's the theoretical max. It's meaningless as no one can see it<br>
- 100% res per eye at min FOV = 2426x2381, again with 45 deg inner angle<br>
+ 100% res per eye at min FoV = 2426x2381, again with 45 deg inner angle<br>
  <b>Weird issue in interaction with MSFS</b><br>
  By process of elimination, I can now confidently say that MSFS (for me at least)<br>
  will always crash one way or another on the first attempt. After simply launching it again,<br>
  it loads fine with VR1 connected and I can renter VR without issues. It's then super stable.<br>
  But something is going on here,<br>
  what could be causing the crash on initial load but making the second load succeed?<br>
- Unfortunately now that my FOV has increased to 124 via thinner cushion,<br>
+ Unfortunately now that my FoV has increased to 124 via thinner cushion,<br>
  I see more distortions in the periphery when moving head..<br>
  very similar to the Aero distortions upon launch probably.<br>
  But Varjo improved this via software, hope Somnnium can do the same.<br>
  Although it's very possible that my brain will remove these after using it some more.<br>
  Havent used the new cushion much yet <br>
- I get worse FOV with the stock cushion vs Studioform pimax.<br>
+ I get worse FoV with the stock cushion vs Studioform pimax.<br>
  And the latter is also amazingly comfortable.<br>
  But the kiwi is very comfortable too considering how thin it is<br>
  Compared to Aero, VR1 is pretty much better in every way,<br>
@@ -795,7 +797,7 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
  What exactly is "Calibrate Head pose" for?<br>
  With first version of VR1 tool it not had any effect to me.<br>
  Just measured IPD with 60% Render resolution,
- and getting 84° VFOV and about 98°-104°HFOV..<br>
+ and getting 84° VFoV and about 98°-104° HFoV..<br>
  But I am with 60mm IPD.. I have also a very unfavorable face 😅<br>
  I've switched in the VR1 tool at Headset > Advanced to a custom profile,<br>
  and moved all the sliders to it's minimum.<br>
@@ -804,14 +806,14 @@ I'd say it gets pleasantly warm, not at all more than expected. Also,<br>
  Then I did the same for Horizontal Peripheral Angle,<br>
  until I stopped seeing any more of the picture view on the outer sides of the lenses.<br>
  for me it's Innger Angle = 30° and Peripheral Angle = 48°<br>
- With this settings, I've measure my FOV with HMDTestTool until the max I can see,<br>
- and it matches the Steam VR view at it's max, which is then 96° HFOV for me<br>
+ With this settings, I've measure my FoV with HMDTestTool until the max I can see,<br>
+ and it matches the Steam VR view at it's max, which is then 96° HFoV for me<br>
  <img width=640 src=img/VR1-max-FOV-neudy.jpg><br><br>
 
  I just wanted to provide first feedback, after reinstalling my Windows 11,<br>
  the flickering black bars are gone during regular use of the Headset 👍 <br>
- Also the FOV got a little bit better for me with 90° VFOV and 104° with TestHMD tool<br>
- and with WimFOV it's 88° VFOV and 109°.<br>
+ Also the FoV got a little bit better for me with 90° VFoV and 104° with TestHMD tool<br>
+ and with WimFoV it's 88° VFoV and 109°.<br>
  I've tried to max it out, by removing the FaceGasket Foam and look into the lenses with my eyes glued on,<br>
  and yes, I can see much more from feeling 😜 <br>
  The Foam I've finally replace with a VRCover 6mm foam, which I had laying around for my Quest2<br>
