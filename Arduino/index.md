@@ -1,9 +1,9 @@
 ---
 ---
-[*back*](../#arduino-custom-usb-stm32-blue-pill-sketches)  
+[*back*](https://github.com/blekenbleu/Arduino-Blue-Pill?tab=readme-ov-file#arduino-mostly-blue-pill-sketches>Arduino-Blue-Pill)  
 
 *updated 8 Sep 2023*  
-## Arduino for STM32 [Black](black.htm) 'n Blue Pills, ESP32-S[2,3]
+## Arduino for STM32 [Black](black.htm) 'n Blue Pills, [ESP32-S2,3](../../static/ESP32/index.htm)
 
 [sketches](https://github.com/blekenbleu/Arduino-Blue-Pill)  
 [other content](content)
