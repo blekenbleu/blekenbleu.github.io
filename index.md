@@ -15,7 +15,7 @@
   - [Niquist was not wrong but is misunderstood](../static/ImageProcessing/Nyquist.html)
   - [Spatially-Varying Autofocus](../static/ImageProcessing/spatial.htm)
   - [Special Error Diffusion](../static/ImageProcessing/sped.html)
-  - [TinyML:&nbsp; TensorFlow Lite on Arduino, STM32 and ESP32](../static/ImageProcessing/TinyML.htm)  
+  - [TinyML:&nbsp; TensorFlow Lite on Arduino and microcontrollers](../static/ImageProcessing/TinyML.htm)  
 
 ### [Arduino custom ESP32 / STM32 USB sketches](Arduino/)
 - e.g. for [harness tensioning](pedals/index.htm#hartens) servos
@@ -25,7 +25,7 @@
         but can drive *any* COM port by **SimHub Custom Serial devices**  
         Some ESP32 / STM32 may appear as Arduino USB COM ports
 - [Direct Drive harness tension](https://github.com/blekenbleu/Direct-Drive-harness-tension-tester)  
-- [ESP32-S2](../static/ESP32/index.htm)  
+- [ESP32-S2, ESP32-S3](../static/ESP32/index.htm)  
 - [**STM32 MIDI**](../static/USB/STM32MIDI.htm)
 - [**mi-360** Xbox360 controller emulation](Arduino/mi360)
 - [pedal sketches](Arduino/) for [STM32](pedals/STM32/) 
