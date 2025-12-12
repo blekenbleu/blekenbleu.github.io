@@ -27,7 +27,30 @@
 <dd><a href="https://www.youtube.com/watch?v=jgCPd5ieL4Y">OpenXR Toolkit with UltraLeap</a>
 <dt><b><a href=FAQ.htm>Somnium VR1</a> mixed reality cameras</b>
 <dd>VR1 Tool integrates (Ultimate) mixed reality camera video
-<br> &emsp; through chromakey, 3D meshes, and more
+<ul> masked through chromakey, 3D meshes, and more
+
+<details><a name=mask><summary></a>mixed reality passthru masked image instability</summary>
+Most likely caused by perceived movement of MR image inside mask, not mask movement.<br>
+3D mesh mask is always placed relative to virtual world, and should not move.<br>
+Check "Show Mesh" checkbox on Masking page to see mesh wireframe visualization,<br>
+which should not move relative to the virtual world.<br>
+MR image movement inside the mask is caused mainly by<br>
+position differences between eyes and MR cameras;<br>
+compensation options available for this on the MR-General page. 
+<li>Reprojection - Maps the MR image onto the used 3D mask.<br>
+This requires a 3D mask closely corresponding to the physical objects<br>
+ and precisely positioned to minimize visible artifacts.
+<li>Cockpit Distance Compensation - Adjusts displayed stereoscopic MR image<br>
+ to more precisely fit the specified distance (by default 70cm).<br>
+ This works for physical cockpit at that distance from user's head,<br>
+ better stabilizing its MR image,<br>
+ but physical objects at other distances will have incorrect size/placement.
+<li>Virtual Camera Compensation - Adjusts virtual image position<br>
+to correspond to the position of the MR cameras (with slider at 100%).<br>
+This helps stabilize the MR image, while slightly destabilizing the VR image.<br>
+<b>Current bug</b>:&nbsp; must be reapplied in Settings menu each VR application restart.
+</details></ul>
+
 <dd><details><summary><a href=https://www.autohotkey.com>AutoHotkey</a> script to toggle full vs masked mixed reality</summary>
 <pre>#Requires AutoHotkey v2.0
 #SingleInstance
@@ -58,7 +81,7 @@ if (WinWait("Somnium VR1 Tool")) {
       }
    }</pre>
 </details>
-<dt><br>WMR (Windows Mixed Reality - deprecated)
+<dt><br>WMR (Windows Mixed Reality - deprecated;&nbsp; see <a href=https://store.steampowered.com/app/3824490/Oasis_Driver_for_Windows_Mixed_Reality/>Oasis</a>)
 <dd><a href=../pedals/index.htm#HP>Assetto Corsa and HP Reverb</a>
 <dd><a href="https://www.youtube.com/watch?v=Iq39cL1ViqE">enable/disable WMR OpenXR service</a>
 </dl>
