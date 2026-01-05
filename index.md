@@ -69,7 +69,9 @@ Arduino 2 IDE (which adds debugging) [**is broken for me**](../static/Arduino2/i
 
 ## [Microscopes and photomicography](microscope/)  
  &nbsp; **American Optical** [Series 10](microscope/#AO) / [Series 120](microscope/AO/) / [Reichert EPIStar](microscope/#EPIStar)  
- &nbsp; **Nikon** [Optiphot 150](microscope/Nikon/OptiphotInfinity/index.html#other) / [Optiphot 66](microscope/Nikon/) / [Optiphot 1](microscope/Nikon/Optiphot/) / [Metaphot](microscope/Nikon/Metaphot/)  
+ &nbsp; **Nikon** [Metaphot](microscope/Nikon/Metaphot/index.html) /
+	Optiphot [100](microscope/Nikon/Optiphot_100/index.html) / [66](microscope/Nikon/index.html#66) [DIC](microscope/Nikon/Optiphot66_DIC/index.htm) /
+   [2](microscope/Nikon/Optiphot_2/index.html) / [1](microscope/Nikon/Optiphot/index.html)  
 
 ## [MIDI](MIDI/), *including Android app* - [**SimHub plugin**](MIDI/plugin/)
  &nbsp; [Node.js **WebSocket MIDI server**](MIDI/midisrv)
