@@ -33,7 +33,7 @@
 - [VJoySerialFeeder](Arduino/VJoySerialFeeder) -  [install](Arduino/vJoySFinstall)
 
 ### Arduino IDE [Alternatives](https://www.javacodegeeks.com/2018/08/10-arduino-ide-alternative.html)
-Arduino 2 IDE (which adds debugging) [**is broken for me**](../static/Arduino2/install.htm#oopsie)
+Arduino 2 IDE (which adds debugging) [**was broken for me**](../static/Arduino2/install.htm#oopsie)
 
 - [**VSCode**](../static/VSCodeArduino/index.htm), AKA Visual Studio **Code**, *a confusingly named editor/IDE wannabe*  
 	- I use [**GVim**](https://www.vim.org/download.php) for source code edits  
