@@ -79,6 +79,7 @@
 [judder](https://www.howtogeek.com/753131/what-is-judder-and-why-do-tvs-have-this-problem/) aliasing between render and display frame rates  
 [Leap Motion Controller 2](Ultraleap.htm#controller) by Ultraleap  
 [Leapify](https://github.com/Nyabsi/leapify) switches between controllers and Hand Tracking  
+[`lighthouse_console.exe`](BaseStation/base_station.htm#exe)
 [LSFG](https://steamcommunity.com/app/993090/discussions/0/4418677017727367960/) Lossless Scaling FrameGen
 	["no substitute for DLSS"](https://www.xda-developers.com/lossless-scaling-hands-on/)  
 	 &emsp; [LSFG 3](https://store.steampowered.com/news/app/993090/view/527583567913419235) 24% less latency, but generally not for VR  
