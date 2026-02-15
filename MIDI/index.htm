@@ -17,24 +17,25 @@
 	 e.g. a VST multichannel fader plugin in <a href=../Windows/WinAudio.htm#VM>VoiceMeeter</a></i>
 <dt><br><details><summary><b>About MIDI</b>: servers, clients, senders, receivers, control surfaces, sequencers,<br>
  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp editors, recorders, instruments</summary>
-Historically, <a href="https://www.midi.org/">MIDI (Musical Instrument Digital Interface)</a> was a variation on asynchronous serial communication,<br>
+Historically, <a href="https://www.midi.org/">MIDI (Musical Instrument Digital Interface)</a><br> was a variation on asynchronous serial communication,<br>
 using the same UART <a href="https://en.wikipedia.org/wiki/MIDI#Technical_specifications">technology</a> as in serial printers, terminals and modems,<br>
-but with idiosynchratic 31.5kbps data rate, 5-pin (ground + 2 in + 2 out) DIN connectors and 5 Volt signals,<br>
+but with idiosynchratic 31.5kbps data rate,<br> <a href=https://drive.google.com/file/d/1L2YHBOZdSCuMg-RFR3TTEJcdV6KWkLZ9/view>5-pin (ground + 2 in + 2 out) DIN connectors and 5 Volt signals</a>,<br>
  instead of <a href="https://en.wikipedia.org/wiki/RS-232">RS-232</a>'s D-subminiature 25 or 9-pin connectors with +/-12 Volt signals.<br>
 <br>
 More crucially, while RS-232 is essentially point-to-point between data terminals and carriers,<br>
 MIDI can daisy-chain, with signals passed among devices that can both initiate and receive packets.<br>
-Consequently, MIDI packets include addressing for 16 channels, to selectively send and receive packets along a shared bus.<br>
+Consequently, MIDI packets include addressing for 16 channels,<br> to selectively send and receive packets along a shared bus.<br>
 <br>
 While all MIDI devices may send and receive messages, instruments are typically receivers,<br>
 while control surfaces and sequencers are typically senders.<br>
 Once IP networking is involved, server and client roles get involved.<br>
 Either senders or receivers can be either servers or clients.<br>
 Since web browsers can play music, JavaScript to behave as client instruments is relatively popular.<br>
-At any rate, code for Websocket MIDI control surface servers is relatively rare.<br>
+At any rate, code for <a href="#WS">WebSocket MIDI</a> control surface servers is relatively rare.<br>
 <br></details>
 
-<dt><details><summary><a href="https://users.cs.cf.ac.uk/Dave.Marshall/Multimedia/node158.html"><b>MIDI 1.0 messages</b></a> <i>mostly</i> include 3 bytes, one for status and 2 for data.</summary><ul>
+<dt><details><summary><a href="https://midi.org/summary-of-midi-1-0-messages"><b>MIDI 1.0 messages</b></a> <i>mostly</i> include 3 bytes, one for status and 2 for data:&nbsp;
+<a href=https://docs.google.com/document/d/1mNEl-4xRUtdilLxmV_6JKfgVAksGtDIJLRqTvIcyQwY/edit?tab=t.0#heading=h.opil6stf4jja>Demystified</a></summary><ul>
 <li>Data bytes are constrained to have msb=0, so only 7 bits for information.<br>
 <li>The status byte has most-significant bit = 1, 4 least significant bits for addressing 16 channels,<br>
 leaving 3 bits for message types, 7 of which (8x - Ex) are for channel messages:<table>
@@ -71,7 +72,7 @@ many second byte values support 127 third byte values and appropriate for slider
 Hex 00-13 for MSB and 20-33 for corresponding LSB.<br>
 First data byte values 70-83, 85-95 are for LSB-only second data bytes
 <br></details>
-<dd>Juan P Bello's <a href="https://ia802206.us.archive.org/29/items/midi-code-notes-NYU-FMT-Bello/9_MIDI_code.pdf"><code>MIDI Code</code> pdf</a>
+<dd>Juan P Bello's <a href="https://www.hobbytronics.co.uk/wp-content/uploads/2023/07/9_MIDI_code.pdf"><font size=+2><b><code>MIDI Code</code></b></font> pdf</a>
 
 <dt><br><a href=https://tttapa.github.io/Control-Surface/Doxygen/><font size=+1><b>MIDI Control Surface library for Arduino</b></font></a>
 
@@ -83,7 +84,7 @@ First data byte values 70-83, 85-95 are for LSB-only second data bytes
 <dt><br><b><a href=../../static/USB/STM32MIDI.htm>STM32MIDI USB</a>
 
 <dt><br><font color=red><a href="../../static/ESP32/midi.htm">ESP32-S2 USB MIDI</a> does not composite well with other devices (CDC, HID gamepad)</font></b>
-<dd>MIDI over Wi-Fi?&nbsp; (perhaps by WebSocket)
+<dd>MIDI over Wi-Fi?&nbsp; (perhaps by <a href="#WS">WebSocket</a>)
 
 <a name=WF><dt><br></a><font size=+1><b>Wireless MIDI - replaced by 
 <a href="https://github.com/blekenbleu/MIDIio">MIDIio</a>
