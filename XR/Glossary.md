@@ -48,7 +48,7 @@
 [eye relief](https://en.wikipedia.org/wiki/Eye_relief) - for HMDs, eye relief `tolerance` is one eyebox dimension  
 [eye tracking](https://en.wikipedia.org/wiki/Eye_tracking) needed for DFR, wanted for social VR    
 [FFR](https://www.tomshardware.com/news/oculus-fixed-foveated-rendering-technology,36781.html) fixed foveated rendering  
-[FoV](https://en.wikipedia.org/wiki/Field_of_view) Field of view, angles from pupil to image edges  
+[FoV](https://en.wikipedia.org/wiki/Field_of_view) Field of view, angles from pupil to image edges - [measure FoV](https://vrheadsetpicker.com/measure-your-fov/)  
 **FPS** First-person shooter (game) or Frames per second (display refresh rate)  
 [frame generation](https://blurbusters.com/frame-generation-essentials-interpolation-extrapolation-and-reprojection/) - interpolating or warping intermediate frames  
  &emsp; when rendered frame rate and/or latency is objectionable  
