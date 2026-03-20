@@ -23,6 +23,7 @@
 [CAS](https://github.com/GPUOpen-Effects/FidelityFX) Contrast adaptive sharpening with optional up-scaling;&nbsp; Nvidia Freestyle  
 [CEF](https://github.com/chromiumembedded/cef) Chromium Embedded Framework embeds Chromium-based browsers in apps  
 	&emsp; [CefSharp](https://ourcodeworld.com/articles/read/173/how-to-use-cefsharp-chromium-embedded-framework-csharp-in-a-winforms-application) C# wrapper  
+[CloudXR](https://www.nvidia.com/en-us/design-visualization/solutions/cloud-xr/) Nvidia streaming e.g. [from X-Plane 12 to Apple Vision Pro](https://www.iclarified.com/100192/xplane-12-flight-simulator-coming-to-apple-vision-pro-with-nvidia-cloudxr)  
 [core parking](https://www.thewindowsclub.com/enable-disable-core-parking-windows) - disable some CPU cores, reducing power and heat  
  &emsp; (Windows 11 often parks 18/20 of i5-13600K 6P + 8E cores)  
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
