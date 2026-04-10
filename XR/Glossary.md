@@ -139,6 +139,7 @@
  Personal Computer Virtual Reality - VR rendering by personal computers  
 	&emsp; (vs standalone / wireless headsets)  
 [Pimax Crystal](https://pimax.com/pages/crystal) mini-LED aspheric lens headset  
+[PimaxMagic4All](https://github.com/mbucchia/PimaxMagic4All) eye-tracking foveated rendering for SteamVR, now with latest VR1 update  
 [PPD]() Pixels Per Degree - angle based pixel density, typically specified near center  
 	&emsp; falling roughly by cosine, e.g. to approx 50% by 60&deg;  
 [Process Lasso](https://bitsum.com/server/features/) GUI to customize software process affinity to CPU cores  
