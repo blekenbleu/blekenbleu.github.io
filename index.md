@@ -5,6 +5,7 @@
 ## Signal Processing
   - [Aliasing and oversampling](../static/ImageProcessing/ao.html)
   - [Apple AirPod Pro as lame hearing aid](Apple/)  
+  - [Chromatic aberration mitigation](https://blekenbleu.github.io/microscope/basics/CA.htm)  
   - [DeltaWave vs Wave Corrector](../static/ImageProcessing/DeltaWave_WaveCorrector.html)
   - [dimg - visual difference utility](../static/ImageProcessing/dimg.html)
   - [dither:&nbsp; noise is not always bad](../static/ImageProcessing/dither.html)
