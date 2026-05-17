@@ -29,7 +29,8 @@
 [CSAA](https://www.tomshardware.com/reviews/anti-aliasing-nvidia-geforce-amd-radeon,2868-4.html) Nvidia's coverage sampling anti-aliasing - enhanced MSAA  
 [CTS](https://github.com/KhronosGroup/OpenXR-CTS) OpenXR™ Conformance Test Suite (OpenXR-CTS)  
 [DCS](https://store.steampowered.com/app/223750/DCS_World_Steam_Edition/) OpenXR sim supporting DFR &nbsp; -
-[graphics settings video](https://www.youtube.com/watch?v=SxQhOgDyIlQ)  
+	[graphics settings video](https://www.youtube.com/watch?v=SxQhOgDyIlQ)  
+[DesktopXR](https://github.com/glenimp617/DesktopXR) OpenXR desktop overlay, FoV crop and API layer with good Wiki, using DirectX 11 or 12  
 [DFR](https://www.tobii.com/blog/what-is-foveated-rendering) dynamic foveated rendering - key for optimizing VR performance  
 [Direct3D](https://learn.microsoft.com/en-us/windows/win32/direct3d) - drawing primitives, shading in Windows DirectX graphics, gaming API  
  &emsp; D3DX12 AKA Direct3D 12 is the current version;&nbsp;  most games use 11 or earlier  
