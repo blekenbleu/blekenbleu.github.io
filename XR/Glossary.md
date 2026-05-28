@@ -88,6 +88,7 @@
 [mbucchia](https://github.com/mbucchia)  XR software engineer Matthieu Bucchianeri  
 [MeganeX superlight 8k](https://shop.shiftall.net/en-us/products/meganex8k-us) 2x 4k microOLED panel pancake lens VR headset,  
  &emsp; highly regarded by MRTV  
+MDF - DCS World [Multi-Function Displays](https://uniforce-sog.org/wp-content/uploads/2024/07/DCS_BeginnersGuide_v20_FullVersion.pdf)  
 [MFG](https://www.nvidia.com/en-eu/geforce/news/dlss4-multi-frame-generation-ai-innovations/) - Multi Frame Generation (NVIDIA) up to 3 fake between rendered  
 [mixed reality](ovr.htm) (MR) binocular camera video overlay - [geometric, chroma key masks](ovr.htm#mask)  
 [motion reprojection](https://forums.flightsimulator.com/t/motion-reprojection-explained/548659) AKA SpaceWarp (SW)  
