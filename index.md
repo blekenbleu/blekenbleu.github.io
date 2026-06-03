@@ -11,6 +11,7 @@
   - [dither:&nbsp; noise is not always bad](../static/ImageProcessing/dither.html)
   - [Hugin image alignment](microscope/objectives/Hugin.htm)  
   - [LED color rendering meta-analaysis](../static/ColorRendering/)  
+  - [Linear Equations, Matrices and PseudoInverse](../static/ImageProcessing/matrix.htm)
   - [Monotone Cubic Fits over an interval](../static/ImageProcessing/MonotoneCubic.htm)
   - [Neighborhood Mask Dithered Interpolation](../static/ImageProcessing/NMDI.html)
   - [Niquist was not wrong but is misunderstood](../static/ImageProcessing/Nyquist.html)
