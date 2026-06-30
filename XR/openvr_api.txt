@@ -1,0 +1,25 @@
+-rwxr-xr-x  819664 Sep 18  2020 /d/my/CadMouse/3DxWare/3DxViewer/openvr_api.dll
+-rwxr-xr-x  597792 Apr 29  2020 /d/my/hmd-tester/Engine/Binaries/ThirdParty/OpenVR/OpenVRv1_5_17/Win64/openvr_api.dll
+-rwxr-xr-x  600864 May 12  2019 /d/my/WhatIsMyFieldOfView/WIMFOV_Data/Plugins/openvr_api.dll
+-rwxr-xr-x  825672 Aug 19  2022 /f/Steam/bin/cef/cef.win7x64/openvr_api.dll
+-rwxr-xr-x  627528 Aug 19  2022 /f/Steam/openvr_api.dll
+-rwxr-xr-x  592160 Aug 23  2023 /f/Steam/steamapps/common/Aircar/Engine/Binaries/ThirdParty/OpenVR/OpenVRv1_0_16/Win64/openvr_api.dll
+-rwxr-xr-x  597792 Aug 23  2023 /f/Steam/steamapps/common/Aircar/Engine/Plugins/Marketplace/SteamVRInput/Source/ThirdParty/OpenVRSDK/bin/win64/openvr_api.dll
+-rwxr-xr-x  314656 Oct 23  2023 /f/Steam/steamapps/common/assettocorsa/system/x64/openvr_api.dll
+-rwxr-xr-x  257312 Oct 23  2023 /f/Steam/steamapps/common/assettocorsa/system/x86/openvr_api.dll
+-rwxr-xr-x  243200 Dec 31  2023 /f/Steam/steamapps/common/Automobilista\ 2/x64/openvr_api.dll
+-rwxr-xr-x  819664 Oct 23  2023 /f/Steam/steamapps/common/Bigscreen/Bigscreen_Data/Plugins/x86_64/openvr_api.dll
+-rwxr-xr-x  839488 Nov  1  2024 /f/Steam/steamapps/common/fpsVR/openvr_api.dll
+-rwxr-xr-x  592160 Aug 23  2023 /f/Steam/steamapps/common/OpenVR\ Benchmark/cyubeVR/Tools/openvr_api.dll
+-rwxr-xr-x  424736 Aug 23  2023 /f/Steam/steamapps/common/OpenVR\ Benchmark/Engine/Binaries/ThirdParty/OpenVR/OpenVRv1_0_10/win32/openvr_api.dll
+-rwxr-xr-x  522528 Aug 23  2023 /f/Steam/steamapps/common/OpenVR\ Benchmark/Engine/Binaries/ThirdParty/OpenVR/OpenVRv1_0_10/win64/openvr_api.dll
+-rwxr-xr-x  600864 Aug 23  2023 /f/Steam/steamapps/common/OpenVR\ Benchmark/Engine/Binaries/ThirdParty/OpenVR/OpenVRv1_0_15/Win64/openvr_api.dll
+-rwxr-xr-x  592160 Aug 23  2023 /f/Steam/steamapps/common/OpenVR\ Benchmark/Engine/Binaries/ThirdParty/OpenVR/OpenVRv1_0_16/Win64/openvr_api.dll
+-rwxr-xr-x  271168 Oct 23  2023 /f/Steam/steamapps/common/OVRdrop/OVRdrop_Data/Plugins/openvr_api.dll
+-rwxr-xr-x  836760 Aug 27  2025 /f/Steam/steamapps/common/SteamVR/bin/vrwebhelper/win64/openvr_api.dll
+-rwxr-xr-x  631960 Aug 27  2025 /f/Steam/steamapps/common/SteamVR/bin/win32/openvr_api.dll
+-rwxr-xr-x  836760 Aug 27  2025 /f/Steam/steamapps/common/SteamVR/bin/win64/openvr_api.dll
+-rwxr-xr-x  815568 Mar  4  2025 /f/Steam/steamapps/common/SteamVR/tools/steamvr_environments/game/bin/win64/openvr_api.dll
+-rwxr-xr-x  314656 Mar  4  2025 /f/Steam/steamapps/common/SteamVR/tools/steamvr_media_player/win64/steamvr_media_player_Data/Plugins/openvr_api.dll
+-rwxr-xr-x  600864 Mar  4  2025 /f/Steam/steamapps/common/SteamVR/tools/steamvr_room_setup/win64/steamvr_room_setup_Data/Plugins/openvr_api.dll
+-rwxr-xr-x  600864 Mar  4  2025 /f/Steam/steamapps/common/SteamVR/tools/steamvr_tutorial/win64/steamvr_tutorial_Data/Plugins/openvr_api.dll

@@ -16,7 +16,8 @@
 <dt>Who's on first?
 <dd>SteamVR will not access headsets' OpenXR runtimes
 <dd>Use <a href=https://gitlab.com/znixian/OpenOVR>OpenComposite</a> to run a SteamVR application<br>  &emsp; on headsets having only OpenXR runtimes
-<br> &emsp; - using OpenComposite with VR1 OpenXR runtime<br> &emsp; &nbsp; seemingly offers no benefit
+<br> &emsp; - <a href=#OpenComposite>using OpenComposite with VR1 OpenXR runtime</a>
+<br> &emsp; &nbsp; for e.g. local dimming support
 <dd>SteamVR provides an OpenXR runtime<br>  &emsp; for OpenXR applications to run on OpenVR headsets
 <br> &emsp; - enabling both OpenVR and OpenXR runtimes<br> &emsp; &nbsp; simultaneously for VR1 is seemingly problematic
 <dt><br><i>Fred Emmott's</i> <a href=https://fredemmott.com/blog/2022/05/29/vr-software-components.html>VR / XR software overview</a>
@@ -58,6 +59,20 @@ OpenKneeboard's <a href="https://fredemmott.com/blog/2022/05/29/vr-software-comp
 <img width=640 src="https://fredemmott.com/assets/images/2022-05-vr/overview.svg">
 
 <dt><br><a href="https://mbucchia.github.io/OpenXR-Toolkit/#opencomposite"><b>OpenComposite</b></a><br>
+<dd>OpenComposite translates SteamVR API calls to standard OpenXR API
+<dd><details><summary><b>Making OpenComposite work with Somnium OpenXR runtime</b></summary><ul id=OpenComposite>
+<li>OpenComposite has two modes;&nbsp; a system wide mode<br> using a launcher <b><i>that will not work with Somnium OpenXR</i></b>
+<br> as it prevents accessing lighthouse tracking info in the background.
+<li>Instead, use  <a href=https://gitlab.com/znixian/OpenOVR#per-game-installation>"Per-game installation"</a> steps,
+which for most applications
+<br>just means copying <a href=https://znix.xyz/OpenComposite/download.php?arch=x64&branch=openxr>64bit <code>openvr_api.dll</code> from OpenComposite</a>
+<br>to <a href=openvr_api.txt>that application's <code>.dll</code> folder</a> (overwriting <code>openvr_api.dll</code> there).
+<li>Some SteamVR applications compatible with OpenComposite
+<br>may still not work with Somnium OpenXR with <i>current stable</i> (30 Jun 2026),
+<br>but should work with the new update.
+<li>Check <a href=https://docs.google.com/spreadsheets/d/1s2SSuRt0oHm91RUZB-R-ef5BrfOtvP_jwDwb6FuMF9Q/edit?gid=2068512515#gid=2068512515>OpenComposite Compatibility List</a> for tested SteamVR applications.
+</ul></details>
+
 <dd><details><summary>Play SteamVR games with OpenXR instead of OpenVR</summary>
 <a href="https://gitlab.com/znixian/OpenOVR">on GitLab</a>:<a name=OC>&nbsp</a>
 download from <a href="https://ci.appveyor.com/project/ZNix/openovr">AppVeyor</a> &gt Platform: x64 &gt Artifacts &gt OpenComposite.zip<br>
