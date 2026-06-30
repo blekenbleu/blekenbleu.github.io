@@ -113,6 +113,7 @@ MDF - DCS World [Multi-Function Displays](https://uniforce-sog.org/wp-content/up
   [toolkit configurator](https://www.youtube.com/watch?v=JBf6IIIrK4A)  
 [OpenComposite](https://gitlab.com/znixian/OpenOVR) replaces `openvr_api.dll`, *may* [speed performance](https://aircada.com/blog/steamvr-vs-opencomposite)  
  &emsp;	by [forwarding calls](https://fredemmott.com/blog/2022/05/29/vr-software-components.html) to OpenXR runtime, bypassing OpenVR  
+ &emsp; [**OpenComposite with Somnium VR1**](https://blekenbleu.github.io/XR/mbucchia.html#OpenComposite)  
 [OpenGL](https://en.wikipedia.org/wiki/OpenGL) - 2D and 3D graphics API, developed by Silicon Graphics  
 [OpenKneeboard](https://openkneeboard.com/) Fred Emmott's 2D overlay for OpenXR and OpenVR,  
  &emsp;	works with [**SimHub**](https://github.com/SHWotever/SimHub/wiki) dashboardsi by SimHub "OBS browser address"  
