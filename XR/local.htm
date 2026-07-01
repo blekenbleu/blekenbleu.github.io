@@ -1,0 +1,71 @@
+<html><head>
+<link rel='stylesheet' type='text/css' href='../../static/my.css'>
+<title>Somnium VR1 local dimming</title>
+</head>
+
+<body>
+<div align=center><table class="my_table"><tr><td>
+
+<font size=-1><a href="FAQ.htm"><i>FAQ</i></a></font>
+<h3>local dimming - <i>30 Jun 2026</i></h3>
+<dl><dt><a href=https://www.youtube.com/watch?v=l-JgqoI9Gpw>YouTube</a>
+<dd><a href=https://www.youtube.com/watch?v=RLvGRkYegKw>VR Flight Sim Guy</a>
+<dt>discord announcement:&nbsp VR1 Tool 1.2.0
+<dd>LOCAL DIMMING brightens QLED backlight spots specifically,
+<br>based on rendered video
+<br> - deeper blacks + higher contrast = more immersion.
+<br> - minimal blooming &amp; glare;&nbsp; more control and settings, industry first in many ways!
+<dd><br><b>Local Dimming modes (OpenXR)</b>
+<br>&emsp; (based on user preference or specific application):<ul>
+<li>Linear - basic averaging algorithm applied everywhere.
+<li>Dynamic - best contrast among darker and lighter areas.
+<li>Natural - approximates human vision brightness response, but more artifacts.
+<li>Medium - linear for darker, natural for lighter areas.
+<li>Adjustable minimum black level - lower values for darker;
+<br>more artifacts in high contrast areas. (First in the industry)
+<li>Local Dimming Toggle by buttons (Settings - Headset - Buttons).
+</ul>
+<dd><br><b>Support for VR controllers and inputs in OpenXR applications</b>:<br>
+Only lighthouse-based controllers (HTC Vive, Valve Index) are supported,
+<br>pairing with VR1 via the standard SteamVR -> Devices -> Pair Controller menu.
+<br>SteamVR is required for communication interface to controllers,
+<br>but we recommend disabling the Somnium SteamVR Driver
+<br>to ensure controllers pairing correctly with Somnium OpenXR Runtime.
+<dd><b>Note!</b>&nbsp; <i>SteamVR version 1.16 does not correctly provide controller button inputs;
+<br> &emsp; update SteamVR to beta version 1.17 or downgrading to 1.15 or older</i>.
+<dd><br><b>3DoF IMU tracking</b> (new) utilizes internal IMU sensors, without base stations.
+<br>Provides only 3DoF tracking (headset rotation, not translation).
+<dd><br><b>Transparent  Eye Tracking Calibration</b> (Settings - Headset - Eyes)
+<br>(started from the Tool or with a headset button)
+<br>a simple calibration cross with uninterrupted VR in less than 1.5 seconds.
+<br>&emsp; Application:&nbsp; <i>recalibrate during flights or races, maintaining view.</i>
+
+<dd><br><b>internally</b><ul>
+<li>Updated Somnium Service to 3.1.0
+<li>Updated Somnium OpenXR Runtime to 1.4.0
+<li>more robust OpenXR and SteamVR installation
+<br> - faster status checks and installation checks.</ul>
+
+<dd><br><b>Known issues</b><ul>:
+<li>120 Hz image artifacts on some setups, still considered experimental.
+<li>current Spacewarp functionality is experimental, not working correctly on all setups.
+<li>(MSFS 2024) repeated switching between desktop and VR mode can impact performance/FPS.
+<br>To recover, restart MSFS 2024.</ul>
+
+<dd><br><b>warping Profile H</b> - 
+<a href=https://discord.com/channels/494994753146847233/1301858258902061056/1521617504827605093>discord</a>
+</dl>
+                   
+<dd><br><b>
+</dl>
+
+
+
+</td></tr><tr><td align=center>
+
+maintained by <a href="https://github.com/blekenbleu">blekenbleu</a><br>
+
+</td></tr></table>
+</div>
+</body></html> 
+
