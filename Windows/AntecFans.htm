@@ -55,8 +55,8 @@ YouTube:<ul compact>
 <a name=AIR><img width=100% src=image/dp502-airflow.png></a>
 <dl>
 <dt><br><b>power supply</b>
-<dd>Separately from other case airflow,
- its fan draws air in thru Antec bottom case filter, exhausting out back.<br>
+<dd>Separately from other case airflow, its fan<br>
+ draws air in thru Antec bottom case filter, exhausting out back.<br>
 <img src="image/PSU-airflow-bottom-mounted.jpg">
 <dt><b>case fan arrows</b>
 <dd>molded into fans, blade rotation and airflow directions
@@ -66,24 +66,24 @@ YouTube:<ul compact>
 <li>one Antec fan has blades reversed...</dl>
 </details><br>
 
+<dl><dt>
 5 Arctic 3-wire fans are plugged into Antec's fan and LED controller,<br>
 which can control speed for up to six 3-wire fans<br>
- from a single PWM (4-wire) motherboard fan control as <font color=red><b><i>FAN6</i></b></font>
-
-<dl><dt><br><b>3 front input Arctic fans</b>
- &nbsp see <a href=#FAN>BIOS FAN settings</a>
-<dd>exhausting into Antec case front filter
-<br>attached to motherboard <font color=red><b><i>FAN6</i></b></font>
-<dt><b>2 top exhaust Arctic fans</b>
-<dd>mounted behind 5.25-inch optical drive
-<br>attached to motherboard <font color=red><b><i>FAN6</i></b></font>
-<dt><b>1 rear case exhaust Antec fan</b>
-<dd>mounted backwards, as received..
-<br>replaced by Scythe KazeFlex 120 PWM fan
+ from a single PWM (4-wire) motherboard fan control as <font color=red><b><i>SYS_FAN6</i></b></font>
+<dd><b>3 front input Arctic fans</b>
+ &nbsp see <a href=#FAN>BIOS FAN settings</a><br>
+ &emsp; exhausting into Antec case front filter<br>
+ &emsp; attached to motherboard <font color=red><b><i>SYS_FAN6</i></b></font>
+<dd><b>2 top exhaust Arctic fans</b>
+mounted behind 5.25-inch optical drive
+<br> &emsp; attached to motherboard <font color=red><b><i>SYS_FAN6</i></b></font>
+<dt><b>1 rear case exhaust fan</b>
+	mounted backwards, as received..
+<dd>Antec DC replaced by Scythe KazeFlex 120 PWM fan
 <br>attached to motherboard <font color=red><b><i>SYS_FAN1</i></b></font>
-<dt><b>1 chamber Antec fan</b>
+<dt><b>1 chamber Antec DC fan</b>
 <dd>mounted above PSU chamber, drawing air from lower front input,<br>
- exhausting to GPU;&nbsp; attached to motherboard <font color=red><b><i>FAN4</i></b></font>
+ exhausting to GPU;&nbsp; attached to motherboard <font color=red><b><i>SYS_FAN4</i></b></font>
 <dt><b>1 PWM ID-Cooling fan</b>
 <dd>exhausting into heat sink fin stack
 <br>attached to motherboard <font color=red><b><i>CPU_FAN1</i></b></font>
@@ -106,7 +106,7 @@ Antec DC chamber fan (<font color=red><code>SYS_FAN4</code></font>)
 <h4>MSI Center fan tuning:<br>Features > User Scenario > (Fan on) > Customize (clover)</h4>
 </a>
 <img width=80% src=image/CPUfan.png><br clear=all>
-CPU Fan<br><br>
+CPU PWM Fan<br><br>
 
 <i>24 Aug 2023</i>:&nbsp KazeFlex 120 PWM fan replaced rear Antec fan<br>
  &emsp; reconfigured SYSFan1 to PWM in BIOS;<br>
@@ -114,9 +114,9 @@ CPU Fan<br><br>
  &emsp; <img width=80% src=image/Aug24fan1.png><br clear=all>
 <i>Fan1:&nbsp rear exhaust now Scythe KazeFlex PWM</i><br><br>
 
-<img width=80% src=image/Aug24fan5.png><br clear=all><i>Fan5:&nbsp Antec chamber fan below GPU</i><br><br>
+<img width=80% src=image/Aug24fan5.png><br clear=all><i>Fan5:&nbsp Antec DC chamber fan below GPU</i><br><br>
 
-<img width=80% src=image/Aug24fan6.png><br clear=all><i>Fan6:&nbsp 5 Artic fans by Antec controller</i><br><br>
+<img width=80% src=image/Aug24fan6.png><br clear=all><i>Fan6:&nbsp 5 Artic fans by Antec PWM controller</i><br><br>
 
 Antec controller poorly matches Arctic case fans,<br>
 which run fast at very low PWM % needed for quiet low load operation.<br>
